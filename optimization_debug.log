@@ -1,0 +1,215 @@
+2025-03-23 16:52:29,977 - DEBUG - Application starting
+2025-03-23 16:52:30,561 - DEBUG - Initializing WebSocket
+2025-03-23 16:52:30,561 - DEBUG - Validating WebSocket request
+2025-03-23 16:52:30,565 - INFO - 127.0.0.1 - - [2025-03-23 16:52:30] "GET /index.html HTTP/1.1" 200 17729 0.005380
+2025-03-23 16:52:30,604 - DEBUG - Initializing WebSocket
+2025-03-23 16:52:30,605 - DEBUG - Validating WebSocket request
+2025-03-23 16:52:30,610 - INFO - 127.0.0.1 - - [2025-03-23 16:52:30] "GET /style.css HTTP/1.1" 200 44628 0.005527
+2025-03-23 16:52:30,613 - DEBUG - Initializing WebSocket
+2025-03-23 16:52:30,616 - DEBUG - Validating WebSocket request
+2025-03-23 16:52:30,619 - INFO - 127.0.0.1 - - [2025-03-23 16:52:30] "GET /eel.js HTTP/1.1" 200 6168 0.005356
+2025-03-23 16:52:30,621 - DEBUG - Initializing WebSocket
+2025-03-23 16:52:30,622 - DEBUG - Validating WebSocket request
+2025-03-23 16:52:30,628 - INFO - 127.0.0.1 - - [2025-03-23 16:52:30] "GET /script.js HTTP/1.1" 200 91692 0.005258
+2025-03-23 16:52:31,108 - DEBUG - Initializing WebSocket
+2025-03-23 16:52:31,110 - DEBUG - Validating WebSocket request
+2025-03-23 16:52:31,117 - INFO - 127.0.0.1 - - [2025-03-23 16:52:31] "GET /favicon.ico HTTP/1.1" 404 882 0.008923
+2025-03-23 16:52:31,300 - DEBUG - Initializing WebSocket
+2025-03-23 16:52:31,300 - DEBUG - Validating WebSocket request
+2025-03-23 16:52:31,300 - DEBUG - Attempting to upgrade connection
+2025-03-23 16:52:31,302 - DEBUG - WebSocket request accepted, switching protocols
+2025-03-23 16:53:10,122 - ERROR - Failed to send debug message to UI
+2025-03-23 16:53:10,123 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 16:53:10,136 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 16:53:10,137 - DEBUG - Target feature: LeftRear Power
+2025-03-23 16:53:10,137 - DEBUG - Max epochs: 100
+2025-03-23 16:53:10,138 - DEBUG - Data available: True
+2025-03-23 16:53:10,138 - DEBUG - ONNX model loaded: True
+2025-03-23 16:53:20,057 - ERROR - Failed to send debug message to UI
+2025-03-23 16:53:20,057 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 16:53:20,057 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 16:53:20,057 - DEBUG - Target feature: LeftRear Power
+2025-03-23 16:53:20,057 - DEBUG - Max epochs: 100
+2025-03-23 16:53:20,058 - DEBUG - Data available: True
+2025-03-23 16:53:20,058 - DEBUG - ONNX model loaded: True
+2025-03-23 16:56:00,163 - DEBUG - Closed WebSocket
+2025-03-23 16:56:00,166 - DEBUG - Failed to write closing frame -> closing socket
+2025-03-23 16:56:00,167 - DEBUG - Closed WebSocket
+2025-03-23 16:56:13,080 - DEBUG - Application starting
+2025-03-23 16:56:13,584 - DEBUG - Initializing WebSocket
+2025-03-23 16:56:13,585 - DEBUG - Validating WebSocket request
+2025-03-23 16:56:13,588 - INFO - 127.0.0.1 - - [2025-03-23 16:56:13] "GET /index.html HTTP/1.1" 200 17729 0.004285
+2025-03-23 16:56:13,629 - DEBUG - Initializing WebSocket
+2025-03-23 16:56:13,630 - DEBUG - Validating WebSocket request
+2025-03-23 16:56:13,640 - INFO - 127.0.0.1 - - [2025-03-23 16:56:13] "GET /style.css HTTP/1.1" 200 44628 0.010837
+2025-03-23 16:56:13,642 - DEBUG - Initializing WebSocket
+2025-03-23 16:56:13,642 - DEBUG - Validating WebSocket request
+2025-03-23 16:56:13,644 - INFO - 127.0.0.1 - - [2025-03-23 16:56:13] "GET /eel.js HTTP/1.1" 200 6168 0.001762
+2025-03-23 16:56:13,659 - DEBUG - Initializing WebSocket
+2025-03-23 16:56:13,659 - DEBUG - Validating WebSocket request
+2025-03-23 16:56:13,666 - INFO - 127.0.0.1 - - [2025-03-23 16:56:13] "GET /script.js HTTP/1.1" 200 91692 0.007050
+2025-03-23 16:56:14,222 - DEBUG - Initializing WebSocket
+2025-03-23 16:56:14,223 - DEBUG - Validating WebSocket request
+2025-03-23 16:56:14,223 - DEBUG - Attempting to upgrade connection
+2025-03-23 16:56:14,224 - DEBUG - WebSocket request accepted, switching protocols
+2025-03-23 16:56:40,762 - ERROR - Failed to send debug message to UI
+2025-03-23 16:56:40,762 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 16:56:40,762 - DEBUG - Called with input_features: ['Time', 'LeftRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'Parallel Deadwheel Encoder', 'Perpendicular Deadwheel Encoder', 'Voltage', 'Heading']
+2025-03-23 16:56:40,763 - DEBUG - Target feature: RightRear Power
+2025-03-23 16:56:40,763 - DEBUG - Max epochs: 100
+2025-03-23 16:56:40,763 - DEBUG - Data available: True
+2025-03-23 16:56:40,763 - DEBUG - ONNX model loaded: True
+2025-03-23 16:57:06,213 - ERROR - Failed to send debug message to UI
+2025-03-23 16:57:06,213 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 16:57:06,213 - DEBUG - Called with input_features: ['Time', 'LeftRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'Parallel Deadwheel Encoder', 'Perpendicular Deadwheel Encoder', 'Voltage', 'Heading']
+2025-03-23 16:57:06,214 - DEBUG - Target feature: RightRear Power
+2025-03-23 16:57:06,214 - DEBUG - Max epochs: 100
+2025-03-23 16:57:06,214 - DEBUG - Data available: True
+2025-03-23 16:57:06,214 - DEBUG - ONNX model loaded: True
+2025-03-23 16:57:49,301 - ERROR - Failed to send debug message to UI
+2025-03-23 16:57:49,302 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 16:57:49,302 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 16:57:49,302 - DEBUG - Target feature: LeftRear Power
+2025-03-23 16:57:49,302 - DEBUG - Max epochs: 100
+2025-03-23 16:57:49,303 - DEBUG - Data available: True
+2025-03-23 16:57:49,303 - DEBUG - ONNX model loaded: True
+2025-03-23 16:57:59,128 - ERROR - Failed to send debug message to UI
+2025-03-23 16:57:59,130 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 16:57:59,130 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 16:57:59,130 - DEBUG - Target feature: LeftRear Power
+2025-03-23 16:57:59,131 - DEBUG - Max epochs: 100
+2025-03-23 16:57:59,131 - DEBUG - Data available: True
+2025-03-23 16:57:59,131 - DEBUG - ONNX model loaded: True
+2025-03-23 16:58:09,225 - ERROR - Failed to send debug message to UI
+2025-03-23 16:58:09,225 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 16:58:09,225 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 16:58:09,226 - DEBUG - Target feature: LeftRear Power
+2025-03-23 16:58:09,226 - DEBUG - Max epochs: 50
+2025-03-23 16:58:09,227 - DEBUG - Data available: True
+2025-03-23 16:58:09,227 - DEBUG - ONNX model loaded: True
+2025-03-23 16:58:14,436 - ERROR - Failed to send debug message to UI
+2025-03-23 16:58:14,436 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 16:58:14,437 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 16:58:14,437 - DEBUG - Target feature: LeftRear Power
+2025-03-23 16:58:14,437 - DEBUG - Max epochs: 50
+2025-03-23 16:58:14,437 - DEBUG - Data available: True
+2025-03-23 16:58:14,438 - DEBUG - ONNX model loaded: True
+2025-03-23 16:58:19,797 - ERROR - Failed to send debug message to UI
+2025-03-23 16:58:19,798 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 16:58:19,798 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 16:58:19,800 - DEBUG - Target feature: LeftRear Power
+2025-03-23 16:58:19,801 - DEBUG - Max epochs: 100
+2025-03-23 16:58:19,801 - DEBUG - Data available: True
+2025-03-23 16:58:19,801 - DEBUG - ONNX model loaded: True
+2025-03-23 16:58:29,722 - ERROR - Failed to send debug message to UI
+2025-03-23 16:58:29,723 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 16:58:29,723 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 16:58:29,725 - DEBUG - Target feature: LeftRear Power
+2025-03-23 16:58:29,725 - DEBUG - Max epochs: 100
+2025-03-23 16:58:29,726 - DEBUG - Data available: True
+2025-03-23 16:58:29,728 - DEBUG - ONNX model loaded: True
+2025-03-23 17:01:33,112 - DEBUG - Closed WebSocket
+2025-03-23 17:01:33,113 - DEBUG - Failed to write closing frame -> closing socket
+2025-03-23 17:01:33,114 - DEBUG - Closed WebSocket
+2025-03-23 17:01:42,687 - DEBUG - Application starting
+2025-03-23 17:01:43,221 - DEBUG - Initializing WebSocket
+2025-03-23 17:01:43,221 - DEBUG - Validating WebSocket request
+2025-03-23 17:01:43,225 - INFO - 127.0.0.1 - - [2025-03-23 17:01:43] "GET /index.html HTTP/1.1" 200 17712 0.003056
+2025-03-23 17:01:43,259 - DEBUG - Initializing WebSocket
+2025-03-23 17:01:43,261 - DEBUG - Validating WebSocket request
+2025-03-23 17:01:43,266 - INFO - 127.0.0.1 - - [2025-03-23 17:01:43] "GET /style.css HTTP/1.1" 200 44628 0.004810
+2025-03-23 17:01:43,268 - DEBUG - Initializing WebSocket
+2025-03-23 17:01:43,269 - DEBUG - Validating WebSocket request
+2025-03-23 17:01:43,272 - INFO - 127.0.0.1 - - [2025-03-23 17:01:43] "GET /eel.js HTTP/1.1" 200 6168 0.004638
+2025-03-23 17:01:43,274 - DEBUG - Initializing WebSocket
+2025-03-23 17:01:43,276 - DEBUG - Validating WebSocket request
+2025-03-23 17:01:43,282 - INFO - 127.0.0.1 - - [2025-03-23 17:01:43] "GET /script.js HTTP/1.1" 200 91692 0.007626
+2025-03-23 17:01:43,868 - DEBUG - Initializing WebSocket
+2025-03-23 17:01:43,870 - DEBUG - Validating WebSocket request
+2025-03-23 17:01:43,870 - DEBUG - Attempting to upgrade connection
+2025-03-23 17:01:43,871 - DEBUG - WebSocket request accepted, switching protocols
+2025-03-23 17:02:09,012 - ERROR - Failed to send debug message to UI
+2025-03-23 17:02:09,012 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 17:02:09,012 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'Parallel Deadwheel Encoder', 'Perpendicular Deadwheel Encoder', 'Voltage', 'Heading']
+2025-03-23 17:02:09,013 - DEBUG - Target feature: LeftRear Power
+2025-03-23 17:02:09,013 - DEBUG - Max epochs: 100
+2025-03-23 17:02:09,013 - DEBUG - Data available: True
+2025-03-23 17:02:09,014 - DEBUG - ONNX model loaded: True
+2025-03-23 17:02:22,241 - ERROR - Failed to send debug message to UI
+2025-03-23 17:02:22,242 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 17:02:22,242 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'Parallel Deadwheel Encoder', 'Perpendicular Deadwheel Encoder', 'Voltage', 'Heading']
+2025-03-23 17:02:22,242 - DEBUG - Target feature: LeftRear Power
+2025-03-23 17:02:22,243 - DEBUG - Max epochs: 100
+2025-03-23 17:02:22,243 - DEBUG - Data available: True
+2025-03-23 17:02:22,243 - DEBUG - ONNX model loaded: True
+2025-03-23 17:03:26,688 - DEBUG - Closed WebSocket
+2025-03-23 17:03:26,689 - DEBUG - Failed to write closing frame -> closing socket
+2025-03-23 17:03:26,690 - DEBUG - Closed WebSocket
+2025-03-23 17:03:37,138 - DEBUG - Application starting
+2025-03-23 17:03:37,735 - DEBUG - Initializing WebSocket
+2025-03-23 17:03:37,736 - DEBUG - Validating WebSocket request
+2025-03-23 17:03:37,739 - INFO - 127.0.0.1 - - [2025-03-23 17:03:37] "GET /index.html HTTP/1.1" 200 17679 0.003614
+2025-03-23 17:03:37,777 - DEBUG - Initializing WebSocket
+2025-03-23 17:03:37,780 - DEBUG - Validating WebSocket request
+2025-03-23 17:03:37,784 - INFO - 127.0.0.1 - - [2025-03-23 17:03:37] "GET /style.css HTTP/1.1" 200 44628 0.006158
+2025-03-23 17:03:37,786 - DEBUG - Initializing WebSocket
+2025-03-23 17:03:37,786 - DEBUG - Validating WebSocket request
+2025-03-23 17:03:37,790 - INFO - 127.0.0.1 - - [2025-03-23 17:03:37] "GET /eel.js HTTP/1.1" 200 6168 0.002580
+2025-03-23 17:03:37,813 - DEBUG - Initializing WebSocket
+2025-03-23 17:03:37,815 - DEBUG - Validating WebSocket request
+2025-03-23 17:03:37,821 - INFO - 127.0.0.1 - - [2025-03-23 17:03:37] "GET /script.js HTTP/1.1" 200 91692 0.007615
+2025-03-23 17:03:38,388 - DEBUG - Initializing WebSocket
+2025-03-23 17:03:38,390 - DEBUG - Validating WebSocket request
+2025-03-23 17:03:38,390 - DEBUG - Attempting to upgrade connection
+2025-03-23 17:03:38,390 - DEBUG - WebSocket request accepted, switching protocols
+2025-03-23 17:03:39,153 - DEBUG - Closed WebSocket
+2025-03-23 17:03:39,155 - DEBUG - Failed to write closing frame -> closing socket
+2025-03-23 17:03:39,155 - DEBUG - Closed WebSocket
+2025-03-23 17:04:37,479 - DEBUG - Application starting
+2025-03-23 17:04:38,015 - DEBUG - Initializing WebSocket
+2025-03-23 17:04:38,015 - DEBUG - Validating WebSocket request
+2025-03-23 17:04:38,017 - INFO - 127.0.0.1 - - [2025-03-23 17:04:38] "GET /index.html HTTP/1.1" 200 17691 0.002200
+2025-03-23 17:04:38,062 - DEBUG - Initializing WebSocket
+2025-03-23 17:04:38,063 - DEBUG - Validating WebSocket request
+2025-03-23 17:04:38,068 - INFO - 127.0.0.1 - - [2025-03-23 17:04:38] "GET /style.css HTTP/1.1" 200 44628 0.004800
+2025-03-23 17:04:38,069 - DEBUG - Initializing WebSocket
+2025-03-23 17:04:38,069 - DEBUG - Validating WebSocket request
+2025-03-23 17:04:38,072 - INFO - 127.0.0.1 - - [2025-03-23 17:04:38] "GET /eel.js HTTP/1.1" 200 6168 0.002562
+2025-03-23 17:04:38,080 - DEBUG - Initializing WebSocket
+2025-03-23 17:04:38,082 - DEBUG - Validating WebSocket request
+2025-03-23 17:04:38,088 - INFO - 127.0.0.1 - - [2025-03-23 17:04:38] "GET /script.js HTTP/1.1" 200 91692 0.007904
+2025-03-23 17:04:38,671 - DEBUG - Initializing WebSocket
+2025-03-23 17:04:38,671 - DEBUG - Validating WebSocket request
+2025-03-23 17:04:38,671 - DEBUG - Attempting to upgrade connection
+2025-03-23 17:04:38,672 - DEBUG - WebSocket request accepted, switching protocols
+2025-03-23 17:04:56,166 - ERROR - Failed to send debug message to UI
+2025-03-23 17:04:56,167 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 17:04:56,167 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 17:04:56,168 - DEBUG - Target feature: LeftRear Power
+2025-03-23 17:04:56,168 - DEBUG - Max epochs: 10
+2025-03-23 17:04:56,168 - DEBUG - Data available: True
+2025-03-23 17:04:56,168 - DEBUG - ONNX model loaded: False
+2025-03-23 17:04:56,169 - ERROR - Failed to send debug message to UI
+2025-03-23 17:04:56,170 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 17:04:56,170 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 17:04:56,170 - DEBUG - Target feature: LeftRear Power
+2025-03-23 17:04:56,171 - DEBUG - Max epochs: 10
+2025-03-23 17:04:56,171 - DEBUG - Data available: True
+2025-03-23 17:04:56,172 - DEBUG - ONNX model loaded: False
+2025-03-23 17:05:06,352 - ERROR - Failed to send debug message to UI
+2025-03-23 17:05:06,353 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 17:05:06,353 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 17:05:06,353 - DEBUG - Target feature: LeftRear Power
+2025-03-23 17:05:06,353 - DEBUG - Max epochs: 100
+2025-03-23 17:05:06,355 - DEBUG - Data available: True
+2025-03-23 17:05:06,355 - DEBUG - ONNX model loaded: True
+2025-03-23 17:05:14,787 - ERROR - Failed to send debug message to UI
+2025-03-23 17:05:14,787 - DEBUG - ==== OPTIMIZATION DEBUG ====
+2025-03-23 17:05:14,787 - DEBUG - Called with input_features: ['Time', 'RightRear Power', 'LeftFront Power', 'RightFront Power', 'LeftRear Current', 'RightRear Current', 'LeftFront Current', 'RightFront Current', 'X', 'Y', 'Voltage', 'Heading']
+2025-03-23 17:05:14,788 - DEBUG - Target feature: LeftRear Power
+2025-03-23 17:05:14,788 - DEBUG - Max epochs: 100
+2025-03-23 17:05:14,788 - DEBUG - Data available: True
+2025-03-23 17:05:14,788 - DEBUG - ONNX model loaded: True
+2025-03-23 17:06:14,873 - DEBUG - Closed WebSocket
+2025-03-23 17:06:14,875 - DEBUG - Failed to write closing frame -> closing socket
+2025-03-23 17:06:14,875 - DEBUG - Closed WebSocket

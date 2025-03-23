@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Visualizer & Analyzer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FontLoader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TextGeometry.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Neural Network Development Dashboard</h1>
+        </div>
+        <div class="controls">
+            <div class="file-input-container">
+                <label for="model-input" class="file-input-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4V16M12 4L8 8M12 4L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 19H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Upload ONNX Model
+                </label>
+                <input type="file" id="model-input" accept=".onnx">
+            </div>
+            <nav class="tabs">
+                <button id="tab-visualize" class="tab-button active">Visualize</button>
+                <button id="tab-data" class="tab-button">Data</button>
+                <button id="tab-optimize" class="tab-button">Optimization</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="status-bar">
+            <p id="status">Please load an ONNX model</p>
+            <div class="spinner hidden"></div>
+        </div>
+
+        <div class="tab-content">
+            <!-- Visualization Tab -->
+            <div id="content-visualize" class="tab-pane active">
+                <div class="visualization-container">
+                    <div id="network-container">
+                        <div class="visualization-controls">
+                            <div class="toggle-buttons">
+                                <button id="view-2d" class="toggle-button active">2D View</button>
+                                <button id="view-3d" class="toggle-button">3D View</button>
+                            </div>
+                        </div>
+                        <div id="network-2d" class="network-view active"></div>
+                        <div id="network-3d" class="network-view"></div>
+                    </div>
+                    <div class="model-details-panel">
+                        <h3>Model Details</h3>
+                        <div id="model-details" class="model-details-content"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Tab -->
+            <div id="content-data" class="tab-pane">
+                <div class="data-container">
+                    <!-- Data Summary -->
+                    <div class="data-summary">
+                        <h3>Dataset Overview</h3>
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <div class="summary-item-label">Rows</div>
+                                <div class="summary-item-value" id="data-row-count">-</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-item-label">Columns</div>
+                                <div class="summary-item-value" id="data-column-count">-</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-item-label">File</div>
+                                <div class="summary-item-value" id="data-filename">No file loaded</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-item-label">Missing Values</div>
+                                <div class="summary-item-value" id="data-missing-count">-</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Actions -->
+                    <div class="data-actions">
+                        <div class="action-group">
+                            <input type="file" id="csv-input" accept=".csv" style="display: none;">
+                            <button id="btn-load-csv" class="data-action-button primary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 15V3M12 3L8 7M12 3L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3 15V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Load CSV File
+                            </button>
+                        </div>
+                        <button id="btn-clear-data" class="data-action-button danger" disabled>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 7L18.1327 19.1425C18.0579 20.1891 17.187 21 16.1378 21H7.86224C6.81296 21 5.94208 20.1891 5.86732 19.1425L5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 11V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 11V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 7L9.6445 3.83886C9.87428 3.32047 10.4087 3 11 3H13C13.5913 3 14.1257 3.32047 14.3555 3.83886L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Clear Data
+                        </button>
+                    </div>
+
+                    <div class="data-table-container">
+                        <!-- Empty state -->
+                        <div id="data-empty-state" class="data-empty-state">
+                            <h3>No data loaded</h3>
+                        </div>
+
+                        <div id="data-table-view" style="display: none;">
+                            <table class="data-table" id="csv-table">
+                                <thead>
+                                    <tr id="csv-headers"></tr>
+                                </thead>
+                                <tbody id="csv-body"></tbody>
+                            </table>
+                            <!-- Pagination -->
+                            <div class="pagination-controls">
+                                <button id="prev-page" disabled>&larr; Previous</button>
+                                <span id="page-info">Page 1 of 1</span>
+                                <button id="next-page" disabled>Next &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-tools">
+                        <div class="data-upload-container">
+                            <div class="file-input-container">
+                                <label for="csv-input-alt" class="file-input-label secondary">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 4V16M12 4L8 8M12 4L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M3 19H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    Upload CSV Dataset
+                                </label>
+                                <input type="file" id="csv-input-alt" accept=".csv">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optimization Tab -->
+            <div id="content-optimize" class="tab-pane">
+                <div class="optimize-main-container" style="padding: 20px; background-color: white; min-height: 400px;">
+                    <h2>Neural Network Optimization</h2>
+                    
+                    <!-- This content is ALWAYS visible -->
+                    <div class="always-visible-content" style="margin-top: 20px; border: 1px solid #e5e7eb; padding: 20px; border-radius: 8px;">
+                        <h3>Architecture Optimization</h3>
+                        <p>Find the optimal neural network architecture for your dataset.</p>
+                        
+                        <div style="margin-top: 20px;">
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Input Features:</label>
+                                <select id="opt-input-features" multiple size="5" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px;">
+                                    <option disabled>Upload a CSV dataset to see available features</option>
+                                </select>
+                            </div>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Target Feature:</label>
+                                <select id="opt-target-feature" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px;">
+                                    <option value="" disabled selected>Upload a CSV dataset to see available features</option>
+                                </select>
+                            </div>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Maximum Epochs Per Configuration:</label>
+                                <input type="number" id="opt-max-epochs" value="10" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px;">
+                            </div>
+                            
+                            <div style="margin-top: 25px; text-align: center;">
+                                <button id="start-optimization" style="background-color: #4f46e5; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Start Optimization</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="optimization-progress" style="display: none; margin-top: 30px;">
+                        <h3>Optimization Progress</h3>
+                        <div style="background-color: #e5e7eb; height: 10px; border-radius: 5px; overflow: hidden; margin: 15px 0;">
+                            <div id="opt-progress-bar" style="background-color: #4f46e5; height: 100%; width: 0%;"></div>
+                        </div>
+                        <div id="opt-progress-text" style="text-align: center;">Starting optimization...</div>
+                    </div>
+                    
+                    <div id="optimization-results" style="display: none; margin-top: 30px;">
+                        <h3>Optimization Results</h3>
+                        <div style="background-color: #f3f4f6; border-radius: 8px; padding: 20px; margin-top: 15px;">
+                            <h4>Best Architecture</h4>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
+                                <div style="background-color: white; padding: 10px; border-radius: 6px;">
+                                    <div style="color: #6b7280; font-size: 14px;">Hidden Layers:</div>
+                                    <div id="best-layers" style="font-size: 18px; font-weight: 600;">-</div>
+                                </div>
+                                <div style="background-color: white; padding: 10px; border-radius: 6px;">
+                                    <div style="color: #6b7280; font-size: 14px;">Neurons Per Layer:</div>
+                                    <div id="best-neurons" style="font-size: 18px; font-weight: 600;">-</div>
+                                </div>
+                                <div style="background-color: white; padding: 10px; border-radius: 6px;">
+                                    <div style="color: #6b7280; font-size: 14px;">Test Loss (MSE):</div>
+                                    <div id="best-loss" style="font-size: 18px; font-weight: 600;">-</div>
+                                </div>
+                                <div style="background-color: white; padding: 10px; border-radius: 6px;">
+                                    <div style="color: #6b7280; font-size: 14px;">R² Score:</div>
+                                    <div id="best-r2" style="font-size: 18px; font-weight: 600;">-</div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; text-align: center;">
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Neural Network Development Dashboard</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+           
+            function fixTabVisibility() {
+                console.log('Fixing tab visibility');
+                
+                
+                const activeTab = document.querySelector('.tab-button.active');
+                if (!activeTab) return;
+                
+                const activeTabId = activeTab.id;
+                const activeContentId = 'content-' + activeTabId.replace('tab-', '');
+                
+                
+                document.querySelectorAll('.tab-pane').forEach(pane => {
+                    if (pane.id === activeContentId) {
+                        
+                        pane.classList.add('active');
+                        
+                        pane.style.setProperty('display', 'block', 'important');
+                        pane.style.setProperty('visibility', 'visible', 'important');
+                        console.log(`Showing tab: ${pane.id}`);
+                    } else {
+                        
+                        pane.classList.remove('active');
+                        
+                        pane.style.setProperty('display', 'none', 'important');
+                        pane.style.setProperty('visibility', 'hidden', 'important');
+                        console.log(`Hiding tab: ${pane.id}`);
+                    }
+                });
+            }
+            
+            
+            fixTabVisibility();
+            setTimeout(fixTabVisibility, 100);
+            
+            
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                
+                const newBtn = btn.cloneNode(true);
+                btn.parentNode.replaceChild(newBtn, btn);
+                
+                
+                newBtn.addEventListener('click', function(e) {
+                    
+                    document.querySelectorAll('.tab-button').forEach(b => {
+                        b.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    
+                    fixTabVisibility();
+                    
+                    
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>
