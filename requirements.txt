@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+onnx
+onnxruntime
+numpy
+pandas
+scikit-learn
+matplotlib
+torch
