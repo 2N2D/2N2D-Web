@@ -14,14 +14,16 @@
 
 ## Project Structure
 
-2n2d/ ├── backend/ # FastAPI + PyTorch + ONNX │
-├── 2n2d.py # Core logic (model loading, optimization)
-│
-├── 2n2denp.py # FastAPI server with API endpoints
-│ └── requirements.txt
-├── frontend/ # Next.js frontend interface
-│ └── (standard Next.js structure)
-└── README.md
+```
+2n2d/
+├── backend/             # FastAPI + PyTorch + ONNX
+│   ├── 2n2d.py          # Core logic (model loading, optimization)
+│   ├── 2n2denp.py       # FastAPI server with API endpoints
+│   └── requirements.txt # Dependencies
+├── frontend/            # Next.js frontend interface
+│   └── (standard Next.js structure)
+└── README.md            # Project documentation
+```
 
 ## API Overview
 
