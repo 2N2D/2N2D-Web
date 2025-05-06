@@ -1,0 +1,62 @@
+.toggleButtons {
+    display: flex;
+    border: 1px solid var(--border-color);
+    gap: 0.2rem;
+    width: fit-content;
+}
+
+.toggleButtons button {
+    padding: 0.5rem 1.5rem;
+    transition: 0.2s;
+}
+
+.toggleButtons button:not(.active):hover {
+    background-color: var(--card-background);
+}
+
+.divider {
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.area {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.dataSum {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+
+.info {
+    min-width: 10rem;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    background-color: var(--background-color);
+}
+
+.info h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.networkView {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    height: 100%;
+}
+
+.title {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+}

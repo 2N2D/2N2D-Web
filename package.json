@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "prettier": "3.5.3"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.9",
+    "numpy": "^0.0.1"
+  }
+}

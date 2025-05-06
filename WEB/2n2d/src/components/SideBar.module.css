@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 15rem;
+    gap: 1rem;
+    border-right: 0.2rem solid var(--border-color);
+    background-color: var(--background-color);
+    transition: 0.5s ease;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.closed {
+    width: 4rem;
+}
+
+.tabBut {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    gap: 1rem;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: 0.2s;
+}
+
+.tabBut:hover {
+    background-color: var(--card-background);
+}
+
+.active:hover {
+    background-color: var(--primary-color);
+}
+
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    width: 2rem; /* Fixed width to center icons consistently */
+}
+
+.tabText {
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, max-width 0.3s ease;
+}
+
+.active {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.closeBut {
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+    transition: 0.5s;
+    z-index: 10;
+    background-color: var(--background-color);
+}
+
+.closeBut:hover {
+    background-color: var(--primary-color);
+}
+
+.fileUploadContainer {
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    height: 4rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    padding-inline: 1rem;
+    fill: #4f46e5;
+}
+
+.closed .logo {
+    height: 3.8rem;
+    padding: 0.2rem;
+}
