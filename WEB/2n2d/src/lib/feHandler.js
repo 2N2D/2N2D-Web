@@ -1,4 +1,6 @@
+"use client";
 import { Chart } from "chart.js";
+import { DataSet, Network } from "vis-network";
 
 export async function createArchitectureComparisonChart(results, ctx) {
   const dataByLayers = {};
@@ -76,4 +78,54 @@ export async function createArchitectureComparisonChart(results, ctx) {
       },
     },
   });
+}
+
+export async function createVisualNetwork2D(results, ctx) {
+  const edges = new DataSet(results.edges);
+  const nodes = new DataSet(results.nodes);
+
+  const options = {
+    layout: {
+      hierarchical: {
+        enabled: true,
+        direction: "LR",
+        sortMethod: "directed",
+        levelSeparation: 150,
+        nodeSpacing: 120,
+      },
+    },
+    nodes: {
+      shape: "box",
+      margin: 10,
+      font: { size: 14, face: "Inter" },
+      borderWidth: 1,
+      shadow: true,
+    },
+    edges: {
+      arrows: { to: { enabled: true, scaleFactor: 0.5 } },
+      smooth: { type: "cubicBezier", roundness: 0.5 },
+    },
+    physics: {
+      enabled: true,
+      stabilization: {
+        enabled: true,
+        iterations: 1000,
+      },
+      hierarchicalRepulsion: {
+        centralGravity: 0.0,
+        springLength: 120,
+        springConstant: 0.01,
+        nodeDistance: 150,
+      },
+      solver: "hierarchicalRepulsion",
+    },
+  };
+
+  const network = new Network(ctx, { nodes, edges }, options);
+
+  network.once("stabilizationIterationsDone", () => {
+    network.fit({ animation: { duration: 500 } });
+  });
+
+  return network;
 }

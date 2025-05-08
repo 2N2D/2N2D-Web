@@ -2,28 +2,50 @@
 
 import React, { useState } from "react";
 import "./styles.css";
-import { uploadCSV } from "@/lib/fileHandler/fileUpload";
+import { dragUpload, uploadCSV } from "@/lib/fileHandler/fileUpload";
+import DataTable from "@/components/DataTable";
 
 function Data() {
-  const [result, setResult] = useState("");
-
   const [message, setMessage] = useState("");
-  const [rowsNr, setRowsNr] = useState(0);
-  const [columnsNr, setColumnsNr] = useState(0);
-  const [missingValues, setMissingValues] = useState(0);
-  const [fileName, setFileName] = useState("");
+  const [rowsNr, setRowsNr] = useState<number | null>(null);
+  const [columnsNr, setColumnsNr] = useState<number | null>(null);
+  const [fileName, setFileName] = useState<string>("");
+  const [missed, setMissed] = useState<number>();
+  const [result, setResult] = useState<any>(null);
+  const [uploadState, setUploadState] = useState<boolean>(false);
+
+  function handleNewData(_result: any) {
+    if (_result == null) return;
+
+    setRowsNr(_result.summary.rows);
+    setColumnsNr(_result.summary.columns);
+    setFileName(_result.summary.filename);
+    setResult(_result);
+    let missing = 0;
+    for (let key in _result.summary.missingValues) {
+      missing += _result.summary.missingValues[key];
+    }
+    setMissed(missing);
+  }
+
+  function clearData() {
+    setResult(null);
+  }
 
   async function _uploadCSV(e: any) {
-    const result = await uploadCSV(e);
-    setMessage("CSV Uploaded!");
-    setRowsNr(result.summary.rows);
-    setColumnsNr(result.summary.columns);
-    setFileName(result.summary.fileName);
-    // let missing = 0;
-    // result.summary.missingValues.forEach((value: any) => {
-    //   missing += value;
-    // });
-    // setMissingValues(missing);
+    if (!e.target.files[0]) return;
+    const _result = await uploadCSV(e);
+
+    handleNewData(_result);
+    e.target.value = "";
+  }
+
+  async function _uploadCSVDrop(e: any) {
+    e.preventDefault();
+    const _result = await dragUpload(e);
+    if (_result == null) return;
+
+    handleNewData(_result);
   }
 
   return (
@@ -33,105 +55,79 @@ function Data() {
         <div className="dataSum">
           <div className="info">
             <h1>File</h1>
-            <h2>{fileName === "" ? "No file uploaded" : fileName}</h2>
+            <h2>{result == null ? "No file uploaded" : fileName}</h2>
           </div>
           <div className="info">
             <h1>Rows</h1>
-            <h2>{result ? "-" : rowsNr}</h2>
+            <h2>{result == null ? "-" : rowsNr}</h2>
           </div>
           <div className="info">
             <h1>Columns</h1>
-            <h2>{result ? "-" : columnsNr}</h2>
+            <h2>{result == null ? "-" : columnsNr}</h2>
           </div>
           <div className="info">
             <h1>Missing values</h1>
-            <h2>{result ? "-" : missingValues}</h2>
+            <h2>{result == null ? "-" : missed}</h2>
           </div>
         </div>
       </div>
 
       <div className="area">
-        <div className="action-group">
-          <input type="file" id="csv-input" accept=".csv" />
-          <button id="btn-load-csv" className="data-action-button primary">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 15V3M12 3L8 7M12 3L16 7"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M3 15V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V15"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            Load CSV File
+        <div className={"dataArea"}>
+          <button
+            onClick={() => {
+              setUploadState(true);
+            }}
+            className={"uploadButton"}
+          >
+            Load CSV File <i className="fa-solid fa-upload"></i>
+          </button>
+          <button className={"deleteButton"} onClick={clearData}>
+            Clear Data <i className="fa-solid fa-trash-xmark"></i>
           </button>
         </div>
-        <button
-          id="btn-clear-data"
-          className="data-action-button danger"
-          disabled
-        >
-          Clear Data
-        </button>
       </div>
 
-      <div className="area">
-        <div id="data-empty-state" className="data-empty-state">
-          <h3>No data loaded</h3>
-        </div>
-
-        <div id="data-table-view">
-          <table className="data-table" id="csv-table">
-            <thead>
-              <tr id="csv-headers"></tr>
-            </thead>
-            <tbody id="csv-body"></tbody>
-          </table>
-
-          <div className="pagination-controls">
-            <button id="prev-page" disabled>
-              &larr; Previous
-            </button>
-            <span id="page-info">Page 1 of 1</span>
-            <button id="next-page" disabled>
-              Next &rarr;
-            </button>
-          </div>
-        </div>
+      <div className="area tableArea">
+        <DataTable result={result} />
       </div>
-
-      <div className="area popup">
-        <div className="data-upload-container">
-          <div className="file-input-container">
-            <label
-              htmlFor="csv-input-alt"
-              className="file-input-label secondary"
-            >
-              Upload CSV Dataset
+      {uploadState ? (
+        <div className={"popup"}>
+          <button
+            className={"fileDropBack"}
+            onClick={() => {
+              setUploadState(false);
+            }}
+          >
+            <i className="fa-solid fa-xmark-large"></i>
+            Cancel
+          </button>
+          <div
+            className="fileDrop"
+            onDrop={(e) => {
+              _uploadCSVDrop(e);
+              setUploadState(false);
+            }}
+            onDragOver={(event) => event.preventDefault()}
+          >
+            <label>
+              Upload CSV Dataset <i className="fa-solid fa-upload"></i>
+              <input
+                type="file"
+                id="csv-input"
+                accept=".csv"
+                onChange={(e) => {
+                  _uploadCSV(e);
+                  setUploadState(false);
+                }}
+              />
             </label>
-            <input
-              type="file"
-              id="csv-input-alt"
-              accept=".csv"
-              onChange={(e) => _uploadCSV(e)}
-            />
+            <span>or drag and drop files</span>
           </div>
         </div>
-      </div>
-      <p>{JSON.stringify(message)}</p>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

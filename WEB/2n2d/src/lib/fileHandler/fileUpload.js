@@ -1,4 +1,4 @@
-import { sendCSV } from "../2n2dAPI";
+import { sendCSV, sendModel } from "../2n2dAPI";
 
 function readFileAsArrayBuffer(file) {
   return new Promise((resolve, reject) => {
@@ -31,17 +31,47 @@ export async function uploadCSV(ev) {
   const file = ev.target.files[0];
   if (!file) return;
 
-  const arrayBuffer = await readFileAsArrayBuffer(file);
-  const base64 = arrayBufferToBase64(arrayBuffer);
-
-  const blob = base64ToBlob(base64, "text/csv");
+  // const arrayBuffer = await readFileAsArrayBuffer(file);
+  // const base64 = arrayBufferToBase64(arrayBuffer);
+  //
+  // const blob = base64ToBlob(base64, "text/csv");
   const formData = new FormData();
-  formData.append("file", blob, file.name);
+  formData.append("file", file, file.name);
 
   return await sendCSV(formData);
 }
 
-export async function uploadONNX() {}
+export async function uploadONNX(ev) {
+  const file = ev.target.files[0];
+  if (!file) return;
+
+  // const arrayBuffer = await readFileAsArrayBuffer(file);
+  // const base64 = arrayBufferToBase64(arrayBuffer);
+  //
+  // const blob = base64ToBlob(base64);
+  const formData = new FormData();
+  formData.append("file", file, file.name);
+
+  return await sendModel(formData);
+}
+
+async function uploadCSVFile(file) {
+  if (!file) return;
+
+  const formData = new FormData();
+  formData.append("file", file, file.name);
+
+  return await sendCSV(formData);
+}
+
+async function uploadModelFile(file) {
+  if (!file) return;
+
+  const formData = new FormData();
+  formData.append("file", file, file.name);
+
+  return await sendModel(formData);
+}
 
 export async function dragUpload(ev) {
   ev.preventDefault();
@@ -53,13 +83,12 @@ export async function dragUpload(ev) {
 
       if (item.kind === "file") {
         const file = item.getAsFile();
+        console.log(file);
 
         if (file.name.split(".").pop().toLowerCase() === "csv") {
-          await uploadCSV();
-          break; // Stop checking after the first valid CSV file
+          return await uploadCSVFile(file);
         } else if (file.name.split(".").pop().toLowerCase() === "onnx") {
-          await uploadONNX();
-          break;
+          return await uploadModelFile(file);
         }
       }
     }

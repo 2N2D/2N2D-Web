@@ -1,5 +1,3 @@
-"use server";
-
 export async function startOptimization(
   selectedInputs: String[],
   targetFeature: String,
@@ -15,10 +13,8 @@ export async function startOptimization(
   if (progressBar) progressBar.style.width = "0%";
   if (progressText) progressText.textContent = "Starting optimization...";
 
-  console.log("Calling Python function directly...");
-
   try {
-    return await fetch("http://127.0.0.1:8000/optimize ", {
+    return await fetch("http://127.0.0.1:8000/optimize", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -38,6 +34,21 @@ export async function startOptimization(
 export async function sendCSV(formData: any) {
   try {
     const result = await fetch("http://127.0.0.1:8000/upload-csv", {
+      method: "POST",
+      body: formData,
+    });
+
+    const response = await result.json();
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.error("Upload failed", error);
+  }
+}
+
+export async function sendModel(formData: any) {
+  try {
+    const result = await fetch("http://127.0.0.1:8000/upload-model", {
       method: "POST",
       body: formData,
     });

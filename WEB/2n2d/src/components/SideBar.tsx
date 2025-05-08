@@ -1,12 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Styles from "./SideBar.module.css";
+import { uploadONNX } from "@/lib/fileHandler/fileUpload";
 
 const SideBar = () => {
   const [open, setOpen] = React.useState(false);
+  const [result, setResult] = useState("");
   const pathname = usePathname();
+
+  async function _uploadOnnx(e: any) {
+    const result = await uploadONNX(e);
+    setResult(JSON.stringify(result));
+  }
 
   return (
     <div>
@@ -65,9 +72,15 @@ const SideBar = () => {
           {open ? "<<<" : ">"}
         </button>
         <div className={Styles.fileUploadContainer}>
-          <label className="file-input-label">
+          <label className="file-input-label" htmlFor={"onnx-input"}>
             <i className="fa-solid fa-upload"></i>
             {open ? "Upload ONNX Model" : ""}
+            <input
+              type="file"
+              id="onnx-input"
+              accept=".onnx"
+              onChange={(e) => _uploadOnnx(e)}
+            />
           </label>
         </div>
       </div>

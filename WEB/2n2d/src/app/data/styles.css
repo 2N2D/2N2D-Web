@@ -60,3 +60,40 @@
     border: 1px solid var(--border-color);
     padding: 1rem;
 }
+
+.dataArea {
+    display: flex;
+    gap: 5rem;
+    padding: 0.2rem 1rem;
+}
+
+.uploadButton {
+    background-color: var(--primary-color);
+    padding: 0.7rem;
+    border: 4px solid #332f9a;
+}
+
+.deleteButton {
+    background-color: #d62626;
+    padding: 0.7rem;
+    border: 4px solid #b12121;
+}
+
+.dataArea button {
+    transition: 0.2s;
+}
+
+.dataArea button:hover {
+    transform: scale(1.1);
+}
+
+.dataArea button:active {
+    transform: scale(0.9);
+}
+
+.tableArea {
+    min-width: 100%;
+    min-height: 20rem;
+    display: flex;
+    justify-content: center;
+}
