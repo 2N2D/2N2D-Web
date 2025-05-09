@@ -7,12 +7,11 @@ import { uploadONNX } from "@/lib/fileHandler/fileUpload";
 
 const SideBar = () => {
   const [open, setOpen] = React.useState(false);
-  const [result, setResult] = useState("");
   const pathname = usePathname();
 
   async function _uploadOnnx(e: any) {
     const result = await uploadONNX(e);
-    setResult(JSON.stringify(result));
+    sessionStorage.setItem("modelData", JSON.stringify(result));
   }
 
   return (
