@@ -9,11 +9,6 @@ const SideBar = () => {
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
 
-  async function _uploadOnnx(e: any) {
-    const result = await uploadONNX(e);
-    sessionStorage.setItem("modelData", JSON.stringify(result));
-  }
-
   return (
     <div>
       <div
@@ -70,18 +65,6 @@ const SideBar = () => {
         <button className={Styles.closeBut} onClick={() => setOpen(!open)}>
           {open ? "<<<" : ">"}
         </button>
-        <div className={Styles.fileUploadContainer}>
-          <label className="file-input-label" htmlFor={"onnx-input"}>
-            <i className="fa-solid fa-upload"></i>
-            {open ? "Upload ONNX Model" : ""}
-            <input
-              type="file"
-              id="onnx-input"
-              accept=".onnx"
-              onChange={(e) => _uploadOnnx(e)}
-            />
-          </label>
-        </div>
       </div>
     </div>
   );

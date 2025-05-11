@@ -85,10 +85,22 @@ export async function createVisualNetwork2D(results, ctx) {
   const edges = new DataSet(results.edges);
   const nodes = new DataSet(results.nodes);
 
-  nodes.color = {
-    border: "black",
-    background: "green",
-  };
+  nodes.forEach((node) => {
+    node.color = {
+      border: "#838181",
+      background: "#4f46e5",
+      highlight: {
+        border: "#d1d5db",
+        background: "#6366f1",
+      },
+    };
+    node.font = {
+      color: "#ffffff",
+      size: 12,
+      fontFamily: "Montserrat",
+    };
+    node.group = "";
+  });
 
   const options = {
     layout: {
@@ -96,20 +108,19 @@ export async function createVisualNetwork2D(results, ctx) {
         enabled: true,
         direction: "LR",
         sortMethod: "directed",
-        levelSeparation: 150,
-        nodeSpacing: 120,
+        levelSeparation: 120,
+        nodeSpacing: 100,
       },
     },
     nodes: {
       shape: "box",
       margin: 10,
-      font: { size: 14, face: "Robotomono" },
+      font: { size: 14, face: "arial" },
       borderWidth: 1,
       shadow: true,
     },
     edges: {
       arrows: { to: { enabled: true, scaleFactor: 0.5 } },
-      smooth: { type: "cubicBezier", roundness: 0.5 },
     },
     physics: {
       enabled: true,

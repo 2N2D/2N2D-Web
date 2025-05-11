@@ -17,25 +17,25 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 
 ##ROBI, NU AM TESTAT INCA NIMIC
-#Nu am avut cum sa testez inca, dar teoretic ar trebui sa mearga, deoarece din logica nu am sters
-#doar ce a tinut de eel, eu lucrez in principal pe engleza si folosesc camelCase pentru variabile, ca sa stii si tu
-#Read me-ul e facut cu chatgpt ca sa fie acolo, ca mi-e lene momentan sa il fac, deci daca sunt balari pe acolo, ayaye
+# Nu am avut cum sa testez inca, dar teoretic ar trebui sa mearga, deoarece din logica nu am sters
+# doar ce a tinut de eel, eu lucrez in principal pe engleza si folosesc camelCase pentru variabile, ca sa stii si tu
+# Read me-ul e facut cu chatgpt ca sa fie acolo, ca mi-e lene momentan sa il fac, deci daca sunt balari pe acolo, ayaye
 
-#Architecture:
-#-API
-#2n2d.py - api in sine, nu are nimic legat de web, functioneaza ca o librarie
-#2n2dEndPoint.py - cum zice in nume, este un endpoint pentru api, care este conectat la web si chestii, asa putem adauga mai tarziu mai usor alte chestii
+# Architecture:
+# -API
+# 2n2d.py - api in sine, nu are nimic legat de web, functioneaza ca o librarie
+# 2n2dEndPoint.py - cum zice in nume, este un endpoint pentru api, care este conectat la web si chestii, asa putem adauga mai tarziu mai usor alte chestii
 #                   pe langa asta, daca adaugam ceva protectie si chestii, va fi mai simplu asa
-#-WEB INTERFACE
-#-OLD 
-#proiectul vechi pe care il tin pentru referinta si sa copiez codul necesar
+# -WEB INTERFACE
+# -OLD
+# proiectul vechi pe care il tin pentru referinta si sa copiez codul necesar
 
-#TO DO
-#Make functions client based and general, not using global variables
-#More refactoring + comments
-#Next js front end remake
-#refact js middleware
-#Read me pe git
+# TO DO
+# Make functions client based and general, not using global variables
+# More refactoring + comments
+# Next js front end remake
+# refact js middleware
+# Read me pe git
 
 current_model = None
 current_model_path = None
@@ -58,44 +58,37 @@ def load_onnx_model(base64_str):
     global current_model, current_model_path
     try:
         file_bytes = base64.b64decode(base64_str)
-        
-        
+
         with tempfile.NamedTemporaryFile(delete=False, suffix=".onnx") as temp_file:
             temp_file.write(file_bytes)
             temp_file_path = temp_file.name
 
-        
         model = onnx.load(temp_file_path)
         graph = model.graph
-        
-        
+
         current_model = model
         current_model_path = temp_file_path
 
-        
         nodes = []
         edges = []
         node_map = {}
-        
-        
+
         for i, node in enumerate(graph.node):
             label = node.name if node.name else node.op_type
             nodes.append({
-                "id": i, 
-                "label": label, 
+                "id": i,
+                "label": label,
                 "title": str(node),
-                "group": "operation"
+                "group": "operation",
             })
             if node.output:
                 node_map[node.output[0]] = i
 
-        
         for i, node in enumerate(graph.node):
             for input_name in node.input:
                 if input_name in node_map:
                     edges.append({"from": node_map[input_name], "to": i})
 
-        
         node_summary = []
         for node in graph.node:
             node_summary.append({
@@ -103,13 +96,12 @@ def load_onnx_model(base64_str):
                 "op_type": node.op_type
             })
 
-        
         summary = {
             "ir_version": model.ir_version,
             "producer": model.producer_name,
             "inputs": [{"name": inp.name} for inp in graph.input],
             "outputs": [{"name": out.name} for out in graph.output],
-            "nodes": node_summary,  
+            "nodes": node_summary,
             "node_count": len(graph.node)
         }
 
@@ -121,6 +113,7 @@ def load_onnx_model(base64_str):
     except Exception as e:
         logging.exception("Failed to load ONNX model")
         return {"error": str(e)}
+
 
 def load_csv_data(base64_data, filename):
     global current_data
@@ -141,6 +134,7 @@ def load_csv_data(base64_data, filename):
         logging.exception("Failed to load CSV data")
         return {"error": str(e)}
 
+
 def analyze_onnx_model(model):
     try:
         graph = model.graph
@@ -159,6 +153,7 @@ def analyze_onnx_model(model):
     except Exception as e:
         logging.exception("Error analyzing ONNX model")
         return {"error": str(e)}
+
 
 def find_optimal_architecture(input_features, target_feature, max_epochs=10, status_callback=None):
     def send_status(message):
@@ -239,7 +234,8 @@ def find_optimal_architecture(input_features, target_feature, max_epochs=10, sta
                 if test_loss < best_loss:
                     best_loss = test_loss
                     best_result = results[-1]
-                    send_status({"status": f"New best config: {num_layers} layers, {hidden_size} neurons", "progress": progress_percent})
+                    send_status({"status": f"New best config: {num_layers} layers, {hidden_size} neurons",
+                                 "progress": progress_percent})
 
         send_status({"status": "Final training of best model...", "progress": 90})
         best_model = create_model(X_train.shape[1], best_result["neurons"], best_result["layers"])
@@ -257,7 +253,8 @@ def find_optimal_architecture(input_features, target_feature, max_epochs=10, sta
 
         dummy_input = torch.randn(1, X_train.shape[1])
         onnx_path = os.path.join(tempfile.gettempdir(), "optimized_model.onnx")
-        torch.onnx.export(best_model, dummy_input, onnx_path, input_names=["input"], output_names=["output"], dynamic_axes={"input": {0: "batch_size"}, "output": {0: "batch_size"}})
+        torch.onnx.export(best_model, dummy_input, onnx_path, input_names=["input"], output_names=["output"],
+                          dynamic_axes={"input": {0: "batch_size"}, "output": {0: "batch_size"}})
 
         send_status({"status": "Optimization complete", "progress": 100})
         return {
@@ -268,6 +265,7 @@ def find_optimal_architecture(input_features, target_feature, max_epochs=10, sta
     except Exception as e:
         send_status({"status": f"Error: {str(e)}", "error": True, "progress": 0})
         return {"error": str(e)}
+
 
 def download_optimized_model(path):
     try:

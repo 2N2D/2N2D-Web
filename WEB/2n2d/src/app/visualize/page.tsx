@@ -1,16 +1,44 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import { createVisualNetwork2D } from "@/lib/feHandler";
+import Styles from "@/components/SideBar.module.css";
+import { dragUpload, uploadONNX } from "@/lib/fileHandler/fileUpload";
 
 export default function visualize() {
   const [view3d, setView] = React.useState(false);
   const [result, setResult] = React.useState<any>(null);
   const canvasRef = React.useRef<HTMLDivElement>(null);
+  const [uploadState, setUploadState] = useState<boolean>(false);
+
+  async function _uploadONNX(e: any) {
+    const _result = await uploadONNX(e);
+    sessionStorage.setItem("modelData", JSON.stringify(_result));
+
+    updateView();
+  }
+
+  async function _uploadONNXDrop(e: any) {
+    e.preventDefault();
+    const _result = await dragUpload(e);
+    if (_result == null) return;
+    sessionStorage.setItem("modelData", JSON.stringify(_result));
+
+    updateView();
+  }
 
   async function updateView() {
     let data = sessionStorage.getItem("modelData");
-    if (!data) return;
+    if (!data) {
+      setResult(null);
+      if (!canvasRef.current) return;
+
+      const ctx = canvasRef.current;
+      if (ctx) {
+        createVisualNetwork2D({ nodes: [], edges: [] }, ctx);
+      }
+      return;
+    }
     data = JSON.parse(data);
     setResult(data);
 
@@ -20,6 +48,12 @@ export default function visualize() {
     if (ctx) {
       createVisualNetwork2D(data, ctx);
     }
+  }
+
+  async function clearData() {
+    sessionStorage.removeItem("modelData");
+    setResult(null);
+    updateView();
   }
 
   React.useEffect(() => {
@@ -53,11 +87,74 @@ export default function visualize() {
         </div>
         <div className="area">
           <h3 className={"subtitle"}>Model Details</h3>
+          {result == null ? (
+            "No model loaded"
+          ) : (
+            <div className={"overflow-y-auto"}>
+              <div className={"sArea"}>
+                <h2>Producer: {result.summary.producer}</h2>
+                <h2>IR version: {result.summary.ir_version}</h2>
+              </div>
+              {JSON.stringify(result)}
+            </div>
+          )}
         </div>
         <div className="titleWrapper">
           <h1 className="title">Network Visualization</h1>
+          <div className="sArea vertical">
+            <div className={"dataArea"}>
+              <button
+                onClick={() => {
+                  setUploadState(true);
+                }}
+                className={"uploadButton"}
+              >
+                Load CSV File <i className="fa-solid fa-upload"></i>
+              </button>
+              <button className={"deleteButton"} onClick={clearData}>
+                Clear Data <i className="fa-solid fa-trash-xmark"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+      {uploadState ? (
+        <div className={"popup"}>
+          <button
+            className={"fileDropBack"}
+            onClick={() => {
+              setUploadState(false);
+            }}
+          >
+            <i className="fa-solid fa-xmark-large"></i>
+            Cancel
+          </button>
+          <div
+            className="fileDrop"
+            onDrop={(e) => {
+              _uploadONNXDrop(e);
+              setUploadState(false);
+            }}
+            onDragOver={(event) => event.preventDefault()}
+          >
+            <label>
+              Upload ONNX Dataset <i className="fa-solid fa-upload"></i>
+              <input
+                type="file"
+                id="ONNX-input"
+                accept=".onnx"
+                onChange={(e) => {
+                  _uploadONNX(e);
+                  setUploadState(false);
+                }}
+              />
+            </label>
+            <span>or drag and drop files</span>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </main>
   );
 }
