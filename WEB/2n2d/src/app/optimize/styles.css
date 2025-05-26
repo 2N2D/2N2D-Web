@@ -1,0 +1,162 @@
+.optimizeForm {
+    gap: 1rem;
+}
+
+.area {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    padding: 1rem;
+}
+
+.formGroup {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formGroup .element {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup .element label {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.featuresList {
+    display: flex;
+    flex-direction: column;
+    max-height: 15rem;
+    overflow-y: scroll;
+}
+
+.optimizeForm input[type="submit"] {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.featuresList li {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+.progressZone {
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.progressZone h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+
+.barFiller {
+    height: 2rem;
+    background-color: var(--primary-color);
+    display: flex;
+    transition: 0.2s;
+}
+
+.loadingBar {
+    width: 80vw;
+    height: 2rem;
+    background-color: var(--border-color);
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.barWrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.barWrapper p {
+    font-size: 1.5rem;
+}
+
+.loader {
+    width: 96px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    background: #FFF;
+    border-radius: 48px 48px 0 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    width: 24px;
+    height: 12px;
+    border-radius: 24px 24px 0 0;
+    background: var(--primary-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 32px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    background: var(--primary-color);
+    transform-origin: 50% 100%;
+    box-sizing: border-box;
+    animation: animloader 2s linear infinite alternate;
+}
+
+@keyframes animloader {
+    0% {
+        transform: rotate(-70deg);
+    }
+    10% {
+        transform: rotate(-40deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+    55% {
+        transform: rotate(40deg);
+    }
+    70% {
+        transform: rotate(45deg);
+    }
+    90% {
+        transform: rotate(50deg);
+    }
+    95% {
+        transform: rotate(75deg);
+    }
+    100% {
+        transform: rotate(80deg);
+    }
+}

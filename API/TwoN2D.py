@@ -16,11 +16,6 @@ from torch.utils.data import TensorDataset, DataLoader
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 
-##ROBI, NU AM TESTAT INCA NIMIC
-# Nu am avut cum sa testez inca, dar teoretic ar trebui sa mearga, deoarece din logica nu am sters
-# doar ce a tinut de eel, eu lucrez in principal pe engleza si folosesc camelCase pentru variabile, ca sa stii si tu
-# Read me-ul e facut cu chatgpt ca sa fie acolo, ca mi-e lene momentan sa il fac, deci daca sunt balari pe acolo, ayaye
-
 # Architecture:
 # -API
 # 2n2d.py - api in sine, nu are nimic legat de web, functioneaza ca o librarie
@@ -37,8 +32,6 @@ from sklearn.metrics import r2_score
 # refact js middleware
 # Read me pe git
 
-current_model = None
-current_model_path = None
 current_data = None
 
 logging.basicConfig(
@@ -55,7 +48,6 @@ logging.basicConfig(
 #     return {"status": "success", "message": "Python backend is connected"}
 
 def load_onnx_model(base64_str):
-    global current_model, current_model_path
     try:
         file_bytes = base64.b64decode(base64_str)
 
@@ -66,8 +58,6 @@ def load_onnx_model(base64_str):
         model = onnx.load(temp_file_path)
         graph = model.graph
 
-        current_model = model
-        current_model_path = temp_file_path
 
         nodes = []
         edges = []
@@ -108,7 +98,8 @@ def load_onnx_model(base64_str):
         return {
             "nodes": nodes,
             "edges": edges,
-            "summary": summary
+            "summary": summary,
+            "path": temp_file_path
         }
     except Exception as e:
         logging.exception("Failed to load ONNX model")
@@ -116,12 +107,17 @@ def load_onnx_model(base64_str):
 
 
 def load_csv_data(base64_data, filename):
-    global current_data
     try:
         binary_data = base64.b64decode(base64_data)
+
+        temp_file_path = ""
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as temp_file:
+            temp_file.write(binary_data)
+            temp_file_path = temp_file.name
+
         data_io = io.BytesIO(binary_data)
         df = pd.read_csv(data_io)
-        current_data = df
+        
         summary = {
             "rows": len(df),
             "columns": len(df.columns),
@@ -129,7 +125,7 @@ def load_csv_data(base64_data, filename):
             "missing_values": df.isna().sum().to_dict(),
             "dtypes": {col: str(df[col].dtype) for col in df.columns}
         }
-        return {"data": df.head(50).to_dict('records'), "summary": summary}
+        return {"data": df.head(50).to_dict('records'), "summary": summary, "path":temp_file_path}
     except Exception as e:
         logging.exception("Failed to load CSV data")
         return {"error": str(e)}
@@ -155,14 +151,13 @@ def analyze_onnx_model(model):
         return {"error": str(e)}
 
 
-def find_optimal_architecture(input_features, target_feature, max_epochs=10, status_callback=None):
+def find_optimal_architecture(current_model, current_data, input_features, target_feature, max_epochs=10, status_callback=None):
     def send_status(message):
         if status_callback:
             status_callback(message)
         else:
             logging.info(message.get("status", str(message)))
 
-    global current_data, current_model
     try:
         if current_data is None:
             send_status({"status": "No data loaded", "error": True})

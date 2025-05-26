@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 15rem;
+    width: 4rem;
     gap: 1rem;
     border-right: 0.2rem solid var(--border-color);
     background-color: var(--background-color);
@@ -14,13 +14,14 @@
     z-index: 20;
 }
 
-.closed {
-    width: 4rem;
+.container:hover {
+    width: 15rem;
 }
 
 .tabBut {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0.5rem 1rem;
     width: 100%;
     gap: 1rem;
@@ -60,17 +61,13 @@
     background-color: var(--primary-color);
 }
 
-.closeBut {
+.spacer {
     height: 100%;
     width: 100%;
     padding: 0.5rem;
     transition: 0.5s;
     z-index: 10;
     background-color: var(--background-color);
-}
-
-.closeBut:hover {
-    background-color: var(--primary-color);
 }
 
 .fileUploadContainer {
@@ -89,4 +86,30 @@
 .closed .logo {
     height: 3.8rem;
     padding: 0.2rem;
+}
+
+.loginZone {
+    display: flex;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.loginZone button i {
+    color: red;
+    font-size: 1rem;
+}
+
+.warning {
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 1.2rem;
+    color: var(--error-color);
+    background-color: var(--card-background);
+    padding: 1rem 1rem;
+}
+
+.warning a {
+    text-decoration: underline;
 }

@@ -22,12 +22,11 @@
 }
 
 .area {
+    background-color: var(--card-background);
     display: flex;
     flex-direction: column;
+    padding: 1rem 0.5rem;
     border: 1px solid var(--border-color);
-    background-color: var(--card-background);
-    padding: 1rem;
-    gap: 1rem;
 }
 
 .dataSum {

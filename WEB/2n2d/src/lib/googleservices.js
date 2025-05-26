@@ -10,6 +10,643 @@ let currentViewMode = "2d";
 let graphData = null;
 let animationFrameId = null;
 
+// document.addEventListener('DOMContentLoaded', function() {
+//     console.log('DOM loaded, setting up optimization button');
+//
+//
+//     const startOptBtn = document.getElementById('start-optimization');
+//     if (startOptBtn) {
+//         console.log('Found optimization button, adding listener');
+//         startOptBtn.addEventListener('click', function(e) {
+//             console.log('OPTIMIZATION BUTTON CLICKED');
+//
+//      outputsHtml += '<ul class="model-io-list">';
+      currentLayer++;
+                      ${shape ? `<span class="io-shape">${shape}</span>` : ""}
+};
+      reader.onload = (e) => resolve(e.target.result);
+            tr.appendChild(indexCell);
+              const targetSelect = document.getElementById("target-select");
+                                  <h4>Inputs</h4>
+  const emptyState = document.getElementById("data-empty-state");
+  if (rowCount) rowCount.textContent = summary.rows || "-";
+
+  const testSize = parseFloat(testSizeSlider.value);
+    0x8b5cf6,
+
+  const allValues = [...actual, ...predicted];
+
+            <h4>Basic Info</h4>
+});
+      loadCsvPage();
+  predictionChart = new Chart(ctx, {
+      if (labelsContainer) {
+
+            container2d.classList.add("active");
+              function checkEnableTestButton() {
+              }
+                    return;
+                  testSizeSlider = document.getElementById("test-size");
+                          const value = parseFloat(testSizeSlider.value);
+      );
+    console.log("Status:", message);
+            edges.forEach((edge) => {
+                    updateOptimizationUI();
+                        if (window.graphData) {
+
+                                    borderColor: "rgba(255, 99, 132, 0.7)",
+
+                                                opTypeCounts[opType] = (opTypeCounts[opType] || 0) + 1;
+                                          updateStatus(`Error: ${error.message}`);
+                                                              </div>
+                              const indexHeader = document.createElement("th");
+                                  let currentLayer = 0;
+                        }
+                          const missingCount = document.getElementById("data-missing-count");
+                container2d.classList.remove("active");
+
+                      network = null;
+                                  nextLayerNodes.push(edge.to);
+                                    if (network) {
+                                      function updateModelTestingUI() {
+                                            console.log(
+                                                  const allValues = [...actual, ...predicted];
+                                      }
+
+
+                                          const label = labelObjects[nodeId];
+                                                          <div class={"param-info">
+                                                                };
+                                          window.graphData = graphData;
+                                                                labelsContainer.appendChild(labelDiv);
+                                                                        labels: layerLabels,
+                                    }
+                                          cell.textContent = "No layer information available";
+
+                                              return;
+                                                  pageInfo.textContent = `Page ${currentPage + 1} of ${totalPages}`;
+                } catch (error)
+        {
+          <p><strong>Producer:</strong> ${summary.producer || "Unknown"}</p>
+          p >
+          nodeDistance
+        :
+          150,
+              prevPageButton.disabled = currentPage === 0;
+          const predicted = results.map((item) => item.predicted);
+          if (tableView) tableView.style.display = "none";
+        } else {
+                                        if (runTestButton) runTestButton.disabled = true;
+                                      function arrayBufferToBase64(buffer) {
+
+                                        Empty
+                                        state: $
+                                        {
+                                          !!emptyState
+                                        }
+                                        const container = document.getElementById("network-3d");
+                                      } finally {
+                                                x: {
+
+                                                                  <div class={"info-row">
+                                                                      if (!featureCheckboxes || !targetSelect) return;
+                                                                      }
+                                                                         const columns = Object.keys(window.csvData.data[0]);
+                                                for (let i = 0; i < uint8Array.byteLength; i++) {
+                                                        label.appendChild(span);
+                                                            const layersTableBody = document.querySelector("#layers-table tbody");
+                                                  <strong>${input.name}</strong>strong>
+
+                                                            th.textContent = column;
+                                                        layersTableBody.innerHTML =
+                                                                .map(Number)
+                                                        summary.inputs.forEach((input) => {
+                                                              network.once("stabilizationIterationsDone", () => {
+
+                                                              },
+
+                                                                        html += `<tr class="total-row">
+                    <tr>
+                      const container = document.getElementById("architecture-display");
+                        targetSelect.innerHTML = '<option value="">-- Select Target --</option>';
+                        
+                            preserveDrawingBuffer: true,
+                            
+                            
+                            
+                            
+                                                    <th>IR Version</th>
+                                                                row.appendChild(nameCell);
+                                                                function populateFeatureSelectors(columns) {
+                                                                    }
+                                                                        });
+                                                                                }
+                                                                                      if (preprocessButton) {
+                                                                                        canvasElements.forEach((canvas) => canvas.remove());
+                                                                                            updateStatus("Please select at least one input feature");
+                                                                                                    },
+                                                                                                    function displayModelSummary(summary) {
+                                                                                                    
+                                                                                                      const outputsContainer = document.getElementById("model-outputs");
+                                                                                                              td.dataset.column = column;
+                                                                                                                    reader.onerror = (e) => reject(new Error("File reading failed"));
+                                                                                                                      } finally {
+                                                                                                                      
+                                                                                                                              borderWidth: 1,
+                                                                                                                                  const modelInfoElement = document.getElementById("model-info");
+                                                                                                                                      console.error("Error creating 2D network:", error);
+                                                                                                                                          const startOptimizationButton =
+                                                                                                                                              indexHeader.textContent = "#";
+                                                                                                                                                      });
+                                                                                                                                                          layersTableBody.innerHTML = "";
+                                                                                                                                                                      typeCell.textContent = node.op_type || "Unknown";
+                                                                                                                                                                          updateOptimizationUI();
+                                                                                                                                                                          
+                                                                                                                                                                            currentViewMode = mode;
+                                                                                                                                                                                            </div>
+                                                                                                                                                                                            function animate() {
+                                                                                                                                                                                                  tbody.innerHTML = '<tr><td colspan="100">No data available</td></tr>';
+                                                                                                                                                                                                    controls.target.copy(center);
+                                                                                                                                                                                                      }
+                                                                                                                                                                                                          }
+                                                                                                                                                                                                              if (emptyState) emptyState.style.display = "flex";
+                                                                                                                                                                                                                  a.download = result.filename;
+                                                                                                                                                                                                                        return;
+                                                                                                                                                                                                                              inputsHtml += "</ul>";
+                                                                                                                                                                                                                                const nodeTypes = {};
+        const shape = input.shape ? `[${input.shape.join(", ")}]` : "";
+     container2d.style.display = "none";
+     
+               pointRadius: 0,
+               
+               
+                     return;
+                           totalLabelCell.style.fontWeight = "bold";
+                                               </li>
+                                               
+                                                   let binary = "";
+                                                     });
+                                                             outputsHtml += `
+                                                            renderer = new THREE.WebGLRenderer({
+                                                              updatePaginationInfo();
+
+                                                              position: "top",
+                                                              if(rowCount) rowCount.textContent = summary.rows || "-";
+
+
+                                                            }
+                                                                  html += "</ul>";
+                                                                                  <div class={"detail-item">
+                                                                                      outputsContainer.innerHTML = outputsHtml;
+
+                                                                                          const td = document.createElement("td");
+
+                                                                                        html += '<ul class="model-io-list">';
+                                                                                    });
+                                                                                        if (!runTestButton) return;
+                                                                                              const span = document.createElement("span");
+                                                        );
+                                                          <td>${opType}</td>td>
+
+
+                                                                  container2d.style.display = "none";
+                                                                                          edges: {
+                                                                                              createNodes(data.nodes, nodePositions);
+
+                                                                                                        result.summary.nodes.forEach((node, index) => {
+
+                                                                                                          clearDataButton.disabled = false;
+                                                                                                        }
+                                                                                                              inputsHtml += "<p>No input information available</p>";
+                                                                                                        let graphData = null;
+
+                                                                                                          console.log("DOM loaded, initializing application...");
+                                                                                          }
+                                                                                              const y = ((-worldPos.y + 1) / 2) * rendererRect.height;
+                                                        });
+                                                                                                                layersTableBody.appendChild(row);
+
+                                                                                                                            callbacks: {
+
+                                                                                                                                  inverse_scaling: document.getElementById("inverse-scaling").checked,
+                                                                                                                                                data: [
+
+                                                                                                                                                        createPredictionChart(results.results);
+                                                                                                                                      return;
+                                                                                                                            }
+                                                                                                                                            </div>
+                                                  function displayTestResults(results) {
+                                                    controls.rotateSpeed = 0.5;
+                                                  });
+                                                                    totalRow.appendChild(totalCountCell);
+
+                                                                            responsive: true,
+                                                                                          borderDash: [5, 5],
+
+                                                              updateStatus("Data cleared");
+                                                                                                </tr>
+                                                  function createPredictionChart(results) {
+                                                          architecture.input_layer,
+                                                                    const opacity = Math.max(0.3, 1 - distance / 1500);
+                                                                labelObjects = {};
+                                                                        <div class={"detail-item">
+                                                                            }
+                                                                                 const line = new THREE.Line(geometry, material);
+                                                                    <h4>Outputs (${summary.outputs?.length || 0})</h4>
+                                                                          console.log("DOM loaded, initializing application...");
+                                                                          function checkEnableTestButton() {
+                                                                                if (summary.error) {
+                                                                                      html += '<div class="detail-section"><h4>Inputs</h4>';
+                                                                                      tr.appendChild(indexCell);
+                                                                                    if (Object.keys(opTypeCounts).length > 0) {
+                                                                                      font: {
+                                                                                        size: 14, face
+                                                                                      :
+                                                                                        "Inter"
+                                                                                      }
+                                                                                    ,
+                                                                                      const shape = output.shape ? `[${output.shape.join(", ")}]` : "";
+                                                                                      if (testingContent) testingContent.style.display = "block";
+                                                                                      layersTableBody.innerHTML = "";
+                                                                                      try {
+                                                                                        !window.csvData ||
+                                                                                      }
+                                                                                    }
+
+                                                                                              backgroundColor: "rgba(75, 192, 192, 0.6)",
+                                                                                                                          <strong>Activation Function:</strong> ${architecture.activation}
+                                                                                                <div class={"info-row">
+                                                                                                      architecture.input_layer,
+
+                                                                                                      updateStatus(`Error: ${error.message}`);
+
+                                                                                                      cell.textContent = "No layer information available";
+                                                                                                          springConstant: 0.01,
+                                                                                                      if (result.error) {
+                                                                                                        }
+
+
+                                                                                                          const edges = new vis.DataSet(graphData.edges);
+
+                                                                                                              tr.appendChild
+                                                                                                }}</strong>
+                                                                                                        }
+                                                                                    }</h4>'
+                                                                                }</h4>
+                                                  }
+                                                                                                                              ]
+                                                                                                        })
+                                                            })</td></tr></th></option>
+</tr>`
+                                                              })
+                                                        })
+                                                }
+                                      }</strong></p>
+        }
+                                            )
+                        }
+            })
+              }
+      }
+  })</h4>
+//
+//
+//             startOptimization();
+//
+//
+//             e.preventDefault();
+//         });
+//     } else {
+//         console.error('Could not find optimization button!');
+//     }
+// });
+
+// function initializeOptimizationButton() {
+//     console.log('Initializing optimization button');
+//
+//
+//     const startOptBtn = document.getElementById('start-optimization');
+//     if (!startOptBtn) {
+//         console.error('Optimization button not found');
+//         return;
+//     }
+//
+//
+//     const newButton = startOptBtn.cloneNode(true);
+//     startOptBtn.parentNode.replaceChild(newButton, startOptBtn);
+//
+//
+//     newButton.addEventListener('click', function(e) {
+//         console.log('Optimization button clicked');
+//
+//
+//         newButton.disabled = true;
+//         newButton.textContent = 'Optimization Running...';
+//
+//
+//         startOptimization().finally(() => {
+//
+//             newButton.disabled = false;
+//             newButton.textContent = 'Start Optimization';
+//         });
+//
+//         e.preventDefault();
+//     });
+//
+//     console.log('Optimization button initialized');
+// }
+
+// function updateOptimizationUI() {
+//     console.log('Updating optimization UI');
+//
+//
+//     const hasData = window.csvData && window.csvData.data && window.csvData.data.length > 0;
+//
+//     console.log(`CSV data available: ${hasData}`);
+//
+//
+//     if (hasData) {
+//
+//         populateOptimizationFeatures();
+//     } else {
+//         console.log('No CSV data available to populate features');
+//     }
+// }
+
+// function populateOptimizationFeatures() {
+//     console.log('Populating optimization features with auto-select all inputs');
+//
+//
+//     if (!window.csvData || !window.csvData.data || window.csvData.data.length === 0) {
+//         console.error('No data available for features');
+//         return;
+//     }
+//
+//
+//     const inputFeatures = document.getElementById('opt-input-features');
+//     const targetFeature = document.getElementById('opt-target-feature');
+//
+//     if (!inputFeatures || !targetFeature) {
+//         console.error('Feature dropdown elements not found');
+//         return;
+//     }
+//
+//
+//     const columns = Object.keys(window.csvData.data[0]);
+//     console.log('CSV columns:', columns);
+//
+//
+//     const inputFeaturesContainer = inputFeatures.parentNode;
+//
+//
+//     const inputFeaturesDisplay = document.createElement('div');
+//     inputFeaturesDisplay.id = 'input-features-display';
+//     inputFeaturesDisplay.style.border = '1px solid #d1d5db';
+//     inputFeaturesDisplay.style.borderRadius = '6px';
+//     inputFeaturesDisplay.style.padding = '8px';
+//     inputFeaturesDisplay.style.backgroundColor = '#f9fafb';
+//     inputFeaturesDisplay.style.minHeight = '100px';
+//     inputFeaturesDisplay.style.maxHeight = '150px';
+//     inputFeaturesDisplay.style.overflowY = 'auto';
+//
+//
+//     inputFeatures.style.display = 'none';
+//
+//
+//     inputFeatures.innerHTML = '';
+//
+//
+//     targetFeature.innerHTML = '<option value="" disabled selected>-- Select Target Feature --</option>';
+//
+//
+//     columns.forEach(column => {
+//
+//         const inputOption = document.createElement('option');
+//         inputOption.value = column;
+//         inputOption.textContent = column;
+//         inputOption.selected = true;
+//         inputFeatures.appendChild(inputOption);
+//
+//
+//         const featureItem = document.createElement('div');
+//         featureItem.style.marginBottom = '4px';
+//         featureItem.innerHTML = `<span style="display:inline-block; width:8px; height:8px; background-color:#4f46e5; border-radius:50%; margin-right:6px;"></span> ${column}`;
+//         inputFeaturesDisplay.appendChild(featureItem);
+//
+//
+//         const targetOption = document.createElement('option');
+//         targetOption.value = column;
+//         targetOption.textContent = column;
+//         targetFeature.appendChild(targetOption);
+//     });
+//
+//
+//     const helperText = document.createElement('div');
+//     helperText.innerHTML = '<small style="color: #6b7280; margin-top: 4px; display: block;">All columns will be used as input features automatically (except target).</small>';
+//
+//
+//     inputFeaturesContainer.insertBefore(inputFeaturesDisplay, inputFeatures);
+//     inputFeaturesContainer.appendChild(helperText);
+//
+//     console.log('Feature dropdowns populated successfully');
+// }
+
+async function startOptimization() {
+  console.log("OPTIMIZATION STARTED");
+
+  const inputFeatures = document.getElementById("opt-input-features");
+  const targetFeature = document.getElementById("opt-target-feature");
+  const maxEpochs = document.getElementById("opt-max-epochs");
+  const progressElement = document.getElementById("optimization-progress");
+  const resultsElement = document.getElementById("optimization-results");
+
+  if (!inputFeatures || !targetFeature || !maxEpochs) {
+    console.error("Missing form elements");
+
+    return;
+  }
+
+  const allInputs = Array.from(inputFeatures.options).map((opt) => opt.value);
+
+  const selectedTarget = targetFeature.value;
+  const epochs = parseInt(maxEpochs.value) || 10;
+
+  if (!selectedTarget) {
+    return;
+  }
+
+  const selectedInputs = allInputs.filter((input) => input !== selectedTarget);
+
+  console.log("Selected inputs:", selectedInputs);
+  console.log("Selected target:", selectedTarget);
+  console.log("Max epochs:", epochs);
+
+  if (progressElement) progressElement.style.display = "block";
+  if (resultsElement) resultsElement.style.display = "none";
+
+  const progressBar = document.getElementById("opt-progress-bar");
+  const progressText = document.getElementById("opt-progress-text");
+
+  if (progressBar) progressBar.style.width = "0%";
+  if (progressText) progressText.textContent = "Starting optimization...";
+
+  console.log("Calling Python function directly...");
+
+  try {
+    console.log("Calling Python function directly...");
+
+    const result = await eel.find_optimal_architecture(
+      selectedInputs,
+      selectedTarget,
+      epochs,
+    )();
+
+    console.log("Optimization completed, result:", result);
+
+    displayOptimizationResults(result);
+
+    return result;
+  } catch (error) {
+    console.error("Error during optimization:", error);
+    throw error;
+  } finally {
+    showSpinner(false);
+  }
+}
+
+function updateOptimizationProgress(progress) {
+  console.log("Progress update received:", progress);
+
+  const progressBar = document.getElementById("opt-progress-bar");
+  const progressText = document.getElementById("opt-progress-text");
+
+  if (!progressBar || !progressText) {
+    console.error("Progress elements not found");
+    return;
+  }
+
+  if (typeof progress.progress === "number") {
+    progressBar.style.width = `${progress.progress}%`;
+
+    progressBar.setAttribute("aria-valuenow", progress.progress);
+  }
+
+  if (progress.status) {
+    progressText.textContent = progress.status;
+  }
+
+  if (progress.error) {
+    progressBar.classList.add("bg-danger");
+    console.error("Optimization error:", progress.status);
+  }
+}
+
+function displayOptimizationResults(results) {
+  const progressElement = document.getElementById("optimization-progress");
+  const resultsElement = document.getElementById("optimization-results");
+
+  if (progressElement) progressElement.style.display = "none";
+  if (resultsElement) resultsElement.style.display = "block";
+
+  const bestConfig = results.best_config;
+
+  if (!bestConfig) {
+    updateStatus("No best configuration found");
+    return;
+  }
+
+  document.getElementById("best-layers").textContent = bestConfig.layers;
+  document.getElementById("best-neurons").textContent = bestConfig.neurons;
+  document.getElementById("best-loss").textContent =
+    bestConfig.test_loss.toFixed(6);
+  document.getElementById("best-r2").textContent =
+    bestConfig.r2_score.toFixed(4);
+}
+
+function createArchitectureComparisonChart(results) {
+  const ctx = document
+    .getElementById("architecture-comparison-chart")
+    .getContext("2d");
+
+  const dataByLayers = {};
+
+  results.forEach((result) => {
+    const layers = result.layers;
+    if (!dataByLayers[layers]) {
+      dataByLayers[layers] = [];
+    }
+    dataByLayers[layers].push({
+      neurons: result.neurons,
+      loss: result.test_loss,
+      r2: result.r2_score,
+    });
+  });
+
+  const datasets = [];
+  const colors = [
+    "rgba(54, 162, 235, 0.7)",
+    "rgba(255, 99, 132, 0.7)",
+    "rgba(75, 192, 192, 0.7)",
+  ];
+
+  Object.keys(dataByLayers).forEach((layers, index) => {
+    datasets.push({
+      label: `${layers} Layer${layers > 1 ? "s" : ""}`,
+      data: dataByLayers[layers].map((item) => ({
+        x: item.neurons,
+        y: item.loss,
+      })),
+      backgroundColor: colors[index % colors.length],
+      borderColor: colors[index % colors.length].replace("0.7", "1"),
+      borderWidth: 1,
+    });
+  });
+
+  const chart = new Chart(ctx, {
+    type: "scatter",
+    data: {
+      datasets: datasets,
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              const item =
+                dataByLayers[context.dataset.label.split(" ")[0]][
+                  context.dataIndex
+                ];
+              return `${context.dataset.label}, ${item.neurons} neurons: MSE = ${item.loss.toFixed(6)}, R² = ${item.r2.toFixed(4)}`;
+            },
+          },
+        },
+        title: {
+          display: true,
+          text: "Architecture Performance Comparison",
+        },
+      },
+      scales: {
+        x: {
+          type: "linear",
+          position: "bottom",
+          title: {
+            display: true,
+            text: "Neurons Per Layer",
+          },
+        },
+        y: {
+          title: {
+            display: true,
+            text: "Test Loss (MSE)",
+          },
+        },
+      },
+    },
+  });
+}
+
 async function downloadOptimizedModel() {
   if (!window.optimizedModelPath) {
     updateStatus("No optimized model available");
@@ -211,7 +848,162 @@ function displayTestResults(results) {
   if (results.results && results.results.length > 0) {
     createPredictionChart(results.results);
   }
-}
+}      startOptimizationButton.addEventListener("click", startOptimization);
+                                                                                      if (nextButton) nextButton.disabled = currentPage >= totalPages - 1;
+                                                                                              title: {
+                                                                                            console.log("Clear data button clicked");
+                                                                                                <td><strong>${totalNodes} node${totalNodes > 1 ? "s" : ""}</strong></td>
+                                                                                            html += `<li class="model-io-item">
+                                                                                      renderer.setPixelRatio(window.devicePixelRatio);
+                                                                                          const totalNodes = summary.nodes.length;
+                                                                                        const layersTableBody = document.querySelector("#layers-table tbody");
+                                                                                                display: true,
+                                                                                          tableBody.appendChild(tr);
+                                                                                                backgroundColor: [
+                                                                                            tr.appendChild(td);
+                                                                                      if (contentPane) {
+                                                                                      if (columnCount) columnCount.textContent = summary.columns || "-";
+                                                                                        document.getElementById("metric-mae").textContent = formatNumber(
+                                                                                      box.getSize(size);
+                                                                                    }
+                                                                                      };
+                                                                                              sortMethod: "directed",
+                                                                                          showSpinner(false);
+                                                                                      camera.position.set(center.x, center.y, center.z + distance);
+                                                                                                layersTableBody.appendChild(row);
+                                                                                        } else {
+                                                                                        }, 200);
+                                                                                        for (let i = 0; i < slice.length; i++) {
+                                                                                            const row = document.createElement("tr");
+                                                                                      console.log("DOM loaded, initializing application...");
+                                                                                        targetFeature.appendChild(targetOption);
+                                                                                          physics: {
+    if (!layersTableBody) return;
+                                                                                        span.textContent = column;
+                                                                                    function createEdges(edges, positions) {
+                                                                                                  "rgba(255, 99, 132, 1)",
+                                                                                      controls.minDistance = 100;
+                                                                                                        <li class="model-io-item">
+                                                                                          prevPageButton.addEventListener("click", () => {
+                                                                                      labelsContainer.id = "three-labels-container";
+      const indexCell = document.createElement("td");
+                                                                                      }
+
+                                                                                      labelsContainer.style.top = "0";
+                                                                                          modelDetailsElement.innerHTML = `
+                                                                                              borderWidth: 2,
+                                                                                          tr.appendChild(detailsCell);
+
+                                                                                      async function generateModelSummary() {
+                                                                                          const arrayBuffer = await readFileAsArrayBuffer(file);
+
+                                                                                            console.log("Clear data button clicked");
+                                                                                      labelsContainer.style.zIndex = "10";
+                                                                                    let network = null;
+
+                                                                                    function updateLabelsPositions() {
+                                                                                          testSize,
+                                                                                        }
+
+                                                                                        if (emptyState) emptyState.style.display = "none";
+                                                                                        const prevPageButton = document.getElementById("prev-page");
+                                                                                        const span = document.createElement("span");
+                                                                                        preserveDrawingBuffer: true,
+                                                                                        const byteArrays = [];
+                                                                                        console.error("Error downloading model:", error);
+                                                                                        const result = await window.eel.download_optimized_model(
+                                                                                          for (let i = 0; i < slice.length; i++) {
+                                                                                          architecture.output_layer,
+
+                                                                                      targetSelect.innerHTML = '<option value="">-- Select Target --</option>';
+                                                                                          displayModelSummary(result.summary);
+                                                                                          }, 100);
+                                                                                        if (emptyState) emptyState.style.display = "none";
+
+                                                                                        tbody.innerHTML = "";
+
+                                                                                        showSpinner(false);
+                                                                                            updateStatus(`Error: ${result.error}`);
+                                                                                          layers[currentLayer] = [];
+
+                                                                                      nodes.forEach((node) => {
+
+                                                                                          return;
+
+                                                                                        labelsContainer.remove();
+                                                                                      const container3d = document.getElementById("network-3d");
+                                                                                          console.error("2D network container not found");
+                                                                                            network.redraw();
+                                                                                      }
+
+                                                                                      columns.forEach((column) => {
+                                                                                          console.warn(`Missing positions for edge ${edge.from} -> ${edge.to}`);
+
+                                                                                      }
+                                                                                        const view2dButton = document.getElementById("view-2d");
+                                                                                        const byteCharacters = atob(result.base64);
+                                                                                          if (result.error) {
+                                                                                                            </div>
+                                                                                      }
+                                                                                          label.style.display = "block";
+                                                                                          },
+
+                                                                                            console.error("Error generating summary:", summary.error);
+                                                                                      inputFeatures.setAttribute("size", "5");
+
+                                                                                            if (tableView) tableView.style.display = "none";
+                                                                                      const hasModel = window.graphData && window.graphData.summary;
+
+                                                                                        console.log(`Showing tab: ${contentId}`);
+                                                                                              if (currentPage < totalPages - 1) {
+                                                                                        container3d.innerHTML = "";
+                                                                                      const pageSize = 10;
+                                                                                          const arrayBuffer = await readFileAsArrayBuffer(file);
+                                                                                      console.log(`Found UI elements: function
+                                                                                        updateStatus("Please select a target feature");
+                                                                                        label.appendChild(span);
+
+                                                                                          label: "Perfect Prediction",
+                                                                                      labelsContainer.id = "three-labels-container";
+                                                                                            td.textContent = row[column] !== null ? row[column] : "";
+                                                                                      });
+                                                                                          html += '<table class="layer-types-table">';
+                                                                                        container2d.classList.add("active");
+                                                                                        const tbody = table.querySelector("tbody");
+                                                                                                  ),
+                                                                                                    <table class="info-table">
+                                                                                              missing_values: {},
+                                                                                      const fov = camera.fov * (Math.PI / 180);
+                                                                                      nodes.forEach((node) => {
+                                                                                                    </div>
+                                                                                      function displayModelInfo(modelInfo) {
+                                                                                      if (results.results && results.results.length > 0) {
+
+                targetSelect.appendChild(option);                                                                                  switchToMode("2d");
+                                                                                            </div>
+    const ctx = canvas.getContext("2d");
+w vis.DataSet(graphData.edge
+
+                                                                                          }
+
+                                                                                        updateStatus("No optimized model available");
+
+                                                                                    }
+                                                                                        } else {
+                                                                                            labels: layerLabels,
+                                                                                        }
+                                                                                      if (nodePositions.length === 0) return;
+                                                                                  if (Object.keys(layers).length <= 1) {
+                                                                                        layers[node.layer].push(node);
+
+                                                                                            summary.inputs.forEach((input) => {
+
+                                                                                          layers[node.layer] = [];
+                                                                                        sphere.position.set(pos.x, pos.y, pos.z);
+                                                                                      }
+
+                                                                                            },
+ne
 
 function createPredictionChart(results) {
   const ctx = document.getElementById("predictions-chart").getContext("2d");
@@ -1351,14 +2143,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (window.csvData) {
       updateModelTestingUI();
-      updateOptimizationUI();
     }
 
     if (window.graphData) {
       updateModelTestingUI();
-      updateOptimizationUI();
     }
-    updateOptimizationUI();
   }
 
   function updateModelDetails(summary) {
@@ -2205,3 +2994,39 @@ document.getElementById("debugBtn").addEventListener("click", function () {
     }, 500);
   }
 });
+      )();
+                                                 </div>
+                                                   ects).forEach((node) => {
+                                                       updateStatus("Model test completed successfully");
+                                                                           <span class="info-value">${summary.node_count || summary.nodes?.length || 0}</span>
+                                                                             }
+                                                                                               <tr>
+nst points = [];
+
+                                                                                      contentPane.classList.add("active");
+
+                                                                                  }
+
+                                                                                      });
+
+ (!positions[node.id]) {
+                                                                                          targetSelect.appendChild(option);
+                                                                                            inputsHtml += `
+                                                                                function updateLabelsPositions() {
+                                                                                      ).value;
+                                                                                        html += `<tr>
+                                                                                function calculateNodePositions(nodes, edges) {
+
+
+
+
+                                                                                      });
+                                                                                  camera.position.set(center.x, center.y, center.z + distance);
+                                                                                      indexCell.className = "row-index";
+                                                                                    typeColors[type] = colors[i % colors.length];
+                                                                                    const indexHeader = document.createElement("th");
+
+                                                                                    } else {
+                                                                                                        <strong>Learning Rate:</strong> ${architecture.learning_rate}
+                                                                                        <div class="detail-item">
+                                                                                    indexHeader.textContent = "#";
