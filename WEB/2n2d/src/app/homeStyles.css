@@ -1,12 +1,11 @@
-.page {
+.pageHome {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    padding: 1rem;
 }
 
-.logo {
+.heroContainer .logo {
     font-size: 2rem;
     font-weight: bold;
     color: white;
@@ -107,7 +106,7 @@
     font-size: 1.9rem;
 }
 
-.page .title {
+.pageHome .title {
     font-size: 4rem;
     font-family: Arial Black;
 }

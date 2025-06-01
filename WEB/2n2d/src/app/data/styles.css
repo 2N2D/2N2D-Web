@@ -5,12 +5,14 @@
     justify-content: center;
 }
 
-.area {
+.pageData .area {
     background-color: var(--card-background);
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     padding: 1rem 0.5rem;
-    border: 1px solid var(--border-color);
+    width: fit-content;
+    border-radius: 0.4rem;
 }
 
 .dataSum {
@@ -21,7 +23,6 @@
 
 .info {
     min-width: 10rem;
-    border: 1px solid var(--border-color);
     padding: 1rem;
     background-color: var(--background-color);
     border-radius: 0.4rem;
@@ -32,21 +33,14 @@
     font-weight: bold;
 }
 
-.networkView {
-    width: 100%;
-    border: 1px solid var(--border-color);
-    height: 100%;
-}
-
-.title {
+.pageData .title {
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    padding: 1rem;
     background-color: var(--card-background);
     border-radius: 0.4rem;
 }
 
-.dataArea {
+.pageData .dataArea {
     display: flex;
     gap: 5rem;
     padding: 0.2rem 1rem;

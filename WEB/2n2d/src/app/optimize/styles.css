@@ -9,12 +9,12 @@
     gap: 1rem;
 }
 
-.area {
+.pageOpt .area {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--border-color);
     background-color: var(--card-background);
     padding: 1rem;
+    border-radius: 0.4rem;
 }
 
 .formGroup {
@@ -95,7 +95,7 @@
     text-orientation: mixed;
 }
 
-.dataArea {
+.pageOpt .dataArea {
     display: flex;
     gap: 1rem;
     flex-direction: column;

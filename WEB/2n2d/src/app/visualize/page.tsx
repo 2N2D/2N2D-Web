@@ -53,7 +53,7 @@ export default function visualize() {
 
     }
 
-    function titleFormat(title: string): Record<string, string | string[] | Record<string, string | number> | number> {
+    function titleFormat(title: string): any {
         // Trim and split the input into individual lines
         const lines = title.trim().split("\n");
         const parsed: Record<string, string | string[] | Record<string, string | number> | number> = {};
@@ -144,7 +144,7 @@ export default function visualize() {
                         options.attributes ? <div>
                             <h2><b>Attributes:</b></h2>
                             <ul>
-                                {options.attributes?.map((attr, i: number) => <li
+                                {options.attributes?.map((attr: any, i: number) => <li
                                     key={i}>
                                     <b>{attr["name"]}</b>: {Object.values(attr)[1]} Type: {attr.type} <br/>
                                 </li>)}

@@ -1,0 +1,7 @@
+numpy
+onnx
+torch
+scikit-learn
+pandas
+asyncio
+fastapi

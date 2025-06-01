@@ -89,7 +89,7 @@ function Optimize() {
     }
 
     return (
-        <main className={"page"}>
+        <main className={"pageOpt"}>
             <div className={"flex h-min-[80vh] w-full"}>
                 <div className={"h-min-[80vh] w-full flex flex-col"}>
                     <form className={"optimizeForm area"} onSubmit={optimize}>

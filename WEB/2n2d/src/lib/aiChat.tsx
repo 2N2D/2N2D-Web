@@ -39,7 +39,7 @@ export async function ask(question: string, history: exchange[], modelData?: str
     if (modelData != null) {
         const aux = JSON.parse(modelData!);
         let labels: string[] = [];
-        aux.nodes.forEach((node) => {
+        aux.nodes.forEach((node: any) => {
             labels.push(node.label.toString())
         })
         messages.push({

@@ -1,5 +1,7 @@
 import {getSessionTokenHash} from "@/lib/auth/authentication";
 
+const endp = process.env.NEXT_PUBLIC_TWONTWOD_ENDPOINT
+
 export async function startOptimization(
     selectedInputs: String[],
     targetFeature: String,
@@ -10,7 +12,7 @@ export async function startOptimization(
     }
 
     try {
-        const res = await fetch("http://127.0.0.1:8000/optimize", {
+        const res = await fetch(endp + "/optimize", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -32,7 +34,7 @@ export async function startOptimization(
 
 export async function sendCSV(formData: any) {
     try {
-        const result = await fetch("http://127.0.0.1:8000/upload-csv", {
+        const result = await fetch(endp + "/upload-csv", {
             headers: {"session-id": `${await getSessionTokenHash()}`},
             method: "POST",
             body: formData,
@@ -48,7 +50,7 @@ export async function sendCSV(formData: any) {
 
 export async function sendModel(formData: any) {
     try {
-        const result = await fetch("http://127.0.0.1:8000/upload-model", {
+        const result = await fetch(endp + "/upload-model", {
             headers: {"session-id": `${await getSessionTokenHash()}`},
             method: "POST",
             body: formData,
@@ -66,7 +68,7 @@ export async function sendModel(formData: any) {
 
 export async function requestOptimized() {
     try {
-        const res = await fetch("http://127.0.0.1:8000/download-optimized", {
+        const res = await fetch(endp + "/download-optimized", {
             headers: {"session-id": `${await getSessionTokenHash()}`},
             method: "GET",
         });

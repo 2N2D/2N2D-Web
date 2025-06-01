@@ -6,7 +6,7 @@ import "./homeStyles.css"
 import ParticleNetwork from "@/components/visual/particleNetwork";
 
 export default function Home() {
-    return <div className="page">
+    return <div className="pageHome">
         <div className={"heroContainer"}>
             <div className={"logo"}>
                 <img

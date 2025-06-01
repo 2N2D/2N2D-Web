@@ -41,7 +41,7 @@ function Data() {
     }, [])
 
     return (
-        <div className="page">
+        <div className="pageData">
             <div className="area">
                 <h3 className={"subtitle"}>Dataset Overview</h3>
                 <div className="dataSum">
