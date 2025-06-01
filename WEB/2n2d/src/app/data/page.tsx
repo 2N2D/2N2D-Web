@@ -4,6 +4,7 @@ import React, {useState, useEffect} from "react";
 import "./styles.css";
 import {dragUpload, uploadCSV} from "@/lib/fileHandler/fileUpload";
 import DataTable from "@/components/DataTable";
+import CSVUploader from "@/components/fileUploadElements/CSVUploader";
 
 function Data() {
     const [message, setMessage] = useState("");
@@ -12,10 +13,11 @@ function Data() {
     const [fileName, setFileName] = useState<string>("");
     const [missed, setMissed] = useState<number>();
     const [result, setResult] = useState<any>(null);
-    const [uploadState, setUploadState] = useState<boolean>(false);
 
-    function handleNewData(_result: any) {
-        if (_result == null) return;
+    function handleNewData() {
+        const data = sessionStorage.getItem("csvData");
+        if (!data) return;
+        const _result = JSON.parse(data);
 
         setRowsNr(_result.summary.rows);
         setColumnsNr(_result.summary.columns);
@@ -33,27 +35,9 @@ function Data() {
         sessionStorage.removeItem("csvData");
     }
 
-    async function _uploadCSV(e: any) {
-        if (!e.target.files[0]) return;
-        const _result = await uploadCSV(e);
-
-        handleNewData(_result);
-        e.target.value = "";
-    }
-
-    async function _uploadCSVDrop(e: any) {
-        e.preventDefault();
-        const _result = await dragUpload(e);
-        if (_result == null) return;
-
-        handleNewData(_result);
-    }
 
     useEffect(() => {
-        const data = sessionStorage.getItem("csvData");
-        if (data) {
-            handleNewData(JSON.parse(data));
-        }
+        handleNewData();
     }, [])
 
     return (
@@ -82,14 +66,7 @@ function Data() {
 
             <div className="area">
                 <div className={"dataArea"}>
-                    <button
-                        onClick={() => {
-                            setUploadState(true);
-                        }}
-                        className={"uploadButton"}
-                    >
-                        Load CSV File <i className="fa-solid fa-upload"></i>
-                    </button>
+                    <CSVUploader callBack={handleNewData}/>
                     <button className={"deleteButton"} onClick={clearData}>
                         Clear Data <i className="fa-solid fa-trash-xmark"></i>
                     </button>
@@ -99,43 +76,7 @@ function Data() {
             <div className="area tableArea">
                 <DataTable result={result}/>
             </div>
-            {uploadState ? (
-                <div className={"popup"}>
-                    <button
-                        className={"fileDropBack"}
-                        onClick={() => {
-                            setUploadState(false);
-                        }}
-                    >
-                        <i className="fa-solid fa-xmark-large"></i>
-                        Cancel
-                    </button>
-                    <div
-                        className="fileDrop"
-                        onDrop={(e) => {
-                            _uploadCSVDrop(e);
-                            setUploadState(false);
-                        }}
-                        onDragOver={(event) => event.preventDefault()}
-                    >
-                        <label>
-                            Upload CSV Dataset <i className="fa-solid fa-upload"></i>
-                            <input
-                                type="file"
-                                id="csv-input"
-                                accept=".csv"
-                                onChange={(e) => {
-                                    _uploadCSV(e);
-                                    setUploadState(false);
-                                }}
-                            />
-                        </label>
-                        <span>or drag and drop files</span>
-                    </div>
-                </div>
-            ) : (
-                ""
-            )}
+
         </div>
     );
 }

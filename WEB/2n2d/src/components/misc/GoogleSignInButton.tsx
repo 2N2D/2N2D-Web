@@ -13,7 +13,8 @@ const GoogleSignInButton = () => {
         }
     }
 
-    return <button className={Style.button} onClick={tryGoogleLogin}><i className="fa-brands fa-google"></i></button>
+    return <button className={Style.button} onClick={tryGoogleLogin}><i className="fa-brands fa-google"></i> Google
+    </button>
 }
 
 export default GoogleSignInButton;

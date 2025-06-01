@@ -1,159 +1,282 @@
 "use client";
 import React, {useState} from "react";
 import "./styles.css";
-import {createVisualNetwork2D} from "@/lib/feHandler";
-import Styles from "@/components/SideBar.module.css";
-import {dragUpload, uploadONNX} from "@/lib/fileHandler/fileUpload";
+import {createVisualNetwork2D, categoryColorMap, getNodeCategory, nodes, edges} from "@/lib/feHandler";
+import ONNXUploader from "@/components/fileUploadElements/ONNXUploader";
 
 export default function visualize() {
-    const [view3d, setView] = React.useState(false);
+    //Onnx data
     const [result, setResult] = React.useState<any>(null);
+    const [fileName, setFileName] = useState<string>("");
+
+    //Settings
+    const [constantsEnabled, setConstantsEnabled] = useState<boolean>(false);
+    const [physicsEnabled, setPhysicsEnabled] = useState<boolean>(false);
+    const [verticalView, setVerticalView] = useState<boolean>(false);
+
+    //View expansion
+    const [detailsExpanded, setDetailsExpanded] = useState<boolean>(false);
+    const [settingsExpanded, setSettingsExpanded] = useState<boolean>(false);
+    const [legendExpanded, setLegendExpanded] = useState<boolean>(false);
+
+    //selected
+    const [selected, setSelected] = useState<any>(null);
+
     const canvasRef = React.useRef<HTMLDivElement>(null);
-    const [uploadState, setUploadState] = useState<boolean>(false);
-
-    async function _uploadONNX(e: any) {
-        await uploadONNX(e);
-        updateView();
-    }
-
-    async function _uploadONNXDrop(e: any) {
-        e.preventDefault();
-        const _result = await dragUpload(e);
-        if (_result == null) return;
-
-        updateView();
-    }
 
     async function updateView() {
         let data = sessionStorage.getItem("modelData");
+        setSelected(null);
         if (!data) {
             setResult(null);
             if (!canvasRef.current) return;
 
             const ctx = canvasRef.current;
             if (ctx) {
-                createVisualNetwork2D({nodes: [], edges: []}, ctx);
+                await createVisualNetwork2D({nodes: [], edges: []}, ctx, false, false, false, handleSelect);
             }
             return;
         }
         data = JSON.parse(data);
         setResult(data);
+        if (sessionStorage.getItem("modelName"))
+            setFileName(sessionStorage.getItem("modelName")!);
+        else
+            setFileName("No model loaded")
 
         if (!canvasRef.current) return;
 
         const ctx = canvasRef.current;
         if (ctx) {
-            createVisualNetwork2D(data, ctx);
+            await createVisualNetwork2D(data, ctx, constantsEnabled, physicsEnabled, verticalView, handleSelect)
         }
+
+    }
+
+    function titleFormat(title: string): Record<string, string | string[] | Record<string, string | number> | number> {
+        // Trim and split the input into individual lines
+        const lines = title.trim().split("\n");
+        const parsed: Record<string, string | string[] | Record<string, string | number> | number> = {};
+        let currentAttr: Record<string, string | number> | null = null;
+
+        for (const line of lines) {
+            if (line.startsWith("attribute {")) {
+                currentAttr = {};
+                if (!parsed.attributes) parsed.attributes = [];
+            } else if (line === "}") {
+                if (currentAttr) {
+                    (parsed.attributes as any[]).push(currentAttr);
+                    currentAttr = null;
+                }
+            } else {
+                const [rawKey, valueRaw] = line.split(": ");
+                const value = valueRaw?.replace(/^"|"$/g, "");
+                const key = rawKey.replace(/\s+/g, "");
+
+                if (currentAttr) {
+                    // handle attribute fields
+                    if (!isNaN(Number(value))) {
+                        currentAttr[key] = Number(value);
+                    } else {
+                        currentAttr[key] = value;
+                    }
+                } else {
+                    // handle top-level fields
+                    if (parsed[key]) {
+                        if (Array.isArray(parsed[key])) {
+                            parsed[key].push(value);
+                        } else {
+                            // @ts-ignore
+                            parsed[key] = [parsed[key], value];
+                        }
+                    } else {
+                        parsed[key] = value;
+                    }
+                }
+            }
+        }
+
+        return parsed;
+    }
+
+
+    function NodeDetails({selected}: { selected: any }) {
+        const options = titleFormat(selected.title);
+        return (
+            <div className="sArea nodeDetails p-0">
+                <div className={"subtitleWrapper"}>
+                    <h2 className="subtitle" style={{backgroundColor: selected.color.background}}>
+                        {selected.label.toString()}
+                    </h2>
+                </div>
+
+                {/*{JSON.stringify(options)}*/}
+                <div className={"pt-0 pl-[2rem] pr-[2rem] pb-[2rem] overflow-y-auto"}>
+                    {
+                        options.name ? <p><b>Name:</b> {options.name.toString()}</p> : ""
+                    }
+
+                    <p><b>Category:</b> {getNodeCategory(selected.label)}</p>
+
+                    {
+                        options.input ? <div>
+                            <h2><b>Inputs:</b></h2>
+                            <ul>
+                                {typeof options.input === "string" ?
+                                    <li>options.input</li> : options.input?.map((input: string, i: number) =>
+                                        <li key={i}>{input}</li>)}
+                            </ul>
+                        </div> : ""
+                    }
+
+                    {
+                        options.output ? <div>
+                            <h2><b>Outputs:</b></h2>
+                            <ul>
+                                {typeof options.output === "string" ?
+                                    <li>options.output</li> : options.output?.map((output: string, i: number) =>
+                                        <li key={i}>{output}</li>)}
+                            </ul>
+                        </div> : ""
+                    }
+
+                    {
+                        options.attributes ? <div>
+                            <h2><b>Attributes:</b></h2>
+                            <ul>
+                                {options.attributes?.map((attr, i: number) => <li
+                                    key={i}>
+                                    <b>{attr["name"]}</b>: {Object.values(attr)[1]} Type: {attr.type} <br/>
+                                </li>)}
+                            </ul>
+                        </div> : ""
+                    }
+                </div>
+
+            </div>
+        );
+    }
+
+
+    function handleSelect(node: { id: number, label: string, title: string }) {
+        setSelected(node);
     }
 
     async function clearData() {
         sessionStorage.removeItem("modelData");
         setResult(null);
+        setSelected(null);
         updateView();
     }
 
     React.useEffect(() => {
         updateView();
-        console.log(result);
     }, []);
+
+    React.useEffect(() => {
+        updateView();
+    }, [constantsEnabled, physicsEnabled, verticalView]);
 
     return (
         <main className="page">
-            <div className="divider">
-                <div className="area">
-                    <div className="toggleButtons">
-                        <button
-                            className={view3d ? "toggle-button" : "toggle-button active"}
-                            onClick={() => setView(false)}
-                        >
-                            2D View
-                        </button>
-                        <button
-                            className={view3d ? "toggle-button active" : "toggle-button"}
-                            onClick={() => setView(true)}
-                        >
-                            3D View
+            <div id="network-2d" className="networkView " ref={canvasRef}></div>
+            <div className="overlay">
+                <div>
+                    <div className={"sArea"} style={detailsExpanded ? {} : {height: "4rem"}}>
+                        <div className={"setting"} onClick={() => {
+                            setDetailsExpanded(!detailsExpanded)
+                        }}>
+                            <h3 className={"subtitle"}>Model Details</h3>
+                            <i className="fa-solid fa-caret-down"></i>
+                        </div>
+                        {result == null ? (
+                            "No model loaded"
+                        ) : (
+                            <div className={"overflow-y-auto max-h-[100vh]"}>
+                                <div className={"sArea"}>
+                                    <h2><b>File:</b> {fileName}</h2>
+                                </div>
+                                <div className={"sArea"}>
+                                    <h2><b>Producer:</b> {result.summary.producer}</h2>
+                                    <h2><b>IR version:</b> {result.summary.ir_version}</h2>
+                                </div>
+                                <div className={"sArea"}>
+                                    <h2><b>Node count:</b> {result.summary.node_count}</h2>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                    <div className={"sArea"} style={legendExpanded ? {} : {height: "4rem"}}>
+                        <div className={"setting"} onClick={() => {
+                            setLegendExpanded(!legendExpanded)
+                        }}>
+                            <h3 className={"subtitle"}>Legend</h3>
+                            <i className="fa-solid fa-caret-down"></i>
+                        </div>
+                        <div>
+                            {Object.entries(categoryColorMap).map(([category, {normal, highlight}]) => (
+                                <div key={category.toString()} className="legendItem">
+                                    <span className="legendLabel">{category}</span>
+                                    <div
+                                        className="legendColor"
+                                        style={{
+                                            backgroundColor: `${normal}`,
+                                        }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className={settingsExpanded ? "sArea" : "sArea closedSArea"}>
+                        <div className={"setting"} onClick={() => {
+                            setSettingsExpanded(!settingsExpanded)
+                        }}>
+                            <h2 className={"subtitle"}>Settings</h2>
+                            <i className="fa-solid fa-caret-down"></i>
+                        </div>
+                        <div className={"setting"}>
+                            <label htmlFor="physics">Node physics</label>
+                            <input type="checkbox" id="physics" checked={physicsEnabled} onChange={(e) => {
+                                setPhysicsEnabled(e.target.checked)
+                            }}/>
+                        </div>
+                        <div className={"setting"}>
+                            <label htmlFor="constants">Constant nodes</label>
+                            <input type="checkbox" id="constants" checked={constantsEnabled} onChange={(e) => {
+                                setConstantsEnabled(e.target.checked)
+                            }}/>
+                        </div>
+                        <div className={"setting"}>
+                            <label htmlFor="vertical">Vertical view</label>
+                            <input type="checkbox" id="vertical" checked={verticalView} onChange={(e) => {
+                                setVerticalView(e.target.checked)
+                            }}/>
+                        </div>
+                    </div>
+                    <div className={"sArea"}>
+                        <button className={"uploadButton"} onClick={() => {
+                            updateView()
+                        }}>Refresh <i className="fa-solid fa-arrows-rotate"></i>
                         </button>
                     </div>
-                    {view3d ? (
-                        <div id="network-3d" className="networkView"></div>
-                    ) : (
-                        <div id="network-2d" className="networkView " ref={canvasRef}></div>
-                    )}
+
                 </div>
-                <div className="area">
-                    <h3 className={"subtitle"}>Model Details</h3>
-                    {result == null ? (
-                        "No model loaded"
-                    ) : (
-                        <div className={"overflow-y-auto max-h-[100vh]"}>
-                            <div className={"sArea"}>
-                                <h2>Producer: {result.summary.producer}</h2>
-                                <h2>IR version: {result.summary.ir_version}</h2>
-                            </div>
-                            <div className={"sArea"}>
-                                <h2>Node count: {result.summary.node_count}</h2>
-                            </div>
-                        </div>
-                    )}
-                </div>
+
                 <div className="titleWrapper">
                     <h1 className="title">Network Visualization</h1>
                     <div className="sArea vertical">
                         <div className={"dataArea"}>
-                            <button
-                                onClick={() => {
-                                    setUploadState(true);
-                                }}
-                                className={"uploadButton"}
-                            >
-                                Load ONNX File <i className="fa-solid fa-upload"></i>
-                            </button>
+                            <ONNXUploader callBack={updateView}/>
                             <button className={"deleteButton"} onClick={clearData}>
                                 Clear Data <i className="fa-solid fa-trash-xmark"></i>
                             </button>
                         </div>
                     </div>
                 </div>
+                {selected && <NodeDetails selected={selected}/>}
+
             </div>
-            {uploadState ? (
-                <div className={"popup"}>
-                    <button
-                        className={"fileDropBack"}
-                        onClick={() => {
-                            setUploadState(false);
-                        }}
-                    >
-                        <i className="fa-solid fa-xmark-large"></i>
-                        Cancel
-                    </button>
-                    <div
-                        className="fileDrop"
-                        onDrop={(e) => {
-                            _uploadONNXDrop(e);
-                            setUploadState(false);
-                        }}
-                        onDragOver={(event) => event.preventDefault()}
-                    >
-                        <label>
-                            Upload ONNX Dataset <i className="fa-solid fa-upload"></i>
-                            <input
-                                type="file"
-                                id="ONNX-input"
-                                accept=".onnx"
-                                onChange={(e) => {
-                                    _uploadONNX(e);
-                                    setUploadState(false);
-                                }}
-                            />
-                        </label>
-                        <span>or drag and drop files</span>
-                    </div>
-                </div>
-            ) : (
-                ""
-            )}
+
         </main>
     );
 }

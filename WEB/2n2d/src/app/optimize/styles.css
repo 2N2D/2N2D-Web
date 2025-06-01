@@ -1,3 +1,10 @@
+
+.page {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .optimizeForm {
     gap: 1rem;
 }
@@ -20,6 +27,12 @@
 .formGroup .element {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
 }
 
 .formGroup .element label {
@@ -40,6 +53,22 @@
     padding: 0.5rem 1.5rem;
     font-size: 1.5rem;
     font-weight: bold;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+}
+
+.optimizeForm input[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+
+.optimizeForm input[type="submit"]:disabled {
+    background-color: var(--border-color);
+}
+
+.optimizeForm {
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .featuresList li {
@@ -49,10 +78,53 @@
     border-bottom: 1px solid var(--border-color);
 }
 
+.uploadButton {
+    background-color: var(--primary-color);
+    padding: 0.7rem;
+    border-radius: 0.4rem;
+}
+
+.deleteButton {
+    background-color: #d62626;
+    padding: 0.7rem;
+    border-radius: 0.4rem;
+}
+
+.vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.dataArea {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.targetFeature {
+    background-color: var(--card-background);
+}
+
+.targetFeature option:hover {
+    background-color: var(--primary-color);
+}
+
+.dataArea button {
+    transition: 0.2s;
+}
+
+.dataArea button:hover {
+    transform: scale(1.1);
+}
+
+.dataArea button:active {
+    transform: scale(0.9);
+}
 
 .progressZone {
     transition: 0.5s;
     overflow: hidden;
+    height: 20%;
 }
 
 .progressZone h1 {
@@ -62,6 +134,92 @@
     padding: 0;
 }
 
+.result {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.result .info {
+    font-size: 1.5rem;
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--border-color);
+    min-width: 40rem;
+}
+
+.result h2 {
+    font-weight: bolder;
+}
+
+.resultArea {
+    width: 100%;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.resultArea h1 {
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+
+.resultArea button {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: var(--success-color);
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+}
+
+.resultArea button:hover {
+    transform: scale(1.02);
+}
+
+.resultArea .result {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.resultArea .result h3 {
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.table tbody, .table th, .table tr, .table td {
+    border: 1px solid var(--border-color);
+    padding: 0.2rem;
+}
+
+.table {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.table th {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    z-index: 10;
+}
+
+.table thead td {
+    background-color: var(--primary-color);
+    font-weight: bold;
+}
 
 .barFiller {
     height: 2rem;
@@ -71,7 +229,7 @@
 }
 
 .loadingBar {
-    width: 80vw;
+    width: 100%;
     height: 2rem;
     background-color: var(--border-color);
     overflow: hidden;

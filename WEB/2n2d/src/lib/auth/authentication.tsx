@@ -3,8 +3,11 @@
 import {initAdmin} from '@/lib/firebase/firebase-admin.config';
 import {cookies} from 'next/headers';
 import {getAuth} from 'firebase-admin/auth';
+import {getAuth as getAuthClient} from "@firebase/auth";
 import {redirect} from 'next/navigation';
 import crypto from 'crypto'
+import {createUserWithEmailAndPassword} from "@firebase/auth";
+import {initFirebaseApp} from "@/lib/firebase/firebase.config";
 
 const expiresIn = 60 * 60 * 24 * 14 * 1000;
 
@@ -20,8 +23,8 @@ export async function createSession(token: string) {
         httpOnly: true,
         secure: true
     });
-
 }
+
 
 export async function logout() {
     (await cookies()).delete('session');

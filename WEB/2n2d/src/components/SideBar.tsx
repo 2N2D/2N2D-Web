@@ -1,14 +1,15 @@
 "use client";
 
 import React, {useState, useEffect} from "react";
-import {usePathname} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import Styles from "./SideBar.module.css";
 import {getSession, logout} from "@/lib/auth/authentication";
 
 const SideBar = () => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const pathname = usePathname();
-    const [logged, setLogged] = React.useState<boolean>(false);
+    const [logged, setLogged] = useState<boolean>(false);
+    const router = useRouter();
 
     async function checkLogged() {
         if (await getSession() == "200") {
@@ -26,13 +27,6 @@ const SideBar = () => {
 
     return (
         <div>
-            {/*{*/}
-            {/*    logged && pathname !== "/" && pathname !== "/singup" && pathname !== "/login" ? "" :*/}
-            {/*        <div className={Styles.warning}>*/}
-            {/*            <h1>You are not logged in and thus cannot use the app, please log in <a href={"/login"}>here</a>*/}
-            {/*            </h1>*/}
-            {/*        </div>*/}
-            {/*}*/}
             <div
                 className={
                     open ? Styles.container : `${Styles.container} ${Styles.closed}`
@@ -40,52 +34,64 @@ const SideBar = () => {
                 onMouseEnter={() => setOpen(true)}
                 onMouseLeave={() => setOpen(false)}
             >
-                <a href={"/"}>
+                <button onClick={() => {
+                    router.push("/")
+                }}>
                     <img
                         src={open ? "logo2n2d.svg" : "logo.svg"}
                         alt="logo"
                         className={Styles.logo}
                     />
-                </a>
-                <a
-                    href="/visualize"
+                </button>
+                <h2 className={Styles.tabCat}>Analise</h2>
+                <button
+                    onClick={() => {
+                        router.push("/visualize")
+                    }}
                     className={
                         pathname === "/visualize"
                             ? `${Styles.tabBut} ${Styles.active}`
                             : Styles.tabBut
                     }
                 >
-          <span className={Styles.iconWrapper}>
-            <i className="fa-solid fa-chart-network"></i>
-          </span>
+                    <span className={Styles.iconWrapper}>
+                        <i className="fa-solid fa-chart-network"></i>
+                     </span>
                     <span className={`${Styles.tabText}`}>Visualize</span>
-                </a>
-                <a
-                    href="/data"
+                </button>
+
+                <button
+                    onClick={() => {
+                        router.push("/data")
+                    }}
                     className={
                         pathname === "/data"
                             ? `${Styles.tabBut} ${Styles.active}`
                             : Styles.tabBut
                     }
                 >
-          <span className={Styles.iconWrapper}>
-            <i className="fa-solid fa-chart-simple"></i>
-          </span>
+                    <span className={Styles.iconWrapper}>
+                        <i className="fa-solid fa-chart-simple"></i>
+                    </span>
                     <span className={`${Styles.tabText}`}>Data</span>
-                </a>
-                <a
-                    href="/optimize"
+                </button>
+                <h2 className={Styles.tabCat}>Tools</h2>
+                <button
+                    onClick={() => {
+                        router.push("/optimize")
+                    }}
                     className={
                         pathname === "/optimize"
                             ? `${Styles.tabBut} ${Styles.active}`
                             : Styles.tabBut
                     }
                 >
-          <span className={Styles.iconWrapper}>
-            <i className="fa-solid fa-rabbit-running"></i>
-          </span>
+                    <span className={Styles.iconWrapper}>
+                        <i className="fa-solid fa-rabbit-running"></i>
+                    </span>
                     <span className={`${Styles.tabText}`}>Optimization</span>
-                </a>
+                </button>
+
                 <div className={Styles.spacer}>
 
                 </div>
@@ -100,7 +106,9 @@ const SideBar = () => {
                             </span>
                             <span className={`${Styles.tabText}`}>Logout</span>
                         </button> :
-                        <a href={"/login"} className={
+                        <button onClick={() => {
+                            router.push("/login")
+                        }} className={
                             pathname === "/login" || pathname === "/signup"
                                 ? `${Styles.tabBut} ${Styles.active}`
                                 : Styles.tabBut
@@ -109,7 +117,7 @@ const SideBar = () => {
                                 <i className="fa-solid fa-user"></i>
                             </span>
                             <span className={`${Styles.tabText}`}>Login</span>
-                        </a>
+                        </button>
                     }
                 </div>
             </div>

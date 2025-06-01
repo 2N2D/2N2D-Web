@@ -2,11 +2,12 @@
 import React, {useState, useEffect, FormEvent} from "react";
 import GoogleSignInButton from "@/components/misc/GoogleSignInButton";
 import OneTimeMailSignInButton from "@/components/misc/OneTimeMailSignInButton";
-import {registerMailAndPass} from "@/lib/auth/authEndP";
+import {register} from "@/lib/auth/authEndP"
 import {useRouter} from "next/navigation";
 import {logout} from "@/lib/auth/authentication";
 import "./style.css"
 import Styles from "@/components/SideBar.module.css";
+import ParticleNetwork from "@/components/visual/particleNetwork";
 
 export default function signup() {
     const router = useRouter();
@@ -16,11 +17,15 @@ export default function signup() {
     async function attemptSignUp(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const email = formData.get("email")?.toString()!;
-        const password = formData.get("password")?.toString()!;
+        const email = formData.get("email")?.toString();
+        const password = formData.get("password")?.toString();
 
-        const rez = await registerMailAndPass(email, password);
+        if (!email || !password) {
+            return;
+        }
 
+        const rez = await register(email, password);
+        console.log(rez);
         if (rez === "200") {
             router.push("/");
         }
@@ -33,6 +38,7 @@ export default function signup() {
     }, []);
 
     return <main>
+        <ParticleNetwork/>
         {loggedIn ? <div>
                 <h1>You are already logged in, would you like to log out?</h1>
                 <button onClick={() => {
@@ -47,9 +53,11 @@ export default function signup() {
                     className={Styles.logo}
                 />
                 <h1>Welcome!</h1>
-                <form>
-                    <input type={"email"} placeholder={"Email"} required={true}/>
-                    <input type={"password"} placeholder={"Password"} required={true}/>
+                <form onSubmit={attemptSignUp}>
+                    <input name={"email"} type={"email"} placeholder={"Email"} required={true}/>
+                    <input name={"password"} type={"password"} placeholder={"Password"} required={true}
+                           pattern="(?=.*\d)(?=.*[\W_]).{7,}"
+                           title="Minimum of 7 characters. Should have at least one special character and one number."/>
                     <input type={"submit"} value={"Sign up"}/>
                 </form>
                 <GoogleSignInButton/>

@@ -55,7 +55,6 @@ async def upload_model(file: UploadFile = File(...), session_id : str = Header(.
     result = load_onnx_model(base64_str)
     models[session_id] = result["path"]
 
-    print(models[session_id])
     return JSONResponse(content=result)
 
 
@@ -78,11 +77,14 @@ async def optimize(request: dict, session_id : str = Header(...)):
     target_feature = request.get("target_feature")
     epochs = request.get("max_epochs")
 
+    if session_id not in models:
+        return "NO MODEL FOR USER"
     if session_id not in message_queues:
         message_queues[session_id] = []
 
     def status_callback(message):
         message_queues[session_id].append(message)
+
 
     result = find_optimal_architecture(
         current_model=onnx.load(models[session_id]),
@@ -93,8 +95,10 @@ async def optimize(request: dict, session_id : str = Header(...)):
         max_epochs=epochs,
     )
     
-    optimized[session_id] = result["model_path"]
+    if "model_path" not in result:
+        return JSONResponse(content=result, status_code=400)
 
+    optimized[session_id] = result["model_path"]
     return JSONResponse(content=result)
 
 @app.get("/optimization-status/{session_id}")

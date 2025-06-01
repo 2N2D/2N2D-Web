@@ -10,7 +10,7 @@ export async function startOptimization(
     }
 
     try {
-        return await fetch("http://127.0.0.1:8000/optimize", {
+        const res = await fetch("http://127.0.0.1:8000/optimize", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -21,7 +21,9 @@ export async function startOptimization(
                 target_feature: targetFeature,
                 max_epochs: epochs,
             }),
-        });
+        })
+        return await res.json();
+
     } catch (error) {
         console.error("Error during optimization:", error);
         throw error;
@@ -53,7 +55,9 @@ export async function sendModel(formData: any) {
         });
 
         const response = await result.json();
+        console.log(response);
         sessionStorage.setItem("modelData", JSON.stringify(response));
+        sessionStorage.setItem("modelResponse", JSON.stringify(response));
         return response;
     } catch (error) {
         console.error("Upload failed", error);
@@ -73,6 +77,7 @@ export async function requestOptimized() {
 
         const data = await res.json();
         const {base64, filename} = data;
+
 
         const binary = atob(base64);
         const bytes = new Uint8Array(binary.length);

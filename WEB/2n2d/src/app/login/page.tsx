@@ -7,6 +7,7 @@ import {useRouter} from "next/navigation";
 import {logout} from "@/lib/auth/authentication";
 import "./style.css"
 import Styles from "@/components/SideBar.module.css";
+import ParticleNetwork from "@/components/visual/particleNetwork";
 
 export default function login() {
     const router = useRouter();
@@ -37,6 +38,7 @@ export default function login() {
     }, []);
 
     return <main>
+        <ParticleNetwork/>
         {loggedIn ? <div>
                 <h1>You are already logged in, would you like to log out?</h1>
                 <button onClick={() => {
@@ -52,8 +54,8 @@ export default function login() {
                 />
                 <h1>Welcome back!</h1>
                 <form onSubmit={attemptLogin}>
-                    <input type={"email"} placeholder={"Email"} required={true}/>
-                    <input type={"password"} placeholder={"Password"} required={true}/>
+                    <input name={"email"} type={"email"} placeholder={"Email"} required={true}/>
+                    <input name={"password"} type={"password"} placeholder={"Password"} required={true}/>
                     <input type={"submit"} value={"Login"}/>
                 </form>
                 <div className={mpAuthError ? "error" : "hidden"}>

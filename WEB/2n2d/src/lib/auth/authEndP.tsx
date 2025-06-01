@@ -30,7 +30,7 @@ export async function mailAndPass(mail: string, pass: string): Promise<string> {
     }
 }
 
-export async function registerMailAndPass(mail: string, pass: string): Promise<string> {
+export async function register(mail: string, pass: string): Promise<string> {
     try {
         await createUserWithEmailAndPassword(getAuth(initFirebaseApp()), mail, pass).then(async (userCredential) => {
             const user = userCredential.user;
@@ -41,7 +41,7 @@ export async function registerMailAndPass(mail: string, pass: string): Promise<s
         console.error(error);
         return "201";
     }
-    return "default"
+    return "200"
 }
 
 export async function google(): Promise<string> {

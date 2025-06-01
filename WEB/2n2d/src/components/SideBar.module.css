@@ -3,7 +3,6 @@
     flex-direction: column;
     height: 100vh;
     width: 4rem;
-    gap: 1rem;
     border-right: 0.2rem solid var(--border-color);
     background-color: var(--background-color);
     transition: 0.5s ease;
@@ -25,12 +24,13 @@
     padding: 0.5rem 1rem;
     width: 100%;
     gap: 1rem;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    /*border-top: 1px solid var(--border-color);*/
+    /*border-bottom: 1px solid var(--border-color);*/
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-color);
     transition: 0.2s;
+    border-radius: 0.4rem;
 }
 
 .tabBut:hover {
@@ -41,19 +41,40 @@
     background-color: var(--primary-color);
 }
 
+.closed .tabCat {
+    font-size: 0;
+    font-weight: bold;
+    width: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.tabCat {
+    width: 100%;
+    font-size: 1.1rem;
+    transition: 0.2s;
+    font-family: "Arial Black";
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    margin-left: 0.5rem;
+    color: var(--border-color)
+}
+
 
 .iconWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
-    width: 2rem; /* Fixed width to center icons consistently */
+    width: 2rem;
 }
 
 .tabText {
     overflow: hidden;
     white-space: nowrap;
     transition: opacity 0.3s ease, max-width 0.3s ease;
+    font-weight: bold;
 }
 
 .active {
@@ -67,7 +88,6 @@
     padding: 0.5rem;
     transition: 0.5s;
     z-index: 10;
-    background-color: var(--background-color);
 }
 
 .fileUploadContainer {
@@ -76,15 +96,20 @@
 }
 
 .logo {
-    height: 4rem;
+    height: 2rem;
     margin-bottom: 1.5rem;
     margin-top: 2rem;
     padding-inline: 1rem;
     fill: #4f46e5;
+    transition: 0.2s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .closed .logo {
-    height: 3.8rem;
+    height: 3rem;
     padding: 0.2rem;
 }
 
@@ -97,6 +122,10 @@
 .loginZone button i {
     color: red;
     font-size: 1rem;
+}
+
+.loginZone button {
+    cursor: pointer;
 }
 
 .warning {
