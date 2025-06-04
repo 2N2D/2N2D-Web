@@ -1,5 +1,5 @@
 .table tbody, .table th, .table tr, .table td {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--background-color);
     padding: 0.2rem;
 }
 
@@ -10,7 +10,7 @@
 
 .headerRow {
     background-color: var(--background-color);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--background-color);
     position: sticky;
     top: 0;
     z-index: 10;

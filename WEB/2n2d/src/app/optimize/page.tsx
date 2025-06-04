@@ -90,9 +90,9 @@ function Optimize() {
 
     return (
         <main className={"pageOpt"}>
-            <div className={"flex h-min-[80vh] w-full"}>
-                <div className={"h-min-[80vh] w-full flex flex-col"}>
-                    <form className={"optimizeForm area"} onSubmit={optimize}>
+            <div className={"flex  w-full gap-[0.1rem]"}>
+                <div className={"flex flex-col"} style={{width: "100%"}}>
+                    <form className={"optimizeForm area"} style={{width: "100%"}} onSubmit={optimize}>
                         <h2 className={"subtitle"}>Optimization settings</h2>
                         <div className={"formGroup"}>
                             <div className={"element"}>

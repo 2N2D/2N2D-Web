@@ -4,11 +4,13 @@ import React, {useState} from 'react';
 import {ask, exchange} from "@/lib/aiChat";
 import MessageDisplayer from "@/components/misc/messageDisplayer";
 import styles from "./Chat.module.css"
+import {usePathname} from "next/navigation";
 
 export default function Chat() {
     const [question, setQuestion] = useState<string>("");
     const [messages, setMessages] = useState<exchange[]>([])
     const [open, setOpen] = useState(false);
+    const pathname = usePathname();
 
     async function askQuestion() {
         if (!question)
@@ -18,6 +20,10 @@ export default function Chat() {
         setQuestion("");
     }
 
+    if (pathname == "/" || pathname == "/login" || pathname == "/signup" || pathname == "/handleMail")
+        return (
+            <></>
+        )
     return <div className={styles.chatContainer} style={{bottom: open ? "0" : "-45vh"}}>
         <button className={styles.toggle} onClick={() => {
             setOpen(!open);

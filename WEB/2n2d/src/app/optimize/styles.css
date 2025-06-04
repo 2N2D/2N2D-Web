@@ -1,12 +1,16 @@
 
-.page {
+.pageOpt {
     width: 100%;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    gap: 0.1rem;
 }
 
-.optimizeForm {
+.pageOpt .optimizeForm {
     gap: 1rem;
+    width: 100%;
+    display: flex;
 }
 
 .pageOpt .area {
@@ -15,6 +19,7 @@
     background-color: var(--card-background);
     padding: 1rem;
     border-radius: 0.4rem;
+    width: fit-content;
 }
 
 .formGroup {
@@ -22,6 +27,7 @@
     gap: 1rem;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .formGroup .element {
@@ -78,13 +84,13 @@
     border-bottom: 1px solid var(--border-color);
 }
 
-.uploadButton {
+.dataArea .uploadButton {
     background-color: var(--primary-color);
     padding: 0.7rem;
     border-radius: 0.4rem;
 }
 
-.deleteButton {
+.dataArea .deleteButton {
     background-color: #d62626;
     padding: 0.7rem;
     border-radius: 0.4rem;
@@ -147,7 +153,6 @@
     background-color: var(--background-color);
     padding: 2rem;
     border-radius: 0.4rem;
-    border: 1px solid var(--border-color);
     min-width: 40rem;
 }
 
@@ -201,7 +206,7 @@
 }
 
 .table tbody, .table th, .table tr, .table td {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--background-color);
     padding: 0.2rem;
 }
 
@@ -212,7 +217,7 @@
 
 .table th {
     background-color: var(--background-color);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--background-color);
     z-index: 10;
 }
 
@@ -235,6 +240,7 @@
     overflow: hidden;
     display: flex;
     justify-content: flex-start;
+    border-radius: 0.4rem;
 }
 
 .barWrapper {

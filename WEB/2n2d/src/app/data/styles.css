@@ -5,13 +5,18 @@
     justify-content: center;
 }
 
+.pageData {
+    gap: 0.1rem;
+    display: flex;
+    flex-direction: column;
+}
+
 .pageData .area {
     background-color: var(--card-background);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 1rem 0.5rem;
-    width: fit-content;
     border-radius: 0.4rem;
 }
 
@@ -44,15 +49,17 @@
     display: flex;
     gap: 5rem;
     padding: 0.2rem 1rem;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
-.uploadButton {
+.pageData .dataArea .uploadButton {
     background-color: var(--primary-color);
     padding: 0.7rem;
     border-radius: 0.4rem;
 }
 
-.deleteButton {
+.pageData .dataArea .deleteButton {
     background-color: #d62626;
     padding: 0.7rem;
     border-radius: 0.4rem;

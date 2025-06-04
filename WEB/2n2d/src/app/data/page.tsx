@@ -42,34 +42,43 @@ function Data() {
 
     return (
         <div className="pageData">
-            <div className="area">
-                <h3 className={"subtitle"}>Dataset Overview</h3>
-                <div className="dataSum">
-                    <div className="info">
-                        <h1>File</h1>
-                        <h2>{result == null ? "No file uploaded" : fileName}</h2>
+            <div className={"flex gap-[0.1rem] w-full"}>
+                <div className={"flex flex-col w-[50%] gap-[0.1rem]"}>
+                    <div className="area w-full gap-[1rem]">
+                        <h3 className={"subtitle"}>Dataset Overview</h3>
+                        <div className="dataSum">
+                            <div className="info">
+                                <h1>File</h1>
+                                <h2>{result == null ? "No file uploaded" : fileName}</h2>
+                            </div>
+                            <div className="info">
+                                <h1>Rows</h1>
+                                <h2>{result == null ? "-" : rowsNr}</h2>
+                            </div>
+                            <div className="info">
+                                <h1>Columns</h1>
+                                <h2>{result == null ? "-" : columnsNr}</h2>
+                            </div>
+                            <div className="info">
+                                <h1>Missing values</h1>
+                                <h2>{result == null ? "-" : missed}</h2>
+                            </div>
+                        </div>
                     </div>
-                    <div className="info">
-                        <h1>Rows</h1>
-                        <h2>{result == null ? "-" : rowsNr}</h2>
-                    </div>
-                    <div className="info">
-                        <h1>Columns</h1>
-                        <h2>{result == null ? "-" : columnsNr}</h2>
-                    </div>
-                    <div className="info">
-                        <h1>Missing values</h1>
-                        <h2>{result == null ? "-" : missed}</h2>
+
+                    <div className="area">
+                        <div className={"dataArea w-full"}>
+                            <CSVUploader callBack={handleNewData}/>
+                            <button className={"deleteButton"} onClick={clearData}>
+                                Clear Data <i className="fa-solid fa-trash-xmark"></i>
+                            </button>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="area">
-                <div className={"dataArea"}>
-                    <CSVUploader callBack={handleNewData}/>
-                    <button className={"deleteButton"} onClick={clearData}>
-                        Clear Data <i className="fa-solid fa-trash-xmark"></i>
-                    </button>
+                <div className={"area w-[50%] h-full"}>
+                    <h2 className={"subtitle"}>Analytical data tools</h2>
+                    <p>Coming soon</p>
                 </div>
             </div>
 

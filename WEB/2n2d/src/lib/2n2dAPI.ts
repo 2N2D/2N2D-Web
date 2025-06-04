@@ -1,5 +1,6 @@
 import {getSessionTokenHash} from "@/lib/auth/authentication";
 
+
 const endp = process.env.NEXT_PUBLIC_TWONTWOD_ENDPOINT
 
 export async function startOptimization(

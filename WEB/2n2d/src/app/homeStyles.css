@@ -23,6 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
     background-color: rgba(75, 0, 33, 0.16);
 }
 
@@ -37,7 +38,6 @@
 .area {
     background-color: var(--card-background);
     padding: 1rem;
-    border: 1px solid var(--border-color);
     border-radius: 1rem;
 }
 
@@ -45,7 +45,7 @@
     font-size: 1.1rem;
 }
 
-.area button, .area a {
+.hero button, .hero a {
     padding: 0.5rem 1rem;
     background-color: var(--primary-color);
     border-radius: 0.4rem;
@@ -57,7 +57,7 @@
     text-align: center;
 }
 
-.area button:hover, .area a:hover {
+.hero button:hover, .hero a:hover {
     transform: scale(1.02);
 }
 
@@ -68,7 +68,6 @@
     align-items: center;
     background-color: var(--card-background);
     padding: 1rem;
-    border: 1px solid var(--border-color);
     border-radius: 1rem;
     width: 40%;
 }
@@ -94,6 +93,7 @@
     align-items: center;
     padding: 2.5rem;
     border: none;
+    margin-inline: 10rem;
     background: linear-gradient(90deg, var(--background-color) 0%, var(--background-color) 50%, rgba(35, 35, 35, 0) 100%);
 }
 
