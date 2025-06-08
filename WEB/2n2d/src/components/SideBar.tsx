@@ -4,11 +4,13 @@ import React, {useState, useEffect} from "react";
 import {usePathname, useRouter} from "next/navigation";
 import Styles from "./SideBar.module.css";
 import {getSession, logout} from "@/lib/auth/authentication";
+import {currentSession} from "@/lib/sessionHandling/currentSession";
 
 const SideBar = () => {
     const [open, setOpen] = useState(false);
     const pathname = usePathname();
     const [logged, setLogged] = useState<boolean>(false);
+    const [sessionLoaded, setSessionLoaded] = useState<boolean>(false);
     const router = useRouter();
 
     async function checkLogged() {
@@ -21,8 +23,17 @@ const SideBar = () => {
         }
     }
 
+    function checkSession() {
+        if (currentSession != null) {
+            setSessionLoaded(true);
+        } else {
+            setSessionLoaded(false);
+        }
+    }
+
     useEffect(() => {
         checkLogged();
+        checkSession()
     }, [pathname]);
 
     return (
@@ -43,6 +54,23 @@ const SideBar = () => {
                         className={Styles.logo}
                     />
                 </button>
+
+                <button
+                    onClick={() => {
+                        router.push("/dash")
+                    }}
+                    className={
+                        pathname === "/dash"
+                            ? `${Styles.tabBut} ${Styles.active}`
+                            : Styles.tabBut
+                    }
+                >
+                    <span className={Styles.iconWrapper}>
+                        <i className="fa-solid fa-house"></i>
+                     </span>
+                    <span className={`${Styles.tabText}`}>Home</span>
+                </button>
+
                 <h2 className={Styles.tabCat}>Analise</h2>
                 <button
                     onClick={() => {
@@ -53,6 +81,7 @@ const SideBar = () => {
                             ? `${Styles.tabBut} ${Styles.active}`
                             : Styles.tabBut
                     }
+                    disabled={!sessionLoaded}
                 >
                     <span className={Styles.iconWrapper}>
                         <i className="fa-solid fa-chart-network"></i>
@@ -69,6 +98,7 @@ const SideBar = () => {
                             ? `${Styles.tabBut} ${Styles.active}`
                             : Styles.tabBut
                     }
+                    disabled={!sessionLoaded}
                 >
                     <span className={Styles.iconWrapper}>
                         <i className="fa-solid fa-chart-simple"></i>
@@ -85,6 +115,7 @@ const SideBar = () => {
                             ? `${Styles.tabBut} ${Styles.active}`
                             : Styles.tabBut
                     }
+                    disabled={!sessionLoaded}
                 >
                     <span className={Styles.iconWrapper}>
                         <i className="fa-solid fa-rabbit-running"></i>
@@ -92,10 +123,29 @@ const SideBar = () => {
                     <span className={`${Styles.tabText}`}>Optimization</span>
                 </button>
 
+
                 <div className={Styles.spacer}>
 
                 </div>
                 <div className={Styles.loginZone}>
+                    {logged ?
+                        <button
+                            onClick={() => {
+                                router.push("/profile")
+                            }}
+                            className={
+                                pathname === "/profile"
+                                    ? `${Styles.tabBut} ${Styles.active}`
+                                    : Styles.tabBut
+                            }
+                        >
+                            <span className={Styles.iconWrapper}>
+                                <i className="fa-solid fa-user"></i>
+                            </span>
+                            <span className={`${Styles.tabText}`}>Profile</span>
+                        </button> : ""
+                    }
+
                     {logged ?
                         <button className={Styles.tabBut} onClick={() => {
                             logout();

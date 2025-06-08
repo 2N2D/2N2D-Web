@@ -1,7 +1,7 @@
 import {pgTable, serial, text, json} from "drizzle-orm/pg-core"
 
 export const session = pgTable("session", {
-    id: serial("id").primaryKey().notNull(),
+    id: serial("id").primaryKey(),
     tokenHash: text("tokenhash").notNull(),
     userId: text("userid").notNull(),
     onnxName: text("onnxname"),

@@ -33,6 +33,10 @@
     border-radius: 0.4rem;
 }
 
+.tabBut:disabled {
+    color: var(--border-color);
+}
+
 .tabBut:hover {
     background-color: var(--card-background);
 }
@@ -58,7 +62,7 @@
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
     margin-left: 0.5rem;
-    color: var(--border-color)
+    color: var(--border-hover)
 }
 
 
@@ -117,10 +121,12 @@
     display: flex;
     width: 100%;
     padding: 0.5rem 0;
+    flex-direction: column;
+    background-color: var(--card-background);
 }
 
 .loginZone button i {
-    color: red;
+    color: white;
     font-size: 1rem;
 }
 

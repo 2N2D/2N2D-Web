@@ -25,7 +25,7 @@ export default function login() {
         const rez = await mailAndPass(email, password);
 
         if (rez === "200") {
-            router.push("/");
+            router.push("/dash");
         } else {
             setMPAuthError(true);
         }

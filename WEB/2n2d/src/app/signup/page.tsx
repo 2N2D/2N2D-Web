@@ -27,7 +27,7 @@ export default function signup() {
         const rez = await register(email, password);
         console.log(rez);
         if (rez === "200") {
-            router.push("/");
+            router.push("/profile");
         }
     }
 

@@ -20,7 +20,7 @@ export default function Chat() {
         setQuestion("");
     }
 
-    if (pathname == "/" || pathname == "/login" || pathname == "/signup" || pathname == "/handleMail")
+    if (pathname == "/" || pathname == "/login" || pathname == "/signup" || pathname == "/handleMail" || pathname == "/dash" || pathname == "/profile")
         return (
             <></>
         )

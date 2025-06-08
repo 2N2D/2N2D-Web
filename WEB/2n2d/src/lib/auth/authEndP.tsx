@@ -1,15 +1,16 @@
 "use client"
 import {
+    createUserWithEmailAndPassword,
     getAuth,
-    signInWithEmailAndPassword,
-    signInWithPopup,
     GoogleAuthProvider,
     isSignInWithEmailLink,
+    signInWithEmailAndPassword,
     signInWithEmailLink,
-    createUserWithEmailAndPassword
+    signInWithPopup
 } from "@firebase/auth";
 import {initFirebaseApp} from "@/lib/firebase/firebase.config";
 import {createSession} from "@/lib/auth/authentication";
+import crypto from 'crypto'
 
 export async function mailAndPass(mail: string, pass: string): Promise<string> {
     let user;
@@ -81,4 +82,12 @@ export async function magicLink(): Promise<string> {
         return "201"
     }
     return "default";
+}
+
+export async function getCurrentUserHash(): Promise<string> {
+    const user = getAuth(initFirebaseApp()).currentUser;
+    if (user != null) {
+        return crypto.createHash('sha256').update(user.uid).digest('hex');
+    } else
+        return "0";
 }
