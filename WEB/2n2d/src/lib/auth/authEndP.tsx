@@ -6,11 +6,12 @@ import {
     isSignInWithEmailLink,
     signInWithEmailAndPassword,
     signInWithEmailLink,
-    signInWithPopup
+    signInWithPopup,
+    UserCredential
 } from "@firebase/auth";
 import {initFirebaseApp} from "@/lib/firebase/firebase.config";
-import {createSession} from "@/lib/auth/authentication";
-import crypto from 'crypto'
+import {createSession, hash} from "@/lib/auth/authentication";
+import {createUser, getSpecificUser} from "@/lib/sessionHandling/sessionManager";
 
 export async function mailAndPass(mail: string, pass: string): Promise<string> {
     let user;
@@ -27,6 +28,7 @@ export async function mailAndPass(mail: string, pass: string): Promise<string> {
     } finally {
         if (user) {
             await createSession(await user.user.getIdToken());
+
         }
     }
 }
@@ -36,6 +38,7 @@ export async function register(mail: string, pass: string): Promise<string> {
         await createUserWithEmailAndPassword(getAuth(initFirebaseApp()), mail, pass).then(async (userCredential) => {
             const user = userCredential.user;
             await createSession(await user.getIdToken());
+            await createUser(mail, mail.split("@")[0]);
             return "200"
         })
     } catch (error) {
@@ -46,7 +49,7 @@ export async function register(mail: string, pass: string): Promise<string> {
 }
 
 export async function google(): Promise<string> {
-    let user;
+    let user: UserCredential;
     try {
         user = await signInWithPopup(getAuth(initFirebaseApp()), new GoogleAuthProvider());
         return "200";
@@ -54,8 +57,12 @@ export async function google(): Promise<string> {
         console.error(error);
         return "201";
     } finally {
+        // @ts-ignore
         if (user) {
-            await createSession(await user.user.getIdToken());
+            await createSession(await user.user.getIdToken()).finally(async () => {
+                if (await getSpecificUser(await hash(user.user.uid)) == null)
+                    await createUser(user.user.email!, user.user.email!.split("@")[0]);
+            });
         }
     }
 }
@@ -68,8 +75,12 @@ export async function magicLink(): Promise<string> {
     const auth = getAuth(initFirebaseApp());
     try {
         if (isSignInWithEmailLink(auth, window.location.href)) {
-            signInWithEmailLink(auth, email, window.location.href).then(async (result) => {
-                await createSession(await result.user.getIdToken());
+            signInWithEmailLink(auth, email, window.location.href).then(async (user) => {
+                await createSession(await user.user.getIdToken()).finally(async () => {
+                    if (await getSpecificUser(await hash(user.user.uid)) == null)
+                        await createUser(user.user.email!, user.user.email!.split("@")[0]);
+                });
+
                 return "200";
             }).catch((e) => {
                 console.error(e);
@@ -84,10 +95,3 @@ export async function magicLink(): Promise<string> {
     return "default";
 }
 
-export async function getCurrentUserHash(): Promise<string> {
-    const user = getAuth(initFirebaseApp()).currentUser;
-    if (user != null) {
-        return crypto.createHash('sha256').update(user.uid).digest('hex');
-    } else
-        return "0";
-}

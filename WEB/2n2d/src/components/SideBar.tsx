@@ -4,7 +4,6 @@ import React, {useState, useEffect} from "react";
 import {usePathname, useRouter} from "next/navigation";
 import Styles from "./SideBar.module.css";
 import {getSession, logout} from "@/lib/auth/authentication";
-import {currentSession} from "@/lib/sessionHandling/currentSession";
 
 const SideBar = () => {
     const [open, setOpen] = useState(false);
@@ -24,6 +23,7 @@ const SideBar = () => {
     }
 
     function checkSession() {
+        const currentSession = sessionStorage.getItem("currentSessionId");
         if (currentSession != null) {
             setSessionLoaded(true);
         } else {

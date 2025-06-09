@@ -6,7 +6,6 @@ import {getAuth} from 'firebase-admin/auth';
 import {redirect} from 'next/navigation';
 import crypto from 'crypto'
 
-
 const expiresIn = 60 * 60 * 24 * 14 * 1000;
 
 export async function createSession(token: string) {
@@ -21,6 +20,10 @@ export async function createSession(token: string) {
         httpOnly: true,
         secure: true
     });
+}
+
+export async function hash(thing: string) {
+    return crypto.createHash('sha256').update(thing).digest('hex');
 }
 
 export async function logout() {
@@ -54,7 +57,15 @@ export async function getSessionTokenHash(): Promise<string> {
             (await cookies()).get('session')?.value!,
             true
         ))
-    ) return crypto.createHash('sha256').update((await cookies()).get('session')?.value!).digest('hex');
+    ) return hash((await cookies()).get('session')?.value!);
     return '0';
 }
 
+export async function getCurrentUserHash(): Promise<string> {
+    const token = (await cookies()).get('session');
+    const user = await getAuth().verifySessionCookie(token?.value!, true);
+    if (user != null) {
+        return hash(user.uid);
+    } else
+        return "0";
+}

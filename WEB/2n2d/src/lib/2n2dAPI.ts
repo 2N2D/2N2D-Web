@@ -1,6 +1,5 @@
 import {getSessionTokenHash} from "@/lib/auth/authentication";
 
-
 const endp = process.env.NEXT_PUBLIC_TWONTWOD_ENDPOINT
 
 export async function startOptimization(
@@ -33,15 +32,16 @@ export async function startOptimization(
     }
 }
 
-export async function sendCSV(formData: any) {
+export async function sendCSV(filePath: string) {
     try {
         const result = await fetch(endp + "/upload-csv", {
-            headers: {"session-id": `${await getSessionTokenHash()}`},
+            headers: {"session-id": `${await getSessionTokenHash()}`, "Content-Type": "application/json"},
             method: "POST",
-            body: formData,
+            body: JSON.stringify({filepath: filePath})
         });
 
         const response = await result.json();
+        console.log(response);
         sessionStorage.setItem("csvData", JSON.stringify(response));
         return response;
     } catch (error) {

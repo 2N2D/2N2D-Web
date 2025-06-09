@@ -1,4 +1,6 @@
 import {sendCSV, sendModel} from "../2n2dAPI";
+import {getCurrentUserHash} from "@/lib/auth/authentication";
+import {UploadFile} from "@/lib/fileHandler/supaStorage";
 
 function readFileAsArrayBuffer(file) {
     return new Promise((resolve, reject) => {
@@ -28,17 +30,26 @@ function base64ToBlob(base64, mimeType) {
 }
 
 export async function uploadCSV(ev) {
+    // const file = ev.target.files[0];
+    // if (!file) return;
+    //
+    // // const arrayBuffer = await readFileAsArrayBuffer(file);
+    // // const base64 = arrayBufferToBase64(arrayBuffer);
+    // //
+    // // const blob = base64ToBlob(base64, "text/csv");
+    // const formData = new FormData();
+    // formData.append("file", file, file.name);
+    //
+    // return await sendCSV(formData);
+
     const file = ev.target.files[0];
     if (!file) return;
+    const currentSessionId = sessionStorage.getItem("currentSessionId");
+    if (!currentSessionId) return;
 
-    // const arrayBuffer = await readFileAsArrayBuffer(file);
-    // const base64 = arrayBufferToBase64(arrayBuffer);
-    //
-    // const blob = base64ToBlob(base64, "text/csv");
-    const formData = new FormData();
-    formData.append("file", file, file.name);
+    const path = await UploadFile(file, "csv", await getCurrentUserHash(), currentSessionId);
 
-    return await sendCSV(formData);
+    return await sendCSV(path)
 }
 
 export async function uploadONNX(ev) {

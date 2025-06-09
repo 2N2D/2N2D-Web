@@ -19,19 +19,25 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-geist-sans), Arial, serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.5;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .container {
+    position: relative;
+    top: 0;
+    left: 0;
     padding-left: 4rem;
     min-height: 100vh;
-    min-width: 99vw;
+    min-width: 100vw;
+
 }
 
 
@@ -57,13 +63,11 @@ footer {
 .title {
     font-size: xx-large;
     font-weight: bold;
-    font-family: Arial Black;
 }
 
 .subtitle {
     font-size: x-large;
     font-weight: bold;
-    font-family: Arial Black;
 }
 
 .logo {

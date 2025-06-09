@@ -1,7 +1,6 @@
 import os
 import io
 import base64
-import tempfile
 import logging
 import numpy as np
 import pandas as pd
@@ -9,10 +8,13 @@ import onnx
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import tempfile
 from torch.utils.data import TensorDataset, DataLoader
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import r2_score, mean_squared_error
+
+from FileHandler import (createTempFile)
 
 current_data = None
 
@@ -25,13 +27,9 @@ logging.basicConfig(
     ]
 )
 
-def load_onnx_model(base64_str):
+def load_onnx_model(file_bytes):
     try:
-        file_bytes = base64.b64decode(base64_str)
-
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".onnx") as temp_file:
-            temp_file.write(file_bytes)
-            temp_file_path = temp_file.name
+        temp_file_path = createTempFile(file_bytes, ".onnx")
 
         model = onnx.load(temp_file_path)
         graph = model.graph
@@ -84,14 +82,9 @@ def load_onnx_model(base64_str):
         return {"error": str(e)}
 
 
-def load_csv_data(base64_data, filename):
+def load_csv_data(binary_data, filename):
     try:
-        binary_data = base64.b64decode(base64_data)
-
-        temp_file_path = ""
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as temp_file:
-            temp_file.write(binary_data)
-            temp_file_path = temp_file.name
+        temp_file_path = createTempFile(binary_data, ".csv")
 
         data_io = io.BytesIO(binary_data)
         df = pd.read_csv(data_io)
@@ -290,7 +283,7 @@ def find_optimal_architecture(current_model, current_data, input_features, targe
         model_type = model_info.get('model_type', 'feedforward')
         input_size = model_info.get('input_size', 0)
         output_size = model_info.get('output_size', 1)
-        is_recurrent = model_info.get('is_recurrent', False)
+        # is_recurrent = model_info.get('is_recurrent', False)
 
         send_status({
             "status": f"Base model: {model_type}, {base_layers} layers, {base_neurons} neurons",

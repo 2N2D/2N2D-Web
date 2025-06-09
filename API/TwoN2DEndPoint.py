@@ -2,7 +2,7 @@
 # Add protection against spam
 # Add api key based access
 
-# run wtih uvicorn --app-dir . TwoN2DEndPoint:app --reload
+# run wtih uvicorn --app-dir . TwoN2DEndPoint:app --reload --log-level debug
 
 from fastapi import FastAPI, UploadFile, File, Request, HTTPException, Header
 from fastapi.responses import StreamingResponse
@@ -12,7 +12,7 @@ import asyncio
 import onnx
 import pandas as pd
 import json
-import base64
+from pydantic import BaseModel
 import os
 
 from TwoN2D import (
@@ -21,6 +21,15 @@ from TwoN2D import (
     find_optimal_architecture,
     download_optimized_model
 )
+
+from FileHandler import (
+    getFileBinaryData
+)
+
+
+class FilePathRequest(BaseModel):
+    filepath: str
+
 
 app = FastAPI()
 
@@ -38,41 +47,34 @@ models = {}
 data = {}
 optimized = {}
 
+
 @app.get("/")
 def root():
     return {"message": "2N2D API is running"}
 
-#Data handling
+
+# Data handling
 
 @app.post("/upload-model")
-async def upload_model(file: UploadFile = File(...), session_id : str = Header(...)):
-
-    if session_id in models and models[session_id] is not None:
-        os.remove(models[session_id])
-
-    contents = await file.read()
-    base64_str = base64.b64encode(contents).decode('utf-8')
-    result = load_onnx_model(base64_str)
-    models[session_id] = result["path"]
+async def upload_model(filePath: str, session_id: str = Header(...)):
+    binary_data = getFileBinaryData(filePath)
+    result = load_onnx_model(binary_data)
 
     return JSONResponse(content=result)
 
 
 @app.post("/upload-csv")
-async def upload_csv(file: UploadFile = File(...), session_id : str = Header(...)):
-
-    contents = await file.read()
-    base64_str = base64.b64encode(contents).decode('utf-8')
-    result = load_csv_data(base64_str, file.filename)
-    data[session_id] = result["path"]
-
+async def upload_csv(request: FilePathRequest, session_id: str = Header(...)):
+    binary_data = await getFileBinaryData(request.filepath, "csv")
+    print(request.filepath) 
+    result = load_csv_data(binary_data, os.path.basename(request.filepath))
     return JSONResponse(content=result)
 
 
-#Optimization service
+# Optimization service
 
 @app.post("/optimize")
-async def optimize(request: dict, session_id : str = Header(...)):
+async def optimize(request: dict, session_id: str = Header(...)):
     input_features = request.get("input_features")
     target_feature = request.get("target_feature")
     epochs = request.get("max_epochs")
@@ -85,7 +87,6 @@ async def optimize(request: dict, session_id : str = Header(...)):
     def status_callback(message):
         message_queues[session_id].append(message)
 
-
     result = find_optimal_architecture(
         current_model=onnx.load(models[session_id]),
         current_data=pd.read_csv(data[session_id]),
@@ -94,12 +95,13 @@ async def optimize(request: dict, session_id : str = Header(...)):
         status_callback=status_callback,
         max_epochs=epochs,
     )
-    
+
     if "model_path" not in result:
         return JSONResponse(content=result, status_code=400)
 
     optimized[session_id] = result["model_path"]
     return JSONResponse(content=result)
+
 
 @app.get("/optimization-status/{session_id}")
 async def stream_status(session_id: str, request: Request):
@@ -119,12 +121,13 @@ async def stream_status(session_id: str, request: Request):
 
     return StreamingResponse(event_generator(), media_type="text/event-stream")
 
+
 @app.get("/download-optimized")
-def download_optimized(session_id : str = Header(...)):
+def download_optimized(session_id: str = Header(...)):
     result = download_optimized_model(optimized[session_id])
     return JSONResponse(content=result)
 
 
 @app.post("/headerTest")
-def headerTest(session_id : str = Header(...)):
-    return {"session_id":session_id}
+def headerTest(session_id: str = Header(...)):
+    return {"session_id": session_id}

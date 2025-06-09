@@ -12,10 +12,12 @@
     "gen": "drizzle-kit generate"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.50.0",
     "@uiw/react-markdown-preview": "^5.1.4",
     "@uploadthing/react": "^7.3.1",
+    "dgram": "^1.0.1",
     "dotenv": "^16.5.0",
-    "drizzle-orm": "^0.44.1",
+    "drizzle-orm": "^0.44.2",
     "firebase": "^11.7.3",
     "firebase-admin": "^13.4.0",
     "groq-sdk": "^0.22.0",
@@ -25,7 +27,6 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-firebase-hooks": "^5.1.1",
-    "uploadthing": "^7.7.2",
     "vis-network": "^9.1.9"
   },
   "devDependencies": {

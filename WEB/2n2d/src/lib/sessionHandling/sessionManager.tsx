@@ -1,7 +1,8 @@
+"use server"
+
 import {session} from "@/db/schemas/session"
 import {user} from "@/db/schemas/user"
-import {getSessionTokenHash} from "@/lib/auth/authentication";
-import {getCurrentUserHash} from "@/lib/auth/authEndP";
+import {getSessionTokenHash, getCurrentUserHash} from "@/lib/auth/authentication";
 import {db} from "@/db/db";
 import {eq} from "drizzle-orm";
 
@@ -25,6 +26,13 @@ export async function deleteUser(id: number) {
 
 export async function getUser(): Promise<User> {
     let User = await db.select().from(user).where(eq(user.uid, await getCurrentUserHash()));
+    console.log(await getCurrentUserHash());
+    return User[0];
+}
+
+export async function getSpecificUser(uidHash: string): Promise<User | null> {
+    let User = await db.select().from(user).where(eq(user.uid, uidHash));
+    if (!User[0] || User[0] == null) return null;
     return User[0];
 }
 
@@ -32,7 +40,7 @@ export async function updateUser(newUser: User) {
     await db.update(user).set(newUser).where(eq(user.id, newUser.id));
 }
 
-export async function createSession(User: typeof user): Promise<Session> {
+export async function createSession(User: User): Promise<Session> {
     let newSession = await db.insert(session).values({
         userId: await getCurrentUserHash(),
         tokenHash: await getSessionTokenHash(),
