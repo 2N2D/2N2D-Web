@@ -5,6 +5,7 @@ import {user} from "@/db/schemas/user"
 import {getSessionTokenHash, getCurrentUserHash} from "@/lib/auth/authentication";
 import {db} from "@/db/db";
 import {eq} from "drizzle-orm";
+import {deleteFile} from "@/lib/fileHandler/supaStorage";
 
 export type Session = typeof session.$inferSelect;
 export type User = typeof user.$inferSelect;
@@ -24,9 +25,11 @@ export async function deleteUser(id: number) {
     await db.delete(user).where(eq(user.id, id));
 }
 
-export async function getUser(): Promise<User> {
-    let User = await db.select().from(user).where(eq(user.uid, await getCurrentUserHash()));
-    console.log(await getCurrentUserHash());
+export async function getUser(): Promise<User | string> {
+    const userHash = await getCurrentUserHash();
+    if (userHash == "0")
+        return "Not logged"
+    let User = await db.select().from(user).where(eq(user.uid, userHash));
     return User[0];
 }
 
@@ -52,7 +55,8 @@ export async function createSession(User: User): Promise<Session> {
         visResult: {},
         csvResult: {},
         optResult: {},
-        chat: {}
+        chat: {},
+        name: "New Session"
     }).returning()
 
     return newSession[0];
@@ -68,5 +72,14 @@ export async function updateSession(newSession: Session) {
 }
 
 export async function deleteSession(id: number) {
+    const ses = await getSession(id);
     await db.delete(session).where(eq(session.id, id));
+    if (ses.csvUrl && ses.csvUrl.length > 0)
+        await deleteFile("csv", ses.csvUrl);
+
+    if (ses.onnxUrl && ses.onnxUrl.length > 0)
+        await deleteFile("onnx", ses.onnxUrl);
+
+    if (ses.optimizedFileUrl && ses.optimizedFileUrl.length > 0)
+        await deleteFile("rezult", ses.optimizedFileUrl);
 }

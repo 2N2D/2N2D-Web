@@ -1,10 +1,13 @@
 "use client"
 import React, {useState, useEffect, FormEvent} from "react"
-import {requestOptimized, startOptimization} from "@/lib/2n2dAPI";
+import {startOptimization} from "@/lib/2n2dAPI";
+import {downloadFileRequest} from "@/lib/feHandler";
 import {getSessionTokenHash} from "@/lib/auth/authentication";
+import {getSession} from "@/lib/sessionHandling/sessionManager";
 import "./styles.css"
 import ONNXUploader from "@/components/fileUploadElements/ONNXUploader";
 import CSVUploader from "@/components/fileUploadElements/CSVUploader";
+import {deleteCsv, deleteOnnx} from "@/lib/sessionHandling/sessionUpdater";
 
 function Optimize() {
     const [features, setFeatures] = useState<string[]>([]);
@@ -13,6 +16,8 @@ function Optimize() {
     const [csvFileName, setCsvFileName] = useState<string>("");
     const [onnxFileName, setOnnxFileName] = useState<string>("");
     const [result, setResult] = useState<any>(null);
+    const [downloading, setDownloading] = useState<boolean>(false);
+    const [alert, setAlert] = useState<string | null>(null);
 
     async function statusUpdate() {
         const eventSource = new EventSource(`http://localhost:8000/optimization-status/${await getSessionTokenHash()}`);
@@ -25,13 +30,32 @@ function Optimize() {
         };
 
         eventSource.onerror = (err) => {
-            console.error("SSE error:", err);
+            console.log("SSE error:", err);
+            setAlert("Error connecting to server");
             eventSource.close();
         };
 
         return () => {
             eventSource.close();
         };
+    }
+
+    async function loadSession() {
+        if (sessionStorage.getItem("currentSessionId")) {
+            const session = await getSession(parseInt(sessionStorage.getItem("currentSessionId")!));
+            console.log(JSON.stringify(session.optResult))
+            if (session && session.optResult && JSON.stringify(session.optResult).length > 2 && JSON.stringify(session.optResult) != "null" && session.optResult.best_config) {
+                setResult(session?.optResult)
+                setProgress(100);
+                setStatus("Optimization finished");
+            } else {
+                setResult(null);
+                setProgress(-1);
+            }
+
+            setOnnxFileName(session?.onnxName!);
+            setCsvFileName(session?.csvName!);
+        }
     }
 
     function populateLists() {
@@ -44,7 +68,12 @@ function Optimize() {
             return;
         }
 
+        if (sessionStorage.getItem("modelData")!.length < 4 || sessionStorage.getItem("csvData")!.length < 4)
+            return;
+
         let csv = JSON.parse(sessionStorage.getItem("csvData")!);
+
+        console.log(JSON.stringify(result));
 
         setCsvFileName(csv.summary.filename);
 
@@ -58,12 +87,16 @@ function Optimize() {
     }
 
     useEffect(() => {
-        statusUpdate()
+        statusUpdate();
         populateLists();
+        loadSession();
     }, [])
 
     async function optimize(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
+
+        setAlert(null);
+
         const formData = new FormData(e.currentTarget);
         const featuresaux = formData.getAll("sIFeatures[]");
         let Ifeatures: String[] = [];
@@ -73,19 +106,33 @@ function Optimize() {
         const target = formData.get("target")?.toString()!;
         const maxEpochs = Number(formData.get("epochs"));
 
+        const sesId = sessionStorage.getItem("currentSessionId");
+        if (!sesId) return;
+        const session = await getSession(parseInt(sesId));
+        if (!session) return;
+
         setProgress(0);
         setStatus("Starting optimization...");
 
-        const _result = await startOptimization(Ifeatures, target, maxEpochs);
+        const _result = await startOptimization(Ifeatures, target, maxEpochs, parseInt(sesId), session.csvUrl!, session.onnxUrl!);
+
+        if (typeof _result === "string") {
+            setAlert(_result);
+            setProgress(-1);
+            setStatus("Error");
+        }
         setResult(_result);
-        console.log(result);
+        console.log(_result);
     }
 
     async function downloadOptimized() {
-        const file = await requestOptimized();
+        setDownloading(true);
+        if (!result) return;
 
-        if (file)
-            console.log(file);
+        let fileName = onnxFileName.split(".")[0] + "_optimized.onnx";
+        console.log(result.url);
+        await downloadFileRequest(result.url!, "rezult", fileName)
+        setDownloading(false);
     }
 
     return (
@@ -129,7 +176,13 @@ function Optimize() {
                         </div>
 
                         <input type="submit" id="opt-start-optimization" value="Start Optimization"
-                               disabled={progress > -1 && progress < 100 ? true : false}/>
+                               disabled={progress > -1 && progress < 100 && onnxFileName && csvFileName ? true : false}/>
+                        {
+                            alert != null ?
+                                <div className={"alert"}>
+                                    <h1>{alert}</h1>
+                                </div> : ""
+                        }
                     </form>
                     <div style={progress != -1 ? {width: "100%"} : {width: 0}}
                          className={`progressZone ${progress != -1 ? "area" : ""}`}>
@@ -151,8 +204,16 @@ function Optimize() {
                         <h1><b>ONNX file:</b> {onnxFileName}</h1>
                         <div className={"flex gap-[1rem]"}>
                             <ONNXUploader callBack={populateLists}/>
-                            <button className={"deleteButton"} onClick={() => {
+                            <button className={"deleteButton"} onClick={async () => {
+                                const curSesId = sessionStorage.getItem("currentSessionId");
+                                if (!curSesId) return;
+                                await deleteOnnx(parseInt(curSesId));
+
+                                sessionStorage.removeItem("modelResponse");
                                 sessionStorage.removeItem("modelData");
+                                sessionStorage.removeItem("modelName");
+
+                                await loadSession();
                                 populateLists()
                             }}>
                                 Clear Data <i className="fa-solid fa-trash-xmark"></i>
@@ -163,8 +224,14 @@ function Optimize() {
                         <h1><b>CSV file:</b> {csvFileName}</h1>
                         <div className={"flex gap-[1rem]"}>
                             <CSVUploader callBack={populateLists}/>
-                            <button className={"deleteButton"} onClick={() => {
+                            <button className={"deleteButton"} onClick={async () => {
+                                const curSesId = sessionStorage.getItem("currentSessionId");
+                                if (!curSesId) return;
+                                await deleteCsv(parseInt(curSesId));
+
                                 sessionStorage.removeItem("csvData");
+
+                                await loadSession();
                                 populateLists()
                             }}>
                                 Clear Data <i className="fa-solid fa-trash-xmark"></i>
@@ -176,57 +243,58 @@ function Optimize() {
                     <h1>Optimization</h1>
                 </div>
             </div>
-
-            <div className={`resultArea ${progress == 100 ? "area" : ""}`}
-                 style={progress == 100 ? {height: "100%"} : {height: 0}}>
-                <h1 className={"main subtitle"}>Optimization results:</h1>
-                <div className={"flex flex-col gap-[1rem] p-[1rem]"}>
-                    <h2 className={"subtitle"}>Best configuration:</h2>
-                    <div className={"result"}>
-                        <div className={"info"}><h2>Neurons:</h2> {result?.best_config.neurons}</div>
-                        <div className={"info"}><h2>Layers:</h2> {result?.best_config.layers}</div>
-                        <div className={"info"}><h2>Test loss:</h2> {result?.best_config.test_loss}</div>
-                        <div className={"info"}><h2>R2 score:</h2> {result?.best_config.r2_score}</div>
+            {result && JSON.stringify(result).length > 2 && JSON.stringify(result) != "null" && result != null && result && result.best_config ?
+                <div className={`resultArea ${progress == 100 ? "area" : ""}`}
+                     style={progress == 100 ? {height: "100%"} : {height: 0}}>
+                    <h1 className={"main subtitle"}>Optimization results:</h1>
+                    <div className={"flex flex-col gap-[1rem] p-[1rem]"}>
+                        <h2 className={"subtitle"}>Best configuration:</h2>
+                        <div className={"result"}>
+                            <div className={"info"}><h2>Neurons:</h2> {result?.best_config.neurons}</div>
+                            <div className={"info"}><h2>Layers:</h2> {result?.best_config.layers}</div>
+                            <div className={"info"}><h2>Test loss:</h2> {result?.best_config.test_loss}</div>
+                            <div className={"info"}><h2>R2 score:</h2> {result?.best_config.r2_score}</div>
+                        </div>
                     </div>
-                </div>
-                <table className={"table"}>
-                    <thead>
-                    <tr>
-                        <th>Configuration</th>
-                        <th>Neurons</th>
-                        <th>Layers</th>
-                        <th>Test loss:</th>
-                        <th>R2 score:</th>
-                    </tr>
-                    <tr>
-                        <td>Best config</td>
-                        <td>{result?.best_config.neurons}</td>
-                        <td>{result?.best_config.layers}</td>
-                        <td>{result?.best_config.test_loss}</td>
-                        <td>{result?.best_config.r2_score}</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {result?.results.map((res: {
-                        neurons: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined;
-                        layers: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined;
-                        test_loss: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined;
-                        r2_score: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined;
-                    }, i: number) =>
-                        <tr key={i}>
-                            <td>Config {i + 1}</td>
-                            <td>{res.neurons}</td>
-                            <td>{res.layers}</td>
-                            <td>{res.test_loss}</td>
-                            <td>{res.r2_score}</td>
-                        </tr>)}
-                    </tbody>
-                </table>
+                    <table className={"table"}>
+                        <thead>
+                        <tr>
+                            <th>Configuration</th>
+                            <th>Neurons</th>
+                            <th>Layers</th>
+                            <th>Test loss:</th>
+                            <th>R2 score:</th>
+                        </tr>
+                        <tr>
+                            <td>Best config</td>
+                            <td>{result?.best_config.neurons}</td>
+                            <td>{result?.best_config.layers}</td>
+                            <td>{result?.best_config.test_loss}</td>
+                            <td>{result?.best_config.r2_score}</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {result?.results.map((res: {
+                            neurons: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined;
+                            layers: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined;
+                            test_loss: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined;
+                            r2_score: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined;
+                        }, i: number) =>
+                            <tr key={i}>
+                                <td>Config {i + 1}</td>
+                                <td>{res.neurons}</td>
+                                <td>{res.layers}</td>
+                                <td>{res.test_loss}</td>
+                                <td>{res.r2_score}</td>
+                            </tr>)}
+                        </tbody>
+                    </table>
 
-                <button onClick={downloadOptimized}>Download optimized <i
-                    className="fa-solid fa-file-arrow-down"></i></button>
-            </div>
-
+                    <button onClick={downloadOptimized}
+                            disabled={downloading}>{downloading ? "Downloading..." : "Download optimized"} <i
+                        className="fa-solid fa-file-arrow-down"></i></button>
+                </div> : ""
+            }
         </main>
     )
 }

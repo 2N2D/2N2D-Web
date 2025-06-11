@@ -51,6 +51,7 @@ export async function getSession(path?: string): Promise<string> {
 }
 
 export async function getSessionTokenHash(): Promise<string> {
+    await initAdmin();
     if (
         (await cookies()).get('session') &&
         (await getAuth().verifySessionCookie(
@@ -62,7 +63,10 @@ export async function getSessionTokenHash(): Promise<string> {
 }
 
 export async function getCurrentUserHash(): Promise<string> {
+    await initAdmin();
     const token = (await cookies()).get('session');
+    if (!token?.value)
+        return "0"
     const user = await getAuth().verifySessionCookie(token?.value!, true);
     if (user != null) {
         return hash(user.uid);

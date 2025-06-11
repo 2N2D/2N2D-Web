@@ -13,4 +13,5 @@ export const session = pgTable("session", {
     csvResult: json("csvresult"),
     optResult: json("optresult"),
     chat: json("chat"),
+    name: text("name")
 });

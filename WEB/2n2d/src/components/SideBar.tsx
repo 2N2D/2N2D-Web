@@ -36,6 +36,12 @@ const SideBar = () => {
         checkSession()
     }, [pathname]);
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            checkSession();
+        }
+    }, [typeof window !== 'undefined' ? sessionStorage?.getItem("currentSessionId") : null]);
+
     return (
         <div>
             <div

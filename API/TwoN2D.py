@@ -16,8 +16,6 @@ from sklearn.metrics import r2_score, mean_squared_error
 
 from FileHandler import (createTempFile)
 
-current_data = None
-
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -71,12 +69,14 @@ def load_onnx_model(file_bytes):
             "node_count": len(graph.node)
         }
 
+        os.remove(temp_file_path)
+
         return {
             "nodes": nodes,
             "edges": edges,
             "summary": summary,
-            "path": temp_file_path
         }
+    
     except Exception as e:
         logging.exception("Failed to load ONNX model")
         return {"error": str(e)}
@@ -84,7 +84,6 @@ def load_onnx_model(file_bytes):
 
 def load_csv_data(binary_data, filename):
     try:
-        temp_file_path = createTempFile(binary_data, ".csv")
 
         data_io = io.BytesIO(binary_data)
         df = pd.read_csv(data_io)
@@ -96,23 +95,19 @@ def load_csv_data(binary_data, filename):
             "missing_values": df.isna().sum().to_dict(),
             "dtypes": {col: str(df[col].dtype) for col in df.columns}
         }
-        return {"data": df.head(50).to_dict('records'), "summary": summary, "path":temp_file_path}
+
+
+        return {"data": df.head(50).to_dict('records'), "summary": summary}
     except Exception as e:
         logging.exception("Failed to load CSV data")
         return {"error": str(e)}
 
 
-def analyze_onnx_model(model):
-    """
-    Analyze ONNX model to extract its architecture details.
-    
-    Args:
-        model: ONNX model
-        
-    Returns:
-        Dictionary with architecture information
-    """
+def analyze_onnx_model(model_bytes):
     try:
+        tempFilePath = createTempFile(model_bytes, ".onnx")
+        model = onnx.load(tempFilePath)
+        
         graph = model.graph
         input_shapes = {}
         output_shapes = {}
@@ -184,6 +179,8 @@ def analyze_onnx_model(model):
         else:
             hidden_size = max(64, input_features * 2)  # Reasonable default
         
+        os.remove(tempFilePath)
+
         return {
             "model_type": model_type,
             "input_size": input_features,
@@ -196,6 +193,7 @@ def analyze_onnx_model(model):
         }
     except Exception as e:
         logging.exception("Error analyzing ONNX model")
+        os.remove(tempFilePath)
         return {"error": str(e), "layers": 1, "neurons": 64}
 
 
@@ -256,7 +254,7 @@ class StructurePreservingModel(nn.Module):
         return x
 
 
-def find_optimal_architecture(current_model, current_data, input_features, target_feature, max_epochs=10, status_callback=None):
+def find_optimal_architecture(onnx_bytes, csv_bytes, input_features, target_feature, max_epochs=10, status_callback=None):
     
     def send_status(message):
         if status_callback:
@@ -268,16 +266,16 @@ def find_optimal_architecture(current_model, current_data, input_features, targe
         os.environ["CUDA_VISIBLE_DEVICES"] = ""
         torch.set_num_threads(4)  # Limit CPU threads for better stability
         
-        if current_data is None:
+        if csv_bytes is None:
             send_status({"status": "No data loaded", "error": True})
             return {"error": "No data loaded"}
 
-        if current_model is None:
+        if onnx_bytes is None:
             send_status({"status": "No ONNX model loaded", "error": True})
             return {"error": "No ONNX model loaded"}
 
         send_status({"status": "Analyzing model...", "progress": 5})
-        model_info = analyze_onnx_model(current_model)
+        model_info = analyze_onnx_model(onnx_bytes)
         base_layers = model_info.get('layers', 1)
         base_neurons = model_info.get('neurons', 64)
         model_type = model_info.get('model_type', 'feedforward')
@@ -287,9 +285,12 @@ def find_optimal_architecture(current_model, current_data, input_features, targe
 
         send_status({
             "status": f"Base model: {model_type}, {base_layers} layers, {base_neurons} neurons",
-            "progress": 10
+            "progress": 15
         })
-        df = current_data
+
+        data_io = io.BytesIO(csv_bytes)
+        df = pd.read_csv(data_io)
+
         missing_values = df[input_features + [target_feature]].isna().sum()
         if missing_values.sum() > 0:
             logging.warning(f"Found missing values in data: {missing_values[missing_values > 0]}")
@@ -443,7 +444,7 @@ def find_optimal_architecture(current_model, current_data, input_features, targe
         return {
             "results": results,
             "best_config": best_result,
-            "model_path": onnx_path
+            "model_path": onnx_path,
         }
     except Exception as e:
         logging.exception("Error in find_optimal_architecture")

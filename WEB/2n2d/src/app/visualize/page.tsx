@@ -3,8 +3,14 @@ import React, {useState} from "react";
 import "./styles.css";
 import {createVisualNetwork2D, categoryColorMap, getNodeCategory, nodes, edges} from "@/lib/feHandler";
 import ONNXUploader from "@/components/fileUploadElements/ONNXUploader";
+import {Session, updateSession, getSession} from "@/lib/sessionHandling/sessionManager";
+import {session} from "@/db/schemas/session";
+import {deleteOnnx} from "@/lib/sessionHandling/sessionUpdater";
 
 export default function visualize() {
+    //Session info
+    const [currentSession, setCurrentSession] = useState<Session | null>(null);
+
     //Onnx data
     const [result, setResult] = React.useState<any>(null);
     const [fileName, setFileName] = useState<string>("");
@@ -26,8 +32,9 @@ export default function visualize() {
 
     async function updateView() {
         let data = sessionStorage.getItem("modelData");
+
         setSelected(null);
-        if (!data) {
+        if (!data || data.length === 2) {
             setResult(null);
             if (!canvasRef.current) return;
 
@@ -37,6 +44,7 @@ export default function visualize() {
             }
             return;
         }
+
         data = JSON.parse(data);
         setResult(data);
         if (sessionStorage.getItem("modelName"))
@@ -50,8 +58,28 @@ export default function visualize() {
         if (ctx) {
             await createVisualNetwork2D(data, ctx, constantsEnabled, physicsEnabled, verticalView, handleSelect)
         }
-
     }
+
+    async function onLoad() {
+        let session = null
+        const sessionId = sessionStorage.getItem("currentSessionId");
+        if (sessionId) {
+            session = await getSession(parseInt(sessionId));
+            setCurrentSession(session);
+        } else return;
+
+        updateView();
+    }
+
+    // async function updateSessionData() {
+    //     console.log("Updating", currentSession)
+    //     if (!currentSession) return;
+    //     let auxSession = currentSession;
+    //     auxSession.visResult = result;
+    //     console.log(auxSession);
+    //     await updateSession(auxSession);
+    //     setCurrentSession(auxSession);
+    // }
 
     function titleFormat(title: string): any {
         // Trim and split the input into individual lines
@@ -163,19 +191,29 @@ export default function visualize() {
     }
 
     async function clearData() {
-        sessionStorage.removeItem("modelData");
+        const curSesId = sessionStorage.getItem("currentSessionId");
+        if (!curSesId) return;
+        await deleteOnnx(parseInt(curSesId));
+
         setResult(null);
         setSelected(null);
+        sessionStorage.removeItem("modelResponse");
+        sessionStorage.removeItem("modelData");
+        sessionStorage.removeItem("modelName");
         updateView();
     }
 
     React.useEffect(() => {
-        updateView();
+        onLoad();
     }, []);
 
     React.useEffect(() => {
         updateView();
     }, [constantsEnabled, physicsEnabled, verticalView]);
+
+    // React.useEffect(() => {
+    //     updateSessionData();
+    // }, [result])
 
     return (
         <main className="page">

@@ -1,9 +1,13 @@
 from supabase import create_client, Client
+from dotenv import load_dotenv
+import os
 import requests
 import tempfile
 
-SUPABASE_URL = "https://wprpxucfksxevfaxeskv.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndwcnB4dWNma3N4ZXZmYXhlc2t2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0ODk2NzkxMCwiZXhwIjoyMDY0NTQzOTEwfQ.NMCYGUMXHLUW0fnW1fb3v1x4lqZEMpGOI0ucr6Gt1WE" 
+load_dotenv()
+
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
@@ -19,11 +23,29 @@ async def getFileBinaryData(path:str, bucket:str):
   print(response)
   return response.content
 
-async def uploadFile(filePath, storagePath):
-  with open(filePath, "rb") as f:
-    file_data = f.read()
+async def uploadFile(filePath: str, storagePath: str, bucket: str = "rezult") -> str | None:
+    """
+    Uploads a file to Supabase storage, deleting the existing file if it exists.
+    Returns the public URL on success, None on failure.
+    """
+    try:
+        with open(filePath, "rb") as f:
+            file_data = f.read()
+        # Delete existing file (if it exists) - ignore errors if it doesn't exist
+        try:
+            supabase.storage.from_(bucket).remove([storagePath])
+        except:
+            pass
+        response = supabase.storage.from_(bucket).upload(path=storagePath, file=file_data, file_options={"upsert": False})
+        if response.error:
+            return None
 
-  supabase.storage.from_("rezult").upload(path=storagePath, file=file_data)
+        public_url = supabase.storage.from_(bucket).get_public_url(storagePath)
+        return public_url
+    except FileNotFoundError:
+        return None
+    except Exception as e:
+        return None
 
 def createTempFile(fileBytes, extension):
   with tempfile.NamedTemporaryFile(delete=False, suffix=extension) as temp_file:

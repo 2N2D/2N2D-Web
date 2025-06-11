@@ -3,13 +3,20 @@ import {dragUpload, uploadCSV} from "@/lib/fileHandler/fileUpload";
 
 export default function CSVUploader({callBack}: { callBack?: () => void }) {
     const [uploadState, setUploadState] = React.useState(false);
+    const [uploading, setUploading] = React.useState(false);
 
     async function _uploadCSV(e: any) {
+        const id = sessionStorage.getItem("currentSessionId");
+        if (!id) return;
         if (!e.target.files[0]) return;
-        await uploadCSV(e);
+        setUploading(true);
+        const rez = await uploadCSV(e, parseInt(id));
+        if (typeof rez === "string")
+            console.log(rez);
 
         if (callBack) callBack();
         e.target.value = "";
+        setUploading(false);
     }
 
     async function _uploadCSVDrop(e: any) {
@@ -26,8 +33,9 @@ export default function CSVUploader({callBack}: { callBack?: () => void }) {
                 setUploadState(true);
             }}
             className={"uploadButton"}
+            disabled={uploading}
         >
-            Load CSV File <i className="fa-solid fa-upload"></i>
+            {uploading ? "Uploading..." : <p>Load CSV File <i className="fa-solid fa-upload"></i></p>}
         </button>
         {uploadState ? (
             <div className={"popup"}>

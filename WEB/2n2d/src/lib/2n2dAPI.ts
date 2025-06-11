@@ -1,4 +1,5 @@
 import {getSessionTokenHash} from "@/lib/auth/authentication";
+import {updateData, updateVis, updateOptimize, updateCsvUrl, updateOnnxUrl} from "@/lib/sessionHandling/sessionUpdater";
 
 const endp = process.env.NEXT_PUBLIC_TWONTWOD_ENDPOINT
 
@@ -6,10 +7,22 @@ export async function startOptimization(
     selectedInputs: String[],
     targetFeature: String,
     epochs: number,
+    sessionId: number,
+    csvPath: string,
+    onnxPath: string,
 ) {
     if (!targetFeature) {
-        return;
+        return "No target feature selected";
     }
+
+    if (!selectedInputs || selectedInputs.length === 0)
+        return "No input features selected";
+
+    if (!csvPath || !onnxPath) {
+        return "No onnx or csv file selected";
+    }
+
+    updateOptimize(sessionId, "", null);
 
     try {
         const res = await fetch(endp + "/optimize", {
@@ -22,17 +35,21 @@ export async function startOptimization(
                 input_features: selectedInputs,
                 target_feature: targetFeature,
                 max_epochs: epochs,
+                session_id: sessionId,
+                csv_path: csvPath,
+                onnx_path: onnxPath,
             }),
         })
-        return await res.json();
+        const data = await res.json();
+        updateOptimize(sessionId, data.url, data);
 
+        return data;
     } catch (error) {
         console.error("Error during optimization:", error);
-        throw error;
     }
 }
 
-export async function sendCSV(filePath: string) {
+export async function sendCSV(filePath: string, sessionId: number) {
     try {
         const result = await fetch(endp + "/upload-csv", {
             headers: {"session-id": `${await getSessionTokenHash()}`, "Content-Type": "application/json"},
@@ -43,62 +60,31 @@ export async function sendCSV(filePath: string) {
         const response = await result.json();
         console.log(response);
         sessionStorage.setItem("csvData", JSON.stringify(response));
+        await updateData(sessionId, response);
+        await updateCsvUrl(sessionId, filePath);
         return response;
     } catch (error) {
         console.error("Upload failed", error);
     }
 }
 
-export async function sendModel(formData: any) {
+export async function sendModel(filePath: string, fileName: string, sessionId: number) {
     try {
         const result = await fetch(endp + "/upload-model", {
-            headers: {"session-id": `${await getSessionTokenHash()}`},
+            headers: {"session-id": `${await getSessionTokenHash()}`, "Content-Type": "application/json"},
             method: "POST",
-            body: formData,
+            body: JSON.stringify({filepath: filePath}),
         });
 
         const response = await result.json();
         console.log(response);
         sessionStorage.setItem("modelData", JSON.stringify(response));
         sessionStorage.setItem("modelResponse", JSON.stringify(response));
+        await updateVis(sessionId, response, fileName);
+        await updateOnnxUrl(sessionId, filePath);
         return response;
     } catch (error) {
         console.error("Upload failed", error);
     }
 }
 
-export async function requestOptimized() {
-    try {
-        const res = await fetch(endp + "/download-optimized", {
-            headers: {"session-id": `${await getSessionTokenHash()}`},
-            method: "GET",
-        });
-
-        if (!res.ok) {
-            throw new Error("Failed to fetch file");
-        }
-
-        const data = await res.json();
-        const {base64, filename} = data;
-
-
-        const binary = atob(base64);
-        const bytes = new Uint8Array(binary.length);
-        for (let i = 0; i < binary.length; i++) {
-            bytes[i] = binary.charCodeAt(i);
-        }
-
-        const blob = new Blob([bytes], {type: "application/octet-stream"});
-
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = filename || "download.onnx";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        return res.json;
-    } catch (error) {
-        console.error("Download failed", error);
-    }
-}

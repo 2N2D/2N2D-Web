@@ -5,6 +5,7 @@ import "./styles.css";
 import {dragUpload, uploadCSV} from "@/lib/fileHandler/fileUpload";
 import DataTable from "@/components/DataTable";
 import CSVUploader from "@/components/fileUploadElements/CSVUploader";
+import {deleteCsv} from "@/lib/sessionHandling/sessionUpdater";
 
 function Data() {
     const [message, setMessage] = useState("");
@@ -16,7 +17,7 @@ function Data() {
 
     function handleNewData() {
         const data = sessionStorage.getItem("csvData");
-        if (!data) return;
+        if (!data || data.length < 4) return;
         const _result = JSON.parse(data);
 
         setRowsNr(_result.summary.rows);
@@ -30,7 +31,11 @@ function Data() {
         setMissed(missing);
     }
 
-    function clearData() {
+    async function clearData() {
+        const curSesId = sessionStorage.getItem("currentSessionId");
+        if (!curSesId) return;
+        await deleteCsv(parseInt(curSesId));
+
         setResult(null);
         sessionStorage.removeItem("csvData");
     }

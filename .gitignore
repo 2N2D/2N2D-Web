@@ -50,3 +50,5 @@ pnpm-debug.log*
 *.tmp
 coverage/
 .cache/
+
+migrations/

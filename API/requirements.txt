@@ -5,3 +5,5 @@ scikit-learn
 pandas
 asyncio
 fastapi
+supabase
+python-dotenv

@@ -23,7 +23,8 @@ from TwoN2D import (
 )
 
 from FileHandler import (
-    getFileBinaryData
+    getFileBinaryData,
+    uploadFile
 )
 
 
@@ -43,9 +44,7 @@ app.add_middleware(
 )
 
 message_queues = {}
-models = {}
-data = {}
-optimized = {}
+
 
 
 @app.get("/")
@@ -56,8 +55,8 @@ def root():
 # Data handling
 
 @app.post("/upload-model")
-async def upload_model(filePath: str, session_id: str = Header(...)):
-    binary_data = getFileBinaryData(filePath)
+async def upload_model(request: FilePathRequest, session_id: str = Header(...)):
+    binary_data = await getFileBinaryData(request.filepath, "onnx")
     result = load_onnx_model(binary_data)
 
     return JSONResponse(content=result)
@@ -75,21 +74,34 @@ async def upload_csv(request: FilePathRequest, session_id: str = Header(...)):
 
 @app.post("/optimize")
 async def optimize(request: dict, session_id: str = Header(...)):
+    message_queues[session_id].append("Processing request...")
     input_features = request.get("input_features")
     target_feature = request.get("target_feature")
-    epochs = request.get("max_epochs")
+    epochs = request.get("max_epochs") 
+    sessionId = request.get("session_id")
+    csv_path = request.get("csv_path")
+    onnx_path = request.get("onnx_path")
 
-    if session_id not in models:
-        return "NO MODEL FOR USER"
-    if session_id not in message_queues:
-        message_queues[session_id] = []
+    print(csv_path)
+
+    message_queues[session_id].append({
+            "status": "Downloading csv data from database...",
+            "progress": 5
+        })
+    csv_binary = await getFileBinaryData(csv_path, "csv")
+
+    message_queues[session_id].append({
+            "status": "Downloading onnx data from database...",
+            "progress": 10
+        })
+    onnx_binary = await getFileBinaryData(onnx_path, "onnx")
 
     def status_callback(message):
         message_queues[session_id].append(message)
 
     result = find_optimal_architecture(
-        current_model=onnx.load(models[session_id]),
-        current_data=pd.read_csv(data[session_id]),
+        onnx_bytes=onnx_binary,
+        csv_bytes=csv_binary,
         input_features=input_features,
         target_feature=target_feature,
         status_callback=status_callback,
@@ -98,8 +110,11 @@ async def optimize(request: dict, session_id: str = Header(...)):
 
     if "model_path" not in result:
         return JSONResponse(content=result, status_code=400)
+    
+    filename =  os.path.basename(result["model_path"])
+    await uploadFile(result["model_path"], f"{session_id}/{sessionId}/{filename}")
+    result["url"]=f"{session_id}/{sessionId}/{filename}"
 
-    optimized[session_id] = result["model_path"]
     return JSONResponse(content=result)
 
 

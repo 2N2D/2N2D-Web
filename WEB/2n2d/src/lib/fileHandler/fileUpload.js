@@ -29,21 +29,42 @@ function base64ToBlob(base64, mimeType) {
     return new Blob([byteArray], {type: mimeType});
 }
 
-export async function uploadCSV(ev) {
-    // const file = ev.target.files[0];
-    // if (!file) return;
-    //
-    // // const arrayBuffer = await readFileAsArrayBuffer(file);
-    // // const base64 = arrayBufferToBase64(arrayBuffer);
-    // //
-    // // const blob = base64ToBlob(base64, "text/csv");
-    // const formData = new FormData();
-    // formData.append("file", file, file.name);
-    //
-    // return await sendCSV(formData);
-
+export async function uploadCSV(ev, id) {
     const file = ev.target.files[0];
-    if (!file) return;
+    if (!file) return "No file uploaded";
+
+    if (file.size > 52428799)
+        return "File too big";
+    const currentSessionId = sessionStorage.getItem("currentSessionId");
+    if (!currentSessionId) return;
+
+    const path = await UploadFile(file, "csv", await getCurrentUserHash(), currentSessionId);
+
+    return await sendCSV(path, id);
+}
+
+export async function uploadONNX(ev, id) {
+    const file = ev.target.files[0];
+    if (!file) return "No file uploaded";
+
+    if (file.size > 52428799)
+        return "File too big";
+
+    sessionStorage.setItem("modelName", file.name.toString());
+
+    const currentSessionId = sessionStorage.getItem("currentSessionId");
+    if (!currentSessionId) return "No active session";
+
+    const path = await UploadFile(file, "onnx", await getCurrentUserHash(), currentSessionId);
+
+    return await sendModel(path, file.name, id);
+}
+
+async function uploadCSVFile(file) {
+    if (!file) return "No file uploaded";
+
+    if (file.size > 52428799)
+        return "File too big";
     const currentSessionId = sessionStorage.getItem("currentSessionId");
     if (!currentSessionId) return;
 
@@ -52,40 +73,20 @@ export async function uploadCSV(ev) {
     return await sendCSV(path)
 }
 
-export async function uploadONNX(ev) {
-    const file = ev.target.files[0];
-    if (!file) return;
-
-    // const arrayBuffer = await readFileAsArrayBuffer(file);
-    // const base64 = arrayBufferToBase64(arrayBuffer);
-    //
-    // const blob = base64ToBlob(base64);
-    const formData = new FormData();
-    formData.append("file", file, file.name);
-    sessionStorage.setItem("modelName", file.name.toString());
-
-    return await sendModel(formData);
-}
-
-async function uploadCSVFile(file) {
-    if (!file) return;
-
-    const formData = new FormData();
-    formData.append("file", file, file.name);
-
-    sessionStorage.setItem("csvName", file.name);
-    return await sendCSV(formData);
-}
-
 async function uploadModelFile(file) {
-    if (!file) return;
+    if (!file) return "No file uploaded";
 
-    const formData = new FormData();
-    formData.append("file", file, file.name);
-
+    if (file.size > 52428799)
+        return "File too big";
 
     sessionStorage.setItem("modelName", file.name.toString());
-    return await sendModel(formData);
+
+    const currentSessionId = sessionStorage.getItem("currentSessionId");
+    if (!currentSessionId) return "No active session";
+
+    const path = await UploadFile(file, "onnx", await getCurrentUserHash(), currentSessionId);
+
+    return await sendModel(path);
 }
 
 export async function dragUpload(ev) {

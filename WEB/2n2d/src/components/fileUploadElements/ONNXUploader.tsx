@@ -3,11 +3,18 @@ import {dragUpload, uploadCSV, uploadONNX} from "@/lib/fileHandler/fileUpload";
 
 export default function ONNXUploader({callBack}: { callBack?: () => void }) {
     const [uploadState, setUploadState] = React.useState(false);
+    const [uploading, setUploading] = React.useState(false);
 
     async function _uploadONNX(e: any) {
-        await uploadONNX(e);
+        const id = sessionStorage.getItem("currentSessionId");
+        if (!id) return;
+
+        setUploading(true);
+        await uploadONNX(e, parseInt(id));
+
 
         if (callBack) callBack();
+        setUploading(false);
     }
 
     async function _uploadONNXDrop(e: any) {
@@ -24,7 +31,7 @@ export default function ONNXUploader({callBack}: { callBack?: () => void }) {
             }}
             className={"uploadButton"}
         >
-            Load ONNX File <i className="fa-solid fa-upload"></i>
+            {uploading ? "Uploading..." : <p>Load ONNX File <i className="fa-solid fa-upload"></i></p>}
         </button>
         {uploadState ? (
             <div className={"popup"}>
