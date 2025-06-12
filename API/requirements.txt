@@ -7,3 +7,4 @@ asyncio
 fastapi
 supabase
 python-dotenv
+urllib3<2
