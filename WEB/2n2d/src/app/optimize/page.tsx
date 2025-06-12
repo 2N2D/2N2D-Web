@@ -20,7 +20,7 @@ function Optimize() {
     const [alert, setAlert] = useState<string | null>(null);
 
     async function statusUpdate() {
-        const eventSource = new EventSource(`http://localhost:8000/optimization-status/${await getSessionTokenHash()}`);
+        const eventSource = new EventSource(`${process.env.NEXT_PUBLIC_TWONTWOD_ENDPOINT}/optimization-status/${await getSessionTokenHash()}`);
 
         eventSource.onmessage = (event) => {
             const data = JSON.parse(event.data);
@@ -31,7 +31,7 @@ function Optimize() {
 
         eventSource.onerror = (err) => {
             console.log("SSE error:", err);
-            setAlert("Error connecting to server");
+            // setAlert("Error connecting to server");
             eventSource.close();
         };
 
@@ -87,7 +87,6 @@ function Optimize() {
     }
 
     useEffect(() => {
-        statusUpdate();
         populateLists();
         loadSession();
     }, [])
@@ -115,6 +114,7 @@ function Optimize() {
         setStatus("Starting optimization...");
 
         const _result = await startOptimization(Ifeatures, target, maxEpochs, parseInt(sesId), session.csvUrl!, session.onnxUrl!);
+
 
         if (typeof _result === "string") {
             setAlert(_result);
