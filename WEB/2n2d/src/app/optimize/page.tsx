@@ -121,8 +121,11 @@ function Optimize() {
             setProgress(-1);
             setStatus("Error");
         }
+
+
         setResult(_result);
         console.log(_result);
+        loadSession();
     }
 
     async function downloadOptimized() {
