@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import {Geist, Geist_Mono, Oswald} from "next/font/google";
+import {Geist, Geist_Mono} from "next/font/google";
 import "@/lib/fontawesome/css/fa.css";
 import "./globals.css";
 import SideBar from "@/components/SideBar";
@@ -14,10 +14,6 @@ const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
 });
-
-const oswald = Oswald({
-    variable: "--font-oswald"
-})
 
 export const metadata: Metadata = {
     title: "2N2D",
@@ -43,7 +39,7 @@ export default function RootLayout({
                 src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TextGeometry.min.js"></script>
         </head>
         <body
-            className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
         >
         <SideBar/>
         <Chat/>

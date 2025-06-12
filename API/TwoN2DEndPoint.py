@@ -46,7 +46,6 @@ app.add_middleware(
 message_queues = {}
 
 
-
 @app.get("/")
 def root():
     return {"message": "2N2D API is running"}
@@ -65,7 +64,7 @@ async def upload_model(request: FilePathRequest, session_id: str = Header(...)):
 @app.post("/upload-csv")
 async def upload_csv(request: FilePathRequest, session_id: str = Header(...)):
     binary_data = await getFileBinaryData(request.filepath, "csv")
-    print(request.filepath) 
+    print(request.filepath)
     result = load_csv_data(binary_data, os.path.basename(request.filepath))
     return JSONResponse(content=result)
 
@@ -74,10 +73,13 @@ async def upload_csv(request: FilePathRequest, session_id: str = Header(...)):
 
 @app.post("/optimize")
 async def optimize(request: dict, session_id: str = Header(...)):
+    if session_id not in message_queues:
+        message_queues[session_id] = []
     message_queues[session_id].append("Processing request...")
+
     input_features = request.get("input_features")
     target_feature = request.get("target_feature")
-    epochs = request.get("max_epochs") 
+    epochs = request.get("max_epochs")
     sessionId = request.get("session_id")
     csv_path = request.get("csv_path")
     onnx_path = request.get("onnx_path")
@@ -85,15 +87,15 @@ async def optimize(request: dict, session_id: str = Header(...)):
     print(csv_path)
 
     message_queues[session_id].append({
-            "status": "Downloading csv data from database...",
-            "progress": 5
-        })
+        "status": "Downloading csv data from database...",
+        "progress": 5
+    })
     csv_binary = await getFileBinaryData(csv_path, "csv")
 
     message_queues[session_id].append({
-            "status": "Downloading onnx data from database...",
-            "progress": 10
-        })
+        "status": "Downloading onnx data from database...",
+        "progress": 10
+    })
     onnx_binary = await getFileBinaryData(onnx_path, "onnx")
 
     def status_callback(message):
@@ -110,16 +112,19 @@ async def optimize(request: dict, session_id: str = Header(...)):
 
     if "model_path" not in result:
         return JSONResponse(content=result, status_code=400)
-    
-    filename =  os.path.basename(result["model_path"])
+
+    filename = os.path.basename(result["model_path"])
     await uploadFile(result["model_path"], f"{session_id}/{sessionId}/{filename}")
-    result["url"]=f"{session_id}/{sessionId}/{filename}"
+    result["url"] = f"{session_id}/{sessionId}/{filename}"
 
     return JSONResponse(content=result)
 
 
 @app.get("/optimization-status/{session_id}")
 async def stream_status(session_id: str, request: Request):
+    if session_id not in message_queues:
+        message_queues[session_id] = []
+
     queue = message_queues.get(session_id)
     if queue is None:
         queue = []
@@ -135,6 +140,7 @@ async def stream_status(session_id: str, request: Request):
             await asyncio.sleep(0.1)
 
     return StreamingResponse(event_generator(), media_type="text/event-stream")
+
 
 
 @app.get("/download-optimized")

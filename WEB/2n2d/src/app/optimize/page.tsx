@@ -30,8 +30,12 @@ function Optimize() {
         };
 
         eventSource.onerror = (err) => {
+<<<<<<< Updated upstream
             console.log("SSE error:", err);
             // setAlert("Error connecting to server");
+=======
+            console.error("SSE error:", err);
+>>>>>>> Stashed changes
             eventSource.close();
         };
 
@@ -44,7 +48,7 @@ function Optimize() {
         if (sessionStorage.getItem("currentSessionId")) {
             const session = await getSession(parseInt(sessionStorage.getItem("currentSessionId")!));
             console.log(JSON.stringify(session.optResult))
-            if (session && session.optResult && JSON.stringify(session.optResult).length > 2 && JSON.stringify(session.optResult) != "null" && session.optResult.best_config) {
+            if (session && session.optResult && JSON.stringify(session.optResult).length > 2 && JSON.stringify(session.optResult) != "null" && (session.optResult as any).best_config) {
                 setResult(session?.optResult)
                 setProgress(100);
                 setStatus("Optimization finished");
@@ -87,6 +91,10 @@ function Optimize() {
     }
 
     useEffect(() => {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         populateLists();
         loadSession();
     }, [])
@@ -114,6 +122,7 @@ function Optimize() {
         setStatus("Starting optimization...");
 
         const _result = await startOptimization(Ifeatures, target, maxEpochs, parseInt(sesId), session.csvUrl!, session.onnxUrl!);
+        statusUpdate();
 
 
         if (typeof _result === "string") {
@@ -124,6 +133,8 @@ function Optimize() {
 
 
         setResult(_result);
+        setProgress(100);
+        setStatus("Optimization finished");
         console.log(_result);
         loadSession();
     }
@@ -179,7 +190,7 @@ function Optimize() {
                         </div>
 
                         <input type="submit" id="opt-start-optimization" value="Start Optimization"
-                               disabled={progress > -1 && progress < 100 && onnxFileName && csvFileName ? true : false}/>
+                               disabled={!!(progress > -1 && progress < 100 && onnxFileName && csvFileName)}/>
                         {
                             alert != null ?
                                 <div className={"alert"}>
@@ -246,7 +257,7 @@ function Optimize() {
                     <h1>Optimization</h1>
                 </div>
             </div>
-            {result && JSON.stringify(result).length > 2 && JSON.stringify(result) != "null" && result != null && result && result.best_config ?
+            {result && JSON.stringify(result).length > 2 && JSON.stringify(result) != "null" && true && result && result.best_config ?
                 <div className={`resultArea ${progress == 100 ? "area" : ""}`}
                      style={progress == 100 ? {height: "100%"} : {height: 0}}>
                     <h1 className={"main subtitle"}>Optimization results:</h1>

@@ -19,7 +19,7 @@ export default function Profile() {
         }
 
         const _user = await getUser();
-        if (!_user) {
+        if (!_user || typeof _user === "string") {
             router.push("/");
             return;
         }
@@ -38,7 +38,7 @@ export default function Profile() {
         setUser(updatedUser);
     }
 
-    function handleLogout() {
+    async function handleLogout() {
         sessionStorage.removeItem("currentSessionId");
         await logout();
         router.push("/login");

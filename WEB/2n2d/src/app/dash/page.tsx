@@ -247,19 +247,23 @@ export default function dash() {
                     <div>
                         <h1 className={"subtitle"}> Optimization</h1>
                         {
-                            JSON.stringify(currentSession.optResult).length > 2 && currentSession.optResult.best_config ?
+                            currentSession && currentSession.optResult && JSON.stringify(currentSession.optResult).length > 2 && (currentSession.optResult as any).best_config ?
                                 <div className={"resultArea"}>
                                     <div className={"flex flex-col gap-[1rem] p-[1rem]"}>
                                         <h2 className={"subtitle"}>Best configuration:</h2>
                                         <div className={"result"}>
                                             <div className={"info"}>
-                                                <h2>Neurons:</h2> {currentSession.optResult.best_config.neurons}</div>
+                                                <h2>Neurons:</h2> {(currentSession.optResult as any).best_config.neurons}
+                                            </div>
                                             <div className={"info"}>
-                                                <h2>Layers:</h2> {currentSession.optResult.best_config.layers}</div>
+                                                <h2>Layers:</h2> {(currentSession.optResult as any).best_config.layers}
+                                            </div>
                                             <div className={"info"}><h2>Test
-                                                loss:</h2> {currentSession.optResult.best_config.test_loss}</div>
+                                                loss:</h2> {(currentSession.optResult as any).best_config.test_loss}
+                                            </div>
                                             <div className={"info"}><h2>R2
-                                                score:</h2> {currentSession.optResult.best_config.r2_score}</div>
+                                                score:</h2> {(currentSession.optResult as any).best_config.r2_score}
+                                            </div>
                                         </div>
                                     </div>
                                     <button onClick={downloadOptimized}
