@@ -67,7 +67,7 @@ export default function dash() {
     }
 
     async function createView() {
-        if (currentSession && currentSession.visResult && currentSession.visResult.nodes && JSON.stringify(currentSession?.visResult).length > 2) {
+        if (currentSession && currentSession.visResult && (currentSession.visResult as any).nodes && JSON.stringify(currentSession?.visResult).length > 2) {
             const ctx = canvasRef.current;
             if (ctx) {
                 await createVisualNetwork2D(currentSession!.visResult, ctx, false, false, false, () => {
