@@ -19,7 +19,7 @@ export default function Profile() {
         }
 
         const _user = await getUser();
-        if (!_user || typeof _user === "string") {
+        if (!_user || typeof _user == "string") {
             router.push("/");
             return;
         }

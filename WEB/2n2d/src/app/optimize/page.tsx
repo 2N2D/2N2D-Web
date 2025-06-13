@@ -30,16 +30,8 @@ function Optimize() {
         };
 
         eventSource.onerror = (err) => {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             console.log("SSE error:", err);
             // setAlert("Error connecting to server");
-=======
-            console.error("SSE error:", err);
->>>>>>> Stashed changes
-=======
-            console.error("SSE error:", err);
->>>>>>> Stashed changes
             eventSource.close();
         };
 
@@ -95,14 +87,6 @@ function Optimize() {
     }
 
     useEffect(() => {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
         populateLists();
         loadSession();
     }, [])
@@ -131,15 +115,11 @@ function Optimize() {
 
         const _result = await startOptimization(Ifeatures, target, maxEpochs, parseInt(sesId), session.csvUrl!, session.onnxUrl!);
         statusUpdate();
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
         if (typeof _result === "string") {
             setAlert(_result);
             setProgress(-1);
-            setStatus("Error");
+            setStatus("Error: " + _result);
         }
 
 

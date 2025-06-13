@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
     subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
     title: "2N2D",
     description: "Neural Network Development Dashboard",
@@ -39,7 +40,7 @@ export default function RootLayout({
                 src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TextGeometry.min.js"></script>
         </head>
         <body
-            className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
         <SideBar/>
         <Chat/>

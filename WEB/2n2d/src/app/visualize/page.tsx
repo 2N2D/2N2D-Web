@@ -54,6 +54,9 @@ export default function visualize() {
 
         if (!canvasRef.current) return;
 
+        if (!(data as any).nodes)
+            return;
+
         const ctx = canvasRef.current;
         if (ctx) {
             await createVisualNetwork2D(data, ctx, constantsEnabled, physicsEnabled, verticalView, handleSelect)
@@ -65,8 +68,16 @@ export default function visualize() {
         const sessionId = sessionStorage.getItem("currentSessionId");
         if (sessionId) {
             session = await getSession(parseInt(sessionId));
-            setCurrentSession(session);
-        } else return;
+            if ((session.visResult as any).nodes && (session.visResult as any).summary) {
+                setCurrentSession(session);
+                setResult(session.visResult);
+            }
+
+        } else {
+            setCurrentSession(null);
+            setResult(null);
+            return;
+        }
 
         updateView();
     }
@@ -227,7 +238,7 @@ export default function visualize() {
                             <h3 className={"subtitle"}>Model Details</h3>
                             <i className="fa-solid fa-caret-down"></i>
                         </div>
-                        {result == null ? (
+                        {result == null || !result.summary ? (
                             "No model loaded"
                         ) : (
                             <div className={"overflow-y-auto max-h-[100vh]"}>

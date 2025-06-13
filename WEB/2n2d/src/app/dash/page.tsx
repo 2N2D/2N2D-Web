@@ -67,7 +67,7 @@ export default function dash() {
     }
 
     async function createView() {
-        if (currentSession && JSON.stringify(currentSession?.visResult).length > 2) {
+        if (currentSession && currentSession.visResult && currentSession.visResult.nodes && JSON.stringify(currentSession?.visResult).length > 2) {
             const ctx = canvasRef.current;
             if (ctx) {
                 await createVisualNetwork2D(currentSession!.visResult, ctx, false, false, false, () => {
@@ -247,7 +247,7 @@ export default function dash() {
                     <div>
                         <h1 className={"subtitle"}> Optimization</h1>
                         {
-                            currentSession && currentSession.optResult && JSON.stringify(currentSession.optResult).length > 2 && (currentSession.optResult as any).best_config ?
+                            JSON.stringify(currentSession.optResult).length > 2 && (currentSession.optResult as any).best_config ?
                                 <div className={"resultArea"}>
                                     <div className={"flex flex-col gap-[1rem] p-[1rem]"}>
                                         <h2 className={"subtitle"}>Best configuration:</h2>
