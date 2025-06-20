@@ -1,4 +1,5 @@
-import React from "react"
+"use client"
+import React, {useEffect, useRef} from "react"
 import {exchange} from "@/lib/aiChat";
 import styles from "./messageDisplayer.module.css";
 import Message from "@/components/misc/message"
@@ -8,7 +9,13 @@ interface props {
 }
 
 const MessageDisplayer = ({messages}: props) => {
-    return <div className={styles.container}>
+    const ref = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.scrollTo({top: ref.current.scrollHeight, left: 0, behavior: 'auto'});
+        }
+    }, [messages]);
+    return <div className={styles.container} ref={ref}>
         {messages?.map((m, i) => (
             <div key={i}>
                 <Message icon={"fa-solid fa-user"} sender={"You"} content={m.question}/>

@@ -11,10 +11,19 @@
     top: 0;
     left: 0;
     z-index: 20;
+    overflow: hidden;
 }
 
 .container:hover {
     width: 15rem;
+}
+
+.container:hover .tabText {
+    font-size: 1rem;
+}
+
+.container:hover .tabBut {
+    gap: 1rem;
 }
 
 .tabBut {
@@ -23,7 +32,7 @@
     justify-content: space-between;
     padding: 0.5rem 1rem;
     width: 100%;
-    gap: 1rem;
+
     /*border-top: 1px solid var(--border-color);*/
     /*border-bottom: 1px solid var(--border-color);*/
     font-size: 0.875rem;
@@ -77,8 +86,11 @@
 .tabText {
     overflow: hidden;
     white-space: nowrap;
-    transition: opacity 0.3s ease, max-width 0.3s ease;
+    transition: 0.2s;
     font-weight: bold;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .active {

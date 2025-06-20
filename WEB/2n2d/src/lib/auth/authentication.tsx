@@ -31,23 +31,34 @@ export async function logout() {
 }
 
 export async function getSession(path?: string): Promise<string> {
-    await initAdmin();
-    if (
-        (await cookies()).get('session') &&
-        (await getAuth().verifySessionCookie(
-            (await cookies()).get('session')?.value!,
-            true
-        ))
-    ) {
-        if (path) {
-            redirect(path);
-        }
-        return '200';
-    } else {
-        return '401';
-    }
+    try {
+        await initAdmin();
+        const sessionCookie = (await cookies()).get('session')?.value;
 
-    return '0';
+        if (sessionCookie) {
+            try {
+                await getAuth().verifySessionCookie(sessionCookie, true);
+
+                if (path) {
+                    redirect(path);
+                }
+                return '200';
+            } catch (error) {
+                // @ts-ignore
+                if (error.code === 'auth/session-cookie-expired') {
+                    (await cookies()).delete('session');
+                    console.log("Session cookie expired and has been removed.");
+                }
+
+                return '401';
+            }
+        } else {
+            return '401'; // No session cookie
+        }
+    } catch (error) {
+        console.error("Error while checking session:", error);
+        return '500'; // General error code if something goes wrong
+    }
 }
 
 export async function getSessionTokenHash(): Promise<string> {

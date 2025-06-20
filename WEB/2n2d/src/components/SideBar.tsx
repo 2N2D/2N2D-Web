@@ -128,11 +128,58 @@ const SideBar = () => {
                     </span>
                     <span className={`${Styles.tabText}`}>Optimization</span>
                 </button>
+                <button
+                    onClick={() => {
+                        router.push("/modeltest")
+                    }}
+                    className={
+                        pathname === "/modeltest"
+                            ? `${Styles.tabBut} ${Styles.active}`
+                            : Styles.tabBut
+                    }
+                    disabled={!sessionLoaded}
+                >
+                    <span className={Styles.iconWrapper}>
+                        <i className="fa-solid fa-chart-scatter"></i>
+                    </span>
+                    <span className={`${Styles.tabText}`}>Test</span>
+                </button>
 
 
-                <div className={Styles.spacer}>
+                <div className={Styles.spacer}/>
 
-                </div>
+                <h2 className={Styles.tabCat}>Info</h2>
+                <button
+                    onClick={() => {
+                        router.push("/learn")
+                    }}
+                    className={
+                        pathname === "/learn"
+                            ? `${Styles.tabBut} ${Styles.active}`
+                            : Styles.tabBut
+                    }
+                >
+                    <span className={Styles.iconWrapper}>
+                        <i className="fa-solid fa-book-open-cover"></i>
+                    </span>
+                    <span className={`${Styles.tabText}`}>Learn</span>
+                </button>
+                <button
+                    onClick={() => {
+                        router.push("/docs")
+                    }}
+                    className={
+                        pathname === "/docs"
+                            ? `${Styles.tabBut} ${Styles.active}`
+                            : Styles.tabBut
+                    }
+                >
+                    <span className={Styles.iconWrapper}>
+                        <i className="fa-solid fa-books"></i>
+                    </span>
+                    <span className={`${Styles.tabText}`}>Docs</span>
+                </button>
+
                 <div className={Styles.loginZone}>
                     {logged ?
                         <button

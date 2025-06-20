@@ -2,10 +2,10 @@
 
 import React, {useState, useEffect} from "react";
 import "./styles.css";
-import {dragUpload, uploadCSV} from "@/lib/fileHandler/fileUpload";
 import DataTable from "@/components/DataTable";
 import CSVUploader from "@/components/fileUploadElements/CSVUploader";
 import {deleteCsv} from "@/lib/sessionHandling/sessionUpdater";
+import {motion} from "framer-motion";
 
 function Data() {
     const [message, setMessage] = useState("");
@@ -46,7 +46,8 @@ function Data() {
     }, [])
 
     return (
-        <div className="pageData">
+        <motion.div className="pageData" transition={{delay: 0.4, duration: 0.2, ease: "easeOut"}}
+                    initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}>
             <div className={"flex gap-[0.1rem] w-full"}>
                 <div className={"flex flex-col w-[50%] gap-[0.1rem]"}>
                     <div className="area w-full gap-[1rem]">
@@ -91,7 +92,7 @@ function Data() {
                 <DataTable result={result}/>
             </div>
 
-        </div>
+        </motion.div>
     );
 }
 

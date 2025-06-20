@@ -91,21 +91,20 @@
 .sessionsArea .sessions .button .largeIcon {
     font-size: 8rem;
     color: var(--primary-color);
-    transition: 0.2s;
+    transition: 0.2s ease-in-out;
 }
 
-.sessionsArea .sessions .button:hover {
-    transform: scale(1.05);
-    background-color: var(--primary-color);
-    color: var(--card-background);
-}
+/*.sessionsArea .sessions .button:hover {*/
+/*    transform: scale(1.05) rotate(2deg);*/
+/*    background-color: var(--primary-color);*/
+/*    color: var(--card-background);*/
+/*}*/
 
 .sessionsArea .sessions .button:hover .largeIcon {
     color: var(--card-background);
 }
 
 .sessionArea .deleteArea .deleteButton i {
-    color: var(--error-color);
     font-size: 1.5rem;
 }
 
@@ -115,6 +114,31 @@
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
+    transition: 0.2s;
+}
+
+.sessionsArea .deleteArea .deleteButton:hover {
+    animation: shake 0.3s;
+    background-color: var(--error-color);
+    color: var(--background-color)
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    50% {
+        transform: translateX(3px);
+    }
+    75% {
+        transform: translateX(-3px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
 }
 
 
@@ -138,6 +162,7 @@
     gap: 10rem;
     align-items: center;
     padding: 3rem;
+    width: 100%;
 }
 
 .currentSessionInfo .element .networkPreview {
@@ -216,7 +241,7 @@
     background-color: var(--background-color);
     padding: 2rem;
     border-radius: 0.4rem;
-    min-width: 40rem;
+    min-width: 39rem;
 }
 
 .resultArea .result .info {

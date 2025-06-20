@@ -160,7 +160,7 @@
     background-color: var(--background-color);
     padding: 2rem;
     border-radius: 0.4rem;
-    min-width: 40rem;
+    min-width: 39rem;
 }
 
 .result h2 {

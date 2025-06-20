@@ -136,7 +136,6 @@ async def stream_status(session_id: str, request: Request):
 
     return StreamingResponse(event_generator(), media_type="text/event-stream")
 
-
 @app.get("/download-optimized")
 def download_optimized(session_id: str = Header(...)):
     result = download_optimized_model(optimized[session_id])

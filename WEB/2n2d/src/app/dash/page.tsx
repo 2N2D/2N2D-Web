@@ -1,19 +1,20 @@
 "use client"
 
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useRouter} from "next/navigation";
 import "./styles.css";
 import ParticleNetwork from "@/components/visual/particleNetwork";
 import {
-    getUser,
-    User,
     createSession,
+    deleteSession,
     getSession,
+    getUser,
     Session,
     updateUser,
-    deleteSession
+    User
 } from "@/lib/sessionHandling/sessionManager";
 import {updateName} from "@/lib/sessionHandling/sessionUpdater";
+import {motion} from "framer-motion";
 import {createVisualNetwork2D, downloadFileRequest} from "@/lib/feHandler";
 
 export default function dash() {
@@ -128,6 +129,7 @@ export default function dash() {
     }
 
     async function setActiveSession(id: number) {
+        setCurrentSession(null)
         const session = await getSession(id);
         if (session == null || !session) return;
         setCurrentSession(session);
@@ -163,8 +165,10 @@ export default function dash() {
         setCurrentUser(user);
         popSessions(user);
         setLoadingName(false);
-        if (sessionStorage.getItem("currentSessionId") != null)
+        if (sessionStorage.getItem("currentSessionId") != null) {
+
             setCurrentSession(await getSession(parseInt(sessionStorage.getItem("currentSessionId")!)))
+        }
 
     }
 
@@ -183,143 +187,182 @@ export default function dash() {
     }, [currentUser])
 
 
-    return <main className={"pageDash"}>
+    return <motion.main className={"pageDash"}
+                        initial={{opacity: 0,}}
+                        animate={{opacity: 1}}
+                        transition={{duration: 0.6, ease: "easeOut"}}>
         <ParticleNetwork/>
-        <div className={"lander"}>
+        <motion.div className="lander" initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.4}}>
             <div>
-                <h1 className={"title"}>Dashboard</h1>
-                {
-                    notLogged ? <div>
-                            <h2 className={"subtitle"}>You are not logged in</h2>
-                            <button className={
-                                "notLoggedBut"
-                            } onClick={() => {
-                                router.push("/login")
-                            }}>Log in here <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                            </button>
-                        </div> :
-                        <h2 className={"subtitle flex align-center gap-[0.5rem]"}>Hello, {loadingName ?
-                            <div className={"lazyLoad h-[1.5rem] w-[10rem]"}/> :
-                            <b>{currentUser?.displayName}!</b>}</h2>
-
-                }
+                <h1 className="title">Dashboard</h1>
+                {notLogged ? <div>
+                        <h2 className="subtitle">You are not logged in</h2>
+                        <button className="notLoggedBut" onClick={() => router.push("/login")}>Log in here <i
+                            className="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </div> :
+                    <h2 className="subtitle flex align-center gap-[0.5rem]">Hello, {loadingName ?
+                        <div className="lazyLoad h-[1.5rem] w-[10rem]"/> :
+                        <b>{currentUser?.displayName}!</b>}</h2>}
             </div>
-            <img
-                src={"logo2n2d.svg"}
-                alt="logo"
-                className={"logo"}
-            />
-        </div>
+            <img src="/logo2n2d.svg" alt="logo" className="logo"/>
+        </motion.div>
 
         {
-            currentSession != null ? <div className={"currentSessionInfo"}>
-                <div>
-                    {
-                        editName ? <div className={"flex gap-[1rem] align-center"}>
-                            <input type={"text"} defaultValue={currentSession.name ? currentSession.name : ""}
-                                   onChange={async (e) => {
-                                       updateName(currentSession.id, e.target.value)
-                                       currentSession.name = e.target.value;
-                                   }}/>
-                            <button onClick={() => setEditName(false)}><i className="fa-solid fa-check"></i></button>
-                        </div> : <div className={"flex gap-[1rem] align-center"}>
-                            <h1 className={"title min-w-[10rem]"}>{currentSession.name}</h1>
-                            <button onClick={() => setEditName(true)}><i className="fa-solid fa-pen"></i></button>
-                        </div>
-                    }
-                </div>
-                <div className={"element"}>
-                    <h1 className={"subtitle"}>Visualize</h1>
-                    {
-                        <div className="networkPreview" ref={canvasRef} onClick={() => {
-                            router.push("/visualize")
-                        }}></div>
-                    }
+            currentSession != null ?
+                <motion.div className={"currentSessionInfo"} initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}}
+                            transition={{delay: 0.4, duration: 0.6, ease: "easeOut"}}>
                     <div>
-                        <h1 className={"title"}>Loaded files:</h1>
-                        <h2><b>ONNX
-                            file:</b> {currentSession.onnxName ? currentSession.onnxName : "No onnx file loaded"}</h2>
-                        <h2><b>Csv file:</b> {currentSession.csvName ? currentSession.csvName : "No csv file loaded"}
-                        </h2>
-                    </div>
-                </div>
-                <div className={"element"}>
-                    <div>
-                        <h1 className={"subtitle"}> Optimization</h1>
                         {
-                            JSON.stringify(currentSession.optResult).length > 2 && (currentSession.optResult as any).best_config ?
-                                <div className={"resultArea"}>
-                                    <div className={"flex flex-col gap-[1rem] p-[1rem]"}>
-                                        <h2 className={"subtitle"}>Best configuration:</h2>
-                                        <div className={"result"}>
-                                            <div className={"info"}>
-                                                <h2>Neurons:</h2> {(currentSession.optResult as any).best_config.neurons}
-                                            </div>
-                                            <div className={"info"}>
-                                                <h2>Layers:</h2> {(currentSession.optResult as any).best_config.layers}
-                                            </div>
-                                            <div className={"info"}><h2>Test
-                                                loss:</h2> {(currentSession.optResult as any).best_config.test_loss}
-                                            </div>
-                                            <div className={"info"}><h2>R2
-                                                score:</h2> {(currentSession.optResult as any).best_config.r2_score}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button onClick={downloadOptimized}
-                                            disabled={downloading}>{downloading ? "Downloading..." : "Download optimized"}
-                                        <i
-                                            className="fa-solid fa-file-arrow-down"></i></button>
-                                </div> : <h1>No optimization done.</h1>
+                            editName ? <div className={"flex gap-[1rem] align-center"}>
+                                <input type={"text"} defaultValue={currentSession.name ? currentSession.name : ""}
+                                       onChange={async (e) => {
+                                           updateName(currentSession.id, e.target.value)
+                                           currentSession.name = e.target.value;
+                                       }}/>
+                                <button onClick={() => setEditName(false)}><i className="fa-solid fa-check"></i>
+                                </button>
+                            </div> : <div className={"flex gap-[1rem] align-center"}>
+                                <h1 className={"title min-w-[10rem]"}>{currentSession.name}</h1>
+                                <button onClick={() => setEditName(true)}><i className="fa-solid fa-pen"></i></button>
+                            </div>
                         }
                     </div>
-                    <div className={"flex gap-[1rem] flex-col align-center justify-center w-[20%]"}>
-                        <button className={"navBut"} onClick={() => {
-                            router.push("/data")
-                        }}>Data <i className="fa-solid fa-chart-simple"></i></button>
-                        <button className={"navBut"} onClick={() => {
-                            router.push("/optimize")
-                        }}>Optimization <i className="fa-solid fa-rabbit-running"></i></button>
+                    <div className={"element"}>
+                        <h1 className={"subtitle"}>Visualize</h1>
+                        {
+                            <div className="networkPreview" ref={canvasRef} onClick={() => {
+                                router.push("/visualize")
+                            }}></div>
+                        }
+                        <div>
+                            <h1 className={"title"}>Loaded files:</h1>
+                            <h2><b>ONNX
+                                file:</b> {currentSession.onnxName ? currentSession.onnxName : "No onnx file loaded"}
+                            </h2>
+                            <h2><b>Csv
+                                file:</b> {currentSession.csvName ? currentSession.csvName : "No csv file loaded"}
+                            </h2>
+                        </div>
                     </div>
-                </div>
-            </div> : ""
+                    <div className={"element"}>
+                        <div>
+                            <h1 className={"subtitle"}> Optimization</h1>
+                            {
+                                currentSession && currentSession.optResult && JSON.stringify(currentSession.optResult).length > 2 && (currentSession.optResult as any).best_config ?
+                                    <motion.div className={"resultArea"} initial={{opacity: 0, y: 10}}
+                                                animate={{opacity: 1, y: 0}}
+                                                transition={{duration: 0.4}}>
+                                        <div className={"flex flex-col gap-[0.2rem] p-[1rem]"}>
+                                            <h2 className={"subtitle"}>Best configuration:</h2>
+                                            <div className={"result"}>
+                                                <div className={"info"}>
+                                                    <h2>Neurons:</h2> {(currentSession.optResult as any).best_config.neurons}
+                                                </div>
+                                                <div className={"info"}>
+                                                    <h2>Layers:</h2> {(currentSession.optResult as any).best_config.layers}
+                                                </div>
+                                                <div className={"info"}><h2>Test
+                                                    loss:</h2> {(currentSession.optResult as any).best_config.test_loss}
+                                                </div>
+                                                <div className={"info"}><h2>R2
+                                                    score:</h2> {(currentSession.optResult as any).best_config.r2_score}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button onClick={downloadOptimized}
+                                                disabled={downloading}>{downloading ? "Downloading..." : "Download optimized"}
+                                            <i
+                                                className="fa-solid fa-file-arrow-down"></i></button>
+                                    </motion.div> : <h1>No optimization done.</h1>
+                            }
+                        </div>
+                        <div className={"flex gap-[1rem] flex-col align-center justify-center w-[20%]"}>
+                            <button className={"navBut"} onClick={() => {
+                                router.push("/data")
+                            }}>Data <i className="fa-solid fa-chart-simple"></i></button>
+                            <button className={"navBut"} onClick={() => {
+                                router.push("/optimize")
+                            }}>Optimization <i className="fa-solid fa-rabbit-running"></i></button>
+                        </div>
+                    </div>
+                </motion.div> :
+                <motion.div className={"flex flex-col gap-[0.1rem] p-[5rem] justify-center"} initial={{opacity: 0}}
+                            animate={{opacity: 1}} transition={{delay: 0.4}}>
+                    <h1 className={"title"}>No active session!</h1>
+                    <h2 className={"subtitle"}>Please load or create a new session to start.</h2>
+                </motion.div>
         }
 
         <div className={"fade"} style={{rotate: "180deg"}}/>
         <div className={"sessionsArea"}>
             <h2 className={"title"}>Sessions:</h2>
-            {!loading && !notLogged ? <div className={"sessions"}>
-                <div className={"button"} onClick={CreateSession}>
-                    <h2 className={"subtitle"}>Create new session</h2>
-                    <i className="fa-solid fa-square-plus largeIcon"></i>
-                </div>
-                {
-                    sessions.length == 0 ? <div className={"empty"}></div> :
-                        sessions.map((session, i) =>
-                            session ?
-                                <div className={"button"} key={i} onClick={() => {
-                                    setActiveSession(session.id);
+            {!loading && !notLogged ?
+                <motion.div className={"sessions"} initial="hidden" whileInView="visible" variants={{
+                    hidden: {opacity: 0, rotate: -2},
+                    visible: {
+                        opacity: 1,
+                        rotate: 0,
+                        transition: {
+                            staggerChildren: 0.1,
+                        },
+                    },
+
+                }} viewport={{once: true, amount: 0.3}}>
+                    <motion.div className={"button"} onClick={CreateSession}
+                                variants={{
+                                    hidden: {opacity: 0, y: 20},
+                                    visible: {opacity: 1, y: 0},
+                                }}
+                                transition={{duration: 0.2}}
+                                whileHover={{
+                                    scale: 1.05,
+                                    rotate: 2,
+                                    backgroundColor: "var(--primary-color)",
+                                    color: "var(--card-background)",
+                                    transition: {duration: 0.2, ease: "easeInOut"},
                                 }}>
-                                    <div className={"flex w-full justify-between align-center"}>
-                                        <div className={"flex flex-col"}>
-                                            <h1 className={"subtitle"}>{session.name}</h1>
-                                            <h2><b>ONNX file:</b> {session.onnxName}</h2>
-                                            <h2><b>Csv file:</b> {session.csvName}</h2>
+                        <h2 className={"subtitle"}>Create new session</h2>
+                        <i className="fa-solid fa-square-plus largeIcon"></i>
+                    </motion.div>
+                    {
+                        sessions.length == 0 ? <div className={"empty"}></div> :
+                            sessions.map((session, i) =>
+                                session ?
+                                    <motion.div className={"button"} key={i} onClick={() => {
+                                        setActiveSession(session.id);
+                                    }}
+                                                variants={{
+                                                    hidden: {opacity: 0, y: 20},
+                                                    visible: {opacity: 1, y: 0},
+                                                }}
+                                                transition={{duration: 0.2}}
+                                                whileHover={{
+                                                    scale: 1.05,
+                                                    rotate: 2,
+                                                    backgroundColor: "var(--primary-color)",
+                                                    color: "var(--card-background)",
+                                                    transition: {duration: 0.2}
+                                                }}>
+                                        <div
+                                            className={"flex w-full justify-between align-center "}>
+                                            <div className={"flex flex-col w-[50%] overflow-hidden text-ellipsis"}>
+                                                <h1 className={"subtitle"}>{session.name}</h1>
+                                                <h2><b>ONNX file:</b> {session.onnxName}</h2>
+                                                <h2><b>Csv file:</b> {session.csvName}</h2>
+                                            </div>
+                                            <i className="fa-solid fa-diagram-project largeIcon"></i>
                                         </div>
-                                        <i className="fa-solid fa-diagram-project largeIcon"></i>
-                                    </div>
-                                    <div className={"flex deleteArea justify-end align-center w-full"}>
-                                        <button className={"deleteButton"} onClick={() => {
-                                            removeSession(session.id, i);
-                                        }}><i className={"fa-solid fa-trash-can"}/></button>
-                                    </div>
-                                </div> : ""
-                        )
-                }
-            </div> : <div className="loaderSpinner"></div>}
+                                        <div className={"flex deleteArea justify-end align-center w-full"}>
+                                            <button className={"deleteButton"} onClick={() => {
+                                                removeSession(session.id, i);
+                                            }}><i className={"fa-solid fa-trash-can"}/></button>
+                                        </div>
+                                    </motion.div> : ""
+                            )
+                    }
+                </motion.div> : <div className="loaderSpinner"></div>}
         </div>
 
-        <div className={"fade"}>
-        </div>
-    </main>
+        <div className={"fade"}/>
+    </motion.main>
 }

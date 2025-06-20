@@ -4,11 +4,11 @@ import "./styles.css";
 import {createVisualNetwork2D, categoryColorMap, getNodeCategory, nodes, edges} from "@/lib/feHandler";
 import ONNXUploader from "@/components/fileUploadElements/ONNXUploader";
 import {Session, updateSession, getSession} from "@/lib/sessionHandling/sessionManager";
-import {session} from "@/db/schemas/session";
+import {motion, AnimatePresence} from 'framer-motion';
 import {deleteOnnx} from "@/lib/sessionHandling/sessionUpdater";
 
 export default function visualize() {
-    //Session info
+    //Session docs
     const [currentSession, setCurrentSession] = useState<Session | null>(null);
 
     //Onnx data
@@ -141,61 +141,63 @@ export default function visualize() {
 
     function NodeDetails({selected}: { selected: any }) {
         const options = titleFormat(selected.title);
+
         return (
-            <div className="sArea nodeDetails p-0">
+            <div
+                className="sArea nodeDetails p-0"
+            >
                 <div className={"subtitleWrapper"}>
                     <h2 className="subtitle" style={{backgroundColor: selected.color.background}}>
                         {selected.label.toString()}
                     </h2>
                 </div>
 
-                {/*{JSON.stringify(options)}*/}
                 <div className={"pt-0 pl-[2rem] pr-[2rem] pb-[2rem] overflow-y-auto"}>
-                    {
-                        options.name ? <p><b>Name:</b> {options.name.toString()}</p> : ""
-                    }
-
+                    {options.name && <p><b>Name:</b> {options.name.toString()}</p>}
                     <p><b>Category:</b> {getNodeCategory(selected.label)}</p>
 
-                    {
-                        options.input ? <div>
+                    {options.input && (
+                        <div>
                             <h2><b>Inputs:</b></h2>
                             <ul>
-                                {typeof options.input === "string" ?
-                                    <li>options.input</li> : options.input?.map((input: string, i: number) =>
-                                        <li key={i}>{input}</li>)}
+                                {typeof options.input === "string" ? (
+                                    <li>{options.input}</li>
+                                ) : (
+                                    options.input?.map((input: string, i: number) => <li key={i}>{input}</li>)
+                                )}
                             </ul>
-                        </div> : ""
-                    }
+                        </div>
+                    )}
 
-                    {
-                        options.output ? <div>
+                    {options.output && (
+                        <div>
                             <h2><b>Outputs:</b></h2>
                             <ul>
-                                {typeof options.output === "string" ?
-                                    <li>options.output</li> : options.output?.map((output: string, i: number) =>
-                                        <li key={i}>{output}</li>)}
+                                {typeof options.output === "string" ? (
+                                    <li>{options.output}</li>
+                                ) : (
+                                    options.output?.map((output: string, i: number) => <li key={i}>{output}</li>)
+                                )}
                             </ul>
-                        </div> : ""
-                    }
+                        </div>
+                    )}
 
-                    {
-                        options.attributes ? <div>
+                    {options.attributes && (
+                        <div>
                             <h2><b>Attributes:</b></h2>
                             <ul>
-                                {options.attributes?.map((attr: any, i: number) => <li
-                                    key={i}>
-                                    <b>{attr["name"]}</b>: {Object.values(attr)[1]} Type: {attr.type} <br/>
-                                </li>)}
+                                {options.attributes.map((attr: any, i: number) => (
+                                    <li key={i}>
+                                        <b>{attr.name}</b>: {Object.values(attr)[1]} Type: {attr.type}
+                                    </li>
+                                ))}
                             </ul>
-                        </div> : ""
-                    }
+                        </div>
+                    )}
                 </div>
-
             </div>
         );
     }
-
 
     function handleSelect(node: { id: number, label: string, title: string }) {
         setSelected(node);
@@ -227,105 +229,157 @@ export default function visualize() {
     // }, [result])
 
     return (
-        <main className="page">
+        <motion.main className="page" transition={{delay: 0.4, duration: 0.2, ease: "easeOut"}}
+                     initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}>
             <div id="network-2d" className="networkView " ref={canvasRef}></div>
             <div className="overlay">
                 <div>
-                    <div className={"sArea"} style={detailsExpanded ? {} : {height: "4rem"}}>
-                        <div className={"setting"} onClick={() => {
-                            setDetailsExpanded(!detailsExpanded)
-                        }}>
-                            <h3 className={"subtitle"}>Model Details</h3>
-                            <i className="fa-solid fa-caret-down"></i>
+                    <motion.div layout className="sArea" transition={{duration: 0.3}}>
+                        <div className="setting" onClick={() => setDetailsExpanded(!detailsExpanded)}>
+                            <h3 className="subtitle">Model Details</h3>
+                            <motion.i
+                                className="fa-solid fa-caret-down"
+                                animate={{rotate: detailsExpanded ? 180 : 0}}
+                                transition={{duration: 0.3}}
+                            />
                         </div>
-                        {result == null || !result.summary ? (
-                            "No model loaded"
-                        ) : (
-                            <div className={"overflow-y-auto max-h-[100vh]"}>
-                                <div className={"sArea"}>
-                                    <h2><b>File:</b> {fileName}</h2>
-                                </div>
-                                <div className={"sArea"}>
-                                    <h2><b>Producer:</b> {result.summary.producer}</h2>
-                                    <h2><b>IR version:</b> {result.summary.ir_version}</h2>
-                                </div>
-                                <div className={"sArea"}>
-                                    <h2><b>Node count:</b> {result.summary.node_count}</h2>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                    <div className={"sArea"} style={legendExpanded ? {} : {height: "4rem"}}>
-                        <div className={"setting"} onClick={() => {
-                            setLegendExpanded(!legendExpanded)
-                        }}>
-                            <h3 className={"subtitle"}>Legend</h3>
-                            <i className="fa-solid fa-caret-down"></i>
+                        <AnimatePresence initial={false}>
+                            {detailsExpanded && (
+                                <motion.div
+                                    layout
+                                    key="model-details"
+                                    initial={{opacity: 0, height: 0, width: 0}}
+                                    animate={{opacity: 1, height: 'auto', width: "auto"}}
+                                    exit={{opacity: 0, height: 0, width: 0}}
+                                    transition={{duration: 0.3}}
+                                    className="overflow-y-auto max-h-[100vh]"
+                                >
+                                    {result == null || !result.summary ? (
+                                        "No model loaded"
+                                    ) : (
+                                        <>
+                                            <div className="sArea">
+                                                <h2><b>File:</b> {fileName}</h2>
+                                            </div>
+                                            <div className="sArea">
+                                                <h2><b>Producer:</b> {result.summary.producer}</h2>
+                                                <h2><b>IR version:</b> {result.summary.ir_version}</h2>
+                                            </div>
+                                            <div className="sArea">
+                                                <h2><b>Node count:</b> {result.summary.node_count}</h2>
+                                            </div>
+                                        </>
+                                    )}
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </motion.div>
+
+                    <motion.div layout className="sArea" transition={{duration: 0.3}}>
+                        <div className="setting" onClick={() => setLegendExpanded(!legendExpanded)}>
+                            <h3 className="subtitle">Legend</h3>
+                            <motion.i
+                                className="fa-solid fa-caret-down"
+                                animate={{rotate: legendExpanded ? 180 : 0}}
+                                transition={{duration: 0.3}}
+                            />
                         </div>
-                        <div>
-                            {Object.entries(categoryColorMap).map(([category, {normal, highlight}]) => (
-                                <div key={category.toString()} className="legendItem">
-                                    <span className="legendLabel">{category}</span>
-                                    <div
-                                        className="legendColor"
-                                        style={{
-                                            backgroundColor: `${normal}`,
-                                        }}
-                                    />
-                                </div>
-                            ))}
+                        <AnimatePresence initial={false}>
+                            {legendExpanded && (
+                                <motion.div
+                                    layout
+                                    key="legend"
+                                    initial={{opacity: 0, height: 0}}
+                                    animate={{opacity: 1, height: 'auto'}}
+                                    exit={{opacity: 0, height: 0}}
+                                    transition={{duration: 0.3}}
+                                >
+                                    {Object.entries(categoryColorMap).map(([category, {normal}]) => (
+                                        <div key={category.toString()} className="legendItem">
+                                            <span className="legendLabel">{category}</span>
+                                            <div
+                                                className="legendColor"
+                                                style={{backgroundColor: `${normal}`}}
+                                            />
+                                        </div>
+                                    ))}
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </motion.div>
+
+                    <motion.div layout className="sArea" transition={{duration: 0.3}}>
+                        <div className="setting" onClick={() => setSettingsExpanded(!settingsExpanded)}>
+                            <h2 className="subtitle">Settings</h2>
+                            <motion.i
+                                className="fa-solid fa-caret-down"
+                                animate={{rotate: settingsExpanded ? 180 : 0}}
+                                transition={{duration: 0.3}}
+                            />
                         </div>
-                    </div>
-                    <div className={settingsExpanded ? "sArea" : "sArea closedSArea"}>
-                        <div className={"setting"} onClick={() => {
-                            setSettingsExpanded(!settingsExpanded)
-                        }}>
-                            <h2 className={"subtitle"}>Settings</h2>
-                            <i className="fa-solid fa-caret-down"></i>
-                        </div>
-                        <div className={"setting"}>
-                            <label htmlFor="physics">Node physics</label>
-                            <input type="checkbox" id="physics" checked={physicsEnabled} onChange={(e) => {
-                                setPhysicsEnabled(e.target.checked)
-                            }}/>
-                        </div>
-                        <div className={"setting"}>
-                            <label htmlFor="constants">Constant nodes</label>
-                            <input type="checkbox" id="constants" checked={constantsEnabled} onChange={(e) => {
-                                setConstantsEnabled(e.target.checked)
-                            }}/>
-                        </div>
-                        <div className={"setting"}>
-                            <label htmlFor="vertical">Vertical view</label>
-                            <input type="checkbox" id="vertical" checked={verticalView} onChange={(e) => {
-                                setVerticalView(e.target.checked)
-                            }}/>
-                        </div>
-                    </div>
-                    <div className={"sArea"}>
-                        <button className={"uploadButton"} onClick={() => {
-                            updateView()
-                        }}>Refresh <i className="fa-solid fa-arrows-rotate"></i>
+                        <AnimatePresence initial={false}>
+                            {settingsExpanded && (
+                                <motion.div
+                                    layout
+                                    key="settings"
+                                    initial={{opacity: 0, height: 0}}
+                                    animate={{opacity: 1, height: 'auto'}}
+                                    exit={{opacity: 0, height: 0}}
+                                    transition={{duration: 0.3}}
+                                >
+                                    <div className="setting">
+                                        <label htmlFor="physics">Node physics</label>
+                                        <input
+                                            type="checkbox"
+                                            id="physics"
+                                            checked={physicsEnabled}
+                                            onChange={(e) => setPhysicsEnabled(e.target.checked)}
+                                        />
+                                    </div>
+                                    <div className="setting">
+                                        <label htmlFor="constants">Constant nodes</label>
+                                        <input
+                                            type="checkbox"
+                                            id="constants"
+                                            checked={constantsEnabled}
+                                            onChange={(e) => setConstantsEnabled(e.target.checked)}
+                                        />
+                                    </div>
+                                    <div className="setting">
+                                        <label htmlFor="vertical">Vertical view</label>
+                                        <input
+                                            type="checkbox"
+                                            id="vertical"
+                                            checked={verticalView}
+                                            onChange={(e) => setVerticalView(e.target.checked)}
+                                        />
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </motion.div>
+
+                    <div className="sArea">
+                        <button className="uploadButton" onClick={updateView}>
+                            Refresh <i className="fa-solid fa-arrows-rotate"></i>
                         </button>
                     </div>
-
                 </div>
 
                 <div className="titleWrapper">
                     <h1 className="title">Network Visualization</h1>
                     <div className="sArea vertical">
-                        <div className={"dataArea"}>
+                        <div className="dataArea">
                             <ONNXUploader callBack={updateView}/>
-                            <button className={"deleteButton"} onClick={clearData}>
+                            <button className="deleteButton" onClick={clearData}>
                                 Clear Data <i className="fa-solid fa-trash-xmark"></i>
                             </button>
                         </div>
                     </div>
                 </div>
                 {selected && <NodeDetails selected={selected}/>}
-
             </div>
 
-        </main>
+        </motion.main>
     );
 }

@@ -101,8 +101,7 @@ def load_csv_data(binary_data, filename):
     except Exception as e:
         logging.exception("Failed to load CSV data")
         return {"error": str(e)}
-
-
+    
 def analyze_onnx_model(model_bytes):
     try:
         tempFilePath = createTempFile(model_bytes, ".onnx")

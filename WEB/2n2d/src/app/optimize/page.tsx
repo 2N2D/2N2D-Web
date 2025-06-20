@@ -8,6 +8,7 @@ import "./styles.css"
 import ONNXUploader from "@/components/fileUploadElements/ONNXUploader";
 import CSVUploader from "@/components/fileUploadElements/CSVUploader";
 import {deleteCsv, deleteOnnx} from "@/lib/sessionHandling/sessionUpdater";
+import {motion} from "framer-motion";
 
 function Optimize() {
     const [features, setFeatures] = useState<string[]>([]);
@@ -141,7 +142,9 @@ function Optimize() {
     }
 
     return (
-        <main className={"pageOpt"}>
+        <motion.main className={"pageOpt"}
+                     transition={{delay: 0.4, duration: 0.2, ease: "easeOut", staggerChildren: 0.1}}
+                     initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}>
             <div className={"flex  w-full gap-[0.1rem]"}>
                 <div className={"flex flex-col"} style={{width: "100%"}}>
                     <form className={"optimizeForm area"} style={{width: "100%"}} onSubmit={optimize}>
@@ -249,8 +252,11 @@ function Optimize() {
                 </div>
             </div>
             {result && JSON.stringify(result).length > 2 && JSON.stringify(result) != "null" && true && result && result.best_config ?
-                <div className={`resultArea ${progress == 100 ? "area" : ""}`}
-                     style={progress == 100 ? {height: "100%"} : {height: 0}}>
+                <motion.div className={`resultArea ${progress == 100 ? "area" : ""}`}
+                            style={progress == 100 ? {height: "100%"} : {height: 0}}
+                            initial={{opacity: 0, y: 10}}
+                            animate={{opacity: 1, y: 0}}
+                            transition={{duration: 0.4}}>
                     <h1 className={"main subtitle"}>Optimization results:</h1>
                     <div className={"flex flex-col gap-[1rem] p-[1rem]"}>
                         <h2 className={"subtitle"}>Best configuration:</h2>
@@ -298,9 +304,9 @@ function Optimize() {
                     <button onClick={downloadOptimized}
                             disabled={downloading}>{downloading ? "Downloading..." : "Download optimized"} <i
                         className="fa-solid fa-file-arrow-down"></i></button>
-                </div> : ""
+                </motion.div> : ""
             }
-        </main>
+        </motion.main>
     )
 }
 
