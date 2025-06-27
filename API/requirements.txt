@@ -1,5 +1,6 @@
 numpy
 onnx
+onnxoptimizer
 torch
 scikit-learn
 pandas
@@ -8,3 +9,5 @@ fastapi
 supabase
 python-dotenv
 urllib3<2
+deap
+neat-python

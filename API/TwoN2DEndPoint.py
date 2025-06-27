@@ -14,6 +14,7 @@ import pandas as pd
 import json
 from pydantic import BaseModel
 import os
+import concurrent.futures
 
 from TwoN2D import (
     load_onnx_model,
@@ -74,7 +75,11 @@ async def upload_csv(request: FilePathRequest, session_id: str = Header(...)):
 
 @app.post("/optimize")
 async def optimize(request: dict, session_id: str = Header(...)):
-    message_queues[session_id].append("Processing request...")
+    queue = message_queues.get(session_id)
+    if queue is None:
+        queue = []
+        message_queues[session_id] = queue
+        
     input_features = request.get("input_features")
     target_feature = request.get("target_feature")
     epochs = request.get("max_epochs") 
@@ -99,14 +104,21 @@ async def optimize(request: dict, session_id: str = Header(...)):
     def status_callback(message):
         message_queues[session_id].append(message)
 
-    result = find_optimal_architecture(
-        onnx_bytes=onnx_binary,
-        csv_bytes=csv_binary,
-        input_features=input_features,
-        target_feature=target_feature,
-        status_callback=status_callback,
-        max_epochs=epochs,
-    )
+    import concurrent.futures
+    
+    loop = asyncio.get_event_loop()
+    with concurrent.futures.ThreadPoolExecutor() as pool:
+        result = await loop.run_in_executor(
+            pool,
+            lambda: find_optimal_architecture(
+                onnx_bytes=onnx_binary,
+                csv_bytes=csv_binary,
+                input_features=input_features,
+                target_feature=target_feature,
+                status_callback=status_callback,
+                max_epochs=epochs,
+            )
+        )
 
     if "model_path" not in result:
         return JSONResponse(content=result, status_code=400)
@@ -137,8 +149,8 @@ async def stream_status(session_id: str, request: Request):
     return StreamingResponse(event_generator(), media_type="text/event-stream")
 
 @app.get("/download-optimized")
-def download_optimized(session_id: str = Header(...)):
-    result = download_optimized_model(optimized[session_id])
+def download_optimized(file_path: str, session_id: str = Header(...)):
+    result = download_optimized_model(file_path)
     return JSONResponse(content=result)
 
 
