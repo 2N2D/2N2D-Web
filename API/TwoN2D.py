@@ -17,7 +17,7 @@ from torch.utils.data import TensorDataset, DataLoader
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import r2_score, mean_squared_error
-
+from Data import (analyze_csv_data)
 from FileHandler import (createTempFile)
 
 try:
@@ -41,6 +41,22 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
+
+def make_json_serializable(obj):
+    if isinstance(obj, dict):
+        return {k: make_json_serializable(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [make_json_serializable(v) for v in obj]
+    elif isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, (np.bool_, bool)):
+        return bool(obj)
+    else:
+        return obj
 
 class UniversalArchitectureModel(nn.Module):
     """Universal PyTorch model that can replicate and enhance any ONNX architecture"""
@@ -523,7 +539,9 @@ def load_csv_data(binary_data, filename):
     try:
         data_io = io.BytesIO(binary_data)
         df = pd.read_csv(data_io)
-        
+        info = analyze_csv_data(df)
+
+
         summary = {
             "rows": len(df),
             "columns": len(df.columns),
@@ -531,8 +549,9 @@ def load_csv_data(binary_data, filename):
             "missing_values": df.isna().sum().to_dict(),
             "dtypes": {col: str(df[col].dtype) for col in df.columns}
         }
-
-        return {"data": df.head(50).to_dict('records'), "summary": summary}
+        result = {"data": df.head(50).to_dict('records'), "summary": summary, "results": info}
+        result = make_json_serializable(result)
+        return result
     except Exception as e:
         logging.exception("Failed to load CSV data")
         return {"error": str(e)}
@@ -1307,7 +1326,6 @@ def find_optimal_architecture(onnx_bytes, csv_bytes, input_features, target_feat
             export_params=True,
             keep_initializers_as_inputs=False,
             verbose=False,
-            strip_doc_string=True,
             training=torch.onnx.TrainingMode.EVAL,
             operator_export_type=torch.onnx.OperatorExportTypes.ONNX_ATEN_FALLBACK
         )

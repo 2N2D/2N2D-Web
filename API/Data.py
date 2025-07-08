@@ -8,6 +8,7 @@ warnings.filterwarnings('ignore')
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
 def encode_data_for_ml(df: pd.DataFrame, encoding_type: str = 'label') -> Tuple[pd.DataFrame, Dict[str, Any]]:
     df_encoded = df.copy()
     categorical_columns = []

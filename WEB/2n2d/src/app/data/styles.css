@@ -26,7 +26,16 @@
     justify-content: space-evenly;
 }
 
+.dataSumMat {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width: 50%;
+}
+
 .info {
+    display: flex;
+    flex-direction: column;
     min-width: 10rem;
     padding: 1rem;
     background-color: var(--background-color);

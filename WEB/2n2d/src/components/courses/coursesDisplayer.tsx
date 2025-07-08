@@ -37,7 +37,7 @@ const courses: Course[] = [
         icon: "fa-solid fa-arrow-up-right-dots"
     },
     {
-        title: "Real-World Data",
+        title: "Real-World data",
         path: "/courses/realdata.md",
         icon: "fa-solid fa-database"
     },

@@ -11,7 +11,7 @@ export default function ModelTest() {
             if (!meta.isTensor) return;
             inputs[meta.name] = {
                 type: meta.type,
-
+            
             };
         }
 

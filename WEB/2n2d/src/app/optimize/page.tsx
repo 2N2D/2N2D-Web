@@ -113,9 +113,9 @@ function Optimize() {
 
         setProgress(0);
         setStatus("Starting optimization...");
+        statusUpdate();
 
         const _result = await startOptimization(Ifeatures, target, maxEpochs, parseInt(sesId), session.csvUrl!, session.onnxUrl!);
-        statusUpdate();
 
         if (typeof _result === "string") {
             setAlert(_result);
