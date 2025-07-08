@@ -247,8 +247,8 @@ function Optimize() {
                         </div>
                     </div>
                 </div>
-                <div className={"area vertical title"}>
-                    <h1>Optimization</h1>
+                <div className={"titleArea"}>
+                    <h1 className={"dataTitle title"}>Optimization</h1>
                 </div>
             </div>
             {result && JSON.stringify(result).length > 2 && JSON.stringify(result) != "null" && true && result && result.best_config ?

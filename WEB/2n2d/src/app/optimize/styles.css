@@ -181,6 +181,21 @@
     font-size: 2rem;
 }
 
+.pageOpt .dataTitle {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    background-color: var(--card-background);
+    border-radius: 0.4rem;
+    color: var(--primary-color);
+}
+
+.pageOpt .titleArea {
+    background-color: var(--card-background);
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    height: 40rem;
+    display: flex;
+}
 
 .resultArea button {
     font-size: 1.3rem;

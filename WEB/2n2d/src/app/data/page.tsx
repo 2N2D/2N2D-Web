@@ -7,6 +7,7 @@ import CSVUploader from "@/components/fileUploadElements/CSVUploader";
 import {deleteCsv} from "@/lib/sessionHandling/sessionUpdater";
 import {motion} from "framer-motion";
 import Heatmap from "@/components/data/HeatMap";
+import MissingDataHeatmap from "@/components/data/MissingValues";
 
 function Data() {
     const [message, setMessage] = useState("");
@@ -15,6 +16,7 @@ function Data() {
     const [fileName, setFileName] = useState<string>("");
     const [missed, setMissed] = useState<number>();
     const [result, setResult] = useState<any>(null);
+    const [selectedView, setSelectedView] = useState<number>(0);
 
     function handleNewData() {
         const data = sessionStorage.getItem("csvData");
@@ -49,42 +51,52 @@ function Data() {
     return (
         <motion.div className="pageData" transition={{delay: 0.4, duration: 0.2, ease: "easeOut"}}
                     initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}>
-            <div className={"flex gap-[0.1rem] w-full"}>
-                <div className={"area"}>
-                    <h1 className={"title"}>CSV tools</h1>
+            <div className={"flex gap-[0.1rem] w-full h-auto"}>
+                <div className={"titleArea h-full"}>
+                    <h1 className={"dataTitle title"}>CSV tools</h1>
                 </div>
                 <div className={"flex flex-col w-[50%] gap-[0.1rem]"}>
-                    <div className={"area"}>
-                        <h1 className={"subtitle p-[0.45rem]"}>File upload:</h1>
-                    </div>
                     <div className="area">
                         <div className={"dataArea w-full"}>
+                            <h1 className={"subtitle"}>Add dataset:</h1>
                             <CSVUploader callBack={handleNewData}/>
                             <button className={"deleteButton"} onClick={clearData}>
                                 Clear Data <i className="fa-solid fa-trash-xmark"></i>
                             </button>
                         </div>
                     </div>
-                    <div className="area w-full gap-[1rem]">
-                        <h3 className={"subtitle"}>Dataset Overview</h3>
-                        <div className="dataSum">
-                            <div className="info">
-                                <h1>File</h1>
-                                <h2>{result == null ? "No file uploaded" : fileName}</h2>
+                    <div className={"flex gap-[0.1rem] h-full"}>
+                        <div className="area w-full gap-[0.55rem] h-full">
+                            <h3 className={"subtitle text-[var(--warning-color)]"}>Warnings</h3>
+                            <div
+                                className={"flex flex-col h-[11rem] border-1 border-[var(--border-color)] rounded-[0.4rem] overflow-y-auto p-[0.1rem]"}>
+                                {
+                                    result && result.results && result.results.encoding_feasibility.warnings.length > 0 ?
+                                        result.results.encoding_feasibility.warnings.length.map((warn: string, i: number) =>
+                                            <div key={i} className={"warningItem"}>
+                                                <p>{warn}</p>
+                                            </div>) :
+                                        <div className={"warningItem"}>
+                                            <p>No warnings</p>
+                                        </div>
+                                }
                             </div>
-                            <div className="info">
-                                <h1>Rows</h1>
-                                <h2>{result == null ? "-" : rowsNr}</h2>
+                        </div>
+                        <div className="area w-full gap-[0.55rem] h-full">
+                            <h3 className={"subtitle text-[var(--primary-color)]"}>Recommendations</h3>
+                            <div
+                                className={"flex flex-col h-[11rem] border-1 border-[var(--border-color)] rounded-[0.4rem] overflow-y-auto p-[0.1rem]"}>
+                                {
+                                    result && result.results && result.results.encoding_feasibility.recommendations.length > 0 ?
+                                        result.results.encoding_feasibility.recommendations.length.map((rec: string, i: number) =>
+                                            <div className={"warningItem"} key={i}>
+                                                <p>{rec}</p>
+                                            </div>) :
+                                        <div className={"warningItem"}>
+                                            <p>No recommendations</p>
+                                        </div>
+                                }
                             </div>
-                            <div className="info">
-                                <h1>Columns</h1>
-                                <h2>{result == null ? "-" : columnsNr}</h2>
-                            </div>
-                            <div className="info">
-                                <h1>Missing values</h1>
-                                <h2>{result == null ? "-" : missed}</h2>
-                            </div>
-
                         </div>
                     </div>
 
@@ -134,17 +146,61 @@ function Data() {
 
                         </div>
                     </div>
+
                 </div>
             </div>
 
             <div className="area tableArea">
                 <DataTable result={result}/>
             </div>
-            {
-                result && result.results ? <div className={"area"}>
-                    <Heatmap matrix={result.results.visualization_data.correlation_matrix}/>
-                </div> : ""
-            }
+            <div className={"area"}>
+                <div className={"viewButtons"}>
+                    <button onClick={() => {
+                        setSelectedView(0)
+                    }} style={selectedView == 0 ? {
+                        backgroundColor: "var(--primary-color)",
+                        color: "var(--card-background)"
+                    } : {}}><i className="fa-solid fa-hashtag"></i> Correlation Matrix
+                    </button>
+                    <button onClick={() => {
+                        setSelectedView(1)
+                    }} style={selectedView == 1 ? {
+                        backgroundColor: "var(--primary-color)",
+                        color: "var(--card-background)"
+                    } : {}}><i
+                        className="fa-solid fa-value-absolute"></i> Missing Values Heatmap
+                    </button>
+                    <button onClick={() => {
+                        setSelectedView(2)
+                    }} style={selectedView == 2 ? {
+                        backgroundColor: "var(--primary-color)",
+                        color: "var(--card-background)"
+                    } : {}}><i
+                        className="fa-solid fa-binary-lock"></i> Encoding Info
+                    </button>
+                </div>
+                {
+                    selectedView == 0 && result && result.results ?
+                        <div className={"area justify-center flex items-center"}>
+                            <h1 className={"subtitle"}>Correlation Matrix</h1>
+                            <Heatmap matrix={result.results.visualization_data.correlation_matrix}/>
+                        </div> : ""
+                }
+                {
+                    selectedView == 1 && result && result.results ?
+                        <div className={"area justify-center flex items-center"}>
+                            <h1 className={"subtitle"}>Missing Data Heatmap</h1>
+                            <MissingDataHeatmap columns={result.results.visualization_data.missing_data_heatmap.columns}
+                                                data={result.results.visualization_data.missing_data_heatmap.data}/>
+                        </div> : ""
+                }
+                {
+                    selectedView == 2 && result && result.results ?
+                        <div className={"area justify-center flex items-center"}>
+                            
+                        </div> : ""
+                }
+            </div>
 
 
         </motion.div>

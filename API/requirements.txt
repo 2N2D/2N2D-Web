@@ -7,7 +7,4 @@ pandas
 asyncio
 fastapi
 supabase
-python-dotenv
-urllib3<2
-deap
-neat-python
+python

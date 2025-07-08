@@ -1,17 +1,13 @@
-"use client";
-
 import Plot from "react-plotly.js";
 
-type CorrelationMatrixProps = {
-    matrix: {
-        columns: string[];
-        index: string[];
-        data: number[][];
-    };
-};
+type missingValuesMatrix = {
+    columns: string[];
+    data: number[][];
+}
 
-export default function Heatmap({matrix}: CorrelationMatrixProps) {
-    const {columns, index, data} = matrix;
+export default function MissingDataHeatmap(matrix: missingValuesMatrix) {
+    const {columns, data} = matrix;
+
     return (
         <div className="w-full overflow-auto flex justify-center items-center">
             <Plot
@@ -19,16 +15,15 @@ export default function Heatmap({matrix}: CorrelationMatrixProps) {
                     {
                         z: data,
                         x: columns,
-                        y: index,
+                        y: Array.from({length: data.length}, (_, i) => i + 1), // Row indices
                         type: "heatmap",
                         colorscale: [
-                            [0, "#232323"],
-                            [0.5, "#4f46e5"],
-                            [1, "#ffffff"],
+                            [0, "#0f973f"],  // Present: Green
+                            [1, "#ef4444"],  // Missing: Red
                         ],
-                        zmin: -1,
+                        zmin: 0,
                         zmax: 1,
-                        showscale: true,
+                        showscale: false,
                         hoverongaps: false,
                     },
                 ]}
@@ -39,16 +34,11 @@ export default function Heatmap({matrix}: CorrelationMatrixProps) {
                     xaxis: {
                         tickangle: -45,
                         automargin: true,
-                        tickfont: {
-                            size: 12,
-                            color: "#cccccc",
-                        },
+                        tickfont: {size: 12, color: "#cccccc"},
                     },
                     yaxis: {
-                        tickfont: {
-                            size: 12,
-                            color: "#cccccc",
-                        },
+                        tickfont: {size: 10, color: "#999999"},
+                        title: {text: "Row", font: {color: "#cccccc"}},
                     },
                 }}
                 style={{
@@ -59,11 +49,8 @@ export default function Heatmap({matrix}: CorrelationMatrixProps) {
                 }}
                 config={{
                     responsive: true,
-                    displayModeBar: false,
-                    scrollZoom: false,
-                    staticPlot: false,
+                    displayModeBar: false, // 🔧 Hides zoom/pan controls
                 }}
-
             />
         </div>
     );

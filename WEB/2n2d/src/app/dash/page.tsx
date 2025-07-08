@@ -320,7 +320,13 @@ export default function dash() {
                                     backgroundColor: "var(--primary-color)",
                                     color: "var(--card-background)",
                                     transition: {duration: 0.2, ease: "easeInOut"},
-                                }}>
+                                }}
+                                whileTap={{
+                                    scale: 0.9,
+                                    rotate: -1,
+                                    transition: {duration: 0.2, ease: "easeInOut"},
+                                }}
+                    >
                         <h2 className={"subtitle"}>Create new session</h2>
                         <i className="fa-solid fa-square-plus largeIcon"></i>
                     </motion.div>
