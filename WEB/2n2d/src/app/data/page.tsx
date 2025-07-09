@@ -196,8 +196,54 @@ function Data() {
                 }
                 {
                     selectedView == 2 && result && result.results ?
-                        <div className={"area justify-center flex items-center"}>
-                            
+                        <div className={"area justify-center flex flex-col gap-[1rem]"}>
+                            <h1 className={"subtitle"}>Encoding Info</h1>
+                            <div className={"p-[0.5rem] rounded-[0.4rem] flex flex-col gap[0.5rem] w-fit"}
+                                 style={{backgroundColor: "var(--background-color)"}}>
+                                <h1 className={"bold"}>
+                                    Overall
+                                    recommendation: <b
+                                    style={result.results.encoding_feasibility.overall_recommendation == "safe" ? {color: "var(--success-color)"} : {color: "var(--error-color)"}}>{result.results.encoding_feasibility.overall_recommendation == "safe" ? "Safe" : result.results.encoding_feasibility.overall_recommendation}</b>
+                                </h1>
+                                <h1 className={"bold"}>Onehot
+                                    encoding: <b
+                                        style={result.results.encoding_feasibility.is_safe_for_onehot ? {color: "var(--success-color)"} : {color: "var(--error-color)"}}>{result.results.encoding_feasibility.is_safe_for_onehot ? "Safe" : "Not safe"}</b>
+                                </h1>
+                            </div>
+                            <div className={"area flex-row flex-nowrap"}
+                                 style={{backgroundColor: "var(--background-color)"}}>
+                                <div className={"w-full"}>
+                                    <h1 className={"font-bold"}>Categorical summary:</h1>
+                                    <p>Risky for
+                                        onehot: {result.results.encoding_feasibility.categorical_summary.risky_for_onehot.toString()}</p>
+                                    <p>Safe for
+                                        onehot: {result.results.encoding_feasibility.categorical_summary.safe_for_onehot.toString()}</p>
+                                    <p>Total
+                                        categorical: {result.results.encoding_feasibility.categorical_summary.total_categorical.toString()}</p>
+                                </div>
+                                <div className={"w-full"}>
+                                    <h1 className={"font-bold"}>Columns estimate:</h1>
+                                    <p>Risky for
+                                        onehot: {result.results.encoding_feasibility.column_estimate.current_columns.toString()}</p>
+                                    <p>Safe for
+                                        onehot: {result.results.encoding_feasibility.column_estimate.estimated_final_columns.toString()}</p>
+                                    <p>Total
+                                        categorical: {result.results.encoding_feasibility.column_estimate.new_columns_added.toString()}</p>
+                                </div>
+                                <div className={"w-full"}>
+                                    <h1 className={"font-bold"}>High cardinality columns:</h1>
+                                    <div>
+                                        {result.results.encoding_feasibility.high_cardinality_columns.length > 0 ? result.results.encoding_feasibility.high_cardinality_columns.map((val, i) =>
+                                            <p key={i}>{val}</p>) : <p>No such columns</p>}
+                                    </div>
+                                </div>
+                                <div className={"w-full"}>
+                                    <h1 className={"font-bold"}>High cardinality columns:</h1>
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div> : ""
                 }
             </div>
