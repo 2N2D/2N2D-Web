@@ -77,7 +77,7 @@ const SideBar = () => {
                     <span className={`${Styles.tabText}`}>Home</span>
                 </button>
 
-                <h2 className={Styles.tabCat}>Analise</h2>
+                <h2 className={Styles.tabCat}>Analyze</h2>
                 <button
                     onClick={() => {
                         router.push("/visualize")

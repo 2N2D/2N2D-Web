@@ -1,32 +1,28 @@
 "use client";
 
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, Suspense} from "react";
 import "./styles.css";
-import DataTable from "@/components/data/DataTable";
 import CSVUploader from "@/components/fileUploadElements/CSVUploader";
 import {deleteCsv} from "@/lib/sessionHandling/sessionUpdater";
 import {motion} from "framer-motion";
-import Heatmap from "@/components/data/HeatMap";
-import MissingDataHeatmap from "@/components/data/MissingValues";
+import DataTable from "@/components/data/DataTable"
 
 function Data() {
-    const [message, setMessage] = useState("");
-    const [rowsNr, setRowsNr] = useState<number | null>(null);
-    const [columnsNr, setColumnsNr] = useState<number | null>(null);
-    const [fileName, setFileName] = useState<string>("");
     const [missed, setMissed] = useState<number>();
     const [result, setResult] = useState<any>(null);
     const [selectedView, setSelectedView] = useState<number>(0);
+    let Heatmap, MissingDataHeatmap = null;
+    if (selectedView == 1)
+        Heatmap = React.lazy(() => import("@/components/data/HeatMap"))
+    if (selectedView == 2)
+        MissingDataHeatmap = React.lazy(() => import("@/components/data/MissingValues"))
 
     function handleNewData() {
         const data = sessionStorage.getItem("csvData");
         if (!data || data.length < 4) return;
         const _result = JSON.parse(data);
-        console.log(_result);
-        setRowsNr(_result.summary.rows);
-        setColumnsNr(_result.summary.columns);
-        setFileName(_result.summary.filename);
         setResult(_result);
+        console.log(_result)
         let missing = 0;
         for (let key in _result.summary.missingValues) {
             missing += _result.summary.missingValues[key];
@@ -129,15 +125,15 @@ function Data() {
                         <div className="dataSum">
                             <div className="info">
                                 <h1>File</h1>
-                                <h2>{result == null ? "No file uploaded" : fileName}</h2>
+                                <h2>{result == null ? "No file uploaded" : result.summary.filename}</h2>
                             </div>
                             <div className="info">
                                 <h1>Rows</h1>
-                                <h2>{result == null ? "-" : rowsNr}</h2>
+                                <h2>{result == null ? "-" : result.summary.rows}</h2>
                             </div>
                             <div className="info">
                                 <h1>Columns</h1>
-                                <h2>{result == null ? "-" : columnsNr}</h2>
+                                <h2>{result == null ? "-" : result.summary.columns}</h2>
                             </div>
                             <div className="info">
                                 <h1>Missing values</h1>
@@ -151,7 +147,9 @@ function Data() {
             </div>
 
             <div className="area tableArea">
-                <DataTable result={result}/>
+                <Suspense fallback={"Loading table...."}>
+                    <DataTable result={result}/>
+                </Suspense>
             </div>
             <div className={"area"}>
                 <div className={"viewButtons"}>
@@ -160,15 +158,15 @@ function Data() {
                     }} style={selectedView == 0 ? {
                         backgroundColor: "var(--primary-color)",
                         color: "var(--card-background)"
-                    } : {}}><i className="fa-solid fa-hashtag"></i> Correlation Matrix
+                    } : {}}><i
+                        className="fa-solid fa-binary-lock"></i> Encoding Info
                     </button>
                     <button onClick={() => {
                         setSelectedView(1)
                     }} style={selectedView == 1 ? {
                         backgroundColor: "var(--primary-color)",
                         color: "var(--card-background)"
-                    } : {}}><i
-                        className="fa-solid fa-value-absolute"></i> Missing Values Heatmap
+                    } : {}}><i className="fa-solid fa-hashtag"></i> Correlation Matrix
                     </button>
                     <button onClick={() => {
                         setSelectedView(2)
@@ -176,27 +174,57 @@ function Data() {
                         backgroundColor: "var(--primary-color)",
                         color: "var(--card-background)"
                     } : {}}><i
-                        className="fa-solid fa-binary-lock"></i> Encoding Info
+                        className="fa-solid fa-value-absolute"></i> Missing Values Heatmap
                     </button>
                 </div>
                 {
-                    selectedView == 0 && result && result.results ?
-                        <div className={"area justify-center flex items-center"}>
+                    selectedView == 1 && result && result.results && Heatmap ?
+                        <motion.div transition={{delay: 0.4, duration: 0.2, ease: "easeOut"}}
+                                    initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}
+                                    className={"area justify-center flex items-center"}>
                             <h1 className={"subtitle"}>Correlation Matrix</h1>
-                            <Heatmap matrix={result.results.visualization_data.correlation_matrix}/>
-                        </div> : ""
+                            <Suspense fallback={
+                                <motion.div transition={{delay: 0.4, duration: 0.2, ease: "easeOut"}}
+                                            initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}
+                                            className={"flex flex-col gap-[1rem] items-center justify-center h-[600px]"}>
+                                    <div className={"spinner"}/>
+                                    <h1><b>Loading</b></h1>
+                                </motion.div>}>
+                                <motion.div transition={{delay: 0.4, duration: 0.2, ease: "easeOut"}}
+                                            initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}
+                                            className={"h-full w-full"}>
+                                    <Heatmap matrix={result.results.visualization_data.correlation_matrix}/>
+                                </motion.div>
+                            </Suspense>
+                        </motion.div> : ""
                 }
                 {
-                    selectedView == 1 && result && result.results ?
-                        <div className={"area justify-center flex items-center"}>
+                    selectedView == 2 && result && result.results && MissingDataHeatmap ?
+                        <motion.div transition={{delay: 0.4, duration: 0.2, ease: "easeOut"}}
+                                    initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}
+                                    className={"area justify-center flex items-center"}>
                             <h1 className={"subtitle"}>Missing Data Heatmap</h1>
-                            <MissingDataHeatmap columns={result.results.visualization_data.missing_data_heatmap.columns}
-                                                data={result.results.visualization_data.missing_data_heatmap.data}/>
-                        </div> : ""
+                            <Suspense fallback={<motion.div transition={{delay: 0.4, duration: 0.2, ease: "easeOut"}}
+                                                            initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}
+                                                            className={"flex flex-col gap-[1rem] items-center justify-center h-[600px]"}>
+                                <div className={"spinner"}/>
+                                <h1><b>Loading</b></h1>
+                            </motion.div>}>
+                                <motion.div transition={{delay: 0.4, duration: 0.2, ease: "easeOut"}}
+                                            initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}
+                                            className={"h-full w-full"}>
+                                    <MissingDataHeatmap
+                                        columns={result.results.visualization_data.missing_data_heatmap.columns}
+                                        data={result.results.visualization_data.missing_data_heatmap.data}/>
+                                </motion.div>
+                            </Suspense>
+                        </motion.div> : ""
                 }
                 {
-                    selectedView == 2 && result && result.results ?
-                        <div className={"area justify-center flex flex-col gap-[1rem]"}>
+                    selectedView == 0 && result && result.results ?
+                        <motion.div className={"area justify-center flex flex-col gap-[1rem] h-[600px]"}
+                                    transition={{delay: 0.4, duration: 0.2, ease: "easeOut"}}
+                                    initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}}>
                             <h1 className={"subtitle"}>Encoding Info</h1>
                             <div className={"p-[0.5rem] rounded-[0.4rem] flex flex-col gap[0.5rem] w-fit"}
                                  style={{backgroundColor: "var(--background-color)"}}>
@@ -210,10 +238,19 @@ function Data() {
                                         style={result.results.encoding_feasibility.is_safe_for_onehot ? {color: "var(--success-color)"} : {color: "var(--error-color)"}}>{result.results.encoding_feasibility.is_safe_for_onehot ? "Safe" : "Not safe"}</b>
                                 </h1>
                             </div>
-                            <div className={"area flex-row flex-nowrap"}
+                            <div className={"flex justify-evenly align-center p-[0.5rem] rounded-[0.4rem]"}
                                  style={{backgroundColor: "var(--background-color)"}}>
-                                <div className={"w-full"}>
-                                    <h1 className={"font-bold"}>Categorical summary:</h1>
+                                <div className={"flex flex-col p-[1rem] rounded-[0.4rem] h-[20rem] w-[20rem]"}
+                                     style={{backgroundColor: "var(--card-background)"}}>
+                                    <h1 className={"font-bold text-[1.5rem] mb-[0.5rem]"}>Column types:</h1>
+                                    <div className={"flex gap-[0.5rem] items-center justify-center"}>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={"flex flex-col p-[1rem] rounded-[0.4rem] h-[20rem] w-[20rem]"}
+                                     style={{backgroundColor: "var(--card-background)"}}>
+                                    <h1 className={"font-bold text-[1.5rem] mb-[0.5rem]"}>Categorical summary:</h1>
                                     <p>Risky for
                                         onehot: {result.results.encoding_feasibility.categorical_summary.risky_for_onehot.toString()}</p>
                                     <p>Safe for
@@ -221,8 +258,9 @@ function Data() {
                                     <p>Total
                                         categorical: {result.results.encoding_feasibility.categorical_summary.total_categorical.toString()}</p>
                                 </div>
-                                <div className={"w-full"}>
-                                    <h1 className={"font-bold"}>Columns estimate:</h1>
+                                <div className={"flex flex-col p-[1rem] rounded-[0.4rem] h-[20rem] w-[20rem]"}
+                                     style={{backgroundColor: "var(--card-background)"}}>
+                                    <h1 className={"font-bold text-[1.5rem] mb-[0.5rem]"}>Columns estimate:</h1>
                                     <p>Risky for
                                         onehot: {result.results.encoding_feasibility.column_estimate.current_columns.toString()}</p>
                                     <p>Safe for
@@ -230,25 +268,18 @@ function Data() {
                                     <p>Total
                                         categorical: {result.results.encoding_feasibility.column_estimate.new_columns_added.toString()}</p>
                                 </div>
-                                <div className={"w-full"}>
-                                    <h1 className={"font-bold"}>High cardinality columns:</h1>
+                                <div className={"flex flex-col p-[1rem] rounded-[0.4rem] h-[20rem] w-[20rem]"}
+                                     style={{backgroundColor: "var(--card-background)"}}>
+                                    <h1 className={"font-bold text-[1.5rem] mb-[0.5rem]"}>High cardinality columns:</h1>
                                     <div>
-                                        {result.results.encoding_feasibility.high_cardinality_columns.length > 0 ? result.results.encoding_feasibility.high_cardinality_columns.map((val, i) =>
+                                        {result.results.encoding_feasibility.high_cardinality_columns.length > 0 ? result.results.encoding_feasibility.high_cardinality_columns.map((val: string, i: number) =>
                                             <p key={i}>{val}</p>) : <p>No such columns</p>}
                                     </div>
                                 </div>
-                                <div className={"w-full"}>
-                                    <h1 className={"font-bold"}>High cardinality columns:</h1>
-                                    <div>
-
-                                    </div>
-                                </div>
                             </div>
-                        </div> : ""
+                        </motion.div> : ""
                 }
             </div>
-
-
         </motion.div>
     );
 }
