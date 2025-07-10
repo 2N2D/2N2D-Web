@@ -1,43 +1,66 @@
+"use client"
+
 import Plot from "react-plotly.js";
 
-export default function FeatureDistributions({distribution_data}) {
+type Distribution = {
+    values: number[];
+    bins: number[];
+    counts: number[];
+    quartiles: number[];
+    mean: number;
+    stddev: number;
+};
+
+type DistributionData = {
+    [key: string]: Distribution;
+};
+
+type Props = {
+    data: DistributionData;
+
+};
+
+export default function PlotDistribution({data}: Props) {
+    const keys = Object.keys(data);
+
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {Object.entries(distribution_data).map(([feature, dist]) => (
-                <div key={feature} className="bg-background rounded-xl p-4 shadow">
-                    <Plot
-                        data={[
-                            {
-                                x: dist.bins.slice(1),
-                                y: dist.counts,
-                                type: "bar",
-                                marker: {color: "#3b82f6"},
-                            },
-                        ]}
-                        layout={{
-                            title: {
-                                text: feature,
-                                font: {size: 18, color: "#ffffff"},
-                            },
-                            paper_bgcolor: "transparent",
-                            plot_bgcolor: "transparent",
-                            xaxis: {
-                                title: "Value",
-                                tickfont: {color: "#cccccc"},
-                                titlefont: {color: "#cccccc"},
-                            },
-                            yaxis: {
-                                title: "Count",
-                                tickfont: {color: "#cccccc"},
-                                titlefont: {color: "#cccccc"},
-                            },
-                            margin: {t: 40, b: 50, l: 50, r: 30},
-                        }}
-                        config={{responsive: true, displayModeBar: false}}
-                        style={{width: "100%", height: "300px"}}
-                    />
-                </div>
-            ))}
+        <div className="flex flex-row w-full overflow-x-auto gap-[0.5rem] h-[600px] align-center items-center">
+            {keys.map((key) => {
+                const dist = data[key];
+                return (
+                    <div className={"p-[0.5rem] w-full h-full flex items-center"} key={key}>
+                        <Plot
+
+                            data={[
+                                {
+                                    x: dist.values,
+                                    type: 'histogram',
+                                    name: key,
+                                    marker: {color: '#4f46e5'},
+                                },
+                            ]}
+                            layout={{
+                                paper_bgcolor: 'transparent',
+                                plot_bgcolor: 'transparent',
+                                title: {text: `${key} Distribution`, font: {color: "white"}},
+                                xaxis: {title: {text: key, font: {color: "white"}}, tickfont: {color: "white"}},
+                                yaxis: {title: {text: 'Frequency', font: {color: "white"}}, tickfont: {color: "white"}},
+                                bargap: 0.05,
+                                margin: {t: 40, l: 40, r: 30, b: 40},
+
+                            }}
+                            useResizeHandler
+                            style={{width: '60rem', height: '450px'}}
+                            config={{
+                                responsive: true,
+                                displayModeBar: false,
+                                scrollZoom: false,
+                                staticPlot: false,
+                            }}
+                        />
+                    </div>
+                );
+            })}
         </div>
     );
 }

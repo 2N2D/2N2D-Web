@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+import {Geist, Geist_Mono, Poppins} from "next/font/google";
 import "@/lib/fontawesome/css/fa.css";
 import "./globals.css";
 import SideBar from "@/components/SideBar";
