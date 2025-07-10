@@ -68,7 +68,7 @@ function Data() {
                                 className={"flex flex-col h-[11rem] border-1 border-[var(--border-color)] rounded-[0.4rem] overflow-y-auto p-[0.1rem]"}>
                                 {
                                     result && result.results && result.results.encoding_feasibility.warnings.length > 0 ?
-                                        result.results.encoding_feasibility.warnings.length.map((warn: string, i: number) =>
+                                        result.results.encoding_feasibility.warnings.map((warn: string, i: number) =>
                                             <div key={i} className={"warningItem"}>
                                                 <p>{warn}</p>
                                             </div>) :
@@ -84,7 +84,7 @@ function Data() {
                                 className={"flex flex-col h-[11rem] border-1 border-[var(--border-color)] rounded-[0.4rem] overflow-y-auto p-[0.1rem]"}>
                                 {
                                     result && result.results && result.results.encoding_feasibility.recommendations.length > 0 ?
-                                        result.results.encoding_feasibility.recommendations.length.map((rec: string, i: number) =>
+                                        result.results.encoding_feasibility.recommendations.map((rec: string, i: number) =>
                                             <div className={"warningItem"} key={i}>
                                                 <p>{rec}</p>
                                             </div>) :
@@ -272,8 +272,12 @@ function Data() {
                                      style={{backgroundColor: "var(--card-background)"}}>
                                     <h1 className={"font-bold text-[1.5rem] mb-[0.5rem]"}>High cardinality columns:</h1>
                                     <div>
-                                        {result.results.encoding_feasibility.high_cardinality_columns.length > 0 ? result.results.encoding_feasibility.high_cardinality_columns.map((val: string, i: number) =>
-                                            <p key={i}>{val}</p>) : <p>No such columns</p>}
+                                        {result.results.encoding_feasibility.high_cardinality_columns.length > 0 ?
+                                            result.results.encoding_feasibility.high_cardinality_columns.map((val: any, i: number) =>
+                                                <p key={i}>
+                                                    {val.column} ({val.unique_values} unique, {val.severity})
+                                                </p>
+                                            ) : <p>No such columns</p>}
                                     </div>
                                 </div>
                             </div>
