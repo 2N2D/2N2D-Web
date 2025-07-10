@@ -1,5 +1,4 @@
 export interface RobotDataResponse {
-  data: RobotReading[];
   summary: Summary;
   results: Results;
 }
