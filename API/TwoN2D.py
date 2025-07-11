@@ -139,6 +139,11 @@ class UniversalArchitectureModel(nn.Module):
             enhanced_width = arch_info.get('max_width', 64)
         
         logging.info(f"  Final architecture: {enhanced_layers} layers, {enhanced_width} max width")
+        
+        
+        self._enhanced_layers = enhanced_layers
+        self._enhanced_width = enhanced_width
+        
         current_size = arch_info['input_size']       
         if arch_info.get('has_lstm', False):
             if self.enhancement_factor > 1.0:
@@ -569,6 +574,9 @@ class NEATPytorchModel(nn.Module):
         min_enhancement = 1.25
         max_enhancement = min(3.0, 1.0 + complexity_score)
         enhancement_factor = max(min_enhancement, max_enhancement)
+        
+        
+        self._enhancement_factor = enhancement_factor
         
         logging.info(f"NEAT Enhancement Factor: {enhancement_factor:.2f} | "
                     f"Connections: {actual_connections} | Nodes: {total_nodes}")
@@ -1090,7 +1098,7 @@ def analyze_onnx_model_universal(model_bytes):
 def analyze_onnx_model(model_bytes):
     return analyze_onnx_model_universal(model_bytes)
 
-def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, base_model_info, generations=20):
+def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, base_model_info, generations=5, status_callback=None):
     config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
                          config_path)
@@ -1098,7 +1106,19 @@ def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, b
     p.add_reporter(neat.StdOutReporter(True))
     stats = neat.StatisticsReporter()
     p.add_reporter(stats)
+    
+    current_generation = [0]  
     def eval_genomes(genomes, config):
+        current_generation[0] += 1
+        
+        
+        if status_callback:
+            progress = 20 + int((current_generation[0] / generations) * 50)  
+            status_callback({
+                "status": f"NEAT Generation {current_generation[0]}/{generations}: Evolving neural networks...",
+                "progress": progress
+            })
+        
         for genome_id, genome in genomes:
             try:
                 net = NEATPytorchModel(genome, config, input_size, output_size, base_model_info)
@@ -1170,11 +1190,42 @@ def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, b
                 logging.warning(f"Error evaluating genome {genome_id}: {e}")
     winner = p.run(eval_genomes, generations)
     winner_model = NEATPytorchModel(winner, config, input_size, output_size, base_model_info)
-    logging.info("Optimization complete. Visualization disabled to reduce dependencies.")
+    
+    
+    enabled_connections = [c for c in winner.connections.values() if c.enabled]
+    total_nodes = len(winner.nodes)
+    
+    
+    hidden_nodes = total_nodes - input_size - output_size
+    
+    
+    enhancement_factor = getattr(winner_model, '_enhancement_factor', 1.0)
+    if hasattr(winner_model, 'enhanced_model'):
+        actual_layers = getattr(winner_model.enhanced_model, '_enhanced_layers', base_model_info.get('num_layers', 1))
+        actual_neurons = getattr(winner_model.enhanced_model, '_enhanced_width', base_model_info.get('max_width', 64))
+    else:
+        
+        actual_layers = max(1, int(base_model_info.get('num_layers', 1) * enhancement_factor))
+        actual_neurons = max(64, int(base_model_info.get('max_width', 64) * enhancement_factor))
+    
+    logging.info(f"NEAT optimization complete. Final architecture:")
+    logging.info(f"  NEAT genome: {total_nodes} nodes, {len(enabled_connections)} connections, {hidden_nodes} hidden nodes")
+    logging.info(f"  Enhanced PyTorch model: {actual_layers} layers, {actual_neurons} max neurons")
+    logging.info("Visualization disabled to reduce dependencies.")
+    
+    
+    winner_model._neat_architecture = {
+        'layers': actual_layers,
+        'neurons': actual_neurons,
+        'neat_nodes': total_nodes,
+        'neat_connections': len(enabled_connections),
+        'neat_hidden_nodes': hidden_nodes,
+        'enhancement_factor': enhancement_factor
+    }
     
     return winner_model
 
-def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_model_info, population_size=20, generations=10):
+def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_model_info, population_size=20, generations=10, status_callback=None):
     if not HAS_DEAP:
         raise ImportError("DEAP library is required for genetic algorithm optimization. Please install it with: pip install deap")
     base_layers = base_model_info.get('num_layers', 1)
@@ -1307,6 +1358,15 @@ def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_m
             best_individual = current_best[:]
         
         best_fitness_history.append(best_fitness)
+        
+        
+        if status_callback:
+            progress = 20 + int((gen / generations) * 50)  
+            status_callback({
+                "status": f"Genetic Generation {gen+1}/{generations}: Evolving architectures...",
+                "progress": progress
+            })
+        
         logging.info(f"DEAP Gen {gen+1}: Best Fitness = {best_fitness:.4f} "
                     f"(Enhancement={best_individual[0]:.2f}, Pattern={best_individual[1]})")
         offspring = toolbox.select(population, len(population))
@@ -1333,7 +1393,20 @@ def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_m
         actual_output_size=output_size
     )
     
+    
+    actual_layers = getattr(best_model, '_enhanced_layers', base_model_info.get('num_layers', 1))
+    actual_neurons = getattr(best_model, '_enhanced_width', base_model_info.get('max_width', 64))
+    
+    
+    best_model._genetic_architecture = {
+        'layers': actual_layers,
+        'neurons': actual_neurons,
+        'enhancement_factor': enhancement_factor,
+        'enhancement_pattern': pattern
+    }
+    
     logging.info(f"DEAP final best: enhancement factor {enhancement_factor:.2f}, pattern {pattern}")
+    logging.info(f"Enhanced architecture: {actual_layers} layers, {actual_neurons} max neurons")
     logging.info(f"Universal architecture created for any ONNX model type")
     
     return best_model, best_fitness_history
@@ -1472,7 +1545,7 @@ def validate_onnx_export_shapes(model, input_size, output_size):
         return False, f"Shape validation failed: {str(e)}"
 
 def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd.DataFrame, max_epochs=5, 
-                            strategy='brute-force', generations=10, status_callback=None):
+                            strategy='brute-force', generations=5, status_callback=None):
     """
     Enhanced version of the original function with new optimization strategies.
     Maintains backward compatibility while adding NEAT and DEAP genetic algorithms.
@@ -1572,9 +1645,8 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
         baseline_model = baseline_model.to("cpu")
         criterion = nn.MSELoss()
         optimizer = optim.Adam(baseline_model.parameters(), lr=0.001)
-        min_epochs = max(max_epochs, 15)
         
-        for epoch in range(min_epochs):
+        for epoch in range(max_epochs):
             baseline_model.train()
             for batch_X, batch_y in train_loader:
                 optimizer.zero_grad()
@@ -1617,17 +1689,17 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
             "progress": 15
         })
 
+        best_loss = float('inf')
+        best_result = None
+        best_model = None
+        results = []
+
         if strategy == 'brute-force':
             neurons_options = [max(16, base_neurons // 2), base_neurons, base_neurons * 2]  
             layers_options = [max(1, base_layers - 1), base_layers, base_layers + 1]       
 
-            results = []
-            best_loss = float('inf')
-            best_result = None
-            best_model = None
             current_iteration = 0
             total_iterations = len(neurons_options) * len(layers_options)
-            min_epochs = max(max_epochs, 15)
 
             for hidden_size in neurons_options:
                 for num_layers in layers_options:
@@ -1654,13 +1726,13 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
                     criterion = nn.MSELoss()
                     if model_type == 'lstm':
                         lr = 0.01  
-                        actual_epochs = max(min_epochs * 2, 20)
+                        actual_epochs = max(max_epochs * 2, 20)
                     elif model_type == 'conv':
                         lr = 0.001  
-                        actual_epochs = max(min_epochs, 15)
+                        actual_epochs = max(max_epochs, 15)
                     else:
                         lr = 0.001  
-                        actual_epochs = max(min_epochs, 10)  
+                        actual_epochs = max_epochs  
                     
                     optimizer = optim.Adam(model.parameters(), lr=lr)
                     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=3, factor=0.5)
@@ -1827,9 +1899,9 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
             best_model = optimize_with_neat(
                 X_train, y_train, 
                 actual_input_size, actual_output_size,
-                config_path, model_info, generations
+                config_path, model_info, max_epochs, send_status
             )
-            send_status({"status": "Training best NEAT model with backpropagation...", "progress": 80})
+            send_status({"status": "Training best NEAT model with backpropagation...", "progress": 75})
             train_loader_neat = DataLoader(
                 TensorDataset(
                     torch.tensor(X_train, dtype=torch.float32),
@@ -1842,7 +1914,8 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
             optimizer = optim.Adam(best_model.parameters(), lr=0.001)
             criterion = nn.MSELoss()
             
-            for epoch in range(max_epochs*2):
+            final_epochs = max_epochs*2
+            for epoch in range(final_epochs):
                 best_model.train()
                 for batch_X, batch_y in train_loader_neat:
                     optimizer.zero_grad()
@@ -1850,9 +1923,55 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
                     loss = criterion(outputs, batch_y)
                     loss.backward()
                     optimizer.step()
+                
+                
+                if epoch % max(1, final_epochs // 5) == 0:  
+                    progress = 75 + int((epoch / final_epochs) * 10)  
+                    send_status({"status": f"NEAT backpropagation training: epoch {epoch+1}/{final_epochs}", "progress": progress})
             
-            best_result = {"strategy": "NEAT", "base_model": model_info}
-            results = [{"strategy": "NEAT", "generations": generations}]
+            send_status({"status": "Evaluating NEAT model performance...", "progress": 85})
+            best_model.eval()
+            with torch.no_grad():
+                all_outputs = []
+                all_targets = []
+                
+                for batch_X, batch_y in test_loader:
+                    outputs = best_model(batch_X)
+                    all_outputs.append(outputs.cpu().numpy())
+                    all_targets.append(batch_y.cpu().numpy())
+                
+                all_outputs = np.vstack(all_outputs)
+                all_targets = np.vstack(all_targets)
+                all_outputs_unscaled = scaler_y.inverse_transform(all_outputs)
+                all_targets_unscaled = scaler_y.inverse_transform(all_targets)
+                
+                best_loss = mean_squared_error(all_targets_unscaled, all_outputs_unscaled)
+                r2 = r2_score(all_targets_unscaled, all_outputs_unscaled)
+            
+            
+            neat_arch = getattr(best_model, '_neat_architecture', {})
+            layers = neat_arch.get('layers', model_info.get('num_layers', 1))
+            neurons = neat_arch.get('neurons', model_info.get('max_width', 64))
+            
+            best_result = {
+                "strategy": "NEAT", 
+                "test_loss": float(best_loss), 
+                "r2_score": float(r2), 
+                "layers": int(layers), 
+                "neurons": int(neurons),
+                "neat_nodes": neat_arch.get('neat_nodes', 0),
+                "neat_connections": neat_arch.get('neat_connections', 0),
+                "enhancement_factor": neat_arch.get('enhancement_factor', 1.0),
+                "base_model": model_info
+            }
+            results = [{
+                "strategy": "NEAT", 
+                "generations": max_epochs, 
+                "test_loss": float(best_loss), 
+                "r2_score": float(r2),
+                "layers": int(layers),
+                "neurons": int(neurons)
+            }]
             
         elif strategy == 'genetic':
             send_status({"status": "Starting DEAP genetic optimization...", "progress": 20})
@@ -1860,9 +1979,9 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
             best_model, history = optimize_with_genetic_deap(
                 X_train, y_train,
                 actual_input_size, actual_output_size,
-                model_info, population_size=20, generations=generations
+                model_info, population_size=20, generations=max_epochs, status_callback=send_status
             )
-            send_status({"status": "Final training of best genetic model...", "progress": 80})
+            send_status({"status": "Final training of best genetic model...", "progress": 75})
             train_loader_genetic = DataLoader(
                 TensorDataset(
                     torch.tensor(X_train, dtype=torch.float32),
@@ -1875,7 +1994,8 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
             optimizer = optim.Adam(best_model.parameters(), lr=0.001)
             criterion = nn.MSELoss()
             
-            for epoch in range(max_epochs*2):
+            final_epochs = max_epochs*2
+            for epoch in range(final_epochs):
                 best_model.train()
                 for batch_X, batch_y in train_loader_genetic:
                     optimizer.zero_grad()
@@ -1883,9 +2003,55 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
                     loss = criterion(outputs, batch_y)
                     loss.backward()
                     optimizer.step()
+                
+                
+                if epoch % max(1, final_epochs // 5) == 0:  
+                    progress = 75 + int((epoch / final_epochs) * 10)  
+                    send_status({"status": f"Genetic backpropagation training: epoch {epoch+1}/{final_epochs}", "progress": progress})
             
-            best_result = {"strategy": "Genetic", "history": history}
-            results = [{"strategy": "Genetic", "generations": generations, "fitness_history": history}]
+            send_status({"status": "Evaluating genetic model performance...", "progress": 85})
+            best_model.eval()
+            with torch.no_grad():
+                all_outputs = []
+                all_targets = []
+                
+                for batch_X, batch_y in test_loader:
+                    outputs = best_model(batch_X)
+                    all_outputs.append(outputs.cpu().numpy())
+                    all_targets.append(batch_y.cpu().numpy())
+                
+                all_outputs = np.vstack(all_outputs)
+                all_targets = np.vstack(all_targets)
+                all_outputs_unscaled = scaler_y.inverse_transform(all_outputs)
+                all_targets_unscaled = scaler_y.inverse_transform(all_targets)
+                
+                best_loss = mean_squared_error(all_targets_unscaled, all_outputs_unscaled)
+                r2 = r2_score(all_targets_unscaled, all_outputs_unscaled)
+            
+            
+            genetic_arch = getattr(best_model, '_genetic_architecture', {})
+            layers = genetic_arch.get('layers', model_info.get('num_layers', 1))
+            neurons = genetic_arch.get('neurons', model_info.get('max_width', 64))
+            
+            best_result = {
+                "strategy": "Genetic", 
+                "test_loss": float(best_loss), 
+                "r2_score": float(r2), 
+                "layers": int(layers), 
+                "neurons": int(neurons),
+                "enhancement_factor": genetic_arch.get('enhancement_factor', 1.0),
+                "enhancement_pattern": genetic_arch.get('enhancement_pattern', 0),
+                "history": history
+            }
+            results = [{
+                "strategy": "Genetic", 
+                "generations": max_epochs, 
+                "fitness_history": history, 
+                "test_loss": float(best_loss), 
+                "r2_score": float(r2),
+                "layers": int(layers),
+                "neurons": int(neurons)
+            }]
             
         else:
             send_status({"status": f"Unknown strategy: {strategy}", "error": True})

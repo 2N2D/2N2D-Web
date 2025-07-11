@@ -17,6 +17,9 @@ venv/
 .vscode/
 .DS_Store
 __pycache__/
+neat_config.ini
+neat_config_*.ini
+
 # Jupyter/IPython
 .ipynb_checkpoints
 
