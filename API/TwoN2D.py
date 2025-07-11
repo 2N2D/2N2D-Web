@@ -1471,7 +1471,7 @@ def validate_onnx_export_shapes(model, input_size, output_size):
     except Exception as e:
         return False, f"Shape validation failed: {str(e)}"
 
-def find_optimal_architecture(onnx_bytes, csv_bytes, input_features, target_feature, max_epochs=5, 
+def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd.DataFrame, max_epochs=5, 
                             strategy='brute-force', generations=10, status_callback=None):
     """
     Enhanced version of the original function with new optimization strategies.
@@ -1488,7 +1488,7 @@ def find_optimal_architecture(onnx_bytes, csv_bytes, input_features, target_feat
         os.environ["CUDA_VISIBLE_DEVICES"] = ""
         torch.set_num_threads(4)  
         
-        if csv_bytes is None:
+        if df is None:
             send_status({"status": "No data loaded", "error": True})
             return {"error": "No data loaded"}
 
@@ -1507,10 +1507,7 @@ def find_optimal_architecture(onnx_bytes, csv_bytes, input_features, target_feat
         send_status({
             "status": f"Base model: {model_type}, {base_layers} layers, {base_neurons} neurons",
             "progress": 15
-        })
-
-        data_io = io.BytesIO(csv_bytes)
-        df = pd.read_csv(data_io)
+        })  
 
         missing_values = df[input_features + [target_feature]].isna().sum()
         if missing_values.sum() > 0:

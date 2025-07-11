@@ -15,6 +15,7 @@ import json
 from pydantic import BaseModel
 import os
 import concurrent.futures
+import io
 
 from TwoN2D import (
     load_onnx_model,
@@ -27,6 +28,8 @@ from FileHandler import (
     getFileBinaryData,
     uploadFile
 )
+
+from Data import (encode_data_for_ml)
 
 
 class FilePathRequest(BaseModel):
@@ -85,14 +88,27 @@ async def optimize(request: dict, session_id: str = Header(...)):
     sessionId = request.get("session_id")
     csv_path = request.get("csv_path")
     onnx_path = request.get("onnx_path")
+    encoding = request.get("encoding")
 
     print(csv_path)
 
     message_queues[session_id].append({
         "status": "Downloading csv data from database...",
-        "progress": 5
+        "progress": 3
     })
     csv_binary = await getFileBinaryData(csv_path, "csv")
+    encodedDf = None
+    df = pd.read_csv(io.BytesIO(csv_binary))
+    if encoding != "label" or encoding != "one-hot":
+        encodedDf = df
+    else:
+        encodedDf = encode_data_for_ml(df, encoding_type=encoding)
+
+    message_queues[session_id].append({
+        "status": "Encoding csv data...",
+        "progress": 5
+    })
+
 
     message_queues[session_id].append({
         "status": "Downloading onnx data from database...",
@@ -103,7 +119,6 @@ async def optimize(request: dict, session_id: str = Header(...)):
     def status_callback(message):
         message_queues[session_id].append(message)
 
-    import concurrent.futures
 
     loop = asyncio.get_event_loop()
     with concurrent.futures.ThreadPoolExecutor() as pool:
@@ -111,7 +126,7 @@ async def optimize(request: dict, session_id: str = Header(...)):
             pool,
             lambda: find_optimal_architecture(
                 onnx_bytes=onnx_binary,
-                csv_bytes=csv_binary,
+                df=encodedDf,
                 input_features=input_features,
                 target_feature=target_feature,
                 status_callback=status_callback,
