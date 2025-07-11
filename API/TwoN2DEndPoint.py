@@ -89,6 +89,7 @@ async def optimize(request: dict, session_id: str = Header(...)):
     csv_path = request.get("csv_path")
     onnx_path = request.get("onnx_path")
     encoding = request.get("encoding")
+    strat = request.get("strategy")
 
     print(csv_path)
 
@@ -138,6 +139,7 @@ async def optimize(request: dict, session_id: str = Header(...)):
                 target_feature=mapped_target_feature,
                 status_callback=status_callback,
                 max_epochs=epochs,
+                strategy=strat
             )
         )
 

@@ -120,6 +120,7 @@ function Optimize() {
     const target = formData.get('target')?.toString()!;
     const encoding = formData.get('encoding')?.toString();
     const maxEpochs = Number(formData.get('epochs'));
+    const strat = formData.get('strat')?.toString();
 
     const sesId = sessionStorage.getItem('currentSessionId');
     if (!sesId) return;
@@ -137,7 +138,8 @@ function Optimize() {
       parseInt(sesId),
       session.csvUrl!,
       session.onnxUrl!,
-      encoding!
+      encoding!,
+      strat!
     );
 
     if (typeof _result === 'string') {
@@ -223,6 +225,12 @@ function Optimize() {
                   <option>None</option>
                   <option>label</option>
                   <option>onehot</option>
+                </select>
+                <label>Optimization strategy:</label>
+                <select className={'targetFeature'} name={'strat'}>
+                  <option>brute-force</option>
+                  <option>neat</option>
+                  <option>genetic</option>
                 </select>
               </div>
               <div className={'element'}>

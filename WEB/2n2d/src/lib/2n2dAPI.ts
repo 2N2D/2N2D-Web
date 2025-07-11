@@ -16,7 +16,8 @@ export async function startOptimization(
   sessionId: number,
   csvPath: string,
   onnxPath: string,
-  encoding: string
+  encoding: string,
+  strat: string
 ) {
   if (!targetFeature) {
     return 'No target feature selected';
@@ -45,7 +46,8 @@ export async function startOptimization(
         session_id: sessionId,
         csv_path: csvPath,
         onnx_path: onnxPath,
-        encoding: encoding
+        encoding: encoding,
+        strategy: strat
       })
     });
     const data = await res.json();
