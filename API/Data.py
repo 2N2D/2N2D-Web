@@ -42,13 +42,16 @@ def encode_data_for_ml(df: pd.DataFrame, encoding_type: str = 'label') -> Tuple[
     if not categorical_columns:
         logger.info("No categorical columns found. Returning original DataFrame.")
         return df_encoded, encoding_metadata
+    
     if encoding_type == 'label':
         logger.info("Applying Label Encoding to categorical columns...")
         
         for col in categorical_columns:
+            original_col = df_encoded[col].copy()
             df_encoded[col] = df_encoded[col].fillna('_MISSING_')
             le = LabelEncoder()
-            df_encoded[col] = le.fit_transform(df_encoded[col].astype(str))
+            encoded_values = le.fit_transform(df_encoded[col].astype(str))
+            df_encoded[col] = pd.Series(encoded_values, index=df_encoded.index, dtype='float64')
             encoding_metadata['encoders'][col] = {
                 'encoder': le,
                 'classes': le.classes_.tolist(),
@@ -78,7 +81,7 @@ def encode_data_for_ml(df: pd.DataFrame, encoding_type: str = 'label') -> Tuple[
                 })
                 continue  
             df_encoded[col] = df_encoded[col].fillna('_MISSING_')
-            dummies = pd.get_dummies(df_encoded[col], prefix=col, dummy_na=False)
+            dummies = pd.get_dummies(df_encoded[col], prefix=col, dummy_na=False, dtype='float64')
             original_values = df_encoded[col].unique().tolist()
             df_encoded = df_encoded.drop(columns=[col])
             df_encoded = pd.concat([df_encoded, dummies], axis=1)
@@ -94,6 +97,11 @@ def encode_data_for_ml(df: pd.DataFrame, encoding_type: str = 'label') -> Tuple[
     
     else:
         raise ValueError(f"Invalid encoding_type: {encoding_type}. Use 'label' or 'onehot'.")
+    
+    for col in df_encoded.columns:
+        if df_encoded[col].dtype == 'object':
+            logger.warning(f"Column '{col}' still contains object data after encoding. Converting to numeric.")
+            df_encoded[col] = pd.to_numeric(df_encoded[col], errors='coerce').fillna(0.0)
     
     logger.info(f"Encoding complete. DataFrame shape: {df.shape} -> {df_encoded.shape}")
     
@@ -203,9 +211,9 @@ def analyze_csv_data(df: pd.DataFrame) -> Dict[str, Any]:
 def prepare_data_for_ml(df: pd.DataFrame, target_column: str, 
                        encoding_method: str = 'label') -> Tuple[pd.DataFrame, Dict[str, Any]]:
     
+    categorical_columns, numerical_columns = get_column_types(df)
     df_processed, encoding_info = encode_data_for_ml(df, encoding_type=encoding_method)
     
-    categorical_columns, numerical_columns = get_column_types(df)
     for col in numerical_columns:
         if col in df_processed.columns:
             df_processed[col] = df_processed[col].fillna(df_processed[col].median())
@@ -299,5 +307,24 @@ def check_encoding_feasibility(df: pd.DataFrame) -> Dict[str, Any]:
             logger.warning(warning)
     
     return result
+
+def map_original_to_encoded_columns(original_columns: List[str], encoding_metadata: Dict[str, Any], 
+                                  df_encoded: pd.DataFrame) -> List[str]:
+    mapped_columns = []
+    
+    for col in original_columns:
+        if col in df_encoded.columns:
+            mapped_columns.append(col)
+        elif col in encoding_metadata.get('encoders', {}):
+            encoder_info = encoding_metadata['encoders'][col]
+            if encoder_info.get('type') == 'onehot':
+                dummy_columns = encoder_info.get('dummy_columns', [])
+                mapped_columns.extend(dummy_columns)
+            else:
+                mapped_columns.append(col)
+        else:
+            logger.warning(f"Column '{col}' not found in encoded DataFrame. Skipping.")
+    
+    return mapped_columns
 
 

@@ -29,7 +29,7 @@ from FileHandler import (
     uploadFile
 )
 
-from Data import (encode_data_for_ml)
+from Data import (encode_data_for_ml, map_original_to_encoded_columns)
 
 
 class FilePathRequest(BaseModel):
@@ -98,11 +98,18 @@ async def optimize(request: dict, session_id: str = Header(...)):
     })
     csv_binary = await getFileBinaryData(csv_path, "csv")
     encodedDf = None
+    encoding_metadata = None
     df = pd.read_csv(io.BytesIO(csv_binary))
-    if encoding != "label" or encoding != "one-hot":
+    if encoding != "label" and encoding != "onehot":
         encodedDf = df
+        encoding_metadata = {}
     else:
-        encodedDf = encode_data_for_ml(df, encoding_type=encoding)
+        result = encode_data_for_ml(df, encoding_type=encoding)
+        encodedDf = result[0]
+        encoding_metadata = result[1]
+    
+    mapped_input_features = map_original_to_encoded_columns(input_features, encoding_metadata, encodedDf)
+    mapped_target_feature = map_original_to_encoded_columns([target_feature], encoding_metadata, encodedDf)[0]
 
     message_queues[session_id].append({
         "status": "Encoding csv data...",
@@ -127,8 +134,8 @@ async def optimize(request: dict, session_id: str = Header(...)):
             lambda: find_optimal_architecture(
                 onnx_bytes=onnx_binary,
                 df=encodedDf,
-                input_features=input_features,
-                target_feature=target_feature,
+                input_features=mapped_input_features,
+                target_feature=mapped_target_feature,
                 status_callback=status_callback,
                 max_epochs=epochs,
             )
