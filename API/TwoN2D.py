@@ -42,6 +42,19 @@ logging.basicConfig(
     ]
 )
 
+def get_device():
+    """Detect and return the best available device (GPU or CPU)"""
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
+        gpu_name = torch.cuda.get_device_name(0)
+        gpu_memory = torch.cuda.get_device_properties(0).total_memory / 1024**3  
+        logging.info(f"✓ GPU detected: {gpu_name} with {gpu_memory:.1f}GB memory")
+        logging.info(f"Using GPU acceleration for optimization")
+        return device
+    else:
+        logging.info("No GPU detected, using CPU for optimization")
+        return torch.device("cpu")
+
 def make_json_serializable(obj):
     if isinstance(obj, dict):
         return {k: make_json_serializable(v) for k, v in obj.items()}
@@ -1098,7 +1111,10 @@ def analyze_onnx_model_universal(model_bytes):
 def analyze_onnx_model(model_bytes):
     return analyze_onnx_model_universal(model_bytes)
 
-def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, base_model_info, generations=5, status_callback=None):
+def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, base_model_info, generations=5, status_callback=None, device=None):
+    if device is None:
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        
     config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
                          config_path)
@@ -1122,6 +1138,7 @@ def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, b
         for genome_id, genome in genomes:
             try:
                 net = NEATPytorchModel(genome, config, input_size, output_size, base_model_info)
+                net = net.to(device)  
                 optimizer = optim.Adam(net.parameters(), lr=0.001)
                 criterion = nn.MSELoss()
                 
@@ -1137,8 +1154,8 @@ def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, b
                     batch_count = 0
                     for i in range(0, len(X_train_eval), 32):
                         end_idx = min(i + 32, len(X_train_eval))
-                        X_batch = torch.tensor(X_train_eval[i:end_idx], dtype=torch.float32)
-                        y_batch = torch.tensor(y_train_eval[i:end_idx], dtype=torch.float32)
+                        X_batch = torch.tensor(X_train_eval[i:end_idx], dtype=torch.float32, device=device)
+                        y_batch = torch.tensor(y_train_eval[i:end_idx], dtype=torch.float32, device=device)
                         
                         optimizer.zero_grad()
                         outputs = net(X_batch)
@@ -1148,7 +1165,7 @@ def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, b
                                 outputs = outputs[:, :y_batch.shape[1]]
                             else:
                                 padding_size = y_batch.shape[1] - outputs.shape[1]
-                                padding = torch.zeros(outputs.shape[0], padding_size)
+                                padding = torch.zeros(outputs.shape[0], padding_size, device=device)
                                 outputs = torch.cat([outputs, padding], dim=1)
                         
                         loss = criterion(outputs, y_batch)
@@ -1165,8 +1182,8 @@ def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, b
                 with torch.no_grad():
                     for i in range(0, len(X_val_eval), 32):
                         end_idx = min(i + 32, len(X_val_eval))
-                        X_batch = torch.tensor(X_val_eval[i:end_idx], dtype=torch.float32)
-                        y_batch = torch.tensor(y_val_eval[i:end_idx], dtype=torch.float32)
+                        X_batch = torch.tensor(X_val_eval[i:end_idx], dtype=torch.float32, device=device)
+                        y_batch = torch.tensor(y_val_eval[i:end_idx], dtype=torch.float32, device=device)
                         
                         outputs = net(X_batch)
                         if outputs.shape[1] != y_batch.shape[1]:
@@ -1174,7 +1191,7 @@ def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, b
                                 outputs = outputs[:, :y_batch.shape[1]]
                             else:
                                 padding_size = y_batch.shape[1] - outputs.shape[1]
-                                padding = torch.zeros(outputs.shape[0], padding_size)
+                                padding = torch.zeros(outputs.shape[0], padding_size, device=device)
                                 outputs = torch.cat([outputs, padding], dim=1)
                         
                         loss = criterion(outputs, y_batch)
@@ -1190,6 +1207,18 @@ def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, b
                 logging.warning(f"Error evaluating genome {genome_id}: {e}")
     winner = p.run(eval_genomes, generations)
     winner_model = NEATPytorchModel(winner, config, input_size, output_size, base_model_info)
+    
+    
+    winner_model = winner_model.to(device)
+    
+    
+    if hasattr(winner_model, 'enhanced_model') and hasattr(winner_model.enhanced_model, 'input_adapter'):
+        adapter_device = next(winner_model.enhanced_model.input_adapter.parameters()).device
+        main_device = next(winner_model.parameters()).device
+        logging.info(f"NEAT final model device check - main model: {main_device}, input_adapter: {adapter_device}")
+        if adapter_device != main_device:
+            logging.warning(f"NEAT final model device mismatch! Moving input_adapter from {adapter_device} to {main_device}")
+            winner_model.enhanced_model.input_adapter = winner_model.enhanced_model.input_adapter.to(main_device)
     
     
     enabled_connections = [c for c in winner.connections.values() if c.enabled]
@@ -1225,7 +1254,10 @@ def optimize_with_neat(X_train, y_train, input_size, output_size, config_path, b
     
     return winner_model
 
-def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_model_info, population_size=20, generations=10, status_callback=None):
+def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_model_info, population_size=20, generations=10, status_callback=None, device=None):
+    if device is None:
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        
     if not HAS_DEAP:
         raise ImportError("DEAP library is required for genetic algorithm optimization. Please install it with: pip install deap")
     base_layers = base_model_info.get('num_layers', 1)
@@ -1257,6 +1289,16 @@ def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_m
                 actual_input_size=input_size,
                 actual_output_size=output_size
             )
+            model = model.to(device)
+            
+            
+            if hasattr(model, 'input_adapter'):
+                adapter_device = next(model.input_adapter.parameters()).device
+                main_device = next(model.parameters()).device
+                logging.info(f"Device check - main model: {main_device}, input_adapter: {adapter_device}")
+                if adapter_device != main_device:
+                    logging.warning(f"Device mismatch detected! Moving input_adapter from {adapter_device} to {main_device}")
+                    model.input_adapter = model.input_adapter.to(main_device)
             
             val_size = int(0.2 * len(X_train))
             X_train_eval = X_train[val_size:]
@@ -1272,8 +1314,8 @@ def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_m
                 batch_count = 0
                 for i in range(0, len(X_train_eval), 32):
                     end_idx = min(i + 32, len(X_train_eval))
-                    X_batch = torch.tensor(X_train_eval[i:end_idx], dtype=torch.float32)
-                    y_batch = torch.tensor(y_train_eval[i:end_idx], dtype=torch.float32)
+                    X_batch = torch.tensor(X_train_eval[i:end_idx], dtype=torch.float32, device=device)
+                    y_batch = torch.tensor(y_train_eval[i:end_idx], dtype=torch.float32, device=device)
                     
                     optimizer.zero_grad()
                     outputs = model(X_batch)
@@ -1284,7 +1326,7 @@ def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_m
                             outputs = outputs[:, :y_batch.shape[1]]
                         else:
                             padding_size = y_batch.shape[1] - outputs.shape[1]
-                            padding = torch.zeros(outputs.shape[0], padding_size)
+                            padding = torch.zeros(outputs.shape[0], padding_size, device=device)
                             outputs = torch.cat([outputs, padding], dim=1)
                     
                     loss = nn.MSELoss()(outputs, y_batch)
@@ -1300,8 +1342,8 @@ def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_m
                 eval_batches = 0
                 for i in range(0, len(X_val_eval), 32):
                     end_idx = min(i + 32, len(X_val_eval))
-                    X_batch = torch.tensor(X_val_eval[i:end_idx], dtype=torch.float32)
-                    y_batch = torch.tensor(y_val_eval[i:end_idx], dtype=torch.float32)
+                    X_batch = torch.tensor(X_val_eval[i:end_idx], dtype=torch.float32, device=device)
+                    y_batch = torch.tensor(y_val_eval[i:end_idx], dtype=torch.float32, device=device)
                     
                     outputs = model(X_batch)
                     if outputs.shape[1] != y_batch.shape[1]:
@@ -1309,7 +1351,7 @@ def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_m
                             outputs = outputs[:, :y_batch.shape[1]]
                         else:
                             padding_size = y_batch.shape[1] - outputs.shape[1]
-                            padding = torch.zeros(outputs.shape[0], padding_size)
+                            padding = torch.zeros(outputs.shape[0], padding_size, device=device)
                             outputs = torch.cat([outputs, padding], dim=1)
                     
                     loss = nn.MSELoss()(outputs, y_batch)
@@ -1392,6 +1434,18 @@ def optimize_with_genetic_deap(X_train, y_train, input_size, output_size, base_m
         actual_input_size=input_size,
         actual_output_size=output_size
     )
+    
+    
+    best_model = best_model.to(device)
+    
+    
+    if hasattr(best_model, 'input_adapter'):
+        adapter_device = next(best_model.input_adapter.parameters()).device
+        main_device = next(best_model.parameters()).device
+        logging.info(f"Final model device check - main model: {main_device}, input_adapter: {adapter_device}")
+        if adapter_device != main_device:
+            logging.warning(f"Final model device mismatch! Moving input_adapter from {adapter_device} to {main_device}")
+            best_model.input_adapter = best_model.input_adapter.to(main_device)
     
     
     actual_layers = getattr(best_model, '_enhanced_layers', base_model_info.get('num_layers', 1))
@@ -1488,11 +1542,19 @@ survival_threshold = 0.2
     
     return config_path
 
-def validate_model_shapes(model, input_size, output_size, sample_input=None):
+def validate_model_shapes(model, input_size, output_size, sample_input=None, device=None):
     """Validate that model can handle expected input/output shapes"""
     try:
+        if device is None:
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            
         if sample_input is None:
-            sample_input = torch.randn(1, input_size)
+            sample_input = torch.randn(1, input_size, device=device)
+        
+        
+        model = model.to(device)
+        sample_input = sample_input.to(device)
+        
         model.eval()
         with torch.no_grad():
             output = model(sample_input)
@@ -1504,10 +1566,13 @@ def validate_model_shapes(model, input_size, output_size, sample_input=None):
     except Exception as e:
         return False, f"Shape validation failed: {str(e)}"
 
-def validate_onnx_export_shapes(model, input_size, output_size):
+def validate_onnx_export_shapes(model, input_size, output_size, device=None):
     """Validate shapes before ONNX export"""
     try:
-        dummy_input = torch.randn(1, input_size)
+        if device is None:
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            
+        dummy_input = torch.randn(1, input_size, device=device)
         model.eval()
         with torch.no_grad():
             test_output = model(dummy_input)
@@ -1517,9 +1582,13 @@ def validate_onnx_export_shapes(model, input_size, output_size):
             return False, f"Output size mismatch: expected {output_size}, got {test_output.shape[1]}"
         temp_path = os.path.join(tempfile.gettempdir(), "test_export.onnx")
         try:
+            
+            model_cpu = model.to("cpu")
+            dummy_input_cpu = dummy_input.to("cpu")
+            
             torch.onnx.export(
-                model,
-                dummy_input,
+                model_cpu,
+                dummy_input_cpu,
                 temp_path,
                 input_names=["input"],
                 output_names=["output"],
@@ -1558,7 +1627,10 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
             logging.info(message.get("status", str(message)))
 
     try:
-        os.environ["CUDA_VISIBLE_DEVICES"] = ""
+        
+        device = get_device()
+        
+        
         torch.set_num_threads(4)  
         
         if df is None:
@@ -1612,16 +1684,25 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
         logging.info(f"  Scaled range: [{y_train.min():.6f}, {y_train.max():.6f}]")
         logging.info(f"  Scaled std: {y_train.std():.6f}")
         
-        X_train_tensor = torch.tensor(X_train, dtype=torch.float32, device="cpu")
-        y_train_tensor = torch.tensor(y_train, dtype=torch.float32, device="cpu")
-        X_test_tensor = torch.tensor(X_test, dtype=torch.float32, device="cpu")
-        y_test_tensor = torch.tensor(y_test, dtype=torch.float32, device="cpu")
+        
+        X_train_tensor = torch.tensor(X_train, dtype=torch.float32, device=device)
+        y_train_tensor = torch.tensor(y_train, dtype=torch.float32, device=device)
+        X_test_tensor = torch.tensor(X_test, dtype=torch.float32, device=device)
+        y_test_tensor = torch.tensor(y_test, dtype=torch.float32, device=device)
+        
+        
+        if device.type == "cuda":
+            batch_size = min(128, len(X_train) // 4)  
+            logging.info(f"Using GPU-optimized batch size: {batch_size}")
+        else:
+            batch_size = 32
+            logging.info(f"Using CPU batch size: {batch_size}")
         
         train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-        train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+        train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         
         test_dataset = TensorDataset(X_test_tensor, y_test_tensor)
-        test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
+        test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
         
         actual_input_size = X.shape[1]
         actual_output_size = y.shape[1]
@@ -1642,7 +1723,7 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
             actual_output_size=actual_output_size,
             base_model_info=model_info
         )
-        baseline_model = baseline_model.to("cpu")
+        baseline_model = baseline_model.to(device)  
         criterion = nn.MSELoss()
         optimizer = optim.Adam(baseline_model.parameters(), lr=0.001)
         
@@ -1721,7 +1802,7 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
                         actual_output_size=actual_output_size,
                         base_model_info=model_info 
                     )
-                    model = model.to("cpu")
+                    model = model.to(device)  
                     
                     criterion = nn.MSELoss()
                     if model_type == 'lstm':
@@ -1743,10 +1824,10 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
                     val_targets_subset = y_train_tensor[:val_split_size]
                     
                     train_subset_dataset = TensorDataset(train_subset, train_targets_subset)
-                    train_subset_loader = DataLoader(train_subset_dataset, batch_size=32, shuffle=True)
+                    train_subset_loader = DataLoader(train_subset_dataset, batch_size=batch_size, shuffle=True)
                     
                     val_subset_dataset = TensorDataset(val_subset, val_targets_subset)
-                    val_subset_loader = DataLoader(val_subset_dataset, batch_size=32, shuffle=False)
+                    val_subset_loader = DataLoader(val_subset_dataset, batch_size=batch_size, shuffle=False)
                     best_val_loss = float('inf')
                     patience_counter = 0
                     
@@ -1756,8 +1837,6 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
                         batch_count = 0
                         
                         for batch_X, batch_y in train_loader:
-                            batch_X, batch_y = batch_X.to("cpu"), batch_y.to("cpu")
-                            
                             optimizer.zero_grad()
                             outputs = model(batch_X)
                             if outputs.shape != batch_y.shape:
@@ -1782,7 +1861,7 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
                         val_batches = 0
                         with torch.no_grad():
                             for val_X, val_y in val_subset_loader:
-                                val_X, val_y = val_X.to("cpu"), val_y.to("cpu")
+                                val_X, val_y = val_X.to(device), val_y.to(device)
                                 val_outputs = model(val_X)
                                 if val_outputs.shape != val_y.shape:
                                     if val_outputs.shape[0] == val_y.shape[0]:  
@@ -1812,7 +1891,7 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
                         all_targets = []
                         
                         for batch_X, batch_y in test_loader:
-                            batch_X, batch_y = batch_X.to("cpu"), batch_y.to("cpu")
+                            batch_X, batch_y = batch_X.to(device), batch_y.to(device)
                             outputs = model(batch_X)
                             if outputs.shape != batch_y.shape:
                                 if outputs.shape[0] == batch_y.shape[0]:  
@@ -1899,13 +1978,13 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
             best_model = optimize_with_neat(
                 X_train, y_train, 
                 actual_input_size, actual_output_size,
-                config_path, model_info, max_epochs, send_status
+                config_path, model_info, max_epochs, send_status, device
             )
             send_status({"status": "Training best NEAT model with backpropagation...", "progress": 75})
             train_loader_neat = DataLoader(
                 TensorDataset(
-                    torch.tensor(X_train, dtype=torch.float32),
-                    torch.tensor(y_train, dtype=torch.float32)
+                    torch.tensor(X_train, dtype=torch.float32, device=device),
+                    torch.tensor(y_train, dtype=torch.float32, device=device)
                 ), 
                 batch_size=32, 
                 shuffle=True
@@ -1930,12 +2009,15 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
                     send_status({"status": f"NEAT backpropagation training: epoch {epoch+1}/{final_epochs}", "progress": progress})
             
             send_status({"status": "Evaluating NEAT model performance...", "progress": 85})
+            best_model = best_model.to(device)  
             best_model.eval()
             with torch.no_grad():
                 all_outputs = []
                 all_targets = []
                 
                 for batch_X, batch_y in test_loader:
+                    batch_X = batch_X.to(device)
+                    batch_y = batch_y.to(device)
                     outputs = best_model(batch_X)
                     all_outputs.append(outputs.cpu().numpy())
                     all_targets.append(batch_y.cpu().numpy())
@@ -1979,13 +2061,13 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
             best_model, history = optimize_with_genetic_deap(
                 X_train, y_train,
                 actual_input_size, actual_output_size,
-                model_info, population_size=20, generations=max_epochs, status_callback=send_status
+                model_info, population_size=20, generations=max_epochs, status_callback=send_status, device=device
             )
             send_status({"status": "Final training of best genetic model...", "progress": 75})
             train_loader_genetic = DataLoader(
                 TensorDataset(
-                    torch.tensor(X_train, dtype=torch.float32),
-                    torch.tensor(y_train, dtype=torch.float32)
+                    torch.tensor(X_train, dtype=torch.float32, device=device),
+                    torch.tensor(y_train, dtype=torch.float32, device=device)
                 ), 
                 batch_size=32, 
                 shuffle=True
@@ -2010,12 +2092,15 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
                     send_status({"status": f"Genetic backpropagation training: epoch {epoch+1}/{final_epochs}", "progress": progress})
             
             send_status({"status": "Evaluating genetic model performance...", "progress": 85})
+            best_model = best_model.to(device)  
             best_model.eval()
             with torch.no_grad():
                 all_outputs = []
                 all_targets = []
                 
                 for batch_X, batch_y in test_loader:
+                    batch_X = batch_X.to(device)
+                    batch_y = batch_y.to(device)
                     outputs = best_model(batch_X)
                     all_outputs.append(outputs.cpu().numpy())
                     all_targets.append(batch_y.cpu().numpy())
@@ -2057,7 +2142,7 @@ def find_optimal_architecture(onnx_bytes, input_features, target_feature, df: pd
             send_status({"status": f"Unknown strategy: {strategy}", "error": True})
             return {"error": f"Unknown strategy: {strategy}"}
         best_model = best_model.to("cpu")
-        dummy_input = torch.randn(1, actual_input_size, device="cpu")
+        dummy_input = torch.randn(1, actual_input_size, device="cpu")  
         onnx_path = os.path.join(tempfile.gettempdir(), "optimized_model.onnx")
         best_model.eval()
         try:
