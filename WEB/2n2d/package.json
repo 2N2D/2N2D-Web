@@ -12,6 +12,7 @@
     "gen": "drizzle-kit generate"
   },
   "dependencies": {
+    "@google/genai": "^1.9.0",
     "@supabase/supabase-js": "^2.50.0",
     "@uiw/react-markdown-preview": "^5.1.4",
     "@uploadthing/react": "^7.3.1",

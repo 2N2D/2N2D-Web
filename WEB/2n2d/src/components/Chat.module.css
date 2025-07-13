@@ -12,6 +12,25 @@
 
 }
 
+/* Chat.module.css */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0
+    }
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    background-color: #333;
+    margin-left: 4px;
+    animation: blink 1s infinite;
+}
+
+
 .status {
     width: 100%;
     background-color: var(--card-background);
