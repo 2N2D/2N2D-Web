@@ -1,6 +1,6 @@
 import {sendCSV, sendModel} from "../2n2dAPI";
-import {getCurrentUserHash} from "@/lib/auth/authentication";
-import {UploadFile} from "@/lib/fileHandler/supaStorage";
+import {getCurrentUser, getCurrentHash} from "@/lib/auth/authentication";
+import {uploadFile} from "@/lib/fileHandler/r2Bucket";
 
 function readFileAsArrayBuffer(file) {
     return new Promise((resolve, reject) => {
@@ -37,8 +37,9 @@ export async function uploadCSV(ev, id) {
         return "File too big";
     const currentSessionId = sessionStorage.getItem("currentSessionId");
     if (!currentSessionId) return;
+    const savePath = await getCurrentUser()
 
-    const path = await UploadFile(file, "csv", await getCurrentUserHash(), currentSessionId);
+    const path = await UploadFile(file, "csv", await getCurrentUser(), currentSessionId);
 
     return await sendCSV(path, id);
 }

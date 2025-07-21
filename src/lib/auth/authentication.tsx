@@ -73,14 +73,14 @@ export async function getSessionTokenHash(): Promise<string> {
     return '0';
 }
 
-export async function getCurrentUserHash(): Promise<string> {
+export async function getCurrentUser(): Promise<string> {
     await initAdmin();
     const token = (await cookies()).get('session');
     if (!token?.value)
         return "0"
     const user = await getAuth().verifySessionCookie(token?.value!, true);
     if (user != null) {
-            return hash(user.uid);
+            return user.uid;
     } else
         return "0";
 }

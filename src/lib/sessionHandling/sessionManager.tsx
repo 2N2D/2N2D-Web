@@ -2,7 +2,7 @@
 
 import {session} from "@/db/schemas/session"
 import {user} from "@/db/schemas/user"
-import {getSessionTokenHash, getCurrentUserHash} from "@/lib/auth/authentication";
+import {getSessionTokenHash, getCurrentUser} from "@/lib/auth/authentication";
 import {db} from "@/db/db";
 import {eq} from "drizzle-orm";
 import {deleteFile} from "@/lib/fileHandler/supaStorage";
@@ -12,7 +12,7 @@ export type User = typeof user.$inferSelect;
 
 export async function createUser(mail: string, displayName: string): Promise<User> {
     let newUser = await db.insert(user).values({
-        uid: await getCurrentUserHash(),
+        uid: await getCurrentUser(),
         email: mail,
         displayName: displayName,
         sessions: []
@@ -26,7 +26,7 @@ export async function deleteUser(id: number) {
 }
 
 export async function getUser(): Promise<User | string> {
-    const userHash = await getCurrentUserHash();
+    const userHash = await getCurrentUser();
     if (userHash == "0")
         return "Not logged"
     let User = await db.select().from(user).where(eq(user.uid, userHash));
@@ -45,7 +45,7 @@ export async function updateUser(newUser: User) {
 
 export async function createSession(User: User): Promise<Session> {
     let newSession = await db.insert(session).values({
-        userId: await getCurrentUserHash(),
+        userId: await getCurrentUser(),
         tokenHash: await getSessionTokenHash(),
         onnxName: "",
         onnxUrl: "",
