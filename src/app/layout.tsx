@@ -26,8 +26,10 @@ export default function RootLayout({
                                    }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const lang = 'en';
+
     return (
-        <html lang="en">
+        <html lang="en" className={"dark"}>
         <head>
             <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

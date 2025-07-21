@@ -15,7 +15,8 @@ import {
 } from "@/lib/sessionHandling/sessionManager";
 import {updateName} from "@/lib/sessionHandling/sessionUpdater";
 import {motion} from "framer-motion";
-import {createVisualNetwork2D, downloadFileRequest} from "@/lib/feHandler";
+import {createVisualNetwork2D, downloadFileRequest} from "@/lib/frontend/feHandler";
+import { Trans } from '@lingui/react/macro';
 
 export default function dash() {
 
@@ -194,7 +195,7 @@ export default function dash() {
         <ParticleNetwork/>
         <motion.div className="lander" initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.4}}>
             <div>
-                <h1 className="title">Dashboard</h1>
+                <h1 className="title">aaa</h1>
                 {notLogged ? <div>
                         <h2 className="subtitle">You are not logged in</h2>
                         <button className="notLoggedBut" onClick={() => router.push("/login")}>Log in here <i

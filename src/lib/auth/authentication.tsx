@@ -53,11 +53,11 @@ export async function getSession(path?: string): Promise<string> {
                 return '401';
             }
         } else {
-            return '401'; // No session cookie
+            return '401';
         }
     } catch (error) {
         console.error("Error while checking session:", error);
-        return '500'; // General error code if something goes wrong
+        return '500';
     }
 }
 
@@ -80,7 +80,7 @@ export async function getCurrentUserHash(): Promise<string> {
         return "0"
     const user = await getAuth().verifySessionCookie(token?.value!, true);
     if (user != null) {
-        return hash(user.uid);
+            return hash(user.uid);
     } else
         return "0";
 }

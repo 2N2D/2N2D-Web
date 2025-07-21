@@ -1,7 +1,7 @@
 "use client";
 import React, {useState} from "react";
 import "./styles.css";
-import {createVisualNetwork2D, categoryColorMap, getNodeCategory, nodes, edges} from "@/lib/feHandler";
+import {createVisualNetwork2D, categoryColorMap, getNodeCategory, nodes, edges} from "@/lib/frontend/feHandler";
 import ONNXUploader from "@/components/fileUploadElements/ONNXUploader";
 import {Session, updateSession, getSession} from "@/lib/sessionHandling/sessionManager";
 import {motion, AnimatePresence} from 'framer-motion';

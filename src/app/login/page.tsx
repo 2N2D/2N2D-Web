@@ -39,7 +39,7 @@ export default function login() {
 
     return <main>
         <ParticleNetwork/>
-        {loggedIn ? <div>
+        {loggedIn ? <div className={"logCont"}>
                 <h1>You are already logged in, would you like to log out?</h1>
                 <button onClick={() => {
                     logout()

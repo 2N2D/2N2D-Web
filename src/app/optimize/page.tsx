@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, FormEvent } from 'react';
 import { startOptimization } from '@/lib/2n2dAPI';
-import { downloadFileRequest } from '@/lib/feHandler';
+import { downloadFileRequest } from '@/lib/frontend/feHandler';
 import { getSessionTokenHash } from '@/lib/auth/authentication';
 import { getSession } from '@/lib/sessionHandling/sessionManager';
 import './styles.css';

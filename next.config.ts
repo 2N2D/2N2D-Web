@@ -1,11 +1,18 @@
-import type {NextConfig} from "next";
+import nextra from 'nextra'
+import  {type NextConfig} from 'next';
 
-const nextConfig: NextConfig = {
+const withNextra = nextra({
+    search: {
+        codeblocks: false
+    }
+})
+
+const nextConfig : NextConfig = {
     experimental: {
         serverActions: {
-            bodySizeLimit: "50mb"
-        }
-    }
-};
+            bodySizeLimit: '50mb',
+        },
+    },
+}
 
-export default nextConfig;
+export default withNextra(nextConfig)
