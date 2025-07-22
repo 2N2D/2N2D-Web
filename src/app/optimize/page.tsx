@@ -161,7 +161,7 @@ function Optimize() {
 
     let fileName = onnxFileName.split('.')[0] + '_optimized.onnx';
     console.log(result.url);
-    await downloadFileRequest(result.url!, 'rezult', fileName);
+    await downloadFileRequest(result.url!, fileName);
     setDownloading(false);
   }
 

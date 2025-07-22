@@ -37,11 +37,12 @@ export async function uploadCSV(ev, id) {
         return "File too big";
     const currentSessionId = sessionStorage.getItem("currentSessionId");
     if (!currentSessionId) return;
-    const savePath = await getCurrentUser()
 
-    const path = await UploadFile(file, "csv", await getCurrentUser(), currentSessionId);
+    const savePath = `${await getCurrentUser()}/csv`;
+    const path = await uploadFile(file, savePath);
+    console.log(path);
 
-    return await sendCSV(path, id);
+    return await sendCSV(path, id)
 }
 
 export async function uploadONNX(ev, id) {
@@ -56,7 +57,8 @@ export async function uploadONNX(ev, id) {
     const currentSessionId = sessionStorage.getItem("currentSessionId");
     if (!currentSessionId) return "No active session";
 
-    const path = await UploadFile(file, "onnx", await getCurrentUserHash(), currentSessionId);
+    const savePath = `${await getCurrentUser()}/onnx`;
+    const path = await uploadFile(file, savePath);
 
     return await sendModel(path, file.name, id);
 }
@@ -69,7 +71,8 @@ async function uploadCSVFile(file) {
     const currentSessionId = sessionStorage.getItem("currentSessionId");
     if (!currentSessionId) return;
 
-    const path = await UploadFile(file, "csv", await getCurrentUserHash(), currentSessionId);
+    const savePath = `${await getCurrentUser()}/csv`;
+    const path = await uploadFile(file, savePath);
 
     return await sendCSV(path)
 }
@@ -85,7 +88,8 @@ async function uploadModelFile(file) {
     const currentSessionId = sessionStorage.getItem("currentSessionId");
     if (!currentSessionId) return "No active session";
 
-    const path = await UploadFile(file, "onnx", await getCurrentUserHash(), currentSessionId);
+    const savePath = `${await getCurrentUser()}/onnx`;
+    const path = await uploadFile(file, savePath);
 
     return await sendModel(path);
 }

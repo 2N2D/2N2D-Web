@@ -33,6 +33,13 @@ export async function getUser(): Promise<User | string> {
     return User[0];
 }
 
+export async function getUserSessions(): Promise<Session[]> {
+    const userId = await getCurrentUser();
+    const sessions = await db.select().from(session).where(eq(session.userId, userId));
+    return sessions;
+}
+
+
 export async function getSpecificUser(uidHash: string): Promise<User | null> {
     let User = await db.select().from(user).where(eq(user.uid, uidHash));
     if (!User[0] || User[0] == null) return null;
