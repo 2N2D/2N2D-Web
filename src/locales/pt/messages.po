@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: pt\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "Painel de Desenvolvimento de Rede Neural"
+
+msgid "Already have an account? "
+msgstr "Já tem uma conta? "
+
+msgid "Analyze"
+msgstr "Analisar"
+
+msgid "Ask"
+msgstr "Perguntar"
+
+msgid "Attributes:"
+msgstr "Atributos:"
+
+msgid "Back to login"
+msgstr "Voltar ao login"
+
+msgid "Category:"
+msgstr "Categoria:"
+
+msgid "Columns"
+msgstr "Colunas"
+
+msgid "Csv file:"
+msgstr "Arquivo csv:"
+
+msgid "CSV file:"
+msgstr "Arquivo CSV:"
+
+msgid "Cur. Memory"
+msgstr "Mem. Atual"
+
+msgid "Don't have an account?"
+msgstr "Não tem uma conta?"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "Interprete facilmente os dados de treinamento e saída de seus modelos."
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "Visualize facilmente a estrutura e os nós da sua rede neural, em um formato fácil e simples de entender."
+
+msgid "Est. Memory"
+msgstr "Mem. Est."
+
+msgid "File"
+msgstr "Arquivo"
+
+msgid "File:"
+msgstr "Arquivo:"
+
+msgid "Got the basics?"
+msgstr "Entendeu o básico?"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "Se você entendeu os conceitos básicos sobre como as redes neurais funcionam, use o guia a seguir para começar a criar a sua própria. Não se esqueça de perguntar ao Assistente de IA se tiver dúvidas!"
+
+msgid "Inputs:"
+msgstr "Entradas:"
+
+msgid "IR version:"
+msgstr "Versão IR:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "Basta arrastar e soltar seus arquivos e começar — sem configuração, sem complicações."
+
+msgid "Layers:"
+msgstr "Camadas:"
+
+msgid "Load CSV File"
+msgstr "Carregar Arquivo CSV"
+
+msgid "Load ONNX File"
+msgstr "Carregar Arquivo ONNX"
+
+msgid "Loading"
+msgstr "Carregando"
+
+msgid "Log out"
+msgstr "Sair"
+
+msgid "Logging in...."
+msgstr "Entrando..."
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Magic Link sign-in"
+msgstr "Login com Link Mágico"
+
+msgid "Missing values"
+msgstr "Valores ausentes"
+
+msgid "Name:"
+msgstr "Nome:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "Painel de Desenvolvimento de Rede Neural"
+
+msgid "Neurons:"
+msgstr "Neurônios:"
+
+msgid "No data to display"
+msgstr "Sem dados para exibir"
+
+msgid "No optimization done."
+msgstr "Nenhuma otimização realizada."
+
+msgid "No recommendations"
+msgstr "Sem recomendações"
+
+msgid "No such columns"
+msgstr "Colunas não encontradas"
+
+msgid "No warnings"
+msgstr "Sem avisos"
+
+msgid "Node count:"
+msgstr "Contagem de nós:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "oferece cursos gratuitos sobre redes neurais e como elas funcionam."
+
+msgid "One hot"
+msgstr "One-hot"
+
+msgid "ONNX file:"
+msgstr "Arquivo ONNX:"
+
+msgid "Optimize"
+msgstr "Otimizar"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "Otimize sua rede neural com uma arquitetura melhor para melhorar sua velocidade e saídas."
+
+msgid "Outputs:"
+msgstr "Saídas:"
+
+msgid "Overall"
+msgstr "Geral"
+
+msgid "Producer:"
+msgstr "Produtor:"
+
+msgid "R2 score:"
+msgstr "Pontuação R2:"
+
+msgid "Risky for onehot:"
+msgstr "Arriscado para one-hot:"
+
+msgid "Rows"
+msgstr "Linhas"
+
+msgid "Safe for onehot:"
+msgstr "Seguro para one-hot:"
+
+msgid "Sign up"
+msgstr "Registrar"
+
+msgid "Something went wrong"
+msgstr "Algo deu errado"
+
+msgid "Test loss:"
+msgstr "Perda no teste:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "O Neural Network Playground oferece uma maneira interativa de ver e entender como uma rede neural pensa e funciona. Basta clicar no botão abaixo para começar."
+
+msgid "Total categorical:"
+msgstr "Total categórico:"
+
+msgid "Visualize"
+msgstr "Visualizar"
+
+msgid "Welcome back!"
+msgstr "Bem-vindo de volta!"
+
+msgid "Welcome!"
+msgstr "Bem-vindo!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "Se você está treinando um modelo simples ou ajustando um transformador massivo, o 2N2D se adapta ao seu fluxo de trabalho. Tudo o que você precisa para começar é uma conta."
+
+msgid "Wrong username or password!"
+msgstr "Nome de usuário ou senha incorretos!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "Você já está conectado, deseja sair?"
+```

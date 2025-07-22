@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: tl\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "Dashboard sa Pagpapaunlad ng Neural Network"
+
+msgid "Already have an account? "
+msgstr "Mayroon ka na bang account? "
+
+msgid "Analyze"
+msgstr "Suriin"
+
+msgid "Ask"
+msgstr "Magtanong"
+
+msgid "Attributes:"
+msgstr "Mga Katangian:"
+
+msgid "Back to login"
+msgstr "Bumalik sa pag-login"
+
+msgid "Category:"
+msgstr "Kategorya:"
+
+msgid "Columns"
+msgstr "Mga Kolum"
+
+msgid "Csv file:"
+msgstr "Csv file:"
+
+msgid "CSV file:"
+msgstr "CSV file:"
+
+msgid "Cur. Memory"
+msgstr "Kasalukuyang Memorya"
+
+msgid "Don't have an account?"
+msgstr "Wala ka pang account?"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "Madaling bigyang-kahulugan ang mga datos sa pagsasanay at output mula sa iyong mga modelo."
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "Madaling biswalisahin ang istruktura at mga node ng iyong neural network, sa isang madali at simpleng maintindihang format"
+
+msgid "Est. Memory"
+msgstr "Tinatayang Memorya"
+
+msgid "File"
+msgstr "File"
+
+msgid "File:"
+msgstr "File:"
+
+msgid "Got the basics?"
+msgstr "Naintindihan mo na ba ang mga pangunahing kaalaman?"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "Kung naintindihan mo na ang mga konsepto kung paano gumagana ang neural network, gamitin ang sumusunod na gabay para simulan ang paggawa ng sarili mo. Huwag kalimutang magtanong sa AI Assistant kung may mga katanungan ka!"
+
+msgid "Inputs:"
+msgstr "Mga Input:"
+
+msgid "IR version:"
+msgstr "Bersyon ng IR:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "I-drag at i-drop lang ang iyong mga file at simulan na—walang setup, walang abala."
+
+msgid "Layers:"
+msgstr "Mga Layer:"
+
+msgid "Load CSV File"
+msgstr "I-load ang CSV File"
+
+msgid "Load ONNX File"
+msgstr "I-load ang ONNX File"
+
+msgid "Loading"
+msgstr "Naglo-load"
+
+msgid "Log out"
+msgstr "Mag-log out"
+
+msgid "Logging in...."
+msgstr "Naglo-login...."
+
+msgid "Login"
+msgstr "Mag-login"
+
+msgid "Magic Link sign-in"
+msgstr "Mag-sign-in gamit ang Magic Link"
+
+msgid "Missing values"
+msgstr "Nawawalang mga halaga"
+
+msgid "Name:"
+msgstr "Pangalan:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "Dashboard sa Pagpapaunlad ng Neural Network"
+
+msgid "Neurons:"
+msgstr "Mga Neuron:"
+
+msgid "No data to display"
+msgstr "Walang datos na maipapakita"
+
+msgid "No optimization done."
+msgstr "Walang optimizasyon na nagawa."
+
+msgid "No recommendations"
+msgstr "Walang rekomendasyon"
+
+msgid "No such columns"
+msgstr "Walang ganyang mga kolum"
+
+msgid "No warnings"
+msgstr "Walang babala"
+
+msgid "Node count:"
+msgstr "Bilang ng Node:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "nagbibigay ng libreng mga kurso tungkol sa mga neural network at kung paano ito gumagana."
+
+msgid "One hot"
+msgstr "One hot"
+
+msgid "ONNX file:"
+msgstr "ONNX file:"
+
+msgid "Optimize"
+msgstr "I-optimize"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "I-optimize ang iyong neural network gamit ang mas mahusay na arkitektura upang mapabuti ang bilis at mga output nito."
+
+msgid "Outputs:"
+msgstr "Mga Output:"
+
+msgid "Overall"
+msgstr "Pangkalahatan"
+
+msgid "Producer:"
+msgstr "Producer:"
+
+msgid "R2 score:"
+msgstr "R2 score:"
+
+msgid "Risky for onehot:"
+msgstr "Mapanganib para sa onehot:"
+
+msgid "Rows"
+msgstr "Mga Hanay"
+
+msgid "Safe for onehot:"
+msgstr "Ligtas para sa onehot:"
+
+msgid "Sign up"
+msgstr "Mag-sign up"
+
+msgid "Something went wrong"
+msgstr "May mali"
+
+msgid "Test loss:"
+msgstr "Test loss:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "Ang Neural Network Playground ay nag-aalok ng interactive na paraan upang makita at maunawaan kung paano nag-iisip at gumagana ang isang neural network. I-click lang ang button sa ibaba para makapagsimula."
+
+msgid "Total categorical:"
+msgstr "Kabuuang kategorya:"
+
+msgid "Visualize"
+msgstr "Biswalisahin"
+
+msgid "Welcome back!"
+msgstr "Muli tayong nagkita!"
+
+msgid "Welcome!"
+msgstr "Maligayang pagdating!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "Kung nagsasanay ka man ng isang simpleng modelo o nagfi-fine-tune ng isang malaking transformer, ang 2N2D ay umaangkop sa iyong workflow. Ang kailangan mo lang para makapagsimula ay isang account."
+
+msgid "Wrong username or password!"
+msgstr "Mali ang username o password!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "Naka-log in ka na, gusto mo bang mag-log out?"
+```

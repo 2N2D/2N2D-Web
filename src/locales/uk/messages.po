@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: uk\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "Панель розробки <0>Н</0>ейронних <1>М</1>ереж"
+
+msgid "Already have an account? "
+msgstr "Вже маєте обліковий запис? "
+
+msgid "Analyze"
+msgstr "Аналізувати"
+
+msgid "Ask"
+msgstr "Запитати"
+
+msgid "Attributes:"
+msgstr "Атрибути:"
+
+msgid "Back to login"
+msgstr "Повернутися до входу"
+
+msgid "Category:"
+msgstr "Категорія:"
+
+msgid "Columns"
+msgstr "Стовпці"
+
+msgid "Csv file:"
+msgstr "Файл Csv:"
+
+msgid "CSV file:"
+msgstr "CSV файл:"
+
+msgid "Cur. Memory"
+msgstr "Поточна пам'ять"
+
+msgid "Don't have an account?"
+msgstr "Не маєте облікового запису?"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "Легко інтерпретуйте дані навчання та виведення з ваших моделей."
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "Легко візуалізуйте структуру та вузли вашої нейронної мережі в простому та зрозумілому форматі"
+
+msgid "Est. Memory"
+msgstr "Орієнтовна пам'ять"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "File:"
+msgstr "Файл:"
+
+msgid "Got the basics?"
+msgstr "Освоили основи?"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "Якщо ви розібралися з основами роботи нейронних мереж, скористайтеся наступним посібником, щоб почати створювати власні. Не забувайте звертатися до помічника ШІ з питаннями!"
+
+msgid "Inputs:"
+msgstr "Входи:"
+
+msgid "IR version:"
+msgstr "Версія IR:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "Просто перетягніть та скиньте ваші файли і почніть роботу — без налаштувань, без клопоту."
+
+msgid "Layers:"
+msgstr "Шари:"
+
+msgid "Load CSV File"
+msgstr "Завантажити CSV файл"
+
+msgid "Load ONNX File"
+msgstr "Завантажити ONNX файл"
+
+msgid "Loading"
+msgstr "Завантаження"
+
+msgid "Log out"
+msgstr "Вийти"
+
+msgid "Logging in...."
+msgstr "Вхід..."
+
+msgid "Login"
+msgstr "Вхід"
+
+msgid "Magic Link sign-in"
+msgstr "Вхід за магічним посиланням"
+
+msgid "Missing values"
+msgstr "Пропущені значення"
+
+msgid "Name:"
+msgstr "Назва:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "Панель розробки нейронних мереж"
+
+msgid "Neurons:"
+msgstr "Нейрони:"
+
+msgid "No data to display"
+msgstr "Немає даних для відображення"
+
+msgid "No optimization done."
+msgstr "Оптимізація не виконана."
+
+msgid "No recommendations"
+msgstr "Рекомендацій немає"
+
+msgid "No such columns"
+msgstr "Таких стовпців немає"
+
+msgid "No warnings"
+msgstr "Попередження відсутні"
+
+msgid "Node count:"
+msgstr "Кількість вузлів:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "пропонує безкоштовні курси про нейронні мережі та їхню роботу."
+
+msgid "One hot"
+msgstr "One hot"
+
+msgid "ONNX file:"
+msgstr "ONNX файл:"
+
+msgid "Optimize"
+msgstr "Оптимізувати"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "Оптимізуйте свою нейронну мережу за допомогою кращої архітектури для покращення її швидкості та результатів."
+
+msgid "Outputs:"
+msgstr "Виходи:"
+
+msgid "Overall"
+msgstr "Загалом"
+
+msgid "Producer:"
+msgstr "Виробник:"
+
+msgid "R2 score:"
+msgstr "R2 оцінка:"
+
+msgid "Risky for onehot:"
+msgstr "Ризиковано для onehot:"
+
+msgid "Rows"
+msgstr "Рядки"
+
+msgid "Safe for onehot:"
+msgstr "Безпечно для onehot:"
+
+msgid "Sign up"
+msgstr "Зареєструватися"
+
+msgid "Something went wrong"
+msgstr "Щось пішло не так"
+
+msgid "Test loss:"
+msgstr "Втрати тестування:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "Нейронна ігрова площадка пропонує інтерактивний спосіб побачити та зрозуміти, як думає та функціонує нейронна мережа. Просто натисніть кнопку нижче, щоб почати."
+
+msgid "Total categorical:"
+msgstr "Загальна категорійна:"
+
+msgid "Visualize"
+msgstr "Візуалізувати"
+
+msgid "Welcome back!"
+msgstr "Ласкаво просимо назад!"
+
+msgid "Welcome!"
+msgstr "Ласкаво просимо!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "Незалежно від того, чи навчаєте ви просту модель, чи донастроюєте масивний трансформатор, 2N2D адаптується до вашого робочого процесу. Все, що вам потрібно для початку, — це обліковий запис."
+
+msgid "Wrong username or password!"
+msgstr "Неправильне ім'я користувача або пароль!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "Ви вже увійшли, бажаєте вийти?"
+```

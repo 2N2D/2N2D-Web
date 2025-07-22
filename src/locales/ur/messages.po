@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ur\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "نیورل نیٹ ورک ترقیاتی ڈیش بورڈ"
+
+msgid "Already have an account? "
+msgstr "کیا آپ کا پہلے سے اکاؤنٹ ہے؟"
+
+msgid "Analyze"
+msgstr "تجزیہ کریں"
+
+msgid "Ask"
+msgstr "پوچھیں"
+
+msgid "Attributes:"
+msgstr "خصوصیات:"
+
+msgid "Back to login"
+msgstr "لاگ ان پر واپس جائیں"
+
+msgid "Category:"
+msgstr "کیٹیگری:"
+
+msgid "Columns"
+msgstr "کالمز"
+
+msgid "Csv file:"
+msgstr "سی ایس وی فائل:"
+
+msgid "CSV file:"
+msgstr "سی ایس وی فائل:"
+
+msgid "Cur. Memory"
+msgstr "موجودہ میموری"
+
+msgid "Don't have an account?"
+msgstr "آپ کا اکاؤنٹ نہیں ہے؟"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "آسانی سے اپنے ماڈلز سے تربیت اور آؤٹ پٹ ڈیٹا کی تشریح کریں۔"
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "آسانی سے اور سمجھنے میں آسان فارمیٹ میں اپنے نیورل نیٹ ورک کی ساخت اور نوڈس کو بصری بنائیں۔"
+
+msgid "Est. Memory"
+msgstr "متوقع میموری"
+
+msgid "File"
+msgstr "فائل"
+
+msgid "File:"
+msgstr "فائل:"
+
+msgid "Got the basics?"
+msgstr "بنیادی باتیں سمجھ آگئی؟"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "اگر آپ کو نیورل نیٹ ورکس کے کام کرنے کے بارے میں بنیادی معلومات مل گئی ہیں، تو اپنا نیٹ ورک بنانے کے لیے درج ذیل گائیڈ استعمال کریں۔ AI اسسٹنٹ سے سوالات پوچھنا مت بھولیں!"
+
+msgid "Inputs:"
+msgstr "ان پٹس:"
+
+msgid "IR version:"
+msgstr "آئی آر ورژن:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "بس اپنی فائلیں ڈریگ اور ڈراپ کریں اور شروع کریں—کوئی سیٹ اپ نہیں، کوئی پریشانی نہیں۔"
+
+msgid "Layers:"
+msgstr "لیئرز:"
+
+msgid "Load CSV File"
+msgstr "سی ایس وی فائل لوڈ کریں"
+
+msgid "Load ONNX File"
+msgstr "او این ایکس فائل لوڈ کریں"
+
+msgid "Loading"
+msgstr "لوڈ ہو رہا ہے"
+
+msgid "Log out"
+msgstr "لاگ آؤٹ کریں"
+
+msgid "Logging in...."
+msgstr "لاگ ان ہو رہا ہے...."
+
+msgid "Login"
+msgstr "لاگ ان"
+
+msgid "Magic Link sign-in"
+msgstr "میجک لنک سائن ان"
+
+msgid "Missing values"
+msgstr "غائب اقدار"
+
+msgid "Name:"
+msgstr "نام:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "نیورل نیٹ ورک ترقیاتی ڈیش بورڈ"
+
+msgid "Neurons:"
+msgstr "نیورونز:"
+
+msgid "No data to display"
+msgstr "دکھانے کے لیے کوئی ڈیٹا نہیں"
+
+msgid "No optimization done."
+msgstr "کوئی بہتری نہیں کی گئی۔"
+
+msgid "No recommendations"
+msgstr "کوئی تجاویز نہیں"
+
+msgid "No such columns"
+msgstr "ایسے کوئی کالم نہیں"
+
+msgid "No warnings"
+msgstr "کوئی وارننگ نہیں"
+
+msgid "Node count:"
+msgstr "نوڈ کی تعداد:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "نیورل نیٹ ورکس اور ان کے کام کرنے کے طریقے کے بارے میں مفت کورسز پیش کرتا ہے۔"
+
+msgid "One hot"
+msgstr "ون ہاٹ"
+
+msgid "ONNX file:"
+msgstr "او این ایکس فائل:"
+
+msgid "Optimize"
+msgstr "بہتر بنائیں"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "اپنے نیورل نیٹ ورک کو بہتر آرکیٹیکچر کے ساتھ بہتر بنائیں تاکہ اس کی رفتار اور آؤٹ پٹ کو بہتر بنایا جا سکے۔"
+
+msgid "Outputs:"
+msgstr "آؤٹ پٹس:"
+
+msgid "Overall"
+msgstr "مجموعی طور پر"
+
+msgid "Producer:"
+msgstr "پیدا کرنے والا:"
+
+msgid "R2 score:"
+msgstr "R2 اسکور:"
+
+msgid "Risky for onehot:"
+msgstr "ون ہاٹ کے لیے خطرناک:"
+
+msgid "Rows"
+msgstr "روئز"
+
+msgid "Safe for onehot:"
+msgstr "ون ہاٹ کے لیے محفوظ:"
+
+msgid "Sign up"
+msgstr "سائن اپ"
+
+msgid "Something went wrong"
+msgstr "کچھ غلط ہو گیا"
+
+msgid "Test loss:"
+msgstr "ٹیسٹ نقصان:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "نیورل نیٹ ورک پلے گراؤنڈ نیورل نیٹ ورک کے سوچنے اور کام کرنے کے طریقے کو دیکھنے اور سمجھنے کا ایک انٹرایکٹو طریقہ پیش کرتا ہے۔ شروع کرنے کے لیے نیچے دیے گئے بٹن پر کلک کریں۔"
+
+msgid "Total categorical:"
+msgstr "کل کیٹیگوری کل:"
+
+msgid "Visualize"
+msgstr "بصری بنائیں"
+
+msgid "Welcome back!"
+msgstr "خوش آمدید واپس!"
+
+msgid "Welcome!"
+msgstr "خوش آمدید!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "چاہے آپ ایک سادہ ماڈل کو تربیت دے رہے ہوں یا کسی بڑے ٹرانسفارمر کو فائن ٹیوننگ کر رہے ہوں، 2N2D آپ کے ورک فلو کے مطابق ڈھل جاتا ہے۔ شروع کرنے کے لیے آپ کو صرف ایک اکاؤنٹ کی ضرورت ہے۔"
+
+msgid "Wrong username or password!"
+msgstr "غلط صارف نام یا پاس ورڈ!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "آپ پہلے ہی لاگ ان ہیں، کیا آپ لاگ آؤٹ کرنا چاہتے ہیں؟"
+```

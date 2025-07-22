@@ -299,13 +299,13 @@ export default function dash() {
             <div>
               <h1 className={'title'}>Loaded files:</h1>
               <h2>
-                <b>ONNX file:</b>{' '}
+                <b><Trans>ONNX file:</Trans></b>{' '}
                 {currentSession.onnxName
                   ? currentSession.onnxName
                   : 'No onnx file loaded'}
               </h2>
               <h2>
-                <b>Csv file:</b>{' '}
+                <b><Trans>Csv file:</Trans></b>{' '}
                 {currentSession.csvName
                   ? currentSession.csvName
                   : 'No csv file loaded'}
@@ -329,22 +329,22 @@ export default function dash() {
                     <h2 className={'subtitle'}>Best configuration:</h2>
                     <div className={'result'}>
                       <div className={'info'}>
-                        <h2>Neurons:</h2>{' '}
+                        <h2><Trans>Neurons:</Trans></h2>{' '}
                         {(currentSession.optResult as any).best_config.neurons}
                       </div>
                       <div className={'info'}>
-                        <h2>Layers:</h2>{' '}
+                        <h2><Trans>Layers:</Trans></h2>{' '}
                         {(currentSession.optResult as any).best_config.layers}
                       </div>
                       <div className={'info'}>
-                        <h2>Test loss:</h2>{' '}
+                        <h2><Trans>Test loss:</Trans></h2>{' '}
                         {
                           (currentSession.optResult as any).best_config
                             .test_loss
                         }
                       </div>
                       <div className={'info'}>
-                        <h2>R2 score:</h2>{' '}
+                        <h2><Trans>R2 score:</Trans></h2>{' '}
                         {(currentSession.optResult as any).best_config.r2_score}
                       </div>
                     </div>
@@ -355,7 +355,7 @@ export default function dash() {
                   </button>
                 </motion.div>
               ) : (
-                <h1>No optimization done.</h1>
+                <h1><Trans>No optimization done.</Trans></h1>
               )}
             </div>
             <div
@@ -471,10 +471,10 @@ export default function dash() {
                         <div className='flex w-1/2 flex-col overflow-hidden text-ellipsis'>
                           <h1 className='subtitle'>{session.name}</h1>
                           <h2>
-                            <b>ONNX file:</b> {session.onnxName}
+                            <b><Trans>ONNX file:</Trans></b> {session.onnxName}
                           </h2>
                           <h2>
-                            <b>Csv file:</b> {session.csvName}
+                            <b><Trans>Csv file:</Trans></b> {session.csvName}
                           </h2>
                         </div>
                         <i className='fa-solid fa-diagram-project largeIcon'></i>

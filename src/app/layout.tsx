@@ -4,6 +4,7 @@ import "@/lib/fontawesome/css/fa.css";
 import "./globals.css";
 import SideBar from "@/components/SideBar";
 import Chat from "@/components/chat";
+import { Trans } from '@lingui/react/macro';
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -48,7 +49,7 @@ export default function RootLayout({
         <Chat/>
         <div className="container">{children}</div>
         <footer>
-            <p>Neural Network Development Dashboard</p>
+            <p><Trans>Neural Network Development Dashboard</Trans></p>
         </footer>
         </body>
         </html>

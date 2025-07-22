@@ -3,6 +3,7 @@ import React, {FormEvent, useState} from "react";
 import {getAuth, sendSignInLinkToEmail} from "@firebase/auth";
 import {initFirebaseApp} from "@/lib/firebase/firebase.config";
 import Styles from "./SignInButton.module.css"
+import { Trans } from '@lingui/react/macro';
 
 const OneTimeMailSignInButton = () => {
     const [state, setState] = useState<boolean>();
@@ -40,7 +41,7 @@ const OneTimeMailSignInButton = () => {
                         <i className="fa-solid fa-xmark-large"></i>
                     </button>
                 </div>
-                <h1>Magic Link sign-in</h1>
+                <h1><Trans>Magic Link sign-in</Trans></h1>
                 <form onSubmit={sendMail}>
                     <input type={"email"} placeholder={"Email"} name={"email"} required={true}/>
                     <input type={"submit"} value={"Send"}/>

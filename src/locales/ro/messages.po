@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ro\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "Tablou de Bord pentru Dezvoltarea Rețelelor Neuronale"
+
+msgid "Already have an account? "
+msgstr "Ai deja un cont? "
+
+msgid "Analyze"
+msgstr "Analizează"
+
+msgid "Ask"
+msgstr "Întreabă"
+
+msgid "Attributes:"
+msgstr "Atribute:"
+
+msgid "Back to login"
+msgstr "Înapoi la autentificare"
+
+msgid "Category:"
+msgstr "Categorie:"
+
+msgid "Columns"
+msgstr "Coloane"
+
+msgid "Csv file:"
+msgstr "Fișier csv:"
+
+msgid "CSV file:"
+msgstr "Fișier CSV:"
+
+msgid "Cur. Memory"
+msgstr "Memorie curentă"
+
+msgid "Don't have an account?"
+msgstr "Nu ai un cont?"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "Interpretați cu ușurință datele de antrenament și de ieșire din modelele dvs."
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "Vizualizați cu ușurință structura și nodurile rețelei dvs. neuronale, într-un format ușor și simplu de înțeles."
+
+msgid "Est. Memory"
+msgstr "Memorie estimată"
+
+msgid "File"
+msgstr "Fișier"
+
+msgid "File:"
+msgstr "Fișier:"
+
+msgid "Got the basics?"
+msgstr "Ai înțeles noțiunile de bază?"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "Dacă ai înțeles cum funcționează rețelele neuronale, folosește următorul ghid pentru a începe să-ți creezi propria rețea. Nu uita să întrebi Asistentul AI dacă ai întrebări!"
+
+msgid "Inputs:"
+msgstr "Intrări:"
+
+msgid "IR version:"
+msgstr "Versiune IR:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "Pur și simplu trageți și plasați fișierele dvs. și începeți—fără configurare, fără complicații."
+
+msgid "Layers:"
+msgstr "Straturi:"
+
+msgid "Load CSV File"
+msgstr "Încarcă fișier CSV"
+
+msgid "Load ONNX File"
+msgstr "Încarcă fișier ONNX"
+
+msgid "Loading"
+msgstr "Se încarcă"
+
+msgid "Log out"
+msgstr "Deconectare"
+
+msgid "Logging in...."
+msgstr "Autentificare..."
+
+msgid "Login"
+msgstr "Autentificare"
+
+msgid "Magic Link sign-in"
+msgstr "Autentificare prin Magic Link"
+
+msgid "Missing values"
+msgstr "Valori lipsă"
+
+msgid "Name:"
+msgstr "Nume:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "Tablou de Bord pentru Dezvoltarea Rețelelor Neuronale"
+
+msgid "Neurons:"
+msgstr "Neuroni:"
+
+msgid "No data to display"
+msgstr "Nu există date de afișat"
+
+msgid "No optimization done."
+msgstr "Nu s-a efectuat nicio optimizare."
+
+msgid "No recommendations"
+msgstr "Nicio recomandare"
+
+msgid "No such columns"
+msgstr "Nu există astfel de coloane"
+
+msgid "No warnings"
+msgstr "Fără avertismente"
+
+msgid "Node count:"
+msgstr "Număr noduri:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "oferă cursuri gratuite despre rețelele neuronale și modul lor de funcționare."
+
+msgid "One hot"
+msgstr "One hot"
+
+msgid "ONNX file:"
+msgstr "Fișier ONNX:"
+
+msgid "Optimize"
+msgstr "Optimizează"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "Optimizează-ți rețeaua neuronală cu o arhitectură mai bună pentru a îmbunătăți viteza și ieșirile acesteia."
+
+msgid "Outputs:"
+msgstr "Ieșiri:"
+
+msgid "Overall"
+msgstr "General"
+
+msgid "Producer:"
+msgstr "Producător:"
+
+msgid "R2 score:"
+msgstr "Scor R2:"
+
+msgid "Risky for onehot:"
+msgstr "Riscant pentru onehot:"
+
+msgid "Rows"
+msgstr "Rânduri"
+
+msgid "Safe for onehot:"
+msgstr "Sigur pentru onehot:"
+
+msgid "Sign up"
+msgstr "Înregistrare"
+
+msgid "Something went wrong"
+msgstr "A apărut o eroare"
+
+msgid "Test loss:"
+msgstr "Pierdere test:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "Neural Network Playground oferă o modalitate interactivă de a vedea și de a înțelege cum gândește și funcționează o rețea neuronală. Apasă pur și simplu butonul de mai jos pentru a începe."
+
+msgid "Total categorical:"
+msgstr "Total categoric:"
+
+msgid "Visualize"
+msgstr "Vizualizează"
+
+msgid "Welcome back!"
+msgstr "Bun venit înapoi!"
+
+msgid "Welcome!"
+msgstr "Bun venit!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "Fie că antrenați un model simplu sau reglați fin un transformator masiv, 2N2D se adaptează la fluxul dvs. de lucru. Tot ce aveți nevoie pentru a începe este un cont."
+
+msgid "Wrong username or password!"
+msgstr "Nume de utilizator sau parolă greșită!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "Sunteți deja conectat, doriți să vă deconectați?"
+```

@@ -8,6 +8,7 @@ import { logout } from '@/lib/auth/authentication';
 import './style.css';
 import Styles from '@/components/SideBar.module.css';
 import ParticleNetwork from '@/components/visual/particleNetwork';
+import { Trans } from '@lingui/react/macro';
 
 export default function signup() {
   const router = useRouter();
@@ -42,19 +43,19 @@ export default function signup() {
       <ParticleNetwork />
       {loggedIn ? (
         <div className={'signCont'}>
-          <h1>You are already logged in, would you like to log out?</h1>
+          <h1><Trans>You are already logged in, would you like to log out?</Trans></h1>
           <button
             onClick={() => {
               logout();
             }}
           >
-            Log out
+            <Trans>Log out</Trans>
           </button>
         </div>
       ) : (
         <div className={'form'}>
           <img src={'logo2n2d.svg'} alt='logo' className={Styles.logo} />
-          <h1>Welcome!</h1>
+          <h1><Trans>Welcome!</Trans></h1>
           <form onSubmit={attemptSignUp}>
             <input
               name={'email'}
@@ -75,7 +76,7 @@ export default function signup() {
           <GoogleSignInButton />
           <OneTimeMailSignInButton />
           <h2>
-            Already have an account? <a href={'/login'}>Login</a>
+            <Trans>Already have an account? </Trans><a href={'/login'}><Trans>Login</Trans></a>
           </h2>
         </div>
       )}

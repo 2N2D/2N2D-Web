@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ms\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "Paparan Pembangun <0>J</0>aringan <1>S</1>araf <2>T</2>eratur"
+
+msgid "Already have an account? "
+msgstr "Sudah mempunyai akaun? "
+
+msgid "Analyze"
+msgstr "Menganalisis"
+
+msgid "Ask"
+msgstr "Tanya"
+
+msgid "Attributes:"
+msgstr "Atribut:"
+
+msgid "Back to login"
+msgstr "Kembali ke log masuk"
+
+msgid "Category:"
+msgstr "Kategori:"
+
+msgid "Columns"
+msgstr "Lajur"
+
+msgid "Csv file:"
+msgstr "Fail csv:"
+
+msgid "CSV file:"
+msgstr "Fail CSV:"
+
+msgid "Cur. Memory"
+msgstr "Memori Semasa"
+
+msgid "Don't have an account?"
+msgstr "Belum mempunyai akaun?"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "Tafsir data latihan dan output daripada model anda dengan mudah."
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "Mudah melihat struktur dan nod rangkaian saraf anda, dalam format yang mudah dan senang difahami."
+
+msgid "Est. Memory"
+msgstr "Memori Anggaran"
+
+msgid "File"
+msgstr "Fail"
+
+msgid "File:"
+msgstr "Fail:"
+
+msgid "Got the basics?"
+msgstr "Faham asasnya?"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "Jika anda faham tentang cara jaringan saraf berfungsi, gunakan panduan berikut untuk mula membuat sendiri. Jangan lupa untuk bertanya kepada Pembantu AI jika ada soalan!"
+
+msgid "Inputs:"
+msgstr "Input:"
+
+msgid "IR version:"
+msgstr "Versi IR:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "Hanya seret dan lepas fail anda dan mulakan—tiada persediaan, tiada kerumitan."
+
+msgid "Layers:"
+msgstr "Lapisan:"
+
+msgid "Load CSV File"
+msgstr "Muat Naik Fail CSV"
+
+msgid "Load ONNX File"
+msgstr "Muat Naik Fail ONNX"
+
+msgid "Loading"
+msgstr "Memuat Naik"
+
+msgid "Log out"
+msgstr "Log keluar"
+
+msgid "Logging in...."
+msgstr "Sedang log masuk...."
+
+msgid "Login"
+msgstr "Log Masuk"
+
+msgid "Magic Link sign-in"
+msgstr "Log masuk Pautan Ajaib"
+
+msgid "Missing values"
+msgstr "Nilai yang hilang"
+
+msgid "Name:"
+msgstr "Nama:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "Paparan Pembangun Jaringan Saraf"
+
+msgid "Neurons:"
+msgstr "Neuron:"
+
+msgid "No data to display"
+msgstr "Tiada data untuk dipaparkan"
+
+msgid "No optimization done."
+msgstr "Tiada pengoptimuman dilakukan."
+
+msgid "No recommendations"
+msgstr "Tiada cadangan"
+
+msgid "No such columns"
+msgstr "Tiada lajur sedemikian"
+
+msgid "No warnings"
+msgstr "Tiada amaran"
+
+msgid "Node count:"
+msgstr "Kiraan nod:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "menawarkan kursus percuma tentang jaringan saraf dan cara kerjanya."
+
+msgid "One hot"
+msgstr "Satu panas"
+
+msgid "ONNX file:"
+msgstr "Fail ONNX:"
+
+msgid "Optimize"
+msgstr "Optimumkan"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "Optimumkan jaringan saraf anda dengan seni bina yang lebih baik untuk meningkatkan kelajuan dan outputnya."
+
+msgid "Outputs:"
+msgstr "Output:"
+
+msgid "Overall"
+msgstr "Keseluruhan"
+
+msgid "Producer:"
+msgstr "Pengeluar:"
+
+msgid "R2 score:"
+msgstr "Skor R2:"
+
+msgid "Risky for onehot:"
+msgstr "Berisiko untuk satu panas:"
+
+msgid "Rows"
+msgstr "Baris"
+
+msgid "Safe for onehot:"
+msgstr "Selamat untuk satu panas:"
+
+msgid "Sign up"
+msgstr "Daftar"
+
+msgid "Something went wrong"
+msgstr "Terdapat ralat"
+
+msgid "Test loss:"
+msgstr "Kehilangan ujian:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "Padang Permainan Jaringan Saraf menawarkan cara interaktif untuk melihat dan memahami bagaimana jaringan saraf berfikir dan berfungsi. Klik butang di bawah untuk bermula."
+
+msgid "Total categorical:"
+msgstr "Jumlah kategori:"
+
+msgid "Visualize"
+msgstr "Visualisasikan"
+
+msgid "Welcome back!"
+msgstr "Selamat datang kembali!"
+
+msgid "Welcome!"
+msgstr "Selamat datang!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "Sama ada anda melatih model mudah atau menala halus transformer besar, 2N2D menyesuaikan diri dengan aliran kerja anda. Apa yang anda perlukan untuk bermula ialah akaun."
+
+msgid "Wrong username or password!"
+msgstr "Nama pengguna atau kata laluan salah!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "Anda sudah log masuk, adakah anda ingin log keluar?"
+```

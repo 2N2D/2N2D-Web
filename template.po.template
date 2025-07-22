@@ -1,0 +1,274 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-07-22 12:21+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+
+#: src/app/page.tsx:41
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+
+#: src/app/(auth)/register/page.tsx:79
+msgid "Already have an account? "
+msgstr "Already have an account? "
+
+#: src/app/page.tsx:87
+msgid "Analyze"
+msgstr "Analyze"
+
+#: src/app/page.tsx:97
+msgid "Ask"
+msgstr "Ask"
+
+#: src/app/(app)/visualize/page.tsx:231
+msgid "Attributes:"
+msgstr "Attributes:"
+
+#: src/app/handle-mail/page.tsx:29
+msgid "Back to login"
+msgstr "Back to login"
+
+#: src/app/(app)/visualize/page.tsx:191
+msgid "Category:"
+msgstr "Category:"
+
+#: src/app/(app)/data/page.tsx:190
+msgid "Columns"
+msgstr "Columns"
+
+#: src/app/(app)/dash/page.tsx:308
+#: src/app/(app)/dash/page.tsx:477
+msgid "Csv file:"
+msgstr "Csv file:"
+
+#: src/app/(app)/optimize/page.tsx:311
+msgid "CSV file:"
+msgstr "CSV file:"
+
+#: src/app/(app)/data/page.tsx:146
+msgid "Cur. Memory"
+msgstr "Cur. Memory"
+
+#: src/app/(auth)/login/page.tsx:80
+msgid "Don't have an account?"
+msgstr "Don't have an account?"
+
+#: src/app/page.tsx:88
+msgid "Easily interpret training and output data from your models."
+msgstr "Easily interpret training and output data from your models."
+
+#: src/app/page.tsx:83
+#: src/app/page.tsx:98
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+
+#: src/app/(app)/data/page.tsx:155
+msgid "Est. Memory"
+msgstr "Est. Memory"
+
+#: src/app/(app)/data/page.tsx:178
+msgid "File"
+msgstr "File"
+
+#: src/app/(app)/visualize/page.tsx:316
+msgid "File:"
+msgstr "File:"
+
+#: src/app/learn/page.tsx:33
+msgid "Got the basics?"
+msgstr "Got the basics?"
+
+#: src/app/learn/page.tsx:34
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+
+#: src/app/(app)/visualize/page.tsx:197
+msgid "Inputs:"
+msgstr "Inputs:"
+
+#: src/app/(app)/visualize/page.tsx:324
+msgid "IR version:"
+msgstr "IR version:"
+
+#: src/app/page.tsx:56
+msgid "Just drag and drop your files and get going—no setup, no fuss."
+msgstr "Just drag and drop your files and get going—no setup, no fuss."
+
+#: src/app/(app)/optimize/page.tsx:358
+#: src/app/(app)/dash/page.tsx:336
+msgid "Layers:"
+msgstr "Layers:"
+
+#: src/components/fileUploadElements/CSVUploader.tsx:39
+msgid "Load CSV File"
+msgstr "Load CSV File"
+
+#: src/components/fileUploadElements/ONNXUploader.tsx:35
+msgid "Load ONNX File"
+msgstr "Load ONNX File"
+
+#: src/app/(app)/data/page.tsx:289
+#: src/app/(app)/data/page.tsx:329
+#: src/app/(app)/data/page.tsx:375
+msgid "Loading"
+msgstr "Loading"
+
+#: src/app/(auth)/register/page.tsx:52
+msgid "Log out"
+msgstr "Log out"
+
+#: src/app/handle-mail/page.tsx:32
+msgid "Logging in...."
+msgstr "Logging in...."
+
+#: src/app/(auth)/register/page.tsx:79
+msgid "Login"
+msgstr "Login"
+
+#: src/components/misc/OneTimeMailSignInButton.tsx:44
+msgid "Magic Link sign-in"
+msgstr "Magic Link sign-in"
+
+#: src/app/(app)/data/page.tsx:194
+msgid "Missing values"
+msgstr "Missing values"
+
+#: src/app/(app)/visualize/page.tsx:187
+msgid "Name:"
+msgstr "Name:"
+
+#: src/app/layout.tsx:52
+msgid "Neural Network Development Dashboard"
+msgstr "Neural Network Development Dashboard"
+
+#: src/app/(app)/optimize/page.tsx:355
+#: src/app/(app)/dash/page.tsx:332
+msgid "Neurons:"
+msgstr "Neurons:"
+
+#: src/components/data/DataTable.tsx:15
+msgid "No data to display"
+msgstr "No data to display"
+
+#: src/app/(app)/dash/page.tsx:358
+msgid "No optimization done."
+msgstr "No optimization done."
+
+#: src/app/(app)/data/page.tsx:124
+msgid "No recommendations"
+msgstr "No recommendations"
+
+#: src/app/(app)/data/page.tsx:596
+msgid "No such columns"
+msgstr "No such columns"
+
+#: src/app/(app)/data/page.tsx:99
+msgid "No warnings"
+msgstr "No warnings"
+
+#: src/app/(app)/visualize/page.tsx:329
+msgid "Node count:"
+msgstr "Node count:"
+
+#: src/app/learn/page.tsx:16
+msgid "offers free courses about neural networks and how they work."
+msgstr "offers free courses about neural networks and how they work."
+
+#: src/app/(app)/data/page.tsx:136
+msgid "One hot"
+msgstr "One hot"
+
+#: src/app/(app)/optimize/page.tsx:286
+#: src/app/(app)/dash/page.tsx:302
+#: src/app/(app)/dash/page.tsx:474
+msgid "ONNX file:"
+msgstr "ONNX file:"
+
+#: src/app/page.tsx:92
+msgid "Optimize"
+msgstr "Optimize"
+
+#: src/app/page.tsx:93
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "Optimize your neural network with a better architecture to improve its speed and outputs."
+
+#: src/app/(app)/visualize/page.tsx:214
+msgid "Outputs:"
+msgstr "Outputs:"
+
+#: src/app/(app)/data/page.tsx:164
+msgid "Overall"
+msgstr "Overall"
+
+#: src/app/(app)/visualize/page.tsx:321
+msgid "Producer:"
+msgstr "Producer:"
+
+#: src/app/(app)/optimize/page.tsx:364
+#: src/app/(app)/dash/page.tsx:347
+msgid "R2 score:"
+msgstr "R2 score:"
+
+#: src/app/(app)/data/page.tsx:542
+#: src/app/(app)/data/page.tsx:564
+msgid "Risky for onehot:"
+msgstr "Risky for onehot:"
+
+#: src/app/(app)/data/page.tsx:186
+msgid "Rows"
+msgstr "Rows"
+
+#: src/app/(app)/data/page.tsx:546
+#: src/app/(app)/data/page.tsx:568
+msgid "Safe for onehot:"
+msgstr "Safe for onehot:"
+
+#: src/app/(auth)/login/page.tsx:80
+msgid "Sign up"
+msgstr "Sign up"
+
+#: src/app/handle-mail/page.tsx:28
+msgid "Something went wrong"
+msgstr "Something went wrong"
+
+#: src/app/(app)/optimize/page.tsx:361
+#: src/app/(app)/dash/page.tsx:340
+msgid "Test loss:"
+msgstr "Test loss:"
+
+#: src/app/learn/page.tsx:17
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+
+#: src/app/(app)/data/page.tsx:550
+#: src/app/(app)/data/page.tsx:572
+msgid "Total categorical:"
+msgstr "Total categorical:"
+
+#: src/app/page.tsx:81
+msgid "Visualize"
+msgstr "Visualize"
+
+#: src/app/(auth)/login/page.tsx:58
+msgid "Welcome back!"
+msgstr "Welcome back!"
+
+#: src/app/(auth)/register/page.tsx:58
+msgid "Welcome!"
+msgstr "Welcome!"
+
+#: src/app/page.tsx:57
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+
+#: src/app/(auth)/login/page.tsx:75
+msgid "Wrong username or password!"
+msgstr "Wrong username or password!"
+
+#: src/app/(auth)/register/page.tsx:46
+#: src/app/(auth)/login/page.tsx:46
+msgid "You are already logged in, would you like to log out?"
+msgstr "You are already logged in, would you like to log out?"

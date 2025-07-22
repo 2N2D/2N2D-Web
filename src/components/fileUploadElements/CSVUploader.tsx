@@ -1,5 +1,6 @@
 import React from 'react';
 import {dragUpload, uploadCSV} from "@/lib/fileHandler/fileUpload";
+import { Trans } from '@lingui/react/macro';
 
 export default function CSVUploader({callBack}: { callBack?: () => void }) {
     const [uploadState, setUploadState] = React.useState(false);
@@ -35,7 +36,7 @@ export default function CSVUploader({callBack}: { callBack?: () => void }) {
             className={"uploadButton"}
             disabled={uploading}
         >
-            {uploading ? "Uploading..." : <p>Load CSV File <i className="fa-solid fa-upload"></i></p>}
+            {uploading ? "Uploading..." : <p><Trans>Load CSV File</Trans> <i className="fa-solid fa-upload"></i></p>}
         </button>
         {uploadState ? (
             <div className={"popup"}>

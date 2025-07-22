@@ -8,6 +8,7 @@ import { logout } from '@/lib/auth/authentication';
 import './style.css';
 import Styles from '@/components/SideBar.module.css';
 import ParticleNetwork from '@/components/visual/particleNetwork';
+import { Trans } from '@lingui/react/macro';
 
 export default function login() {
   const router = useRouter();
@@ -42,7 +43,7 @@ export default function login() {
       <ParticleNetwork />
       {loggedIn ? (
         <div className={'logCont'}>
-          <h1>You are already logged in, would you like to log out?</h1>
+          <h1><Trans>You are already logged in, would you like to log out?</Trans></h1>
           <button
             onClick={() => {
               logout();
@@ -54,7 +55,7 @@ export default function login() {
       ) : (
         <div className={'form'}>
           <img src={'logo2n2d.svg'} alt='logo' className={Styles.logo} />
-          <h1>Welcome back!</h1>
+          <h1><Trans>Welcome back!</Trans></h1>
           <form onSubmit={attemptLogin}>
             <input
               name={'email'}
@@ -71,12 +72,12 @@ export default function login() {
             <input type={'submit'} value={'Login'} />
           </form>
           <div className={mpAuthError ? 'error' : 'hidden'}>
-            <h1>Wrong username or password!</h1>
+            <h1><Trans>Wrong username or password!</Trans></h1>
           </div>
           <GoogleSignInButton />
           <OneTimeMailSignInButton />
           <h2>
-            Don't have an account? <a href={'/signup'}>Sign up</a>
+            <Trans>Don't have an account?</Trans> <a href={'/signup'}><Trans>Sign up</Trans></a>
           </h2>
         </div>
       )}

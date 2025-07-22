@@ -1,0 +1,135 @@
+```
+msgstr ""
+"Data utworzenia pliku POT: 2024-07-30 00:03+0300\n"
+"Wersja MIME: 1.0\n"
+"Typ zawartości: text/plain; charset=utf-8\n"
+"Kodowanie zawartości: 8bit\n"
+"Generator: @lingui/cli\n"
+"Język: pl\n"
+
+msgstr "Panel <0>R</0>ozwoju <1>S</1>iec <2>N</2>euronowych"
+
+msgstr "Masz już konto? "
+
+msgstr "Analizuj"
+
+msgstr "Zapytaj"
+
+msgstr "Atrybuty:"
+
+msgstr "Wróć do logowania"
+
+msgstr "Kategoria:"
+
+msgstr "Kolumny"
+
+msgstr "Plik csv:"
+
+msgstr "Plik CSV:"
+
+msgstr "Bieżąca pamięć"
+
+msgstr "Nie masz konta?"
+
+msgstr "Łatwo interpretuj dane treningowe i wyjściowe z twoich modeli."
+
+msgstr "Łatwo wizualizuj strukturę i węzły swojej sieci neuronowej w prostym i łatwym do zrozumienia formacie"
+
+msgstr "Estymowana pamięć"
+
+msgstr "Plik"
+
+msgstr "Plik:"
+
+msgstr "Znasz podstawy?"
+
+msgstr "Jeśli znasz zasady działania sieci neuronowych, skorzystaj z poniższego przewodnika, aby rozpocząć tworzenie własnych. Nie zapomnij zadać pytań Asystentowi AI!"
+
+msgstr "Wejścia:"
+
+msgstr "Wersja IR:"
+
+msgstr "Po prostu przeciągnij i upuść swoje pliki i zacznij — bez konfiguracji, bez problemów."
+
+msgstr "Warstwy:"
+
+msgstr "Wczytaj plik CSV"
+
+msgstr "Wczytaj plik ONNX"
+
+msgstr "Wczytywanie"
+
+msgstr "Wyloguj się"
+
+msgstr "Logowanie..."
+
+msgstr "Zaloguj się"
+
+msgstr "Logowanie za pomocą linku magicznego"
+
+msgstr "Brakujące wartości"
+
+msgstr "Nazwa:"
+
+msgstr "Panel Rozwoju Sieci Neuronowych"
+
+msgstr "Neurony:"
+
+msgstr "Brak danych do wyświetlenia"
+
+msgstr "Brak optymalizacji."
+
+msgstr "Brak rekomendacji"
+
+msgstr "Brak takich kolumn"
+
+msgstr "Brak ostrzeżeń"
+
+msgstr "Liczba węzłów:"
+
+msgstr "oferuje bezpłatne kursy na temat sieci neuronowych i ich działania."
+
+msgstr "One hot"
+
+msgstr "Plik ONNX:"
+
+msgstr "Optymalizuj"
+
+msgstr "Optymalizuj swoją sieć neuronową, stosując lepszą architekturę, aby poprawić jej szybkość i wyniki."
+
+msgstr "Wyjścia:"
+
+msgstr "Ogólnie"
+
+msgstr "Producent:"
+
+msgstr "Wynik R2:"
+
+msgstr "Ryzykowne dla onehot:"
+
+msgstr "Wiersze"
+
+msgstr "Bezpieczne dla onehot:"
+
+msgstr "Zarejestruj się"
+
+msgstr "Coś poszło nie tak"
+
+msgstr "Strata testowa:"
+
+msgstr "Neural Network Playground oferuje interaktywny sposób na zobaczenie i zrozumienie, jak działa sieć neuronowa. Kliknij przycisk poniżej, aby rozpocząć."
+
+msgstr "Łącznie kategorii:"
+
+msgstr "Wizualizuj"
+
+msgstr "Miło Cię widzieć!"
+
+msgstr "Witamy!"
+
+msgstr "Niezależnie od tego, czy trenujesz prosty model, czy dopracowujesz ogromny transformator, 2N2D dostosowuje się do Twojego sposobu pracy. Aby rozpocząć, potrzebujesz tylko konta."
+
+msgstr "Nieprawidłowa nazwa użytkownika lub hasło!"
+
+msgstr "Jesteś już zalogowany, chcesz się wylogować?"
+```

@@ -1,0 +1,135 @@
+```
+msgstr ""
+"Fecha de creación del POT: 2024-07-30 00:03+0300\n"
+"Versión MIME: 1.0\n"
+"Tipo de contenido: text/plain; charset=utf-8\n"
+"Codificación de transferencia de contenido: 8bit\n"
+"X-Generador: @lingui/cli\n"
+"Idioma: es\n"
+
+msgstr "Panel de Desarrollo de <0>R</0>edes <1>N</1>euronales <2>D</2>e <3>D</3>esarrollo"
+
+msgstr "¿Ya tienes una cuenta? "
+
+msgstr "Analizar"
+
+msgstr "Preguntar"
+
+msgstr "Atributos:"
+
+msgstr "Volver al inicio de sesión"
+
+msgstr "Categoría:"
+
+msgstr "Columnas"
+
+msgstr "Archivo csv:"
+
+msgstr "Archivo CSV:"
+
+msgstr "Mem. Actual"
+
+msgstr "¿No tienes una cuenta?"
+
+msgstr "Interpreta fácilmente los datos de entrenamiento y salida de tus modelos."
+
+msgstr "Visualiza fácilmente la estructura y los nodos de tu red neuronal, en un formato fácil y simple de entender"
+
+msgstr "Mem. Est."
+
+msgstr "Archivo"
+
+msgstr "Archivo:"
+
+msgstr "¿Entiendes lo básico?"
+
+msgstr "Si entiendes los conceptos básicos sobre cómo funcionan las redes neuronales, utiliza la siguiente guía para empezar a crear las tuyas propias. ¡No olvides consultar al Asistente de IA si tienes alguna pregunta!"
+
+msgstr "Entradas:"
+
+msgstr "Versión IR:"
+
+msgstr "Simplemente arrastra y suelta tus archivos y empieza a trabajar; sin configuración, sin complicaciones."
+
+msgstr "Capas:"
+
+msgstr "Cargar archivo CSV"
+
+msgstr "Cargar archivo ONNX"
+
+msgstr "Cargando"
+
+msgstr "Cerrar sesión"
+
+msgstr "Iniciando sesión..."
+
+msgstr "Iniciar sesión"
+
+msgstr "Inicio de sesión con enlace mágico"
+
+msgstr "Valores perdidos"
+
+msgstr "Nombre:"
+
+msgstr "Panel de Desarrollo de Redes Neuronales"
+
+msgstr "Neuronas:"
+
+msgstr "No hay datos que mostrar"
+
+msgstr "No se realizó ninguna optimización."
+
+msgstr "Sin recomendaciones"
+
+msgstr "No existen esas columnas"
+
+msgstr "Sin advertencias"
+
+msgstr "Recuento de nodos:"
+
+msgstr "ofrece cursos gratuitos sobre redes neuronales y cómo funcionan."
+
+msgstr "One hot"
+
+msgstr "Archivo ONNX:"
+
+msgstr "Optimizar"
+
+msgstr "Optimiza tu red neuronal con una mejor arquitectura para mejorar su velocidad y resultados."
+
+msgstr "Salidas:"
+
+msgstr "General"
+
+msgstr "Productor:"
+
+msgstr "Puntuación R2:"
+
+msgstr "Riesgoso para onehot:"
+
+msgstr "Filas"
+
+msgstr "Seguro para onehot:"
+
+msgstr "Registrarse"
+
+msgstr "Algo salió mal"
+
+msgstr "Pérdida de prueba:"
+
+msgstr "El entorno de pruebas de redes neuronales ofrece una forma interactiva de ver y comprender cómo piensa y funciona una red neuronal. Simplemente haz clic en el botón de abajo para empezar."
+
+msgstr "Total categórico:"
+
+msgstr "Visualizar"
+
+msgstr "¡Bienvenido de nuevo!"
+
+msgstr "¡Bienvenido!"
+
+msgstr "Ya sea que estés entrenando un modelo simple o ajustando un transformador masivo, 2N2D se adapta a tu flujo de trabajo. Todo lo que necesitas para empezar es una cuenta."
+
+msgstr "¡Nombre de usuario o contraseña incorrectos!"
+
+msgstr "¿Ya has iniciado sesión, deseas cerrar sesión?"
+```

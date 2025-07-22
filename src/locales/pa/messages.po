@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: pa\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "ਨਿਊਰਲ ਨੈਟਵਰਕ ਵਿਕਾਸ ਡੈਸ਼ਬੋਰਡ"
+
+msgid "Already have an account? "
+msgstr "ਪਹਿਲਾਂ ਹੀ ਅਕਾਉਂਟ ਹੈ? "
+
+msgid "Analyze"
+msgstr "ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ"
+
+msgid "Ask"
+msgstr "ਪੁੱਛੋ"
+
+msgid "Attributes:"
+msgstr "ਗੁਣ:"
+
+msgid "Back to login"
+msgstr "ਲੌਗਇਨ ਤੇ ਵਾਪਸ ਜਾਓ"
+
+msgid "Category:"
+msgstr "ਸ਼੍ਰੇਣੀ:"
+
+msgid "Columns"
+msgstr "ਕਾਲਮ"
+
+msgid "Csv file:"
+msgstr "ਸੀ. ਐਸ. ਵੀ. ਫਾਈਲ:"
+
+msgid "CSV file:"
+msgstr "ਸੀ. ਐਸ. ਵੀ. ਫਾਈਲ:"
+
+msgid "Cur. Memory"
+msgstr "ਮੌਜੂਦਾ ਮੈਮੋਰੀ"
+
+msgid "Don't have an account?"
+msgstr "ਅਕਾਉਂਟ ਨਹੀਂ ਹੈ?"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "ਆਪਣੇ ਮਾਡਲਾਂ ਤੋਂ ਸਿਖਲਾਈ ਅਤੇ ਆਉਟਪੁੱਟ ਡੇਟਾ ਨੂੰ ਆਸਾਨੀ ਨਾਲ ਸਮਝੋ।"
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "ਆਪਣੇ ਨਿਊਰਲ ਨੈਟਵਰਕ ਦੀ ਬਣਤਰ ਅਤੇ ਨੋਡਸ ਨੂੰ ਇੱਕ ਆਸਾਨ ਅਤੇ ਸਧਾਰਨ ਢੰਗ ਨਾਲ ਆਸਾਨੀ ਨਾਲ ਵੇਖੋ।"
+
+msgid "Est. Memory"
+msgstr "ਅਨੁਮਾਨਿਤ ਮੈਮੋਰੀ"
+
+msgid "File"
+msgstr "ਫਾਈਲ"
+
+msgid "File:"
+msgstr "ਫਾਈਲ:"
+
+msgid "Got the basics?"
+msgstr "ਆਧਾਰਿਕ ਗੱਲਾਂ ਸਮਝ ਆ ਗਈਆਂ?"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "ਜੇਕਰ ਤੁਸੀਂ ਨਿਊਰਲ ਨੈਟਵਰਕ ਕਿਵੇਂ ਕੰਮ ਕਰਦੇ ਹਨ ਬਾਰੇ ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕੀਤੀ ਹੈ, ਤਾਂ ਆਪਣਾ ਨਿਰਮਾਣ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਹੇਠ ਦਿੱਤੇ ਗਾਈਡ ਦੀ ਵਰਤੋਂ ਕਰੋ। AI ਅਸਿਸਟੈਂਟ ਤੋਂ ਸਵਾਲ ਪੁੱਛਣਾ ਨਾ ਭੁੱਲੋ!"
+
+msgid "Inputs:"
+msgstr "ਇਨਪੁੱਟਸ:"
+
+msgid "IR version:"
+msgstr "ਆਈ. ਆਰ. ਵਰਜਨ:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "ਬੱਸ ਆਪਣੀਆਂ ਫਾਈਲਾਂ ਨੂੰ ਡਰੈਗ ਅਤੇ ਡ੍ਰੌਪ ਕਰੋ ਅਤੇ ਸ਼ੁਰੂ ਕਰੋ—ਕੋਈ ਸੈਟਅਪ ਨਹੀਂ, ਕੋਈ ਝਮੇਲਾ ਨਹੀਂ।"
+
+msgid "Layers:"
+msgstr "ਲੇਅਰਸ:"
+
+msgid "Load CSV File"
+msgstr "ਸੀ. ਐਸ. ਵੀ. ਫਾਈਲ ਲੋਡ ਕਰੋ"
+
+msgid "Load ONNX File"
+msgstr "ਓ. ਐਨ. ਐਕਸ. ਫਾਈਲ ਲੋਡ ਕਰੋ"
+
+msgid "Loading"
+msgstr "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ"
+
+msgid "Log out"
+msgstr "ਲੌਗ ਆਊਟ"
+
+msgid "Logging in...."
+msgstr "ਲੌਗਇਨ ਹੋ ਰਿਹਾ ਹੈ...."
+
+msgid "Login"
+msgstr "ਲੌਗਇਨ"
+
+msgid "Magic Link sign-in"
+msgstr "ਮੈਜਿਕ ਲਿੰਕ ਸਾਈਨ-ਇਨ"
+
+msgid "Missing values"
+msgstr "ਗੁੰਮ ਮੁੱਲ"
+
+msgid "Name:"
+msgstr "ਨਾਮ:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "ਨਿਊਰਲ ਨੈਟਵਰਕ ਵਿਕਾਸ ਡੈਸ਼ਬੋਰਡ"
+
+msgid "Neurons:"
+msgstr "ਨਿਊਰੌਨਸ:"
+
+msgid "No data to display"
+msgstr "ਡਿਸਪਲੇਅ ਕਰਨ ਲਈ ਕੋਈ ਡੇਟਾ ਨਹੀਂ"
+
+msgid "No optimization done."
+msgstr "ਕੋਈ ਅਨੁਕੂਲਤਾ ਨਹੀਂ ਕੀਤੀ ਗਈ।"
+
+msgid "No recommendations"
+msgstr "ਕੋਈ ਸਿਫਾਰਸ਼ਾਂ ਨਹੀਂ"
+
+msgid "No such columns"
+msgstr "ਇਸ ਤਰ੍ਹਾਂ ਦੇ ਕੋਈ ਕਾਲਮ ਨਹੀਂ"
+
+msgid "No warnings"
+msgstr "ਕੋਈ ਚੇਤਾਵਨੀਆਂ ਨਹੀਂ"
+
+msgid "Node count:"
+msgstr "ਨੋਡ ਗਿਣਤੀ:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "ਨਿਊਰਲ ਨੈਟਵਰਕ ਅਤੇ ਉਨ੍ਹਾਂ ਦੇ ਕੰਮ ਕਰਨ ਦੇ ਤਰੀਕੇ ਬਾਰੇ ਮੁਫਤ ਕੋਰਸ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ।"
+
+msgid "One hot"
+msgstr "ਇੱਕ ਗਰਮ"
+
+msgid "ONNX file:"
+msgstr "ਓ. ਐਨ. ਐਕਸ. ਫਾਈਲ:"
+
+msgid "Optimize"
+msgstr "ਅਨੁਕੂਲਿਤ ਕਰੋ"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "ਆਪਣੀ ਗਤੀ ਅਤੇ ਆਉਟਪੁੱਟ ਨੂੰ ਸੁਧਾਰਨ ਲਈ ਇੱਕ ਬਿਹਤਰ ਆਰਕੀਟੈਕਚਰ ਨਾਲ ਆਪਣੇ ਨਿਊਰਲ ਨੈਟਵਰਕ ਨੂੰ ਅਨੁਕੂਲਿਤ ਕਰੋ।"
+
+msgid "Outputs:"
+msgstr "ਆਉਟਪੁੱਟਸ:"
+
+msgid "Overall"
+msgstr "ਕੁੱਲ ਮਿਲਾ ਕੇ"
+
+msgid "Producer:"
+msgstr "ਨਿਰਮਾਤਾ:"
+
+msgid "R2 score:"
+msgstr "ਆਰ2 ਸਕੋਰ:"
+
+msgid "Risky for onehot:"
+msgstr "ਇੱਕ ਗਰਮ ਲਈ ਜੋਖਮ ਭਰਪੂਰ:"
+
+msgid "Rows"
+msgstr "ਪੰਕਤੀਆਂ"
+
+msgid "Safe for onehot:"
+msgstr "ਇੱਕ ਗਰਮ ਲਈ ਸੁਰੱਖਿਅਤ:"
+
+msgid "Sign up"
+msgstr "ਸਾਈਨ ਅੱਪ"
+
+msgid "Something went wrong"
+msgstr "ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ"
+
+msgid "Test loss:"
+msgstr "ਟੈਸਟ ਨੁਕਸਾਨ:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "ਨਿਊਰਲ ਨੈਟਵਰਕ ਪਲੇਗਰਾਉਂਡ ਇੱਕ ਇੰਟਰੈਕਟਿਵ ਤਰੀਕਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਦੇਖ ਸਕਦੇ ਹੋ ਅਤੇ ਸਮਝ ਸਕਦੇ ਹੋ ਕਿ ਇੱਕ ਨਿਊਰਲ ਨੈਟਵਰਕ ਕਿਵੇਂ ਸੋਚਦਾ ਹੈ ਅਤੇ ਕੰਮ ਕਰਦਾ ਹੈ। ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨ ਤੇ ਕਲਿੱਕ ਕਰੋ।"
+
+msgid "Total categorical:"
+msgstr "ਕੁੱਲ ਸ਼੍ਰੇਣੀਬੱਧ:"
+
+msgid "Visualize"
+msgstr "ਵਿਜ਼ੂਅਲਾਈਜ਼ ਕਰੋ"
+
+msgid "Welcome back!"
+msgstr "ਵਾਪਸ ਆਉਣ ਤੇ ਸਵਾਗਤ ਹੈ!"
+
+msgid "Welcome!"
+msgstr "ਸਵਾਗਤ ਹੈ!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "ਭਾਵੇਂ ਤੁਸੀਂ ਇੱਕ ਸਧਾਰਨ ਮਾਡਲ ਸਿਖਲਾਈ ਦੇ ਰਹੇ ਹੋ ਜਾਂ ਕਿਸੇ ਵੱਡੇ ਟ੍ਰਾਂਸਫਾਰਮਰ ਨੂੰ ਫ਼ਾਈਨ-ਟਿਊਨ ਕਰ ਰਹੇ ਹੋ, 2N2D ਤੁਹਾਡੇ ਵਰਕਫਲੋ ਦੇ ਅਨੁਕੂਲ ਹੈ। ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ ਸਿਰਫ਼ ਇੱਕ ਅਕਾਉਂਟ ਦੀ ਲੋੜ ਹੈ।"
+
+msgid "Wrong username or password!"
+msgstr "ਗਲਤ ਯੂਜ਼ਰਨੇਮ ਜਾਂ ਪਾਸਵਰਡ!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਲੌਗਇਨ ਹੋ ਚੁੱਕੇ ਹੋ, ਕੀ ਤੁਸੀਂ ਲੌਗ ਆਊਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+```
