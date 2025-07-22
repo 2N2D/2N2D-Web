@@ -1,4 +1,4 @@
-import { getSessionTokenHash } from '@/lib/auth/authentication';
+import { getCurrentUser, getSessionTokenHash } from '@/lib/auth/authentication';
 import {
   updateData,
   updateVis,
@@ -37,7 +37,7 @@ export async function startOptimization(
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'session-id': `${await getSessionTokenHash()}`
+        'session-id': `${await getCurrentUser()}`
       },
       body: JSON.stringify({
         input_features: selectedInputs,

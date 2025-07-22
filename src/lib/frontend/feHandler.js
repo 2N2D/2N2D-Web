@@ -344,7 +344,7 @@ export async function createVisualNetwork2D(results, ctx, constants, physicsEnab
 
 export async function downloadFileRequest(path, filename, bucket = "2n2d") {
     try {
-        const blob = await downloadFile(path);
+        const blob = await getFile(path, bucket);
 
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
