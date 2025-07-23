@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ar\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "لوحة تحكم تطوير الشبكات العصبية"
+
+msgid "Already have an account? "
+msgstr "هل لديك حساب بالفعل؟ "
+
+msgid "Analyze"
+msgstr "تحليل"
+
+msgid "Ask"
+msgstr "اسأل"
+
+msgid "Attributes:"
+msgstr "السمات:"
+
+msgid "Back to login"
+msgstr "العودة إلى تسجيل الدخول"
+
+msgid "Category:"
+msgstr "الفئة:"
+
+msgid "Columns"
+msgstr "الأعمدة"
+
+msgid "Csv file:"
+msgstr "ملف CSV:"
+
+msgid "CSV file:"
+msgstr "ملف CSV:"
+
+msgid "Cur. Memory"
+msgstr "الذاكرة الحالية"
+
+msgid "Don't have an account?"
+msgstr "ليس لديك حساب؟"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "افهم بسهولة بيانات التدريب والإخراج من نماذجك."
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "قم بسهولة بتصور هيكل وعقد شبكتك العصبية، بتنسيق سهل وبسيط للفهم."
+
+msgid "Est. Memory"
+msgstr "الذاكرة المقدرة"
+
+msgid "File"
+msgstr "الملف"
+
+msgid "File:"
+msgstr "الملف:"
+
+msgid "Got the basics?"
+msgstr "هل فهمت الأساسيات؟"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "إذا فهمت أساسيات عمل الشبكات العصبية، فاستخدم الدليل التالي للبدء في إنشاء شبكتك الخاصة. لا تنسَ أن تسأل مساعد الذكاء الاصطناعي عن أي أسئلة!"
+
+msgid "Inputs:"
+msgstr "المدخلات:"
+
+msgid "IR version:"
+msgstr "إصدار IR:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "فقط اسحب وألقِ ملفاتك وابدأ—لا حاجة لإعدادات، ولا تعقيدات."
+
+msgid "Layers:"
+msgstr "الطبقات:"
+
+msgid "Load CSV File"
+msgstr "تحميل ملف CSV"
+
+msgid "Load ONNX File"
+msgstr "تحميل ملف ONNX"
+
+msgid "Loading"
+msgstr "جارٍ التحميل"
+
+msgid "Log out"
+msgstr "تسجيل الخروج"
+
+msgid "Logging in...."
+msgstr "جارٍ تسجيل الدخول...."
+
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+msgid "Magic Link sign-in"
+msgstr "تسجيل الدخول برابط سحري"
+
+msgid "Missing values"
+msgstr "قيم مفقودة"
+
+msgid "Name:"
+msgstr "الاسم:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "لوحة تحكم تطوير الشبكات العصبية"
+
+msgid "Neurons:"
+msgstr "الخلايا العصبية:"
+
+msgid "No data to display"
+msgstr "لا توجد بيانات لعرضها"
+
+msgid "No optimization done."
+msgstr "لم يتم إجراء أي تحسين."
+
+msgid "No recommendations"
+msgstr "لا توجد توصيات"
+
+msgid "No such columns"
+msgstr "لا توجد أعمدة كهذه"
+
+msgid "No warnings"
+msgstr "لا توجد تحذيرات"
+
+msgid "Node count:"
+msgstr "عدد العقد:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "يوفر دورات مجانية حول الشبكات العصبية وكيف تعمل."
+
+msgid "One hot"
+msgstr "واحد ساخن"
+
+msgid "ONNX file:"
+msgstr "ملف ONNX:"
+
+msgid "Optimize"
+msgstr "تحسين"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "حسّن شبكتك العصبية باستخدام بنية أفضل لتحسين سرعتها ومخرجاتها."
+
+msgid "Outputs:"
+msgstr "المخرجات:"
+
+msgid "Overall"
+msgstr "إجمالي"
+
+msgid "Producer:"
+msgstr "المنتج:"
+
+msgid "R2 score:"
+msgstr "نتيجة R2:"
+
+msgid "Risky for onehot:"
+msgstr "مُعرض للخطر بالنسبة لـ واحد ساخن:"
+
+msgid "Rows"
+msgstr "الصفوف"
+
+msgid "Safe for onehot:"
+msgstr "آمن بالنسبة لـ واحد ساخن:"
+
+msgid "Sign up"
+msgstr "تسجيل"
+
+msgid "Something went wrong"
+msgstr "حدث خطأ ما"
+
+msgid "Test loss:"
+msgstr "خسارة الاختبار:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "يوفر ساحة لعب الشبكات العصبية طريقة تفاعلية لرؤية وفهم كيفية تفكير وعمل الشبكة العصبية. فقط انقر على الزر أدناه للبدء."
+
+msgid "Total categorical:"
+msgstr "إجمالي التصنيفات:"
+
+msgid "Visualize"
+msgstr "تصور"
+
+msgid "Welcome back!"
+msgstr "أهلاً بعودتك!"
+
+msgid "Welcome!"
+msgstr "أهلاً بك!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "سواء كنت تدرب نموذجًا بسيطًا أو تُحسّن محوّلًا ضخمًا، يتكيف 2N2D مع سير عملك. كل ما تحتاجه للبدء هو حساب."
+
+msgid "Wrong username or password!"
+msgstr "اسم المستخدم أو كلمة المرور غير صحيحين!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "لقد سجّلت الدخول بالفعل، هل ترغب في تسجيل الخروج؟"
+```

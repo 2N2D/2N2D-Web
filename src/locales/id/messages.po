@@ -1,0 +1,135 @@
+```
+msgstr ""
+"Tanggal Pembuatan POT: 2024-07-30 00:03+0300\n"
+"Versi MIME: 1.0\n"
+"Jenis Konten: text/plain; charset=utf-8\n"
+"Pengodean Transfer Konten: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Bahasa: id\n"
+
+msgstr "<0>J</0>aringan <1>S</1>araf <2>P</2>engembangan <3>D</3>ashboard"
+
+msgstr "Sudah punya akun? "
+
+msgstr "Analisis"
+
+msgstr "Tanyakan"
+
+msgstr "Atribut:"
+
+msgstr "Kembali ke login"
+
+msgstr "Kategori:"
+
+msgstr "Kolom"
+
+msgstr "Berkas csv:"
+
+msgstr "Berkas CSV:"
+
+msgstr "Memori Saat Ini"
+
+msgstr "Belum punya akun?"
+
+msgstr "Mudah menafsirkan data pelatihan dan keluaran dari model Anda."
+
+msgstr "Mudah memvisualisasikan struktur dan node jaringan saraf Anda, dalam format yang mudah dan sederhana untuk dipahami"
+
+msgstr "Memori Estimasi"
+
+msgstr "Berkas"
+
+msgstr "Berkas:"
+
+msgstr "Sudah paham dasar-dasarnya?"
+
+msgstr "Jika Anda sudah memahami tentang cara kerja jaringan saraf, gunakan panduan berikut untuk mulai membuat jaringan saraf Anda sendiri. Jangan lupa untuk bertanya kepada Asisten AI jika ada pertanyaan!"
+
+msgstr "Masukan:"
+
+msgstr "Versi IR:"
+
+msgstr "Cukup seret dan lepas berkas Anda dan mulai—tanpa pengaturan, tanpa kerumitan."
+
+msgstr "Lapisan:"
+
+msgstr "Muat Berkas CSV"
+
+msgstr "Muat Berkas ONNX"
+
+msgstr "Memuat"
+
+msgstr "Keluar"
+
+msgstr "Sedang masuk...."
+
+msgstr "Masuk"
+
+msgstr "Masuk dengan Tautan Ajaib"
+
+msgstr "Nilai yang hilang"
+
+msgstr "Nama:"
+
+msgstr "Dasbor Pengembangan Jaringan Saraf"
+
+msgstr "Neuron:"
+
+msgstr "Tidak ada data untuk ditampilkan"
+
+msgstr "Tidak ada optimasi yang dilakukan."
+
+msgstr "Tidak ada rekomendasi"
+
+msgstr "Tidak ada kolom seperti itu"
+
+msgstr "Tidak ada peringatan"
+
+msgstr "Jumlah node:"
+
+msgstr "menawarkan kursus gratis tentang jaringan saraf dan cara kerjanya."
+
+msgstr "Satu panas"
+
+msgstr "Berkas ONNX:"
+
+msgstr "Optimalkan"
+
+msgstr "Optimalkan jaringan saraf Anda dengan arsitektur yang lebih baik untuk meningkatkan kecepatan dan keluarannya."
+
+msgstr "Keluaran:"
+
+msgstr "Keseluruhan"
+
+msgstr "Produsen:"
+
+msgstr "Skor R2:"
+
+msgstr "Berisiko untuk satu panas:"
+
+msgstr "Baris"
+
+msgstr "Aman untuk satu panas:"
+
+msgstr "Daftar"
+
+msgstr "Terjadi kesalahan"
+
+msgstr "Kerugian uji:"
+
+msgstr "Neural Network Playground menawarkan cara interaktif untuk melihat dan memahami bagaimana jaringan saraf berpikir dan berfungsi. Cukup klik tombol di bawah ini untuk memulai."
+
+msgstr "Total kategorikal:"
+
+msgstr "Visualisasikan"
+
+msgstr "Selamat datang kembali!"
+
+msgstr "Selamat datang!"
+
+msgstr "Baik Anda melatih model sederhana atau menyempurnakan transformer besar, 2N2D beradaptasi dengan alur kerja Anda. Yang Anda perlukan untuk memulai hanyalah akun."
+
+msgstr "Nama pengguna atau kata sandi salah!"
+
+msgstr "Anda sudah masuk, apakah Anda ingin keluar?"
+```

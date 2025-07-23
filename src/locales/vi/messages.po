@@ -1,0 +1,257 @@
+```
+msgstr ""
+"Ngày tạo POT: 2024-07-30 00:03+0300\n"
+"Phiên bản MIME: 1.0\n"
+"Kiểu nội dung: text/plain; charset=utf-8\n"
+"Mã hóa truyền tải nội dung: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Ngôn ngữ: vi\n"
+```
+
+```
+msgstr "Bảng điều khiển <0>Phát</0> triển <1>Mạng</1> thần kinh <2>N</2>ơ-ron"
+```
+
+```
+msgstr "Đã có tài khoản? "
+```
+
+```
+msgstr "Phân tích"
+```
+
+```
+msgstr "Hỏi"
+```
+
+```
+msgstr "Thuộc tính:"
+```
+
+```
+msgstr "Trở lại đăng nhập"
+```
+
+```
+msgstr "Thể loại:"
+```
+
+```
+msgstr "Cột"
+```
+
+```
+msgstr "Tệp csv:"
+```
+
+```
+msgstr "Tệp CSV:"
+```
+
+```
+msgstr "Bộ nhớ hiện tại"
+```
+
+```
+msgstr "Chưa có tài khoản?"
+```
+
+```
+msgstr "Dễ dàng diễn giải dữ liệu huấn luyện và đầu ra từ mô hình của bạn."
+```
+
+```
+msgstr "Dễ dàng trực quan hóa cấu trúc và các nút của mạng thần kinh của bạn, ở định dạng dễ hiểu và đơn giản."
+```
+
+```
+msgstr "Bộ nhớ ước tính"
+```
+
+```
+msgstr "Tệp"
+```
+
+```
+msgstr "Tệp:"
+```
+
+```
+msgstr "Đã nắm được những kiến thức cơ bản?"
+```
+
+```
+msgstr "Nếu bạn đã nắm được các nguyên lý hoạt động của mạng thần kinh, hãy sử dụng hướng dẫn sau để bắt đầu tạo mạng của riêng bạn. Đừng quên hỏi Trợ lý AI nếu có thắc mắc!"
+```
+
+```
+msgstr "Đầu vào:"
+```
+
+```
+msgstr "Phiên bản IR:"
+```
+
+```
+msgstr "Chỉ cần kéo và thả tệp của bạn và bắt đầu—không cần thiết lập, không rắc rối."
+```
+
+```
+msgstr "Lớp:"
+```
+
+```
+msgstr "Tải tệp CSV"
+```
+
+```
+msgstr "Tải tệp ONNX"
+```
+
+```
+msgstr "Đang tải"
+```
+
+```
+msgstr "Đăng xuất"
+```
+
+```
+msgstr "Đang đăng nhập...."
+```
+
+```
+msgstr "Đăng nhập"
+```
+
+```
+msgstr "Đăng nhập bằng liên kết thần kỳ"
+```
+
+```
+msgstr "Giá trị thiếu"
+```
+
+```
+msgstr "Tên:"
+```
+
+```
+msgstr "Bảng điều khiển Phát triển Mạng thần kinh"
+```
+
+```
+msgstr "Nơ-ron:"
+```
+
+```
+msgstr "Không có dữ liệu để hiển thị"
+```
+
+```
+msgstr "Không tối ưu hóa."
+```
+
+```
+msgstr "Không có đề xuất"
+```
+
+```
+msgstr "Không có cột nào như vậy"
+```
+
+```
+msgstr "Không có cảnh báo"
+```
+
+```
+msgstr "Số lượng nút:"
+```
+
+```
+msgstr "cung cấp các khóa học miễn phí về mạng thần kinh và cách hoạt động của chúng."
+```
+
+```
+msgstr "One hot"
+```
+
+```
+msgstr "Tệp ONNX:"
+```
+
+```
+msgstr "Tối ưu hóa"
+```
+
+```
+msgstr "Tối ưu hóa mạng thần kinh của bạn với kiến trúc tốt hơn để cải thiện tốc độ và đầu ra của nó."
+```
+
+```
+msgstr "Đầu ra:"
+```
+
+```
+msgstr "Tổng quan"
+```
+
+```
+msgstr "Nhà sản xuất:"
+```
+
+```
+msgstr "Điểm R2:"
+```
+
+```
+msgstr "Nguy hiểm đối với onehot:"
+```
+
+```
+msgstr "Hàng"
+```
+
+```
+msgstr "An toàn cho onehot:"
+```
+
+```
+msgstr "Đăng ký"
+```
+
+```
+msgstr "Đã xảy ra lỗi"
+```
+
+```
+msgstr "Sân chơi Mạng thần kinh cung cấp một cách tương tác để xem và hiểu cách mạng thần kinh suy nghĩ và hoạt động. Chỉ cần nhấp vào nút bên dưới để bắt đầu."
+```
+
+```
+msgstr "Tổng số loại:"
+```
+
+```
+msgstr "Trực quan hóa"
+```
+
+```
+msgstr "Chào mừng trở lại!"
+```
+
+```
+msgstr "Chào mừng!"
+```
+
+```
+msgstr "Cho dù bạn đang huấn luyện một mô hình đơn giản hay tinh chỉnh một bộ chuyển đổi khổng lồ, 2N2D đều thích ứng với quy trình làm việc của bạn. Tất cả những gì bạn cần để bắt đầu là một tài khoản."
+```
+
+```
+msgstr "Tên người dùng hoặc mật khẩu không đúng!"
+```
+
+```
+msgstr "Bạn đã đăng nhập, bạn có muốn đăng xuất không?"
+```

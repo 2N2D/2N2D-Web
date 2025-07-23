@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: bn\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "<0>নিউরাল</0> <1>নেটওয়ার্ক</1> <2>বিকাশ</2> <3>ড্যাশবোর্ড</3>"
+
+msgid "Already have an account? "
+msgstr "ইতিমধ্যে একটি অ্যাকাউন্ট আছে?"
+
+msgid "Analyze"
+msgstr "বিশ্লেষণ করুন"
+
+msgid "Ask"
+msgstr "জিজ্ঞাসা করুন"
+
+msgid "Attributes:"
+msgstr "বিশেষণগুলি:"
+
+msgid "Back to login"
+msgstr "লগইনে ফিরে যান"
+
+msgid "Category:"
+msgstr "বিভাগ:"
+
+msgid "Columns"
+msgstr "কলাম"
+
+msgid "Csv file:"
+msgstr "CSV ফাইল:"
+
+msgid "CSV file:"
+msgstr "CSV ফাইল:"
+
+msgid "Cur. Memory"
+msgstr "বর্তমান মেমোরি"
+
+msgid "Don't have an account?"
+msgstr "অ্যাকাউন্ট নেই?"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "আপনার মডেল থেকে প্রশিক্ষণ এবং আউটপুট ডেটা সহজেই ব্যাখ্যা করুন।"
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "সহজ এবং সহজে বোঝার জন্য একটি ফরম্যাটে আপনার নিউরাল নেটওয়ার্কের গঠন এবং নোডগুলি সহজেই ভিজ্যুয়ালাইজ করুন"
+
+msgid "Est. Memory"
+msgstr "আনুমানিক মেমোরি"
+
+msgid "File"
+msgstr "ফাইল"
+
+msgid "File:"
+msgstr "ফাইল:"
+
+msgid "Got the basics?"
+msgstr "মূলসূত্রগুলি বুঝেছেন?"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "যদি আপনি নিউরাল নেটওয়ার্ক কীভাবে কাজ করে সে সম্পর্কে ধারণা পেয়ে থাকেন, তাহলে নিজের তৈরি করার জন্য নিম্নলিখিত গাইড ব্যবহার করুন। AI সহায়কের কাছে প্রশ্ন জিজ্ঞাসা করতে ভুলবেন না!"
+
+msgid "Inputs:"
+msgstr "ইনপুট:"
+
+msgid "IR version:"
+msgstr "IR সংস্করণ:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "শুধু আপনার ফাইলগুলি টেনে এবং ফেলে দিন এবং শুরু করুন—কোনও সেটআপ, কোনও ঝামেলা নেই।"
+
+msgid "Layers:"
+msgstr "স্তর:"
+
+msgid "Load CSV File"
+msgstr "CSV ফাইল লোড করুন"
+
+msgid "Load ONNX File"
+msgstr "ONNX ফাইল লোড করুন"
+
+msgid "Loading"
+msgstr "লোড হচ্ছে"
+
+msgid "Log out"
+msgstr "লগ আউট করুন"
+
+msgid "Logging in...."
+msgstr "লগইন হচ্ছে...."
+
+msgid "Login"
+msgstr "লগইন"
+
+msgid "Magic Link sign-in"
+msgstr "ম্যাজিক লিঙ্ক সাইন-ইন"
+
+msgid "Missing values"
+msgstr "অনুপস্থিত মান"
+
+msgid "Name:"
+msgstr "নাম:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "নিউরাল নেটওয়ার্ক বিকাশ ড্যাশবোর্ড"
+
+msgid "Neurons:"
+msgstr "নিউরন:"
+
+msgid "No data to display"
+msgstr "প্রদর্শনের জন্য কোনও ডেটা নেই"
+
+msgid "No optimization done."
+msgstr "কোনও অপ্টিমাইজেশন করা হয়নি।"
+
+msgid "No recommendations"
+msgstr "কোনও সুপারিশ নেই"
+
+msgid "No such columns"
+msgstr "এই ধরণের কোন কলাম নেই"
+
+msgid "No warnings"
+msgstr "কোনও সতর্কীকরণ নেই"
+
+msgid "Node count:"
+msgstr "নোড সংখ্যা:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "নিউরাল নেটওয়ার্ক এবং তাদের কাজের উপর বিনামূল্যে কোর্স সরবরাহ করে।"
+
+msgid "One hot"
+msgstr "ওয়ান হট"
+
+msgid "ONNX file:"
+msgstr "ONNX ফাইল:"
+
+msgid "Optimize"
+msgstr "অপ্টিমাইজ করুন"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "তার গতি এবং আউটপুট উন্নত করার জন্য একটি ভাল আর্কিটেকচারের সাথে আপনার নিউরাল নেটওয়ার্ক অপ্টিমাইজ করুন।"
+
+msgid "Outputs:"
+msgstr "আউটপুট:"
+
+msgid "Overall"
+msgstr "সামগ্রিক"
+
+msgid "Producer:"
+msgstr "প্রযোজক:"
+
+msgid "R2 score:"
+msgstr "R2 স্কোর:"
+
+msgid "Risky for onehot:"
+msgstr "ওয়ান হট এর জন্য ঝুঁকিপূর্ণ:"
+
+msgid "Rows"
+msgstr "সারি"
+
+msgid "Safe for onehot:"
+msgstr "ওয়ান হট এর জন্য নিরাপদ:"
+
+msgid "Sign up"
+msgstr "সাইন আপ করুন"
+
+msgid "Something went wrong"
+msgstr "কিছু ভুল হয়েছে"
+
+msgid "Test loss:"
+msgstr "পরীক্ষার ক্ষতি:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "নিউরাল নেটওয়ার্ক প্লেগ্রাউন্ড একটি ইন্টারেক্টিভ উপায় সরবরাহ করে যা দেখতে এবং বুঝতে পারে যে একটি নিউরাল নেটওয়ার্ক কীভাবে চিন্তা করে এবং কাজ করে। শুরু করার জন্য নিচের বোতামটি ক্লিক করুন।"
+
+msgid "Total categorical:"
+msgstr "মোট বিভাগীয়:"
+
+msgid "Visualize"
+msgstr "ভিজ্যুয়ালাইজ করুন"
+
+msgid "Welcome back!"
+msgstr "আবার স্বাগতম!"
+
+msgid "Welcome!"
+msgstr "স্বাগতম!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "আপনি একটি সহজ মডেল প্রশিক্ষণ দিচ্ছেন বা একটি বিশাল ট্রান্সফর্মার ফাইন-টিউনিং করছেন, 2N2D আপনার ওয়ার্কফ্লোতে মানিয়ে নেয়। শুরু করার জন্য আপনার যা দরকার তা হল একটি অ্যাকাউন্ট।"
+
+msgid "Wrong username or password!"
+msgstr "ভুল ব্যবহারকারীর নাম বা পাসওয়ার্ড!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "আপনি ইতিমধ্যে লগ ইন আছেন, কি আপনি লগ আউট করতে চান?"
+```

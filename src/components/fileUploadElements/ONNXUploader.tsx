@@ -1,5 +1,6 @@
 import React from 'react';
 import {dragUpload, uploadCSV, uploadONNX} from "@/lib/fileHandler/fileUpload";
+import { Trans } from '@lingui/react/macro';
 
 export default function ONNXUploader({callBack}: { callBack?: () => void }) {
     const [uploadState, setUploadState] = React.useState(false);
@@ -31,7 +32,7 @@ export default function ONNXUploader({callBack}: { callBack?: () => void }) {
             }}
             className={"uploadButton"}
         >
-            {uploading ? "Uploading..." : <p>Load ONNX File <i className="fa-solid fa-upload"></i></p>}
+            {uploading ? "Uploading..." : <p><Trans>Load ONNX File</Trans> <i className="fa-solid fa-upload"></i></p>}
         </button>
         {uploadState ? (
             <div className={"popup"}>

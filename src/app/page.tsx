@@ -4,6 +4,8 @@ import React from "react";
 import {motion} from "framer-motion";
 import ParticleNetwork from "@/components/visual/particleNetwork";
 import "./homeStyles.css";
+import { Trans } from '@lingui/react/macro';
+import { t } from '@lingui/core/macro'
 
 const containerVariants = {
     hidden: {opacity: 0, y: 30},
@@ -36,7 +38,9 @@ export default function Home() {
                 <div className="logo">
                     <img src={"logo2n2d.svg"} alt="logo"/>
                     <h1>
+                        <Trans>
                         <b>N</b>eural <b>N</b>etwork <b>D</b>evelopment <b>D</b>ashboard
+                        </Trans>
                     </h1>
                 </div>
 
@@ -49,10 +53,8 @@ export default function Home() {
                         The one stop shop for your neural network needs
                     </h2>
                     <p>
-                        Just drag and drop your files and get going—no setup, no fuss.
-                        Whether you're training a simple model or fine-tuning a massive
-                        transformer, 2N2D adapts to your workflow. All you need to get
-                        started is an account.
+                        <Trans>Just drag and drop your files and get going—no setup, no fuss.</Trans>
+                        <Trans>Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account.</Trans>
                     </p>
                     <motion.a
                         href="/signup"
@@ -76,26 +78,24 @@ export default function Home() {
                 <div className="featuresGrid">
                     {[
                         {
-                            title: "Visualize",
+                            title: t`Visualize`,
                             description:
-                                "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format",
+                                t`Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format`,
                             icon: "fa-chart-network",
                         },
                         {
-                            title: "Analyze",
-                            description: "Easily interpret training and output data from your models.",
+                            title: t`Analyze`,
+                            description: t`Easily interpret training and output data from your models.`,
                             icon: "fa-chart-simple",
                         },
                         {
-                            title: "Optimize",
-                            description:
-                                "Optimize your neural network with a better architecture to improve its speed and outputs.",
+                            title: t`Optimize`,
+                            description: t`Optimize your neural network with a better architecture to improve its speed and outputs.`,
                             icon: "fa-rabbit-running",
                         },
                         {
-                            title: "Ask",
-                            description:
-                                "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format",
+                            title: t`Ask`,
+                            description: t`Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format`,
                             icon: "fa-comments",
                         },
                     ].map(({title, description, icon}, i) => (

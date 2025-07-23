@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ja\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "ニューラルネットワーク開発ダッシュボード"
+
+msgid "Already have an account? "
+msgstr "アカウントをお持ちですか？"
+
+msgid "Analyze"
+msgstr "分析"
+
+msgid "Ask"
+msgstr "質問する"
+
+msgid "Attributes:"
+msgstr "属性："
+
+msgid "Back to login"
+msgstr "ログイン画面に戻る"
+
+msgid "Category:"
+msgstr "カテゴリ："
+
+msgid "Columns"
+msgstr "列"
+
+msgid "Csv file:"
+msgstr "CSVファイル："
+
+msgid "CSV file:"
+msgstr "CSVファイル："
+
+msgid "Cur. Memory"
+msgstr "現在メモリ"
+
+msgid "Don't have an account?"
+msgstr "アカウントをお持ちでない場合？"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "モデルのトレーニングデータと出力データを簡単に解釈できます。"
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "簡単で分かりやすい形式で、ニューラルネットワークの構造とノードを簡単に視覚化できます。"
+
+msgid "Est. Memory"
+msgstr "推定メモリ"
+
+msgid "File"
+msgstr "ファイル"
+
+msgid "File:"
+msgstr "ファイル："
+
+msgid "Got the basics?"
+msgstr "基本は理解しましたか？"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "ニューラルネットワークの仕組みについて理解したら、次のガイドを使って独自のニューラルネットワークの作成を始めましょう。AIアシスタントに質問することを忘れないでください！"
+
+msgid "Inputs:"
+msgstr "入力："
+
+msgid "IR version:"
+msgstr "IRバージョン："
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "ファイルをドラッグアンドドロップするだけで開始できます。設定不要で手間がかかりません。"
+
+msgid "Layers:"
+msgstr "レイヤー："
+
+msgid "Load CSV File"
+msgstr "CSVファイルを読み込む"
+
+msgid "Load ONNX File"
+msgstr "ONNXファイルを読み込む"
+
+msgid "Loading"
+msgstr "読み込み中"
+
+msgid "Log out"
+msgstr "ログアウト"
+
+msgid "Logging in...."
+msgstr "ログイン中…"
+
+msgid "Login"
+msgstr "ログイン"
+
+msgid "Magic Link sign-in"
+msgstr "マジックリンクサインイン"
+
+msgid "Missing values"
+msgstr "欠損値"
+
+msgid "Name:"
+msgstr "名前："
+
+msgid "Neural Network Development Dashboard"
+msgstr "ニューラルネットワーク開発ダッシュボード"
+
+msgid "Neurons:"
+msgstr "ニューロン："
+
+msgid "No data to display"
+msgstr "表示するデータがありません"
+
+msgid "No optimization done."
+msgstr "最適化されていません。"
+
+msgid "No recommendations"
+msgstr "推奨事項はありません"
+
+msgid "No such columns"
+msgstr "そのような列はありません"
+
+msgid "No warnings"
+msgstr "警告はありません"
+
+msgid "Node count:"
+msgstr "ノード数："
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "ニューラルネットワークとその仕組みに関する無料コースを提供しています。"
+
+msgid "One hot"
+msgstr "ワンホット"
+
+msgid "ONNX file:"
+msgstr "ONNXファイル："
+
+msgid "Optimize"
+msgstr "最適化"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "より優れたアーキテクチャでニューラルネットワークを最適化し、速度と出力を向上させます。"
+
+msgid "Outputs:"
+msgstr "出力："
+
+msgid "Overall"
+msgstr "全体"
+
+msgid "Producer:"
+msgstr "プロデューサー："
+
+msgid "R2 score:"
+msgstr "R2スコア："
+
+msgid "Risky for onehot:"
+msgstr "ワンホットエンコーディングのリスク："
+
+msgid "Rows"
+msgstr "行"
+
+msgid "Safe for onehot:"
+msgstr "ワンホットエンコーディングで安全："
+
+msgid "Sign up"
+msgstr "サインアップ"
+
+msgid "Something went wrong"
+msgstr "何か問題が発生しました"
+
+msgid "Test loss:"
+msgstr "テスト損失："
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "ニューラルネットワークプレイグラウンドでは、ニューラルネットワークの思考と機能をインタラクティブに見て理解することができます。下のボタンをクリックして始めましょう。"
+
+msgid "Total categorical:"
+msgstr "カテゴリの合計："
+
+msgid "Visualize"
+msgstr "視覚化する"
+
+msgid "Welcome back!"
+msgstr "ようこそ！"
+
+msgid "Welcome!"
+msgstr "ようこそ！"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "シンプルなモデルをトレーニングする場合でも、大規模なトランスフォーマーを微調整する場合でも、2N2D はあなたのワークフローに適応します。開始するにはアカウントが必要です。"
+
+msgid "Wrong username or password!"
+msgstr "ユーザー名またはパスワードが間違っています！"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "すでにログインしています。ログアウトしますか？"
+```

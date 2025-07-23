@@ -10,6 +10,7 @@ import ONNXUploader from '@/components/fileUploadElements/ONNXUploader';
 import CSVUploader from '@/components/fileUploadElements/CSVUploader';
 import { deleteCsv, deleteOnnx } from '@/lib/sessionHandling/sessionUpdater';
 import { motion } from 'framer-motion';
+import { Trans } from '@lingui/react/macro';
 
 export default function Optimize() {
   const [features, setFeatures] = useState<string[]>([]);
@@ -283,7 +284,7 @@ export default function Optimize() {
         <div>
           <div className={'dataArea area vertical'}>
             <h1>
-              <b>ONNX file:</b> {onnxFileName}
+              <b><Trans>ONNX file:</Trans></b> {onnxFileName}
             </h1>
             <div className={'flex gap-[1rem]'}>
               <ONNXUploader callBack={populateLists} />
@@ -308,7 +309,7 @@ export default function Optimize() {
           </div>
           <div className={'dataArea area vertical'}>
             <h1>
-              <b>CSV file:</b> {csvFileName}
+              <b><Trans>CSV file:</Trans></b> {csvFileName}
             </h1>
             <div className={'flex gap-[1rem]'}>
               <CSVUploader callBack={populateLists} />
@@ -352,16 +353,16 @@ export default function Optimize() {
             <h2 className={'subtitle'}>Best configuration:</h2>
             <div className={'result'}>
               <div className={'info'}>
-                <h2>Neurons:</h2> {result?.best_config.neurons}
+                <h2><Trans>Neurons:</Trans></h2> {result?.best_config.neurons}
               </div>
               <div className={'info'}>
-                <h2>Layers:</h2> {result?.best_config.layers}
+                <h2><Trans>Layers:</Trans></h2> {result?.best_config.layers}
               </div>
               <div className={'info'}>
-                <h2>Test loss:</h2> {result?.best_config.test_loss}
+                <h2><Trans>Test loss:</Trans></h2> {result?.best_config.test_loss}
               </div>
               <div className={'info'}>
-                <h2>R2 score:</h2> {result?.best_config.r2_score}
+                <h2><Trans>R2 score:</Trans></h2> {result?.best_config.r2_score}
               </div>
             </div>
           </div>

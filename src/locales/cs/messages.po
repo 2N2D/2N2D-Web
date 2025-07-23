@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: cs\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "Nástroj pro vývoj neuronových sítí"
+
+msgid "Already have an account? "
+msgstr "Už máte účet? "
+
+msgid "Analyze"
+msgstr "Analyzovat"
+
+msgid "Ask"
+msgstr "Zeptat se"
+
+msgid "Attributes:"
+msgstr "Atributy:"
+
+msgid "Back to login"
+msgstr "Zpět k přihlášení"
+
+msgid "Category:"
+msgstr "Kategorie:"
+
+msgid "Columns"
+msgstr "Sloupce"
+
+msgid "Csv file:"
+msgstr "Soubor CSV:"
+
+msgid "CSV file:"
+msgstr "Soubor CSV:"
+
+msgid "Cur. Memory"
+msgstr "Aktuální paměť"
+
+msgid "Don't have an account?"
+msgstr "Nemáte účet?"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "Snadno interpretujte data z trénování a výstupu vašich modelů."
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "Snadno si vizualizujte strukturu a uzly vaší neuronové sítě v jednoduchém a srozumitelném formátu."
+
+msgid "Est. Memory"
+msgstr "Odhadovaná paměť"
+
+msgid "File"
+msgstr "Soubor"
+
+msgid "File:"
+msgstr "Soubor:"
+
+msgid "Got the basics?"
+msgstr "Základy máte?"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "Pokud rozumíte základům fungování neuronových sítí, použijte následujícího průvodce k vytvoření vlastní sítě. Nezapomeňte se zeptat asistenta AI na případné otázky!"
+
+msgid "Inputs:"
+msgstr "Vstupy:"
+
+msgid "IR version:"
+msgstr "Verze IR:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "Stačí přetáhnout a umístit soubory a začít – žádná instalace, žádné zbytečnosti."
+
+msgid "Layers:"
+msgstr "Vrstvy:"
+
+msgid "Load CSV File"
+msgstr "Načíst soubor CSV"
+
+msgid "Load ONNX File"
+msgstr "Načíst soubor ONNX"
+
+msgid "Loading"
+msgstr "Načítání"
+
+msgid "Log out"
+msgstr "Odhlásit se"
+
+msgid "Logging in...."
+msgstr "Přihlášení..."
+
+msgid "Login"
+msgstr "Přihlásit se"
+
+msgid "Magic Link sign-in"
+msgstr "Přihlášení pomocí magického odkazu"
+
+msgid "Missing values"
+msgstr "Chybějící hodnoty"
+
+msgid "Name:"
+msgstr "Jméno:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "Nástroj pro vývoj neuronových sítí"
+
+msgid "Neurons:"
+msgstr "Neurony:"
+
+msgid "No data to display"
+msgstr "Žádná data k zobrazení"
+
+msgid "No optimization done."
+msgstr "Nezadána žádná optimalizace."
+
+msgid "No recommendations"
+msgstr "Žádná doporučení"
+
+msgid "No such columns"
+msgstr "Takové sloupce neexistují"
+
+msgid "No warnings"
+msgstr "Žádná upozornění"
+
+msgid "Node count:"
+msgstr "Počet uzlů:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "nabízí bezplatné kurzy o neuronových sítích a jejich fungování."
+
+msgid "One hot"
+msgstr "One-hot"
+
+msgid "ONNX file:"
+msgstr "Soubor ONNX:"
+
+msgid "Optimize"
+msgstr "Optimalizovat"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "Optimalizujte svou neuronovou síť s lepší architekturou pro zlepšení její rychlosti a výstupů."
+
+msgid "Outputs:"
+msgstr "Výstupy:"
+
+msgid "Overall"
+msgstr "Celkově"
+
+msgid "Producer:"
+msgstr "Výrobce:"
+
+msgid "R2 score:"
+msgstr "R2 skóre:"
+
+msgid "Risky for onehot:"
+msgstr "Rizikové pro one-hot:"
+
+msgid "Rows"
+msgstr "Řádky"
+
+msgid "Safe for onehot:"
+msgstr "Bezpečné pro one-hot:"
+
+msgid "Sign up"
+msgstr "Registrovat se"
+
+msgid "Something went wrong"
+msgstr "Něco se pokazilo"
+
+msgid "Test loss:"
+msgstr "Ztráta při testování:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "Hřiště pro neuronové sítě nabízí interaktivní způsob, jak vidět a pochopit, jak neuronová síť myslí a funguje. Stačí kliknout na tlačítko níže a začít."
+
+msgid "Total categorical:"
+msgstr "Celkem kategorií:"
+
+msgid "Visualize"
+msgstr "Zobrazit"
+
+msgid "Welcome back!"
+msgstr "Vítejte zpět!"
+
+msgid "Welcome!"
+msgstr "Vítejte!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "Ať už trénujete jednoduchý model nebo ladíte obrovský transformátor, 2N2D se přizpůsobí vašemu pracovnímu postupu. Vše, co potřebujete k zahájení, je účet."
+
+msgid "Wrong username or password!"
+msgstr "Nesprávné uživatelské jméno nebo heslo!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "Již jste přihlášeni, chcete se odhlásit?"
+```

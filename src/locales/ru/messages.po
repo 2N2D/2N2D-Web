@@ -1,0 +1,190 @@
+```
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "Панель разработки нейронных сетей"
+
+msgid "Already have an account? "
+msgstr "Уже есть аккаунт? "
+
+msgid "Analyze"
+msgstr "Анализировать"
+
+msgid "Ask"
+msgstr "Спросить"
+
+msgid "Attributes:"
+msgstr "Атрибуты:"
+
+msgid "Back to login"
+msgstr "Назад к входу"
+
+msgid "Category:"
+msgstr "Категория:"
+
+msgid "Columns"
+msgstr "Столбцы"
+
+msgid "Csv file:"
+msgstr "CSV-файл:"
+
+msgid "CSV file:"
+msgstr "CSV-файл:"
+
+msgid "Cur. Memory"
+msgstr "Текущая память"
+
+msgid "Don't have an account?"
+msgstr "У вас нет аккаунта?"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "Легко интерпретируйте данные обучения и вывода ваших моделей."
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "Легко визуализируйте структуру и узлы вашей нейронной сети в простом и понятном формате"
+
+msgid "Est. Memory"
+msgstr "Оцен. память"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "File:"
+msgstr "Файл:"
+
+msgid "Got the basics?"
+msgstr "Поняли основы?"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "Если вы разобрались с принципами работы нейронных сетей, воспользуйтесь следующим руководством, чтобы начать создавать свои собственные. Не забудьте задать вопросы помощнику ИИ!"
+
+msgid "Inputs:"
+msgstr "Входы:"
+
+msgid "IR version:"
+msgstr "Версия IR:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "Просто перетащите ваши файлы — никакой настройки, никаких проблем."
+
+msgid "Layers:"
+msgstr "Слои:"
+
+msgid "Load CSV File"
+msgstr "Загрузить CSV-файл"
+
+msgid "Load ONNX File"
+msgstr "Загрузить ONNX-файл"
+
+msgid "Loading"
+msgstr "Загрузка"
+
+msgid "Log out"
+msgstr "Выйти"
+
+msgid "Logging in...."
+msgstr "Вход..."
+
+msgid "Login"
+msgstr "Вход"
+
+msgid "Magic Link sign-in"
+msgstr "Вход по магической ссылке"
+
+msgid "Missing values"
+msgstr "Пропущенные значения"
+
+msgid "Name:"
+msgstr "Название:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "Панель разработки нейронных сетей"
+
+msgid "Neurons:"
+msgstr "Нейроны:"
+
+msgid "No data to display"
+msgstr "Нет данных для отображения"
+
+msgid "No optimization done."
+msgstr "Оптимизация не выполнена."
+
+msgid "No recommendations"
+msgstr "Нет рекомендаций"
+
+msgid "No such columns"
+msgstr "Нет таких столбцов"
+
+msgid "No warnings"
+msgstr "Нет предупреждений"
+
+msgid "Node count:"
+msgstr "Количество узлов:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "предлагает бесплатные курсы о нейронных сетях и принципах их работы."
+
+msgid "One hot"
+msgstr "One-hot кодирование"
+
+msgid "ONNX file:"
+msgstr "ONNX-файл:"
+
+msgid "Optimize"
+msgstr "Оптимизировать"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "Оптимизируйте вашу нейронную сеть с помощью лучшей архитектуры для повышения её скорости и качества вывода."
+
+msgid "Outputs:"
+msgstr "Выходы:"
+
+msgid "Overall"
+msgstr "В целом"
+
+msgid "Producer:"
+msgstr "Производитель:"
+
+msgid "R2 score:"
+msgstr "R2-оценка:"
+
+msgid "Risky for onehot:"
+msgstr "Риск для one-hot кодирования:"
+
+msgid "Rows"
+msgstr "Строки"
+
+msgid "Safe for onehot:"
+msgstr "Безопасно для one-hot кодирования:"
+
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+msgid "Something went wrong"
+msgstr "Что-то пошло не так"
+
+msgid "Test loss:"
+msgstr "Потери на тесте:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "Интерактивная площадка для работы с нейронными сетями позволяет увидеть и понять, как работает нейронная сеть. Просто нажмите кнопку ниже, чтобы начать."
+
+msgid "Total categorical:"
+msgstr "Всего категориальных:"
+
+msgid "Visualize"
+msgstr "Визуализировать"
+
+msgid "Welcome back!"
+msgstr "Добро пожаловать обратно!"
+
+msgid "Welcome!"
+msgstr "Добро пожаловать!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "Независимо от того, обучаете ли вы простую модель или донастраиваете массивный трансформатор, 2N2D адаптируется к вашему рабочему процессу. Всё, что вам нужно для начала, — это аккаунт."
+
+msgid "Wrong username or password!"
+msgstr "Неправильное имя пользователя или пароль!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "Вы уже вошли в систему. Хотите выйти?"
+```

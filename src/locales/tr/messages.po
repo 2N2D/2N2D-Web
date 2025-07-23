@@ -1,0 +1,133 @@
+```
+msgstr ""
+"POT Oluşturma Tarihi: 2024-07-30 00:03+0300\n"
+"MIME Sürümü: 1.0\n"
+"İçerik Türü: text/plain; charset=utf-8\n"
+"İçerik Aktarım Kodlaması: 8bit\n"
+"X-Üretici: @lingui/cli\n"
+"Dil: tr\n"
+
+msgstr "<0>N</0>öron <1>A</1>ğı <2>G</2>elim <3>T</3>ablosu"
+
+msgstr "Hesabınız zaten var mı? "
+
+msgstr "Analiz Et"
+
+msgstr "Sor"
+
+msgstr "Özellikler:"
+
+msgstr "Oturum açmaya geri dön"
+
+msgstr "Kategori:"
+
+msgstr "Sütunlar"
+
+msgstr "Csv dosyası:"
+
+msgstr "CSV dosyası:"
+
+msgstr "Geç. Bellek"
+
+msgstr "Hesabınız yok mu?"
+
+msgstr "Modellerinizden gelen eğitim ve çıktı verilerini kolayca yorumlayın."
+
+msgstr "Nöron ağınızın yapısını ve düğümlerini, kolay ve anlaşılır bir formatta kolayca görselleştirin."
+
+msgstr "Tahm. Bellek"
+
+msgstr "Dosya"
+
+msgstr "Dosya:"
+
+msgstr "Temelleri öğrendiniz mi?"
+
+msgstr "Nöron ağlarının nasıl çalıştığıyla ilgili bilgileri öğrendiyseniz, kendi ağınızı oluşturmaya başlamak için aşağıdaki kılavuzu kullanın. Sorularınız için Yapay Zeka Asistanından yardım almayı unutmayın!"
+
+msgstr "Girişler:"
+
+msgstr "IR sürümü:"
+
+msgstr "Dosyalarınızı sürükleyip bırakın ve başlayın—kurulum yok, gereksiz işlem yok."
+
+msgstr "Katmanlar:"
+
+msgstr "CSV Dosyası Yükle"
+
+msgstr "ONNX Dosyası Yükle"
+
+msgstr "Yükleniyor"
+
+msgstr "Oturumu kapat"
+
+msgstr "Oturum açılıyor...."
+
+msgstr "Oturum Aç"
+
+msgstr "Sihirli Bağlantı ile oturum açma"
+
+msgstr "Eksik değerler"
+
+msgstr "Adı:"
+
+msgstr "Nöron Ağı Geliştirme Tablosu"
+
+msgstr "Nöronlar:"
+
+msgstr "Gösterilecek veri yok"
+
+msgstr "Hiç optimizasyon yapılmadı."
+
+msgstr "Öneri yok"
+
+msgstr "Böyle bir sütun yok"
+
+msgstr "Uyarı yok"
+
+msgstr "Düğüm sayısı:"
+
+msgstr "nöron ağları ve nasıl çalıştıkları hakkında ücretsiz kurslar sunmaktadır."
+
+msgstr "One hot"
+
+msgstr "ONNX dosyası:"
+
+msgstr "Optimize Et"
+
+msgstr "Nöron ağınızı daha iyi bir mimariyle optimize ederek hızını ve çıktılarını iyileştirin."
+
+msgstr "Çıktılar:"
+
+msgstr "Genel"
+
+msgstr "Üretici:"
+
+msgstr "R2 puanı:"
+
+msgstr "Onehot için riskli:"
+
+msgstr "Satırlar"
+
+msgstr "Onehot için güvenli:"
+
+msgstr "Kayıt Ol"
+
+msgstr "Bir sorun oluştu"
+
+msgstr "Nöron ağının nasıl düşündüğünü ve işlev gördüğünü görmenin ve anlamanın interaktif bir yolunu sunar. Başlamak için aşağıdaki düğmeyi tıklayın."
+
+msgstr "Toplam kategorik:"
+
+msgstr "Görselleştir"
+
+msgstr "Tekrar hoş geldiniz!"
+
+msgstr "Hoş geldin!"
+
+msgstr "İster basit bir modeli eğitiyor ister devasa bir dönüştürücüyü ince ayar yapıyor olun, 2N2D iş akışınıza uyum sağlar. Başlamak için tek ihtiyacınız bir hesap."
+
+msgstr "Yanlış kullanıcı adı veya parola!"
+
+msgstr "Zaten oturum açtınız, oturumu kapatmak ister misiniz?"
+```

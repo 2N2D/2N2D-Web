@@ -1,0 +1,257 @@
+```
+msgstr ""
+"POT-Létrehozási dátum: 2024-07-30 00:03+0300\n"
+"MIME-változat: 1.0\n"
+"Tartalomtípus: text/plain; charset=utf-8\n"
+"Tartalom-átadás kódolása: 8bit\n"
+"X-Generátor: @lingui/cli\n"
+"Nyelv: hu\n"
+```
+
+```
+msgstr "Neuronális <1>H</1>álózat <2>F</2>ejlesztési <3>I</3>rányítópult"
+```
+
+```
+msgstr "Már van fiókod? "
+```
+
+```
+msgstr "Elemzés"
+```
+
+```
+msgstr "Kérdez"
+```
+
+```
+msgstr "Attribútumok:"
+```
+
+```
+msgstr "Vissza a bejelentkezéshez"
+```
+
+```
+msgstr "Kategória:"
+```
+
+```
+msgstr "Oszlopok"
+```
+
+```
+msgstr "Csv fájl:"
+```
+
+```
+msgstr "CSV fájl:"
+```
+
+```
+msgstr "Jelenlegi memória"
+```
+
+```
+msgstr "Nincs fiókod?"
+```
+
+```
+msgstr "Könnyedén értelmezheted a modelljeid képzési és kimeneti adatait."
+```
+
+```
+msgstr "Könnyedén vizualizálhatod a neuronális hálózatod szerkezetét és csomópontjait egy egyszerű és könnyen érthető formátumban."
+```
+
+```
+msgstr "Becsült memória"
+```
+
+```
+msgstr "Fájl"
+```
+
+```
+msgstr "Fájl:"
+```
+
+```
+msgstr "Megtanultad az alapokat?"
+```
+
+```
+msgstr "Ha már megértetted a neuronális hálózatok működését, akkor a következő útmutató segítségével elkeztheted a saját hálózatod létrehozását. Ne felejtsd el megkérdezni az AI asszisztenst, ha bármi kérdésed van!"
+```
+
+```
+msgstr "Bemenetek:"
+```
+
+```
+msgstr "IR verzió:"
+```
+
+```
+msgstr "Egyszerűen húzd és dobd a fájljaidat, és máris indulhatsz – nincs beállítás, nincs bonyodalom."
+```
+
+```
+msgstr "Rétegek:"
+```
+
+```
+msgstr "CSV fájl betöltése"
+```
+
+```
+msgstr "ONNX fájl betöltése"
+```
+
+```
+msgstr "Betöltés"
+```
+
+```
+msgstr "Kijelentkezés"
+```
+
+```
+msgstr "Bejelentkezés..."
+```
+
+```
+msgstr "Bejelentkezés"
+```
+
+```
+msgstr "Varázslólinkes bejelentkezés"
+```
+
+```
+msgstr "Hiányzó értékek"
+```
+
+```
+msgstr "Név:"
+```
+
+```
+msgstr "Neuronális Hálózat Fejlesztési Irányítópult"
+```
+
+```
+msgstr "Neuronok:"
+```
+
+```
+msgstr "Nincs megjeleníthető adat"
+```
+
+```
+msgstr "Nincs optimalizálás."
+```
+
+```
+msgstr "Nincs ajánlás"
+```
+
+```
+msgstr "Nincs ilyen oszlop"
+```
+
+```
+msgstr "Nincs figyelmeztetés"
+```
+
+```
+msgstr "Csomópontszám:"
+```
+
+```
+msgstr "ingyenes kurzusokat kínál a neuronális hálózatokról és működésükről."
+```
+
+```
+msgstr "Egy forró"
+```
+
+```
+msgstr "ONNX fájl:"
+```
+
+```
+msgstr "Optimalizálás"
+```
+
+```
+msgstr "Optimalizáld a neuronális hálózatodat egy jobb architektúrával a sebesség és a kimenetek javítása érdekében."
+```
+
+```
+msgstr "Kimenetek:"
+```
+
+```
+msgstr "Összesen"
+```
+
+```
+msgstr "Létrehozó:"
+```
+
+```
+msgstr "R2 pontszám:"
+```
+
+```
+msgstr "Kockázatos egy forróhoz:"
+```
+
+```
+msgstr "Sorok"
+```
+
+```
+msgstr "Biztonságos egy forróhoz:"
+```
+
+```
+msgstr "Regisztráció"
+```
+
+```
+msgstr "Hiba történt"
+```
+
+```
+msgstr "A Neuronális Hálózat Játszótér interaktív módot kínál arra, hogy láthasd és megértsd, hogyan gondolkodik és működik egy neuronális hálózat. Egyszerűen kattints az alábbi gombra a kezdéshez."
+```
+
+```
+msgstr "Összes kategória:"
+```
+
+```
+msgstr "Megjelenítés"
+```
+
+```
+msgstr "Üdvözöllek vissza!"
+```
+
+```
+msgstr "Üdvözöllek!"
+```
+
+```
+msgstr "Akár egy egyszerű modellt képsz, akár egy hatalmas transzformert hangolsz finomra, a 2N2D alkalmazkodik a munkafolyamatodhoz. Mindössze egy fiókra van szükséged a kezdéshez."
+```
+
+```
+msgstr "Hibás felhasználónév vagy jelszó!"
+```
+
+```
+msgstr "Már be vagy jelentkezve, ki szeretnél jelentkezni?"
+```

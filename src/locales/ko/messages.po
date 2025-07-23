@@ -1,0 +1,199 @@
+```
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ko\n"
+
+msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgstr "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+
+msgid "Already have an account? "
+msgstr "이미 계정이 있으신가요?"
+
+msgid "Analyze"
+msgstr "분석"
+
+msgid "Ask"
+msgstr "질문하기"
+
+msgid "Attributes:"
+msgstr "속성:"
+
+msgid "Back to login"
+msgstr "로그인으로 돌아가기"
+
+msgid "Category:"
+msgstr "범주:"
+
+msgid "Columns"
+msgstr "열"
+
+msgid "Csv file:"
+msgstr "CSV 파일:"
+
+msgid "CSV file:"
+msgstr "CSV 파일:"
+
+msgid "Cur. Memory"
+msgstr "현재 메모리"
+
+msgid "Don't have an account?"
+msgstr "계정이 없으신가요?"
+
+msgid "Easily interpret training and output data from your models."
+msgstr "모델의 학습 및 출력 데이터를 쉽게 해석하세요."
+
+msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+msgstr "쉽고 간단하게 이해할 수 있는 형식으로 신경망의 구조와 노드를 쉽게 시각화하세요."
+
+msgid "Est. Memory"
+msgstr "예상 메모리"
+
+msgid "File"
+msgstr "파일"
+
+msgid "File:"
+msgstr "파일:"
+
+msgid "Got the basics?"
+msgstr "기본 사항을 이해하셨나요?"
+
+msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+msgstr "신경망의 작동 방식에 대한 기본 지식이 있다면 다음 가이드를 사용하여 자신만의 신경망을 만들어보세요. AI 어시스턴트에게 질문하는 것을 잊지 마세요!"
+
+msgid "Inputs:"
+msgstr "입력:"
+
+msgid "IR version:"
+msgstr "IR 버전:"
+
+msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+msgstr "파일을 드래그 앤 드롭하여 바로 시작하세요—설정이나 번거로움 없이."
+
+msgid "Layers:"
+msgstr "레이어:"
+
+msgid "Load CSV File"
+msgstr "CSV 파일 로드"
+
+msgid "Load ONNX File"
+msgstr "ONNX 파일 로드"
+
+msgid "Loading"
+msgstr "로드 중"
+
+msgid "Log out"
+msgstr "로그아웃"
+
+msgid "Logging in...."
+msgstr "로그인 중..."
+
+msgid "Login"
+msgstr "로그인"
+
+msgid "Magic Link sign-in"
+msgstr "매직 링크 로그인"
+
+msgid "Missing values"
+msgstr "누락된 값"
+
+msgid "Name:"
+msgstr "이름:"
+
+msgid "Neural Network Development Dashboard"
+msgstr "신경망 개발 대시보드"
+
+msgid "Neurons:"
+msgstr "뉴런:"
+
+msgid "No data to display"
+msgstr "표시할 데이터가 없습니다."
+
+msgid "No optimization done."
+msgstr "최적화되지 않았습니다."
+
+msgid "No recommendations"
+msgstr "권장 사항 없음"
+
+msgid "No such columns"
+msgstr "해당 열 없음"
+
+msgid "No warnings"
+msgstr "경고 없음"
+
+msgid "Node count:"
+msgstr "노드 수:"
+
+msgid "offers free courses about neural networks and how they work."
+msgstr "신경망과 그 작동 방식에 대한 무료 강좌를 제공합니다."
+
+msgid "One hot"
+msgstr "원-핫"
+
+msgid "ONNX file:"
+msgstr "ONNX 파일:"
+
+msgid "Optimize"
+msgstr "최적화"
+
+msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+msgstr "더 나은 아키텍처로 신경망을 최적화하여 속도와 출력을 향상시키세요."
+
+msgid "Outputs:"
+msgstr "출력:"
+
+msgid "Overall"
+msgstr "전체"
+
+msgid "Producer:"
+msgstr "생산자:"
+
+msgid "R2 score:"
+msgstr "R2 점수:"
+
+msgid "Risky for onehot:"
+msgstr "원-핫에 위험:"
+
+msgid "Rows"
+msgstr "행"
+
+msgid "Safe for onehot:"
+msgstr "원-핫에 안전:"
+
+msgid "Sign up"
+msgstr "가입"
+
+msgid "Something went wrong"
+msgstr "문제가 발생했습니다."
+
+msgid "Test loss:"
+msgstr "테스트 손실:"
+
+msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+msgstr "신경망 놀이터는 신경망의 사고 방식과 기능을 대화형으로 보고 이해할 수 있는 방법을 제공합니다. 아래 버튼을 클릭하여 시작하세요."
+
+msgid "Total categorical:"
+msgstr "총 범주형:"
+
+msgid "Visualize"
+msgstr "시각화"
+
+msgid "Welcome back!"
+msgstr "환영합니다!"
+
+msgid "Welcome!"
+msgstr "환영합니다!"
+
+msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+msgstr "간단한 모델을 학습하든 대규모 트랜스포머를 미세 조정하든, 2N2D는 사용자의 워크플로에 적응합니다. 시작하려면 계정만 있으면 됩니다."
+
+msgid "Wrong username or password!"
+msgstr "잘못된 사용자 이름 또는 비밀번호입니다!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "이미 로그인되어 있습니다. 로그아웃하시겠습니까?"
+```

@@ -4,6 +4,7 @@ import "@/lib/fontawesome/css/fa.css";
 import "./globals.css";
 import SideBar from "@/components/layout/sidebar";
 import Chat from "@/components/chat";
+import { Trans } from '@lingui/react/macro';
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
