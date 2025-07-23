@@ -1,8 +1,8 @@
-import type {Metadata} from "next";
-import {Geist, Geist_Mono, Poppins} from "next/font/google";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "@/lib/fontawesome/css/fa.css";
 import "./globals.css";
-import SideBar from "@/components/SideBar";
+import SideBar from "@/components/layout/sidebar";
 import Chat from "@/components/chat";
 
 const geistSans = Geist({
@@ -15,42 +15,35 @@ const geistMono = Geist_Mono({
     subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
     title: "2N2D",
     description: "Neural Network Development Dashboard",
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+    children,
+}: {
     children: React.ReactNode;
-}>) {
-    const lang = 'en';
-
+}) {
     return (
-        <html lang="en" className={"dark"}>
-        <head>
-            <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script type="text/javascript" src="/eel.js"></script>
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FontLoader.min.js"></script>
-            <script
-                src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TextGeometry.min.js"></script>
-        </head>
-        <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-        <SideBar/>
-        <Chat/>
-        <div className="container">{children}</div>
-        <footer>
-            <p>Neural Network Development Dashboard</p>
-        </footer>
-        </body>
+        <html lang="en" className="dark">
+            <head>
+                <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js" />
+                <script src="https://cdn.jsdelivr.net/npm/chart.js" />
+                <script type="text/javascript" src="/eel.js" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" />
+                <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js" />
+                <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FontLoader.min.js" />
+                <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TextGeometry.min.js" />
+            </head>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+                <SideBar />
+                <Chat />
+                <div className="container">{children}</div>
+                <footer>
+                    <p>Neural Network Development Dashboard</p>
+                </footer>
+            </body>
         </html>
     );
 }

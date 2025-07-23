@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Styles from './SideBar.module.css';
 import { getSession, logout } from '@/lib/auth/authentication';
 
-export function Sidebar() {
+export default function Sidebar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const [logged, setLogged] = useState<boolean>(false);
