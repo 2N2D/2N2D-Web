@@ -10,7 +10,7 @@ import ONNXUploader from '@/components/fileUploadElements/ONNXUploader';
 import CSVUploader from '@/components/fileUploadElements/CSVUploader';
 import { deleteCsv, deleteOnnx } from '@/lib/sessionHandling/sessionUpdater';
 import { motion } from 'framer-motion';
-import { Trans } from '@lingui/react/macro';
+import OptimizationResults from '@/components/optimizationResults';
 
 export default function Optimize() {
   const [features, setFeatures] = useState<string[]>([]);
@@ -179,8 +179,8 @@ export default function Optimize() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <div className={'flex w-full gap-[0.1rem]'}>
-        <div className={'flex flex-col'} style={{ width: '100%' }}>
+      <div className={'flex w-full gap-[0.5rem]'}>
+        <div className={'flex flex-col gap-[0.5rem]'} style={{ width: '100%' }}>
           <form
             className={'optimizeForm area'}
             style={{ width: '100%' }}
@@ -234,8 +234,6 @@ export default function Optimize() {
                   <option>neat</option>
                   <option>genetic</option>
                 </select>
-              </div>
-              <div className={'element'}>
                 <label>Maximum Epochs Per Configuration:</label>
                 <input type='number' name={'epochs'} defaultValue='10' />
               </div>
@@ -267,9 +265,6 @@ export default function Optimize() {
             className={`progressZone ${progress != -1 ? 'area' : ''}`}
           >
             <h1>{status}</h1>
-            {/*<div className={progress == 100 || progress == -1 ? "hidden" : "loaderWrapper"}>*/}
-            {/*    <span className="loader"></span>*/}
-            {/*</div>*/}
             <div className={'barWrapper'}>
               <p>{progress}%</p>
               <div className={'loadingBar'}>
@@ -284,7 +279,7 @@ export default function Optimize() {
         <div>
           <div className={'dataArea area vertical'}>
             <h1>
-              <b><Trans>ONNX file:</Trans></b> {onnxFileName}
+              <b> ONNX file: </b> {onnxFileName}
             </h1>
             <div className={'flex gap-[1rem]'}>
               <ONNXUploader callBack={populateLists} />
@@ -309,7 +304,7 @@ export default function Optimize() {
           </div>
           <div className={'dataArea area vertical'}>
             <h1>
-              <b><Trans>CSV file:</Trans></b> {csvFileName}
+              <b> CSV file: </b> {csvFileName}
             </h1>
             <div className={'flex gap-[1rem]'}>
               <CSVUploader callBack={populateLists} />
@@ -332,193 +327,22 @@ export default function Optimize() {
           </div>
         </div>
         <div className={'titleArea'}>
-          <h1 className={'dataTitle title'}>Optimization</h1>
+          <h1 className={'pageTitle title'}>Optimization</h1>
         </div>
       </div>
       {result &&
-      JSON.stringify(result).length > 2 &&
-      JSON.stringify(result) != 'null' &&
-      true &&
-      result &&
-      result.best_config ? (
-        <motion.div
-          className={`resultArea ${progress == 100 ? 'area' : ''}`}
-          style={progress == 100 ? { height: '100%' } : { height: 0 }}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <h1 className={'main subtitle'}>Optimization results:</h1>
-          <div className={'flex flex-col gap-[1rem] p-[1rem]'}>
-            <h2 className={'subtitle'}>Best configuration:</h2>
-            <div className={'result'}>
-              <div className={'info'}>
-                <h2><Trans>Neurons:</Trans></h2> {result?.best_config.neurons}
-              </div>
-              <div className={'info'}>
-                <h2><Trans>Layers:</Trans></h2> {result?.best_config.layers}
-              </div>
-              <div className={'info'}>
-                <h2><Trans>Test loss:</Trans></h2> {result?.best_config.test_loss}
-              </div>
-              <div className={'info'}>
-                <h2><Trans>R2 score:</Trans></h2> {result?.best_config.r2_score}
-              </div>
-            </div>
-          </div>
-          <table className={'table'}>
-            <thead>
-              <tr>
-                <th>Configuration</th>
-                <th>Neurons</th>
-                <th>Layers</th>
-                <th>Test loss:</th>
-                <th>R2 score:</th>
-              </tr>
-              <tr>
-                <td>Best config</td>
-                <td>{result?.best_config.neurons}</td>
-                <td>{result?.best_config.layers}</td>
-                <td>{result?.best_config.test_loss}</td>
-                <td>{result?.best_config.r2_score}</td>
-              </tr>
-            </thead>
-            <tbody>
-              {result?.results.map(
-                (
-                  res: {
-                    neurons:
-                      | string
-                      | number
-                      | bigint
-                      | boolean
-                      | React.ReactElement<
-                          unknown,
-                          string | React.JSXElementConstructor<any>
-                        >
-                      | Iterable<React.ReactNode>
-                      | React.ReactPortal
-                      | Promise<
-                          | string
-                          | number
-                          | bigint
-                          | boolean
-                          | React.ReactPortal
-                          | React.ReactElement<
-                              unknown,
-                              string | React.JSXElementConstructor<any>
-                            >
-                          | Iterable<React.ReactNode>
-                          | null
-                          | undefined
-                        >
-                      | null
-                      | undefined;
-                    layers:
-                      | string
-                      | number
-                      | bigint
-                      | boolean
-                      | React.ReactElement<
-                          unknown,
-                          string | React.JSXElementConstructor<any>
-                        >
-                      | Iterable<React.ReactNode>
-                      | React.ReactPortal
-                      | Promise<
-                          | string
-                          | number
-                          | bigint
-                          | boolean
-                          | React.ReactPortal
-                          | React.ReactElement<
-                              unknown,
-                              string | React.JSXElementConstructor<any>
-                            >
-                          | Iterable<React.ReactNode>
-                          | null
-                          | undefined
-                        >
-                      | null
-                      | undefined;
-                    test_loss:
-                      | string
-                      | number
-                      | bigint
-                      | boolean
-                      | React.ReactElement<
-                          unknown,
-                          string | React.JSXElementConstructor<any>
-                        >
-                      | Iterable<React.ReactNode>
-                      | React.ReactPortal
-                      | Promise<
-                          | string
-                          | number
-                          | bigint
-                          | boolean
-                          | React.ReactPortal
-                          | React.ReactElement<
-                              unknown,
-                              string | React.JSXElementConstructor<any>
-                            >
-                          | Iterable<React.ReactNode>
-                          | null
-                          | undefined
-                        >
-                      | null
-                      | undefined;
-                    r2_score:
-                      | string
-                      | number
-                      | bigint
-                      | boolean
-                      | React.ReactElement<
-                          unknown,
-                          string | React.JSXElementConstructor<any>
-                        >
-                      | Iterable<React.ReactNode>
-                      | React.ReactPortal
-                      | Promise<
-                          | string
-                          | number
-                          | bigint
-                          | boolean
-                          | React.ReactPortal
-                          | React.ReactElement<
-                              unknown,
-                              string | React.JSXElementConstructor<any>
-                            >
-                          | Iterable<React.ReactNode>
-                          | null
-                          | undefined
-                        >
-                      | null
-                      | undefined;
-                  },
-                  i: number
-                ) => (
-                  <tr key={i}>
-                    <td>Config {i + 1}</td>
-                    <td>{res.neurons}</td>
-                    <td>{res.layers}</td>
-                    <td>{res.test_loss}</td>
-                    <td>{res.r2_score}</td>
-                  </tr>
-                )
-              )}
-            </tbody>
-          </table>
-
-          <button onClick={downloadOptimized} disabled={downloading}>
-            {downloading ? 'Downloading...' : 'Download optimized'}{' '}
-            <i className='fa-solid fa-file-arrow-down'></i>
-          </button>
-        </motion.div>
-      ) : (
-        ''
-      )}
+        JSON.stringify(result).length > 2 &&
+        JSON.stringify(result) != 'null' &&
+        true &&
+        result &&
+        result.best_config && (
+          <OptimizationResults
+            result={result}
+            progress={progress}
+            downloading={downloading}
+            downloadOptimized={downloadOptimized}
+          />
+        )}
     </motion.main>
   );
 }
-

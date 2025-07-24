@@ -16,7 +16,6 @@ import {
 } from '@/lib/sessionHandling/sessionManager';
 import { motion, AnimatePresence } from 'framer-motion';
 import { deleteOnnx } from '@/lib/sessionHandling/sessionUpdater';
-import { Trans } from '@lingui/react/macro';
 
 
 export default function visualize() {
@@ -184,17 +183,17 @@ export default function visualize() {
         <div className={'overflow-y-auto pt-0 pr-[2rem] pb-[2rem] pl-[2rem]'}>
           {options.name && (
             <p>
-              <b><Trans>Name:</Trans></b> {options.name.toString()}
+              <b> Name: </b> {options.name.toString()}
             </p>
           )}
           <p>
-            <b><Trans>Category:</Trans></b> {getNodeCategory(selected.label)}
+            <b> Category: </b> {getNodeCategory(selected.label)}
           </p>
 
           {options.input && (
             <div>
               <h2>
-                <b><Trans>Inputs:</Trans></b>
+                <b> Inputs: </b>
               </h2>
               <ul>
                 {typeof options.input === 'string' ? (
@@ -211,7 +210,7 @@ export default function visualize() {
           {options.output && (
             <div>
               <h2>
-                <b><Trans>Outputs:</Trans></b>
+                <b> Outputs: </b>
               </h2>
               <ul>
                 {typeof options.output === 'string' ? (
@@ -228,7 +227,7 @@ export default function visualize() {
           {options.attributes && (
             <div>
               <h2>
-                <b><Trans>Attributes:</Trans></b>
+                <b> Attributes: </b>
               </h2>
               <ul>
                 {options.attributes.map((attr: any, i: number) => (
@@ -313,20 +312,20 @@ export default function visualize() {
                     <>
                       <div className='sArea'>
                         <h2>
-                          <b><Trans>File:</Trans></b> {fileName}
+                          <b> File: </b> {fileName}
                         </h2>
                       </div>
                       <div className='sArea'>
                         <h2>
-                          <b><Trans>Producer:</Trans></b> {result.summary.producer}
+                          <b> Producer: </b> {result.summary.producer}
                         </h2>
                         <h2>
-                          <b><Trans>IR version:</Trans></b> {result.summary.ir_version}
+                          <b> IR version: </b> {result.summary.ir_version}
                         </h2>
                       </div>
                       <div className='sArea'>
                         <h2>
-                          <b><Trans>Node count:</Trans></b> {result.summary.node_count}
+                          <b> Node count: </b> {result.summary.node_count}
                         </h2>
                       </div>
                     </>

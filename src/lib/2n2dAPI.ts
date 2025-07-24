@@ -1,4 +1,9 @@
-import { getCurrentUser, getSessionTokenHash } from '@/lib/auth/authentication';
+'use server';
+import {
+  getCurrentUser,
+  getSessionTokenHash,
+  hash
+} from '@/lib/auth/authentication';
 import {
   updateData,
   updateVis,
@@ -7,7 +12,23 @@ import {
   updateOnnxUrl
 } from '@/lib/sessionHandling/sessionUpdater';
 
-const endp = process.env.NEXT_PUBLIC_TWONTWOD_ENDPOINT;
+async function sendRequest(body: any, endpoint: string) {
+  const request = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'session-id': `${await getCurrentUser()}`,
+      'x-api-key': await hash(process.env.TWONTWOD_API_KEY!)
+    },
+    body: JSON.stringify(body)
+  };
+  try {
+    const res = await fetch(process.env.TWONTWOD_ENDPOINT + endpoint, request);
+    return await res.json();
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 export async function startOptimization(
   selectedInputs: String[],
@@ -33,13 +54,8 @@ export async function startOptimization(
   updateOptimize(sessionId, '', null);
 
   try {
-    const res = await fetch(endp + '/optimize', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'session-id': `${await getCurrentUser()}`
-      },
-      body: JSON.stringify({
+    const data = await sendRequest(
+      {
         input_features: selectedInputs,
         target_feature: targetFeature,
         max_epochs: epochs,
@@ -48,9 +64,10 @@ export async function startOptimization(
         onnx_path: onnxPath,
         encoding: encoding,
         strategy: strat
-      })
-    });
-    const data = await res.json();
+      },
+      '/optimize'
+    );
+
     updateOptimize(sessionId, data.url, data);
 
     return data;
@@ -61,18 +78,8 @@ export async function startOptimization(
 
 export async function sendCSV(filePath: string, sessionId: number) {
   try {
-    const result = await fetch(endp + '/upload-csv', {
-      headers: {
-        'session-id': `${await getSessionTokenHash()}`,
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: JSON.stringify({ filepath: filePath })
-    });
+    const response = await sendRequest({ filepath: filePath }, '/upload-csv');
 
-    const response = await result.json();
-    console.log(response);
-    sessionStorage.setItem('csvData', JSON.stringify(response));
     await updateData(sessionId, response);
     await updateCsvUrl(sessionId, filePath);
     return response;
@@ -87,19 +94,7 @@ export async function sendModel(
   sessionId: number
 ) {
   try {
-    const result = await fetch(endp + '/upload-model', {
-      headers: {
-        'session-id': `${await getSessionTokenHash()}`,
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: JSON.stringify({ filepath: filePath })
-    });
-
-    const response = await result.json();
-    console.log(response);
-    sessionStorage.setItem('modelData', JSON.stringify(response));
-    sessionStorage.setItem('modelResponse', JSON.stringify(response));
+    const response = await sendRequest({ filepath: filePath }, '/upload-model');
     await updateVis(sessionId, response, fileName);
     await updateOnnxUrl(sessionId, filePath);
     return response;

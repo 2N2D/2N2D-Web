@@ -6,7 +6,7 @@ import { deleteCsv } from '@/lib/sessionHandling/sessionUpdater';
 import { motion } from 'framer-motion';
 import DataTable from '@/components/data/DataTable';
 import './styles.css';
-import { Trans } from '@lingui/react/macro';
+import DynamicInfoArea from '@/components/data/InfoArea';
 
 function Data() {
   const [missed, setMissed] = useState<number>(0);
@@ -61,11 +61,11 @@ function Data() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <div className={'flex h-auto w-full gap-[0.1rem]'}>
-        <div className={'titleArea h-full'}>
+      <div className={'flex w-full gap-[0.5rem]'}>
+        <div className={'titleArea'}>
           <h1 className={'dataTitle title'}>CSV tools</h1>
         </div>
-        <div className={'flex w-[50%] flex-col gap-[0.1rem]'}>
+        <div className={'flex w-[50%] flex-col gap-[0.5rem]'}>
           <div className='area'>
             <div className={'dataArea w-full'}>
               <h1 className={'subtitle'}>Add dataset:</h1>
@@ -75,8 +75,8 @@ function Data() {
               </button>
             </div>
           </div>
-          <div className={'flex h-full gap-[0.1rem]'}>
-            <div className='area h-full w-full gap-[0.55rem]'>
+          <div className={'gap-[0.5 rem] flex'}>
+            <div className='area w-full gap-[0.5rem]'>
               <h3 className={'subtitle text-[var(--warning-color)]'}>
                 Warnings
               </h3>
@@ -96,12 +96,12 @@ function Data() {
                   )
                 ) : (
                   <div className={'warningItem'}>
-                    <p><Trans>No warnings</Trans></p>
+                    <p> No warnings </p>
                   </div>
                 )}
               </div>
             </div>
-            <div className='area h-full w-full gap-[0.55rem]'>
+            <div className='area w-full gap-[0.5rem]'>
               <h3 className={'subtitle text-primary'}>Recommendations</h3>
               <div
                 className={
@@ -121,81 +121,73 @@ function Data() {
                   )
                 ) : (
                   <div className={'warningItem'}>
-                    <p><Trans>No recommendations</Trans></p>
+                    <p> No recommendations </p>
                   </div>
                 )}
               </div>
             </div>
           </div>
         </div>
-        <div className={'flex w-[50%] flex-col gap-[0.1rem]'}>
-          <div className='area w-full gap-[1rem]'>
-            <h3 className={'subtitle ml-[0.5rem]'}>Encoding Feasibility</h3>
-            <div className='dataSum'>
-              <div className='info'>
-                <h1><Trans>One hot</Trans></h1>
-                <h2>
-                  {result == null
+        <div className={'flex w-[50%] flex-col gap-[0.5rem]'}>
+          <DynamicInfoArea
+            title='Encoding Feasibility'
+            items={[
+              {
+                label: 'One hot',
+                value:
+                  result == null
                     ? '-'
                     : result.results.encoding_feasibility.is_safe_for_onehot
                       ? 'Safe'
-                      : 'Unsafe'}
-                </h2>
-              </div>
-              <div className='info'>
-                <h1><Trans>Cur. Memory</Trans></h1>
-                <h2>
-                  {result == null
+                      : 'Unsafe'
+              },
+              {
+                label: 'Cur. Memory',
+                value:
+                  result == null
                     ? '-'
                     : result.results.encoding_feasibility.memory_estimate
-                        .current_memory_mb + 'mb'}
-                </h2>
-              </div>
-              <div className='info'>
-                <h1><Trans>Est. Memory</Trans></h1>
-                <h2>
-                  {result == null
+                        .current_memory_mb + 'mb'
+              },
+              {
+                label: 'Est. Memory',
+                value:
+                  result == null
                     ? '-'
                     : result.results.encoding_feasibility.memory_estimate
-                        .estimated_memory_mb + 'mb'}
-                </h2>
-              </div>
-              <div className='info'>
-                <h1><Trans>Overall</Trans></h1>
-                <h2>
-                  {result == null
+                        .estimated_memory_mb + 'mb'
+              },
+              {
+                label: 'Overall',
+                value:
+                  result == null
                     ? '-'
-                    : result.results.encoding_feasibility
-                        .overall_recommendation}
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div className='area w-full gap-[1rem]'>
-            <h3 className={'subtitle ml-[0.5rem]'}>Dataset Overview</h3>
-            <div className='dataSum'>
-              <div className='info'>
-                <h1><Trans>File</Trans></h1>
-                <h2>
-                  {result == null
-                    ? 'No file uploaded'
-                    : result.summary.filename}
-                </h2>
-              </div>
-              <div className='info'>
-                <h1><Trans>Rows</Trans></h1>
-                <h2>{result == null ? '-' : result.summary.rows}</h2>
-              </div>
-              <div className='info'>
-                <h1><Trans>Columns</Trans></h1>
-                <h2>{result == null ? '-' : result.summary.columns}</h2>
-              </div>
-              <div className='info'>
-                <h1><Trans>Missing values</Trans></h1>
-                <h2>{result == null ? '-' : missed}</h2>
-              </div>
-            </div>
-          </div>
+                    : result.results.encoding_feasibility.overall_recommendation
+              }
+            ]}
+          />
+          <DynamicInfoArea
+            title='Dataset Overview'
+            items={[
+              {
+                label: 'File',
+                value:
+                  result == null ? 'No file uploaded' : result.summary.filename
+              },
+              {
+                label: 'Rows',
+                value: result == null ? '-' : result.summary.rows
+              },
+              {
+                label: 'Columns',
+                value: result == null ? '-' : result.summary.columns
+              },
+              {
+                label: 'Missing values',
+                value: result == null ? '-' : missed
+              }
+            ]}
+          />
         </div>
       </div>
 
@@ -286,7 +278,7 @@ function Data() {
                 >
                   <div className={'spinner'} />
                   <h1>
-                    <b><Trans>Loading</Trans></b>
+                    <b> Loading </b>
                   </h1>
                 </motion.div>
               }
@@ -326,7 +318,7 @@ function Data() {
                 >
                   <div className={'spinner'} />
                   <h1>
-                    <b><Trans>Loading</Trans></b>
+                    <b> Loading </b>
                   </h1>
                 </motion.div>
               }
@@ -372,7 +364,7 @@ function Data() {
                 >
                   <div className={'spinner'} />
                   <h1>
-                    <b><Trans>Loading</Trans></b>
+                    <b> Loading </b>
                   </h1>
                 </motion.div>
               }
@@ -539,15 +531,15 @@ function Data() {
                   Categorical summary:
                 </h1>
                 <p>
-                  <Trans>Risky for onehot:</Trans>{' '}
+                  Risky for onehot:{' '}
                   {result.results.encoding_feasibility.categorical_summary.risky_for_onehot.toString()}
                 </p>
                 <p>
-                  <Trans>Safe for onehot:</Trans>{' '}
+                  Safe for onehot:{' '}
                   {result.results.encoding_feasibility.categorical_summary.safe_for_onehot.toString()}
                 </p>
                 <p>
-                  <Trans>Total categorical:</Trans>{' '}
+                  Total categorical:{' '}
                   {result.results.encoding_feasibility.categorical_summary.total_categorical.toString()}
                 </p>
               </div>
@@ -561,15 +553,15 @@ function Data() {
                   Columns estimate:
                 </h1>
                 <p>
-                  <Trans>Risky for onehot:</Trans>{' '}
+                  Risky for onehot:{' '}
                   {result.results.encoding_feasibility.column_estimate.current_columns.toString()}
                 </p>
                 <p>
-                  <Trans>Safe for onehot:</Trans>{' '}
+                  Safe for onehot:{' '}
                   {result.results.encoding_feasibility.column_estimate.estimated_final_columns.toString()}
                 </p>
                 <p>
-                  <Trans>Total categorical:</Trans>{' '}
+                  Total categorical:{' '}
                   {result.results.encoding_feasibility.column_estimate.new_columns_added.toString()}
                 </p>
               </div>
@@ -593,7 +585,7 @@ function Data() {
                       )
                     )
                   ) : (
-                    <p><Trans>No such columns</Trans></p>
+                    <p> No such columns </p>
                   )}
                 </div>
               </div>

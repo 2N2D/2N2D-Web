@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Style from "./DataTable.module.css";
-import { Trans } from '@lingui/react/macro';
+
 
 function Table(results: any) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ function Table(results: any) {
   if (results === null || results == undefined) {
     return (
       <div>
-        <h1><Trans>No data to display</Trans></h1>
+        <h1> No data to display </h1>
       </div>
     );
   }

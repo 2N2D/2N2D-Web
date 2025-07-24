@@ -1,14 +1,13 @@
 'use client';
 import React, { useState, useEffect, FormEvent } from 'react';
-import GoogleSignInButton from '@/components/misc/GoogleSignInButton';
-import OneTimeMailSignInButton from '@/components/misc/OneTimeMailSignInButton';
+import GoogleSignInButton from '@/components/auth/GoogleSignInButton';
+import OneTimeMailSignInButton from '@/components/auth/OneTimeMailSignInButton';
 import { mailAndPass } from '@/lib/auth/authEndP';
 import { useRouter } from 'next/navigation';
 import { logout } from '@/lib/auth/authentication';
-import './style.css';
-import Styles from '@/components/SideBar.module.css';
+import '../style.css';
 import ParticleNetwork from '@/components/visual/particleNetwork';
-import { Trans } from '@lingui/react/macro';
+import Styles from '@/components/layout/SideBar.module.css';
 
 export default function login() {
   const router = useRouter();
@@ -25,9 +24,7 @@ export default function login() {
 
     const rez = await mailAndPass(email, password);
 
-    if (rez === '200') {
-      router.push('/dash');
-    } else {
+    if (rez !== '200') {
       setMPAuthError(true);
     }
   }
@@ -39,11 +36,11 @@ export default function login() {
   }, []);
 
   return (
-    <main>
+    <main className={'logCont'}>
       <ParticleNetwork />
       {loggedIn ? (
-        <div className={'logCont'}>
-          <h1><Trans>You are already logged in, would you like to log out?</Trans></h1>
+        <div>
+          <h1>You are already logged in, would you like to log out?</h1>
           <button
             onClick={() => {
               logout();
@@ -55,7 +52,7 @@ export default function login() {
       ) : (
         <div className={'form'}>
           <img src={'logo2n2d.svg'} alt='logo' className={Styles.logo} />
-          <h1><Trans>Welcome back!</Trans></h1>
+          <h1>Welcome back!</h1>
           <form onSubmit={attemptLogin}>
             <input
               name={'email'}
@@ -72,12 +69,12 @@ export default function login() {
             <input type={'submit'} value={'Login'} />
           </form>
           <div className={mpAuthError ? 'error' : 'hidden'}>
-            <h1><Trans>Wrong username or password!</Trans></h1>
+            <h1>Wrong username or password!</h1>
           </div>
           <GoogleSignInButton />
           <OneTimeMailSignInButton />
           <h2>
-            <Trans>Don't have an account?</Trans> <a href={'/signup'}><Trans>Sign up</Trans></a>
+            Don't have an account? <a href={'/register'}>Register here!</a>
           </h2>
         </div>
       )}

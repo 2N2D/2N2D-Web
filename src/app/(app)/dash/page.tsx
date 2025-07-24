@@ -19,7 +19,7 @@ import {
   createVisualNetwork2D,
   downloadFileRequest
 } from '@/lib/frontend/feHandler';
-import { Trans } from '@lingui/react/macro';
+import OptimizationResults from '@/components/optimizationResults';
 
 export default function dash() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -67,11 +67,7 @@ export default function dash() {
     if (!currentSession) return;
 
     let fileName = currentSession.onnxName!.split('.')[0] + '_optimized.onnx';
-    await downloadFileRequest(
-      currentSession.optimizedFileUrl!,
-      'rezult',
-      fileName
-    );
+    await downloadFileRequest(currentSession.optimizedFileUrl!, fileName);
     setDownloading(false);
   }
 
@@ -228,7 +224,7 @@ export default function dash() {
         transition={{ delay: 0.4 }}
       >
         <div>
-          <h1 className='title'>aaa</h1>
+          <h1 className='title'>Dashboard</h1>
           {notLogged ? (
             <div>
               <h2 className='subtitle'>You are not logged in</h2>
@@ -299,13 +295,13 @@ export default function dash() {
             <div>
               <h1 className={'title'}>Loaded files:</h1>
               <h2>
-                <b><Trans>ONNX file:</Trans></b>{' '}
+                <b> ONNX file: </b>{' '}
                 {currentSession.onnxName
                   ? currentSession.onnxName
                   : 'No onnx file loaded'}
               </h2>
               <h2>
-                <b><Trans>Csv file:</Trans></b>{' '}
+                <b> Csv file: </b>{' '}
                 {currentSession.csvName
                   ? currentSession.csvName
                   : 'No csv file loaded'}
@@ -319,43 +315,14 @@ export default function dash() {
               currentSession.optResult &&
               JSON.stringify(currentSession.optResult).length > 2 &&
               (currentSession.optResult as any).best_config ? (
-                <motion.div
-                  className={'resultArea'}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <div className={'flex flex-col gap-[0.2rem] p-[1rem]'}>
-                    <h2 className={'subtitle'}>Best configuration:</h2>
-                    <div className={'result'}>
-                      <div className={'info'}>
-                        <h2><Trans>Neurons:</Trans></h2>{' '}
-                        {(currentSession.optResult as any).best_config.neurons}
-                      </div>
-                      <div className={'info'}>
-                        <h2><Trans>Layers:</Trans></h2>{' '}
-                        {(currentSession.optResult as any).best_config.layers}
-                      </div>
-                      <div className={'info'}>
-                        <h2><Trans>Test loss:</Trans></h2>{' '}
-                        {
-                          (currentSession.optResult as any).best_config
-                            .test_loss
-                        }
-                      </div>
-                      <div className={'info'}>
-                        <h2><Trans>R2 score:</Trans></h2>{' '}
-                        {(currentSession.optResult as any).best_config.r2_score}
-                      </div>
-                    </div>
-                  </div>
-                  <button onClick={downloadOptimized} disabled={downloading}>
-                    {downloading ? 'Downloading...' : 'Download optimized'}
-                    <i className='fa-solid fa-file-arrow-down'></i>
-                  </button>
-                </motion.div>
+                <OptimizationResults
+                  result={currentSession.optResult as any}
+                  progress={100}
+                  downloading={downloading}
+                  downloadOptimized={downloadOptimized}
+                />
               ) : (
-                <h1><Trans>No optimization done.</Trans></h1>
+                <h1> No optimization done. </h1>
               )}
             </div>
             <div
@@ -471,10 +438,10 @@ export default function dash() {
                         <div className='flex w-1/2 flex-col overflow-hidden text-ellipsis'>
                           <h1 className='subtitle'>{session.name}</h1>
                           <h2>
-                            <b><Trans>ONNX file:</Trans></b> {session.onnxName}
+                            <b> ONNX file: </b> {session.onnxName}
                           </h2>
                           <h2>
-                            <b><Trans>Csv file:</Trans></b> {session.csvName}
+                            <b> Csv file: </b> {session.csvName}
                           </h2>
                         </div>
                         <i className='fa-solid fa-diagram-project largeIcon'></i>

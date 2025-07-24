@@ -1,0 +1,75 @@
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.info {
+  font-size: 1.5rem;
+  background-color: var(--background-color);
+  padding: 2rem;
+  border-radius: 0.4rem;
+  min-width: 39rem;
+}
+
+.result h2 {
+  font-weight: bolder;
+}
+
+.resultArea {
+  width: 100%;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  align-self: stretch;
+  min-width: 100%;
+}
+
+.resultArea h1 {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.resultArea button {
+  background-color: var(--background-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+  font-weight: 600;
+  width: fit-content;
+  transition: 0.2s;
+}
+
+.resultArea button:hover {
+  background-color: var(--success-color);
+  color: var(--background-color);
+}
+
+.table tbody,
+.table th,
+.table tr,
+.table td {
+  border: 1px solid var(--background-color);
+  padding: 0.2rem;
+}
+
+.table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table th {
+  background-color: var(--background-color);
+  border: 1px solid var(--background-color);
+  z-index: 10;
+}
+
+.table thead td {
+  background-color: var(--primary-color);
+  font-weight: bold;
+}

@@ -3,8 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { magicLink } from '@/lib/auth/authEndP';
 import { useRouter } from 'next/navigation';
-import { Trans } from '@lingui/react/macro';
-
 
 export default function handleMail() {
   const router = useRouter();
@@ -25,11 +23,11 @@ export default function handleMail() {
     <main>
       {error ? (
         <div>
-          <h1><Trans>Something went wrong</Trans></h1>
-          <a href={'/login'}><Trans>Back to login</Trans></a>
+          <h1> Something went wrong </h1>
+          <a href={'/login'}> Back to login </a>
         </div>
       ) : (
-        <h1><Trans>Logging in....</Trans></h1>
+        <h1> Logging in.... </h1>
       )}
     </main>
   );

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Styles from './SideBar.module.css';
 import { getSession, logout } from '@/lib/auth/authentication';
+import SidebarButton from './sidebarButton';
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -45,7 +46,7 @@ export default function Sidebar() {
       ? sessionStorage?.getItem('currentSessionId')
       : null
   ]);
-
+  if (pathname === '/' || pathname.includes('/docs')) return null; // Hide sidebar on the home page
   return (
     <div>
       <div
@@ -67,107 +68,53 @@ export default function Sidebar() {
           />
         </button>
 
-        <button
-          onClick={() => {
-            router.push('/dash');
-          }}
-          className={
-            pathname === '/dash'
-              ? `${Styles.tabBut} ${Styles.active}`
-              : Styles.tabBut
-          }
-        >
-          <span className={Styles.iconWrapper}>
-            <i className='fa-solid fa-house'></i>
-          </span>
-          <span className={`${Styles.tabText}`}>Home</span>
-        </button>
+        <SidebarButton
+          icon='fa-solid fa-house'
+          text='Dashboard'
+          active={pathname === '/dash'}
+          onClick={() => router.push('/dash')}
+        />
 
         <h2 className={Styles.tabCat}>Analyze</h2>
-        <button
-          onClick={() => {
-            router.push('/visualize');
-          }}
-          className={
-            pathname === '/visualize'
-              ? `${Styles.tabBut} ${Styles.active}`
-              : Styles.tabBut
-          }
+        <SidebarButton
+          icon='fa-solid fa-chart-network'
+          text='Visualize'
+          active={pathname === '/visualize'}
           disabled={!sessionLoaded}
-        >
-          <span className={Styles.iconWrapper}>
-            <i className='fa-solid fa-chart-network'></i>
-          </span>
-          <span className={`${Styles.tabText}`}>Visualize</span>
-        </button>
+          onClick={() => router.push('/visualize')}
+        />
 
-        <button
-          onClick={() => {
-            router.push('/data');
-          }}
-          className={
-            pathname === '/data'
-              ? `${Styles.tabBut} ${Styles.active}`
-              : Styles.tabBut
-          }
+        <SidebarButton
+          icon='fa-solid fa-chart-simple'
+          text='Data'
+          active={pathname === '/data'}
           disabled={!sessionLoaded}
-        >
-          <span className={Styles.iconWrapper}>
-            <i className='fa-solid fa-chart-simple'></i>
-          </span>
-          <span className={`${Styles.tabText}`}>Data</span>
-        </button>
+          onClick={() => router.push('/data')}
+        />
         <h2 className={Styles.tabCat}>Tools</h2>
-        <button
-          onClick={() => {
-            router.push('/optimize');
-          }}
-          className={
-            pathname === '/optimize'
-              ? `${Styles.tabBut} ${Styles.active}`
-              : Styles.tabBut
-          }
+        <SidebarButton
+          icon='fa-solid fa-rabbit-running'
+          text='Optimization'
+          active={pathname === '/optimize'}
           disabled={!sessionLoaded}
-        >
-          <span className={Styles.iconWrapper}>
-            <i className='fa-solid fa-rabbit-running'></i>
-          </span>
-          <span className={`${Styles.tabText}`}>Optimization</span>
-        </button>
+          onClick={() => router.push('/optimize')}
+        />
 
         <div className={Styles.spacer} />
 
         <h2 className={Styles.tabCat}>Info</h2>
-        <button
-          onClick={() => {
-            router.push('/learn');
-          }}
-          className={
-            pathname === '/learn'
-              ? `${Styles.tabBut} ${Styles.active}`
-              : Styles.tabBut
-          }
-        >
-          <span className={Styles.iconWrapper}>
-            <i className='fa-solid fa-book-open-cover'></i>
-          </span>
-          <span className={`${Styles.tabText}`}>Learn</span>
-        </button>
-        <button
-          onClick={() => {
-            router.push('/docs');
-          }}
-          className={
-            pathname === '/docs'
-              ? `${Styles.tabBut} ${Styles.active}`
-              : Styles.tabBut
-          }
-        >
-          <span className={Styles.iconWrapper}>
-            <i className='fa-solid fa-books'></i>
-          </span>
-          <span className={`${Styles.tabText}`}>Docs</span>
-        </button>
+        <SidebarButton
+          icon='fa-solid fa-book-open-cover'
+          text='Learn'
+          active={pathname === '/learn'}
+          onClick={() => router.push('/learn')}
+        />
+        <SidebarButton
+          icon='fa-solid fa-books'
+          text='Docs'
+          active={pathname === '/docs'}
+          onClick={() => router.push('/docs')}
+        />
 
         <div className={Styles.loginZone}>
           {logged ? (

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { exchange, createChat } from '@/lib/aiChat';
-import MessageDisplayer from '@/components/misc/messageDisplayer';
+import MessageDisplayer from '@/components/chat/messageDisplayer';
 import styles from './Chat.module.css';
 import { usePathname } from 'next/navigation';
 import { getSessionTokenHash } from '@/lib/auth/authentication';
@@ -95,10 +95,11 @@ export default function ChatElement() {
   if (
     pathname == '/' ||
     pathname == '/login' ||
-    pathname == '/signup' ||
+    pathname == '/register' ||
     pathname == '/handleMail' ||
     pathname == '/dash' ||
-    pathname == '/profile'
+    pathname == '/profile' ||
+    pathname.includes('/docs')
   )
     return <></>;
   return (
