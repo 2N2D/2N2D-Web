@@ -8,12 +8,6 @@
 
 În această secțiune sunt prezentate componentele principale, modul în care interacționează și serviciile externe folosite pentru fiecare dintre ele.
 
-###
-
-###
-
-###
-
 ### 3.1.1 Arhitectura Generală
 
 - **Fiecare serviciu rulează independent, permițând scalabilitate și întreținere modulară.  
@@ -67,10 +61,6 @@ Interfața web este o aplicație full-stack construită cu **Next.js**, folosind
   - **auth/**: Logica de autentificare și interacțiunea cu Firebase.
 - **src/locales/**: Conține fișierele de traducere. Prezența a peste 30 de subdirectoare (ro, en, de, fr, etc.) demonstrează în mod concret implementarea suportului multi-lingv prin LinguiJS.
 
-####
-
-####
-
 #### 3.4.1 **Arhitectura Backend (2N2D API - Python FastAPI)**
 
 API-ul este un serviciu modular construit în **Python** cu framework-ul **FastAPI**, proiectat pentru a gestiona operațiunile de procesare intensivă.
@@ -91,12 +81,6 @@ Această structură demonstrează o decizie de proiectare deliberată de a separ
 Pentru persistența datelor, proiectul utilizează o bază de date **PostgreSQL**, gestionată printr-un ORM (Object-Relational Mapping) modern, **Drizzle ORM**. Această alegere permite o definire a schemei direct în TypeScript, asigurând o coerență sporită între codul aplicației și structura bazei de date.
 
 Arhitectura este centrată pe două entități principale: **Utilizatori (user)** și **Sesiuni de lucru (session)**. Baza de date are rolul de a stoca informațiile conturilor, de a menține starea fiecărei sesiuni de lucru (fișiere încărcate, rezultate obținute) și de a persista istoricul interacțiunilor, precum conversațiile cu chatbot-ul AI.
-
-####
-
-####
-
-####
 
 #### 3.5.1 **Schema Tabelelor**
 
@@ -122,14 +106,6 @@ Arhitectura este centrată pe două entități principale: **Utilizatori (user)*
 - `csvResult (**JSON**)`: Stochează rezultatele analizei fișierului CSV (statistici, recomandări, etc.).
 - `optResult (**JSON**)`: Stochează rezultatele complete ale procesului de optimizare (configurația optimă, scoruri MAE și R2).
 - `chat (**JSON**)`: Persistă istoricul conversației cu chatbot-ul AI pentru sesiunea curentă, permițându-i acestuia să ofere răspunsuri contextuale.
-
-####
-
-####
-
-####
-
-####
 
 #### 3.5.2 **Diagrama Relațională și Logica de Legătură**
 
