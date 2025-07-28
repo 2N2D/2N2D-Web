@@ -1,36 +1,87 @@
-```
+
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: he\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "לוח מחוונים לפיתוח רשתות נוירונים"
+msgid " Got the basics? "
+msgstr "הבנת את הבסיס?"
 
-msgid "Already have an account? "
-msgstr "כבר יש לך חשבון? "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " אם הבנת את הדברים הבסיסיים לגבי איך רשתות עצביות עובדות, אז השתמש במדריך הבא כדי להתחיל ליצור רשת משלך. אל תשכח לשאול את עוזר הבינה המלאכותית שאלות!"
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " המגרש של הרשת העצבית מציע דרך אינטראקטיבית לראות ולהבין איך רשת עצבית חושבת ומתפקדת. פשוט לחץ על הכפתור למטה כדי להתחיל."
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} ייחודיים, {2})"
+
+msgid "{key} Distribution"
+msgstr "התפלגות {key}"
+
+msgid "Add dataset:"
+msgstr "הוסף מערך נתונים:"
+
+msgid "AI Chat"
+msgstr "צ'אט בינה מלאכותית"
+
+msgid "Already have an account?"
+msgstr "כבר יש לך חשבון?"
 
 msgid "Analyze"
 msgstr "נתח"
 
-msgid "Ask"
-msgstr "שאל"
-
 msgid "Attributes:"
-msgstr "תכונות:"
+msgstr "מאפיינים:"
 
-msgid "Back to login"
-msgstr "חזרה להתחברות"
+msgid "Best config"
+msgstr "הגדרות הטובות ביותר"
+
+msgid "Best configuration:"
+msgstr "התצורה הטובה ביותר:"
+
+msgid "Categorical"
+msgstr "קטגוריאלי"
+
+msgid "Categorical summary:"
+msgstr "סיכום קטגוריאלי:"
 
 msgid "Category:"
 msgstr "קטגוריה:"
 
+msgid "Clear Data"
+msgstr "נקה נתונים"
+
+msgid "Close"
+msgstr "סגור"
+
+msgid "Column types:"
+msgstr "סוגי עמודות:"
+
 msgid "Columns"
 msgstr "עמודות"
+
+msgid "Columns estimate:"
+msgstr "אומדן עמודות:"
+
+msgid "Config {0}"
+msgstr "הגדרות {0}"
+
+msgid "Configuration"
+msgstr "תצורה"
+
+msgid "Constant nodes"
+msgstr "צמתים קבועים"
+
+msgid "Correlation Matrix"
+msgstr "מטריצת מתאם"
+
+msgid "Create new session"
+msgstr "צור סשן חדש"
 
 msgid "Csv file:"
 msgstr "קובץ CSV:"
@@ -38,20 +89,59 @@ msgstr "קובץ CSV:"
 msgid "CSV file:"
 msgstr "קובץ CSV:"
 
+msgid "CSV tools"
+msgstr "כלי CSV"
+
 msgid "Cur. Memory"
 msgstr "זיכרון נוכחי"
 
-msgid "Don't have an account?"
-msgstr "אין לך חשבון?"
+msgid "Dashboard"
+msgstr "לוח בקרה"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "פרשנות קלה של נתוני אימון ויציאה מהמודלים שלך."
+msgid "Data"
+msgstr "נתונים"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "הצגה חזותית קלה של המבנה והצמתים של רשת הנוירונים שלך, בפורמט קל ופשוט להבנה"
+msgid "Data <0/>"
+msgstr "נתונים <0/>"
+
+msgid "Data Distribution"
+msgstr "התפלגות נתונים"
+
+msgid "Dataset Overview"
+msgstr "סקירת מערך נתונים"
+
+msgid "Docs"
+msgstr "מסמכים"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "אין לך חשבון? <0>הירשם כאן!</0>"
+
+msgid "Download optimized"
+msgstr "הורד גרסה מותאמת"
+
+msgid "Downloading..."
+msgstr "מוריד..."
+
+msgid "E-Mail:"
+msgstr "דואר אלקטרוני:"
+
+msgid "Email"
+msgstr "דוא\"ל"
+
+msgid "Encoding Feasibility"
+msgstr "היתכנות קידוד"
+
+msgid "Encoding Info"
+msgstr "מידע קידוד"
+
+msgid "Encoding type:"
+msgstr "סוג קידוד:"
 
 msgid "Est. Memory"
 msgstr "זיכרון משוער"
+
+msgid "Failed to connect to AI."
+msgstr "החיבור לבינה המלאכותית נכשל."
 
 msgid "File"
 msgstr "קובץ"
@@ -59,23 +149,41 @@ msgstr "קובץ"
 msgid "File:"
 msgstr "קובץ:"
 
-msgid "Got the basics?"
-msgstr "הבנת את הבסיס?"
+msgid "Hello,"
+msgstr "שלום,"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "אם הבנת את העקרונות של פעולת רשתות נוירונים, השתמש במדריך הבא כדי להתחיל ליצור את שלך. אל תשכח לשאול את עוזר ה-AI שאלות!"
+msgid "High cardinality columns:"
+msgstr "עמודות עם קרדינליות גבוהה:"
+
+msgid "Info"
+msgstr "מידע"
+
+msgid "Input Features:"
+msgstr "מאפייני קלט:"
 
 msgid "Inputs:"
-msgstr "קלטים:"
+msgstr "כניסות:"
 
 msgid "IR version:"
 msgstr "גרסת IR:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "פשוט גרור ושחרר את הקבצים שלך ותתחיל לעבוד—אין צורך בהגדרות, אין כאב ראש."
+msgid "Know nothing about neural networks?"
+msgstr "לא יודע כלום על רשתות עצביות?"
+
+msgid "Language:"
+msgstr "שפה:"
+
+msgid "Layers"
+msgstr "שכבות"
 
 msgid "Layers:"
 msgstr "שכבות:"
+
+msgid "Learn"
+msgstr "למד"
+
+msgid "Legend"
+msgstr "מקרא"
 
 msgid "Load CSV File"
 msgstr "טען קובץ CSV"
@@ -83,38 +191,86 @@ msgstr "טען קובץ CSV"
 msgid "Load ONNX File"
 msgstr "טען קובץ ONNX"
 
-msgid "Loading"
-msgstr "טוען"
+msgid "Loaded files:"
+msgstr "קבצים נטענו:"
+
+msgid "Log in here <0/>"
+msgstr "התחבר כאן <0/>"
 
 msgid "Log out"
 msgstr "התנתק"
 
-msgid "Logging in...."
-msgstr "מתחבר...."
-
 msgid "Login"
-msgstr "התחברות"
+msgstr "התחבר"
 
-msgid "Magic Link sign-in"
-msgstr "כניסה באמצעות קישור קסם"
+msgid "logo"
+msgstr "לוגו"
+
+msgid "Logout"
+msgstr "התנתק"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "מספר מקסימלי של עידנים לכל תצורה:"
+
+msgid "mb"
+msgstr "מ\"ב"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "מינימום 7 תווים. חייב להיות לפחות תו מיוחד אחד ומספר אחד."
+
+msgid "Missing Data Heatmap"
+msgstr "מפת חום של נתונים חסרים"
 
 msgid "Missing values"
 msgstr "ערכים חסרים"
 
+msgid "Missing Values Heatmap"
+msgstr "מפת חום של ערכים חסרים"
+
+msgid "Model Details"
+msgstr "פרטי מודל"
+
 msgid "Name:"
 msgstr "שם:"
 
-msgid "Neural Network Development Dashboard"
-msgstr "לוח מחוונים לפיתוח רשתות נוירונים"
+msgid "Network Visualization"
+msgstr "הדמיית רשת"
+
+msgid "Neurons"
+msgstr "נוירונים"
 
 msgid "Neurons:"
 msgstr "נוירונים:"
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision מציעה קורסים חינמיים על רשתות עצביות ואיך הן עובדות."
+
+msgid "No active session!"
+msgstr "אין סשן פעיל!"
+
+msgid "No categorical columns"
+msgstr "אין עמודות קטגוריאליות"
+
+msgid "No csv file loaded"
+msgstr "לא נטען קובץ CSV"
+
 msgid "No data to display"
 msgstr "אין נתונים להצגה"
 
+msgid "No file uploaded"
+msgstr "לא הועלה קובץ"
+
+msgid "No model loaded"
+msgstr "לא נטען מודל"
+
+msgid "No numerical columns"
+msgstr "אין עמודות מספריות"
+
+msgid "No onnx file loaded"
+msgstr "לא נטען קובץ ONNX"
+
 msgid "No optimization done."
-msgstr "לא בוצעה אופטימיזציה."
+msgstr "לא בוצע אופטימיזציה."
 
 msgid "No recommendations"
 msgstr "אין המלצות"
@@ -128,72 +284,164 @@ msgstr "אין אזהרות"
 msgid "Node count:"
 msgstr "ספירת צמתים:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "מציע קורסים חינמיים על רשתות נוירונים ואיך הן עובדות."
+msgid "Node physics"
+msgstr "פיזיקת צמתים"
+
+msgid "Not safe"
+msgstr "לא בטוח"
+
+msgid "Numerical"
+msgstr "מספרי"
 
 msgid "One hot"
 msgstr "One hot"
 
+msgid "Onehot encoding:"
+msgstr "קידוד Onehot:"
+
 msgid "ONNX file:"
 msgstr "קובץ ONNX:"
 
-msgid "Optimize"
+msgid "Optimization"
 msgstr "אופטימיזציה"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "אופטימיזציה של רשת הנוירונים שלך עם ארכיטקטורה טובה יותר לשיפור המהירות והפלטים."
+msgid "Optimization <0/>"
+msgstr "אופטימיזציה <0/>"
+
+msgid "Optimization results:"
+msgstr "תוצאות אופטימיזציה:"
+
+msgid "Optimization settings"
+msgstr "הגדרות אופטימיזציה"
+
+msgid "Optimization strategy:"
+msgstr "אסטרטגיית אופטימיזציה:"
+
+msgid "or drag and drop files"
+msgstr "או גרור ושחרר קבצים"
 
 msgid "Outputs:"
-msgstr "פלטים:"
+msgstr "תְפוּקָה:"
 
 msgid "Overall"
 msgstr "כולל"
 
+msgid "Overall recommendation:"
+msgstr "המלצה כוללת:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "עמוד {currentPage} מתוך {totalPages}"
+
+msgid "Password"
+msgstr "סיסמה"
+
+msgid "Please load or create a new session to start."
+msgstr "אנא טען או צור סשן חדש כדי להתחיל."
+
 msgid "Producer:"
 msgstr "מפיק:"
+
+msgid "Profile"
+msgstr "פרופיל"
 
 msgid "R2 score:"
 msgstr "ציון R2:"
 
+msgid "Recommendations"
+msgstr "המלצות"
+
+msgid "Refresh"
+msgstr "רענן"
+
 msgid "Risky for onehot:"
-msgstr "סיכון ל-One hot:"
+msgstr "מסוכן עבור onehot:"
 
 msgid "Rows"
 msgstr "שורות"
 
+msgid "Rows/Page:"
+msgstr "שורות/עמוד:"
+
+msgid "Safe"
+msgstr "בטוח"
+
 msgid "Safe for onehot:"
-msgstr "בטוח ל-One hot:"
+msgstr "בטוח עבור onehot:"
+
+msgid "Save"
+msgstr "שמור"
+
+msgid "Send"
+msgstr "שלח"
+
+msgid "Sessions:"
+msgstr "סשנים:"
+
+msgid "Settings"
+msgstr "הגדרות"
 
 msgid "Sign up"
-msgstr "הרשמה"
+msgstr "הירשם"
 
-msgid "Something went wrong"
-msgstr "משהו השתבש"
+msgid "Start Optimization"
+msgstr "התחל אופטימיזציה"
+
+msgid "Target Feature:"
+msgstr "מאפיין מטרה:"
 
 msgid "Test loss:"
-msgstr "הפסד במבחן:"
+msgstr "אובדן בדיקה:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "מגרש המשחקים של רשתות נוירונים מציע דרך אינטראקטיבית לראות ולהבין איך רשת נוירונים חושבת ופועלת. פשוט לחץ על הלחצן למטה כדי להתחיל."
+msgid "thinking..."
+msgstr "חושב..."
+
+msgid "Tools"
+msgstr "כלים"
 
 msgid "Total categorical:"
-msgstr "סך הכל קטגוריות:"
+msgstr "סך הכל קטגוריאלי:"
+
+msgid "Type here..."
+msgstr "הקלד כאן..."
+
+msgid "Type:"
+msgstr "סוג:"
+
+msgid "Unsafe"
+msgstr "לא בטוח"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "העלה מערך נתוני CSV כדי לראות תכונות זמינות"
+
+msgid "Upload CSV Dataset"
+msgstr "העלה מערך נתוני CSV"
+
+msgid "Upload ONNX model"
+msgstr "העלה מודל ONNX"
+
+msgid "Username:"
+msgstr "שם משתמש:"
+
+msgid "Vertical view"
+msgstr "תצוגה אנכית"
 
 msgid "Visualize"
-msgstr "הצג חזותית"
+msgstr "הדמיה"
+
+msgid "Warnings"
+msgstr "אזהרות"
 
 msgid "Welcome back!"
-msgstr "ברוכים השבים!"
+msgstr "ברוך שובך!"
 
 msgid "Welcome!"
-msgstr "ברוכים הבאים!"
-
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "בין אם אתה מאמן מודל פשוט או מכוון Transformer עצום, 2N2D מותאם לזרימת העבודה שלך. כל מה שאתה צריך כדי להתחיל הוא חשבון."
+msgstr "ברוך הבא!"
 
 msgid "Wrong username or password!"
 msgstr "שם משתמש או סיסמה שגויים!"
 
 msgid "You are already logged in, would you like to log out?"
 msgstr "אתה כבר מחובר, האם תרצה להתנתק?"
-```
+
+msgid "You are not logged in"
+msgstr "אינך מחובר"

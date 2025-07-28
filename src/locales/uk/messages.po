@@ -1,57 +1,147 @@
-```
+po
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: uk\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "Панель розробки <0>Н</0>ейронних <1>М</1>ереж"
+msgid " Got the basics? "
+msgstr "Зрозуміли основи?"
 
-msgid "Already have an account? "
-msgstr "Вже маєте обліковий запис? "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr "Якщо ви розібралися з тим, як працюють нейронні мережі, скористайтеся наведеним нижче посібником, щоб розпочати створення власних. Не забудьте звертатися до помічника зі штучним інтелектом із запитаннями!"
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr "Майданчик нейронних мереж пропонує інтерактивний спосіб побачити та зрозуміти, як нейронна мережа мислить і функціонує. Просто натисніть кнопку нижче, щоб розпочати."
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} унікальних, {2})"
+
+msgid "{key} Distribution"
+msgstr "Розподіл {key}"
+
+msgid "Add dataset:"
+msgstr "Додати набір даних:"
+
+msgid "AI Chat"
+msgstr "Чат зі ШІ"
+
+msgid "Already have an account?"
+msgstr "Вже маєте обліковий запис?"
 
 msgid "Analyze"
 msgstr "Аналізувати"
 
-msgid "Ask"
-msgstr "Запитати"
-
 msgid "Attributes:"
 msgstr "Атрибути:"
 
-msgid "Back to login"
-msgstr "Повернутися до входу"
+msgid "Best config"
+msgstr "Найкраща конфігурація"
+
+msgid "Best configuration:"
+msgstr "Найкраща конфігурація:"
+
+msgid "Categorical"
+msgstr "Категоріальні"
+
+msgid "Categorical summary:"
+msgstr "Категоріальний підсумок:"
 
 msgid "Category:"
 msgstr "Категорія:"
 
+msgid "Clear Data"
+msgstr "Очистити дані"
+
+msgid "Close"
+msgstr "Закрити"
+
+msgid "Column types:"
+msgstr "Типи стовпців:"
+
 msgid "Columns"
 msgstr "Стовпці"
 
+msgid "Columns estimate:"
+msgstr "Оцінка стовпців:"
+
+msgid "Config {0}"
+msgstr "Конфігурація {0}"
+
+msgid "Configuration"
+msgstr "Конфігурація"
+
+msgid "Constant nodes"
+msgstr "Постійні вузли"
+
+msgid "Correlation Matrix"
+msgstr "Матриця кореляції"
+
+msgid "Create new session"
+msgstr "Створити нову сесію"
+
 msgid "Csv file:"
-msgstr "Файл Csv:"
+msgstr "Файл CSV:"
 
 msgid "CSV file:"
-msgstr "CSV файл:"
+msgstr "Файл CSV:"
+
+msgid "CSV tools"
+msgstr "Інструменти CSV"
 
 msgid "Cur. Memory"
 msgstr "Поточна пам'ять"
 
-msgid "Don't have an account?"
-msgstr "Не маєте облікового запису?"
+msgid "Dashboard"
+msgstr "Панель управління"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "Легко інтерпретуйте дані навчання та виведення з ваших моделей."
+msgid "Data"
+msgstr "Дані"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "Легко візуалізуйте структуру та вузли вашої нейронної мережі в простому та зрозумілому форматі"
+msgid "Data <0/>"
+msgstr "Дані <0/>"
+
+msgid "Data Distribution"
+msgstr "Розподіл даних"
+
+msgid "Dataset Overview"
+msgstr "Огляд набору даних"
+
+msgid "Docs"
+msgstr "Документація"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "Не маєте облікового запису? <0>Зареєструйтеся тут!</0>"
+
+msgid "Download optimized"
+msgstr "Завантажити оптимізований"
+
+msgid "Downloading..."
+msgstr "Завантаження..."
+
+msgid "E-Mail:"
+msgstr "Електронна пошта:"
+
+msgid "Email"
+msgstr "Електронна пошта"
+
+msgid "Encoding Feasibility"
+msgstr "Можливість кодування"
+
+msgid "Encoding Info"
+msgstr "Інформація про кодування"
+
+msgid "Encoding type:"
+msgstr "Тип кодування:"
 
 msgid "Est. Memory"
-msgstr "Орієнтовна пам'ять"
+msgstr "Оц. пам'ять"
+
+msgid "Failed to connect to AI."
+msgstr "Не вдалося підключитися до ШІ."
 
 msgid "File"
 msgstr "Файл"
@@ -59,11 +149,17 @@ msgstr "Файл"
 msgid "File:"
 msgstr "Файл:"
 
-msgid "Got the basics?"
-msgstr "Освоили основи?"
+msgid "Hello,"
+msgstr "Привіт,"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "Якщо ви розібралися з основами роботи нейронних мереж, скористайтеся наступним посібником, щоб почати створювати власні. Не забувайте звертатися до помічника ШІ з питаннями!"
+msgid "High cardinality columns:"
+msgstr "Стовпці з високою кардинальністю:"
+
+msgid "Info"
+msgstr "Інформація"
+
+msgid "Input Features:"
+msgstr "Вхідні ознаки:"
 
 msgid "Inputs:"
 msgstr "Входи:"
@@ -71,129 +167,281 @@ msgstr "Входи:"
 msgid "IR version:"
 msgstr "Версія IR:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "Просто перетягніть та скиньте ваші файли і почніть роботу — без налаштувань, без клопоту."
+msgid "Know nothing about neural networks?"
+msgstr "Нічого не знаєте про нейронні мережі?"
+
+msgid "Language:"
+msgstr "Мова:"
+
+msgid "Layers"
+msgstr "Шари"
 
 msgid "Layers:"
 msgstr "Шари:"
 
+msgid "Learn"
+msgstr "Навчання"
+
+msgid "Legend"
+msgstr "Легенда"
+
 msgid "Load CSV File"
-msgstr "Завантажити CSV файл"
+msgstr "Завантажити файл CSV"
 
 msgid "Load ONNX File"
-msgstr "Завантажити ONNX файл"
+msgstr "Завантажити файл ONNX"
 
-msgid "Loading"
-msgstr "Завантаження"
+msgid "Loaded files:"
+msgstr "Завантажені файли:"
+
+msgid "Log in here <0/>"
+msgstr "Увійдіть тут <0/>"
 
 msgid "Log out"
 msgstr "Вийти"
 
-msgid "Logging in...."
-msgstr "Вхід..."
-
 msgid "Login"
-msgstr "Вхід"
+msgstr "Увійти"
 
-msgid "Magic Link sign-in"
-msgstr "Вхід за магічним посиланням"
+msgid "logo"
+msgstr "логотип"
+
+msgid "Logout"
+msgstr "Вихід"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "Максимальна кількість епох на конфігурацію:"
+
+msgid "mb"
+msgstr "МБ"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "Мінімум 7 символів. Повинен містити щонайменше один спеціальний символ та одну цифру."
+
+msgid "Missing Data Heatmap"
+msgstr "Теплова карта відсутніх даних"
 
 msgid "Missing values"
-msgstr "Пропущені значення"
+msgstr "Відсутні значення"
+
+msgid "Missing Values Heatmap"
+msgstr "Теплова карта відсутніх значень"
+
+msgid "Model Details"
+msgstr "Деталі моделі"
 
 msgid "Name:"
-msgstr "Назва:"
+msgstr "Ім'я:"
 
-msgid "Neural Network Development Dashboard"
-msgstr "Панель розробки нейронних мереж"
+msgid "Network Visualization"
+msgstr "Візуалізація мережі"
+
+msgid "Neurons"
+msgstr "Нейрони"
 
 msgid "Neurons:"
 msgstr "Нейрони:"
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision пропонує безкоштовні курси про нейронні мережі та принципи їх роботи."
+
+msgid "No active session!"
+msgstr "Немає активної сесії!"
+
+msgid "No categorical columns"
+msgstr "Немає категоріальних стовпців"
+
+msgid "No csv file loaded"
+msgstr "Файл CSV не завантажено"
+
 msgid "No data to display"
 msgstr "Немає даних для відображення"
 
+msgid "No file uploaded"
+msgstr "Файл не завантажено"
+
+msgid "No model loaded"
+msgstr "Модель не завантажено"
+
+msgid "No numerical columns"
+msgstr "Немає числових стовпців"
+
+msgid "No onnx file loaded"
+msgstr "Файл ONNX не завантажено"
+
 msgid "No optimization done."
-msgstr "Оптимізація не виконана."
+msgstr "Оптимізацію не виконано."
 
 msgid "No recommendations"
-msgstr "Рекомендацій немає"
+msgstr "Немає рекомендацій"
 
 msgid "No such columns"
 msgstr "Таких стовпців немає"
 
 msgid "No warnings"
-msgstr "Попередження відсутні"
+msgstr "Немає попереджень"
 
 msgid "Node count:"
 msgstr "Кількість вузлів:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "пропонує безкоштовні курси про нейронні мережі та їхню роботу."
+msgid "Node physics"
+msgstr "Фізика вузлів"
+
+msgid "Not safe"
+msgstr "Небезпечно"
+
+msgid "Numerical"
+msgstr "Числові"
 
 msgid "One hot"
-msgstr "One hot"
+msgstr "One-hot"
+
+msgid "Onehot encoding:"
+msgstr "One-hot кодування:"
 
 msgid "ONNX file:"
-msgstr "ONNX файл:"
+msgstr "Файл ONNX:"
 
-msgid "Optimize"
-msgstr "Оптимізувати"
+msgid "Optimization"
+msgstr "Оптимізація"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "Оптимізуйте свою нейронну мережу за допомогою кращої архітектури для покращення її швидкості та результатів."
+msgid "Optimization <0/>"
+msgstr "Оптимізація <0/>"
+
+msgid "Optimization results:"
+msgstr "Результати оптимізації:"
+
+msgid "Optimization settings"
+msgstr "Налаштування оптимізації"
+
+msgid "Optimization strategy:"
+msgstr "Стратегія оптимізації:"
+
+msgid "or drag and drop files"
+msgstr "або перетягніть файли"
 
 msgid "Outputs:"
 msgstr "Виходи:"
 
 msgid "Overall"
-msgstr "Загалом"
+msgstr "Загальний"
+
+msgid "Overall recommendation:"
+msgstr "Загальна рекомендація:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "Сторінка {currentPage} з {totalPages}"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Please load or create a new session to start."
+msgstr "Будь ласка, завантажте або створіть нову сесію, щоб розпочати."
 
 msgid "Producer:"
 msgstr "Виробник:"
 
+msgid "Profile"
+msgstr "Профіль"
+
 msgid "R2 score:"
-msgstr "R2 оцінка:"
+msgstr "Показник R2:"
+
+msgid "Recommendations"
+msgstr "Рекомендації"
+
+msgid "Refresh"
+msgstr "Оновити"
 
 msgid "Risky for onehot:"
-msgstr "Ризиковано для onehot:"
+msgstr "Ризиковано для one-hot:"
 
 msgid "Rows"
 msgstr "Рядки"
 
+msgid "Rows/Page:"
+msgstr "Рядків/сторінка:"
+
+msgid "Safe"
+msgstr "Безпечно"
+
 msgid "Safe for onehot:"
-msgstr "Безпечно для onehot:"
+msgstr "Безпечно для one-hot:"
+
+msgid "Save"
+msgstr "Зберегти"
+
+msgid "Send"
+msgstr "Надіслати"
+
+msgid "Sessions:"
+msgstr "Сесії:"
+
+msgid "Settings"
+msgstr "Налаштування"
 
 msgid "Sign up"
 msgstr "Зареєструватися"
 
-msgid "Something went wrong"
-msgstr "Щось пішло не так"
+msgid "Start Optimization"
+msgstr "Розпочати оптимізацію"
+
+msgid "Target Feature:"
+msgstr "Цільова ознака:"
 
 msgid "Test loss:"
-msgstr "Втрати тестування:"
+msgstr "Тестова втрата:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "Нейронна ігрова площадка пропонує інтерактивний спосіб побачити та зрозуміти, як думає та функціонує нейронна мережа. Просто натисніть кнопку нижче, щоб почати."
+msgid "thinking..."
+msgstr "думка..."
+
+msgid "Tools"
+msgstr "Інструменти"
 
 msgid "Total categorical:"
-msgstr "Загальна категорійна:"
+msgstr "Усього категоріальних:"
+
+msgid "Type here..."
+msgstr "Напишіть тут..."
+
+msgid "Type:"
+msgstr "Тип:"
+
+msgid "Unsafe"
+msgstr "Небезпечно"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "Завантажте набір даних CSV, щоб побачити доступні функції"
+
+msgid "Upload CSV Dataset"
+msgstr "Завантажити набір даних CSV"
+
+msgid "Upload ONNX model"
+msgstr "Завантажити модель ONNX"
+
+msgid "Username:"
+msgstr "Ім'я користувача:"
+
+msgid "Vertical view"
+msgstr "Вертикальний вигляд"
 
 msgid "Visualize"
 msgstr "Візуалізувати"
 
+msgid "Warnings"
+msgstr "Попередження"
+
 msgid "Welcome back!"
-msgstr "Ласкаво просимо назад!"
+msgstr "З поверненням!"
 
 msgid "Welcome!"
 msgstr "Ласкаво просимо!"
-
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "Незалежно від того, чи навчаєте ви просту модель, чи донастроюєте масивний трансформатор, 2N2D адаптується до вашого робочого процесу. Все, що вам потрібно для початку, — це обліковий запис."
 
 msgid "Wrong username or password!"
 msgstr "Неправильне ім'я користувача або пароль!"
 
 msgid "You are already logged in, would you like to log out?"
 msgstr "Ви вже увійшли, бажаєте вийти?"
-```
+
+msgid "You are not logged in"
+msgstr "Ви не увійшли в систему"

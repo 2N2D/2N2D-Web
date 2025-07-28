@@ -1,0 +1,58 @@
+# 6 Testare
+
+## 6.1 Testarea manuală
+
+Pentru a asigura funcționalitatea de bază și o experiență de utilizare fluidă, am efectuat o serie de teste manuale riguroase. Acestea au acoperit următoarele scenarii:
+
+- **Fluxul de Autentificare:** Am testat logarea prin Email/Parolă, Google Auth și Magic Link, verificând atât scenariile de succes, cât și cele de eșec (ex: parolă greșită, email invalid).
+- **Managementul Sesiunilor:** Am verificat crearea, redenumirea și ștergerea sesiunilor de lucru.
+- **Încărcarea Fișierelor:** Am testat încărcarea fișierelor ONNX și CSV de diferite dimensiuni și cu diverse formate, inclusiv fișiere corupte sau cu date lipsă, pentru a verifica robustețea sistemului.
+- **Interfața Utilizator:** Am verificat toate elementele interactive (butoane, formulare, grafice) pe cele mai populare browsere (Chrome, Firefox, Safari, Opera) pentru a asigura compatibilitatea (Multi-Browser support).
+- **Responsivitatea:** Am testat afișarea interfeței pe diverse rezoluții de ecran pentru a valida designul adaptiv.
+
+## 6.2 Testarea automată
+
+**Având în vedere obiectivul de a extinde aplicația și de a integra un număr mai mare de unelte și funcționalități, devine esențială tranziția către testarea automată.**
+
+Primul pas în această direcție este implementarea testelor unitare, care ne permit să verificăm corectitudinea logicii fiecărui modul în mod izolat, asigurând astfel o bază solidă pentru dezvoltarea ulterioară.
+
+###
+
+###
+
+###
+
+###
+
+###
+
+###
+
+###
+
+### 6.2.1 Testarea Unitara
+
+Am folosit testarea unitară după modificările de cod în API pentru a ne asigura că acestea respectă în continuare structura așteptată de Frontend.
+
+Folosind Pytest, am realizat testarea endpoint-urilor din API pentru a verifica funcționarea corectă a acestora. Un exemplu de test:\*\*![]()
+
+Prin acest test ne asigurăm că API-ul funcționează corect, procesează fără erori fișierele **.onnx**, nu întâmpină probleme la execuție, documentația automată este generată corespunzător, iar mecanismul de autentificare validează sau respinge conexiunile conform așteptărilor.
+
+### 6.2.2 Testarea de integrare
+
+Următorul pas în strategia noastră este implementarea testelor de integrare. Acestea vor verifica interacțiunea dintre diferitele module ale sistemului.
+
+- **Exemplu Planificat:** Un test care verifică fluxul complet de la API la baza de date: se apelează un endpoint de creare a unei sesiuni și se verifică dacă înregistrarea corespunzătoare a fost creată corect în tabela session din PostgreSQL.
+
+### 6.2.3 Testarea End to End (E2E)
+
+Pentru a valida întreaga experiență a utilizatorului, vom implementa teste E2E folosind un framework precum **Cypress** sau **Playwright**. Aceste teste simulează acțiunile unui utilizator real în browser.
+
+- **Exemplu de Scenariu E2E:**
+  1. Automatizarea navigării către pagina de login și autentificarea.
+  2. Crearea unei noi sesiuni.
+  3. Încărcarea programatică a unui fișier ONNX și a unui CSV.
+  4. Navigarea la pagina de optimizare, completarea formularului și pornirea procesului.
+  5. Așteptarea finalizării optimizării și validarea faptului că rezultatele sunt afișate corect pe pagină.
+
+##

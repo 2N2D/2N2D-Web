@@ -1,0 +1,352 @@
+# 5\. 2N2D Interfața WEB
+
+Interfața web a aplicației 2N2D reprezintă punctul central pentru orice interacțiune cu serviciile oferite de platformă.
+
+Principalele funcționalități ale interfeței includ:
+
+- Manager de sesiuni pentru rețelele neuronale
+- Stocare în cloud pentru toate fișierele utilizatorului
+- Reprezentare grafică a rețelelor neuronale încărcate
+- Analiză de date CSV pentru crearea seturilor optime de date
+- Optimizarea rețelelor neuronale încărcate
+- AI Chat cu context extins, capabil să folosească informații din fișierele încărcate sau conținutul afișat pe ecran
+- Resurse educaționale pentru dezvoltarea propriilor rețele neuronale
+
+Aplicația web a fost realizată folosind framework-ul **Next.js**, dezvoltat de Vercel, care facilitează crearea de aplicații web full-stack performante și scalabile.
+
+## 5.1 UI/UX
+
+### 5.1.1 Design Interfață Grafică
+
+Când am realizat interfața grafică a aplicației, ne-am propus să creăm un UI care să fie în același timp funcțional și unic, ceea ce este mai greu pentru un software orientat spre utilitate. Totuși, credem că am reușit fără prea multe compromisuri.
+
+### 5.1.2 Elemente de design
+
+- **Schema de culori:** Culorile aplicației sunt în principal neutre, bazate pe o temă închisă, cu accente de culoare pentru evidențiere.
+- **Iconițe:** Pentru a facilita utilizatorul, în întreaga aplicație sunt folosite iconițe. Toate iconițele urmează aceleași reguli: sunt pline (nu doar contururi) și rotunjite (colțuri ușor rotunjite). Acestea sunt preluate din FontAwesome.
+- **Carduri și zone:** Toate paginile sunt constituite din zone și carduri, așezate la aceeași distanță una față de cealaltă (0.5rem). Zonele separă meniurile și elementele pentru a crea o structură aerisită și ușor de citit.
+- **Responsivitate:** Datorită folosirii cardurilor și zonelor, acestea se pot micșora sau muta automat pentru o varietate de rezoluții și raporturi de aspect. În întreaga aplicație s-a folosit Flexbox, fără valori hardcodate pentru lățime sau înălțime, cu excepția sidebar-ului.
+- **Dispozitive mobile:** Aplicația nu este destinată în mod special pentru telefoane mobile, însă am încercat să asigurăm funcționalitate și pe acestea, deși nu recomandăm utilizarea pe astfel de device-uri, deoarece o aplicație de acest gen nu este optimizată pentru mobil.
+- **Consistență:** Toate elementele sunt consistente, folosind aceeași paletă de culori și proprietăți vizuale (border-radius de 0.4rem, padding de 1rem 2rem). Butoanele și headerele sunt standardizate și arată la fel pe toate paginile, astfel încât toate paginile par parte din aceeași aplicație.
+
+### 5.1.3 Dinamism și Responsivitate
+
+O provocare în crearea acestei interfețe a fost faptul că totul trebuia să fie dinamic. Nu știam ce fișiere va încărca utilizatorul, astfel a trebuit să facem interfața să funcționeze pe orice ecran, indiferent de numărul de date încărcate.
+
+De asemenea, interfața trebuia să arate bine și în cazul în care nu existau date încărcate. Din acest motiv, am implementat conceptul de **pagini care se construiesc singure**.
+
+Folosind zone în designul aplicației, am putut face ca acestea să apară pe măsură ce utilizatorul interacționează cu aplicația. Astfel, păstrăm interfața curată și, în același timp, ghidăm utilizatorul într-un mod natural. În acest fel, știm exact în ce ordine utilizatorul va folosi aplicația și putem afișa întotdeauna doar ceea ce are nevoie.
+
+## 5.2 Page Flow
+
+În diagrama următoare prezentăm modul în care ne așteptăm ca utilizatorul să interacționeze cu platforma noastră.
+
+![]()
+
+Această diagramă a stat la baza deciziilor noastre de design, astfel încât să încurajăm utilizatorul să interacționeze cu aplicația într-un mod intuitiv și eficient.
+
+Pentru a ghida utilizatorii pe platformă, am folosit următoarele tehnici:
+
+- **Contrast de culori:** Am optat pentru o paletă neutră în majoritatea interfeței, astfel încât orice buton sau element colorat diferit să atragă imediat atenția utilizatorului. Culoarea principală a brandului este folosită cu moderație, pentru a-i păstra impactul vizual, dar suficient pentru a nu face interfața monotonă.
+
+- **Conținut dinamic al paginilor:** Pagina se adaptează în funcție de contextul utilizatorului, afișând doar elementele relevante.
+
+- **Activarea/Dezactivarea butoanelor importante:** Butoanele critice sunt activate sau dezactivate în funcție de starea aplicației, pentru a preveni acțiuni nepermise și a ghida utilizatorul.
+
+De asemenea, am decis să ascundem anumite elemente precum chat-ul sau sidebar-ul pe anumite pagini, pentru a crește lizibilitatea și pentru că prezența lor nu era relevantă în toate contextele.
+
+### 5.2.1 Sidebar vs Navbar
+
+Primele versiuni ale aplicației utilizau un navbar fix și permanent. Pe măsură ce am adăugat funcționalități și pagini, acesta a devenit încărcat și greu de utilizat. Pentru o aplicație utilitară, spațiul vertical este mai valoros decât cel orizontal, motiv pentru care am ales să implementăm un sidebar retractabil. Astfel, acesta poate fi ascuns sau afișat la nevoie, economisind spațiu și oferind o experiență mai aerisită.
+
+## 5.3 Accesibilitate
+
+### 5.3.1 Internaționalizare
+
+Întreaga aplicație oferă suport pentru 30 de limbi, din care utilizatorul poate alege pentru traducere. Pentru aceasta folosim framework-ul i18n Lingui, care presupune încadrarea întregului text din aplicație în taguri precum &lt;Trans&gt;&lt;/Trans&gt;, iar apoi se generează fișiere separate pentru fiecare limbă, care pot fi completate cu traduceri.
+
+Pentru traducere automată am folosit AutoI18T .
+
+### 5.3.2 Input
+
+Aplicația nu folosește shortcut-uri de tastatură sau gesturi cu mouse-ul. Întreaga interfață poate fi utilizată complet atât cu mouse-ul, cât și cu tastatura, astfel fiind accesibilă și persoanelor cu dizabilități care folosesc alternative de input.
+
+### 5.3.3 Multi-Browser Support
+
+Aplicația nu depinde de niciun tool specific unui browser, astfel întreaga funcționalitate este disponibilă pe orice browser web modern.
+
+## 5.4 Componente UI
+
+### 5.4.1 Reprezentare vizuala a retelelor neuronale
+
+Una dintre cele mai complexe componente ale interfeței web este vizualizatorul interactiv de rețele neuronale. Acesta permite utilizatorilor să exploreze grafic structura modelelor ONNX, facilitând înțelegerea și depanarea acestora. Implementarea nu se rezumă la simpla utilizare a unei librării, ci implică o logică semnificativă de **procesare, clasificare și randare a datelor**.
+
+Întregul proces este orchestrat de funcția createVisualNetwork2D, care utilizează librăria **vis-network** pentru randarea finală, dar se bazează pe o serie de funcții ajutătoare originale pentru a pregăti datele.
+
+**1\. Procesarea și Curățarea Datelor**
+
+Datele brute despre noduri și conexiuni, primite de la API-ul Python, trec printr-un proces de pre-procesare esențial:
+
+- **Eliminarea Nodurilor Constante:** Multe modele ONNX conțin noduri "Constant" care reprezintă greutățile (weights) și bias-urile. Acestea aglomerează vizualizarea fără a adăuga informații structurale. Logica implementată parcurge graful și elimină aceste noduri, **reconectând nodurile din amonte și din aval** pentru a păstra integritatea fluxului de date. Această etapă de "bypass" este o contribuție originală crucială pentru claritatea vizualizării.
+- **Simplificarea Denumirilor (simplifyNodeName):** Numele nodurilor din ONNX sunt adesea lungi și conțin prefixe tehnice. Această funcție utilizează expresii regulate pentru a curăța denumirile, păstrând doar informația relevantă (ex: "ReLU", "Conv").
+
+**2\. Clasificarea și Colorarea Semantică a Nodurilor**
+
+Pentru a oferi o înțelegere vizuală rapidă a rolului fiecărui nod, am implementat un sistem de clasificare semantică:
+
+- **Categorizare (getNodeCategory):** Am definit un dicționar (NODE_TYPE_CATEGORIES) care mapează cuvinte cheie la categorii funcționale (ex: "coreLayers", "activations", "tensorManip"). Funcția getNodeCategory parcurge aceste definiții și atribuie fiecărui nod o categorie pe baza numelui său.
+- **Atribuirea Culorilor (colorNode):** Pe baza categoriei atribuite, fiecărui nod i se asociază un set de culori distincte (pentru fundal, bordură și highlight) dintr-o paletă predefinită (categoryColorMap). Acest sistem de colorare transformă un graf monocrom într-o diagramă semantică, ușor de interpretat.
+
+**3\. Randarea și Interactivitatea**
+
+Odată ce datele sunt procesate, ele sunt încărcate în instanțe vis-data (DataSet) și transmise componentei Network din vis-network pentru randare.
+
+- **Layout Ierarhic:** Am configurat vis-network pentru a utiliza un **layout ierarhic**, care aranjează nodurile pe niveluri, de la stânga la dreapta (input -> output) sau de sus în jos, oferind o reprezentare mult mai logică a fluxului de date decât un layout fizic haotic.
+- **Gestionarea Interacțiunilor (handleSelect):** Am atașat un event listener (network.on("selectNode", ...)) la evenimentul de selecție a unui nod. Când un utilizator dă click pe un nod, funcția handleSelect (primită ca prop din pagina principală) este apelată, permițând afișarea detaliilor complete ale nodului respectiv într-o altă componentă. Aceasta decuplează logica de vizualizare de logica de afișare a detaliilor, respectând principiul responsabilității unice.
+
+### 5.4.2 Tabel CSV, Grafice, Heatmaps, Matrici de corelare
+
+Toate aceste componente sunt generate pe baza datelor din fișierul CSV și sunt afișate în interfața web. Generarea tabelului a fost implementată complet de la zero și reprezintă o soluție personalizată (_custom_).
+
+Celelalte elemente grafice, precum **heatmap-urile**, **matricile de corelație** și **graficele**, sunt generate folosind biblioteca **Plotly.js**, însă și acestea au fost modificate pentru a se potrivi aspectului general al site-ului.
+
+De asemenea, pentru realizarea acestor componente, datele trebuie mai întâi **analizate** și **procesate** corespunzător.
+
+## 5.5 **Backend**
+
+### 5.5.1 Autentificare
+
+Autentificarea a fost realizată folosind **Firebase**, permițând astfel integrarea mai multor modalități de autentificare, pe lângă cea clasică, adică email și parolă. Utilizatorul poate alege să se autentifice fie cu un cont **Google**, fie folosind **Magic Link**.
+
+#### Autentificare prin Google
+
+Autentificarea prin Google se realizează prin selectarea unui cont Google valid.
+
+#### **Autentificare folosind Magic Link**
+
+Această metodă funcționează după următorii pași:
+
+1. Utilizatorul își introduce adresa de email.
+2. Primește pe email un link de autentificare.
+3. La accesarea linkului, utilizatorul este redirecționat către o pagină din aplicație, unde se verifică headerul care conține informații referitoare la utilizator, iar dispozitivul este autentificat.
+
+#### Persistența autentificării și protecția aplicației
+
+Odată ce un utilizator este autentificat, se efectuează o căutare în baza de date a aplicației pentru a identifica **setările** și **sesiunile** asociate utilizatorului, care sunt apoi încărcate în aplicație.
+
+Se creează, de asemenea, un **cookie** care conține informații de bază, precum uid-ul utilizatorului, esențial pentru funcționalitatea aplicației.
+
+La fiecare schimbare de pagină, **cookie-ul din browser-ul utilizatorului este extras și verificat** cu o copie a acestuia, pentru a ne asigura că nu a fost modificat.
+
+##
+
+###
+
+###
+
+###
+
+###
+
+### 5.5.2 Management Sesiuni și Caching
+
+Managementul sesiunilor este foarte important pentru aplicația noastră. Fiind o aplicație **multi-page**, este necesar să păstrăm date între pagini.
+
+Pentru această funcționalitate există mai multe opțiuni:
+
+- putem stoca aceste date în link (prin parametri URL),
+- sau local, pe dispozitivul utilizatorului.
+
+Pentru a păstra totul cât mai **curat și transparent pentru utilizator**, am ales să folosim **stocarea locală a sesiunii** (_local/session storage_).
+
+#### Avantajele acestei abordări
+
+- Nu interogăm baza de date la fiecare schimbare de pagină.
+- Link-urile rămân curate, ceea ce ajută la navigarea internă și la redirectări.
+- Paginile se încarcă mai rapid, deoarece nu trebuie să aștepte un header sau un query către server.
+
+### 5.5.3 Componentele sistemului de sesiuni
+
+Pentru implementare, am creat un **serviciu dedicat**, format din două componente:
+
+#### 1\. SessionHandler
+
+**SessionHandler.tsx** se ocupă de **crearea și gestionarea sesiunilor utilizatorilor**.
+
+Funcționalități principale:
+
+- Monitorizează fiecare utilizator autentificat în aplicație.
+- Încarcă inițial **sesiunile disponibile** din baza de date pentru utilizatorul curent.
+- La selectarea unei sesiuni, se ocupă de **încărcarea acesteia în stocarea locală**.
+- Păstrează în cache **orice rezultat provenit de la API**, astfel evitând apelurile repetitive către server pentru fișiere deja încărcate.
+
+Structura exactă a unei sesiuni în baza de date este prezentată în secțiunea _Arhitectura proiectului_.
+
+####
+
+####
+
+####
+
+#### 2\. SessionUpdater
+
+**SessionUpdater.tsx** este responsabil pentru **actualizarea sesiunilor în baza de date**.
+
+Funcționalități:
+
+- Se asigură că **actualizările sunt eficiente**, evitând suprascrierea întregului obiect.
+- Actualizează doar secțiunea relevantă din sesiune, minimizând astfel volumul de date scris și timpul de răspuns.
+
+### 5.5.4 Management Requesturi
+
+O altă componentă care a ridicat dificultăți a fost **crearea sistemelor astfel încât acestea să poată procesa mai mulți utilizatori simultan**.
+
+Atât timp cât nu există un script care să se ocupe de acest lucru în mod complet autonom, acest aspect a fost tratat mai degrabă ca un **principiu de arhitectură** pe care l-am avut în vedere încă de la începutul dezvoltării aplicației.
+
+Pentru a face posibilă procesarea paralelă a cererilor de la mai mulți utilizatori, am construit toate funcționalitățile în așa fel încât **utilizatorul să solicite informațiile folosind o cheie arbitrară**, în loc să menținem o evidență activă a utilizatorilor logați în backend.
+
+De fapt, în momentul autentificării, **această cheie este generată și transmisă sub forma unui cookie**, așa cum este detaliat în secțiunea _Autentificare_.
+
+### 5.5.5 Management Date
+
+Managementul datelor și al fișierelor este un aspect de bază al aplicației. Pentru acest scop, folosim două servicii separate:
+
+- **Baza de date (realizată în PostgreSQL)  
+   **
+- **R2 Object Storage (hostat de Cloudflare)  
+   **
+
+####
+
+####
+
+####
+
+#### Baza de date
+
+Structura bazei de date este prezentată în secțiunea _Arhitectura Proiectului_.
+
+Pentru a fi cât mai eficienți și pentru a menține aplicația cât mai rapidă, am urmărit să executăm **cât mai puține interogări** către baza de date. Așa cum am menționat anterior, datele legate de sesiune sunt stocate local, pe dispozitivul utilizatorului.
+
+Astfel, numărul de requesturi către baza de date este redus semnificativ. Singurele momente în care se fac interogări suplimentare sunt cele în care trebuie **actualizate anumite informații**, iar conform celor prezentate în secțiunea _SessionUpdater_, ne asigurăm că este actualizată **doar secțiunea necesară**, nu întregul entry din baza de date.
+
+#### **De ce o bază de date SQL?**
+
+Am ales o bază de date relațională deoarece **știm mereu ce urmează să stocăm**. Structura este clar definită, iar flexibilitatea unei baze de date NoSQL nu este necesară în acest caz. Folosirea PostgreSQL ne permite să avem control strict asupra datelor și relațiilor dintre entități.
+
+#### R2 Object Storage
+
+În proiect, există două etape de implementare a stocării fișierelor:
+
+- La început am folosit **Supabase Storage**, însă, din cauza limitărilor planului gratuit, am migrat către **R2 Buckets**, oferit de Cloudflare.
+
+Fiecare utilizator are propriul său folder în cloud, cu următoarea structură:
+
+&lt;User_UID&gt;/&lt;Session_ID&gt;/  
+├── onnx/  
+│ └── orice fișier .onnx încărcat de utilizator  
+├── csv/  
+│ └── orice fișier .csv încărcat de utilizator  
+└── Optim/  
+└── orice fișier .onnx optimizat de către 2N2D API
+
+####
+
+####
+
+#### Politică de curățare și optimizare spațiu
+
+Suntem foarte atenți la **gestionarea spațiului de stocare** per utilizator. Aplicăm mai multe reguli pentru a preveni ocuparea inutilă a spațiului:
+
+- La ștergerea unei sesiuni, sunt șterse și fișierele aferente acesteia.
+- Fiecare nouă optimizare a modelului în cadrul unei sesiuni **înlocuiește** optimizarea anterioară.
+- Gestionăm numeroase _edge-case_\-uri pentru a ne asigura că nu rămân fișiere orfane sau neutilizate în cloud.
+
+### 5.5.6 Comunicarea cu 2N2D-API
+
+Deși, la suprafață, toată comunicarea cu API-ul pare să fie realizată prin fișierul /lib/2N2D.tsx, în realitate acest lucru nu este în întregime adevărat. O mare parte din procesare are loc pe **serverul web**, înainte de a fi transmis efectiv un request către API.
+
+#### Procesul complet este următorul
+
+1. **Se verifică dacă utilizatorul este autentificat** pentru a putea efectua requestul.
+2. **În cazul generării de vizualizări sau CSV**, fișierele sunt încărcate în locațiile corespunzătoare din cloud.
+3. **Entry-ul asociat sesiunii curente din baza de date este actualizat** cu path-urile către fișierele încărcate.
+4. **Cheia API este hashu-ită** (folosind SHA-256), iar pe baza acesteia se construiește requestul.  
+   _Modelele de request sunt prezentate în secțiunea 2N2D API._
+5. **Requestul este trimis către API**.
+6. La primirea unui răspuns, acesta este **pars-at într-un obiect JavaScript**, pentru a putea fi utilizat în restul codului.
+7. **Informațiile sesiunii sunt actualizate** cu datele primite de la API.
+
+Acești pași sunt implementați **în fișiere diferite ale proiectului**, cu scopul de a:
+
+- separa responsabilitățile logicii de aplicație,
+- asigura o funcționalitate optimă,
+- păstra un cod **lizibil**, **modular** și **ușor de întreținut**.
+
+## 5.6 **AI Chat**
+
+Chat-ul AI este un tool important al aplicației și am avut grijă să fie implementat corespunzător. Pe lângă faptul că chatul persistă între pagini și este salvat pentru fiecare sesiune, acesta are și acces la fișierele încărcate în acel moment în aplicație, fiind astfel capabil să ajute utilizatorul în moduri folositoare.
+
+### **LLM folosit: Gemini 2.5 Flash**
+
+### 5.6.1 **Master Prompt**
+
+Deoarece nu am antrenat propriul LLM, ne „tunăm” agentul AI pentru a fi cât mai folositor. Acesta este conștient de tool-urile aplicației, de alte resurse importante și de contextul în care se află.
+
+### 5.6.2 **Context extins**
+
+Alegerea agentului Gemini nu a fost una făcută într-o secundă. Am fost împărțiți între a folosi Deepseek R1, LLama și Grok. Motivul pentru care Gemini a fost ales este faptul că are un context de peste 1.000.000 de tokeni, fiind astfel capabil să proceseze fișiere foarte mari.
+
+Pentru orice fișier încărcat, Gemini primește un rezumat detaliat, deoarece doar niște biți nu ar fi prea folositori. Aceste date sunt cele prezentate în interfața web, astfel AI-ul știe la fel de multe lucruri din acest punct de vedere.
+
+De asemenea, o funcționalitate pe pagina de Learn este faptul că AI-ul știe ce lecție este deschisă de către utilizator, fiind astfel capabil să îl ghideze pe parcursul învățării.
+
+### 5.6.3 **Markdown**
+
+Am făcut AI-ul capabil să genereze Markdown și să îl afișeze corespunzător în mesaje. Pe când multe alte implementări ale unui AI chatbot se bazează doar pe răspunsul text, noi am făcut un pas în plus pentru a ne asigura că este cât mai folositor.
+
+###
+
+###
+
+### 5.6.4 **Streaming**
+
+Un alt aspect care face AI-ul mai bun este implementarea _message streaming_. În loc să aștepți până când acesta generează întregul mesaj, ceea ce îl face să pară lent, am implementat un sistem prin care primești porțiuni din mesaj pe măsură ce acesta este generat, până când mesajul este complet.
+
+Astfel, AI-ul răspunde aproape instant și scrie rapid, iar utilizatorul nu trebuie să aștepte până la finalizarea întregului text.
+
+## 5.7 **Lazy Loading**
+
+Pentru a face aplicația să se încarce mai repede, folosim _lazy loading_ pentru fișierele mari, precum tabele, grafice etc. Astfel, am redus timpul de încărcare de la până la 18.4 secunde la aproximativ 655 ms în build-urile de dezvoltare locală. În cazul build-urilor finale, încărcarea este aproape instantanee, în funcție de viteza conexiunii la internet.
+
+## 5.8 **Securitate**
+
+Primul și cel mai important principiu aplicat pentru a ne asigura că aplicația nu va fi vulnerabilă la atacuri precum SQL injection, XSS sau alte atacuri de tip injectare de scripturi a fost separarea procesării datelor pe server. Toate apelurile către API externe sunt realizate de pe server.
+
+Astfel, pe client nu se execută niciun cod critic care să compromită integritatea aplicației. Codul de pe client se ocupă exclusiv cu afișarea elementelor și a datelor primite în pagină.
+
+## 5.9 Tehnologii folosite
+
+\- NextJS - Framework web development
+
+\- Tailwind CSS - Stilizarea aplicației
+
+\- React Vis - Generare grafic interactiv cu noduri
+
+\- Plotly - Grafice
+
+\- Nextra - Framework generare documentație
+
+\- Firebase OAuth - Autentificarea utlizatorilor
+
+\- PostgreSQL - Bază de date
+
+\- Cloudflare R2 Buckets - Stocare fișiere
+
+\- Lingui - Internaționalizare
+
+\- Gemini - Chatbot AI
+
+\- OpenAPI - Documentarea API Endpointurilor
+
+\- Hostare și scalare: Microservicii, Docker, Vercel

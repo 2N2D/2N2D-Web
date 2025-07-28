@@ -20,6 +20,7 @@ import {
   downloadFileRequest
 } from '@/lib/frontend/feHandler';
 import OptimizationResults from '@/components/optimizationResults';
+import { Trans, useLingui } from '@lingui/react/macro';
 
 export default function dash() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -34,6 +35,7 @@ export default function dash() {
   const canvasRef = React.useRef<HTMLDivElement>(null);
 
   const router = useRouter();
+  const { t } = useLingui();
 
   function updateSessionStorage(session?: Session) {
     const logged = sessionStorage.getItem('logged');
@@ -112,7 +114,7 @@ export default function dash() {
     if (auxUser?.sessions) {
       auxUser.sessions = auxUser.sessions.filter(
         (sessionId) => sessionId !== id
-      ); // Filter out the deleted session ID
+      );
     }
 
     setCurrentUser(auxUser);
@@ -224,21 +226,27 @@ export default function dash() {
         transition={{ delay: 0.4 }}
       >
         <div>
-          <h1 className='title'>Dashboard</h1>
+          <h1 className='title'>
+            <Trans>Dashboard</Trans>
+          </h1>
           {notLogged ? (
             <div>
-              <h2 className='subtitle'>You are not logged in</h2>
+              <h2 className='subtitle'>
+                <Trans>You are not logged in</Trans>
+              </h2>
               <button
                 className='notLoggedBut'
                 onClick={() => router.push('/login')}
               >
-                Log in here{' '}
-                <i className='fa-solid fa-arrow-up-right-from-square'></i>
+                <Trans>
+                  Log in here{' '}
+                  <i className='fa-solid fa-arrow-up-right-from-square'></i>
+                </Trans>
               </button>
             </div>
           ) : (
             <h2 className='subtitle align-center flex gap-[0.5rem]'>
-              Hello,{' '}
+              <Trans>Hello,</Trans>{' '}
               {loadingName ? (
                 <div className='lazyLoad h-[1.5rem] w-[10rem]' />
               ) : (
@@ -247,7 +255,7 @@ export default function dash() {
             </h2>
           )}
         </div>
-        <img src='/logo2n2d.svg' alt='logo' className='logo' />
+        <img src='/logo2n2d.svg' alt={t`logo`} className='logo' />
       </motion.div>
 
       {currentSession != null ? (
@@ -282,7 +290,9 @@ export default function dash() {
             )}
           </div>
           <div className={'element'}>
-            <h1 className={'subtitle'}>Visualize</h1>
+            <h1 className={'subtitle'}>
+              <Trans>Visualize</Trans>
+            </h1>
             {
               <div
                 className='networkPreview'
@@ -293,24 +303,32 @@ export default function dash() {
               ></div>
             }
             <div>
-              <h1 className={'title'}>Loaded files:</h1>
+              <h1 className={'title'}>
+                <Trans>Loaded files:</Trans>
+              </h1>
               <h2>
-                <b> ONNX file: </b>{' '}
+                <b>
+                  <Trans>ONNX file:</Trans>
+                </b>{' '}
                 {currentSession.onnxName
                   ? currentSession.onnxName
-                  : 'No onnx file loaded'}
+                  : t`No onnx file loaded`}
               </h2>
               <h2>
-                <b> Csv file: </b>{' '}
+                <b>
+                  <Trans>Csv file:</Trans>
+                </b>{' '}
                 {currentSession.csvName
                   ? currentSession.csvName
-                  : 'No csv file loaded'}
+                  : t`No csv file loaded`}
               </h2>
             </div>
           </div>
           <div className={'element'}>
             <div>
-              <h1 className={'subtitle'}> Optimization</h1>
+              <h1 className={'subtitle'}>
+                <Trans>Optimization</Trans>
+              </h1>
               {currentSession &&
               currentSession.optResult &&
               JSON.stringify(currentSession.optResult).length > 2 &&
@@ -322,30 +340,10 @@ export default function dash() {
                   downloadOptimized={downloadOptimized}
                 />
               ) : (
-                <h1> No optimization done. </h1>
+                <h1>
+                  <Trans>No optimization done.</Trans>
+                </h1>
               )}
-            </div>
-            <div
-              className={
-                'align-center flex w-[20%] flex-col justify-center gap-[1rem]'
-              }
-            >
-              <button
-                className={'navBut'}
-                onClick={() => {
-                  router.push('/data');
-                }}
-              >
-                Data <i className='fa-solid fa-chart-simple'></i>
-              </button>
-              <button
-                className={'navBut'}
-                onClick={() => {
-                  router.push('/optimize');
-                }}
-              >
-                Optimization <i className='fa-solid fa-rabbit-running'></i>
-              </button>
             </div>
           </div>
         </motion.div>
@@ -356,19 +354,24 @@ export default function dash() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          <h1 className={'title'}>No active session!</h1>
+          <h1 className={'title'}>
+            <Trans>No active session!</Trans>
+          </h1>
           <h2 className={'subtitle'}>
-            Please load or create a new session to start.
+            <Trans>Please load or create a new session to start.</Trans>
           </h2>
         </motion.div>
       )}
 
       <div className={'fade'} style={{ rotate: '180deg' }} />
       <div className={'sessionsArea'}>
-        <h2 className={'title'}>Sessions:</h2>
+        <h2 className={'title'}>
+          <Trans>Sessions:</Trans>
+        </h2>
         {!loading && !notLogged ? (
           <motion.div
             className={'sessions'}
+            key={sessions.length} // Add key to re-trigger animation
             initial='hidden'
             whileInView='visible'
             variants={{
@@ -404,7 +407,9 @@ export default function dash() {
                 transition: { duration: 0.2, ease: 'easeInOut' }
               }}
             >
-              <h2 className={'subtitle'}>Create new session</h2>
+              <h2 className={'subtitle'}>
+                <Trans>Create new session</Trans>
+              </h2>
               <i className='fa-solid fa-square-plus largeIcon'></i>
             </motion.div>
             {sessions.length == 0 ? (
@@ -438,10 +443,16 @@ export default function dash() {
                         <div className='flex w-1/2 flex-col overflow-hidden text-ellipsis'>
                           <h1 className='subtitle'>{session.name}</h1>
                           <h2>
-                            <b> ONNX file: </b> {session.onnxName}
+                            <b>
+                              <Trans>ONNX file:</Trans>
+                            </b>{' '}
+                            {session.onnxName}
                           </h2>
                           <h2>
-                            <b> Csv file: </b> {session.csvName}
+                            <b>
+                              <Trans>Csv file:</Trans>
+                            </b>{' '}
+                            {session.csvName}
                           </h2>
                         </div>
                         <i className='fa-solid fa-diagram-project largeIcon'></i>

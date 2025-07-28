@@ -1,36 +1,87 @@
-```
+po
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: cs\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "Nástroj pro vývoj neuronových sítí"
+msgid " Got the basics? "
+msgstr " Chápete základy? "
 
-msgid "Already have an account? "
-msgstr "Už máte účet? "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " Pokud rozumíte tomu, jak fungují neuronové sítě, použijte následujícího průvodce pro zahájení tvorby vlastních. Nezapomeňte se zeptat asistenta AI na otázky! "
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " Hřiště neuronových sítí nabízí interaktivní způsob, jak vidět a pochopit, jak neuronová síť myslí a funguje. Stačí kliknout na tlačítko níže a začít. "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} unikátní, {2})"
+
+msgid "{key} Distribution"
+msgstr "Distribuce {key}"
+
+msgid "Add dataset:"
+msgstr "Přidat datovou sadu:"
+
+msgid "AI Chat"
+msgstr "AI Chat"
+
+msgid "Already have an account?"
+msgstr "Už máte účet?"
 
 msgid "Analyze"
 msgstr "Analyzovat"
 
-msgid "Ask"
-msgstr "Zeptat se"
-
 msgid "Attributes:"
 msgstr "Atributy:"
 
-msgid "Back to login"
-msgstr "Zpět k přihlášení"
+msgid "Best config"
+msgstr "Nejlepší konfigurace"
+
+msgid "Best configuration:"
+msgstr "Nejlepší konfigurace:"
+
+msgid "Categorical"
+msgstr "Kategorické"
+
+msgid "Categorical summary:"
+msgstr "Souhrn kategorických dat:"
 
 msgid "Category:"
 msgstr "Kategorie:"
 
+msgid "Clear Data"
+msgstr "Vymazat data"
+
+msgid "Close"
+msgstr "Zavřít"
+
+msgid "Column types:"
+msgstr "Typy sloupců:"
+
 msgid "Columns"
 msgstr "Sloupce"
+
+msgid "Columns estimate:"
+msgstr "Odhad sloupců:"
+
+msgid "Config {0}"
+msgstr "Konfigurace {0}"
+
+msgid "Configuration"
+msgstr "Konfigurace"
+
+msgid "Constant nodes"
+msgstr "Konstantní uzly"
+
+msgid "Correlation Matrix"
+msgstr "Korelační matice"
+
+msgid "Create new session"
+msgstr "Vytvořit novou relaci"
 
 msgid "Csv file:"
 msgstr "Soubor CSV:"
@@ -38,20 +89,59 @@ msgstr "Soubor CSV:"
 msgid "CSV file:"
 msgstr "Soubor CSV:"
 
+msgid "CSV tools"
+msgstr "Nástroje CSV"
+
 msgid "Cur. Memory"
 msgstr "Aktuální paměť"
 
-msgid "Don't have an account?"
-msgstr "Nemáte účet?"
+msgid "Dashboard"
+msgstr "Panel"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "Snadno interpretujte data z trénování a výstupu vašich modelů."
+msgid "Data"
+msgstr "Data"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "Snadno si vizualizujte strukturu a uzly vaší neuronové sítě v jednoduchém a srozumitelném formátu."
+msgid "Data <0/>"
+msgstr "Data <0/>"
+
+msgid "Data Distribution"
+msgstr "Distribuce dat"
+
+msgid "Dataset Overview"
+msgstr "Přehled datové sady"
+
+msgid "Docs"
+msgstr "Dokumentace"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "Nemáte účet? <0>Registrujte se zde!</0>"
+
+msgid "Download optimized"
+msgstr "Stáhnout optimalizované"
+
+msgid "Downloading..."
+msgstr "Stahuji..."
+
+msgid "E-Mail:"
+msgstr "E-mail:"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Encoding Feasibility"
+msgstr "Proveditelnost kódování"
+
+msgid "Encoding Info"
+msgstr "Informace o kódování"
+
+msgid "Encoding type:"
+msgstr "Typ kódování:"
 
 msgid "Est. Memory"
-msgstr "Odhadovaná paměť"
+msgstr "Odhad paměti"
+
+msgid "Failed to connect to AI."
+msgstr "Nepodařilo se připojit k AI."
 
 msgid "File"
 msgstr "Soubor"
@@ -59,11 +149,17 @@ msgstr "Soubor"
 msgid "File:"
 msgstr "Soubor:"
 
-msgid "Got the basics?"
-msgstr "Základy máte?"
+msgid "Hello,"
+msgstr "Ahoj,"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "Pokud rozumíte základům fungování neuronových sítí, použijte následujícího průvodce k vytvoření vlastní sítě. Nezapomeňte se zeptat asistenta AI na případné otázky!"
+msgid "High cardinality columns:"
+msgstr "Sloupce s vysokou kardinalitou:"
+
+msgid "Info"
+msgstr "Informace"
+
+msgid "Input Features:"
+msgstr "Vstupní prvky:"
 
 msgid "Inputs:"
 msgstr "Vstupy:"
@@ -71,11 +167,23 @@ msgstr "Vstupy:"
 msgid "IR version:"
 msgstr "Verze IR:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "Stačí přetáhnout a umístit soubory a začít – žádná instalace, žádné zbytečnosti."
+msgid "Know nothing about neural networks?"
+msgstr "Nevíte nic o neuronových sítích?"
+
+msgid "Language:"
+msgstr "Jazyk:"
+
+msgid "Layers"
+msgstr "Vrstva"
 
 msgid "Layers:"
-msgstr "Vrstvy:"
+msgstr "Vrstva:"
+
+msgid "Learn"
+msgstr "Učit se"
+
+msgid "Legend"
+msgstr "Legenda"
 
 msgid "Load CSV File"
 msgstr "Načíst soubor CSV"
@@ -83,65 +191,134 @@ msgstr "Načíst soubor CSV"
 msgid "Load ONNX File"
 msgstr "Načíst soubor ONNX"
 
-msgid "Loading"
-msgstr "Načítání"
+msgid "Loaded files:"
+msgstr "Načtené soubory:"
+
+msgid "Log in here <0/>"
+msgstr "Přihlaste se zde <0/>"
 
 msgid "Log out"
 msgstr "Odhlásit se"
 
-msgid "Logging in...."
-msgstr "Přihlášení..."
-
 msgid "Login"
 msgstr "Přihlásit se"
 
-msgid "Magic Link sign-in"
-msgstr "Přihlášení pomocí magického odkazu"
+msgid "logo"
+msgstr "logo"
+
+msgid "Logout"
+msgstr "Odhlásit se"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "Maximální počet epoch na konfiguraci:"
+
+msgid "mb"
+msgstr "MB"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "Minimálně 7 znaků. Měl by obsahovat alespoň jeden speciální znak a jedno číslo."
+
+msgid "Missing Data Heatmap"
+msgstr "Tepelná mapa chybějících dat"
 
 msgid "Missing values"
 msgstr "Chybějící hodnoty"
 
-msgid "Name:"
-msgstr "Jméno:"
+msgid "Missing Values Heatmap"
+msgstr "Tepelná mapa chybějících hodnot"
 
-msgid "Neural Network Development Dashboard"
-msgstr "Nástroj pro vývoj neuronových sítí"
+msgid "Model Details"
+msgstr "Detaily modelu"
+
+msgid "Name:"
+msgstr "Název:"
+
+msgid "Network Visualization"
+msgstr "Vizualizace sítě"
+
+msgid "Neurons"
+msgstr "Neurony"
 
 msgid "Neurons:"
 msgstr "Neurony:"
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision nabízí bezplatné kurzy o neuronových sítích a jejich fungování."
+
+msgid "No active session!"
+msgstr "Žádná aktivní relace!"
+
+msgid "No categorical columns"
+msgstr "Žádné kategorické sloupce"
+
+msgid "No csv file loaded"
+msgstr "Není načten žádný soubor CSV"
+
 msgid "No data to display"
 msgstr "Žádná data k zobrazení"
 
+msgid "No file uploaded"
+msgstr "Nebyl nahrán žádný soubor"
+
+msgid "No model loaded"
+msgstr "Není načten žádný model"
+
+msgid "No numerical columns"
+msgstr "Žádné číselné sloupce"
+
+msgid "No onnx file loaded"
+msgstr "Není načten žádný soubor ONNX"
+
 msgid "No optimization done."
-msgstr "Nezadána žádná optimalizace."
+msgstr "Nebyla provedena žádná optimalizace."
 
 msgid "No recommendations"
 msgstr "Žádná doporučení"
 
 msgid "No such columns"
-msgstr "Takové sloupce neexistují"
+msgstr "Žádné takové sloupce"
 
 msgid "No warnings"
-msgstr "Žádná upozornění"
+msgstr "Žádná varování"
 
 msgid "Node count:"
 msgstr "Počet uzlů:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "nabízí bezplatné kurzy o neuronových sítích a jejich fungování."
+msgid "Node physics"
+msgstr "Fyzika uzlů"
+
+msgid "Not safe"
+msgstr "Není bezpečné"
+
+msgid "Numerical"
+msgstr "Numerické"
 
 msgid "One hot"
 msgstr "One-hot"
 
+msgid "Onehot encoding:"
+msgstr "One-hot kódování:"
+
 msgid "ONNX file:"
 msgstr "Soubor ONNX:"
 
-msgid "Optimize"
-msgstr "Optimalizovat"
+msgid "Optimization"
+msgstr "Optimalizace"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "Optimalizujte svou neuronovou síť s lepší architekturou pro zlepšení její rychlosti a výstupů."
+msgid "Optimization <0/>"
+msgstr "Optimalizace <0/>"
+
+msgid "Optimization results:"
+msgstr "Výsledky optimalizace:"
+
+msgid "Optimization settings"
+msgstr "Nastavení optimalizace"
+
+msgid "Optimization strategy:"
+msgstr "Strategie optimalizace:"
+
+msgid "or drag and drop files"
+msgstr "nebo přetáhněte soubory"
 
 msgid "Outputs:"
 msgstr "Výstupy:"
@@ -149,11 +326,32 @@ msgstr "Výstupy:"
 msgid "Overall"
 msgstr "Celkově"
 
+msgid "Overall recommendation:"
+msgstr "Celkové doporučení:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "Stránka {currentPage} z {totalPages}"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "Please load or create a new session to start."
+msgstr "Pro zahájení prosím načtěte nebo vytvořte novou relaci."
+
 msgid "Producer:"
 msgstr "Výrobce:"
 
+msgid "Profile"
+msgstr "Profil"
+
 msgid "R2 score:"
-msgstr "R2 skóre:"
+msgstr "Skóre R2:"
+
+msgid "Recommendations"
+msgstr "Doporučení"
+
+msgid "Refresh"
+msgstr "Obnovit"
 
 msgid "Risky for onehot:"
 msgstr "Rizikové pro one-hot:"
@@ -161,26 +359,77 @@ msgstr "Rizikové pro one-hot:"
 msgid "Rows"
 msgstr "Řádky"
 
+msgid "Rows/Page:"
+msgstr "Řádky/stránka:"
+
+msgid "Safe"
+msgstr "Bezpečné"
+
 msgid "Safe for onehot:"
 msgstr "Bezpečné pro one-hot:"
 
-msgid "Sign up"
-msgstr "Registrovat se"
+msgid "Save"
+msgstr "Uložit"
 
-msgid "Something went wrong"
-msgstr "Něco se pokazilo"
+msgid "Send"
+msgstr "Odeslat"
+
+msgid "Sessions:"
+msgstr "Relace:"
+
+msgid "Settings"
+msgstr "Nastavení"
+
+msgid "Sign up"
+msgstr "Zaregistrovat se"
+
+msgid "Start Optimization"
+msgstr "Spustit optimalizaci"
+
+msgid "Target Feature:"
+msgstr "Cílový prvek:"
 
 msgid "Test loss:"
-msgstr "Ztráta při testování:"
+msgstr "Testovací ztráta:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "Hřiště pro neuronové sítě nabízí interaktivní způsob, jak vidět a pochopit, jak neuronová síť myslí a funguje. Stačí kliknout na tlačítko níže a začít."
+msgid "thinking..."
+msgstr "přemýšlím..."
+
+msgid "Tools"
+msgstr "Nástroje"
 
 msgid "Total categorical:"
-msgstr "Celkem kategorií:"
+msgstr "Celkem kategorických:"
+
+msgid "Type here..."
+msgstr "Pište sem..."
+
+msgid "Type:"
+msgstr "Typ:"
+
+msgid "Unsafe"
+msgstr "Nebezpečné"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "Nahrajte datovou sadu CSV, abyste viděli dostupné funkce"
+
+msgid "Upload CSV Dataset"
+msgstr "Nahrát datovou sadu CSV"
+
+msgid "Upload ONNX model"
+msgstr "Nahrát model ONNX"
+
+msgid "Username:"
+msgstr "Uživatelské jméno:"
+
+msgid "Vertical view"
+msgstr "Vertikální pohled"
 
 msgid "Visualize"
-msgstr "Zobrazit"
+msgstr "Vizualizovat"
+
+msgid "Warnings"
+msgstr "Varování"
 
 msgid "Welcome back!"
 msgstr "Vítejte zpět!"
@@ -188,12 +437,11 @@ msgstr "Vítejte zpět!"
 msgid "Welcome!"
 msgstr "Vítejte!"
 
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "Ať už trénujete jednoduchý model nebo ladíte obrovský transformátor, 2N2D se přizpůsobí vašemu pracovnímu postupu. Vše, co potřebujete k zahájení, je účet."
-
 msgid "Wrong username or password!"
-msgstr "Nesprávné uživatelské jméno nebo heslo!"
+msgstr "Špatné uživatelské jméno nebo heslo!"
 
 msgid "You are already logged in, would you like to log out?"
-msgstr "Již jste přihlášeni, chcete se odhlásit?"
-```
+msgstr "Jste již přihlášeni, chcete se odhlásit?"
+
+msgid "You are not logged in"
+msgstr "Nejste přihlášeni"

@@ -59,7 +59,6 @@ export default function Home() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ container: ref });
 
-  // Parallax for hero text
   const heroY = useTransform(scrollYProgress, [0, 0.2], [0, -80]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0.5]);
 
@@ -75,7 +74,6 @@ export default function Home() {
       <Navbar />
       <ParticleNetwork />
 
-      {/* Hero Section */}
       <motion.section
         className='heroZone'
         style={{

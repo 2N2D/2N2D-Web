@@ -1,0 +1,37 @@
+# 7 Contribuție Originală
+
+O cerință fundamentală în evaluarea proiectelor software este originalitatea contribuției autorilor. Această secțiune are rolul de a clarifica distincția dintre utilizarea uneltelor și framework-urilor moderne (o practică standard în industrie) și contribuția originală, care reprezintă nucleul funcțional și arhitectural al platformei 2N2D.
+
+Argumentăm că logica de business, arhitectura sistemului și designul interfeței, dezvoltate de la zero, constituie **peste 80% din complexitatea totală a proiectului**.
+
+### 7.1. Arhitectura Multi-Utilizator și Managementul Stării: O Abordare de la Zero
+
+Cea mai mare provocare și, totodată, cea mai semnificativă contribuție originală a fost tranziția de la un concept de script local, mono-utilizator, la o **aplicație web complexă, multi-tenant și stateful**. Aceasta nu a fost o simplă adaptare, ci o reproiectare fundamentală care a implicat:
+
+- **Proiectarea Bazei de Date:** Crearea de la zero a schemelor user și session în PostgreSQL pentru a gestiona relația unu-la-mulți și pentru a persista starea fiecărei sesiuni (fișiere încărcate, rezultate, istoric chat).
+- **Management Izolat al Fișierelor:** Implementarea logicii de stocare a fișierelor în Cloudflare R2, unde fiecare fișier este asociat în mod unic cu o sesiune și un utilizator, asigurând securitatea și izolarea datelor.
+- **Securizarea Endpoint-urilor:** Toată logica API-ului a fost construită pentru a funcționa pe bază de sesiuni, unde fiecare request este validat pentru a se asigura că utilizatorul are permisiunea de a accesa sau modifica resursele cerute.
+
+### 7.2. Logica de Business și Algoritmi Custom
+
+Deși folosim librării puternice pentru sarcinile de calcul, orchestrarea și logica de aplicare sunt complet originale.
+
+- **Reconstrucția Dinamică a Modelelor ONNX:** Nucleul platformei este capacitatea de a parsa un fișier ONNX, a-i înțelege arhitectura (straturi, activări, dimensiuni) și a-l **reconstrui dinamic într-un model Pytorch pe server**. Această logică de "traducere" este implementată integral de noi și este esențială pentru a putea reantrena și optimiza modelul.
+- **Algoritmul Brute-Force:** Strategia de optimizare "Brute Force" a fost implementată de la zero. Aceasta implică o logică custom pentru a genera noi configurații de arhitectură, a gestiona procesul de reantrenare și a evalua fiecare variantă pentru a o selecta pe cea optimă.
+- **Orchestrarea Strategiilor de Optimizare:** Clasa TwoN2D.py acționează ca un "creier" central care gestionează întregul flux de optimizare. Ea preia datele de la utilizator, deleagă sarcinile către modulele specifice (fie că e vorba de algoritmul nostru Brute-Force sau de integrarea cu librăria NEAT) și formatează rezultatele.
+
+### 7.3. Design de Interfață și Experiență Utilizator Originală
+
+Am evitat în mod deliberat utilizarea unor librării de componente UI pre-fabricate (ex: Material UI, Ant Design) pentru a crea o identitate vizuală unică și o experiență de utilizare croită exact pe nevoile proiectului.
+
+- **Toate componentele vizuale sunt create de la zero** folosind unelte de bază precum **CSS pur și Tailwind CSS**.
+- Acest lucru include elemente complexe precum: tabelele de date interactive, sistemul de upload de fișiere, vizualizările grafice (heatmap, distribuție), dashboard-ul dinamic și întregul sistem de layout cu sidebar retractabil.
+- Această abordare ne-a oferit control total asupra accesibilității, responsivității și performanței interfeței.
+
+### 7.4 Justificarea Utilizării Librăriilor Externe
+
+Folosirea unor librării consacrate precum **Firebase Auth, Pytorch, FastAPI sau DEAP** nu reprezintă o scurtătură, ci o decizie de proiectare matură, aliniată cu practicile standard din industrie. A scrie de la zero un sistem de autentificare OAuth sau un framework de calcul tensorial ar fi impractical și nesigur.
+
+Am utilizat aceste unelte pentru funcționalități standardizate și non-diferențiatoare, ceea ce ne-a permis să **ne concentrăm eforturile pe logica de business unică și inovatoare a platformei 2N2D**, descrisă mai sus. Contribuția noastră constă în **integrarea inteligentă** a acestor unelte într-o arhitectură nouă și originală.
+
+#

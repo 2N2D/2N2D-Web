@@ -1,57 +1,147 @@
-```
+po
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: fa\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "پیشخوان توسعه شبکه عصبی"
+msgid " Got the basics? "
+msgstr " اصول اولیه را یاد گرفتید؟ "
 
-msgid "Already have an account? "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " اگر مطالب مربوط به نحوه کار شبکه‌های عصبی را متوجه شدید، از راهنمای زیر برای شروع به ایجاد شبکه عصبی خود استفاده کنید. فراموش نکنید که سوالات خود را از دستیار هوش مصنوعی بپرسید! "
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " زمین بازی شبکه‌های عصبی، راهی تعاملی برای مشاهده و درک نحوه تفکر و عملکرد یک شبکه عصبی ارائه می‌دهد. برای شروع کافیست روی دکمه زیر کلیک کنید. "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} منحصر به فرد، {2})"
+
+msgid "{key} Distribution"
+msgstr "توزیع {key}"
+
+msgid "Add dataset:"
+msgstr "افزودن مجموعه داده:"
+
+msgid "AI Chat"
+msgstr "چت هوش مصنوعی"
+
+msgid "Already have an account?"
 msgstr "حساب کاربری دارید؟"
 
 msgid "Analyze"
-msgstr "تجزیه و تحلیل"
-
-msgid "Ask"
-msgstr "بپرسید"
+msgstr "تحلیل"
 
 msgid "Attributes:"
 msgstr "ویژگی‌ها:"
 
-msgid "Back to login"
-msgstr "بازگشت به ورود"
+msgid "Best config"
+msgstr "بهترین پیکربندی"
+
+msgid "Best configuration:"
+msgstr "بهترین پیکربندی:"
+
+msgid "Categorical"
+msgstr "دسته‌بندی"
+
+msgid "Categorical summary:"
+msgstr "خلاصه دسته‌بندی:"
 
 msgid "Category:"
 msgstr "دسته‌بندی:"
 
+msgid "Clear Data"
+msgstr "پاک کردن داده"
+
+msgid "Close"
+msgstr "بستن"
+
+msgid "Column types:"
+msgstr "انواع ستون:"
+
 msgid "Columns"
 msgstr "ستون‌ها"
 
+msgid "Columns estimate:"
+msgstr "تخمین ستون‌ها:"
+
+msgid "Config {0}"
+msgstr "پیکربندی {0}"
+
+msgid "Configuration"
+msgstr "پیکربندی"
+
+msgid "Constant nodes"
+msgstr "گره‌های ثابت"
+
+msgid "Correlation Matrix"
+msgstr "ماتریس همبستگی"
+
+msgid "Create new session"
+msgstr "ایجاد جلسه جدید"
+
 msgid "Csv file:"
-msgstr "فایل CSV:"
+msgstr "فایل Csv:"
 
 msgid "CSV file:"
 msgstr "فایل CSV:"
 
+msgid "CSV tools"
+msgstr "ابزارهای CSV"
+
 msgid "Cur. Memory"
 msgstr "حافظه فعلی"
 
-msgid "Don't have an account?"
-msgstr "حساب کاربری ندارید؟"
+msgid "Dashboard"
+msgstr "داشبورد"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "به راحتی داده‌های آموزش و خروجی مدل‌های خود را تفسیر کنید."
+msgid "Data"
+msgstr "داده"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "ساختار و گره‌های شبکه عصبی خود را به راحتی و به شکلی ساده و قابل فهم تجسم کنید."
+msgid "Data <0/>"
+msgstr "داده <0/>"
+
+msgid "Data Distribution"
+msgstr "توزیع داده"
+
+msgid "Dataset Overview"
+msgstr "مرور کلی مجموعه داده"
+
+msgid "Docs"
+msgstr "مستندات"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "حساب کاربری ندارید؟ <0>اینجا ثبت نام کنید!</0>"
+
+msgid "Download optimized"
+msgstr "دانلود بهینه‌سازی شده"
+
+msgid "Downloading..."
+msgstr "در حال دانلود..."
+
+msgid "E-Mail:"
+msgstr "ایمیل:"
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "Encoding Feasibility"
+msgstr "امکان‌سنجی رمزگذاری"
+
+msgid "Encoding Info"
+msgstr "اطلاعات رمزگذاری"
+
+msgid "Encoding type:"
+msgstr "نوع رمزگذاری:"
 
 msgid "Est. Memory"
-msgstr "حافظه تخمین زده شده"
+msgstr "حافظه تخمینی"
+
+msgid "Failed to connect to AI."
+msgstr "اتصال به هوش مصنوعی ناموفق بود."
 
 msgid "File"
 msgstr "فایل"
@@ -59,11 +149,17 @@ msgstr "فایل"
 msgid "File:"
 msgstr "فایل:"
 
-msgid "Got the basics?"
-msgstr "مفاهیم اولیه را فهمیدید؟"
+msgid "Hello,"
+msgstr "سلام،"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "اگر مفاهیم اولیه در مورد چگونگی عملکرد شبکه‌های عصبی را می‌دانید، از راهنمای زیر برای شروع ایجاد شبکه عصبی خود استفاده کنید. فراموش نکنید که از دستیار هوش مصنوعی سوال بپرسید!"
+msgid "High cardinality columns:"
+msgstr "ستون‌های با کاردینالیتی بالا:"
+
+msgid "Info"
+msgstr "اطلاعات"
+
+msgid "Input Features:"
+msgstr "ویژگی‌های ورودی:"
 
 msgid "Inputs:"
 msgstr "ورودی‌ها:"
@@ -71,11 +167,23 @@ msgstr "ورودی‌ها:"
 msgid "IR version:"
 msgstr "نسخه IR:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "فقط فایل‌های خود را بکشید و رها کنید و شروع کنید—بدون تنظیمات، بدون دردسر."
+msgid "Know nothing about neural networks?"
+msgstr "چیزی درباره شبکه‌های عصبی نمی‌دانید؟"
+
+msgid "Language:"
+msgstr "زبان:"
+
+msgid "Layers"
+msgstr "لایه‌ها"
 
 msgid "Layers:"
 msgstr "لایه‌ها:"
+
+msgid "Learn"
+msgstr "آموزش"
+
+msgid "Legend"
+msgstr "راهنما"
 
 msgid "Load CSV File"
 msgstr "بارگذاری فایل CSV"
@@ -83,117 +191,257 @@ msgstr "بارگذاری فایل CSV"
 msgid "Load ONNX File"
 msgstr "بارگذاری فایل ONNX"
 
-msgid "Loading"
-msgstr "در حال بارگذاری"
+msgid "Loaded files:"
+msgstr "فایل‌های بارگذاری شده:"
+
+msgid "Log in here <0/>"
+msgstr "اینجا وارد شوید <0/>"
 
 msgid "Log out"
 msgstr "خروج"
 
-msgid "Logging in...."
-msgstr "در حال ورود..."
-
 msgid "Login"
 msgstr "ورود"
 
-msgid "Magic Link sign-in"
-msgstr "ورود با لینک جادویی"
+msgid "logo"
+msgstr "لوگو"
+
+msgid "Logout"
+msgstr "خروج"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "حداکثر دوره‌ها برای هر پیکربندی:"
+
+msgid "mb"
+msgstr "مگابایت"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "حداقل ۷ کاراکتر. باید حداقل یک کاراکتر خاص و یک عدد داشته باشد."
+
+msgid "Missing Data Heatmap"
+msgstr "نمودار حرارتی داده‌های از دست رفته"
 
 msgid "Missing values"
-msgstr "مقادیر گمشده"
+msgstr "مقادیر از دست رفته"
+
+msgid "Missing Values Heatmap"
+msgstr "نقشه حرارتی مقادیر گمشده"
+
+msgid "Model Details"
+msgstr "جزئیات مدل"
 
 msgid "Name:"
 msgstr "نام:"
 
-msgid "Neural Network Development Dashboard"
-msgstr "پیشخوان توسعه شبکه عصبی"
+msgid "Network Visualization"
+msgstr "نمایش شبکه"
+
+msgid "Neurons"
+msgstr "نورون‌ها"
 
 msgid "Neurons:"
 msgstr "نورون‌ها:"
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "نورویژن دوره‌های رایگان درباره شبکه‌های عصبی و نحوه کار آنها ارائه می‌دهد."
+
+msgid "No active session!"
+msgstr "هیچ جلسه فعالی وجود ندارد!"
+
+msgid "No categorical columns"
+msgstr "هیچ ستون دسته‌بندی وجود ندارد"
+
+msgid "No csv file loaded"
+msgstr "هیچ فایل csv بارگذاری نشده است"
+
 msgid "No data to display"
-msgstr "داده‌ای برای نمایش وجود ندارد"
+msgstr "هیچ داده‌ای برای نمایش وجود ندارد"
+
+msgid "No file uploaded"
+msgstr "هیچ فایلی بارگذاری نشده است"
+
+msgid "No model loaded"
+msgstr "هیچ مدلی بارگذاری نشده است"
+
+msgid "No numerical columns"
+msgstr "هیچ ستون عددی وجود ندارد"
+
+msgid "No onnx file loaded"
+msgstr "هیچ فایل onnx بارگذاری نشده است"
 
 msgid "No optimization done."
 msgstr "بهینه‌سازی انجام نشده است."
 
 msgid "No recommendations"
-msgstr "پیشنهادی وجود ندارد"
+msgstr "توصیه‌ای وجود ندارد"
 
 msgid "No such columns"
-msgstr "چنین ستونی وجود ندارد"
+msgstr "چنین ستون‌هایی وجود ندارد"
 
 msgid "No warnings"
-msgstr "هشداری وجود ندارد"
+msgstr "هیچ هشداری وجود ندارد"
 
 msgid "Node count:"
 msgstr "تعداد گره‌ها:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "دوره‌های رایگان در مورد شبکه‌های عصبی و نحوه عملکرد آنها ارائه می‌دهد."
+msgid "Node physics"
+msgstr "فیزیک گره"
+
+msgid "Not safe"
+msgstr "ناامن"
+
+msgid "Numerical"
+msgstr "عددی"
 
 msgid "One hot"
-msgstr "یک داغ"
+msgstr "وان هات"
+
+msgid "Onehot encoding:"
+msgstr "رمزگذاری Onehot:"
 
 msgid "ONNX file:"
 msgstr "فایل ONNX:"
 
-msgid "Optimize"
+msgid "Optimization"
 msgstr "بهینه‌سازی"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "شبکه عصبی خود را با معماری بهتر بهینه‌سازی کنید تا سرعت و خروجی آن بهبود یابد."
+msgid "Optimization <0/>"
+msgstr "بهینه‌سازی <0/>"
+
+msgid "Optimization results:"
+msgstr "نتایج بهینه‌سازی:"
+
+msgid "Optimization settings"
+msgstr "تنظیمات بهینه‌سازی"
+
+msgid "Optimization strategy:"
+msgstr "استراتژی بهینه‌سازی:"
+
+msgid "or drag and drop files"
+msgstr "یا کشیدن و رها کردن فایل‌ها"
 
 msgid "Outputs:"
 msgstr "خروجی‌ها:"
 
 msgid "Overall"
-msgstr "کلا"
+msgstr "کلی"
+
+msgid "Overall recommendation:"
+msgstr "توصیه کلی:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "صفحه {currentPage} از {totalPages}"
+
+msgid "Password"
+msgstr "رمز عبور"
+
+msgid "Please load or create a new session to start."
+msgstr "لطفاً برای شروع یک جلسه جدید بارگذاری یا ایجاد کنید."
 
 msgid "Producer:"
-msgstr "تولید کننده:"
+msgstr "سازنده:"
+
+msgid "Profile"
+msgstr "پروفایل"
 
 msgid "R2 score:"
 msgstr "امتیاز R2:"
 
+msgid "Recommendations"
+msgstr "توصیه‌ها"
+
+msgid "Refresh"
+msgstr "بازخوانی"
+
 msgid "Risky for onehot:"
-msgstr "خطرناک برای یک داغ:"
+msgstr "خطرناک برای وان‌هات:"
 
 msgid "Rows"
 msgstr "ردیف‌ها"
 
+msgid "Rows/Page:"
+msgstr "ردیف‌ها در صفحه:"
+
+msgid "Safe"
+msgstr "امن"
+
 msgid "Safe for onehot:"
-msgstr "امن برای یک داغ:"
+msgstr "امن برای وان‌هات:"
+
+msgid "Save"
+msgstr "ذخیره"
+
+msgid "Send"
+msgstr "ارسال"
+
+msgid "Sessions:"
+msgstr "جلسات:"
+
+msgid "Settings"
+msgstr "تنظیمات"
 
 msgid "Sign up"
 msgstr "ثبت نام"
 
-msgid "Something went wrong"
-msgstr "مشکلی پیش آمده است"
+msgid "Start Optimization"
+msgstr "شروع بهینه‌سازی"
+
+msgid "Target Feature:"
+msgstr "ویژگی هدف:"
 
 msgid "Test loss:"
-msgstr "کاهش آزمون:"
+msgstr "خطای آزمون:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "محیط بازی شبکه عصبی روشی تعاملی برای دیدن و درک نحوه تفکر و عملکرد یک شبکه عصبی ارائه می‌دهد. فقط روی دکمه زیر کلیک کنید تا شروع کنید."
+msgid "thinking..."
+msgstr "در حال فکر کردن..."
+
+msgid "Tools"
+msgstr "ابزارها"
 
 msgid "Total categorical:"
-msgstr "مجموع دسته‌بندی‌ها:"
+msgstr "کل دسته‌بندی شده:"
+
+msgid "Type here..."
+msgstr "اینجا تایپ کنید..."
+
+msgid "Type:"
+msgstr "نوع:"
+
+msgid "Unsafe"
+msgstr "ناامن"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "برای مشاهده ویژگی‌های موجود، یک مجموعه داده CSV آپلود کنید"
+
+msgid "Upload CSV Dataset"
+msgstr "بارگذاری مجموعه داده CSV"
+
+msgid "Upload ONNX model"
+msgstr "بارگذاری مدل ONNX"
+
+msgid "Username:"
+msgstr "نام کاربری:"
+
+msgid "Vertical view"
+msgstr "نمای عمودی"
 
 msgid "Visualize"
-msgstr "تجسم"
+msgstr "نمایش"
+
+msgid "Warnings"
+msgstr "هشدارها"
 
 msgid "Welcome back!"
-msgstr "خوش آمدید!"
+msgstr "خوش برگشتید!"
 
 msgid "Welcome!"
 msgstr "خوش آمدید!"
-
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "چه در حال آموزش یک مدل ساده باشید یا در حال تنظیم دقیق یک ترانسفورمر عظیم، 2N2D با گردش کار شما سازگار است. همه آنچه برای شروع نیاز دارید یک حساب کاربری است."
 
 msgid "Wrong username or password!"
 msgstr "نام کاربری یا رمز عبور اشتباه است!"
 
 msgid "You are already logged in, would you like to log out?"
-msgstr "شما قبلاً وارد شده‌اید، آیا می‌خواهید خارج شوید؟"
-```
+msgstr "شما قبلاً وارد شده‌اید، آیا مایل به خروج هستید؟"
+
+msgid "You are not logged in"
+msgstr "شما وارد نشده‌اید"

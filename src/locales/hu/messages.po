@@ -1,257 +1,447 @@
-```
+text
+msgid ""
 msgstr ""
-"POT-Létrehozási dátum: 2024-07-30 00:03+0300\n"
-"MIME-változat: 1.0\n"
-"Tartalomtípus: text/plain; charset=utf-8\n"
-"Tartalom-átadás kódolása: 8bit\n"
-"X-Generátor: @lingui/cli\n"
-"Nyelv: hu\n"
-```
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: hu\n"
 
-```
-msgstr "Neuronális <1>H</1>álózat <2>F</2>ejlesztési <3>I</3>rányítópult"
-```
+msgid " Got the basics? "
+msgstr " Érti az alapokat? "
 
-```
-msgstr "Már van fiókod? "
-```
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " Ha érti az ideghálózatok működését, akkor a következő útmutató segítségével elkezdheti a sajátját létrehozni. Ne felejtse el kérdezni a MI Asszisztenst! "
 
-```
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " A Neural Network Playground egy interaktív módszert kínál arra, hogy megnézze és megértse, hogyan gondolkodik és működik egy neurális hálózat. Csak kattintson az alábbi gombra a kezdéshez. "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} egyedi, {2})"
+
+msgid "{key} Distribution"
+msgstr "{key} Eloszlás"
+
+msgid "Add dataset:"
+msgstr "Adathalmaz hozzáadása:"
+
+msgid "AI Chat"
+msgstr "MI Csevegés"
+
+msgid "Already have an account?"
+msgstr "Már van fiókja?"
+
+msgid "Analyze"
 msgstr "Elemzés"
-```
 
-```
-msgstr "Kérdez"
-```
-
-```
+msgid "Attributes:"
 msgstr "Attribútumok:"
-```
 
-```
-msgstr "Vissza a bejelentkezéshez"
-```
+msgid "Best config"
+msgstr "Legjobb konfiguráció"
 
-```
+msgid "Best configuration:"
+msgstr "Legjobb konfiguráció:"
+
+msgid "Categorical"
+msgstr "Kategorikus"
+
+msgid "Categorical summary:"
+msgstr "Kategorikus összefoglaló:"
+
+msgid "Category:"
 msgstr "Kategória:"
-```
 
-```
+msgid "Clear Data"
+msgstr "Adatok törlése"
+
+msgid "Close"
+msgstr "Bezárás"
+
+msgid "Column types:"
+msgstr "Oszloptípusok:"
+
+msgid "Columns"
 msgstr "Oszlopok"
-```
 
-```
-msgstr "Csv fájl:"
-```
+msgid "Columns estimate:"
+msgstr "Oszlopok becslése:"
 
-```
+msgid "Config {0}"
+msgstr "{0} konfiguráció"
+
+msgid "Configuration"
+msgstr "Konfiguráció"
+
+msgid "Constant nodes"
+msgstr "Állandó csomópontok"
+
+msgid "Correlation Matrix"
+msgstr "Korrelációs mátrix"
+
+msgid "Create new session"
+msgstr "Új munkamenet létrehozása"
+
+msgid "Csv file:"
 msgstr "CSV fájl:"
-```
 
-```
-msgstr "Jelenlegi memória"
-```
+msgid "CSV file:"
+msgstr "CSV fájl:"
 
-```
-msgstr "Nincs fiókod?"
-```
+msgid "CSV tools"
+msgstr "CSV eszközök"
 
-```
-msgstr "Könnyedén értelmezheted a modelljeid képzési és kimeneti adatait."
-```
+msgid "Cur. Memory"
+msgstr "Akt. Memória"
 
-```
-msgstr "Könnyedén vizualizálhatod a neuronális hálózatod szerkezetét és csomópontjait egy egyszerű és könnyen érthető formátumban."
-```
+msgid "Dashboard"
+msgstr "Irányítópult"
 
-```
-msgstr "Becsült memória"
-```
+msgid "Data"
+msgstr "Adat"
 
-```
+msgid "Data <0/>"
+msgstr "Adatok <0/>"
+
+msgid "Data Distribution"
+msgstr "Adateloszlás"
+
+msgid "Dataset Overview"
+msgstr "Adathalmaz áttekintése"
+
+msgid "Docs"
+msgstr "Dokumentumok"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "Nincs fiókja? <0>Regisztráljon itt!</0>"
+
+msgid "Download optimized"
+msgstr "Optimalizált letöltése"
+
+msgid "Downloading..."
+msgstr "Letöltés..."
+
+msgid "E-Mail:"
+msgstr "E-mail:"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Encoding Feasibility"
+msgstr "Kódolási megvalósíthatóság"
+
+msgid "Encoding Info"
+msgstr "Kódolási információk"
+
+msgid "Encoding type:"
+msgstr "Kódolás típusa:"
+
+msgid "Est. Memory"
+msgstr "Becs. Memória"
+
+msgid "Failed to connect to AI."
+msgstr "Nem sikerült csatlakozni a MI-hez."
+
+msgid "File"
 msgstr "Fájl"
-```
 
-```
+msgid "File:"
 msgstr "Fájl:"
-```
 
-```
-msgstr "Megtanultad az alapokat?"
-```
+msgid "Hello,"
+msgstr "Üdv,"
 
-```
-msgstr "Ha már megértetted a neuronális hálózatok működését, akkor a következő útmutató segítségével elkeztheted a saját hálózatod létrehozását. Ne felejtsd el megkérdezni az AI asszisztenst, ha bármi kérdésed van!"
-```
+msgid "High cardinality columns:"
+msgstr "Magas kardinalitású oszlopok:"
 
-```
+msgid "Info"
+msgstr "Információ"
+
+msgid "Input Features:"
+msgstr "Bemeneti jellemzők:"
+
+msgid "Inputs:"
 msgstr "Bemenetek:"
-```
 
-```
+msgid "IR version:"
 msgstr "IR verzió:"
-```
 
-```
-msgstr "Egyszerűen húzd és dobd a fájljaidat, és máris indulhatsz – nincs beállítás, nincs bonyodalom."
-```
+msgid "Know nothing about neural networks?"
+msgstr "Semmit sem tud az ideghálózatokról?"
 
-```
+msgid "Language:"
+msgstr "Nyelv:"
+
+msgid "Layers"
+msgstr "Rétegek"
+
+msgid "Layers:"
 msgstr "Rétegek:"
-```
 
-```
+msgid "Learn"
+msgstr "Tanulás"
+
+msgid "Legend"
+msgstr "Jelmagyarázat"
+
+msgid "Load CSV File"
 msgstr "CSV fájl betöltése"
-```
 
-```
+msgid "Load ONNX File"
 msgstr "ONNX fájl betöltése"
-```
 
-```
-msgstr "Betöltés"
-```
+msgid "Loaded files:"
+msgstr "Betöltött fájlok:"
 
-```
+msgid "Log in here <0/>"
+msgstr "Jelentkezzen be itt <0/>"
+
+msgid "Log out"
 msgstr "Kijelentkezés"
-```
 
-```
-msgstr "Bejelentkezés..."
-```
-
-```
+msgid "Login"
 msgstr "Bejelentkezés"
-```
 
-```
-msgstr "Varázslólinkes bejelentkezés"
-```
+msgid "logo"
+msgstr "logo"
 
-```
+msgid "Logout"
+msgstr "Kijelentkezés"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "Maximális Epóka Konfigurációnként:"
+
+msgid "mb"
+msgstr "MB"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "Minimum 7 karakter. Legalább egy speciális karaktert és egy számot kell tartalmaznia."
+
+msgid "Missing Data Heatmap"
+msgstr "Hiányzó adatok hőtérképe"
+
+msgid "Missing values"
 msgstr "Hiányzó értékek"
-```
 
-```
+msgid "Missing Values Heatmap"
+msgstr "Hiányzó értékek hőtérképe"
+
+msgid "Model Details"
+msgstr "Modell részletei"
+
+msgid "Name:"
 msgstr "Név:"
-```
 
-```
-msgstr "Neuronális Hálózat Fejlesztési Irányítópult"
-```
+msgid "Network Visualization"
+msgstr "Hálózati vizualizáció"
 
-```
+msgid "Neurons"
+msgstr "Neuronok"
+
+msgid "Neurons:"
 msgstr "Neuronok:"
-```
 
-```
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "A NeuroVision ingyenes tanfolyamokat kínál a neurális hálózatokról és azok működéséről."
+
+msgid "No active session!"
+msgstr "Nincs aktív munkamenet!"
+
+msgid "No categorical columns"
+msgstr "Nincsenek kategorikus oszlopok"
+
+msgid "No csv file loaded"
+msgstr "Nincs CSV fájl betöltve"
+
+msgid "No data to display"
 msgstr "Nincs megjeleníthető adat"
-```
 
-```
-msgstr "Nincs optimalizálás."
-```
+msgid "No file uploaded"
+msgstr "Nincs fájl feltöltve"
 
-```
-msgstr "Nincs ajánlás"
-```
+msgid "No model loaded"
+msgstr "Nincs modell betöltve"
 
-```
-msgstr "Nincs ilyen oszlop"
-```
+msgid "No numerical columns"
+msgstr "Nincsenek numerikus oszlopok"
 
-```
-msgstr "Nincs figyelmeztetés"
-```
+msgid "No onnx file loaded"
+msgstr "Nincs ONNX fájl betöltve"
 
-```
-msgstr "Csomópontszám:"
-```
+msgid "No optimization done."
+msgstr "Nincs optimalizálás elvégezve."
 
-```
-msgstr "ingyenes kurzusokat kínál a neuronális hálózatokról és működésükről."
-```
+msgid "No recommendations"
+msgstr "Nincsenek javaslatok"
 
-```
-msgstr "Egy forró"
-```
+msgid "No such columns"
+msgstr "Nincsenek ilyen oszlopok"
 
-```
+msgid "No warnings"
+msgstr "Nincsenek figyelmeztetések"
+
+msgid "Node count:"
+msgstr "Csomópontok száma:"
+
+msgid "Node physics"
+msgstr "Csomópontfizika"
+
+msgid "Not safe"
+msgstr "Nem biztonságos"
+
+msgid "Numerical"
+msgstr "Numerikus"
+
+msgid "One hot"
+msgstr "One-hot"
+
+msgid "Onehot encoding:"
+msgstr "One-hot kódolás:"
+
+msgid "ONNX file:"
 msgstr "ONNX fájl:"
-```
 
-```
+msgid "Optimization"
 msgstr "Optimalizálás"
-```
 
-```
-msgstr "Optimalizáld a neuronális hálózatodat egy jobb architektúrával a sebesség és a kimenetek javítása érdekében."
-```
+msgid "Optimization <0/>"
+msgstr "Optimalizálás <0/>"
 
-```
+msgid "Optimization results:"
+msgstr "Optimalizálási eredmények:"
+
+msgid "Optimization settings"
+msgstr "Optimalizálási beállítások"
+
+msgid "Optimization strategy:"
+msgstr "Optimalizálási stratégia:"
+
+msgid "or drag and drop files"
+msgstr "vagy húzza ide a fájlokat"
+
+msgid "Outputs:"
 msgstr "Kimenetek:"
-```
 
-```
+msgid "Overall"
 msgstr "Összesen"
-```
 
-```
-msgstr "Létrehozó:"
-```
+msgid "Overall recommendation:"
+msgstr "Átfogó javaslat:"
 
-```
-msgstr "R2 pontszám:"
-```
+msgid "Page {currentPage} of {totalPages}"
+msgstr "{currentPage}. oldal a(z) {totalPages} oldalból"
 
-```
-msgstr "Kockázatos egy forróhoz:"
-```
+msgid "Password"
+msgstr "Jelszó"
 
-```
+msgid "Please load or create a new session to start."
+msgstr "A kezdéshez töltsön be vagy hozzon létre egy új munkamenetet."
+
+msgid "Producer:"
+msgstr "Gyártó:"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "R2 score:"
+msgstr "R2 érték:"
+
+msgid "Recommendations"
+msgstr "Javaslatok"
+
+msgid "Refresh"
+msgstr "Frissítés"
+
+msgid "Risky for onehot:"
+msgstr "Kockázatos a one-hot kódoláshoz:"
+
+msgid "Rows"
 msgstr "Sorok"
-```
 
-```
-msgstr "Biztonságos egy forróhoz:"
-```
+msgid "Rows/Page:"
+msgstr "Sorok/Oldal:"
 
-```
+msgid "Safe"
+msgstr "Biztonságos"
+
+msgid "Safe for onehot:"
+msgstr "Biztonságos a one-hot kódoláshoz:"
+
+msgid "Save"
+msgstr "Mentés"
+
+msgid "Send"
+msgstr "Küldés"
+
+msgid "Sessions:"
+msgstr "Munkamenetek:"
+
+msgid "Settings"
+msgstr "Beállítások"
+
+msgid "Sign up"
 msgstr "Regisztráció"
-```
 
-```
-msgstr "Hiba történt"
-```
+msgid "Start Optimization"
+msgstr "Optimalizálás indítása"
 
-```
-msgstr "A Neuronális Hálózat Játszótér interaktív módot kínál arra, hogy láthasd és megértsd, hogyan gondolkodik és működik egy neuronális hálózat. Egyszerűen kattints az alábbi gombra a kezdéshez."
-```
+msgid "Target Feature:"
+msgstr "Céljellemző:"
 
-```
-msgstr "Összes kategória:"
-```
+msgid "Test loss:"
+msgstr "Tesztveszteség:"
 
-```
-msgstr "Megjelenítés"
-```
+msgid "thinking..."
+msgstr "gondolkodik..."
 
-```
-msgstr "Üdvözöllek vissza!"
-```
+msgid "Tools"
+msgstr "Eszközök"
 
-```
-msgstr "Üdvözöllek!"
-```
+msgid "Total categorical:"
+msgstr "Összes kategorikus:"
 
-```
-msgstr "Akár egy egyszerű modellt képsz, akár egy hatalmas transzformert hangolsz finomra, a 2N2D alkalmazkodik a munkafolyamatodhoz. Mindössze egy fiókra van szükséged a kezdéshez."
-```
+msgid "Type here..."
+msgstr "Ide írjon..."
 
-```
+msgid "Type:"
+msgstr "Típus:"
+
+msgid "Unsafe"
+msgstr "Nem biztonságos"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "Töltsön fel egy CSV adathalmazt az elérhető funkciók megtekintéséhez"
+
+msgid "Upload CSV Dataset"
+msgstr "CSV adathalmaz feltöltése"
+
+msgid "Upload ONNX model"
+msgstr "ONNX modell feltöltése"
+
+msgid "Username:"
+msgstr "Felhasználónév:"
+
+msgid "Vertical view"
+msgstr "Függőleges nézet"
+
+msgid "Visualize"
+msgstr "Vizualizáció"
+
+msgid "Warnings"
+msgstr "Figyelmeztetések"
+
+msgid "Welcome back!"
+msgstr "Üdv újra!"
+
+msgid "Welcome!"
+msgstr "Üdvözöljük!"
+
+msgid "Wrong username or password!"
 msgstr "Hibás felhasználónév vagy jelszó!"
-```
 
-```
-msgstr "Már be vagy jelentkezve, ki szeretnél jelentkezni?"
-```
+msgid "You are already logged in, would you like to log out?"
+msgstr "Már be van jelentkezve, szeretne kijelentkezni?"
+
+msgid "You are not logged in"
+msgstr "Nincs bejelentkezve"

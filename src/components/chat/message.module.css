@@ -1,21 +1,23 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    width: 100%;
-    border-bottom: 1px solid var(--border-color);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 .sender {
-    font-size: large;
-    font-weight: bolder;
-    color: var(--primary-color);
+  font-size: large;
+  font-weight: bolder;
+  color: var(--primary-color);
 }
 
 .content {
-    font-size: medium;
+  font-size: medium;
+  max-width: 100%;
+  word-break: normal;
+  white-space: pre-wrap;
 }

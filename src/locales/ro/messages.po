@@ -1,57 +1,147 @@
-```
+po
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: ro\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "Tablou de Bord pentru Dezvoltarea Rețelelor Neuronale"
+msgid " Got the basics? "
+msgstr " Ai înțeles elementele de bază? "
 
-msgid "Already have an account? "
-msgstr "Ai deja un cont? "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " Dacă ai înțeles elementele despre cum funcționează rețelele neuronale, atunci folosește următorul ghid pentru a începe să le creezi pe ale tale. Nu uita să pui întrebări Asistentului AI! "
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " Mediul de testare al rețelelor neuronale (Neural Network Playground) oferă o modalitate interactivă de a vedea și înțelege cum gândește și funcționează o rețea neuronală. Doar apasă butonul de mai jos pentru a începe. "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} unice, {2})"
+
+msgid "{key} Distribution"
+msgstr "Distribuția {key}"
+
+msgid "Add dataset:"
+msgstr "Adaugă set de date:"
+
+msgid "AI Chat"
+msgstr "Chat AI"
+
+msgid "Already have an account?"
+msgstr "Ai deja un cont?"
 
 msgid "Analyze"
 msgstr "Analizează"
 
-msgid "Ask"
-msgstr "Întreabă"
-
 msgid "Attributes:"
 msgstr "Atribute:"
 
-msgid "Back to login"
-msgstr "Înapoi la autentificare"
+msgid "Best config"
+msgstr "Cea mai bună configurație"
+
+msgid "Best configuration:"
+msgstr "Cea mai bună configurație:"
+
+msgid "Categorical"
+msgstr "Categoric"
+
+msgid "Categorical summary:"
+msgstr "Rezumat categoric:"
 
 msgid "Category:"
 msgstr "Categorie:"
 
+msgid "Clear Data"
+msgstr "Șterge datele"
+
+msgid "Close"
+msgstr "Închide"
+
+msgid "Column types:"
+msgstr "Tipuri de coloane:"
+
 msgid "Columns"
 msgstr "Coloane"
 
+msgid "Columns estimate:"
+msgstr "Estimare coloane:"
+
+msgid "Config {0}"
+msgstr "Configurația {0}"
+
+msgid "Configuration"
+msgstr "Configurație"
+
+msgid "Constant nodes"
+msgstr "Noduri constante"
+
+msgid "Correlation Matrix"
+msgstr "Matricea de Corelație"
+
+msgid "Create new session"
+msgstr "Creează sesiune nouă"
+
 msgid "Csv file:"
-msgstr "Fișier csv:"
+msgstr "Fișier CSV:"
 
 msgid "CSV file:"
 msgstr "Fișier CSV:"
 
+msgid "CSV tools"
+msgstr "Instrumente CSV"
+
 msgid "Cur. Memory"
-msgstr "Memorie curentă"
+msgstr "Memorie curen."
 
-msgid "Don't have an account?"
-msgstr "Nu ai un cont?"
+msgid "Dashboard"
+msgstr "Tablou de bord"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "Interpretați cu ușurință datele de antrenament și de ieșire din modelele dvs."
+msgid "Data"
+msgstr "Date"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "Vizualizați cu ușurință structura și nodurile rețelei dvs. neuronale, într-un format ușor și simplu de înțeles."
+msgid "Data <0/>"
+msgstr "Date <0/>"
+
+msgid "Data Distribution"
+msgstr "Distribuția Datelor"
+
+msgid "Dataset Overview"
+msgstr "Prezentare generală a setului de date"
+
+msgid "Docs"
+msgstr "Documentație"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "Nu ai un cont? <0>Înregistrează-te aici!</0>"
+
+msgid "Download optimized"
+msgstr "Descarcă optimizat"
+
+msgid "Downloading..."
+msgstr "Se descarcă..."
+
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Encoding Feasibility"
+msgstr "Fezaibilitate Codificare"
+
+msgid "Encoding Info"
+msgstr "Informații codificare"
+
+msgid "Encoding type:"
+msgstr "Tip codificare:"
 
 msgid "Est. Memory"
-msgstr "Memorie estimată"
+msgstr "Memorie Est."
+
+msgid "Failed to connect to AI."
+msgstr "Conectare eșuată la AI."
 
 msgid "File"
 msgstr "Fișier"
@@ -59,11 +149,17 @@ msgstr "Fișier"
 msgid "File:"
 msgstr "Fișier:"
 
-msgid "Got the basics?"
-msgstr "Ai înțeles noțiunile de bază?"
+msgid "Hello,"
+msgstr "Bună,"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "Dacă ai înțeles cum funcționează rețelele neuronale, folosește următorul ghid pentru a începe să-ți creezi propria rețea. Nu uita să întrebi Asistentul AI dacă ai întrebări!"
+msgid "High cardinality columns:"
+msgstr "Coloane cu cardinalitate ridicată:"
+
+msgid "Info"
+msgstr "Informații"
+
+msgid "Input Features:"
+msgstr "Caracteristici de intrare:"
 
 msgid "Inputs:"
 msgstr "Intrări:"
@@ -71,11 +167,23 @@ msgstr "Intrări:"
 msgid "IR version:"
 msgstr "Versiune IR:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "Pur și simplu trageți și plasați fișierele dvs. și începeți—fără configurare, fără complicații."
+msgid "Know nothing about neural networks?"
+msgstr "Nu știi nimic despre rețelele neuronale?"
+
+msgid "Language:"
+msgstr "Limbă:"
+
+msgid "Layers"
+msgstr "Straturi"
 
 msgid "Layers:"
 msgstr "Straturi:"
+
+msgid "Learn"
+msgstr "Învață"
+
+msgid "Legend"
+msgstr "Legendă"
 
 msgid "Load CSV File"
 msgstr "Încarcă fișier CSV"
@@ -83,65 +191,134 @@ msgstr "Încarcă fișier CSV"
 msgid "Load ONNX File"
 msgstr "Încarcă fișier ONNX"
 
-msgid "Loading"
-msgstr "Se încarcă"
+msgid "Loaded files:"
+msgstr "Fișiere încărcate:"
+
+msgid "Log in here <0/>"
+msgstr "Autentifică-te aici <0/>"
 
 msgid "Log out"
 msgstr "Deconectare"
 
-msgid "Logging in...."
-msgstr "Autentificare..."
-
 msgid "Login"
 msgstr "Autentificare"
 
-msgid "Magic Link sign-in"
-msgstr "Autentificare prin Magic Link"
+msgid "logo"
+msgstr "logo"
+
+msgid "Logout"
+msgstr "Deconectare"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "Epoci maxime per configurație:"
+
+msgid "mb"
+msgstr "MB"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "Minim 7 caractere. Ar trebui să conțină cel puțin un caracter special și o cifră."
+
+msgid "Missing Data Heatmap"
+msgstr "Harta termică a datelor lipsă"
 
 msgid "Missing values"
 msgstr "Valori lipsă"
 
+msgid "Missing Values Heatmap"
+msgstr "Harta termică a valorilor lipsă"
+
+msgid "Model Details"
+msgstr "Detalii model"
+
 msgid "Name:"
 msgstr "Nume:"
 
-msgid "Neural Network Development Dashboard"
-msgstr "Tablou de Bord pentru Dezvoltarea Rețelelor Neuronale"
+msgid "Network Visualization"
+msgstr "Vizualizarea Rețelei"
+
+msgid "Neurons"
+msgstr "Neuroni"
 
 msgid "Neurons:"
 msgstr "Neuroni:"
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision oferă cursuri gratuite despre rețelele neuronale și modul lor de funcționare."
+
+msgid "No active session!"
+msgstr "Nicio sesiune activă!"
+
+msgid "No categorical columns"
+msgstr "Nicio coloană categorică"
+
+msgid "No csv file loaded"
+msgstr "Niciun fișier CSV încărcat"
+
 msgid "No data to display"
 msgstr "Nu există date de afișat"
 
+msgid "No file uploaded"
+msgstr "Niciun fișier încărcat"
+
+msgid "No model loaded"
+msgstr "Niciun model încărcat"
+
+msgid "No numerical columns"
+msgstr "Nicio coloană numerică"
+
+msgid "No onnx file loaded"
+msgstr "Niciun fișier ONNX încărcat"
+
 msgid "No optimization done."
-msgstr "Nu s-a efectuat nicio optimizare."
+msgstr "Nicio optimizare efectuată."
 
 msgid "No recommendations"
 msgstr "Nicio recomandare"
 
 msgid "No such columns"
-msgstr "Nu există astfel de coloane"
+msgstr "Nicio astfel de coloană"
 
 msgid "No warnings"
-msgstr "Fără avertismente"
+msgstr "Niciun avertisment"
 
 msgid "Node count:"
 msgstr "Număr noduri:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "oferă cursuri gratuite despre rețelele neuronale și modul lor de funcționare."
+msgid "Node physics"
+msgstr "Fizica nodurilor"
+
+msgid "Not safe"
+msgstr "Nu este sigur"
+
+msgid "Numerical"
+msgstr "Numeric"
 
 msgid "One hot"
 msgstr "One hot"
 
+msgid "Onehot encoding:"
+msgstr "Codificare One-hot:"
+
 msgid "ONNX file:"
 msgstr "Fișier ONNX:"
 
-msgid "Optimize"
-msgstr "Optimizează"
+msgid "Optimization"
+msgstr "Optimizare"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "Optimizează-ți rețeaua neuronală cu o arhitectură mai bună pentru a îmbunătăți viteza și ieșirile acesteia."
+msgid "Optimization <0/>"
+msgstr "Optimizare <0/>"
+
+msgid "Optimization results:"
+msgstr "Rezultate optimizare:"
+
+msgid "Optimization settings"
+msgstr "Setări optimizare"
+
+msgid "Optimization strategy:"
+msgstr "Strategie optimizare:"
+
+msgid "or drag and drop files"
+msgstr "sau trage și plasează fișiere"
 
 msgid "Outputs:"
 msgstr "Ieșiri:"
@@ -149,51 +326,122 @@ msgstr "Ieșiri:"
 msgid "Overall"
 msgstr "General"
 
+msgid "Overall recommendation:"
+msgstr "Recomandare generală:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "Pagina {currentPage} din {totalPages}"
+
+msgid "Password"
+msgstr "Parolă"
+
+msgid "Please load or create a new session to start."
+msgstr "Vă rugăm să încărcați sau să creați o sesiune nouă pentru a începe."
+
 msgid "Producer:"
 msgstr "Producător:"
 
+msgid "Profile"
+msgstr "Profil"
+
 msgid "R2 score:"
-msgstr "Scor R2:"
+msgstr "Scorul R2:"
+
+msgid "Recommendations"
+msgstr "Recomandări"
+
+msgid "Refresh"
+msgstr "Reîmprospătează"
 
 msgid "Risky for onehot:"
-msgstr "Riscant pentru onehot:"
+msgstr "Riscant pentru one-hot:"
 
 msgid "Rows"
 msgstr "Rânduri"
 
+msgid "Rows/Page:"
+msgstr "Rânduri/Pagină:"
+
+msgid "Safe"
+msgstr "Sigur"
+
 msgid "Safe for onehot:"
-msgstr "Sigur pentru onehot:"
+msgstr "Sigur pentru one-hot:"
+
+msgid "Save"
+msgstr "Salvează"
+
+msgid "Send"
+msgstr "Trimite"
+
+msgid "Sessions:"
+msgstr "Sesiuni:"
+
+msgid "Settings"
+msgstr "Setări"
 
 msgid "Sign up"
 msgstr "Înregistrare"
 
-msgid "Something went wrong"
-msgstr "A apărut o eroare"
+msgid "Start Optimization"
+msgstr "Pornire optimizare"
+
+msgid "Target Feature:"
+msgstr "Caracteristică țintă:"
 
 msgid "Test loss:"
 msgstr "Pierdere test:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "Neural Network Playground oferă o modalitate interactivă de a vedea și de a înțelege cum gândește și funcționează o rețea neuronală. Apasă pur și simplu butonul de mai jos pentru a începe."
+msgid "thinking..."
+msgstr "gândesc..."
+
+msgid "Tools"
+msgstr "Instrumente"
 
 msgid "Total categorical:"
-msgstr "Total categoric:"
+msgstr "Total categorice:"
+
+msgid "Type here..."
+msgstr "Scrie aici..."
+
+msgid "Type:"
+msgstr "Tip:"
+
+msgid "Unsafe"
+msgstr "Nesigur"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "Încarcă un set de date CSV pentru a vedea caracteristicile disponibile"
+
+msgid "Upload CSV Dataset"
+msgstr "Încarcă set de date CSV"
+
+msgid "Upload ONNX model"
+msgstr "Încarcă model ONNX"
+
+msgid "Username:"
+msgstr "Nume de utilizator:"
+
+msgid "Vertical view"
+msgstr "Vizualizare verticală"
 
 msgid "Visualize"
 msgstr "Vizualizează"
 
+msgid "Warnings"
+msgstr "Avertismente"
+
 msgid "Welcome back!"
-msgstr "Bun venit înapoi!"
+msgstr "Bine ai revenit!"
 
 msgid "Welcome!"
 msgstr "Bun venit!"
 
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "Fie că antrenați un model simplu sau reglați fin un transformator masiv, 2N2D se adaptează la fluxul dvs. de lucru. Tot ce aveți nevoie pentru a începe este un cont."
-
 msgid "Wrong username or password!"
-msgstr "Nume de utilizator sau parolă greșită!"
+msgstr "Nume de utilizator sau parolă greșite!"
 
 msgid "You are already logged in, would you like to log out?"
-msgstr "Sunteți deja conectat, doriți să vă deconectați?"
-```
+msgstr "Ești deja conectat, dorești să te deconectezi?"
+
+msgid "You are not logged in"
+msgstr "Nu ești conectat"

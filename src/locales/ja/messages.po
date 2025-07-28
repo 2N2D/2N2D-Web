@@ -1,81 +1,187 @@
-```
-msgid ""
-msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+msgstr
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: ja\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "ニューラルネットワーク開発ダッシュボード"
+msgid " Got the basics? "
+msgstr " 基本は理解できましたか？ "
 
-msgid "Already have an account? "
-msgstr "アカウントをお持ちですか？"
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " ニューラルネットワークの仕組みについての理解ができたら、以下のガイドを使って独自のネットワークを作成してみましょう。AIアシスタントに質問することも忘れずに！ "
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " Neural Network Playgroundは、ニューラルネットワークがどのように考え、機能するかをインタラクティブに見て理解できる場所です。下のボタンをクリックして始めましょう。 "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} ユニーク, {2})"
+
+msgid "{key} Distribution"
+msgstr "{key} の分布"
+
+msgid "Add dataset:"
+msgstr "データセットを追加:"
+
+msgid "AI Chat"
+msgstr "AIチャット"
+
+msgid "Already have an account?"
+msgstr "すでにアカウントをお持ちですか？"
 
 msgid "Analyze"
 msgstr "分析"
 
-msgid "Ask"
-msgstr "質問する"
-
 msgid "Attributes:"
-msgstr "属性："
+msgstr "属性:"
 
-msgid "Back to login"
-msgstr "ログイン画面に戻る"
+msgid "Best config"
+msgstr "最良の設定"
+
+msgid "Best configuration:"
+msgstr "最良の構成:"
+
+msgid "Categorical"
+msgstr "カテゴリカル"
+
+msgid "Categorical summary:"
+msgstr "カテゴリカルの概要:"
 
 msgid "Category:"
-msgstr "カテゴリ："
+msgstr "カテゴリ:"
+
+msgid "Clear Data"
+msgstr "データを消去"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "Column types:"
+msgstr "列の型:"
 
 msgid "Columns"
 msgstr "列"
 
+msgid "Columns estimate:"
+msgstr "列の見積もり:"
+
+msgid "Config {0}"
+msgstr "設定 {0}"
+
+msgid "Configuration"
+msgstr "構成"
+
+msgid "Constant nodes"
+msgstr "定数ノード"
+
+msgid "Correlation Matrix"
+msgstr "相関行列"
+
+msgid "Create new session"
+msgstr "新しいセッションを作成"
+
 msgid "Csv file:"
-msgstr "CSVファイル："
+msgstr "CSVファイル:"
 
 msgid "CSV file:"
-msgstr "CSVファイル："
+msgstr "CSVファイル:"
+
+msgid "CSV tools"
+msgstr "CSVツール"
 
 msgid "Cur. Memory"
-msgstr "現在メモリ"
+msgstr "現在のメモリ"
 
-msgid "Don't have an account?"
-msgstr "アカウントをお持ちでない場合？"
+msgid "Dashboard"
+msgstr "ダッシュボード"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "モデルのトレーニングデータと出力データを簡単に解釈できます。"
+msgid "Data"
+msgstr "データ"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "簡単で分かりやすい形式で、ニューラルネットワークの構造とノードを簡単に視覚化できます。"
+msgid "Data <0/>"
+msgstr "データ <0/>"
+
+msgid "Data Distribution"
+msgstr "データ分布"
+
+msgid "Dataset Overview"
+msgstr "データセットの概要"
+
+msgid "Docs"
+msgstr "ドキュメント"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "アカウントをお持ちではありませんか？ <0>こちらから登録！</0>"
+
+msgid "Download optimized"
+msgstr "最適化されたものをダウンロード"
+
+msgid "Downloading..."
+msgstr "ダウンロード中..."
+
+msgid "E-Mail:"
+msgstr "メールアドレス:"
+
+msgid "Email"
+msgstr "メールアドレス"
+
+msgid "Encoding Feasibility"
+msgstr "エンコーディングの可能性"
+
+msgid "Encoding Info"
+msgstr "エンコーディング情報"
+
+msgid "Encoding type:"
+msgstr "エンコーディングの種類:"
 
 msgid "Est. Memory"
 msgstr "推定メモリ"
+
+msgid "Failed to connect to AI."
+msgstr "AIへの接続に失敗しました。"
 
 msgid "File"
 msgstr "ファイル"
 
 msgid "File:"
-msgstr "ファイル："
+msgstr "ファイル:"
 
-msgid "Got the basics?"
-msgstr "基本は理解しましたか？"
+msgid "Hello,"
+msgstr "こんにちは、"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "ニューラルネットワークの仕組みについて理解したら、次のガイドを使って独自のニューラルネットワークの作成を始めましょう。AIアシスタントに質問することを忘れないでください！"
+msgid "High cardinality columns:"
+msgstr "カーディナリティの高い列:"
+
+msgid "Info"
+msgstr "情報"
+
+msgid "Input Features:"
+msgstr "入力特徴量:"
 
 msgid "Inputs:"
-msgstr "入力："
+msgstr "入力:"
 
 msgid "IR version:"
-msgstr "IRバージョン："
+msgstr "IRバージョン:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "ファイルをドラッグアンドドロップするだけで開始できます。設定不要で手間がかかりません。"
+msgid "Know nothing about neural networks?"
+msgstr "ニューラルネットワークについて何も知りませんか？"
+
+msgid "Language:"
+msgstr "言語:"
+
+msgid "Layers"
+msgstr "レイヤー"
 
 msgid "Layers:"
-msgstr "レイヤー："
+msgstr "レイヤー:"
+
+msgid "Learn"
+msgstr "学習"
+
+msgid "Legend"
+msgstr "凡例"
 
 msgid "Load CSV File"
 msgstr "CSVファイルを読み込む"
@@ -83,41 +189,89 @@ msgstr "CSVファイルを読み込む"
 msgid "Load ONNX File"
 msgstr "ONNXファイルを読み込む"
 
-msgid "Loading"
-msgstr "読み込み中"
+msgid "Loaded files:"
+msgstr "読み込まれたファイル:"
+
+msgid "Log in here <0/>"
+msgstr "こちらからログイン <0/>"
 
 msgid "Log out"
 msgstr "ログアウト"
 
-msgid "Logging in...."
-msgstr "ログイン中…"
-
 msgid "Login"
 msgstr "ログイン"
 
-msgid "Magic Link sign-in"
-msgstr "マジックリンクサインイン"
+msgid "logo"
+msgstr "ロゴ"
+
+msgid "Logout"
+msgstr "ログアウト"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "構成ごとの最大エポック数:"
+
+msgid "mb"
+msgstr "MB"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "7文字以上である必要があります。少なくとも1つの特殊文字と1つの数字を含める必要があります。"
+
+msgid "Missing Data Heatmap"
+msgstr "欠損データヒートマップ"
 
 msgid "Missing values"
 msgstr "欠損値"
 
-msgid "Name:"
-msgstr "名前："
+msgid "Missing Values Heatmap"
+msgstr "欠損値ヒートマップ"
 
-msgid "Neural Network Development Dashboard"
-msgstr "ニューラルネットワーク開発ダッシュボード"
+msgid "Model Details"
+msgstr "モデルの詳細"
+
+msgid "Name:"
+msgstr "名前:"
+
+msgid "Network Visualization"
+msgstr "ネットワークの可視化"
+
+msgid "Neurons"
+msgstr "ニューロン"
 
 msgid "Neurons:"
-msgstr "ニューロン："
+msgstr "ニューロン:"
+
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVisionは、ニューラルネットワークとその仕組みに関する無料のコースを提供しています。"
+
+msgid "No active session!"
+msgstr "アクティブなセッションはありません！"
+
+msgid "No categorical columns"
+msgstr "カテゴリカル列はありません"
+
+msgid "No csv file loaded"
+msgstr "CSVファイルが読み込まれていません"
 
 msgid "No data to display"
 msgstr "表示するデータがありません"
 
+msgid "No file uploaded"
+msgstr "ファイルがアップロードされていません"
+
+msgid "No model loaded"
+msgstr "モデルが読み込まれていません"
+
+msgid "No numerical columns"
+msgstr "数値列はありません"
+
+msgid "No onnx file loaded"
+msgstr "ONNXファイルが読み込まれていません"
+
 msgid "No optimization done."
-msgstr "最適化されていません。"
+msgstr "最適化は行われていません。"
 
 msgid "No recommendations"
-msgstr "推奨事項はありません"
+msgstr "おすすめはありません"
 
 msgid "No such columns"
 msgstr "そのような列はありません"
@@ -126,74 +280,166 @@ msgid "No warnings"
 msgstr "警告はありません"
 
 msgid "Node count:"
-msgstr "ノード数："
+msgstr "ノード数:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "ニューラルネットワークとその仕組みに関する無料コースを提供しています。"
+msgid "Node physics"
+msgstr "ノードの物理"
+
+msgid "Not safe"
+msgstr "安全ではありません"
+
+msgid "Numerical"
+msgstr "数値"
 
 msgid "One hot"
-msgstr "ワンホット"
+msgstr "One-Hot"
+
+msgid "Onehot encoding:"
+msgstr "One-Hotエンコーディング:"
 
 msgid "ONNX file:"
-msgstr "ONNXファイル："
+msgstr "ONNXファイル:"
 
-msgid "Optimize"
+msgid "Optimization"
 msgstr "最適化"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "より優れたアーキテクチャでニューラルネットワークを最適化し、速度と出力を向上させます。"
+msgid "Optimization <0/>"
+msgstr "最適化 <0/>"
+
+msgid "Optimization results:"
+msgstr "最適化の結果:"
+
+msgid "Optimization settings"
+msgstr "最適化設定"
+
+msgid "Optimization strategy:"
+msgstr "最適化戦略:"
+
+msgid "or drag and drop files"
+msgstr "またはファイルをドラッグ＆ドロップ"
 
 msgid "Outputs:"
-msgstr "出力："
+msgstr "出力:"
 
 msgid "Overall"
 msgstr "全体"
 
+msgid "Overall recommendation:"
+msgstr "全体的なおすすめ:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "{totalPages}ページ中{currentPage}ページ"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Please load or create a new session to start."
+msgstr "開始するには、ロードまたは新しいセッションを作成してください。"
+
 msgid "Producer:"
-msgstr "プロデューサー："
+msgstr "作成者:"
+
+msgid "Profile"
+msgstr "プロフィール"
 
 msgid "R2 score:"
-msgstr "R2スコア："
+msgstr "R2スコア:"
+
+msgid "Recommendations"
+msgstr "おすすめ"
+
+msgid "Refresh"
+msgstr "更新"
 
 msgid "Risky for onehot:"
-msgstr "ワンホットエンコーディングのリスク："
+msgstr "One-Hotエンコーディングにはリスクがあります:"
 
 msgid "Rows"
 msgstr "行"
 
+msgid "Rows/Page:"
+msgstr "行数/ページ:"
+
+msgid "Safe"
+msgstr "安全"
+
 msgid "Safe for onehot:"
-msgstr "ワンホットエンコーディングで安全："
+msgstr "One-Hotエンコーディングには安全です:"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Send"
+msgstr "送信"
+
+msgid "Sessions:"
+msgstr "セッション:"
+
+msgid "Settings"
+msgstr "設定"
 
 msgid "Sign up"
 msgstr "サインアップ"
 
-msgid "Something went wrong"
-msgstr "何か問題が発生しました"
+msgid "Start Optimization"
+msgstr "最適化を開始"
+
+msgid "Target Feature:"
+msgstr "ターゲット特徴量:"
 
 msgid "Test loss:"
-msgstr "テスト損失："
+msgstr "テスト損失:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "ニューラルネットワークプレイグラウンドでは、ニューラルネットワークの思考と機能をインタラクティブに見て理解することができます。下のボタンをクリックして始めましょう。"
+msgid "thinking..."
+msgstr "思考中..."
+
+msgid "Tools"
+msgstr "ツール"
 
 msgid "Total categorical:"
-msgstr "カテゴリの合計："
+msgstr "カテゴリカルの合計:"
+
+msgid "Type here..."
+msgstr "ここにタイプ..."
+
+msgid "Type:"
+msgstr "種類:"
+
+msgid "Unsafe"
+msgstr "安全ではありません"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "利用可能な特徴量を確認するには、CSVデータセットをアップロードしてください"
+
+msgid "Upload CSV Dataset"
+msgstr "CSVデータセットをアップロード"
+
+msgid "Upload ONNX model"
+msgstr "ONNXモデルをアップロード"
+
+msgid "Username:"
+msgstr "ユーザー名:"
+
+msgid "Vertical view"
+msgstr "垂直ビュー"
 
 msgid "Visualize"
-msgstr "視覚化する"
+msgstr "可視化"
+
+msgid "Warnings"
+msgstr "警告"
 
 msgid "Welcome back!"
-msgstr "ようこそ！"
+msgstr "おかえりなさい！"
 
 msgid "Welcome!"
 msgstr "ようこそ！"
-
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "シンプルなモデルをトレーニングする場合でも、大規模なトランスフォーマーを微調整する場合でも、2N2D はあなたのワークフローに適応します。開始するにはアカウントが必要です。"
 
 msgid "Wrong username or password!"
 msgstr "ユーザー名またはパスワードが間違っています！"
 
 msgid "You are already logged in, would you like to log out?"
 msgstr "すでにログインしています。ログアウトしますか？"
-```
+
+msgid "You are not logged in"
+msgstr "ログインしていません"

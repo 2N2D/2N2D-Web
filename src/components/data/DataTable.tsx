@@ -1,18 +1,22 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Style from "./DataTable.module.css";
-
+import React, { useState } from 'react';
+import Style from './DataTable.module.css';
+import { Trans, useLingui } from '@lingui/react/macro';
 
 function Table(results: any) {
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
 
+  const { t } = useLingui();
+
   results = results.result;
   if (results === null || results == undefined) {
     return (
       <div>
-        <h1> No data to display </h1>
+        <h1>
+          <Trans>No data to display</Trans>
+        </h1>
       </div>
     );
   }
@@ -34,7 +38,7 @@ function Table(results: any) {
   const currentRows = [...Array(rowsPerPage)].map((_, rowIndex) =>
     rowIndex + (currentPage - 1) * rowsPerPage < maxRows
       ? rowIndex + (currentPage - 1) * rowsPerPage
-      : -1,
+      : -1
   );
 
   return (
@@ -45,16 +49,18 @@ function Table(results: any) {
             onClick={() => setCurrentPage(1)}
             disabled={currentPage === 1}
           >
-            <i className="fa-solid fa-left-to-line"></i>
+            <i className='fa-solid fa-left-to-line'></i>
           </button>
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
           >
-            <i className="fa-solid fa-left"></i>
+            <i className='fa-solid fa-left'></i>
           </button>
           <span>
-            Page {currentPage} of {totalPages}
+            <Trans>
+              Page {currentPage} of {totalPages}
+            </Trans>
           </span>
           <button
             onClick={() =>
@@ -62,20 +68,20 @@ function Table(results: any) {
             }
             disabled={currentPage === totalPages}
           >
-            <i className="fa-solid fa-right"></i>
+            <i className='fa-solid fa-right'></i>
           </button>
           <button
             onClick={() => setCurrentPage(totalPages)}
             disabled={currentPage === totalPages}
           >
-            <i className="fa-solid fa-right-to-line"></i>
+            <i className='fa-solid fa-right-to-line'></i>
           </button>
         </div>
         <div className={Style.controls}>
-          Rows/Page:
+          <Trans>Rows/Page:</Trans>
           <input
-            type={"number"}
-            min={"1"}
+            type={'number'}
+            min={'1'}
             value={rowsPerPage}
             onChange={(e) => {
               setRowsPerPage(Number(e.target.value));
@@ -89,22 +95,19 @@ function Table(results: any) {
       <table className={Style.table}>
         <thead>
           <tr className={Style.headerRow}>
-            {/* Render headers from the Map keys */}
             {[...data.keys()].map((key, index) => (
               <th key={index}>{key}</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {/* Render rows for the current page */}
           {currentRows.map((rowIndex, rowIndexInPage) => {
-            if (rowIndex === -1) return null; // Skip if no valid data for this row
+            if (rowIndex === -1) return null;
 
             return (
               <tr key={rowIndexInPage}>
-                {/* Render each column based on the row */}
                 {[...data].map(([key, values], colIndex) => (
-                  <td key={colIndex}>{values[rowIndex] || "-"}</td>
+                  <td key={colIndex}>{values[rowIndex] || '-'}</td>
                 ))}
               </tr>
             );
@@ -112,7 +115,7 @@ function Table(results: any) {
         </tbody>
       </table>
       {rowsPerPage < 30 ? (
-        ""
+        ''
       ) : (
         <div className={Style.controlsContainer}>
           <div className={Style.controls}>
@@ -120,16 +123,18 @@ function Table(results: any) {
               onClick={() => setCurrentPage(1)}
               disabled={currentPage === 1}
             >
-              <i className="fa-solid fa-left-to-line"></i>
+              <i className='fa-solid fa-left-to-line'></i>
             </button>
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
             >
-              <i className="fa-solid fa-left"></i>
+              <i className='fa-solid fa-left'></i>
             </button>
             <span>
-              Page {currentPage} of {totalPages}
+              <Trans>
+                Page {currentPage} of {totalPages}
+              </Trans>
             </span>
             <button
               onClick={() =>
@@ -137,21 +142,21 @@ function Table(results: any) {
               }
               disabled={currentPage === totalPages}
             >
-              <i className="fa-solid fa-right"></i>
+              <i className='fa-solid fa-right'></i>
             </button>
             <button
               onClick={() => setCurrentPage(totalPages)}
               disabled={currentPage === totalPages}
             >
-              <i className="fa-solid fa-right-to-line"></i>
+              <i className='fa-solid fa-right-to-line'></i>
             </button>
           </div>
           <div className={Style.controls}>
-            Rows/Page:
+            <Trans>Rows/Page:</Trans>
             <input
-              type={"number"}
+              type={'number'}
               value={rowsPerPage}
-              min={"1"}
+              min={'1'}
               onChange={(e) => {
                 setRowsPerPage(Number(e.target.value));
                 if (rowsPerPage < 1) {

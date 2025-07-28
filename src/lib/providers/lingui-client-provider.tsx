@@ -11,10 +11,10 @@ type Props = {
 };
 
 export function LinguiClientProvider({
-                                       children,
-                                       initialLocale,
-                                       initialMessages
-                                     }: Props) {
+  children,
+  initialLocale,
+  initialMessages
+}: Props) {
   const [i18n] = useState(() => {
     return setupI18n({
       locale: initialLocale,

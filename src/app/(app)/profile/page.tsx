@@ -10,18 +10,15 @@ import {
 } from '@/lib/sessionHandling/sessionManager';
 import { logout } from '@/lib/auth/authentication';
 import './styles.css';
+import { Trans, useLingui } from '@lingui/react/macro';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 
 export default function Profile() {
   const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
+  const { t } = useLingui();
 
   async function onLoad() {
-    const sesId = sessionStorage.getItem('currentSessionId');
-    if (!sesId) {
-      router.push('/');
-      return;
-    }
-
     const _user = await getUser();
     if (!_user || typeof _user == 'string') {
       router.push('/');
@@ -57,31 +54,44 @@ export default function Profile() {
 
   return (
     <main className={'profilePage'}>
-      <ParticleNetwork />
       <div className={'profileArea'}>
-        <h1 className={'title'}>Profile</h1>
+        <h1 className={'title'}>
+          <Trans>Profile</Trans>
+        </h1>
         {user ? (
           <form onSubmit={updateName}>
-            <label className={'subtitle'}>Username:</label>
+            <label className={'subtitle'}>
+              <Trans>Username:</Trans>
+            </label>
             <input
               className={'subtitle'}
               type={'text'}
               defaultValue={user.displayName!}
               name={'username'}
             />
-            <input type={'submit'} value={'Save'} />
+            <input type={'submit'} value={t`Save`} />
           </form>
         ) : (
           <div className={'loaderSpinner'} />
         )}
         <div>
-          <h2 className={'subtitle'}>E-Mail:</h2>
+          <h2 className={'subtitle'}>
+            <Trans>E-Mail:</Trans>
+          </h2>
           <p>{user?.email}</p>
         </div>
+        <div>
+          <h1 className={'subtitle'}>
+            <Trans>Language:</Trans>
+          </h1>
+          <LanguageSwitcher />
+        </div>
         <button onClick={handleLogout} className={'logoutBut'}>
-          Logout <i className='fa-solid fa-right-from-bracket'></i>
+          <Trans>Logout</Trans>{' '}
+          <i className='fa-solid fa-right-from-bracket'></i>
         </button>
       </div>
+      <ParticleNetwork />
     </main>
   );
 }

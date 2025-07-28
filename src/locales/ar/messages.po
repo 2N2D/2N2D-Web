@@ -1,36 +1,87 @@
-```
+po
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: ar\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "لوحة تحكم تطوير الشبكات العصبية"
+msgid " Got the basics? "
+msgstr " هل فهمت الأساسيات؟ "
 
-msgid "Already have an account? "
-msgstr "هل لديك حساب بالفعل؟ "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " إذا فهمت الأساسيات حول كيفية عمل الشبكات العصبية، فاستخدم الدليل التالي للبدء في إنشاء شبكتك الخاصة. لا تنسَ طرح الأسئلة على مساعد الذكاء الاصطناعي! "
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " يقدم ملعب الشبكات العصبية طريقة تفاعلية لرؤية وفهم كيف تفكر الشبكة العصبية وتعمل. ما عليك سوى النقر على الزر أدناه للبدء. "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} فريد، {2})"
+
+msgid "{key} Distribution"
+msgstr "توزيع {key}"
+
+msgid "Add dataset:"
+msgstr "إضافة مجموعة بيانات:"
+
+msgid "AI Chat"
+msgstr "دردشة الذكاء الاصطناعي"
+
+msgid "Already have an account?"
+msgstr "هل لديك حساب بالفعل؟"
 
 msgid "Analyze"
 msgstr "تحليل"
 
-msgid "Ask"
-msgstr "اسأل"
-
 msgid "Attributes:"
 msgstr "السمات:"
 
-msgid "Back to login"
-msgstr "العودة إلى تسجيل الدخول"
+msgid "Best config"
+msgstr "أفضل تهيئة"
+
+msgid "Best configuration:"
+msgstr "أفضل تهيئة:"
+
+msgid "Categorical"
+msgstr "فئوي"
+
+msgid "Categorical summary:"
+msgstr "ملخص الفئات:"
 
 msgid "Category:"
 msgstr "الفئة:"
 
+msgid "Clear Data"
+msgstr "مسح البيانات"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Column types:"
+msgstr "أنواع الأعمدة:"
+
 msgid "Columns"
 msgstr "الأعمدة"
+
+msgid "Columns estimate:"
+msgstr "تقدير الأعمدة:"
+
+msgid "Config {0}"
+msgstr "تهيئة {0}"
+
+msgid "Configuration"
+msgstr "التهيئة"
+
+msgid "Constant nodes"
+msgstr "عقد ثابتة"
+
+msgid "Correlation Matrix"
+msgstr "مصفوفة الارتباط"
+
+msgid "Create new session"
+msgstr "إنشاء جلسة جديدة"
 
 msgid "Csv file:"
 msgstr "ملف CSV:"
@@ -38,32 +89,77 @@ msgstr "ملف CSV:"
 msgid "CSV file:"
 msgstr "ملف CSV:"
 
+msgid "CSV tools"
+msgstr "أدوات CSV"
+
 msgid "Cur. Memory"
 msgstr "الذاكرة الحالية"
 
-msgid "Don't have an account?"
-msgstr "ليس لديك حساب؟"
+msgid "Dashboard"
+msgstr "لوحة التحكم"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "افهم بسهولة بيانات التدريب والإخراج من نماذجك."
+msgid "Data"
+msgstr "البيانات"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "قم بسهولة بتصور هيكل وعقد شبكتك العصبية، بتنسيق سهل وبسيط للفهم."
+msgid "Data <0/>"
+msgstr "البيانات <0/>"
+
+msgid "Data Distribution"
+msgstr "توزيع البيانات"
+
+msgid "Dataset Overview"
+msgstr "نظرة عامة على مجموعة البيانات"
+
+msgid "Docs"
+msgstr "الوثائق"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "ليس لديك حساب؟ <0>سجل هنا!</0>"
+
+msgid "Download optimized"
+msgstr "تنزيل المحسن"
+
+msgid "Downloading..."
+msgstr "جاري التنزيل..."
+
+msgid "E-Mail:"
+msgstr "البريد الإلكتروني:"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Encoding Feasibility"
+msgstr "جدوى الترميز"
+
+msgid "Encoding Info"
+msgstr "معلومات الترميز"
+
+msgid "Encoding type:"
+msgstr "نوع الترميز:"
 
 msgid "Est. Memory"
 msgstr "الذاكرة المقدرة"
 
+msgid "Failed to connect to AI."
+msgstr "فشل الاتصال بالذكاء الاصطناعي."
+
 msgid "File"
-msgstr "الملف"
+msgstr "ملف"
 
 msgid "File:"
 msgstr "الملف:"
 
-msgid "Got the basics?"
-msgstr "هل فهمت الأساسيات؟"
+msgid "Hello,"
+msgstr "أهلاً،"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "إذا فهمت أساسيات عمل الشبكات العصبية، فاستخدم الدليل التالي للبدء في إنشاء شبكتك الخاصة. لا تنسَ أن تسأل مساعد الذكاء الاصطناعي عن أي أسئلة!"
+msgid "High cardinality columns:"
+msgstr "أعمدة ذات تكرارية عالية:"
+
+msgid "Info"
+msgstr "معلومات"
+
+msgid "Input Features:"
+msgstr "ميزات الإدخال:"
 
 msgid "Inputs:"
 msgstr "المدخلات:"
@@ -71,11 +167,23 @@ msgstr "المدخلات:"
 msgid "IR version:"
 msgstr "إصدار IR:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "فقط اسحب وألقِ ملفاتك وابدأ—لا حاجة لإعدادات، ولا تعقيدات."
+msgid "Know nothing about neural networks?"
+msgstr "لا تعرف شيئاً عن الشبكات العصبية؟"
+
+msgid "Language:"
+msgstr "اللغة:"
+
+msgid "Layers"
+msgstr "الطبقات"
 
 msgid "Layers:"
 msgstr "الطبقات:"
+
+msgid "Learn"
+msgstr "تعلم"
+
+msgid "Legend"
+msgstr "وسيلة إيضاح"
 
 msgid "Load CSV File"
 msgstr "تحميل ملف CSV"
@@ -83,35 +191,83 @@ msgstr "تحميل ملف CSV"
 msgid "Load ONNX File"
 msgstr "تحميل ملف ONNX"
 
-msgid "Loading"
-msgstr "جارٍ التحميل"
+msgid "Loaded files:"
+msgstr "الملفات المحملة:"
+
+msgid "Log in here <0/>"
+msgstr "سجل الدخول هنا <0/>"
 
 msgid "Log out"
 msgstr "تسجيل الخروج"
 
-msgid "Logging in...."
-msgstr "جارٍ تسجيل الدخول...."
-
 msgid "Login"
 msgstr "تسجيل الدخول"
 
-msgid "Magic Link sign-in"
-msgstr "تسجيل الدخول برابط سحري"
+msgid "logo"
+msgstr "شعار"
+
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "الحد الأقصى للحقبات لكل تهيئة:"
+
+msgid "mb"
+msgstr "م.ب"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "الحد الأدنى 7 أحرف. يجب أن يحتوي على حرف خاص واحد على الأقل ورقم واحد."
+
+msgid "Missing Data Heatmap"
+msgstr "خريطة حرارية للبيانات المفقودة"
 
 msgid "Missing values"
-msgstr "قيم مفقودة"
+msgstr "القيم المفقودة"
+
+msgid "Missing Values Heatmap"
+msgstr "خريطة حرارية للقيم المفقودة"
+
+msgid "Model Details"
+msgstr "تفاصيل النموذج"
 
 msgid "Name:"
 msgstr "الاسم:"
 
-msgid "Neural Network Development Dashboard"
-msgstr "لوحة تحكم تطوير الشبكات العصبية"
+msgid "Network Visualization"
+msgstr "تصور الشبكة"
+
+msgid "Neurons"
+msgstr "الخلايا العصبية"
 
 msgid "Neurons:"
 msgstr "الخلايا العصبية:"
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "تقدم NeuroVision دورات مجانية حول الشبكات العصبية وكيفية عملها."
+
+msgid "No active session!"
+msgstr "لا توجد جلسة نشطة!"
+
+msgid "No categorical columns"
+msgstr "لا توجد أعمدة فئوية"
+
+msgid "No csv file loaded"
+msgstr "لم يتم تحميل ملف CSV"
+
 msgid "No data to display"
-msgstr "لا توجد بيانات لعرضها"
+msgstr "لا توجد بيانات للعرض"
+
+msgid "No file uploaded"
+msgstr "لم يتم تحميل أي ملف"
+
+msgid "No model loaded"
+msgstr "لم يتم تحميل أي نموذج"
+
+msgid "No numerical columns"
+msgstr "لا توجد أعمدة رقمية"
+
+msgid "No onnx file loaded"
+msgstr "لم يتم تحميل ملف ONNX"
 
 msgid "No optimization done."
 msgstr "لم يتم إجراء أي تحسين."
@@ -120,7 +276,7 @@ msgid "No recommendations"
 msgstr "لا توجد توصيات"
 
 msgid "No such columns"
-msgstr "لا توجد أعمدة كهذه"
+msgstr "لا توجد مثل هذه الأعمدة"
 
 msgid "No warnings"
 msgstr "لا توجد تحذيرات"
@@ -128,72 +284,164 @@ msgstr "لا توجد تحذيرات"
 msgid "Node count:"
 msgstr "عدد العقد:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "يوفر دورات مجانية حول الشبكات العصبية وكيف تعمل."
+msgid "Node physics"
+msgstr "فيزياء العقد"
+
+msgid "Not safe"
+msgstr "غير آمن"
+
+msgid "Numerical"
+msgstr "رقمي"
 
 msgid "One hot"
-msgstr "واحد ساخن"
+msgstr "ترميز أحادي"
+
+msgid "Onehot encoding:"
+msgstr "ترميز Onehot:"
 
 msgid "ONNX file:"
 msgstr "ملف ONNX:"
 
-msgid "Optimize"
-msgstr "تحسين"
+msgid "Optimization"
+msgstr "التحسين"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "حسّن شبكتك العصبية باستخدام بنية أفضل لتحسين سرعتها ومخرجاتها."
+msgid "Optimization <0/>"
+msgstr "التحسين <0/>"
+
+msgid "Optimization results:"
+msgstr "نتائج التحسين:"
+
+msgid "Optimization settings"
+msgstr "إعدادات التحسين"
+
+msgid "Optimization strategy:"
+msgstr "استراتيجية التحسين:"
+
+msgid "or drag and drop files"
+msgstr "أو اسحب وأفلت الملفات"
 
 msgid "Outputs:"
 msgstr "المخرجات:"
 
 msgid "Overall"
-msgstr "إجمالي"
+msgstr "عام"
+
+msgid "Overall recommendation:"
+msgstr "التوصية العامة:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "صفحة {currentPage} من {totalPages}"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Please load or create a new session to start."
+msgstr "يرجى تحميل أو إنشاء جلسة جديدة للبدء."
 
 msgid "Producer:"
 msgstr "المنتج:"
 
+msgid "Profile"
+msgstr "الملف الشخصي"
+
 msgid "R2 score:"
-msgstr "نتيجة R2:"
+msgstr "درجة R2:"
+
+msgid "Recommendations"
+msgstr "توصيات"
+
+msgid "Refresh"
+msgstr "تحديث"
 
 msgid "Risky for onehot:"
-msgstr "مُعرض للخطر بالنسبة لـ واحد ساخن:"
+msgstr "خطير لـ onehot:"
 
 msgid "Rows"
 msgstr "الصفوف"
 
+msgid "Rows/Page:"
+msgstr "الصفوف/الصفحة:"
+
+msgid "Safe"
+msgstr "آمن"
+
 msgid "Safe for onehot:"
-msgstr "آمن بالنسبة لـ واحد ساخن:"
+msgstr "آمن لـ onehot:"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Send"
+msgstr "إرسال"
+
+msgid "Sessions:"
+msgstr "الجلسات:"
+
+msgid "Settings"
+msgstr "الإعدادات"
 
 msgid "Sign up"
-msgstr "تسجيل"
+msgstr "التسجيل"
 
-msgid "Something went wrong"
-msgstr "حدث خطأ ما"
+msgid "Start Optimization"
+msgstr "بدء التحسين"
+
+msgid "Target Feature:"
+msgstr "الميزة المستهدفة:"
 
 msgid "Test loss:"
 msgstr "خسارة الاختبار:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "يوفر ساحة لعب الشبكات العصبية طريقة تفاعلية لرؤية وفهم كيفية تفكير وعمل الشبكة العصبية. فقط انقر على الزر أدناه للبدء."
+msgid "thinking..."
+msgstr "جاري التفكير..."
+
+msgid "Tools"
+msgstr "الأدوات"
 
 msgid "Total categorical:"
-msgstr "إجمالي التصنيفات:"
+msgstr "إجمالي الفئوي:"
+
+msgid "Type here..."
+msgstr "اكتب هنا..."
+
+msgid "Type:"
+msgstr "النوع:"
+
+msgid "Unsafe"
+msgstr "غير آمن"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "حمّل مجموعة بيانات CSV لمشاهدة الميزات المتاحة"
+
+msgid "Upload CSV Dataset"
+msgstr "تحميل مجموعة بيانات CSV"
+
+msgid "Upload ONNX model"
+msgstr "تحميل نموذج ONNX"
+
+msgid "Username:"
+msgstr "اسم المستخدم:"
+
+msgid "Vertical view"
+msgstr "عرض عمودي"
 
 msgid "Visualize"
 msgstr "تصور"
+
+msgid "Warnings"
+msgstr "تحذيرات"
 
 msgid "Welcome back!"
 msgstr "أهلاً بعودتك!"
 
 msgid "Welcome!"
-msgstr "أهلاً بك!"
-
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "سواء كنت تدرب نموذجًا بسيطًا أو تُحسّن محوّلًا ضخمًا، يتكيف 2N2D مع سير عملك. كل ما تحتاجه للبدء هو حساب."
+msgstr "أهلاً!"
 
 msgid "Wrong username or password!"
-msgstr "اسم المستخدم أو كلمة المرور غير صحيحين!"
+msgstr "اسم المستخدم أو كلمة المرور خاطئة!"
 
 msgid "You are already logged in, would you like to log out?"
-msgstr "لقد سجّلت الدخول بالفعل، هل ترغب في تسجيل الخروج؟"
-```
+msgstr "أنت مسجل الدخول بالفعل، هل ترغب في تسجيل الخروج؟"
+
+msgid "You are not logged in"
+msgstr "أنت لست مسجلاً للدخول"

@@ -16,9 +16,7 @@ export default async function ({ children }: { children: ReactNode }) {
 
   return (
     <Layout navbar={navbar} pageMap={pageMap}>
-      <div className={'flex flex-col items-center justify-center'}>
-        {children}
-      </div>
+      <div>{children}</div>
     </Layout>
   );
 }

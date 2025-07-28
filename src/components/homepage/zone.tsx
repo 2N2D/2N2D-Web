@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 function Zone({
@@ -17,7 +17,17 @@ function Zone({
   highlights?: string[];
 }) {
   const [flipped, setFlipped] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const fromLeft = index % 2 === 0;
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 768);
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <motion.section
@@ -27,17 +37,10 @@ function Zone({
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, delay: 0.1 * index }}
       style={{
-        display: 'flex',
-        flexDirection: fromLeft ? 'row' : 'row-reverse',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '60vh',
-        gap: '3rem',
-        width: '100%',
-        position: 'relative'
+        flexDirection: isMobile ? 'column' : fromLeft ? 'row' : 'row-reverse'
       }}
     >
-      <div className='zoneText' style={{ flex: 1, zIndex: 1 }}>
+      <div className='zoneText' style={{ flex: 1, zIndex: 1, width: '90vw' }}>
         <motion.div
           className='zoneCard'
           style={{

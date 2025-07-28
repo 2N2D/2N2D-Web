@@ -1,0 +1,163 @@
+# 3\. Structură proiect
+
+## 3.1 Structură generală
+
+![]()
+
+**Aplicația 2N2D este alcătuită din mai multe servicii independente, fiecare rulând separat, dar comunicând eficient între ele pentru a asigura funcționalitatea completă a platformei.**
+
+În această secțiune sunt prezentate componentele principale, modul în care interacționează și serviciile externe folosite pentru fiecare dintre ele.
+
+###
+
+###
+
+###
+
+### 3.1.1 Arhitectura Generală
+
+- **Fiecare serviciu rulează independent, permițând scalabilitate și întreținere modulară.  
+   **
+- **Comunicarea între componente este realizată prin API-uri și protocoale standard (HTTP, JSON, etc.).  
+   **
+- **Sistemul este construit folosind principii de tip microservicii.  
+   **
+
+## 3.2 Componente și Hosting
+
+| **Componentă**          | **Descriere**                                                                                                | **Hosting / Platformă**          |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------- |
+| **2N2D Web UI**         | **Interfața grafică a aplicației. Permite interacțiunea utilizatorului cu toate funcționalitățile oferite.** | **Hostat pe Vercel**             |
+| ---                     | ---                                                                                                          | ---                              |
+| **2N2D API**            | **Serverul backend care se ocupă de procesarea datelor și modelelor.**                                       | **Rulează pe un server dedicat** |
+| ---                     | ---                                                                                                          | ---                              |
+| **R2 Buckets**          | **Serviciu pentru stocarea fișierelor utilizatorului (CSV, ONNX etc.).**                                     | **Hostat de Cloudflare**         |
+| ---                     | ---                                                                                                          | ---                              |
+| **Firebase**            | **Serviciu folosit pentru autentificarea utilizatorilor și stocarea metadatelor.**                           | **Hostat de Google**             |
+| ---                     | ---                                                                                                          | ---                              |
+| **PostgreSQL Database** | **Baza de date relațională folosită pentru gestionarea datelor aplicației.**                                 | **Hostată prin Supabase**        |
+| ---                     | ---                                                                                                          | ---                              |
+| **Gemini API**          | **Folosit pentru integrarea AI Chat contextual.**                                                            | **Serviciu oferit de Google**    |
+| ---                     | ---                                                                                                          | ---                              |
+
+## 3.3 Versioning
+
+Pentru version control s-a folosit GIT, cu o structură monorepo pentru fiecare dintre componentele aplicației, toate sub aceeași organizație pe github.
+
+## 3.4 Structura cod sursa
+
+Proiectul 2N2D a fost dezvoltat cu o atenție deosebită acordată modularității și separării responsabilităților (Separation of Concerns), atât pentru componenta de frontend, cât și pentru cea de backend. Această abordare nu doar că facilitează dezvoltarea și mentenanța, dar asigură și o scalabilitate ridicată a aplicației.
+
+#### 3.4.1 **Arhitectura Frontend (2N2D Web UI - Next.js)**
+
+Interfața web este o aplicație full-stack construită cu **Next.js**, folosind arhitectura modernă **App Router**. Structura de fișiere reflectă o organizare logică, bazată pe funcționalități și responsabilități.
+
+- **src/app/**: Nucleul aplicației, unde este definită întreaga structură de pagini și rute.
+  - **(app) și (auth)**: Utilizarea grupurilor de rute (Route Groups) este o decizie de proiectare cheie. Permite aplicarea unor layout-uri diferite pentru paginile aplicației principale (care necesită sidebar, etc.) și pentru paginile de autentificare, fără a afecta structura URL-urilor.
+  - **api/**: Conține endpoint-uri API server-side (Route Handlers), cum ar fi cel pentru chatbot (/api/ask), asigurând că logica sensibilă și comunicarea cu serviciile externe (ex: Gemini API) se execută pe server, nu pe client.
+- **src/components/**: O bibliotecă de componente **React** reutilizabile, realizata de noi, esențială pentru un UI consistent și mentenabil. Este subdivizată pe domenii de funcționalitate:
+  - **chat/**: Componentele pentru interfața de chat (fereastra, bule de mesaje).
+  - **data/**: Componente specializate pentru vizualizarea datelor CSV (tabel interactiv, heatmap, grafice de distribuție).
+  - **fileUploadElements/**: Componente dedicate pentru încărcarea fișierelor ONNX și CSV.
+  - **layout/**: Componentele structurale ale paginii, precum sidebar și footer.
+- **src/lib/**: Directorul pentru logica non-UI (utility functions, business logic).
+  - **2n2dAPI.ts**: Un client API centralizat pentru comunicarea cu backend-ul Python.
+  - **sessionHandling/**: Logica pentru managementul stării sesiunii curente.
+  - **fileHandler/**: Module pentru interacțiunea cu serviciile de stocare (Cloudflare R2).
+  - **auth/**: Logica de autentificare și interacțiunea cu Firebase.
+- **src/locales/**: Conține fișierele de traducere. Prezența a peste 30 de subdirectoare (ro, en, de, fr, etc.) demonstrează în mod concret implementarea suportului multi-lingv prin LinguiJS.
+
+####
+
+####
+
+#### 3.4.1 **Arhitectura Backend (2N2D API - Python FastAPI)**
+
+API-ul este un serviciu modular construit în **Python** cu framework-ul **FastAPI**, proiectat pentru a gestiona operațiunile de procesare intensivă.
+
+- **App.py**: Punctul de intrare al API-ului. Acesta definește instanța serverului FastAPI și înregistrează endpoint-urile, acționând ca un controlor de trafic pentru toate cererile primite.
+- **TwoN2D.py**: Clasa principală care orchestrează logica de business. Primește cererile de la App.py și deleagă sarcinile către modulele specializate, asigurând un flux de date coerent.
+- **Models/**: Acest director încapsulează logica diferitelor arhitecturi de rețele neuronale. Separarea modelelor (NEATPytorchModel, StructurePreservingModel) permite adăugarea de noi tipuri de modele în viitor fără a modifica codul existent.
+- **Optimize/**: Conține modulele care implementează algoritmii complecși de optimizare (Genetic.py, Neat.py). Izolarea acestor strategii complexe face codul mai curat și mai ușor de testat.
+- **Other/**: O colecție de module utilitare esențiale:
+  - **Data.py**: Funcții pentru preprocesarea și analiza fișierelor CSV.
+  - **FileHandler.py**: Logică pentru descărcarea și gestionarea fișierelor din storage.
+  - **Utils.py**: Funcții ajutătoare generale, folosite în întregul API.
+
+Această structură demonstrează o decizie de proiectare deliberată de a separa interfața de utilizator, logica de business, algoritmii complecși și utilitarele, rezultând într-un sistem robust, mentenabil și scalabil.
+
+## 3.5 Arhitectura Datelor
+
+Pentru persistența datelor, proiectul utilizează o bază de date **PostgreSQL**, gestionată printr-un ORM (Object-Relational Mapping) modern, **Drizzle ORM**. Această alegere permite o definire a schemei direct în TypeScript, asigurând o coerență sporită între codul aplicației și structura bazei de date.
+
+Arhitectura este centrată pe două entități principale: **Utilizatori (user)** și **Sesiuni de lucru (session)**. Baza de date are rolul de a stoca informațiile conturilor, de a menține starea fiecărei sesiuni de lucru (fișiere încărcate, rezultate obținute) și de a persista istoricul interacțiunilor, precum conversațiile cu chatbot-ul AI.
+
+####
+
+####
+
+####
+
+#### 3.5.1 **Schema Tabelelor**
+
+**1\. Tabela user  
+**Această tabelă stochează informațiile esențiale despre utilizatorii înregistrați pe platformă.
+
+- `id (**Integer**, Primary Key)`: Identificator numeric unic pentru fiecare utilizator în baza noastră de date.
+- `uid (**Text**)`: Identificatorul unic al utilizatorului, provenit de la serviciul de autentificare extern (**Firebase Auth**). Acesta este folosit pentru a lega contul din baza de date de sistemul de autentificare.
+- `email (**Text**)`: Adresa de email a utilizatorului.
+- `displayName (**Text**)`: Numele de afișaj al utilizatorului.
+- `sessions (**Array** de Integers)`: O listă cu ID-urile sesiunilor de lucru create de utilizator. Acest design optimizează interogările pentru afișarea rapidă a sesiunilor unui utilizator.
+
+**2\. Tabela session  
+**Aceasta este tabela centrală a aplicației, stocând toate datele aferente unei sesiuni de lucru specifice.
+
+- `id (**Integer**, Primary Key)`: Identificator numeric unic pentru fiecare sesiune.
+- `userId (**Text**)`: uid-ul utilizatorului care deține sesiunea, realizând legătura cu tabela user.
+- `name (**Text**)`: Numele personalizat dat sesiunii de către utilizator.
+- `onnxName / onnxUrl (**Text**)`: Numele și URL-ul fișierului ONNX încărcat (stocat în Cloudflare R2).
+- `csvName / csvUrl (**Text**)`: Numele și URL-ul fișierului CSV încărcat.
+- `optimizedFileUrl (**Text**)`: URL-ul modelului optimizat, disponibil pentru descărcare.
+- `visResult (**JSON**)`: Stochează rezultatul analizei fișierului ONNX. Prin "caching"-ul acestor date, se evită reprocesarea la fiecare vizitare a paginii, îmbunătățind performanța.
+- `csvResult (**JSON**)`: Stochează rezultatele analizei fișierului CSV (statistici, recomandări, etc.).
+- `optResult (**JSON**)`: Stochează rezultatele complete ale procesului de optimizare (configurația optimă, scoruri MAE și R2).
+- `chat (**JSON**)`: Persistă istoricul conversației cu chatbot-ul AI pentru sesiunea curentă, permițându-i acestuia să ofere răspunsuri contextuale.
+
+####
+
+####
+
+####
+
+####
+
+#### 3.5.2 **Diagrama Relațională și Logica de Legătură**
+
+Relația dintre utilizatori și sesiuni este de tip **unu-la-mulți (one-to-many)**: un utilizator poate avea mai multe sesiuni de lucru.
+
+```
+user {
+int id PK
+text uid UK
+text email
+text displayName
+int\[\] sessions
+}
+<br/>session {
+int id PK
+text userId FK
+text name
+text onnxUrl
+text csvUrl
+json visResult
+json optResult
+json chat
+}
+<br/>user ||--o{ session : "deține" }
+```
+
+_Logica de legătură este implementată astfel:_
+
+1. La crearea unei sesiuni noi, uid-ul utilizatorului curent este salvat în câmpul session.userId.
+2. Simultan, id-ul noii sesiuni create este adăugat în array-ul user.sessions.  
+   Această abordare, deși o formă de denormalizare, este o decizie de proiectare deliberată pentru a optimiza performanța la citire, permițând încărcarea tuturor datelor despre un utilizator și sesiunile sale cu un număr minim de interogări.

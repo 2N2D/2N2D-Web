@@ -8,11 +8,13 @@ import { logout } from '@/lib/auth/authentication';
 import '../style.css';
 import Styles from '@/components/layout/SideBar.module.css';
 import ParticleNetwork from '@/components/visual/particleNetwork';
+import { Trans, useLingui } from '@lingui/react/macro';
 
 export default function signup() {
   const router = useRouter();
 
   const [loggedIn, setLoggedIn] = useState(false);
+  const { t } = useLingui();
 
   async function attemptSignUp(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -34,45 +36,51 @@ export default function signup() {
   }, []);
 
   return (
-    <main>
+    <main className={'logCont'}>
       <ParticleNetwork />
       {loggedIn ? (
-        <div className={'signCont'}>
-          <h1>You are already logged in, would you like to log out?</h1>
+        <div>
+          <h1>
+            <Trans>You are already logged in, would you like to log out?</Trans>
+          </h1>
           <button
             onClick={() => {
               logout();
             }}
           >
-            Log out
+            <Trans>Log out</Trans>
           </button>
         </div>
       ) : (
         <div className={'form'}>
           <img src={'logo2n2d.svg'} alt='logo' className={Styles.logo} />
-          <h1>Welcome!</h1>
+          <h1>
+            <Trans>Welcome!</Trans>
+          </h1>
           <form onSubmit={attemptSignUp}>
             <input
               name={'email'}
               type={'email'}
-              placeholder={'Email'}
+              placeholder={t`Email`}
               required={true}
             />
             <input
               name={'password'}
               type={'password'}
-              placeholder={'Password'}
+              placeholder={t`Password`}
               required={true}
               pattern='(?=.*\d)(?=.*[\W_]).{7,}'
-              title='Minimum of 7 characters. Should have at least one special character and one number.'
+              title={t`Minimum of 7 characters. Should have at least one special character and one number.`}
             />
-            <input type={'submit'} value={'Sign up'} />
+            <input type={'submit'} value={t`Sign up`} />
           </form>
           <GoogleSignInButton />
           <OneTimeMailSignInButton />
           <h2>
-            Already have an account?
-            <a href={'/login'}>Login</a>
+            <Trans>Already have an account?</Trans>
+            <a href={'/login'}>
+              <Trans>Login</Trans>
+            </a>
           </h2>
         </div>
       )}

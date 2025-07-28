@@ -1,135 +1,447 @@
-```
+
+msgid ""
 msgstr ""
-"Tanggal Pembuatan POT: 2024-07-30 00:03+0300\n"
-"Versi MIME: 1.0\n"
-"Jenis Konten: text/plain; charset=utf-8\n"
-"Pengodean Transfer Konten: 8bit\n"
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Bahasa: id\n"
+"Language: id\n"
 
-msgstr "<0>J</0>aringan <1>S</1>araf <2>P</2>engembangan <3>D</3>ashboard"
+msgid " Got the basics? "
+msgstr " Sudah paham dasar-dasarnya? "
 
-msgstr "Sudah punya akun? "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " Jika Anda sudah memahami dasar-dasar cara kerja jaringan saraf, gunakan panduan berikut untuk mulai membuat jaringan saraf Anda sendiri. Jangan lupa untuk bertanya kepada Asisten AI jika ada pertanyaan! "
 
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " Neural Network Playground menawarkan cara interaktif untuk melihat dan memahami cara berpikir dan fungsi jaringan saraf. Cukup klik tombol di bawah untuk memulai. "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} unik, {2})"
+
+msgid "{key} Distribution"
+msgstr "Distribusi {key}"
+
+msgid "Add dataset:"
+msgstr "Tambahkan dataset:"
+
+msgid "AI Chat"
+msgstr "Obrolan AI"
+
+msgid "Already have an account?"
+msgstr "Sudah punya akun?"
+
+msgid "Analyze"
 msgstr "Analisis"
 
-msgstr "Tanyakan"
-
+msgid "Attributes:"
 msgstr "Atribut:"
 
-msgstr "Kembali ke login"
+msgid "Best config"
+msgstr "Konfigurasi terbaik"
 
+msgid "Best configuration:"
+msgstr "Konfigurasi terbaik:"
+
+msgid "Categorical"
+msgstr "Kategorikal"
+
+msgid "Categorical summary:"
+msgstr "Ringkasan kategorikal:"
+
+msgid "Category:"
 msgstr "Kategori:"
 
+msgid "Clear Data"
+msgstr "Bersihkan Data"
+
+msgid "Close"
+msgstr "Tutup"
+
+msgid "Column types:"
+msgstr "Tipe kolom:"
+
+msgid "Columns"
 msgstr "Kolom"
 
-msgstr "Berkas csv:"
+msgid "Columns estimate:"
+msgstr "Estimasi kolom:"
 
-msgstr "Berkas CSV:"
+msgid "Config {0}"
+msgstr "Konfigurasi {0}"
 
+msgid "Configuration"
+msgstr "Konfigurasi"
+
+msgid "Constant nodes"
+msgstr "Node konstan"
+
+msgid "Correlation Matrix"
+msgstr "Matriks Korelasi"
+
+msgid "Create new session"
+msgstr "Buat sesi baru"
+
+msgid "Csv file:"
+msgstr "File CSV:"
+
+msgid "CSV file:"
+msgstr "File CSV:"
+
+msgid "CSV tools"
+msgstr "Alat CSV"
+
+msgid "Cur. Memory"
 msgstr "Memori Saat Ini"
 
-msgstr "Belum punya akun?"
+msgid "Dashboard"
+msgstr "Dasbor"
 
-msgstr "Mudah menafsirkan data pelatihan dan keluaran dari model Anda."
+msgid "Data"
+msgstr "Data"
 
-msgstr "Mudah memvisualisasikan struktur dan node jaringan saraf Anda, dalam format yang mudah dan sederhana untuk dipahami"
+msgid "Data <0/>"
+msgstr "Data <0/>"
 
-msgstr "Memori Estimasi"
+msgid "Data Distribution"
+msgstr "Distribusi Data"
 
+msgid "Dataset Overview"
+msgstr "Ikhtisar Dataset"
+
+msgid "Docs"
+msgstr "Dokumen"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "Belum punya akun? <0>Daftar di sini!</0>"
+
+msgid "Download optimized"
+msgstr "Unduh yang dioptimalkan"
+
+msgid "Downloading..."
+msgstr "Mengunduh..."
+
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Encoding Feasibility"
+msgstr "Kelayakan Encoding"
+
+msgid "Encoding Info"
+msgstr "Info Encoding"
+
+msgid "Encoding type:"
+msgstr "Tipe encoding:"
+
+msgid "Est. Memory"
+msgstr "Estimasi Memori"
+
+msgid "Failed to connect to AI."
+msgstr "Gagal terhubung ke AI."
+
+msgid "File"
 msgstr "Berkas"
 
+msgid "File:"
 msgstr "Berkas:"
 
-msgstr "Sudah paham dasar-dasarnya?"
+msgid "Hello,"
+msgstr "Halo,"
 
-msgstr "Jika Anda sudah memahami tentang cara kerja jaringan saraf, gunakan panduan berikut untuk mulai membuat jaringan saraf Anda sendiri. Jangan lupa untuk bertanya kepada Asisten AI jika ada pertanyaan!"
+msgid "High cardinality columns:"
+msgstr "Kolom dengan kardinalitas tinggi:"
 
+msgid "Info"
+msgstr "Info"
+
+msgid "Input Features:"
+msgstr "Fitur Masukan:"
+
+msgid "Inputs:"
 msgstr "Masukan:"
 
+msgid "IR version:"
 msgstr "Versi IR:"
 
-msgstr "Cukup seret dan lepas berkas Anda dan mulai—tanpa pengaturan, tanpa kerumitan."
+msgid "Know nothing about neural networks?"
+msgstr "Tidak tahu apa-apa tentang jaringan saraf?"
 
+msgid "Language:"
+msgstr "Bahasa:"
+
+msgid "Layers"
+msgstr "Lapisan"
+
+msgid "Layers:"
 msgstr "Lapisan:"
 
-msgstr "Muat Berkas CSV"
+msgid "Learn"
+msgstr "Pelajari"
 
-msgstr "Muat Berkas ONNX"
+msgid "Legend"
+msgstr "Legenda"
 
-msgstr "Memuat"
+msgid "Load CSV File"
+msgstr "Muat File CSV"
 
+msgid "Load ONNX File"
+msgstr "Muat File ONNX"
+
+msgid "Loaded files:"
+msgstr "File yang dimuat:"
+
+msgid "Log in here <0/>"
+msgstr "Masuk di sini <0/>"
+
+msgid "Log out"
 msgstr "Keluar"
 
-msgstr "Sedang masuk...."
-
+msgid "Login"
 msgstr "Masuk"
 
-msgstr "Masuk dengan Tautan Ajaib"
+msgid "logo"
+msgstr "logo"
 
+msgid "Logout"
+msgstr "Keluar"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "Epochs Maksimum Per Konfigurasi:"
+
+msgid "mb"
+msgstr "mb"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "Minimal 7 karakter. Harus memiliki setidaknya satu karakter khusus dan satu angka."
+
+msgid "Missing Data Heatmap"
+msgstr "Peta Panas Data yang Hilang"
+
+msgid "Missing values"
 msgstr "Nilai yang hilang"
 
+msgid "Missing Values Heatmap"
+msgstr "Peta Panas Nilai yang Hilang"
+
+msgid "Model Details"
+msgstr "Detail Model"
+
+msgid "Name:"
 msgstr "Nama:"
 
-msgstr "Dasbor Pengembangan Jaringan Saraf"
+msgid "Network Visualization"
+msgstr "Visualisasi Jaringan"
 
+msgid "Neurons"
+msgstr "Neuron"
+
+msgid "Neurons:"
 msgstr "Neuron:"
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision menawarkan kursus gratis tentang jaringan saraf dan cara kerjanya."
+
+msgid "No active session!"
+msgstr "Tidak ada sesi aktif!"
+
+msgid "No categorical columns"
+msgstr "Tidak ada kolom kategorikal"
+
+msgid "No csv file loaded"
+msgstr "Tidak ada file csv yang dimuat"
+
+msgid "No data to display"
 msgstr "Tidak ada data untuk ditampilkan"
 
+msgid "No file uploaded"
+msgstr "Tidak ada file yang diunggah"
+
+msgid "No model loaded"
+msgstr "Tidak ada model yang dimuat"
+
+msgid "No numerical columns"
+msgstr "Tidak ada kolom numerik"
+
+msgid "No onnx file loaded"
+msgstr "Tidak ada file onnx yang dimuat"
+
+msgid "No optimization done."
 msgstr "Tidak ada optimasi yang dilakukan."
 
+msgid "No recommendations"
 msgstr "Tidak ada rekomendasi"
 
+msgid "No such columns"
 msgstr "Tidak ada kolom seperti itu"
 
+msgid "No warnings"
 msgstr "Tidak ada peringatan"
 
+msgid "Node count:"
 msgstr "Jumlah node:"
 
-msgstr "menawarkan kursus gratis tentang jaringan saraf dan cara kerjanya."
+msgid "Node physics"
+msgstr "Fisika node"
 
-msgstr "Satu panas"
+msgid "Not safe"
+msgstr "Tidak aman"
 
-msgstr "Berkas ONNX:"
+msgid "Numerical"
+msgstr "Numerik"
 
-msgstr "Optimalkan"
+msgid "One hot"
+msgstr "One hot"
 
-msgstr "Optimalkan jaringan saraf Anda dengan arsitektur yang lebih baik untuk meningkatkan kecepatan dan keluarannya."
+msgid "Onehot encoding:"
+msgstr "Encoding Onehot:"
 
+msgid "ONNX file:"
+msgstr "File ONNX:"
+
+msgid "Optimization"
+msgstr "Optimasi"
+
+msgid "Optimization <0/>"
+msgstr "Optimasi <0/>"
+
+msgid "Optimization results:"
+msgstr "Hasil optimasi:"
+
+msgid "Optimization settings"
+msgstr "Pengaturan optimasi"
+
+msgid "Optimization strategy:"
+msgstr "Strategi optimasi:"
+
+msgid "or drag and drop files"
+msgstr "atau seret dan lepas file"
+
+msgid "Outputs:"
 msgstr "Keluaran:"
 
+msgid "Overall"
 msgstr "Keseluruhan"
 
+msgid "Overall recommendation:"
+msgstr "Rekomendasi keseluruhan:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "Halaman {currentPage} dari {totalPages}"
+
+msgid "Password"
+msgstr "Kata Sandi"
+
+msgid "Please load or create a new session to start."
+msgstr "Silakan muat atau buat sesi baru untuk memulai."
+
+msgid "Producer:"
 msgstr "Produsen:"
 
+msgid "Profile"
+msgstr "Profil"
+
+msgid "R2 score:"
 msgstr "Skor R2:"
 
-msgstr "Berisiko untuk satu panas:"
+msgid "Recommendations"
+msgstr "Rekomendasi"
 
+msgid "Refresh"
+msgstr "Segarkan"
+
+msgid "Risky for onehot:"
+msgstr "Berisiko untuk onehot:"
+
+msgid "Rows"
 msgstr "Baris"
 
-msgstr "Aman untuk satu panas:"
+msgid "Rows/Page:"
+msgstr "Baris/Halaman:"
 
+msgid "Safe"
+msgstr "Aman"
+
+msgid "Safe for onehot:"
+msgstr "Aman untuk onehot:"
+
+msgid "Save"
+msgstr "Simpan"
+
+msgid "Send"
+msgstr "Kirim"
+
+msgid "Sessions:"
+msgstr "Sesi:"
+
+msgid "Settings"
+msgstr "Pengaturan"
+
+msgid "Sign up"
 msgstr "Daftar"
 
-msgstr "Terjadi kesalahan"
+msgid "Start Optimization"
+msgstr "Mulai Optimasi"
 
-msgstr "Kerugian uji:"
+msgid "Target Feature:"
+msgstr "Fitur Target:"
 
-msgstr "Neural Network Playground menawarkan cara interaktif untuk melihat dan memahami bagaimana jaringan saraf berpikir dan berfungsi. Cukup klik tombol di bawah ini untuk memulai."
+msgid "Test loss:"
+msgstr "Uji kerugian:"
 
+msgid "thinking..."
+msgstr "berpikir..."
+
+msgid "Tools"
+msgstr "Alat"
+
+msgid "Total categorical:"
 msgstr "Total kategorikal:"
 
+msgid "Type here..."
+msgstr "Ketik di sini..."
+
+msgid "Type:"
+msgstr "Jenis:"
+
+msgid "Unsafe"
+msgstr "Tidak aman"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "Unggah dataset CSV untuk melihat fitur yang tersedia"
+
+msgid "Upload CSV Dataset"
+msgstr "Unggah Dataset CSV"
+
+msgid "Upload ONNX model"
+msgstr "Unggah model ONNX"
+
+msgid "Username:"
+msgstr "Nama Pengguna:"
+
+msgid "Vertical view"
+msgstr "Tampilan vertikal"
+
+msgid "Visualize"
 msgstr "Visualisasikan"
 
+msgid "Warnings"
+msgstr "Peringatan"
+
+msgid "Welcome back!"
 msgstr "Selamat datang kembali!"
 
+msgid "Welcome!"
 msgstr "Selamat datang!"
 
-msgstr "Baik Anda melatih model sederhana atau menyempurnakan transformer besar, 2N2D beradaptasi dengan alur kerja Anda. Yang Anda perlukan untuk memulai hanyalah akun."
-
+msgid "Wrong username or password!"
 msgstr "Nama pengguna atau kata sandi salah!"
 
+msgid "You are already logged in, would you like to log out?"
 msgstr "Anda sudah masuk, apakah Anda ingin keluar?"
-```
+
+msgid "You are not logged in"
+msgstr "Anda belum masuk"

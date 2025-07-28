@@ -406,3 +406,77 @@
     transform: scaleY(-1) rotate(-135deg);
   }
 }
+
+@media (max-width: 768px) {
+  .pageDash {
+    padding-left: 1rem;
+  }
+
+  .pageDash .lander {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .pageDash .lander .logo {
+    width: 15rem;
+  }
+
+  .pageDash .lastSession {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .pageDash .lastSession button {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .sessions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sessionsArea {
+    padding: 1.5rem;
+  }
+
+  .sessionsArea .sessions .button {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .currentSessionInfo {
+    padding: 1.5rem;
+  }
+
+  .currentSessionInfo .element {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .currentSessionInfo .element .networkPreview {
+    width: 100%;
+  }
+
+  .resultArea {
+    padding: 1.5rem;
+  }
+
+  .resultArea .result .info {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .resultArea button {
+    width: 100%;
+  }
+
+  .pageDash .lander .notLoggedBut {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}

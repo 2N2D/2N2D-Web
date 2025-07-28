@@ -1,57 +1,147 @@
-```
+
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: zh-TW\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "<0>神</0>經<1>網</1>路<2>開</2>發<3>儀</3>表板"
+msgid " Got the basics? "
+msgstr " 掌握基本概念了嗎？ "
 
-msgid "Already have an account? "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " 如果您了解神經網路的運作方式，請使用以下指南開始創建您自己的神經網路。別忘了向 AI 助手提問！ "
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " 神經網路遊樂場提供了一種互動的方式來觀察和理解神經網路的思考和運作方式。只需點擊下面的按鈕即可開始。 "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0}（{1} 個唯一值，{2}）"
+
+msgid "{key} Distribution"
+msgstr "{key} 分佈"
+
+msgid "Add dataset:"
+msgstr "新增資料集："
+
+msgid "AI Chat"
+msgstr "AI 聊天"
+
+msgid "Already have an account?"
 msgstr "已經有帳號了嗎？"
 
 msgid "Analyze"
 msgstr "分析"
 
-msgid "Ask"
-msgstr "詢問"
-
 msgid "Attributes:"
 msgstr "屬性："
 
-msgid "Back to login"
-msgstr "返回登入"
+msgid "Best config"
+msgstr "最佳配置"
+
+msgid "Best configuration:"
+msgstr "最佳配置："
+
+msgid "Categorical"
+msgstr "類別型"
+
+msgid "Categorical summary:"
+msgstr "類別型摘要："
 
 msgid "Category:"
 msgstr "類別："
 
+msgid "Clear Data"
+msgstr "清除資料"
+
+msgid "Close"
+msgstr "關閉"
+
+msgid "Column types:"
+msgstr "欄位類型："
+
 msgid "Columns"
 msgstr "欄位"
 
+msgid "Columns estimate:"
+msgstr "欄位估計："
+
+msgid "Config {0}"
+msgstr "配置 {0}"
+
+msgid "Configuration"
+msgstr "配置"
+
+msgid "Constant nodes"
+msgstr "常數節點"
+
+msgid "Correlation Matrix"
+msgstr "相關矩陣"
+
+msgid "Create new session"
+msgstr "建立新工作階段"
+
 msgid "Csv file:"
-msgstr "Csv 檔案："
+msgstr "CSV 檔案："
 
 msgid "CSV file:"
 msgstr "CSV 檔案："
 
+msgid "CSV tools"
+msgstr "CSV 工具"
+
 msgid "Cur. Memory"
 msgstr "目前記憶體"
 
-msgid "Don't have an account?"
-msgstr "還沒有帳號嗎？"
+msgid "Dashboard"
+msgstr "儀表板"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "輕鬆解讀模型的訓練和輸出數據。"
+msgid "Data"
+msgstr "資料"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "以輕鬆簡單易懂的格式輕鬆視覺化神經網絡的結構和節點。"
+msgid "Data <0/>"
+msgstr "資料 <0/>"
+
+msgid "Data Distribution"
+msgstr "資料分佈"
+
+msgid "Dataset Overview"
+msgstr "資料集總覽"
+
+msgid "Docs"
+msgstr "文件"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "還沒有帳號嗎？<0>在此註冊！</0>"
+
+msgid "Download optimized"
+msgstr "下載已優化"
+
+msgid "Downloading..."
+msgstr "下載中..."
+
+msgid "E-Mail:"
+msgstr "電子郵件："
+
+msgid "Email"
+msgstr "電子郵件"
+
+msgid "Encoding Feasibility"
+msgstr "編碼可行性"
+
+msgid "Encoding Info"
+msgstr "編碼資訊"
+
+msgid "Encoding type:"
+msgstr "編碼類型："
 
 msgid "Est. Memory"
 msgstr "預估記憶體"
+
+msgid "Failed to connect to AI."
+msgstr "連線至 AI 失敗。"
 
 msgid "File"
 msgstr "檔案"
@@ -59,11 +149,17 @@ msgstr "檔案"
 msgid "File:"
 msgstr "檔案："
 
-msgid "Got the basics?"
-msgstr "了解基礎知識了嗎？"
+msgid "Hello,"
+msgstr "您好，"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "如果您了解神經網絡的工作原理，請使用以下指南開始創建您自己的神經網絡。別忘了向 AI 助理提問！"
+msgid "High cardinality columns:"
+msgstr "高基數欄位："
+
+msgid "Info"
+msgstr "資訊"
+
+msgid "Input Features:"
+msgstr "輸入特徵："
 
 msgid "Inputs:"
 msgstr "輸入："
@@ -71,11 +167,23 @@ msgstr "輸入："
 msgid "IR version:"
 msgstr "IR 版本："
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "只需拖放您的檔案即可開始使用——無需設定，輕鬆便捷。"
+msgid "Know nothing about neural networks?"
+msgstr "對神經網路一無所知嗎？"
+
+msgid "Language:"
+msgstr "語言："
+
+msgid "Layers"
+msgstr "層"
 
 msgid "Layers:"
-msgstr "層級："
+msgstr "層："
+
+msgid "Learn"
+msgstr "學習"
+
+msgid "Legend"
+msgstr "圖例"
 
 msgid "Load CSV File"
 msgstr "載入 CSV 檔案"
@@ -83,104 +191,245 @@ msgstr "載入 CSV 檔案"
 msgid "Load ONNX File"
 msgstr "載入 ONNX 檔案"
 
-msgid "Loading"
-msgstr "載入中"
+msgid "Loaded files:"
+msgstr "已載入檔案："
+
+msgid "Log in here <0/>"
+msgstr "在此登入 <0/>"
 
 msgid "Log out"
 msgstr "登出"
 
-msgid "Logging in...."
-msgstr "登入中…"
-
 msgid "Login"
 msgstr "登入"
 
-msgid "Magic Link sign-in"
-msgstr "魔法連結登入"
+msgid "logo"
+msgstr "標誌"
+
+msgid "Logout"
+msgstr "登出"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "每個配置的最大 Epoch 數："
+
+msgid "mb"
+msgstr "MB"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "至少 7 個字元。應至少包含一個特殊字元和一個數字。"
+
+msgid "Missing Data Heatmap"
+msgstr "遺失資料熱圖"
 
 msgid "Missing values"
-msgstr "遺漏值"
+msgstr "遺失值"
+
+msgid "Missing Values Heatmap"
+msgstr "遺失值熱圖"
+
+msgid "Model Details"
+msgstr "模型詳細資訊"
 
 msgid "Name:"
 msgstr "名稱："
 
-msgid "Neural Network Development Dashboard"
-msgstr "神經網絡開發儀表板"
+msgid "Network Visualization"
+msgstr "網路視覺化"
+
+msgid "Neurons"
+msgstr "神經元"
 
 msgid "Neurons:"
 msgstr "神經元："
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision 提供關於神經網路及其運作方式的免費課程。"
+
+msgid "No active session!"
+msgstr "沒有活動的工作階段！"
+
+msgid "No categorical columns"
+msgstr "沒有類別型欄位"
+
+msgid "No csv file loaded"
+msgstr "未載入 CSV 檔案"
+
 msgid "No data to display"
-msgstr "沒有數據顯示"
+msgstr "沒有可顯示的資料"
+
+msgid "No file uploaded"
+msgstr "未上傳檔案"
+
+msgid "No model loaded"
+msgstr "未載入模型"
+
+msgid "No numerical columns"
+msgstr "沒有數值欄位"
+
+msgid "No onnx file loaded"
+msgstr "未載入 ONNX 檔案"
 
 msgid "No optimization done."
-msgstr "未進行優化。"
+msgstr "未進行最佳化。"
 
 msgid "No recommendations"
-msgstr "無建議"
+msgstr "沒有建議"
 
 msgid "No such columns"
-msgstr "沒有此類欄位"
+msgstr "沒有此欄位"
 
 msgid "No warnings"
-msgstr "無警告"
+msgstr "沒有警告"
 
 msgid "Node count:"
-msgstr "節點數量："
+msgstr "節點計數："
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "提供關於神經網絡及其工作原理的免費課程。"
+msgid "Node physics"
+msgstr "節點物理"
+
+msgid "Not safe"
+msgstr "不安全"
+
+msgid "Numerical"
+msgstr "數值型"
 
 msgid "One hot"
-msgstr "獨熱編碼"
+msgstr "One-Hot 編碼"
+
+msgid "Onehot encoding:"
+msgstr "One-Hot 編碼："
 
 msgid "ONNX file:"
 msgstr "ONNX 檔案："
 
-msgid "Optimize"
-msgstr "優化"
+msgid "Optimization"
+msgstr "最佳化"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "使用更好的架構優化您的神經網絡，以提高其速度和輸出。"
+msgid "Optimization <0/>"
+msgstr "最佳化 <0/>"
+
+msgid "Optimization results:"
+msgstr "最佳化結果："
+
+msgid "Optimization settings"
+msgstr "最佳化設定"
+
+msgid "Optimization strategy:"
+msgstr "最佳化策略："
+
+msgid "or drag and drop files"
+msgstr "或拖放檔案"
 
 msgid "Outputs:"
 msgstr "輸出："
 
 msgid "Overall"
-msgstr "整體"
+msgstr "總體"
+
+msgid "Overall recommendation:"
+msgstr "總體建議："
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "第 {currentPage} 頁，共 {totalPages} 頁"
+
+msgid "Password"
+msgstr "密碼"
+
+msgid "Please load or create a new session to start."
+msgstr "請載入或建立新工作階段以開始。"
 
 msgid "Producer:"
 msgstr "生產者："
 
+msgid "Profile"
+msgstr "個人資料"
+
 msgid "R2 score:"
 msgstr "R2 分數："
 
+msgid "Recommendations"
+msgstr "建議"
+
+msgid "Refresh"
+msgstr "重新整理"
+
 msgid "Risky for onehot:"
-msgstr "獨熱編碼風險："
+msgstr "One-Hot 編碼有風險："
 
 msgid "Rows"
 msgstr "列"
 
+msgid "Rows/Page:"
+msgstr "每頁列數："
+
+msgid "Safe"
+msgstr "安全"
+
 msgid "Safe for onehot:"
-msgstr "適用於獨熱編碼："
+msgstr "One-Hot 編碼安全："
+
+msgid "Save"
+msgstr "儲存"
+
+msgid "Send"
+msgstr "發送"
+
+msgid "Sessions:"
+msgstr "工作階段："
+
+msgid "Settings"
+msgstr "設定"
 
 msgid "Sign up"
 msgstr "註冊"
 
-msgid "Something went wrong"
-msgstr "發生錯誤"
+msgid "Start Optimization"
+msgstr "開始最佳化"
+
+msgid "Target Feature:"
+msgstr "目標特徵："
 
 msgid "Test loss:"
 msgstr "測試損失："
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "神經網絡遊樂場提供一種互動式方式，讓您查看和了解神經網絡的思考和運作方式。只需點擊下面的按鈕即可開始。"
+msgid "thinking..."
+msgstr "思考中..."
+
+msgid "Tools"
+msgstr "工具"
 
 msgid "Total categorical:"
-msgstr "總類別數："
+msgstr "總類別型欄位："
+
+msgid "Type here..."
+msgstr "在此輸入..."
+
+msgid "Type:"
+msgstr "類型："
+
+msgid "Unsafe"
+msgstr "不安全"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "上傳 CSV 資料集以查看可用特徵"
+
+msgid "Upload CSV Dataset"
+msgstr "上傳 CSV 資料集"
+
+msgid "Upload ONNX model"
+msgstr "上傳 ONNX 模型"
+
+msgid "Username:"
+msgstr "使用者名稱："
+
+msgid "Vertical view"
+msgstr "垂直視圖"
 
 msgid "Visualize"
 msgstr "視覺化"
+
+msgid "Warnings"
+msgstr "警告"
 
 msgid "Welcome back!"
 msgstr "歡迎回來！"
@@ -188,12 +437,11 @@ msgstr "歡迎回來！"
 msgid "Welcome!"
 msgstr "歡迎！"
 
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "無論您是訓練簡單模型還是微調大型轉換器，2N2D 都能適應您的工作流程。您只需一個帳戶即可開始。"
-
 msgid "Wrong username or password!"
-msgstr "用戶名或密碼錯誤！"
+msgstr "使用者名稱或密碼錯誤！"
 
 msgid "You are already logged in, would you like to log out?"
-msgstr "您已經登入，是否要登出？"
-```
+msgstr "您已經登入，要登出嗎？"
+
+msgid "You are not logged in"
+msgstr "您尚未登入"

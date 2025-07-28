@@ -1,135 +1,445 @@
-```
-msgstr ""
-"Data utworzenia pliku POT: 2024-07-30 00:03+0300\n"
-"Wersja MIME: 1.0\n"
-"Typ zawartości: text/plain; charset=utf-8\n"
-"Kodowanie zawartości: 8bit\n"
-"Generator: @lingui/cli\n"
-"Język: pl\n"
+msgstr
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: pl\n"
 
-msgstr "Panel <0>R</0>ozwoju <1>S</1>iec <2>N</2>euronowych"
+msgid " Got the basics? "
+msgstr " Masz podstawy? "
 
-msgstr "Masz już konto? "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " Jeśli rozumiesz, jak działają sieci neuronowe, skorzystaj z poniższego przewodnika, aby zacząć tworzyć własne. Nie zapomnij zadać pytań Asystentowi AI! "
 
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " Plac zabaw Sieci Neuronowych oferuje interaktywny sposób na zobaczenie i zrozumienie, jak sieć neuronowa myśli i działa. Po prostu kliknij przycisk poniżej, aby rozpocząć. "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} (unikalnych: {1}, {2})"
+
+msgid "{key} Distribution"
+msgstr "Rozkład {key}"
+
+msgid "Add dataset:"
+msgstr "Dodaj zestaw danych:"
+
+msgid "AI Chat"
+msgstr "Czat AI"
+
+msgid "Already have an account?"
+msgstr "Masz już konto?"
+
+msgid "Analyze"
 msgstr "Analizuj"
 
-msgstr "Zapytaj"
-
+msgid "Attributes:"
 msgstr "Atrybuty:"
 
-msgstr "Wróć do logowania"
+msgid "Best config"
+msgstr "Najlepsza konfiguracja"
 
+msgid "Best configuration:"
+msgstr "Najlepsza konfiguracja:"
+
+msgid "Categorical"
+msgstr "Kategorialne"
+
+msgid "Categorical summary:"
+msgstr "Podsumowanie danych kategorialnych:"
+
+msgid "Category:"
 msgstr "Kategoria:"
 
+msgid "Clear Data"
+msgstr "Wyczyść dane"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Column types:"
+msgstr "Typy kolumn:"
+
+msgid "Columns"
 msgstr "Kolumny"
 
-msgstr "Plik csv:"
+msgid "Columns estimate:"
+msgstr "Szacunkowa liczba kolumn:"
 
+msgid "Config {0}"
+msgstr "Konfiguracja {0}"
+
+msgid "Configuration"
+msgstr "Konfiguracja"
+
+msgid "Constant nodes"
+msgstr "Stałe węzły"
+
+msgid "Correlation Matrix"
+msgstr "Macierz korelacji"
+
+msgid "Create new session"
+msgstr "Utwórz nową sesję"
+
+msgid "Csv file:"
 msgstr "Plik CSV:"
 
-msgstr "Bieżąca pamięć"
+msgid "CSV file:"
+msgstr "Plik CSV:"
 
-msgstr "Nie masz konta?"
+msgid "CSV tools"
+msgstr "Narzędzia CSV"
 
-msgstr "Łatwo interpretuj dane treningowe i wyjściowe z twoich modeli."
+msgid "Cur. Memory"
+msgstr "Akt. Pamięć"
 
-msgstr "Łatwo wizualizuj strukturę i węzły swojej sieci neuronowej w prostym i łatwym do zrozumienia formacie"
+msgid "Dashboard"
+msgstr "Panel"
 
-msgstr "Estymowana pamięć"
+msgid "Data"
+msgstr "Dane"
 
+msgid "Data <0/>"
+msgstr "Dane <0/>"
+
+msgid "Data Distribution"
+msgstr "Rozkład danych"
+
+msgid "Dataset Overview"
+msgstr "Przegląd zestawu danych"
+
+msgid "Docs"
+msgstr "Dokumentacja"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "Nie masz konta? <0>Zarejestruj się tutaj!</0>"
+
+msgid "Download optimized"
+msgstr "Pobierz zoptymalizowany"
+
+msgid "Downloading..."
+msgstr "Pobieranie..."
+
+msgid "E-Mail:"
+msgstr "E-mail:"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Encoding Feasibility"
+msgstr "Wykonalność kodowania"
+
+msgid "Encoding Info"
+msgstr "Informacje o kodowaniu"
+
+msgid "Encoding type:"
+msgstr "Typ kodowania:"
+
+msgid "Est. Memory"
+msgstr "Szac. Pamięć"
+
+msgid "Failed to connect to AI."
+msgstr "Nie udało się połączyć z AI."
+
+msgid "File"
 msgstr "Plik"
 
+msgid "File:"
 msgstr "Plik:"
 
-msgstr "Znasz podstawy?"
+msgid "Hello,"
+msgstr "Witaj,"
 
-msgstr "Jeśli znasz zasady działania sieci neuronowych, skorzystaj z poniższego przewodnika, aby rozpocząć tworzenie własnych. Nie zapomnij zadać pytań Asystentowi AI!"
+msgid "High cardinality columns:"
+msgstr "Kolumny o wysokiej kardynalności:"
 
+msgid "Info"
+msgstr "Informacje"
+
+msgid "Input Features:"
+msgstr "Cechy wejściowe:"
+
+msgid "Inputs:"
 msgstr "Wejścia:"
 
+msgid "IR version:"
 msgstr "Wersja IR:"
 
-msgstr "Po prostu przeciągnij i upuść swoje pliki i zacznij — bez konfiguracji, bez problemów."
+msgid "Know nothing about neural networks?"
+msgstr "Nic nie wiesz o sieciach neuronowych?"
 
+msgid "Language:"
+msgstr "Język:"
+
+msgid "Layers"
+msgstr "Warstwy"
+
+msgid "Layers:"
 msgstr "Warstwy:"
 
-msgstr "Wczytaj plik CSV"
+msgid "Learn"
+msgstr "Ucz się"
 
-msgstr "Wczytaj plik ONNX"
+msgid "Legend"
+msgstr "Legenda"
 
-msgstr "Wczytywanie"
+msgid "Load CSV File"
+msgstr "Załaduj plik CSV"
 
+msgid "Load ONNX File"
+msgstr "Załaduj plik ONNX"
+
+msgid "Loaded files:"
+msgstr "Załadowane pliki:"
+
+msgid "Log in here <0/>"
+msgstr "Zaloguj się tutaj <0/>"
+
+msgid "Log out"
 msgstr "Wyloguj się"
 
-msgstr "Logowanie..."
-
+msgid "Login"
 msgstr "Zaloguj się"
 
-msgstr "Logowanie za pomocą linku magicznego"
+msgid "logo"
+msgstr "logo"
 
+msgid "Logout"
+msgstr "Wyloguj"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "Maksymalna liczba epok na konfigurację:"
+
+msgid "mb"
+msgstr "MB"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "Minimum 7 znaków. Powinien zawierać co najmniej jeden znak specjalny i jedną cyfrę."
+
+msgid "Missing Data Heatmap"
+msgstr "Mapa cieplna brakujących danych"
+
+msgid "Missing values"
 msgstr "Brakujące wartości"
 
+msgid "Missing Values Heatmap"
+msgstr "Mapa cieplna brakujących wartości"
+
+msgid "Model Details"
+msgstr "Szczegóły modelu"
+
+msgid "Name:"
 msgstr "Nazwa:"
 
-msgstr "Panel Rozwoju Sieci Neuronowych"
+msgid "Network Visualization"
+msgstr "Wizualizacja sieci"
 
+msgid "Neurons"
+msgstr "Neurony"
+
+msgid "Neurons:"
 msgstr "Neurony:"
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision oferuje darmowe kursy o sieciach neuronowych i o tym, jak one działają."
+
+msgid "No active session!"
+msgstr "Brak aktywnej sesji!"
+
+msgid "No categorical columns"
+msgstr "Brak kolumn kategorialnych"
+
+msgid "No csv file loaded"
+msgstr "Nie załadowano pliku CSV"
+
+msgid "No data to display"
 msgstr "Brak danych do wyświetlenia"
 
-msgstr "Brak optymalizacji."
+msgid "No file uploaded"
+msgstr "Nie przesłano pliku"
 
+msgid "No model loaded"
+msgstr "Nie załadowano modelu"
+
+msgid "No numerical columns"
+msgstr "Brak kolumn numerycznych"
+
+msgid "No onnx file loaded"
+msgstr "Nie załadowano pliku ONNX"
+
+msgid "No optimization done."
+msgstr "Nie przeprowadzono optymalizacji."
+
+msgid "No recommendations"
 msgstr "Brak rekomendacji"
 
+msgid "No such columns"
 msgstr "Brak takich kolumn"
 
+msgid "No warnings"
 msgstr "Brak ostrzeżeń"
 
+msgid "Node count:"
 msgstr "Liczba węzłów:"
 
-msgstr "oferuje bezpłatne kursy na temat sieci neuronowych i ich działania."
+msgid "Node physics"
+msgstr "Fizyka węzłów"
 
-msgstr "One hot"
+msgid "Not safe"
+msgstr "Niezabezpieczone"
 
+msgid "Numerical"
+msgstr "Numeryczne"
+
+msgid "One hot"
+msgstr "One-hot"
+
+msgid "Onehot encoding:"
+msgstr "Kodowanie One-hot:"
+
+msgid "ONNX file:"
 msgstr "Plik ONNX:"
 
-msgstr "Optymalizuj"
+msgid "Optimization"
+msgstr "Optymalizacja"
 
-msgstr "Optymalizuj swoją sieć neuronową, stosując lepszą architekturę, aby poprawić jej szybkość i wyniki."
+msgid "Optimization <0/>"
+msgstr "Optymalizacja <0/>"
 
+msgid "Optimization results:"
+msgstr "Wyniki optymalizacji:"
+
+msgid "Optimization settings"
+msgstr "Ustawienia optymalizacji"
+
+msgid "Optimization strategy:"
+msgstr "Strategia optymalizacji:"
+
+msgid "or drag and drop files"
+msgstr "lub przeciągnij i upuść pliki"
+
+msgid "Outputs:"
 msgstr "Wyjścia:"
 
+msgid "Overall"
 msgstr "Ogólnie"
 
+msgid "Overall recommendation:"
+msgstr "Ogólne zalecenie:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "Strona {currentPage} z {totalPages}"
+
+msgid "Password"
+msgstr "Hasło"
+
+msgid "Please load or create a new session to start."
+msgstr "Aby rozpocząć, załaduj lub utwórz nową sesję."
+
+msgid "Producer:"
 msgstr "Producent:"
 
-msgstr "Wynik R2:"
+msgid "Profile"
+msgstr "Profil"
 
-msgstr "Ryzykowne dla onehot:"
+msgid "R2 score:"
+msgstr "Współczynnik R2:"
 
+msgid "Recommendations"
+msgstr "Rekomendacje"
+
+msgid "Refresh"
+msgstr "Odśwież"
+
+msgid "Risky for onehot:"
+msgstr "Ryzykowne dla one-hot:"
+
+msgid "Rows"
 msgstr "Wiersze"
 
-msgstr "Bezpieczne dla onehot:"
+msgid "Rows/Page:"
+msgstr "Wierszy/stronę:"
 
+msgid "Safe"
+msgstr "Bezpieczne"
+
+msgid "Safe for onehot:"
+msgstr "Bezpieczne dla one-hot:"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Send"
+msgstr "Wyślij"
+
+msgid "Sessions:"
+msgstr "Sesje:"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Sign up"
 msgstr "Zarejestruj się"
 
-msgstr "Coś poszło nie tak"
+msgid "Start Optimization"
+msgstr "Rozpocznij optymalizację"
 
-msgstr "Strata testowa:"
+msgid "Target Feature:"
+msgstr "Cecha docelowa:"
 
-msgstr "Neural Network Playground oferuje interaktywny sposób na zobaczenie i zrozumienie, jak działa sieć neuronowa. Kliknij przycisk poniżej, aby rozpocząć."
+msgid "Test loss:"
+msgstr "Błąd testowy:"
 
-msgstr "Łącznie kategorii:"
+msgid "thinking..."
+msgstr "myślę..."
 
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Total categorical:"
+msgstr "Suma kategorialnych:"
+
+msgid "Type here..."
+msgstr "Wpisz tutaj..."
+
+msgid "Type:"
+msgstr "Typ:"
+
+msgid "Unsafe"
+msgstr "Niezabezpieczone"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "Prześlij zestaw danych CSV, aby zobaczyć dostępne cechy"
+
+msgid "Upload CSV Dataset"
+msgstr "Prześlij zestaw danych CSV"
+
+msgid "Upload ONNX model"
+msgstr "Prześlij model ONNX"
+
+msgid "Username:"
+msgstr "Nazwa użytkownika:"
+
+msgid "Vertical view"
+msgstr "Widok pionowy"
+
+msgid "Visualize"
 msgstr "Wizualizuj"
 
-msgstr "Miło Cię widzieć!"
+msgid "Warnings"
+msgstr "Ostrzeżenia"
 
-msgstr "Witamy!"
+msgid "Welcome back!"
+msgstr "Witamy ponownie!"
 
-msgstr "Niezależnie od tego, czy trenujesz prosty model, czy dopracowujesz ogromny transformator, 2N2D dostosowuje się do Twojego sposobu pracy. Aby rozpocząć, potrzebujesz tylko konta."
+msgid "Welcome!"
+msgstr "Witaj!"
 
+msgid "Wrong username or password!"
 msgstr "Nieprawidłowa nazwa użytkownika lub hasło!"
 
-msgstr "Jesteś już zalogowany, chcesz się wylogować?"
-```
+msgid "You are already logged in, would you like to log out?"
+msgstr "Jesteś już zalogowany, czy chcesz się wylogować?"
+
+msgid "You are not logged in"
+msgstr "Nie jesteś zalogowany"

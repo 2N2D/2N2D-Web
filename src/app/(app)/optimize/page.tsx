@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, FormEvent } from 'react';
-import { startOptimization } from '@/lib/2n2dAPI';
+import { getOptimizationStatus, startOptimization } from '@/lib/2n2dAPI';
 import { downloadFileRequest } from '@/lib/frontend/feHandler';
-import { getSessionTokenHash } from '@/lib/auth/authentication';
+import { getCurrentUser } from '@/lib/auth/authentication';
 import { getSession } from '@/lib/sessionHandling/sessionManager';
 import './styles.css';
 import ONNXUploader from '@/components/fileUploadElements/ONNXUploader';
@@ -11,6 +11,7 @@ import CSVUploader from '@/components/fileUploadElements/CSVUploader';
 import { deleteCsv, deleteOnnx } from '@/lib/sessionHandling/sessionUpdater';
 import { motion } from 'framer-motion';
 import OptimizationResults from '@/components/optimizationResults';
+import { Trans, useLingui } from '@lingui/react/macro';
 
 export default function Optimize() {
   const [features, setFeatures] = useState<string[]>([]);
@@ -22,9 +23,11 @@ export default function Optimize() {
   const [downloading, setDownloading] = useState<boolean>(false);
   const [alert, setAlert] = useState<string | null>(null);
 
+  const { t } = useLingui();
+
   async function statusUpdate() {
     const eventSource = new EventSource(
-      `${process.env.NEXT_PUBLIC_TWONTWOD_ENDPOINT}/optimization-status/${await getSessionTokenHash()}`
+      await getOptimizationStatus(await getCurrentUser())
     );
 
     eventSource.onmessage = (event) => {
@@ -36,7 +39,6 @@ export default function Optimize() {
 
     eventSource.onerror = (err) => {
       console.log('SSE error:', err);
-      // setAlert("Error connecting to server");
       eventSource.close();
     };
 
@@ -131,7 +133,7 @@ export default function Optimize() {
 
     setProgress(0);
     setStatus('Starting optimization...');
-    statusUpdate();
+    await statusUpdate();
 
     const _result = await startOptimization(
       Ifeatures,
@@ -154,7 +156,7 @@ export default function Optimize() {
     setProgress(100);
     setStatus('Optimization finished');
     console.log(_result);
-    loadSession();
+    // loadSession();
   }
 
   async function downloadOptimized() {
@@ -163,7 +165,7 @@ export default function Optimize() {
 
     let fileName = onnxFileName.split('.')[0] + '_optimized.onnx';
     console.log(result.url);
-    await downloadFileRequest(result.url!, 'rezult', fileName);
+    await downloadFileRequest(result.url!, fileName);
     setDownloading(false);
   }
 
@@ -186,13 +188,21 @@ export default function Optimize() {
             style={{ width: '100%' }}
             onSubmit={optimize}
           >
-            <h2 className={'subtitle'}>Optimization settings</h2>
+            <h2 className={'subtitle'}>
+              <Trans>Optimization settings</Trans>
+            </h2>
             <div className={'formGroup'}>
               <div className={'element'}>
-                <label>Input Features:</label>
+                <label>
+                  <Trans>Input Features:</Trans>
+                </label>
                 <ul className={'featuresList'}>
                   {features.length == 0 ? (
-                    <li>Upload a CSV dataset to see available features</li>
+                    <li>
+                      <Trans>
+                        Upload a CSV dataset to see available features
+                      </Trans>
+                    </li>
                   ) : (
                     features.map((feat, i) => (
                       <li key={i}>
@@ -208,7 +218,9 @@ export default function Optimize() {
                 </ul>
               </div>
               <div className={'element'}>
-                <label>Target Feature:</label>
+                <label>
+                  <Trans>Target Feature:</Trans>
+                </label>
                 <select className={'targetFeature'} name={'target'}>
                   {features.length == 0 ? (
                     <option disabled>
@@ -222,19 +234,25 @@ export default function Optimize() {
                     ))
                   )}
                 </select>
-                <label>Encoding type:</label>
+                <label>
+                  <Trans>Encoding type:</Trans>
+                </label>
                 <select className={'targetFeature'} name={'encoding'}>
                   <option>None</option>
                   <option>label</option>
                   <option>onehot</option>
                 </select>
-                <label>Optimization strategy:</label>
+                <label>
+                  <Trans>Optimization strategy:</Trans>
+                </label>
                 <select className={'targetFeature'} name={'strat'}>
                   <option>brute-force</option>
                   <option>neat</option>
                   <option>genetic</option>
                 </select>
-                <label>Maximum Epochs Per Configuration:</label>
+                <label>
+                  <Trans>Maximum Epochs Per Configuration:</Trans>
+                </label>
                 <input type='number' name={'epochs'} defaultValue='10' />
               </div>
             </div>
@@ -242,7 +260,7 @@ export default function Optimize() {
             <input
               type='submit'
               id='opt-start-optimization'
-              value='Start Optimization'
+              value={t`Start Optimization`}
               disabled={
                 !!(
                   progress > -1 &&
@@ -279,7 +297,10 @@ export default function Optimize() {
         <div>
           <div className={'dataArea area vertical'}>
             <h1>
-              <b> ONNX file: </b> {onnxFileName}
+              <b>
+                <Trans>ONNX file:</Trans>
+              </b>{' '}
+              {onnxFileName}
             </h1>
             <div className={'flex gap-[1rem]'}>
               <ONNXUploader callBack={populateLists} />
@@ -298,13 +319,17 @@ export default function Optimize() {
                   populateLists();
                 }}
               >
-                Clear Data <i className='fa-solid fa-trash-xmark'></i>
+                <Trans>Clear Data</Trans>{' '}
+                <i className='fa-solid fa-trash-xmark'></i>
               </button>
             </div>
           </div>
           <div className={'dataArea area vertical'}>
             <h1>
-              <b> CSV file: </b> {csvFileName}
+              <b>
+                <Trans>CSV file:</Trans>
+              </b>{' '}
+              {csvFileName}
             </h1>
             <div className={'flex gap-[1rem]'}>
               <CSVUploader callBack={populateLists} />
@@ -321,13 +346,16 @@ export default function Optimize() {
                   populateLists();
                 }}
               >
-                Clear Data <i className='fa-solid fa-trash-xmark'></i>
+                <Trans>Clear Data</Trans>{' '}
+                <i className='fa-solid fa-trash-xmark'></i>
               </button>
             </div>
           </div>
         </div>
         <div className={'titleArea'}>
-          <h1 className={'pageTitle title'}>Optimization</h1>
+          <h1 className={'pageTitle title'}>
+            <Trans>Optimization</Trans>
+          </h1>
         </div>
       </div>
       {result &&

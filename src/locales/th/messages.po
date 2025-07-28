@@ -1,4 +1,3 @@
-```
 msgid ""
 msgstr ""
 "POT-Creation-Date: 2024-07-30 00:03+0300\n"
@@ -7,193 +6,691 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: th\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "แดชบอร์ดพัฒนาเครือข่ายประสาทเทียม"
+#: src/app/learn/page.tsx:53
+msgid " Got the basics? "
+msgstr ""
 
-msgid "Already have an account? "
-msgstr "มีบัญชีผู้ใช้แล้วใช่ไหม? "
+#: src/app/learn/page.tsx:56
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr ""
 
+#: src/app/learn/page.tsx:30
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr ""
+
+#. placeholder {0}: val.column
+#. placeholder {1}: val.unique_values
+#. placeholder {2}: val.severity
+#: src/components/data/EncodingInfoView.tsx:201
+msgid "{0} ({1} unique, {2})"
+msgstr ""
+
+#: src/components/data/Distribution.tsx:49
+msgid "{key} Distribution"
+msgstr ""
+
+#~ msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+#~ msgstr "แดชบอร์ดพัฒนาเครือข่ายประสาทเทียม"
+
+#: src/app/(app)/data/page.tsx:80
+msgid "Add dataset:"
+msgstr ""
+
+#: src/components/chat/chat.tsx:129
+msgid "AI Chat"
+msgstr ""
+
+#: src/app/(auth)/register/page.tsx:80
+msgid "Already have an account?"
+msgstr ""
+
+#~ msgid "Already have an account? "
+#~ msgstr "มีบัญชีผู้ใช้แล้วใช่ไหม? "
+
+#: src/components/layout/sidebar.tsx:82
 msgid "Analyze"
 msgstr "วิเคราะห์"
 
-msgid "Ask"
-msgstr "สอบถาม"
+#~ msgid "Ask"
+#~ msgstr "สอบถาม"
 
+#: src/app/(app)/visualize/page.tsx:230
 msgid "Attributes:"
 msgstr "แอตทริบิวต์:"
 
-msgid "Back to login"
-msgstr "กลับไปเข้าสู่ระบบ"
+#~ msgid "Back to login"
+#~ msgstr "กลับไปเข้าสู่ระบบ"
 
+#: src/components/optimizationResults.tsx:108
+msgid "Best config"
+msgstr ""
+
+#: src/components/optimizationResults.tsx:58
+msgid "Best configuration:"
+msgstr ""
+
+#: src/components/data/EncodingInfoView.tsx:93
+msgid "Categorical"
+msgstr ""
+
+#: src/components/data/EncodingInfoView.tsx:150
+msgid "Categorical summary:"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:183
 msgid "Category:"
 msgstr "หมวดหมู่:"
 
+#: src/app/(app)/visualize/page.tsx:467
+#: src/app/(app)/optimize/page.tsx:322
+#: src/app/(app)/optimize/page.tsx:349
+#: src/app/(app)/data/page.tsx:84
+msgid "Clear Data"
+msgstr ""
+
+#: src/components/chat/chat.tsx:129
+msgid "Close"
+msgstr ""
+
+#: src/components/data/EncodingInfoView.tsx:69
+msgid "Column types:"
+msgstr ""
+
+#: src/app/(app)/data/page.tsx:110
 msgid "Columns"
 msgstr "คอลัมน์"
 
+#: src/components/data/EncodingInfoView.tsx:172
+msgid "Columns estimate:"
+msgstr ""
+
+#. placeholder {0}: i + 1
+#: src/components/optimizationResults.tsx:120
+msgid "Config {0}"
+msgstr ""
+
+#: src/components/optimizationResults.tsx:91
+msgid "Configuration"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:426
+msgid "Constant nodes"
+msgstr ""
+
+#: src/components/data/ViewSelector.tsx:15
+#: src/app/(app)/data/page.tsx:187
+msgid "Correlation Matrix"
+msgstr ""
+
+#: src/app/(app)/dash/page.tsx:437
+msgid "Create new session"
+msgstr ""
+
+#: src/app/(app)/dash/page.tsx:319
+#: src/app/(app)/dash/page.tsx:479
 msgid "Csv file:"
 msgstr "ไฟล์ Csv:"
 
+#: src/app/(app)/optimize/page.tsx:330
 msgid "CSV file:"
 msgstr "ไฟล์ CSV:"
 
+#: src/app/(app)/data/page.tsx:73
+msgid "CSV tools"
+msgstr ""
+
+#: src/app/(app)/data/page.tsx:132
 msgid "Cur. Memory"
 msgstr "หน่วยความจำปัจจุบัน"
 
-msgid "Don't have an account?"
-msgstr "ยังไม่มีบัญชีผู้ใช้?"
+#: src/components/layout/sidebar.tsx:76
+#: src/app/(app)/dash/page.tsx:230
+msgid "Dashboard"
+msgstr ""
 
-msgid "Easily interpret training and output data from your models."
-msgstr "ตีความข้อมูลการฝึกอบรมและผลลัพธ์จากโมเดลของคุณได้อย่างง่ายดาย"
+#: src/components/layout/sidebar.tsx:94
+msgid "Data"
+msgstr ""
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "แสดงภาพโครงสร้างและโหนดของเครือข่ายประสาทเทียมของคุณได้อย่างง่ายดาย ในรูปแบบที่เข้าใจง่าย"
+#: src/app/(app)/dash/page.tsx:359
+msgid "Data <0/>"
+msgstr ""
 
+#: src/components/data/ViewSelector.tsx:17
+#: src/app/(app)/data/page.tsx:250
+msgid "Data Distribution"
+msgstr ""
+
+#: src/app/(app)/data/page.tsx:98
+msgid "Dataset Overview"
+msgstr ""
+
+#: src/components/layout/sidebar.tsx:123
+msgid "Docs"
+msgstr ""
+
+#~ msgid "Don't have an account?"
+#~ msgstr "ยังไม่มีบัญชีผู้ใช้?"
+
+#: src/app/(auth)/login/page.tsx:79
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr ""
+
+#: src/components/optimizationResults.tsx:131
+msgid "Download optimized"
+msgstr ""
+
+#: src/components/optimizationResults.tsx:131
+msgid "Downloading..."
+msgstr ""
+
+#: src/app/(app)/profile/page.tsx:85
+msgid "E-Mail:"
+msgstr ""
+
+#~ msgid "Easily interpret training and output data from your models."
+#~ msgstr "ตีความข้อมูลการฝึกอบรมและผลลัพธ์จากโมเดลของคุณได้อย่างง่ายดาย"
+
+#~ msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
+#~ msgstr "แสดงภาพโครงสร้างและโหนดของเครือข่ายประสาทเทียมของคุณได้อย่างง่ายดาย ในรูปแบบที่เข้าใจง่าย"
+
+#: src/app/(auth)/register/page.tsx:64
+#: src/app/(auth)/login/page.tsx:62
+msgid "Email"
+msgstr ""
+
+#: src/app/(app)/data/page.tsx:120
+msgid "Encoding Feasibility"
+msgstr ""
+
+#: src/components/data/ViewSelector.tsx:14
+#: src/components/data/EncodingInfoView.tsx:17
+msgid "Encoding Info"
+msgstr ""
+
+#: src/app/(app)/optimize/page.tsx:238
+msgid "Encoding type:"
+msgstr ""
+
+#: src/app/(app)/data/page.tsx:140
 msgid "Est. Memory"
 msgstr "หน่วยความจำโดยประมาณ"
 
+#: src/components/chat/chat.tsx:85
+msgid "Failed to connect to AI."
+msgstr ""
+
+#: src/app/(app)/data/page.tsx:101
 msgid "File"
 msgstr "ไฟล์"
 
+#: src/app/(app)/visualize/page.tsx:315
 msgid "File:"
 msgstr "ไฟล์:"
 
-msgid "Got the basics?"
-msgstr "เข้าใจพื้นฐานแล้วใช่ไหม?"
+#~ msgid "Got the basics?"
+#~ msgstr "เข้าใจพื้นฐานแล้วใช่ไหม?"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "ถ้าคุณเข้าใจหลักการทำงานของเครือข่ายประสาทเทียมแล้ว ให้ใช้คู่มือต่อไปนี้เพื่อเริ่มสร้างเครือข่ายของคุณเอง อย่าลืมสอบถาม AI Assistant หากมีคำถาม!"
+#: src/app/(app)/dash/page.tsx:249
+msgid "Hello,"
+msgstr ""
 
+#: src/components/data/EncodingInfoView.tsx:193
+msgid "High cardinality columns:"
+msgstr ""
+
+#~ msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
+#~ msgstr "ถ้าคุณเข้าใจหลักการทำงานของเครือข่ายประสาทเทียมแล้ว ให้ใช้คู่มือต่อไปนี้เพื่อเริ่มสร้างเครือข่ายของคุณเอง อย่าลืมสอบถาม AI Assistant หากมีคำถาม!"
+
+#: src/components/layout/sidebar.tsx:113
+msgid "Info"
+msgstr ""
+
+#: src/app/(app)/optimize/page.tsx:197
+msgid "Input Features:"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:192
 msgid "Inputs:"
 msgstr "อินพุต:"
 
+#: src/app/(app)/visualize/page.tsx:329
 msgid "IR version:"
 msgstr "เวอร์ชัน IR:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "เพียงแค่ลากแล้ววางไฟล์ของคุณ แล้วเริ่มใช้งานได้เลย—ไม่ต้องตั้งค่า ไม่ยุ่งยาก"
+#~ msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
+#~ msgstr "เพียงแค่ลากแล้ววางไฟล์ของคุณ แล้วเริ่มใช้งานได้เลย—ไม่ต้องตั้งค่า ไม่ยุ่งยาก"
 
+#: src/app/learn/page.tsx:21
+msgid "Know nothing about neural networks?"
+msgstr ""
+
+#: src/app/(app)/profile/page.tsx:90
+msgid "Language:"
+msgstr ""
+
+#: src/components/optimizationResults.tsx:97
+msgid "Layers"
+msgstr ""
+
+#: src/components/optimizationResults.tsx:69
 msgid "Layers:"
 msgstr "เลเยอร์:"
 
+#: src/components/layout/sidebar.tsx:117
+msgid "Learn"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:355
+msgid "Legend"
+msgstr ""
+
+#: src/components/fileUploadElements/CSVUploader.tsx:45
 msgid "Load CSV File"
 msgstr "โหลดไฟล์ CSV"
 
+#: src/components/fileUploadElements/ONNXUploader.tsx:47
 msgid "Load ONNX File"
 msgstr "โหลดไฟล์ ONNX"
 
-msgid "Loading"
-msgstr "กำลังโหลด"
+#: src/app/(app)/dash/page.tsx:307
+msgid "Loaded files:"
+msgstr ""
 
+#~ msgid "Loading"
+#~ msgstr "กำลังโหลด"
+
+#: src/app/(app)/dash/page.tsx:241
+msgid "Log in here <0/>"
+msgstr ""
+
+#: src/app/(auth)/register/page.tsx:51
+#: src/app/(auth)/login/page.tsx:51
 msgid "Log out"
 msgstr "ออกจากระบบ"
 
-msgid "Logging in...."
-msgstr "กำลังเข้าสู่ระบบ..."
+#~ msgid "Logging in...."
+#~ msgstr "กำลังเข้าสู่ระบบ..."
 
+#: src/components/layout/sidebar.tsx:181
+#: src/app/(auth)/register/page.tsx:82
+#: src/app/(auth)/login/page.tsx:71
 msgid "Login"
 msgstr "เข้าสู่ระบบ"
 
-msgid "Magic Link sign-in"
-msgstr "ลงชื่อเข้าใช้ด้วย Magic Link"
+#: src/components/layout/sidebar.tsx:69
+#: src/app/(auth)/login/page.tsx:56
+#: src/app/(app)/dash/page.tsx:258
+msgid "logo"
+msgstr ""
 
+#: src/components/layout/sidebar.tsx:163
+#: src/app/(app)/profile/page.tsx:94
+msgid "Logout"
+msgstr ""
+
+#~ msgid "Magic Link sign-in"
+#~ msgstr "ลงชื่อเข้าใช้ด้วย Magic Link"
+
+#: src/app/(app)/optimize/page.tsx:254
+msgid "Maximum Epochs Per Configuration:"
+msgstr ""
+
+#: src/app/(app)/data/page.tsx:137
+#: src/app/(app)/data/page.tsx:145
+msgid "mb"
+msgstr ""
+
+#: src/app/(auth)/register/page.tsx:73
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr ""
+
+#: src/app/(app)/data/page.tsx:216
+msgid "Missing Data Heatmap"
+msgstr ""
+
+#: src/app/(app)/data/page.tsx:114
 msgid "Missing values"
 msgstr "ค่าที่หายไป"
 
+#: src/components/data/ViewSelector.tsx:16
+msgid "Missing Values Heatmap"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:289
+msgid "Model Details"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:176
 msgid "Name:"
 msgstr "ชื่อ:"
 
-msgid "Neural Network Development Dashboard"
-msgstr "แดชบอร์ดพัฒนาเครือข่ายประสาทเทียม"
+#: src/app/(app)/visualize/page.tsx:461
+msgid "Network Visualization"
+msgstr ""
 
+#~ msgid "Neural Network Development Dashboard"
+#~ msgstr "แดชบอร์ดพัฒนาเครือข่ายประสาทเทียม"
+
+#: src/components/optimizationResults.tsx:94
+msgid "Neurons"
+msgstr ""
+
+#: src/components/optimizationResults.tsx:63
 msgid "Neurons:"
 msgstr "นิวรอน:"
 
+#: src/app/learn/page.tsx:24
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr ""
+
+#: src/app/(app)/dash/page.tsx:384
+msgid "No active session!"
+msgstr ""
+
+#: src/components/data/EncodingInfoView.tsx:138
+msgid "No categorical columns"
+msgstr ""
+
+#: src/app/(app)/dash/page.tsx:323
+msgid "No csv file loaded"
+msgstr ""
+
+#: src/components/data/DataTable.tsx:18
 msgid "No data to display"
 msgstr "ไม่มีข้อมูลแสดง"
 
+#: src/app/(app)/data/page.tsx:103
+msgid "No file uploaded"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:309
+msgid "No model loaded"
+msgstr ""
+
+#: src/components/data/EncodingInfoView.tsx:115
+msgid "No numerical columns"
+msgstr ""
+
+#: src/app/(app)/dash/page.tsx:315
+msgid "No onnx file loaded"
+msgstr ""
+
+#: src/app/(app)/dash/page.tsx:344
 msgid "No optimization done."
 msgstr "ยังไม่ได้ทำการเพิ่มประสิทธิภาพ"
 
+#: src/components/data/WarningsRecommendations.tsx:50
 msgid "No recommendations"
 msgstr "ไม่มีคำแนะนำ"
 
+#: src/components/data/EncodingInfoView.tsx:209
 msgid "No such columns"
 msgstr "ไม่มีคอลัมน์ดังกล่าว"
 
+#: src/components/data/WarningsRecommendations.tsx:29
 msgid "No warnings"
 msgstr "ไม่มีคำเตือน"
 
+#: src/app/(app)/visualize/page.tsx:337
 msgid "Node count:"
 msgstr "จำนวนโหนด:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "มีหลักสูตรฟรีเกี่ยวกับเครือข่ายประสาทเทียมและวิธีการทำงาน"
+#: src/app/(app)/visualize/page.tsx:415
+msgid "Node physics"
+msgstr ""
 
+#: src/components/data/EncodingInfoView.tsx:52
+msgid "Not safe"
+msgstr ""
+
+#: src/components/data/EncodingInfoView.tsx:83
+msgid "Numerical"
+msgstr ""
+
+#~ msgid "offers free courses about neural networks and how they work."
+#~ msgstr "มีหลักสูตรฟรีเกี่ยวกับเครือข่ายประสาทเทียมและวิธีการทำงาน"
+
+#: src/app/(app)/data/page.tsx:123
 msgid "One hot"
 msgstr "One hot"
 
+#: src/components/data/EncodingInfoView.tsx:42
+msgid "Onehot encoding:"
+msgstr ""
+
+#: src/app/(app)/optimize/page.tsx:301
+#: src/app/(app)/dash/page.tsx:311
+#: src/app/(app)/dash/page.tsx:473
 msgid "ONNX file:"
 msgstr "ไฟล์ ONNX:"
 
-msgid "Optimize"
-msgstr "เพิ่มประสิทธิภาพ"
+#: src/components/layout/sidebar.tsx:104
+#: src/app/(app)/optimize/page.tsx:357
+#: src/app/(app)/dash/page.tsx:330
+msgid "Optimization"
+msgstr ""
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "เพิ่มประสิทธิภาพเครือข่ายประสาทเทียมของคุณด้วยสถาปัตยกรรมที่ดีขึ้นเพื่อปรับปรุงความเร็วและผลลัพธ์"
+#: src/app/(app)/dash/page.tsx:369
+msgid "Optimization <0/>"
+msgstr ""
 
+#: src/components/optimizationResults.tsx:54
+msgid "Optimization results:"
+msgstr ""
+
+#: src/app/(app)/optimize/page.tsx:192
+msgid "Optimization settings"
+msgstr ""
+
+#: src/app/(app)/optimize/page.tsx:246
+msgid "Optimization strategy:"
+msgstr ""
+
+#~ msgid "Optimize"
+#~ msgstr "เพิ่มประสิทธิภาพ"
+
+#~ msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
+#~ msgstr "เพิ่มประสิทธิภาพเครือข่ายประสาทเทียมของคุณด้วยสถาปัตยกรรมที่ดีขึ้นเพื่อปรับปรุงความเร็วและผลลัพธ์"
+
+#: src/components/fileUploadElements/ONNXUploader.tsx:84
+#: src/components/fileUploadElements/CSVUploader.tsx:82
+msgid "or drag and drop files"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:211
 msgid "Outputs:"
 msgstr "เอาต์พุต:"
 
+#: src/app/(app)/data/page.tsx:148
 msgid "Overall"
 msgstr "โดยรวม"
 
+#: src/components/data/EncodingInfoView.tsx:26
+msgid "Overall recommendation:"
+msgstr ""
+
+#: src/components/data/DataTable.tsx:61
+#: src/components/data/DataTable.tsx:135
+msgid "Page {currentPage} of {totalPages}"
+msgstr ""
+
+#: src/app/(auth)/register/page.tsx:70
+#: src/app/(auth)/login/page.tsx:68
+msgid "Password"
+msgstr ""
+
+#: src/app/(app)/dash/page.tsx:387
+msgid "Please load or create a new session to start."
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:323
 msgid "Producer:"
 msgstr "ผู้ผลิต:"
 
+#: src/components/layout/sidebar.tsx:144
+#: src/app/(app)/profile/page.tsx:65
+msgid "Profile"
+msgstr ""
+
+#: src/components/optimizationResults.tsx:81
+#: src/components/optimizationResults.tsx:103
 msgid "R2 score:"
 msgstr "คะแนน R2:"
 
+#: src/components/data/WarningsRecommendations.tsx:38
+msgid "Recommendations"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:453
+msgid "Refresh"
+msgstr ""
+
+#: src/components/data/EncodingInfoView.tsx:153
+#: src/components/data/EncodingInfoView.tsx:175
 msgid "Risky for onehot:"
 msgstr "เสี่ยงต่อ onehot:"
 
+#: src/app/(app)/data/page.tsx:106
 msgid "Rows"
 msgstr "แถว"
 
+#: src/components/data/DataTable.tsx:81
+#: src/components/data/DataTable.tsx:155
+msgid "Rows/Page:"
+msgstr ""
+
+#: src/components/data/EncodingInfoView.tsx:37
+#: src/components/data/EncodingInfoView.tsx:51
+#: src/app/(app)/data/page.tsx:128
+msgid "Safe"
+msgstr ""
+
+#: src/components/data/EncodingInfoView.tsx:157
+#: src/components/data/EncodingInfoView.tsx:179
 msgid "Safe for onehot:"
 msgstr "ปลอดภัยสำหรับ onehot:"
 
+#: src/app/(app)/profile/page.tsx:78
+msgid "Save"
+msgstr ""
+
+#: src/components/chat/chat.tsx:154
+msgid "Send"
+msgstr ""
+
+#: src/app/(app)/dash/page.tsx:395
+msgid "Sessions:"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:395
+msgid "Settings"
+msgstr ""
+
+#: src/app/(auth)/register/page.tsx:75
 msgid "Sign up"
 msgstr "ลงทะเบียน"
 
-msgid "Something went wrong"
-msgstr "มีบางอย่างผิดพลาด"
+#~ msgid "Something went wrong"
+#~ msgstr "มีบางอย่างผิดพลาด"
 
+#: src/app/(app)/optimize/page.tsx:263
+msgid "Start Optimization"
+msgstr ""
+
+#: src/app/(app)/optimize/page.tsx:222
+msgid "Target Feature:"
+msgstr ""
+
+#: src/components/optimizationResults.tsx:75
+#: src/components/optimizationResults.tsx:100
 msgid "Test loss:"
 msgstr "การสูญเสียการทดสอบ:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "Neural Network Playground นำเสนอวิธีแบบโต้ตอบในการดูและทำความเข้าใจว่าเครือข่ายประสาทเทียมคิดและทำงานอย่างไร เพียงคลิกปุ่มด้านล่างเพื่อเริ่มต้น"
+#~ msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
+#~ msgstr "Neural Network Playground นำเสนอวิธีแบบโต้ตอบในการดูและทำความเข้าใจว่าเครือข่ายประสาทเทียมคิดและทำงานอย่างไร เพียงคลิกปุ่มด้านล่างเพื่อเริ่มต้น"
 
+#: src/components/chat/chat.tsx:25
+msgid "thinking..."
+msgstr ""
+
+#: src/components/layout/sidebar.tsx:100
+msgid "Tools"
+msgstr ""
+
+#: src/components/data/EncodingInfoView.tsx:161
+#: src/components/data/EncodingInfoView.tsx:183
 msgid "Total categorical:"
 msgstr "ทั้งหมดแบบจำแนกประเภท:"
 
+#: src/components/chat/chat.tsx:148
+msgid "Type here..."
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:237
+msgid "Type:"
+msgstr ""
+
+#: src/app/(app)/data/page.tsx:129
+msgid "Unsafe"
+msgstr ""
+
+#: src/app/(app)/optimize/page.tsx:202
+msgid "Upload a CSV dataset to see available features"
+msgstr ""
+
+#: src/components/fileUploadElements/CSVUploader.tsx:69
+msgid "Upload CSV Dataset"
+msgstr ""
+
+#: src/components/fileUploadElements/ONNXUploader.tsx:71
+msgid "Upload ONNX model"
+msgstr ""
+
+#: src/app/(app)/profile/page.tsx:70
+msgid "Username:"
+msgstr ""
+
+#: src/app/(app)/visualize/page.tsx:437
+msgid "Vertical view"
+msgstr ""
+
+#: src/components/layout/sidebar.tsx:86
+#: src/app/(app)/dash/page.tsx:294
 msgid "Visualize"
 msgstr "แสดงภาพ"
 
+#: src/components/data/WarningsRecommendations.tsx:17
+msgid "Warnings"
+msgstr ""
+
+#: src/app/(auth)/login/page.tsx:57
 msgid "Welcome back!"
 msgstr "ยินดีต้อนรับกลับ!"
 
+#: src/app/(auth)/register/page.tsx:58
 msgid "Welcome!"
 msgstr "ยินดีต้อนรับ!"
 
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "ไม่ว่าคุณจะฝึกฝนโมเดลอย่างง่ายหรือปรับแต่ง transformer ขนาดใหญ่ 2N2D จะปรับให้เข้ากับเวิร์กโฟลว์ของคุณ สิ่งที่คุณต้องการเริ่มต้นคือบัญชีผู้ใช้"
+#~ msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
+#~ msgstr "ไม่ว่าคุณจะฝึกฝนโมเดลอย่างง่ายหรือปรับแต่ง transformer ขนาดใหญ่ 2N2D จะปรับให้เข้ากับเวิร์กโฟลว์ของคุณ สิ่งที่คุณต้องการเริ่มต้นคือบัญชีผู้ใช้"
 
+#: src/app/(auth)/login/page.tsx:74
 msgid "Wrong username or password!"
 msgstr "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!"
 
+#: src/app/(auth)/register/page.tsx:44
+#: src/app/(auth)/login/page.tsx:45
 msgid "You are already logged in, would you like to log out?"
-msgstr "คุณได้เข้าสู่ระบบแล้ว ต้องการออกจากระบบหรือไม่?"
-```
+msgstr "คุณได้เข้าสู่ระบบแล้ว ต้องการออกจากระบบหรือไม่?```"
+
+#: src/app/(app)/dash/page.tsx:235
+msgid "You are not logged in"
+msgstr ""

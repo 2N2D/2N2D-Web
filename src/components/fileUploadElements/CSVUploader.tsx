@@ -1,5 +1,6 @@
 import React from 'react';
 import { dragUpload, uploadCSV } from '@/lib/fileHandler/fileUpload';
+import { Trans } from '@lingui/react/macro';
 
 export default function CSVUploader({ callBack }: { callBack?: () => void }) {
   const [uploadState, setUploadState] = React.useState(false);
@@ -11,8 +12,7 @@ export default function CSVUploader({ callBack }: { callBack?: () => void }) {
     if (!e.target.files[0]) return;
     setUploading(true);
     const rez = await uploadCSV(e, parseInt(id));
-    if (typeof rez === 'string')
-      console.log(rez);
+    if (typeof rez === 'string') console.log(rez);
     sessionStorage.setItem('csvData', JSON.stringify(rez));
 
     if (callBack) callBack();
@@ -28,52 +28,64 @@ export default function CSVUploader({ callBack }: { callBack?: () => void }) {
     if (callBack) callBack();
   }
 
-  return <>
-    <button
-      onClick={() => {
-        setUploadState(true);
-      }}
-      className={'uploadButton'}
-      disabled={uploading}
-    >
-      {uploading ? 'Uploading...' : <p> Load CSV File <i className="fa-solid fa-upload"></i></p>}
-    </button>
-    {uploadState ? (
-      <div className={'popup'}>
-        <button
-          className={'fileDropBack'}
-          onClick={() => {
-            setUploadState(false);
-          }}
-        >
-          <i className="fa-solid fa-xmark-large"></i>
-          Cancel
-        </button>
-        <div
-          className="fileDrop"
-          onDrop={(e) => {
-            _uploadCSVDrop(e);
-            setUploadState(false);
-          }}
-          onDragOver={(event) => event.preventDefault()}
-        >
-          <label>
-            Upload CSV Dataset <i className="fa-solid fa-upload"></i>
-            <input
-              type="file"
-              id="csv-input"
-              accept=".csv"
-              onChange={(e) => {
-                _uploadCSV(e);
-                setUploadState(false);
-              }}
-            />
-          </label>
-          <span>or drag and drop files</span>
+  return (
+    <>
+      <button
+        onClick={() => {
+          setUploadState(true);
+        }}
+        className={'uploadButton'}
+        disabled={uploading}
+      >
+        {uploading ? (
+          'Uploading...'
+        ) : (
+          <p>
+            {' '}
+            <Trans>Load CSV File</Trans> <i className='fa-solid fa-upload'></i>
+          </p>
+        )}
+      </button>
+      {uploadState ? (
+        <div className={'popup'}>
+          <button
+            className={'fileDropBack'}
+            onClick={() => {
+              setUploadState(false);
+            }}
+          >
+            <i className='fa-solid fa-xmark-large'></i>
+            Cancel
+          </button>
+          <div
+            className='fileDrop'
+            onDrop={(e) => {
+              _uploadCSVDrop(e);
+              setUploadState(false);
+            }}
+            onDragOver={(event) => event.preventDefault()}
+          >
+            <label>
+              <Trans>Upload CSV Dataset</Trans>{' '}
+              <i className='fa-solid fa-upload'></i>
+              <input
+                type='file'
+                id='csv-input'
+                accept='.csv'
+                onChange={(e) => {
+                  _uploadCSV(e);
+                  setUploadState(false);
+                }}
+              />
+            </label>
+            <span>
+              <Trans>or drag and drop files</Trans>
+            </span>
+          </div>
         </div>
-      </div>
-    ) : (
-      ''
-    )}
-  </>;
+      ) : (
+        ''
+      )}
+    </>
+  );
 }

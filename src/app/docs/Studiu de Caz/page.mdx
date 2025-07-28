@@ -1,0 +1,25 @@
+# 8 Studiu de caz
+
+Pentru a demonstra valoarea practică și eficiența platformei 2N2D, am realizat un studiu de caz care simulează un scenariu real de utilizare: optimizarea unui model de regresie pentru predicția prețurilor imobiliare.
+
+**Obiectiv:** Îmbunătățirea performanței unui model de rețea neuronală de bază, utilizând un set de date standard din industrie.
+
+**Metodologie:**
+
+1. **Set de Date și Model Inițial:**
+   - Am utilizat setul de date public **"Boston Housing"**, care conține 13 atribute despre locuințe pentru a prezice prețul acestora.
+   - Am creat un model de bază de tip feedforward, cu **2 straturi ascunse și 32 de neuroni** pe strat, salvat în format .onnx.
+2. **Performanța de Bază (Baseline):**
+   - Fișierele (boston.csv și model.onnx) au fost încărcate pe platformă.
+   - Am evaluat performanța modelului inițial, care a obținut un scor al **coeficientului de determinare (R²) de 0.68**, indicând o performanță modestă.
+3. **Procesul de Optimizare cu 2N2D:**
+   - În pagina "Optimize", am selectat atributele de intrare și variabila țintă (prețul).
+   - Am ales strategia de optimizare **"Brute Force"**, cu un număr maxim de 5 epoci de antrenare pentru fiecare configurație.
+   - Întregul proces, de la pornirea optimizării până la afișarea rezultatelor, a fost finalizat în **mai puțin de 4 minute**.
+4. **Rezultatul Optimizat:**
+   - Platforma 2N2D a testat automat 9 configurații de arhitectură.
+   - A fost identificată o arhitectură superioară, cu **3 straturi ascunse și 64 de neuroni**, care a atins un scor **R² de 0.85**.
+
+**Concluzie:**
+
+Acest studiu de caz demonstrează valoarea practică a platformei 2N2D. Un proces care ar necesita în mod normal ore de muncă manuală – modificarea repetată a codului sursă, re-antrenarea, evaluarea și compararea rezultatelor – a fost transformat într-o operațiune automată, rapidă și intuitivă. Platforma nu doar că a îmbunătățit semnificativ performanța modelului, dar a abstractizat complet complexitatea tehnică, permițând utilizatorului să se concentreze exclusiv pe rezultatul final.

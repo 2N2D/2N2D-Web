@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Styles from './SideBar.module.css';
 import { getSession, logout } from '@/lib/auth/authentication';
 import SidebarButton from './sidebarButton';
+import { Trans, useLingui } from '@lingui/react/macro';
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -12,6 +13,8 @@ export default function Sidebar() {
   const [logged, setLogged] = useState<boolean>(false);
   const [sessionLoaded, setSessionLoaded] = useState<boolean>(false);
   const router = useRouter();
+
+  const { t } = useLingui();
 
   async function checkLogged() {
     if ((await getSession()) == '200') {
@@ -63,22 +66,24 @@ export default function Sidebar() {
         >
           <img
             src={open ? 'logo2n2d.svg' : 'logo.svg'}
-            alt='logo'
+            alt={t`logo`}
             className={Styles.logo}
           />
         </button>
 
         <SidebarButton
           icon='fa-solid fa-house'
-          text='Dashboard'
+          text={t`Dashboard`}
           active={pathname === '/dash'}
           onClick={() => router.push('/dash')}
         />
 
-        <h2 className={Styles.tabCat}>Analyze</h2>
+        <h2 className={Styles.tabCat}>
+          <Trans>Analyze</Trans>
+        </h2>
         <SidebarButton
           icon='fa-solid fa-chart-network'
-          text='Visualize'
+          text={t`Visualize`}
           active={pathname === '/visualize'}
           disabled={!sessionLoaded}
           onClick={() => router.push('/visualize')}
@@ -86,15 +91,17 @@ export default function Sidebar() {
 
         <SidebarButton
           icon='fa-solid fa-chart-simple'
-          text='Data'
+          text={t`Data`}
           active={pathname === '/data'}
           disabled={!sessionLoaded}
           onClick={() => router.push('/data')}
         />
-        <h2 className={Styles.tabCat}>Tools</h2>
+        <h2 className={Styles.tabCat}>
+          <Trans>Tools</Trans>
+        </h2>
         <SidebarButton
           icon='fa-solid fa-rabbit-running'
-          text='Optimization'
+          text={t`Optimization`}
           active={pathname === '/optimize'}
           disabled={!sessionLoaded}
           onClick={() => router.push('/optimize')}
@@ -102,16 +109,18 @@ export default function Sidebar() {
 
         <div className={Styles.spacer} />
 
-        <h2 className={Styles.tabCat}>Info</h2>
+        <h2 className={Styles.tabCat}>
+          <Trans>Info</Trans>
+        </h2>
         <SidebarButton
           icon='fa-solid fa-book-open-cover'
-          text='Learn'
+          text={t`Learn`}
           active={pathname === '/learn'}
           onClick={() => router.push('/learn')}
         />
         <SidebarButton
           icon='fa-solid fa-books'
-          text='Docs'
+          text={t`Docs`}
           active={pathname === '/docs'}
           onClick={() => router.push('/docs')}
         />
@@ -131,7 +140,9 @@ export default function Sidebar() {
               <span className={Styles.iconWrapper}>
                 <i className='fa-solid fa-user'></i>
               </span>
-              <span className={`${Styles.tabText}`}>Profile</span>
+              <span className={`${Styles.tabText}`}>
+                <Trans>Profile</Trans>
+              </span>
             </button>
           ) : (
             ''
@@ -148,7 +159,9 @@ export default function Sidebar() {
               <span className={Styles.iconWrapper}>
                 <i className='fa-solid fa-right-from-bracket'></i>
               </span>
-              <span className={`${Styles.tabText}`}>Logout</span>
+              <span className={`${Styles.tabText}`}>
+                <Trans>Logout</Trans>
+              </span>
             </button>
           ) : (
             <button
@@ -164,7 +177,9 @@ export default function Sidebar() {
               <span className={Styles.iconWrapper}>
                 <i className='fa-solid fa-user'></i>
               </span>
-              <span className={`${Styles.tabText}`}>Login</span>
+              <span className={`${Styles.tabText}`}>
+                <Trans>Login</Trans>
+              </span>
             </button>
           )}
         </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import { useLingui } from '@lingui/react/macro';
 import Plot from 'react-plotly.js';
 
 type Distribution = {
@@ -21,6 +22,7 @@ type Props = {
 
 export default function PlotDistribution({ data }: Props) {
   const keys = Object.keys(data);
+  const { t } = useLingui();
 
   return (
     <div className='align-center flex h-[600px] w-full flex-row items-center gap-[0.5rem] overflow-x-auto'>
@@ -44,7 +46,7 @@ export default function PlotDistribution({ data }: Props) {
                 paper_bgcolor: 'transparent',
                 plot_bgcolor: 'transparent',
                 title: {
-                  text: `${key} Distribution`,
+                  text: t`${key} Distribution`,
                   font: { color: 'white' }
                 },
                 xaxis: {

@@ -8,6 +8,9 @@ import '@/lib/fontawesome/css/fa.css';
 import './globals.css';
 import SideBar from '@/components/layout/sidebar';
 import Chat from '@/components/chat/chat';
+import Provider from '@/lib/providers/providers';
+import { allMessages } from '@/lib/frontend/i18n';
+import { getCurrentLocale } from '@/lib/frontend/languageChanger';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,24 +33,27 @@ export const metadata: Metadata = {
   description: 'Neural Network Development Dashboard'
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: {
   children: React.ReactNode;
 }) {
+  const lang = await getCurrentLocale();
   return (
     <html
-      lang='en'
+      lang={lang}
       className={`dark ${geistSans.variable} ${geistMono.variable} ${specialGothicExpandedOne.variable}`}
     >
       <head></head>
       <body className='antialiased'>
-        <SideBar />
-        <Chat />
-        <div>{children}</div>
-        <footer>
-          <p>Neural Network Development Dashboard</p>
-        </footer>
+        <Provider lang={lang} messages={allMessages[lang]}>
+          <SideBar />
+          <Chat />
+          {children}
+          <footer>
+            <p>Neural Network Development Dashboard</p>
+          </footer>
+        </Provider>
       </body>
     </html>
   );

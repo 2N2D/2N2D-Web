@@ -16,7 +16,7 @@ import {
 } from '@/lib/sessionHandling/sessionManager';
 import { motion, AnimatePresence } from 'framer-motion';
 import { deleteOnnx } from '@/lib/sessionHandling/sessionUpdater';
-
+import { Trans, useLingui } from '@lingui/react/macro';
 
 export default function visualize() {
   //Session docs
@@ -40,6 +40,8 @@ export default function visualize() {
   const [selected, setSelected] = useState<any>(null);
 
   const canvasRef = React.useRef<HTMLDivElement>(null);
+
+  const { t } = useLingui();
 
   async function updateView() {
     let data = sessionStorage.getItem('modelData');
@@ -107,18 +109,7 @@ export default function visualize() {
     updateView();
   }
 
-  // async function updateSessionData() {
-  //     console.log("Updating", currentSession)
-  //     if (!currentSession) return;
-  //     let auxSession = currentSession;
-  //     auxSession.visResult = result;
-  //     console.log(auxSession);
-  //     await updateSession(auxSession);
-  //     setCurrentSession(auxSession);
-  // }
-
   function titleFormat(title: string): any {
-    // Trim and split the input into individual lines
     const lines = title.trim().split('\n');
     const parsed: Record<
       string,
@@ -141,14 +132,12 @@ export default function visualize() {
         const key = rawKey.replace(/\s+/g, '');
 
         if (currentAttr) {
-          // handle attribute fields
           if (!isNaN(Number(value))) {
             currentAttr[key] = Number(value);
           } else {
             currentAttr[key] = value;
           }
         } else {
-          // handle top-level fields
           if (parsed[key]) {
             if (Array.isArray(parsed[key])) {
               parsed[key].push(value);
@@ -183,17 +172,25 @@ export default function visualize() {
         <div className={'overflow-y-auto pt-0 pr-[2rem] pb-[2rem] pl-[2rem]'}>
           {options.name && (
             <p>
-              <b> Name: </b> {options.name.toString()}
+              <b>
+                <Trans>Name:</Trans>
+              </b>{' '}
+              {options.name.toString()}
             </p>
           )}
           <p>
-            <b> Category: </b> {getNodeCategory(selected.label)}
+            <b>
+              <Trans>Category:</Trans>
+            </b>{' '}
+            {getNodeCategory(selected.label)}
           </p>
 
           {options.input && (
             <div>
               <h2>
-                <b> Inputs: </b>
+                <b>
+                  <Trans>Inputs:</Trans>
+                </b>
               </h2>
               <ul>
                 {typeof options.input === 'string' ? (
@@ -210,7 +207,9 @@ export default function visualize() {
           {options.output && (
             <div>
               <h2>
-                <b> Outputs: </b>
+                <b>
+                  <Trans>Outputs:</Trans>
+                </b>
               </h2>
               <ul>
                 {typeof options.output === 'string' ? (
@@ -227,13 +226,15 @@ export default function visualize() {
           {options.attributes && (
             <div>
               <h2>
-                <b> Attributes: </b>
+                <b>
+                  <Trans>Attributes:</Trans>
+                </b>
               </h2>
               <ul>
                 {options.attributes.map((attr: any, i: number) => (
                   <li key={i}>
-                    <b>{attr.name}</b>: {Object.values(attr)[1]} Type:{' '}
-                    {attr.type}
+                    <b>{attr.name}</b>: {Object.values(attr)[1]}{' '}
+                    <Trans>Type:</Trans> {attr.type}
                   </li>
                 ))}
               </ul>
@@ -269,10 +270,6 @@ export default function visualize() {
     updateView();
   }, [constantsEnabled, physicsEnabled, verticalView]);
 
-  // React.useEffect(() => {
-  //     updateSessionData();
-  // }, [result])
-
   return (
     <motion.main
       className='page'
@@ -288,7 +285,9 @@ export default function visualize() {
               className='setting'
               onClick={() => setDetailsExpanded(!detailsExpanded)}
             >
-              <h3 className='subtitle'>Model Details</h3>
+              <h3 className='subtitle'>
+                <Trans>Model Details</Trans>
+              </h3>
               <motion.i
                 className='fa-solid fa-caret-down'
                 animate={{ rotate: detailsExpanded ? 180 : 0 }}
@@ -307,25 +306,37 @@ export default function visualize() {
                   className='max-h-[100vh] overflow-y-auto'
                 >
                   {result == null || !result.summary ? (
-                    'No model loaded'
+                    <Trans>No model loaded</Trans>
                   ) : (
                     <>
                       <div className='sArea'>
                         <h2>
-                          <b> File: </b> {fileName}
+                          <b>
+                            <Trans>File:</Trans>
+                          </b>{' '}
+                          {fileName}
                         </h2>
                       </div>
                       <div className='sArea'>
                         <h2>
-                          <b> Producer: </b> {result.summary.producer}
+                          <b>
+                            <Trans>Producer:</Trans>
+                          </b>{' '}
+                          {result.summary.producer}
                         </h2>
                         <h2>
-                          <b> IR version: </b> {result.summary.ir_version}
+                          <b>
+                            <Trans>IR version:</Trans>
+                          </b>{' '}
+                          {result.summary.ir_version}
                         </h2>
                       </div>
                       <div className='sArea'>
                         <h2>
-                          <b> Node count: </b> {result.summary.node_count}
+                          <b>
+                            <Trans>Node count:</Trans>
+                          </b>{' '}
+                          {result.summary.node_count}
                         </h2>
                       </div>
                     </>
@@ -340,7 +351,9 @@ export default function visualize() {
               className='setting'
               onClick={() => setLegendExpanded(!legendExpanded)}
             >
-              <h3 className='subtitle'>Legend</h3>
+              <h3 className='subtitle'>
+                <Trans>Legend</Trans>
+              </h3>
               <motion.i
                 className='fa-solid fa-caret-down'
                 animate={{ rotate: legendExpanded ? 180 : 0 }}
@@ -378,7 +391,9 @@ export default function visualize() {
               className='setting'
               onClick={() => setSettingsExpanded(!settingsExpanded)}
             >
-              <h2 className='subtitle'>Settings</h2>
+              <h2 className='subtitle'>
+                <Trans>Settings</Trans>
+              </h2>
               <motion.i
                 className='fa-solid fa-caret-down'
                 animate={{ rotate: settingsExpanded ? 180 : 0 }}
@@ -396,7 +411,9 @@ export default function visualize() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className='setting'>
-                    <label htmlFor='physics'>Node physics</label>
+                    <label htmlFor='physics'>
+                      <Trans>Node physics</Trans>
+                    </label>
                     <input
                       type='checkbox'
                       id='physics'
@@ -405,7 +422,9 @@ export default function visualize() {
                     />
                   </div>
                   <div className='setting'>
-                    <label htmlFor='constants'>Constant nodes</label>
+                    <label htmlFor='constants'>
+                      <Trans>Constant nodes</Trans>
+                    </label>
                     <input
                       type='checkbox'
                       id='constants'
@@ -414,7 +433,9 @@ export default function visualize() {
                     />
                   </div>
                   <div className='setting'>
-                    <label htmlFor='vertical'>Vertical view</label>
+                    <label htmlFor='vertical'>
+                      <Trans>Vertical view</Trans>
+                    </label>
                     <input
                       type='checkbox'
                       id='vertical'
@@ -429,18 +450,22 @@ export default function visualize() {
 
           <div className='sArea'>
             <button className='uploadButton' onClick={updateView}>
-              Refresh <i className='fa-solid fa-arrows-rotate'></i>
+              <Trans>Refresh</Trans>{' '}
+              <i className='fa-solid fa-arrows-rotate'></i>
             </button>
           </div>
         </div>
 
         <div className='titleWrapper'>
-          <h1 className='title'>Network Visualization</h1>
+          <h1 className='title'>
+            <Trans>Network Visualization</Trans>
+          </h1>
           <div className='sArea vertical'>
             <div className='dataArea'>
               <ONNXUploader callBack={updateView} />
               <button className='deleteButton' onClick={clearData}>
-                Clear Data <i className='fa-solid fa-trash-xmark'></i>
+                <Trans>Clear Data</Trans>{' '}
+                <i className='fa-solid fa-trash-xmark'></i>
               </button>
             </div>
           </div>

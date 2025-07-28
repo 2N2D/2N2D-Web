@@ -5,7 +5,8 @@ import { exchange, createChat } from '@/lib/aiChat';
 import MessageDisplayer from '@/components/chat/messageDisplayer';
 import styles from './Chat.module.css';
 import { usePathname } from 'next/navigation';
-import { getSessionTokenHash } from '@/lib/auth/authentication';
+import { getCurrentUser } from '@/lib/auth/authentication';
+import { Trans, useLingui } from '@lingui/react/macro';
 
 export default function ChatElement() {
   const [question, setQuestion] = useState<string>('');
@@ -14,20 +15,22 @@ export default function ChatElement() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
+  const { t } = useLingui();
+
   const isStreamingRef = useRef(false); // Tracks if we're mid-stream
 
   async function askQuestion() {
     if (!question.trim()) return;
 
-    setStatus('thinking...');
+    setStatus(t`thinking...`);
     const auxQuestion = question;
     setQuestion('');
     setMessages((prev) => [...prev, { question: auxQuestion, answer: '' }]);
-    const sessionId = await getSessionTokenHash();
+    const uId = await getCurrentUser();
 
     const payload = {
       question: auxQuestion,
-      sessionId,
+      sessionId: uId,
       modelData:
         pathname !== '/learn' && pathname !== '/docs'
           ? sessionStorage.getItem('modelResponse')
@@ -79,13 +82,23 @@ export default function ChatElement() {
       isStreamingRef.current = false;
       setStatus('');
     } else {
-      setStatus('Failed to connect to AI.');
+      setStatus(t`Failed to connect to AI.`);
     }
   }
 
   async function initChat() {
-    const sessionId = await getSessionTokenHash();
-    await createChat(sessionId);
+    const uId = await getCurrentUser();
+    const rezult = await createChat(uId);
+    //console.log('Chat history:', rezult);
+
+    if (rezult && Array.isArray(rezult)) {
+      for (let i = 0; i < rezult.length; i += 2) {
+        const question = rezult[i]?.parts?.[0]?.text || '';
+        const answer = rezult[i + 1]?.parts?.[0]?.text || '';
+        const newExchange: exchange = { question, answer };
+        setMessages((prev) => [...prev, newExchange]);
+      }
+    }
   }
 
   useEffect(() => {
@@ -113,7 +126,7 @@ export default function ChatElement() {
           setOpen(!open);
         }}
       >
-        {open ? 'Close' : 'AI Chat'}
+        {open ? <Trans>Close</Trans> : <Trans>AI Chat</Trans>}
       </button>
       <div className={styles.chatArea}>
         <MessageDisplayer messages={messages} />
@@ -132,13 +145,13 @@ export default function ChatElement() {
         >
           <input
             type={'text'}
-            placeholder={'Type here...'}
+            placeholder={t`Type here...`}
             onChange={(e) => setQuestion(e.target.value)}
             value={question}
           />
 
           <button type={'submit'}>
-            Send <i className='fa-solid fa-paper-plane-top'></i>
+            <Trans>Send</Trans> <i className='fa-solid fa-paper-plane-top'></i>
           </button>
         </form>
       </div>

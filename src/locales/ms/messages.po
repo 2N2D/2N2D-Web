@@ -1,57 +1,145 @@
-```
-msgid ""
-msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+msgstr
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: ms\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "Paparan Pembangun <0>J</0>aringan <1>S</1>araf <2>T</2>eratur"
+msgid " Got the basics? "
+msgstr " Dah faham asasnya? "
 
-msgid "Already have an account? "
-msgstr "Sudah mempunyai akaun? "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " Jika anda faham tentang bagaimana rangkaian neural berfungsi, gunakan panduan berikut untuk mula mencipta rangkaian anda sendiri. Jangan lupa untuk bertanya soalan kepada Pembantu AI! "
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " Taman Permainan Rangkaian Neural menawarkan cara interaktif untuk melihat dan memahami cara rangkaian neural berfikir dan berfungsi. Klik sahaja butang di bawah untuk bermula. "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} unik, {2})"
+
+msgid "{key} Distribution"
+msgstr "Taburan {key}"
+
+msgid "Add dataset:"
+msgstr "Tambah set data:"
+
+msgid "AI Chat"
+msgstr "Sembang AI"
+
+msgid "Already have an account?"
+msgstr "Sudah mempunyai akaun?"
 
 msgid "Analyze"
-msgstr "Menganalisis"
-
-msgid "Ask"
-msgstr "Tanya"
+msgstr "Analisis"
 
 msgid "Attributes:"
 msgstr "Atribut:"
 
-msgid "Back to login"
-msgstr "Kembali ke log masuk"
+msgid "Best config"
+msgstr "Konfigurasi terbaik"
+
+msgid "Best configuration:"
+msgstr "Konfigurasi terbaik:"
+
+msgid "Categorical"
+msgstr "Kategorikal"
+
+msgid "Categorical summary:"
+msgstr "Ringkasan kategorikal:"
 
 msgid "Category:"
 msgstr "Kategori:"
 
+msgid "Clear Data"
+msgstr "Kosongkan Data"
+
+msgid "Close"
+msgstr "Tutup"
+
+msgid "Column types:"
+msgstr "Jenis lajur:"
+
 msgid "Columns"
 msgstr "Lajur"
 
+msgid "Columns estimate:"
+msgstr "Anggaran lajur:"
+
+msgid "Config {0}"
+msgstr "Konfig {0}"
+
+msgid "Configuration"
+msgstr "Konfigurasi"
+
+msgid "Constant nodes"
+msgstr "Nod malar"
+
+msgid "Correlation Matrix"
+msgstr "Matriks Korelasi"
+
+msgid "Create new session"
+msgstr "Cipta sesi baharu"
+
 msgid "Csv file:"
-msgstr "Fail csv:"
+msgstr "Fail Csv:"
 
 msgid "CSV file:"
 msgstr "Fail CSV:"
 
+msgid "CSV tools"
+msgstr "Alat CSV"
+
 msgid "Cur. Memory"
 msgstr "Memori Semasa"
 
-msgid "Don't have an account?"
-msgstr "Belum mempunyai akaun?"
+msgid "Dashboard"
+msgstr "Papan Pemuka"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "Tafsir data latihan dan output daripada model anda dengan mudah."
+msgid "Data"
+msgstr "Data"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "Mudah melihat struktur dan nod rangkaian saraf anda, dalam format yang mudah dan senang difahami."
+msgid "Data <0/>"
+msgstr "Data <0/>"
+
+msgid "Data Distribution"
+msgstr "Taburan Data"
+
+msgid "Dataset Overview"
+msgstr "Gambaran Keseluruhan Set Data"
+
+msgid "Docs"
+msgstr "Dokumen"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "Tiada akaun? <0>Daftar di sini!</0>"
+
+msgid "Download optimized"
+msgstr "Muat turun yang dioptimumkan"
+
+msgid "Downloading..."
+msgstr "Memuat turun..."
+
+msgid "E-Mail:"
+msgstr "E-Mel:"
+
+msgid "Email"
+msgstr "E-mel"
+
+msgid "Encoding Feasibility"
+msgstr "Kebolehlaksanaan Pengekodan"
+
+msgid "Encoding Info"
+msgstr "Maklumat Pengekodan"
+
+msgid "Encoding type:"
+msgstr "Jenis pengekodan:"
 
 msgid "Est. Memory"
-msgstr "Memori Anggaran"
+msgstr "Angg. Memori"
+
+msgid "Failed to connect to AI."
+msgstr "Gagal menyambung ke AI."
 
 msgid "File"
 msgstr "Fail"
@@ -59,11 +147,17 @@ msgstr "Fail"
 msgid "File:"
 msgstr "Fail:"
 
-msgid "Got the basics?"
-msgstr "Faham asasnya?"
+msgid "Hello,"
+msgstr "Hai,"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "Jika anda faham tentang cara jaringan saraf berfungsi, gunakan panduan berikut untuk mula membuat sendiri. Jangan lupa untuk bertanya kepada Pembantu AI jika ada soalan!"
+msgid "High cardinality columns:"
+msgstr "Lajur kardinaliti tinggi:"
+
+msgid "Info"
+msgstr "Maklumat"
+
+msgid "Input Features:"
+msgstr "Ciri Input:"
 
 msgid "Inputs:"
 msgstr "Input:"
@@ -71,11 +165,23 @@ msgstr "Input:"
 msgid "IR version:"
 msgstr "Versi IR:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "Hanya seret dan lepas fail anda dan mulakan—tiada persediaan, tiada kerumitan."
+msgid "Know nothing about neural networks?"
+msgstr "Tidak tahu apa-apa tentang rangkaian neural?"
+
+msgid "Language:"
+msgstr "Bahasa:"
+
+msgid "Layers"
+msgstr "Lapisan"
 
 msgid "Layers:"
 msgstr "Lapisan:"
+
+msgid "Learn"
+msgstr "Belajar"
+
+msgid "Legend"
+msgstr "Legenda"
 
 msgid "Load CSV File"
 msgstr "Muat Naik Fail CSV"
@@ -83,35 +189,83 @@ msgstr "Muat Naik Fail CSV"
 msgid "Load ONNX File"
 msgstr "Muat Naik Fail ONNX"
 
-msgid "Loading"
-msgstr "Memuat Naik"
+msgid "Loaded files:"
+msgstr "Fail yang dimuatkan:"
+
+msgid "Log in here <0/>"
+msgstr "Log masuk di sini <0/>"
 
 msgid "Log out"
 msgstr "Log keluar"
 
-msgid "Logging in...."
-msgstr "Sedang log masuk...."
-
 msgid "Login"
-msgstr "Log Masuk"
+msgstr "Log masuk"
 
-msgid "Magic Link sign-in"
-msgstr "Log masuk Pautan Ajaib"
+msgid "logo"
+msgstr "logo"
+
+msgid "Logout"
+msgstr "Log Keluar"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "Epok Maksimum Setiap Konfigurasi:"
+
+msgid "mb"
+msgstr "mb"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "Minimum 7 aksara. Perlu mempunyai sekurang-kurangnya satu aksara khas dan satu nombor."
+
+msgid "Missing Data Heatmap"
+msgstr "Peta Haba Data Hilang"
 
 msgid "Missing values"
 msgstr "Nilai yang hilang"
 
+msgid "Missing Values Heatmap"
+msgstr "Peta Haba Nilai Hilang"
+
+msgid "Model Details"
+msgstr "Butiran Model"
+
 msgid "Name:"
 msgstr "Nama:"
 
-msgid "Neural Network Development Dashboard"
-msgstr "Paparan Pembangun Jaringan Saraf"
+msgid "Network Visualization"
+msgstr "Visualisasi Rangkaian"
+
+msgid "Neurons"
+msgstr "Neuron"
 
 msgid "Neurons:"
 msgstr "Neuron:"
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision menawarkan kursus percuma tentang rangkaian neural dan cara ia berfungsi."
+
+msgid "No active session!"
+msgstr "Tiada sesi aktif!"
+
+msgid "No categorical columns"
+msgstr "Tiada lajur kategorikal"
+
+msgid "No csv file loaded"
+msgstr "Tiada fail csv dimuatkan"
+
 msgid "No data to display"
 msgstr "Tiada data untuk dipaparkan"
+
+msgid "No file uploaded"
+msgstr "Tiada fail dimuat naik"
+
+msgid "No model loaded"
+msgstr "Tiada model dimuatkan"
+
+msgid "No numerical columns"
+msgstr "Tiada lajur berangka"
+
+msgid "No onnx file loaded"
+msgstr "Tiada fail onnx dimuatkan"
 
 msgid "No optimization done."
 msgstr "Tiada pengoptimuman dilakukan."
@@ -126,22 +280,43 @@ msgid "No warnings"
 msgstr "Tiada amaran"
 
 msgid "Node count:"
-msgstr "Kiraan nod:"
+msgstr "Bilangan nod:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "menawarkan kursus percuma tentang jaringan saraf dan cara kerjanya."
+msgid "Node physics"
+msgstr "Fizik nod"
+
+msgid "Not safe"
+msgstr "Tidak selamat"
+
+msgid "Numerical"
+msgstr "Berangka"
 
 msgid "One hot"
 msgstr "Satu panas"
 
+msgid "Onehot encoding:"
+msgstr "Pengekodan satu panas:"
+
 msgid "ONNX file:"
 msgstr "Fail ONNX:"
 
-msgid "Optimize"
-msgstr "Optimumkan"
+msgid "Optimization"
+msgstr "Pengoptimuman"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "Optimumkan jaringan saraf anda dengan seni bina yang lebih baik untuk meningkatkan kelajuan dan outputnya."
+msgid "Optimization <0/>"
+msgstr "Pengoptimuman <0/>"
+
+msgid "Optimization results:"
+msgstr "Keputusan pengoptimuman:"
+
+msgid "Optimization settings"
+msgstr "Tetapan pengoptimuman"
+
+msgid "Optimization strategy:"
+msgstr "Strategi pengoptimuman:"
+
+msgid "or drag and drop files"
+msgstr "atau seret dan lepas fail"
 
 msgid "Outputs:"
 msgstr "Output:"
@@ -149,11 +324,32 @@ msgstr "Output:"
 msgid "Overall"
 msgstr "Keseluruhan"
 
+msgid "Overall recommendation:"
+msgstr "Cadangan keseluruhan:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "Halaman {currentPage} daripada {totalPages}"
+
+msgid "Password"
+msgstr "Kata Laluan"
+
+msgid "Please load or create a new session to start."
+msgstr "Sila muat naik atau cipta sesi baharu untuk bermula."
+
 msgid "Producer:"
 msgstr "Pengeluar:"
 
+msgid "Profile"
+msgstr "Profil"
+
 msgid "R2 score:"
 msgstr "Skor R2:"
+
+msgid "Recommendations"
+msgstr "Cadangan"
+
+msgid "Refresh"
+msgstr "Segar semula"
 
 msgid "Risky for onehot:"
 msgstr "Berisiko untuk satu panas:"
@@ -161,39 +357,89 @@ msgstr "Berisiko untuk satu panas:"
 msgid "Rows"
 msgstr "Baris"
 
+msgid "Rows/Page:"
+msgstr "Baris/Halaman:"
+
+msgid "Safe"
+msgstr "Selamat"
+
 msgid "Safe for onehot:"
 msgstr "Selamat untuk satu panas:"
+
+msgid "Save"
+msgstr "Simpan"
+
+msgid "Send"
+msgstr "Hantar"
+
+msgid "Sessions:"
+msgstr "Sesi:"
+
+msgid "Settings"
+msgstr "Tetapan"
 
 msgid "Sign up"
 msgstr "Daftar"
 
-msgid "Something went wrong"
-msgstr "Terdapat ralat"
+msgid "Start Optimization"
+msgstr "Mulakan Pengoptimuman"
+
+msgid "Target Feature:"
+msgstr "Ciri Sasaran:"
 
 msgid "Test loss:"
 msgstr "Kehilangan ujian:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "Padang Permainan Jaringan Saraf menawarkan cara interaktif untuk melihat dan memahami bagaimana jaringan saraf berfikir dan berfungsi. Klik butang di bawah untuk bermula."
+msgid "thinking..."
+msgstr "berfikir..."
+
+msgid "Tools"
+msgstr "Alat"
 
 msgid "Total categorical:"
-msgstr "Jumlah kategori:"
+msgstr "Jumlah kategorikal:"
+
+msgid "Type here..."
+msgstr "Taip di sini..."
+
+msgid "Type:"
+msgstr "Jenis:"
+
+msgid "Unsafe"
+msgstr "Tidak selamat"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "Muat naik set data CSV untuk melihat ciri yang tersedia"
+
+msgid "Upload CSV Dataset"
+msgstr "Muat Naik Set Data CSV"
+
+msgid "Upload ONNX model"
+msgstr "Muat Naik Model ONNX"
+
+msgid "Username:"
+msgstr "Nama Pengguna:"
+
+msgid "Vertical view"
+msgstr "Paparan menegak"
 
 msgid "Visualize"
 msgstr "Visualisasikan"
 
+msgid "Warnings"
+msgstr "Amaran"
+
 msgid "Welcome back!"
-msgstr "Selamat datang kembali!"
+msgstr "Selamat kembali!"
 
 msgid "Welcome!"
 msgstr "Selamat datang!"
-
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "Sama ada anda melatih model mudah atau menala halus transformer besar, 2N2D menyesuaikan diri dengan aliran kerja anda. Apa yang anda perlukan untuk bermula ialah akaun."
 
 msgid "Wrong username or password!"
 msgstr "Nama pengguna atau kata laluan salah!"
 
 msgid "You are already logged in, would you like to log out?"
 msgstr "Anda sudah log masuk, adakah anda ingin log keluar?"
-```
+
+msgid "You are not logged in"
+msgstr "Anda belum log masuk"

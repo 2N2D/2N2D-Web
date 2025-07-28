@@ -1,36 +1,85 @@
-```
-msgid ""
-msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+msgstr
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: ko\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
+msgid " Got the basics? "
+msgstr " 기본을 이해하셨나요? "
 
-msgid "Already have an account? "
-msgstr "이미 계정이 있으신가요?"
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " 신경망 작동 방식에 대한 기본 지식을 얻었다면 다음 가이드를 사용하여 직접 신경망을 만들어 보세요. 궁금한 점은 AI 어시스턴트에게 문의하는 것을 잊지 마세요! "
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " 신경망 놀이터는 신경망이 어떻게 생각하고 작동하는지 보고 이해할 수 있는 대화형 방법을 제공합니다. 시작하려면 아래 버튼을 클릭하세요. "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} (고유값 {1}개, {2})"
+
+msgid "{key} Distribution"
+msgstr "{key} 분포"
+
+msgid "Add dataset:"
+msgstr "데이터 세트 추가:"
+
+msgid "AI Chat"
+msgstr "AI 채팅"
+
+msgid "Already have an account?"
+msgstr "계정이 이미 있으신가요?"
 
 msgid "Analyze"
 msgstr "분석"
 
-msgid "Ask"
-msgstr "질문하기"
-
 msgid "Attributes:"
 msgstr "속성:"
 
-msgid "Back to login"
-msgstr "로그인으로 돌아가기"
+msgid "Best config"
+msgstr "최적 구성"
+
+msgid "Best configuration:"
+msgstr "최적 구성:"
+
+msgid "Categorical"
+msgstr "범주형"
+
+msgid "Categorical summary:"
+msgstr "범주형 요약:"
 
 msgid "Category:"
 msgstr "범주:"
 
+msgid "Clear Data"
+msgstr "데이터 지우기"
+
+msgid "Close"
+msgstr "닫기"
+
+msgid "Column types:"
+msgstr "열 유형:"
+
 msgid "Columns"
 msgstr "열"
+
+msgid "Columns estimate:"
+msgstr "열 추정:"
+
+msgid "Config {0}"
+msgstr "구성 {0}"
+
+msgid "Configuration"
+msgstr "구성"
+
+msgid "Constant nodes"
+msgstr "상수 노드"
+
+msgid "Correlation Matrix"
+msgstr "상관 행렬"
+
+msgid "Create new session"
+msgstr "새 세션 만들기"
 
 msgid "Csv file:"
 msgstr "CSV 파일:"
@@ -38,20 +87,59 @@ msgstr "CSV 파일:"
 msgid "CSV file:"
 msgstr "CSV 파일:"
 
+msgid "CSV tools"
+msgstr "CSV 도구"
+
 msgid "Cur. Memory"
 msgstr "현재 메모리"
 
-msgid "Don't have an account?"
-msgstr "계정이 없으신가요?"
+msgid "Dashboard"
+msgstr "대시보드"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "모델의 학습 및 출력 데이터를 쉽게 해석하세요."
+msgid "Data"
+msgstr "데이터"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "쉽고 간단하게 이해할 수 있는 형식으로 신경망의 구조와 노드를 쉽게 시각화하세요."
+msgid "Data <0/>"
+msgstr "데이터 <0/>"
+
+msgid "Data Distribution"
+msgstr "데이터 분포"
+
+msgid "Dataset Overview"
+msgstr "데이터 세트 개요"
+
+msgid "Docs"
+msgstr "문서"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "계정이 없으신가요? <0>여기에서 등록하세요!</0>"
+
+msgid "Download optimized"
+msgstr "최적화된 버전 다운로드"
+
+msgid "Downloading..."
+msgstr "다운로드 중..."
+
+msgid "E-Mail:"
+msgstr "이메일:"
+
+msgid "Email"
+msgstr "이메일"
+
+msgid "Encoding Feasibility"
+msgstr "인코딩 가능성"
+
+msgid "Encoding Info"
+msgstr "인코딩 정보"
+
+msgid "Encoding type:"
+msgstr "인코딩 유형:"
 
 msgid "Est. Memory"
 msgstr "예상 메모리"
+
+msgid "Failed to connect to AI."
+msgstr "AI 연결 실패."
 
 msgid "File"
 msgstr "파일"
@@ -59,11 +147,17 @@ msgstr "파일"
 msgid "File:"
 msgstr "파일:"
 
-msgid "Got the basics?"
-msgstr "기본 사항을 이해하셨나요?"
+msgid "Hello,"
+msgstr "안녕하세요,"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "신경망의 작동 방식에 대한 기본 지식이 있다면 다음 가이드를 사용하여 자신만의 신경망을 만들어보세요. AI 어시스턴트에게 질문하는 것을 잊지 마세요!"
+msgid "High cardinality columns:"
+msgstr "카디널리티가 높은 열:"
+
+msgid "Info"
+msgstr "정보"
+
+msgid "Input Features:"
+msgstr "입력 특징:"
 
 msgid "Inputs:"
 msgstr "입력:"
@@ -71,56 +165,116 @@ msgstr "입력:"
 msgid "IR version:"
 msgstr "IR 버전:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "파일을 드래그 앤 드롭하여 바로 시작하세요—설정이나 번거로움 없이."
+msgid "Know nothing about neural networks?"
+msgstr "신경망에 대해 전혀 모르시나요?"
+
+msgid "Language:"
+msgstr "언어:"
+
+msgid "Layers"
+msgstr "레이어"
 
 msgid "Layers:"
 msgstr "레이어:"
 
+msgid "Learn"
+msgstr "학습"
+
+msgid "Legend"
+msgstr "범례"
+
 msgid "Load CSV File"
-msgstr "CSV 파일 로드"
+msgstr "CSV 파일 불러오기"
 
 msgid "Load ONNX File"
-msgstr "ONNX 파일 로드"
+msgstr "ONNX 파일 불러오기"
 
-msgid "Loading"
-msgstr "로드 중"
+msgid "Loaded files:"
+msgstr "불러온 파일:"
+
+msgid "Log in here <0/>"
+msgstr "여기에서 로그인 <0/>"
 
 msgid "Log out"
 msgstr "로그아웃"
 
-msgid "Logging in...."
-msgstr "로그인 중..."
-
 msgid "Login"
 msgstr "로그인"
 
-msgid "Magic Link sign-in"
-msgstr "매직 링크 로그인"
+msgid "logo"
+msgstr "로고"
+
+msgid "Logout"
+msgstr "로그아웃"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "구성 당 최대 에폭 수:"
+
+msgid "mb"
+msgstr "MB"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "최소 7자 이상이어야 합니다. 특수 문자 및 숫자를 각각 하나 이상 포함해야 합니다."
+
+msgid "Missing Data Heatmap"
+msgstr "결측치 히트맵"
 
 msgid "Missing values"
-msgstr "누락된 값"
+msgstr "결측치"
+
+msgid "Missing Values Heatmap"
+msgstr "결측값 히트맵"
+
+msgid "Model Details"
+msgstr "모델 세부 정보"
 
 msgid "Name:"
 msgstr "이름:"
 
-msgid "Neural Network Development Dashboard"
-msgstr "신경망 개발 대시보드"
+msgid "Network Visualization"
+msgstr "네트워크 시각화"
+
+msgid "Neurons"
+msgstr "뉴런"
 
 msgid "Neurons:"
 msgstr "뉴런:"
 
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision은 신경망 및 작동 방식에 대한 무료 강좌를 제공합니다."
+
+msgid "No active session!"
+msgstr "활성 세션이 없습니다!"
+
+msgid "No categorical columns"
+msgstr "범주형 열이 없습니다."
+
+msgid "No csv file loaded"
+msgstr "CSV 파일이 로드되지 않았습니다."
+
 msgid "No data to display"
 msgstr "표시할 데이터가 없습니다."
 
+msgid "No file uploaded"
+msgstr "파일이 업로드되지 않았습니다."
+
+msgid "No model loaded"
+msgstr "모델이 로드되지 않았습니다."
+
+msgid "No numerical columns"
+msgstr "수치형 열이 없습니다."
+
+msgid "No onnx file loaded"
+msgstr "ONNX 파일이 로드되지 않았습니다."
+
 msgid "No optimization done."
-msgstr "최적화되지 않았습니다."
+msgstr "최적화가 수행되지 않았습니다."
 
 msgid "No recommendations"
-msgstr "권장 사항 없음"
+msgstr "추천 사항이 없습니다."
 
 msgid "No such columns"
-msgstr "해당 열 없음"
+msgstr "해당 열이 없습니다."
 
 msgid "No warnings"
 msgstr "경고 없음"
@@ -128,20 +282,41 @@ msgstr "경고 없음"
 msgid "Node count:"
 msgstr "노드 수:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "신경망과 그 작동 방식에 대한 무료 강좌를 제공합니다."
+msgid "Node physics"
+msgstr "노드 물리"
+
+msgid "Not safe"
+msgstr "안전하지 않음"
+
+msgid "Numerical"
+msgstr "수치형"
 
 msgid "One hot"
-msgstr "원-핫"
+msgstr "원-핫 인코딩"
+
+msgid "Onehot encoding:"
+msgstr "원-핫 인코딩:"
 
 msgid "ONNX file:"
 msgstr "ONNX 파일:"
 
-msgid "Optimize"
+msgid "Optimization"
 msgstr "최적화"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "더 나은 아키텍처로 신경망을 최적화하여 속도와 출력을 향상시키세요."
+msgid "Optimization <0/>"
+msgstr "최적화 <0/>"
+
+msgid "Optimization results:"
+msgstr "최적화 결과:"
+
+msgid "Optimization settings"
+msgstr "최적화 설정"
+
+msgid "Optimization strategy:"
+msgstr "최적화 전략:"
+
+msgid "or drag and drop files"
+msgstr "또는 파일을 드래그 앤 드롭하세요."
 
 msgid "Outputs:"
 msgstr "출력:"
@@ -149,51 +324,122 @@ msgstr "출력:"
 msgid "Overall"
 msgstr "전체"
 
+msgid "Overall recommendation:"
+msgstr "전체 추천:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "{totalPages}페이지 중 {currentPage}페이지"
+
+msgid "Password"
+msgstr "비밀번호"
+
+msgid "Please load or create a new session to start."
+msgstr "시작하려면 새 세션을 로드하거나 만드세요."
+
 msgid "Producer:"
-msgstr "생산자:"
+msgstr "제작자:"
+
+msgid "Profile"
+msgstr "프로필"
 
 msgid "R2 score:"
 msgstr "R2 점수:"
 
+msgid "Recommendations"
+msgstr "추천"
+
+msgid "Refresh"
+msgstr "새로 고침"
+
 msgid "Risky for onehot:"
-msgstr "원-핫에 위험:"
+msgstr "원-핫 인코딩에 위험:"
 
 msgid "Rows"
 msgstr "행"
 
+msgid "Rows/Page:"
+msgstr "페이지 당 행 수:"
+
+msgid "Safe"
+msgstr "안전"
+
 msgid "Safe for onehot:"
-msgstr "원-핫에 안전:"
+msgstr "원-핫 인코딩에 안전:"
+
+msgid "Save"
+msgstr "저장"
+
+msgid "Send"
+msgstr "보내기"
+
+msgid "Sessions:"
+msgstr "세션:"
+
+msgid "Settings"
+msgstr "설정"
 
 msgid "Sign up"
 msgstr "가입"
 
-msgid "Something went wrong"
-msgstr "문제가 발생했습니다."
+msgid "Start Optimization"
+msgstr "최적화 시작"
+
+msgid "Target Feature:"
+msgstr "대상 특징:"
 
 msgid "Test loss:"
 msgstr "테스트 손실:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "신경망 놀이터는 신경망의 사고 방식과 기능을 대화형으로 보고 이해할 수 있는 방법을 제공합니다. 아래 버튼을 클릭하여 시작하세요."
+msgid "thinking..."
+msgstr "생각 중..."
+
+msgid "Tools"
+msgstr "도구"
 
 msgid "Total categorical:"
 msgstr "총 범주형:"
 
+msgid "Type here..."
+msgstr "여기에 입력하세요..."
+
+msgid "Type:"
+msgstr "유형:"
+
+msgid "Unsafe"
+msgstr "안전하지 않음"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "사용 가능한 특징을 보려면 CSV 데이터 세트를 업로드하세요."
+
+msgid "Upload CSV Dataset"
+msgstr "CSV 데이터 세트 업로드"
+
+msgid "Upload ONNX model"
+msgstr "ONNX 모델 업로드"
+
+msgid "Username:"
+msgstr "사용자 이름:"
+
+msgid "Vertical view"
+msgstr "수직 보기"
+
 msgid "Visualize"
 msgstr "시각화"
 
+msgid "Warnings"
+msgstr "경고"
+
 msgid "Welcome back!"
-msgstr "환영합니다!"
+msgstr "다시 오신 것을 환영합니다!"
 
 msgid "Welcome!"
 msgstr "환영합니다!"
-
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "간단한 모델을 학습하든 대규모 트랜스포머를 미세 조정하든, 2N2D는 사용자의 워크플로에 적응합니다. 시작하려면 계정만 있으면 됩니다."
 
 msgid "Wrong username or password!"
 msgstr "잘못된 사용자 이름 또는 비밀번호입니다!"
 
 msgid "You are already logged in, would you like to log out?"
 msgstr "이미 로그인되어 있습니다. 로그아웃하시겠습니까?"
-```
+
+msgid "You are not logged in"
+msgstr "로그인되지 않았습니다."

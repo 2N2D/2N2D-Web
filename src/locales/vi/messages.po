@@ -1,257 +1,445 @@
-```
-msgstr ""
-"Ngày tạo POT: 2024-07-30 00:03+0300\n"
-"Phiên bản MIME: 1.0\n"
-"Kiểu nội dung: text/plain; charset=utf-8\n"
-"Mã hóa truyền tải nội dung: 8bit\n"
+msgstr
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Ngôn ngữ: vi\n"
-```
+"Language: vi\n"
 
-```
-msgstr "Bảng điều khiển <0>Phát</0> triển <1>Mạng</1> thần kinh <2>N</2>ơ-ron"
-```
+msgid " Got the basics? "
+msgstr " Đã nắm vững kiến thức cơ bản? "
 
-```
-msgstr "Đã có tài khoản? "
-```
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " Nếu bạn đã nắm được những kiến thức về cách thức hoạt động của mạng nơ-ron, hãy sử dụng hướng dẫn sau để bắt đầu tạo mạng nơ-ron của riêng bạn. Đừng quên hỏi Trợ lý AI nếu có thắc mắc! "
 
-```
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " Neural Network Playground cung cấp một cách tương tác để xem và hiểu cách mạng nơ-ron suy nghĩ và hoạt động. Chỉ cần nhấp vào nút bên dưới để bắt đầu. "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} duy nhất, {2})"
+
+msgid "{key} Distribution"
+msgstr "Phân phối {key}"
+
+msgid "Add dataset:"
+msgstr "Thêm bộ dữ liệu:"
+
+msgid "AI Chat"
+msgstr "Trò chuyện AI"
+
+msgid "Already have an account?"
+msgstr "Bạn đã có tài khoản chưa?"
+
+msgid "Analyze"
 msgstr "Phân tích"
-```
 
-```
-msgstr "Hỏi"
-```
-
-```
+msgid "Attributes:"
 msgstr "Thuộc tính:"
-```
 
-```
-msgstr "Trở lại đăng nhập"
-```
+msgid "Best config"
+msgstr "Cấu hình tốt nhất"
 
-```
-msgstr "Thể loại:"
-```
+msgid "Best configuration:"
+msgstr "Cấu hình tốt nhất:"
 
-```
+msgid "Categorical"
+msgstr "Phân loại"
+
+msgid "Categorical summary:"
+msgstr "Tóm tắt phân loại:"
+
+msgid "Category:"
+msgstr "Loại:"
+
+msgid "Clear Data"
+msgstr "Xóa Dữ liệu"
+
+msgid "Close"
+msgstr "Đóng"
+
+msgid "Column types:"
+msgstr "Loại cột:"
+
+msgid "Columns"
 msgstr "Cột"
-```
 
-```
-msgstr "Tệp csv:"
-```
+msgid "Columns estimate:"
+msgstr "Ước tính cột:"
 
-```
+msgid "Config {0}"
+msgstr "Cấu hình {0}"
+
+msgid "Configuration"
+msgstr "Cấu hình"
+
+msgid "Constant nodes"
+msgstr "Nút hằng"
+
+msgid "Correlation Matrix"
+msgstr "Ma trận tương quan"
+
+msgid "Create new session"
+msgstr "Tạo phiên mới"
+
+msgid "Csv file:"
+msgstr "Tệp Csv:"
+
+msgid "CSV file:"
 msgstr "Tệp CSV:"
-```
 
-```
+msgid "CSV tools"
+msgstr "Công cụ CSV"
+
+msgid "Cur. Memory"
 msgstr "Bộ nhớ hiện tại"
-```
 
-```
-msgstr "Chưa có tài khoản?"
-```
+msgid "Dashboard"
+msgstr "Bảng điều khiển"
 
-```
-msgstr "Dễ dàng diễn giải dữ liệu huấn luyện và đầu ra từ mô hình của bạn."
-```
+msgid "Data"
+msgstr "Dữ liệu"
 
-```
-msgstr "Dễ dàng trực quan hóa cấu trúc và các nút của mạng thần kinh của bạn, ở định dạng dễ hiểu và đơn giản."
-```
+msgid "Data <0/>"
+msgstr "Dữ liệu <0/>"
 
-```
-msgstr "Bộ nhớ ước tính"
-```
+msgid "Data Distribution"
+msgstr "Phân phối dữ liệu"
 
-```
+msgid "Dataset Overview"
+msgstr "Tổng quan về bộ dữ liệu"
+
+msgid "Docs"
+msgstr "Tài liệu"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "Chưa có tài khoản? <0>Đăng ký tại đây!</0>"
+
+msgid "Download optimized"
+msgstr "Tải xuống bản tối ưu"
+
+msgid "Downloading..."
+msgstr "Đang tải xuống..."
+
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Encoding Feasibility"
+msgstr "Tính khả thi của mã hóa"
+
+msgid "Encoding Info"
+msgstr "Thông tin mã hóa"
+
+msgid "Encoding type:"
+msgstr "Loại mã hóa:"
+
+msgid "Est. Memory"
+msgstr "Ước tính bộ nhớ"
+
+msgid "Failed to connect to AI."
+msgstr "Không thể kết nối với AI."
+
+msgid "File"
 msgstr "Tệp"
-```
 
-```
+msgid "File:"
 msgstr "Tệp:"
-```
 
-```
-msgstr "Đã nắm được những kiến thức cơ bản?"
-```
+msgid "Hello,"
+msgstr "Xin chào,"
 
-```
-msgstr "Nếu bạn đã nắm được các nguyên lý hoạt động của mạng thần kinh, hãy sử dụng hướng dẫn sau để bắt đầu tạo mạng của riêng bạn. Đừng quên hỏi Trợ lý AI nếu có thắc mắc!"
-```
+msgid "High cardinality columns:"
+msgstr "Cột có độ cardinality cao:"
 
-```
+msgid "Info"
+msgstr "Thông tin"
+
+msgid "Input Features:"
+msgstr "Đặc trưng đầu vào:"
+
+msgid "Inputs:"
 msgstr "Đầu vào:"
-```
 
-```
+msgid "IR version:"
 msgstr "Phiên bản IR:"
-```
 
-```
-msgstr "Chỉ cần kéo và thả tệp của bạn và bắt đầu—không cần thiết lập, không rắc rối."
-```
+msgid "Know nothing about neural networks?"
+msgstr "Bạn không biết gì về mạng nơ-ron?"
 
-```
+msgid "Language:"
+msgstr "Ngôn ngữ:"
+
+msgid "Layers"
+msgstr "Lớp"
+
+msgid "Layers:"
 msgstr "Lớp:"
-```
 
-```
+msgid "Learn"
+msgstr "Học"
+
+msgid "Legend"
+msgstr "Chú giải"
+
+msgid "Load CSV File"
 msgstr "Tải tệp CSV"
-```
 
-```
+msgid "Load ONNX File"
 msgstr "Tải tệp ONNX"
-```
 
-```
-msgstr "Đang tải"
-```
+msgid "Loaded files:"
+msgstr "Tệp đã tải:"
 
-```
+msgid "Log in here <0/>"
+msgstr "Đăng nhập tại đây <0/>"
+
+msgid "Log out"
 msgstr "Đăng xuất"
-```
 
-```
-msgstr "Đang đăng nhập...."
-```
-
-```
+msgid "Login"
 msgstr "Đăng nhập"
-```
 
-```
-msgstr "Đăng nhập bằng liên kết thần kỳ"
-```
+msgid "logo"
+msgstr "logo"
 
-```
-msgstr "Giá trị thiếu"
-```
+msgid "Logout"
+msgstr "Đăng xuất"
 
-```
+msgid "Maximum Epochs Per Configuration:"
+msgstr "Số Epoch tối đa trên mỗi cấu hình:"
+
+msgid "mb"
+msgstr "mb"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "Tối thiểu 7 ký tự. Phải có ít nhất một ký tự đặc biệt và một số."
+
+msgid "Missing Data Heatmap"
+msgstr "Bản đồ nhiệt dữ liệu bị thiếu"
+
+msgid "Missing values"
+msgstr "Giá trị bị thiếu"
+
+msgid "Missing Values Heatmap"
+msgstr "Bản đồ nhiệt giá trị bị thiếu"
+
+msgid "Model Details"
+msgstr "Chi tiết mô hình"
+
+msgid "Name:"
 msgstr "Tên:"
-```
 
-```
-msgstr "Bảng điều khiển Phát triển Mạng thần kinh"
-```
+msgid "Network Visualization"
+msgstr "Trực quan hóa mạng"
 
-```
+msgid "Neurons"
+msgstr "Nơ-ron"
+
+msgid "Neurons:"
 msgstr "Nơ-ron:"
-```
 
-```
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision cung cấp các khóa học miễn phí về mạng nơ-ron và cách chúng hoạt động."
+
+msgid "No active session!"
+msgstr "Không có phiên hoạt động!"
+
+msgid "No categorical columns"
+msgstr "Không có cột phân loại"
+
+msgid "No csv file loaded"
+msgstr "Chưa tải tệp csv nào"
+
+msgid "No data to display"
 msgstr "Không có dữ liệu để hiển thị"
-```
 
-```
-msgstr "Không tối ưu hóa."
-```
+msgid "No file uploaded"
+msgstr "Chưa có tệp nào được tải lên"
 
-```
-msgstr "Không có đề xuất"
-```
+msgid "No model loaded"
+msgstr "Chưa có mô hình nào được tải"
 
-```
+msgid "No numerical columns"
+msgstr "Không có cột số"
+
+msgid "No onnx file loaded"
+msgstr "Chưa tải tệp onnx nào"
+
+msgid "No optimization done."
+msgstr "Chưa thực hiện tối ưu hóa."
+
+msgid "No recommendations"
+msgstr "Không có đề xuất nào"
+
+msgid "No such columns"
 msgstr "Không có cột nào như vậy"
-```
 
-```
+msgid "No warnings"
 msgstr "Không có cảnh báo"
-```
 
-```
+msgid "Node count:"
 msgstr "Số lượng nút:"
-```
 
-```
-msgstr "cung cấp các khóa học miễn phí về mạng thần kinh và cách hoạt động của chúng."
-```
+msgid "Node physics"
+msgstr "Vật lý nút"
 
-```
+msgid "Not safe"
+msgstr "Không an toàn"
+
+msgid "Numerical"
+msgstr "Số"
+
+msgid "One hot"
 msgstr "One hot"
-```
 
-```
+msgid "Onehot encoding:"
+msgstr "Mã hóa Onehot:"
+
+msgid "ONNX file:"
 msgstr "Tệp ONNX:"
-```
 
-```
+msgid "Optimization"
 msgstr "Tối ưu hóa"
-```
 
-```
-msgstr "Tối ưu hóa mạng thần kinh của bạn với kiến trúc tốt hơn để cải thiện tốc độ và đầu ra của nó."
-```
+msgid "Optimization <0/>"
+msgstr "Tối ưu hóa <0/>"
 
-```
+msgid "Optimization results:"
+msgstr "Kết quả tối ưu hóa:"
+
+msgid "Optimization settings"
+msgstr "Cài đặt tối ưu hóa"
+
+msgid "Optimization strategy:"
+msgstr "Chiến lược tối ưu hóa:"
+
+msgid "or drag and drop files"
+msgstr "hoặc kéo và thả tệp"
+
+msgid "Outputs:"
 msgstr "Đầu ra:"
-```
 
-```
+msgid "Overall"
 msgstr "Tổng quan"
-```
 
-```
+msgid "Overall recommendation:"
+msgstr "Đề xuất tổng quan:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "Trang {currentPage} trên {totalPages}"
+
+msgid "Password"
+msgstr "Mật khẩu"
+
+msgid "Please load or create a new session to start."
+msgstr "Vui lòng tải hoặc tạo một phiên mới để bắt đầu."
+
+msgid "Producer:"
 msgstr "Nhà sản xuất:"
-```
 
-```
+msgid "Profile"
+msgstr "Hồ sơ"
+
+msgid "R2 score:"
 msgstr "Điểm R2:"
-```
 
-```
-msgstr "Nguy hiểm đối với onehot:"
-```
+msgid "Recommendations"
+msgstr "Đề xuất"
 
-```
+msgid "Refresh"
+msgstr "Làm mới"
+
+msgid "Risky for onehot:"
+msgstr "Rủi ro cho onehot:"
+
+msgid "Rows"
 msgstr "Hàng"
-```
 
-```
+msgid "Rows/Page:"
+msgstr "Hàng/Trang:"
+
+msgid "Safe"
+msgstr "An toàn"
+
+msgid "Safe for onehot:"
 msgstr "An toàn cho onehot:"
-```
 
-```
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Send"
+msgstr "Gửi"
+
+msgid "Sessions:"
+msgstr "Phiên:"
+
+msgid "Settings"
+msgstr "Cài đặt"
+
+msgid "Sign up"
 msgstr "Đăng ký"
-```
 
-```
-msgstr "Đã xảy ra lỗi"
-```
+msgid "Start Optimization"
+msgstr "Bắt đầu tối ưu hóa"
 
-```
-msgstr "Sân chơi Mạng thần kinh cung cấp một cách tương tác để xem và hiểu cách mạng thần kinh suy nghĩ và hoạt động. Chỉ cần nhấp vào nút bên dưới để bắt đầu."
-```
+msgid "Target Feature:"
+msgstr "Đặc trưng mục tiêu:"
 
-```
-msgstr "Tổng số loại:"
-```
+msgid "Test loss:"
+msgstr "Mất mát kiểm tra:"
 
-```
+msgid "thinking..."
+msgstr "đang suy nghĩ..."
+
+msgid "Tools"
+msgstr "Công cụ"
+
+msgid "Total categorical:"
+msgstr "Tổng số phân loại:"
+
+msgid "Type here..."
+msgstr "Nhập tại đây..."
+
+msgid "Type:"
+msgstr "Loại:"
+
+msgid "Unsafe"
+msgstr "Không an toàn"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "Tải lên bộ dữ liệu CSV để xem các đặc trưng có sẵn"
+
+msgid "Upload CSV Dataset"
+msgstr "Tải lên bộ dữ liệu CSV"
+
+msgid "Upload ONNX model"
+msgstr "Tải lên mô hình ONNX"
+
+msgid "Username:"
+msgstr "Tên người dùng:"
+
+msgid "Vertical view"
+msgstr "Xem dọc"
+
+msgid "Visualize"
 msgstr "Trực quan hóa"
-```
 
-```
+msgid "Warnings"
+msgstr "Cảnh báo"
+
+msgid "Welcome back!"
 msgstr "Chào mừng trở lại!"
-```
 
-```
+msgid "Welcome!"
 msgstr "Chào mừng!"
-```
 
-```
-msgstr "Cho dù bạn đang huấn luyện một mô hình đơn giản hay tinh chỉnh một bộ chuyển đổi khổng lồ, 2N2D đều thích ứng với quy trình làm việc của bạn. Tất cả những gì bạn cần để bắt đầu là một tài khoản."
-```
+msgid "Wrong username or password!"
+msgstr "Sai tên người dùng hoặc mật khẩu!"
 
-```
-msgstr "Tên người dùng hoặc mật khẩu không đúng!"
-```
-
-```
+msgid "You are already logged in, would you like to log out?"
 msgstr "Bạn đã đăng nhập, bạn có muốn đăng xuất không?"
-```
+
+msgid "You are not logged in"
+msgstr "Bạn chưa đăng nhập"

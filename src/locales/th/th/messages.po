@@ -1,0 +1,448 @@
+th
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: th\n"
+
+msgid " Got the basics? "
+msgstr " เข้าใจพื้นฐานแล้วใช่ไหม "
+
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr " หากคุณเข้าใจหลักการทำงานของโครงข่ายประสาทเทียมแล้ว ให้ใช้คำแนะนำต่อไปนี้เพื่อเริ่มต้นสร้างของคุณเอง อย่าลืมถามคำถามกับผู้ช่วย AI! "
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr " Neural Network Playground นำเสนอวิธีโต้ตอบเพื่อดูและทำความเข้าใจว่าโครงข่ายประสาทเทียมคิดและทำงานอย่างไร เพียงคลิกที่ปุ่มด้านล่างเพื่อเริ่มต้น "
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} ไม่ซ้ำ, {2})"
+
+msgid "{key} Distribution"
+msgstr "การกระจายตัวของ {key}"
+
+msgid "Add dataset:"
+msgstr "เพิ่มชุดข้อมูล:"
+
+msgid "AI Chat"
+msgstr "แชท AI"
+
+msgid "Already have an account?"
+msgstr "มีบัญชีอยู่แล้วใช่ไหม?"
+
+msgid "Analyze"
+msgstr "วิเคราะห์"
+
+msgid "Attributes:"
+msgstr "คุณสมบัติ:"
+
+msgid "Best config"
+msgstr "การกำหนดค่าที่ดีที่สุด"
+
+msgid "Best configuration:"
+msgstr "การกำหนดค่าที่ดีที่สุด:"
+
+msgid "Categorical"
+msgstr "เชิงหมวดหมู่"
+
+msgid "Categorical summary:"
+msgstr "สรุปเชิงหมวดหมู่:"
+
+msgid "Category:"
+msgstr "หมวดหมู่:"
+
+msgid "Clear Data"
+msgstr "ล้างข้อมูล"
+
+msgid "Close"
+msgstr "ปิด"
+
+msgid "Column types:"
+msgstr "ประเภทคอลัมน์:"
+
+msgid "Columns"
+msgstr "คอลัมน์"
+
+msgid "Columns estimate:"
+msgstr "ประมาณการคอลัมน์:"
+
+msgid "Config {0}"
+msgstr "การกำหนดค่า {0}"
+
+msgid "Configuration"
+msgstr "การกำหนดค่า"
+
+msgid "Constant nodes"
+msgstr "โหนดคงที่"
+
+msgid "Correlation Matrix"
+msgstr "เมทริกซ์สหสัมพันธ์"
+
+msgid "Create new session"
+msgstr "สร้างเซสชันใหม่"
+
+msgid "Csv file:"
+msgstr "ไฟล์ CSV:"
+
+msgid "CSV file:"
+msgstr "ไฟล์ CSV:"
+
+msgid "CSV tools"
+msgstr "เครื่องมือ CSV"
+
+msgid "Cur. Memory"
+msgstr "หน่วยความจำปัจจุบัน"
+
+msgid "Dashboard"
+msgstr "แดชบอร์ด"
+
+msgid "Data"
+msgstr "ข้อมูล"
+
+msgid "Data <0/>"
+msgstr "ข้อมูล <0/>"
+
+msgid "Data Distribution"
+msgstr "การกระจายข้อมูล"
+
+msgid "Dataset Overview"
+msgstr "ภาพรวมชุดข้อมูล"
+
+msgid "Docs"
+msgstr "เอกสาร"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "ยังไม่มีบัญชีใช่ไหม? <0>ลงทะเบียนที่นี่!</0>"
+
+msgid "Download optimized"
+msgstr "ดาวน์โหลดแบบปรับให้เหมาะสม"
+
+msgid "Downloading..."
+msgstr "กำลังดาวน์โหลด..."
+
+msgid "E-Mail:"
+msgstr "อีเมล:"
+
+msgid "Email"
+msgstr "อีเมล"
+
+msgid "Encoding Feasibility"
+msgstr "ความเป็นไปได้ในการเข้ารหัส"
+
+msgid "Encoding Info"
+msgstr "ข้อมูลการเข้ารหัส"
+
+msgid "Encoding type:"
+msgstr "ประเภทการเข้ารหัส:"
+
+msgid "Est. Memory"
+msgstr "หน่วยความจำโดยประมาณ"
+
+msgid "Failed to connect to AI."
+msgstr "ไม่สามารถเชื่อมต่อกับ AI"
+
+msgid "File"
+msgstr "ไฟล์"
+
+msgid "File:"
+msgstr "ไฟล์:"
+
+msgid "Hello,"
+msgstr "สวัสดี,"
+
+msgid "High cardinality columns:"
+msgstr "คอลัมน์ที่มี Cardinality สูง:"
+
+msgid "Info"
+msgstr "ข้อมูล"
+
+msgid "Input Features:"
+msgstr "คุณสมบัติอินพุต:"
+
+msgid "Inputs:"
+msgstr "อินพุต:"
+
+msgid "IR version:"
+msgstr "เวอร์ชัน IR:"
+
+msgid "Know nothing about neural networks?"
+msgstr "ไม่รู้อะไรเกี่ยวกับโครงข่ายประสาทเทียมเลยใช่ไหม?"
+
+msgid "Language:"
+msgstr "ภาษา:"
+
+msgid "Layers"
+msgstr "เลเยอร์"
+
+msgid "Layers:"
+msgstr "เลเยอร์:"
+
+msgid "Learn"
+msgstr "เรียนรู้"
+
+msgid "Legend"
+msgstr "คำอธิบาย"
+
+msgid "Load CSV File"
+msgstr "โหลดไฟล์ CSV"
+
+msgid "Load ONNX File"
+msgstr "โหลดไฟล์ ONNX"
+
+msgid "Loaded files:"
+msgstr "ไฟล์ที่โหลด:"
+
+msgid "Log in here <0/>"
+msgstr "เข้าสู่ระบบที่นี่ <0/>"
+
+msgid "Log out"
+msgstr "ออกจากระบบ"
+
+msgid "Login"
+msgstr "เข้าสู่ระบบ"
+
+msgid "logo"
+msgstr "โลโก้"
+
+msgid "Logout"
+msgstr "ออกจากระบบ"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "จำนวน Epoch สูงสุดต่อการกำหนดค่า:"
+
+msgid "mb"
+msgstr "เมกะไบต์"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "ขั้นต่ำ 7 ตัวอักษร ควรมีอักขระพิเศษอย่างน้อยหนึ่งตัวและตัวเลขหนึ่งตัว"
+
+msgid "Missing Data Heatmap"
+msgstr "ฮีทแมปข้อมูลที่ขาดหายไป"
+
+msgid "Missing values"
+msgstr "ค่าที่ขาดหายไป"
+
+msgid "Missing Values Heatmap"
+msgstr "ฮีทแมปค่าที่ขาดหายไป"
+
+msgid "Model Details"
+msgstr "รายละเอียดโมเดล"
+
+msgid "Name:"
+msgstr "ชื่อ:"
+
+msgid "Network Visualization"
+msgstr "การแสดงภาพเครือข่าย"
+
+msgid "Neurons"
+msgstr "นิวรอน"
+
+msgid "Neurons:"
+msgstr "นิวรอน:"
+
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "NeuroVision เสนอหลักสูตรฟรีเกี่ยวกับโครงข่ายประสาทเทียมและวิธีการทำงาน"
+
+msgid "No active session!"
+msgstr "ไม่มีเซสชันที่ใช้งานอยู่!"
+
+msgid "No categorical columns"
+msgstr "ไม่มีคอลัมน์เชิงหมวดหมู่"
+
+msgid "No csv file loaded"
+msgstr "ไม่ได้โหลดไฟล์ CSV"
+
+msgid "No data to display"
+msgstr "ไม่มีข้อมูลที่จะแสดง"
+
+msgid "No file uploaded"
+msgid ""
+msgstr "ไม่มีไฟล์อัปโหลด"
+
+msgid "No model loaded"
+msgstr "ไม่ได้โหลดโมเดล"
+
+msgid "No numerical columns"
+msgstr "ไม่มีคอลัมน์ตัวเลข"
+
+msgid "No onnx file loaded"
+msgstr "ไม่ได้โหลดไฟล์ ONNX"
+
+msgid "No optimization done."
+msgstr "ไม่ได้ทำการปรับให้เหมาะสม"
+
+msgid "No recommendations"
+msgstr "ไม่มีคำแนะนำ"
+
+msgid "No such columns"
+msgstr "ไม่มีคอลัมน์ดังกล่าว"
+
+msgid "No warnings"
+msgstr "ไม่มีคำเตือน"
+
+msgid "Node count:"
+msgstr "จำนวนโหนด:"
+
+msgid "Node physics"
+msgstr "ฟิสิกส์ของโหนด"
+
+msgid "Not safe"
+msgstr "ไม่ปลอดภัย"
+
+msgid "Numerical"
+msgstr "เชิงตัวเลข"
+
+msgid "One hot"
+msgstr "วันฮอท"
+
+msgid "Onehot encoding:"
+msgstr "การเข้ารหัสแบบวันฮอท:"
+
+msgid "ONNX file:"
+msgstr "ไฟล์ ONNX:"
+
+msgid "Optimization"
+msgstr "การปรับให้เหมาะสม"
+
+msgid "Optimization <0/>"
+msgstr "การปรับให้เหมาะสม <0/>"
+
+msgid "Optimization results:"
+msgstr "ผลลัพธ์การปรับให้เหมาะสม:"
+
+msgid "Optimization settings"
+msgstr "การตั้งค่าการปรับให้เหมาะสม"
+
+msgid "Optimization strategy:"
+msgstr "กลยุทธ์การปรับให้เหมาะสม:"
+
+msgid "or drag and drop files"
+msgstr "หรือลากและวางไฟล์"
+
+msgid "Outputs:"
+msgstr "เอาต์พุต:"
+
+msgid "Overall"
+msgstr "โดยรวม"
+
+msgid "Overall recommendation:"
+msgstr "คำแนะนำโดยรวม:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "หน้า {currentPage} จาก {totalPages}"
+
+msgid "Password"
+msgstr "รหัสผ่าน"
+
+msgid "Please load or create a new session to start."
+msgstr "โปรดโหลดหรือสร้างเซสชันใหม่เพื่อเริ่มต้น"
+
+msgid "Producer:"
+msgstr "ผู้ผลิต:"
+
+msgid "Profile"
+msgstr "โปรไฟล์"
+
+msgid "R2 score:"
+msgstr "คะแนน R2:"
+
+msgid "Recommendations"
+msgstr "คำแนะนำ"
+
+msgid "Refresh"
+msgstr "รีเฟรช"
+
+msgid "Risky for onehot:"
+msgstr "เสี่ยงต่อวันฮอท:"
+
+msgid "Rows"
+msgstr "แถว"
+
+msgid "Rows/Page:"
+msgstr "แถว/หน้า:"
+
+msgid "Safe"
+msgstr "ปลอดภัย"
+
+msgid "Safe for onehot:"
+msgstr "ปลอดภัยสำหรับวันฮอท:"
+
+msgid "Save"
+msgstr "บันทึก"
+
+msgid "Send"
+msgstr "ส่ง"
+
+msgid "Sessions:"
+msgstr "เซสชัน:"
+
+msgid "Settings"
+msgstr "การตั้งค่า"
+
+msgid "Sign up"
+msgstr "สมัคร"
+
+msgid "Start Optimization"
+msgstr "เริ่มการปรับให้เหมาะสม"
+
+msgid "Target Feature:"
+msgstr "คุณสมบัติเป้าหมาย:"
+
+msgid "Test loss:"
+msgstr "การสูญเสียในการทดสอบ:"
+
+msgid "thinking..."
+msgstr "กำลังคิด..."
+
+msgid "Tools"
+msgstr "เครื่องมือ"
+
+msgid "Total categorical:"
+msgstr "รวมเชิงหมวดหมู่:"
+
+msgid "Type here..."
+msgstr "พิมพ์ที่นี่..."
+
+msgid "Type:"
+msgstr "ประเภท:"
+
+msgid "Unsafe"
+msgstr "ไม่ปลอดภัย"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "อัปโหลดชุดข้อมูล CSV เพื่อดูคุณสมบัติที่มีอยู่"
+
+msgid "Upload CSV Dataset"
+msgstr "อัปโหลดชุดข้อมูล CSV"
+
+msgid "Upload ONNX model"
+msgstr "อัปโหลดโมเดล ONNX"
+
+msgid "Username:"
+msgstr "ชื่อผู้ใช้:"
+
+msgid "Vertical view"
+msgstr "มุมมองแนวตั้ง"
+
+msgid "Visualize"
+msgstr "แสดงภาพ"
+
+msgid "Warnings"
+msgstr "คำเตือน"
+
+msgid "Welcome back!"
+msgstr "ยินดีต้อนรับกลับมา!"
+
+msgid "Welcome!"
+msgstr "ยินดีต้อนรับ!"
+
+msgid "Wrong username or password!"
+msgstr "ชื่อผู้ใช้หรือรหัสผ่านผิด!"
+
+msgid "You are already logged in, would you like to log out?"
+msgstr "คุณได้เข้าสู่ระบบแล้ว ต้องการออกจากระบบหรือไม่?"
+
+msgid "You are not logged in"
+msgstr "คุณไม่ได้เข้าสู่ระบบ"

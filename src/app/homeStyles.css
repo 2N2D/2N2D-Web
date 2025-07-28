@@ -55,8 +55,13 @@
 }
 
 .screenshotZone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 3rem;
   width: 100%;
-  margin-bottom: 4rem;
+  position: relative;
 }
 
 .zoneTitle {
@@ -197,4 +202,81 @@
   border-radius: 1.5rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
   padding: 2rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .pageHome {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .heroZone {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .landingTitle {
+    font-size: 2.5rem;
+  }
+
+  .landingSubtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .ctaButton {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  .zonesContainer {
+    padding: 0 2rem;
+  }
+
+  .zoneTitle {
+    font-size: 1.8rem;
+  }
+
+  .zoneDesc {
+    font-size: 1rem;
+  }
+
+  .zoneHighlights li {
+    font-size: 1rem;
+  }
+
+  .zoneCard {
+    min-height: 240px;
+    width: 90vw;
+  }
+
+  .zoneText {
+    width: 90vw;
+  }
+
+  .zoneCardInner {
+    min-height: 240px;
+  }
+
+  .zoneCardFace,
+  .zoneCardBack,
+  .zoneCardFront {
+    padding: 1.5rem 1rem;
+    width: 90vw;
+  }
+
+  .zoneMoreBtn {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .ctaZone h2 {
+    font-size: 1.8rem;
+  }
+
+  .screenshotZone {
+    flex-direction: column;
+    min-height: 50vh;
+    gap: 2rem;
+  }
 }

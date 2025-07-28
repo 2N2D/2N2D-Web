@@ -102,3 +102,7 @@ export async function sendModel(
     console.error('Upload failed', error);
   }
 }
+
+export async function getOptimizationStatus(sessionId: string) {
+  return `${process.env.TWONTWOD_ENDPOINT}/optimization-status/${sessionId}`;
+}

@@ -1,57 +1,147 @@
-```
+
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-07-30 00:03+0300\n"
+"POT-Creation-Date: 2025-07-28 20:57+0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: pa\n"
 
-msgid "<0>N</0>eural <1>N</1>etwork <2>D</2>evelopment <3>D</3>ashboard"
-msgstr "ਨਿਊਰਲ ਨੈਟਵਰਕ ਵਿਕਾਸ ਡੈਸ਼ਬੋਰਡ"
+msgid " Got the basics? "
+msgstr "ਕੀ ਤੁਹਾਨੂੰ ਬੁਨਿਆਦੀ ਗੱਲਾਂ ਪਤਾ ਹਨ?"
 
-msgid "Already have an account? "
-msgstr "ਪਹਿਲਾਂ ਹੀ ਅਕਾਉਂਟ ਹੈ? "
+msgid " If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions! "
+msgstr "ਜੇਕਰ ਤੁਹਾਨੂੰ ਇਹ ਪਤਾ ਹੈ ਕਿ ਨਿਊਰਲ ਨੈੱਟਵਰਕ ਕਿਵੇਂ ਕੰਮ ਕਰਦੇ ਹਨ, ਤਾਂ ਆਪਣਾ ਖੁਦ ਦਾ ਬਣਾਉਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੀ ਗਾਈਡ ਦੀ ਵਰਤੋਂ ਕਰੋ। ਸਵਾਲ ਪੁੱਛਣ ਲਈ AI ਸਹਾਇਕ ਨੂੰ ਪੁੱਛਣਾ ਨਾ ਭੁੱਲੋ!"
+
+msgid " The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started. "
+msgstr "ਨਿਊਰਲ ਨੈੱਟਵਰਕ ਪਲੇਗ੍ਰਾਉਂਡ ਇਹ ਦੇਖਣ ਅਤੇ ਸਮਝਣ ਦਾ ਇੱਕ ਇੰਟਰਐਕਟਿਵ ਤਰੀਕਾ ਪੇਸ਼ ਕਰਦਾ ਹੈ ਕਿ ਇੱਕ ਨਿਊਰਲ ਨੈੱਟਵਰਕ ਕਿਵੇਂ ਸੋਚਦਾ ਹੈ ਅਤੇ ਕੰਮ ਕਰਦਾ ਹੈ। ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨ 'ਤੇ ਕਲਿੱਕ ਕਰੋ।"
+
+msgid "{0} ({1} unique, {2})"
+msgstr "{0} ({1} ਵਿਲੱਖਣ, {2})"
+
+msgid "{key} Distribution"
+msgstr "{key} ਵੰਡ"
+
+msgid "Add dataset:"
+msgstr "ਡਾਟਾਸੈੱਟ ਸ਼ਾਮਲ ਕਰੋ:"
+
+msgid "AI Chat"
+msgstr "AI ਗੱਲਬਾਤ"
+
+msgid "Already have an account?"
+msgstr "ਕੀ ਤੁਹਾਡਾ ਪਹਿਲਾਂ ਤੋਂ ਹੀ ਖਾਤਾ ਹੈ?"
 
 msgid "Analyze"
-msgstr "ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ"
-
-msgid "Ask"
-msgstr "ਪੁੱਛੋ"
+msgstr "ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ"
 
 msgid "Attributes:"
-msgstr "ਗੁਣ:"
+msgstr "ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ:"
 
-msgid "Back to login"
-msgstr "ਲੌਗਇਨ ਤੇ ਵਾਪਸ ਜਾਓ"
+msgid "Best config"
+msgstr "ਵਧੀਆ ਕੌਨਫਿਗ"
+
+msgid "Best configuration:"
+msgstr "ਵਧੀਆ ਸੰਰਚਨਾ:"
+
+msgid "Categorical"
+msgstr "ਸ਼੍ਰੇਣੀਬੱਧ"
+
+msgid "Categorical summary:"
+msgstr "ਸ਼੍ਰੇਣੀਬੱਧ ਸੰਖੇਪ:"
 
 msgid "Category:"
-msgstr "ਸ਼੍ਰੇਣੀ:"
+msgstr "ਸ਼੍ਰੇਣੀ:"
+
+msgid "Clear Data"
+msgstr "ਡਾਟਾ ਸਾਫ਼ ਕਰੋ"
+
+msgid "Close"
+msgstr "ਬੰਦ ਕਰੋ"
+
+msgid "Column types:"
+msgstr "ਕਾਲਮ ਕਿਸਮਾਂ:"
 
 msgid "Columns"
 msgstr "ਕਾਲਮ"
 
+msgid "Columns estimate:"
+msgstr "ਕਾਲਮ ਅਨੁਮਾਨ:"
+
+msgid "Config {0}"
+msgstr "ਕੌਨਫਿਗ {0}"
+
+msgid "Configuration"
+msgstr "ਸੰਰਚਨਾ"
+
+msgid "Constant nodes"
+msgstr "ਨਿਰੰਤਰ ਨੋਡ"
+
+msgid "Correlation Matrix"
+msgstr "ਸੰਬੰਧ ਮੈਟਰਿਕਸ"
+
+msgid "Create new session"
+msgstr "ਨਵਾਂ ਸੈਸ਼ਨ ਬਣਾਓ"
+
 msgid "Csv file:"
-msgstr "ਸੀ. ਐਸ. ਵੀ. ਫਾਈਲ:"
+msgstr "CSV ਫਾਈਲ:"
 
 msgid "CSV file:"
-msgstr "ਸੀ. ਐਸ. ਵੀ. ਫਾਈਲ:"
+msgstr "CSV ਫਾਈਲ:"
+
+msgid "CSV tools"
+msgstr "CSV ਟੂਲ"
 
 msgid "Cur. Memory"
 msgstr "ਮੌਜੂਦਾ ਮੈਮੋਰੀ"
 
-msgid "Don't have an account?"
-msgstr "ਅਕਾਉਂਟ ਨਹੀਂ ਹੈ?"
+msgid "Dashboard"
+msgstr "ਡੈਸ਼ਬੋਰਡ"
 
-msgid "Easily interpret training and output data from your models."
-msgstr "ਆਪਣੇ ਮਾਡਲਾਂ ਤੋਂ ਸਿਖਲਾਈ ਅਤੇ ਆਉਟਪੁੱਟ ਡੇਟਾ ਨੂੰ ਆਸਾਨੀ ਨਾਲ ਸਮਝੋ।"
+msgid "Data"
+msgstr "ਡਾਟਾ"
 
-msgid "Easily visualize the structure and nodes of your neural network, in an easy and simple to understand format"
-msgstr "ਆਪਣੇ ਨਿਊਰਲ ਨੈਟਵਰਕ ਦੀ ਬਣਤਰ ਅਤੇ ਨੋਡਸ ਨੂੰ ਇੱਕ ਆਸਾਨ ਅਤੇ ਸਧਾਰਨ ਢੰਗ ਨਾਲ ਆਸਾਨੀ ਨਾਲ ਵੇਖੋ।"
+msgid "Data <0/>"
+msgstr "ਡਾਟਾ <0/>"
+
+msgid "Data Distribution"
+msgstr "ਡਾਟਾ ਵੰਡ"
+
+msgid "Dataset Overview"
+msgstr "ਡਾਟਾਸੈੱਟ ਸੰਖੇਪ ਜਾਣਕਾਰੀ"
+
+msgid "Docs"
+msgstr "ਦਸਤਾਵੇਜ਼"
+
+msgid "Don't have an account? <0>Register here!</0>"
+msgstr "ਕੀ ਤੁਹਾਡਾ ਖਾਤਾ ਨਹੀਂ ਹੈ? <0>ਇੱਥੇ ਰਜਿਸਟਰ ਕਰੋ!</0>"
+
+msgid "Download optimized"
+msgstr "ਅਨੁਕੂਲਿਤ ਡਾਊਨਲੋਡ ਕਰੋ"
+
+msgid "Downloading..."
+msgstr "ਡਾਊਨਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
+
+msgid "E-Mail:"
+msgstr "ਈ-ਮੇਲ:"
+
+msgid "Email"
+msgstr "ਈਮੇਲ"
+
+msgid "Encoding Feasibility"
+msgstr "ਇਨਕੋਡਿੰਗ ਸੰਭਾਵਨਾ"
+
+msgid "Encoding Info"
+msgstr "ਇਨਕੋਡਿੰਗ ਜਾਣਕਾਰੀ"
+
+msgid "Encoding type:"
+msgstr "ਇਨਕੋਡਿੰਗ ਕਿਸਮ:"
 
 msgid "Est. Memory"
 msgstr "ਅਨੁਮਾਨਿਤ ਮੈਮੋਰੀ"
+
+msgid "Failed to connect to AI."
+msgstr "AI ਨਾਲ ਜੁੜਨ ਵਿੱਚ ਅਸਫਲ।"
 
 msgid "File"
 msgstr "ਫਾਈਲ"
@@ -59,141 +149,299 @@ msgstr "ਫਾਈਲ"
 msgid "File:"
 msgstr "ਫਾਈਲ:"
 
-msgid "Got the basics?"
-msgstr "ਆਧਾਰਿਕ ਗੱਲਾਂ ਸਮਝ ਆ ਗਈਆਂ?"
+msgid "Hello,"
+msgstr "ਹੈਲੋ,"
 
-msgid "If you got the strings about how neural networks work, then use the following guide to get started creating your own. Don't forget to ask the AI Assistant for questions!"
-msgstr "ਜੇਕਰ ਤੁਸੀਂ ਨਿਊਰਲ ਨੈਟਵਰਕ ਕਿਵੇਂ ਕੰਮ ਕਰਦੇ ਹਨ ਬਾਰੇ ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕੀਤੀ ਹੈ, ਤਾਂ ਆਪਣਾ ਨਿਰਮਾਣ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਹੇਠ ਦਿੱਤੇ ਗਾਈਡ ਦੀ ਵਰਤੋਂ ਕਰੋ। AI ਅਸਿਸਟੈਂਟ ਤੋਂ ਸਵਾਲ ਪੁੱਛਣਾ ਨਾ ਭੁੱਲੋ!"
+msgid "High cardinality columns:"
+msgstr "ਉੱਚ ਕਾਰਡੀਨੈਲਿਟੀ ਕਾਲਮ:"
+
+msgid "Info"
+msgstr "ਜਾਣਕਾਰੀ"
+
+msgid "Input Features:"
+msgstr "ਇਨਪੁਟ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ:"
 
 msgid "Inputs:"
-msgstr "ਇਨਪੁੱਟਸ:"
+msgstr "ਇਨਪੁਟ:"
 
 msgid "IR version:"
-msgstr "ਆਈ. ਆਰ. ਵਰਜਨ:"
+msgstr "IR ਸੰਸਕਰਣ:"
 
-msgid "Just drag and drop your files and get goingâ€”no setup, no fuss."
-msgstr "ਬੱਸ ਆਪਣੀਆਂ ਫਾਈਲਾਂ ਨੂੰ ਡਰੈਗ ਅਤੇ ਡ੍ਰੌਪ ਕਰੋ ਅਤੇ ਸ਼ੁਰੂ ਕਰੋ—ਕੋਈ ਸੈਟਅਪ ਨਹੀਂ, ਕੋਈ ਝਮੇਲਾ ਨਹੀਂ।"
+msgid "Know nothing about neural networks?"
+msgstr "ਨਿਊਰਲ ਨੈੱਟਵਰਕ ਬਾਰੇ ਕੁਝ ਨਹੀਂ ਜਾਣਦੇ?"
+
+msgid "Language:"
+msgstr "ਭਾਸ਼ਾ:"
+
+msgid "Layers"
+msgstr "ਲੇਅਰ"
 
 msgid "Layers:"
-msgstr "ਲੇਅਰਸ:"
+msgstr "ਲੇਅਰ:"
+
+msgid "Learn"
+msgstr "ਸਿੱਖੋ"
+
+msgid "Legend"
+msgstr "ਲੈਜੈਂਡ"
 
 msgid "Load CSV File"
-msgstr "ਸੀ. ਐਸ. ਵੀ. ਫਾਈਲ ਲੋਡ ਕਰੋ"
+msgstr "CSV ਫਾਈਲ ਲੋਡ ਕਰੋ"
 
 msgid "Load ONNX File"
-msgstr "ਓ. ਐਨ. ਐਕਸ. ਫਾਈਲ ਲੋਡ ਕਰੋ"
+msgstr "ONNX ਫਾਈਲ ਲੋਡ ਕਰੋ"
 
-msgid "Loading"
-msgstr "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ"
+msgid "Loaded files:"
+msgstr "ਲੋਡ ਕੀਤੀਆਂ ਫਾਈਲਾਂ:"
+
+msgid "Log in here <0/>"
+msgstr "ਇੱਥੇ ਲਾਗ ਇਨ ਕਰੋ <0/>"
 
 msgid "Log out"
-msgstr "ਲੌਗ ਆਊਟ"
-
-msgid "Logging in...."
-msgstr "ਲੌਗਇਨ ਹੋ ਰਿਹਾ ਹੈ...."
+msgstr "ਲੌਗ ਆਊਟ ਕਰੋ"
 
 msgid "Login"
-msgstr "ਲੌਗਇਨ"
+msgstr "ਲਾਗਇਨ"
 
-msgid "Magic Link sign-in"
-msgstr "ਮੈਜਿਕ ਲਿੰਕ ਸਾਈਨ-ਇਨ"
+msgid "logo"
+msgstr "ਲੋਗੋ"
+
+msgid "Logout"
+msgstr "ਲਾਗਆਉਟ"
+
+msgid "Maximum Epochs Per Configuration:"
+msgstr "ਪ੍ਰਤੀ ਸੰਰਚਨਾ ਵੱਧ ਤੋਂ ਵੱਧ ਯੁੱਗ:"
+
+msgid "mb"
+msgstr "mb"
+
+msgid "Minimum of 7 characters. Should have at least one special character and one number."
+msgstr "ਘੱਟੋ-ਘੱਟ 7 ਅੱਖਰ। ਘੱਟੋ-ਘੱਟ ਇੱਕ ਵਿਸ਼ੇਸ਼ ਅੱਖਰ ਅਤੇ ਇੱਕ ਨੰਬਰ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
+
+msgid "Missing Data Heatmap"
+msgstr "ਗੁੰਮ ਡਾਟਾ ਹੀਟਮੈਪ"
 
 msgid "Missing values"
 msgstr "ਗੁੰਮ ਮੁੱਲ"
 
+msgid "Missing Values Heatmap"
+msgstr "ਗੁੰਮ ਮੁੱਲਾਂ ਦਾ ਹੀਟਮੈਪ"
+
+msgid "Model Details"
+msgstr "ਮਾਡਲ ਵੇਰਵੇ"
+
 msgid "Name:"
 msgstr "ਨਾਮ:"
 
-msgid "Neural Network Development Dashboard"
-msgstr "ਨਿਊਰਲ ਨੈਟਵਰਕ ਵਿਕਾਸ ਡੈਸ਼ਬੋਰਡ"
+msgid "Network Visualization"
+msgstr "ਨੈੱਟਵਰਕ ਵਿਜ਼ੂਅਲਾਈਜ਼ੇਸ਼ਨ"
+
+msgid "Neurons"
+msgstr "ਨਿਊਰੋਨ"
 
 msgid "Neurons:"
-msgstr "ਨਿਊਰੌਨਸ:"
+msgstr "ਨਿਊਰੋਨ:"
+
+msgid "NeuroVision offers free courses about neural networks and how they work."
+msgstr "ਨਿਊਰੋਵਿਜ਼ਨ ਨਿਊਰਲ ਨੈੱਟਵਰਕਾਂ ਅਤੇ ਉਹਨਾਂ ਦੇ ਕੰਮ ਕਰਨ ਦੇ ਤਰੀਕੇ ਬਾਰੇ ਮੁਫਤ ਕੋਰਸ ਪੇਸ਼ ਕਰਦਾ ਹੈ।"
+
+msgid "No active session!"
+msgstr "ਕੋਈ ਕਿਰਿਆਸ਼ੀਲ ਸੈਸ਼ਨ ਨਹੀਂ!"
+
+msgid "No categorical columns"
+msgstr "ਕੋਈ ਸ਼੍ਰੇਣੀਬੱਧ ਕਾਲਮ ਨਹੀਂ"
+
+msgid "No csv file loaded"
+msgstr "ਕੋਈ CSV ਫਾਈਲ ਲੋਡ ਨਹੀਂ ਕੀਤੀ ਗਈ"
 
 msgid "No data to display"
-msgstr "ਡਿਸਪਲੇਅ ਕਰਨ ਲਈ ਕੋਈ ਡੇਟਾ ਨਹੀਂ"
+msgstr "ਵਿਖਾਉਣ ਲਈ ਕੋਈ ਡਾਟਾ ਨਹੀਂ"
+
+msgid "No file uploaded"
+msgstr "ਕੋਈ ਫਾਈਲ ਅਪਲੋਡ ਨਹੀਂ ਕੀਤੀ ਗਈ"
+
+msgid "No model loaded"
+msgstr "ਕੋਈ ਮਾਡਲ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਗਿਆ"
+
+msgid "No numerical columns"
+msgstr "ਕੋਈ ਸੰਖਿਆਤਮਕ ਕਾਲਮ ਨਹੀਂ"
+
+msgid "No onnx file loaded"
+msgstr "ਕੋਈ ONNX ਫਾਈਲ ਲੋਡ ਨਹੀਂ ਕੀਤੀ ਗਈ"
 
 msgid "No optimization done."
 msgstr "ਕੋਈ ਅਨੁਕੂਲਤਾ ਨਹੀਂ ਕੀਤੀ ਗਈ।"
 
 msgid "No recommendations"
-msgstr "ਕੋਈ ਸਿਫਾਰਸ਼ਾਂ ਨਹੀਂ"
+msgstr "ਕੋਈ ਸਿਫ਼ਾਰਸ਼ਾਂ ਨਹੀਂ"
 
 msgid "No such columns"
-msgstr "ਇਸ ਤਰ੍ਹਾਂ ਦੇ ਕੋਈ ਕਾਲਮ ਨਹੀਂ"
+msgstr "ਅਜਿਹੇ ਕੋਈ ਕਾਲਮ ਨਹੀਂ"
 
 msgid "No warnings"
-msgstr "ਕੋਈ ਚੇਤਾਵਨੀਆਂ ਨਹੀਂ"
+msgstr "ਕੋਈ ਚੇਤਾਵਨੀ ਨਹੀਂ"
 
 msgid "Node count:"
 msgstr "ਨੋਡ ਗਿਣਤੀ:"
 
-msgid "offers free courses about neural networks and how they work."
-msgstr "ਨਿਊਰਲ ਨੈਟਵਰਕ ਅਤੇ ਉਨ੍ਹਾਂ ਦੇ ਕੰਮ ਕਰਨ ਦੇ ਤਰੀਕੇ ਬਾਰੇ ਮੁਫਤ ਕੋਰਸ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ।"
+msgid "Node physics"
+msgstr "ਨੋਡ ਭੌਤਿਕ ਵਿਗਿਆਨ"
+
+msgid "Not safe"
+msgstr "ਸੁਰੱਖਿਅਤ ਨਹੀਂ"
+
+msgid "Numerical"
+msgstr "ਸੰਖਿਆਤਮਕ"
 
 msgid "One hot"
-msgstr "ਇੱਕ ਗਰਮ"
+msgstr "ਇੱਕ ਹੌਟ"
+
+msgid "Onehot encoding:"
+msgstr "ਵਨਹੌਟ ਇਨਕੋਡਿੰਗ:"
 
 msgid "ONNX file:"
-msgstr "ਓ. ਐਨ. ਐਕਸ. ਫਾਈਲ:"
+msgstr "ONNX ਫਾਈਲ:"
 
-msgid "Optimize"
-msgstr "ਅਨੁਕੂਲਿਤ ਕਰੋ"
+msgid "Optimization"
+msgstr "ਅਨੁਕੂਲਤਾ"
 
-msgid "Optimize your neural network with a better architecture to improve its speed and outputs."
-msgstr "ਆਪਣੀ ਗਤੀ ਅਤੇ ਆਉਟਪੁੱਟ ਨੂੰ ਸੁਧਾਰਨ ਲਈ ਇੱਕ ਬਿਹਤਰ ਆਰਕੀਟੈਕਚਰ ਨਾਲ ਆਪਣੇ ਨਿਊਰਲ ਨੈਟਵਰਕ ਨੂੰ ਅਨੁਕੂਲਿਤ ਕਰੋ।"
+msgid "Optimization <0/>"
+msgstr "ਅਨੁਕੂਲਤਾ <0/>"
+
+msgid "Optimization results:"
+msgstr "ਅਨੁਕੂਲਤਾ ਨਤੀਜੇ:"
+
+msgid "Optimization settings"
+msgstr "ਅਨੁਕੂਲਤਾ ਸੈਟਿੰਗਾਂ"
+
+msgid "Optimization strategy:"
+msgstr "ਅਨੁਕੂਲਤਾ ਰਣਨੀਤੀ:"
+
+msgid "or drag and drop files"
+msgstr "ਜਾਂ ਫਾਈਲਾਂ ਨੂੰ ਡਰੈਗ ਅਤੇ ਡ੍ਰੌਪ ਕਰੋ"
 
 msgid "Outputs:"
-msgstr "ਆਉਟਪੁੱਟਸ:"
+msgstr "ਆਉਟਪੁੱਟ:"
 
 msgid "Overall"
-msgstr "ਕੁੱਲ ਮਿਲਾ ਕੇ"
+msgstr "ਕੁੱਲ"
+
+msgid "Overall recommendation:"
+msgstr "ਸਮੁੱਚੀ ਸਿਫਾਰਸ਼:"
+
+msgid "Page {currentPage} of {totalPages}"
+msgstr "ਪੰਨਾ {currentPage} ਵਿੱਚੋਂ {totalPages}"
+
+msgid "Password"
+msgstr "ਪਾਸਵਰਡ"
+
+msgid "Please load or create a new session to start."
+msgstr "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਨਵਾਂ ਸੈਸ਼ਨ ਲੋਡ ਕਰੋ ਜਾਂ ਬਣਾਓ।"
 
 msgid "Producer:"
-msgstr "ਨਿਰਮਾਤਾ:"
+msgstr "ਉਤਪਾਦਕ:"
+
+msgid "Profile"
+msgstr "ਪ੍ਰੋਫਾਈਲ"
 
 msgid "R2 score:"
-msgstr "ਆਰ2 ਸਕੋਰ:"
+msgstr "R2 ਸਕੋਰ:"
+
+msgid "Recommendations"
+msgstr "ਸਿਫ਼ਾਰਸ਼ਾਂ"
+
+msgid "Refresh"
+msgstr "ਰਿਫਰੈਸ਼"
 
 msgid "Risky for onehot:"
-msgstr "ਇੱਕ ਗਰਮ ਲਈ ਜੋਖਮ ਭਰਪੂਰ:"
+msgstr "ਵਨਹੌਟ ਲਈ ਜੋਖਮ ਭਰਿਆ:"
 
 msgid "Rows"
-msgstr "ਪੰਕਤੀਆਂ"
+msgstr "ਕਤਾਰਾਂ"
+
+msgid "Rows/Page:"
+msgstr "ਕਤਾਰਾਂ/ਪੰਨਾ:"
+
+msgid "Safe"
+msgstr "ਸੁਰੱਖਿਅਤ"
 
 msgid "Safe for onehot:"
-msgstr "ਇੱਕ ਗਰਮ ਲਈ ਸੁਰੱਖਿਅਤ:"
+msgstr "ਵਨਹੌਟ ਲਈ ਸੁਰੱਖਿਅਤ:"
+
+msgid "Save"
+msgstr "ਸੇਵ ਕਰੋ"
+
+msgid "Send"
+msgstr "ਭੇਜੋ"
+
+msgid "Sessions:"
+msgstr "ਸੈਸ਼ਨ:"
+
+msgid "Settings"
+msgstr "ਸੈਟਿੰਗਾਂ"
 
 msgid "Sign up"
-msgstr "ਸਾਈਨ ਅੱਪ"
+msgstr "ਸਾਈਨ ਅੱਪ ਕਰੋ"
 
-msgid "Something went wrong"
-msgstr "ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ"
+msgid "Start Optimization"
+msgstr "ਅਨੁਕੂਲਤਾ ਸ਼ੁਰੂ ਕਰੋ"
+
+msgid "Target Feature:"
+msgstr "ਨਿਸ਼ਾਨਾ ਵਿਸ਼ੇਸ਼ਤਾ:"
 
 msgid "Test loss:"
-msgstr "ਟੈਸਟ ਨੁਕਸਾਨ:"
+msgstr "ਟੈਸਟ ਘਾਟਾ:"
 
-msgid "The Neural Network Playground offers an interactive way to see and understand how a neural network thinks and functions. Just click the button below to get started."
-msgstr "ਨਿਊਰਲ ਨੈਟਵਰਕ ਪਲੇਗਰਾਉਂਡ ਇੱਕ ਇੰਟਰੈਕਟਿਵ ਤਰੀਕਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਦੇਖ ਸਕਦੇ ਹੋ ਅਤੇ ਸਮਝ ਸਕਦੇ ਹੋ ਕਿ ਇੱਕ ਨਿਊਰਲ ਨੈਟਵਰਕ ਕਿਵੇਂ ਸੋਚਦਾ ਹੈ ਅਤੇ ਕੰਮ ਕਰਦਾ ਹੈ। ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨ ਤੇ ਕਲਿੱਕ ਕਰੋ।"
+msgid "thinking..."
+msgstr "ਸੋਚ ਰਿਹਾ ਹੈ..."
+
+msgid "Tools"
+msgstr "ਟੂਲ"
 
 msgid "Total categorical:"
 msgstr "ਕੁੱਲ ਸ਼੍ਰੇਣੀਬੱਧ:"
 
+msgid "Type here..."
+msgstr "ਇੱਥੇ ਟਾਈਪ ਕਰੋ..."
+
+msgid "Type:"
+msgstr "ਕਿਸਮ:"
+
+msgid "Unsafe"
+msgstr "ਅਸੁਰੱਖਿਅਤ"
+
+msgid "Upload a CSV dataset to see available features"
+msgstr "ਉਪਲਬਧ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਨੂੰ ਦੇਖਣ ਲਈ ਇੱਕ CSV ਡਾਟਾਸੈੱਟ ਅਪਲੋਡ ਕਰੋ"
+
+msgid "Upload CSV Dataset"
+msgstr "CSV ਡਾਟਾਸੈੱਟ ਅੱਪਲੋਡ ਕਰੋ"
+
+msgid "Upload ONNX model"
+msgstr "ONNX ਮਾਡਲ ਅੱਪਲੋਡ ਕਰੋ"
+
+msgid "Username:"
+msgstr "ਉਪਭੋਗਤਾ ਨਾਮ:"
+
+msgid "Vertical view"
+msgstr "ਲੰਬਕਾਰੀ ਦ੍ਰਿਸ਼"
+
 msgid "Visualize"
-msgstr "ਵਿਜ਼ੂਅਲਾਈਜ਼ ਕਰੋ"
+msgstr "ਕਲਪਨਾ ਕਰੋ"
+
+msgid "Warnings"
+msgstr "ਚੇਤਾਵਨੀਆਂ"
 
 msgid "Welcome back!"
-msgstr "ਵਾਪਸ ਆਉਣ ਤੇ ਸਵਾਗਤ ਹੈ!"
+msgstr "ਵਾਪਸੀ 'ਤੇ ਸਵਾਗਤ ਹੈ!"
 
 msgid "Welcome!"
-msgstr "ਸਵਾਗਤ ਹੈ!"
-
-msgid "Whether you're training a simple model or fine-tuning a massive transformer, 2N2D adapts to your workflow. All you need to get started is an account."
-msgstr "ਭਾਵੇਂ ਤੁਸੀਂ ਇੱਕ ਸਧਾਰਨ ਮਾਡਲ ਸਿਖਲਾਈ ਦੇ ਰਹੇ ਹੋ ਜਾਂ ਕਿਸੇ ਵੱਡੇ ਟ੍ਰਾਂਸਫਾਰਮਰ ਨੂੰ ਫ਼ਾਈਨ-ਟਿਊਨ ਕਰ ਰਹੇ ਹੋ, 2N2D ਤੁਹਾਡੇ ਵਰਕਫਲੋ ਦੇ ਅਨੁਕੂਲ ਹੈ। ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ ਸਿਰਫ਼ ਇੱਕ ਅਕਾਉਂਟ ਦੀ ਲੋੜ ਹੈ।"
+msgstr "ਸੁਆਗਤ ਹੈ!"
 
 msgid "Wrong username or password!"
-msgstr "ਗਲਤ ਯੂਜ਼ਰਨੇਮ ਜਾਂ ਪਾਸਵਰਡ!"
+msgstr "ਗਲਤ ਉਪਭੋਗਤਾ ਨਾਮ ਜਾਂ ਪਾਸਵਰਡ!"
 
 msgid "You are already logged in, would you like to log out?"
-msgstr "ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਲੌਗਇਨ ਹੋ ਚੁੱਕੇ ਹੋ, ਕੀ ਤੁਸੀਂ ਲੌਗ ਆਊਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
-```
+msgstr "ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਲੌਗ ਇਨ ਹੋ, ਕੀ ਤੁਸੀਂ ਲੌਗ ਆਊਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+msgid "You are not logged in"
+msgstr "ਤੁਸੀਂ ਲੌਗ ਇਨ ਨਹੀਂ ਹੋ"

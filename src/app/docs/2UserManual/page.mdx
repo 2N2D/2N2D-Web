@@ -1,0 +1,217 @@
+# 2\. User manual
+
+## 2.0 Introducere
+
+În această secțiune a documentației se va prezenta felul în care utilizatorul să navigheze și să folosească platforma 2N2D.
+
+## 2.1 Login/Signup
+
+2N2D oferă 3 tipuri de autentificare:
+
+- **Email + Password**
+- **Google auth**
+- **Magic link**
+
+Astfel încât logarea în platformă sa fie cât mai simplă. Fiecare tip de logare are zona sa separată. După logare, utilizatorul va fi trimis la Dashboard.
+
+## 2.2 Dashboard
+
+Dashboard-ul este centrul activității utilizatorului pe platforma 2N2D. De aici se pot accesa sesiunile și toate uneltele aferente ale platformei.
+
+### 2.2.1 Creare/Încărcare Sesiuni
+
+La prima accesare a platformei, va fi necesar ca utilizatorul să creeze o sesiune nouă de lucru. Tot ce trebuie făcut este să apese pe butonul Create Session, sesiunea va fi creata si incărcată automat ca și secțiunea curentă. De asemenea, în cazul în care există deja sesiuni create, trebuie numai să fie apăsat cartonașul aferent sesiunii.
+
+### 2.2.2 Secțiunea “Sesiunea curentă”
+
+Această secțiune a paginii este un rezumat al sesiunii deja încărcate. De aici se poate schimba numele sesiunii și să se acceseze rapid orice tool al platformei.
+
+Pe lângă asta sunt prezente mai multe widgeturi cu informații utile despre sesiunea încărcată:
+
+- O previzualizare al modelului încărcat
+- Rezultat optimizare
+- Numele fișierelor încărcate.
+
+## 2.3 Sidebar
+
+**Sidebar-ul** reprezintă principalul mijloc de navigare în aplicația **2N2D**, permițând accesul rapid la toate paginile platformei.
+
+Fiecare buton este etichetat clar, indicând fie pagina către care navighează, fie acțiunea pe care o execută (de exemplu, butonul de **Logout**).
+
+Când utilizatorul nu este autentificat, accesul la **Dashboard** și la paginile ce conțin uneltele platformei este restricționat.
+
+Odată ce autentificarea este realizată, butonul **Dashboard** devine activ. Celelalte butoane se activează automat după încărcarea unei sesiuni.
+
+## 2.4 Profil
+
+Pagina de profil oferă utilizatorului să vadă detalii legate de contul său, să își schimbe numele de utilizator și să se delogheze.
+
+## 2.5 Learn
+
+**Pagina „Learn”** conține informații utile pentru utilizatorii care doresc să învețe cum să își creeze propriile rețele neuronale.
+
+Pentru cei fără experiență în domeniu, este disponibilă **Neurovision**, o platformă cu cursuri interactive care explică, într-un mod vizual și intuitiv, modul de funcționare al rețelelor neuronale.
+
+Pentru utilizatorii care vor să învețe cum să implementeze și să dezvolte propriile rețele neuronale, **2N2D** pune la dispoziție cursul **„Dev Basics”**, care acoperă toate conceptele esențiale necesare pentru a construi o rețea neuronală folosind **PyTorch**.
+
+Utilizatorul trebuie doar să selecteze o lecție pentru a începe.
+
+Lecțiile sunt scrise manual, pe baza următoarelor surse:
+
+##
+
+## 2.6 Vizualizare ONNX
+
+### 2.6.1 Încărcare/Ștergere fișiere ONNX
+
+Folosind butoanele de upload și delete utilizatorul poate încărca fișiere ONNX pentru a fi prelucrate de către aplicație.
+
+### 2.6.2 Quick Options
+
+#### Detalii Model
+
+Conține informații legate de modelul încărcat precum numele fișierului, ce constructor s-a folosit, numărul de node-uri.
+
+#### Legendă
+
+O legendă pentru culorile node-urilor din vizualizare.
+
+#### Setări Vizualizare
+
+Conține opțiuni pentru vizualizare precum ascunderea node-urilor constante, schimbarea la o structură verticală sau node physics.
+
+#### Button Refresh
+
+Apăsarea acestui buton va reîncărca întreaga vizualizare.
+
+### 2.6.3 Zona de vizualizare
+
+În această zonă principală a paginii este încărcată vizualizarea fișierului ONNX, reprezentată sub formă de noduri și conexiuni. Întreaga structură poate fi mutată prin clic și glisarea mouse-ului. Nodurile individuale pot fi de asemenea repoziționate în același mod, atâta timp cât clicul inițial a fost realizat direct pe un nod.
+
+La selectarea unui nod, în colțul din stânga jos al paginii apare o fereastră care afișează detalii despre nodul selectat.
+
+## 2.7 CSV Tools
+
+### 2.7.1 Încărcare/Ștergere fișiere CSV
+
+Folosind butoanele de upload și delete utilizatorul poate încărca fișiere CSV pentru a fi prelucrate de către aplicație.
+
+### 2.7.2 Informații generale
+
+#### Warnings/Recomandări
+
+Encodarea one-hot nu este recomandată pentru fișierele CSV cu un număr mare de valori non-numerice unice. Din acest motiv, după analizarea fișierului Încărcat de utilizator, va fi oferită o atenționare în cazul în care acesta nu este potrivit pentru encodarea one-hot.
+
+#### Fezabilitate encodare
+
+În această secțiune este prezentată concluzia analizei pentru prevenirea encodării nepotrivite: dacă encodarea one-hot este sau nu sigură pentru setul de date folosit, consumul original de memorie și consumul de memorie estimat dacă encodarea one-hot ar fi folosită.
+
+#### Overview set de date
+
+Această secțiune oferă următoarele informații:
+
+- numele fișierului încărcat
+- numărul de rânduri
+- numărul de coloane
+- numărul de valori lipsă
+
+### 2.7.3 Vizualizare CSV sub formă de tabel
+
+Fișierul încărcat este vizualizat sub formă de tabel integrat în frontend, cu un număr de rânduri/pagină ales de utilizator.
+
+### 2.7.4 Tool-uri analiză
+
+#### Informații encodare
+
+Recomandarea cu privire la folosirea encodării one-hot și gradul de siguranță.
+
+#### Matricie de corelare
+
+Afișează relațiile dintre valorile numerice. Util pentru identificarea legăturilor puternice între anumite date.
+
+#### Heatmap pentru valorile lipsă
+
+Vizualizează absența datelor în fișierul CSV. Ajută la identificarea rapidă a datelor incomplete.
+
+#### Distribuție de date
+
+Reprezintă grafic valorile din coloane. Folositor pentru a înțelege tiparele și variațiile datelor.
+
+## 2.8 Optimizare
+
+### 2.8.1 Încărcare/Ștergere fișiere CSV/ONNX
+
+Folosind butoanele de upload și delete utilizatorul poate încărca fișiere CSV/ONNX pentru a fi prelucrate de către aplicație și folosite in optimizare.
+
+### 2.8.2 Setări optimizare
+
+#### Input Features
+
+Utilizatorul selectează coloanele din fișierul CSV încărcat care urmează să fie folosite ca **date de intrare** pentru rețeaua neuronală. Operațiile necesare pentru a asigura compatibilitatea cu formatul modelului ONNX sunt efectuate automat, fără a necesita intervenția utilizatorului.
+
+#### Target Feature
+
+Aceasta este coloana din fișierul CSV care reprezintă **ieșirea dorită** a rețelei neuronale. După selectare, ea este separată de celelalte coloane și procesată distinct. La fel ca și în cazul datelor de intrare, toate prelucrările necesare sunt realizate automat.
+
+#### Encoding type
+
+Tipul de codificare se referă la codificare setului de date în numere astfel încăt să poată fi înțelese de către rețeaua neuronală.
+
+2N2D oferă următoarele opțiuni de codificare:
+
+**\-Label**
+
+**\-One-hot**
+
+**\-None** (folosită dacă datele sunt deja codificate sau nu necesita această operație)
+
+Mai multe informații despre encodare se pot găsi în secțiunea **IV**)
+
+####
+
+#### Optimization strategy
+
+Strategia de optimizare determină ce algoritm este folosit pentru a optimiza rețeaua neuronala.
+
+Opțiunile sunt următoarele:
+
+- **NEAT**
+- **GENETIC**
+- **Brute Force**
+
+#### Max Epochs
+
+**Numărul maxim de epoci** definește de câte ori este parcurs complet setul de date de antrenament de către model. Acest parametru influențează direct performanța rețelei neuronale:
+
+- **Prea puține epoci** pot duce la _underfitting_ — modelul nu are suficient timp pentru a învăța tiparele din date.
+- **Prea multe epoci** pot duce la _overfitting_ — modelul ajunge să memoreze datele de antrenament, pierzându-și capacitatea de generalizare la date noi.
+
+Alegerea unui număr adecvat de epoci este esențială în procesul de **optimizare a rețelelor neuronale**, întrucât fiecare strategie de optimizare implică reantrenarea și evaluarea repetată a modelului.
+
+În cazul metodelor **genetice** și **neuro-evolutive**, acest parametru controlează **numărul de generații** prin care evoluează populația de modele. O **generație** include următorii pași:
+
+- Reantrenarea fiecărui individ (model)
+- Evaluarea performanței
+- Selectarea celor mai buni indivizi
+- Aplicarea mutațiilor și recombinarea genomurilor
+
+Astfel, numărul de epoci are un impact direct asupra duratei, resurselor consumate și calității optimizării finale.
+
+### 2.8.3 Start Optimization
+
+Acest buton dă startul optimizării. Pe parcursul optimizării butonul este dezactivat până aceasta este finalizată.
+
+### 2.8.4 Progress Bar
+
+Progress Bar-ul arată utilizatorului cât mai durează procesul, respectiv statusul în care se află optimizarea, fiind informat în timp real de ce configurații sunt testate sau alte informații relevante legate de optimizare.
+
+### 2.8.5 Secțiune rezultat optimizare
+
+Secțiunea de rezultate conține mai multe informații despre fișierul optimizat, precum configurația optimă la care a ajuns procesul, MAE și R2 Score. Pe lângă asta, bazat pe strategia de optimizare, există un tabel care conține toate configurațiile testate respectiv MAE și R2 Score-ul fiecăruia.
+
+La finalul acestei secțiuni se află un buton pentru descărcarea rețelei neuronale sub format optim.
+
+Interpretarea rezultatelor:
+
+- MAE ( Mean Absolute Error ) - diferența absolută dintre rezultatele oferite de model și cele corecte, trebuie să fie cât mai apropiat de 0.
+- R2 ( Coeficientul de determinare ) - reprezintă capacitatea modelului de a explica variația datelor de output. R2=1 înseamnă rezultate perfecte, R2 = înseamnă că modelul ar avea aceeași performanță dacă ar prezice doar media tuturor valorilor, R20 înseamnă că modelul este chiar mai slab decât ar fi dacă ar prezice doar media tuturor valorilor.
