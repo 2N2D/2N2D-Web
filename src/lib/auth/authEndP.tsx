@@ -11,13 +11,12 @@ import {
   sendEmailVerification
 } from '@firebase/auth';
 import { initFirebaseApp } from '@/lib/firebase/firebase.config';
-import { createSession } from '@/lib/auth/authentication';
+import { createSession, logout } from '@/lib/auth/authentication';
 import {
   createUser,
   getSpecificUser
 } from '@/lib/sessionHandling/sessionManager';
 import { redirect } from 'next/navigation';
-import { send } from 'process';
 
 export async function mailAndPass(mail: string, pass: string): Promise<string> {
   let user;
@@ -27,7 +26,7 @@ export async function mailAndPass(mail: string, pass: string): Promise<string> {
       mail,
       pass
     );
-    await sendEmailVerification(user.user);
+
     redirect('/login');
     return '200';
   } catch (error) {
@@ -48,9 +47,9 @@ export async function register(mail: string, pass: string): Promise<string> {
       pass
     ).then(async (userCredential) => {
       const user = userCredential.user;
-      await createSession(await user.getIdToken());
       await createUser(mail, mail.split('@')[0]);
-      redirect('/dash');
+      sendEmailVerification(user);
+      logout();
       return '200';
     });
   } catch (error) {

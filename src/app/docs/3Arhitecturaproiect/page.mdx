@@ -2,7 +2,7 @@
 
 ## 3.1 Structură generală
 
-![]()
+![image](/Group18.png)
 
 **Aplicația 2N2D este alcătuită din mai multe servicii independente, fiecare rulând separat, dar comunicând eficient între ele pentru a asigura funcționalitatea completă a platformei.**
 
@@ -10,29 +10,20 @@
 
 ### 3.1.1 Arhitectura Generală
 
-- **Fiecare serviciu rulează independent, permițând scalabilitate și întreținere modulară.  
-   **
-- **Comunicarea între componente este realizată prin API-uri și protocoale standard (HTTP, JSON, etc.).  
-   **
-- **Sistemul este construit folosind principii de tip microservicii.  
-   **
+- **Fiecare serviciu rulează independent, permițând scalabilitate și întreținere modulară.**
+- **Comunicarea între componente este realizată prin API-uri și protocoale standard (HTTP, JSON, etc.).**
+- **Sistemul este construit folosind principii de tip microservicii.**
 
 ## 3.2 Componente și Hosting
 
 | **Componentă**          | **Descriere**                                                                                                | **Hosting / Platformă**          |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------- |
 | **2N2D Web UI**         | **Interfața grafică a aplicației. Permite interacțiunea utilizatorului cu toate funcționalitățile oferite.** | **Hostat pe Vercel**             |
-| ---                     | ---                                                                                                          | ---                              |
 | **2N2D API**            | **Serverul backend care se ocupă de procesarea datelor și modelelor.**                                       | **Rulează pe un server dedicat** |
-| ---                     | ---                                                                                                          | ---                              |
 | **R2 Buckets**          | **Serviciu pentru stocarea fișierelor utilizatorului (CSV, ONNX etc.).**                                     | **Hostat de Cloudflare**         |
-| ---                     | ---                                                                                                          | ---                              |
 | **Firebase**            | **Serviciu folosit pentru autentificarea utilizatorilor și stocarea metadatelor.**                           | **Hostat de Google**             |
-| ---                     | ---                                                                                                          | ---                              |
 | **PostgreSQL Database** | **Baza de date relațională folosită pentru gestionarea datelor aplicației.**                                 | **Hostată prin Supabase**        |
-| ---                     | ---                                                                                                          | ---                              |
 | **Gemini API**          | **Folosit pentru integrarea AI Chat contextual.**                                                            | **Serviciu oferit de Google**    |
-| ---                     | ---                                                                                                          | ---                              |
 
 ## 3.3 Versioning
 
@@ -87,25 +78,25 @@ Arhitectura este centrată pe două entități principale: **Utilizatori (user)*
 **1\. Tabela user  
 **Această tabelă stochează informațiile esențiale despre utilizatorii înregistrați pe platformă.
 
-- `id (**Integer**, Primary Key)`: Identificator numeric unic pentru fiecare utilizator în baza noastră de date.
-- `uid (**Text**)`: Identificatorul unic al utilizatorului, provenit de la serviciul de autentificare extern (**Firebase Auth**). Acesta este folosit pentru a lega contul din baza de date de sistemul de autentificare.
-- `email (**Text**)`: Adresa de email a utilizatorului.
-- `displayName (**Text**)`: Numele de afișaj al utilizatorului.
-- `sessions (**Array** de Integers)`: O listă cu ID-urile sesiunilor de lucru create de utilizator. Acest design optimizează interogările pentru afișarea rapidă a sesiunilor unui utilizator.
+- `id (Integer, Primary Key)`: Identificator numeric unic pentru fiecare utilizator în baza noastră de date.
+- `uid (Text)`: Identificatorul unic al utilizatorului, provenit de la serviciul de autentificare extern (**Firebase Auth**). Acesta este folosit pentru a lega contul din baza de date de sistemul de autentificare.
+- `email (Text)`: Adresa de email a utilizatorului.
+- `displayName (Text)`: Numele de afișaj al utilizatorului.
+- `sessions (Array de Integers)`: O listă cu ID-urile sesiunilor de lucru create de utilizator. Acest design optimizează interogările pentru afișarea rapidă a sesiunilor unui utilizator.
 
 **2\. Tabela session  
 **Aceasta este tabela centrală a aplicației, stocând toate datele aferente unei sesiuni de lucru specifice.
 
-- `id (**Integer**, Primary Key)`: Identificator numeric unic pentru fiecare sesiune.
-- `userId (**Text**)`: uid-ul utilizatorului care deține sesiunea, realizând legătura cu tabela user.
-- `name (**Text**)`: Numele personalizat dat sesiunii de către utilizator.
-- `onnxName / onnxUrl (**Text**)`: Numele și URL-ul fișierului ONNX încărcat (stocat în Cloudflare R2).
-- `csvName / csvUrl (**Text**)`: Numele și URL-ul fișierului CSV încărcat.
-- `optimizedFileUrl (**Text**)`: URL-ul modelului optimizat, disponibil pentru descărcare.
-- `visResult (**JSON**)`: Stochează rezultatul analizei fișierului ONNX. Prin "caching"-ul acestor date, se evită reprocesarea la fiecare vizitare a paginii, îmbunătățind performanța.
-- `csvResult (**JSON**)`: Stochează rezultatele analizei fișierului CSV (statistici, recomandări, etc.).
-- `optResult (**JSON**)`: Stochează rezultatele complete ale procesului de optimizare (configurația optimă, scoruri MAE și R2).
-- `chat (**JSON**)`: Persistă istoricul conversației cu chatbot-ul AI pentru sesiunea curentă, permițându-i acestuia să ofere răspunsuri contextuale.
+- `id (Integer, Primary Key)`: Identificator numeric unic pentru fiecare sesiune.
+- `userId (Text)`: uid-ul utilizatorului care deține sesiunea, realizând legătura cu tabela user.
+- `name (Text)`: Numele personalizat dat sesiunii de către utilizator.
+- `onnxName / onnxUrl (Text)`: Numele și URL-ul fișierului ONNX încărcat (stocat în Cloudflare R2).
+- `csvName / csvUrl (Text)`: Numele și URL-ul fișierului CSV încărcat.
+- `optimizedFileUrl (Text)`: URL-ul modelului optimizat, disponibil pentru descărcare.
+- `visResult (JSON)`: Stochează rezultatul analizei fișierului ONNX. Prin "caching"-ul acestor date, se evită reprocesarea la fiecare vizitare a paginii, îmbunătățind performanța.
+- `csvResult (JSON)`: Stochează rezultatele analizei fișierului CSV (statistici, recomandări, etc.).
+- `optResult (JSON)`: Stochează rezultatele complete ale procesului de optimizare (configurația optimă, scoruri MAE și R2).
+- `chat (JSON)`: Persistă istoricul conversației cu chatbot-ul AI pentru sesiunea curentă, permițându-i acestuia să ofere răspunsuri contextuale.
 
 #### 3.5.2 **Diagrama Relațională și Logica de Legătură**
 
@@ -119,7 +110,7 @@ text email
 text displayName
 int\[\] sessions
 }
-<br/>session {
+session {
 int id PK
 text userId FK
 text name
@@ -129,7 +120,7 @@ json visResult
 json optResult
 json chat
 }
-<br/>user ||--o{ session : "deține" }
+user ||--o{ session : "deține" }
 ```
 
 _Logica de legătură este implementată astfel:_

@@ -41,7 +41,7 @@ Folosind zone în designul aplicației, am putut face ca acestea să apară pe m
 
 În diagrama următoare prezentăm modul în care ne așteptăm ca utilizatorul să interacționeze cu platforma noastră.
 
-![]()
+![](/Group13.png)
 
 Această diagramă a stat la baza deciziilor noastre de design, astfel încât să încurajăm utilizatorul să interacționeze cu aplicația într-un mod intuitiv și eficient.
 
@@ -138,16 +138,6 @@ Se creează, de asemenea, un **cookie** care conține informații de bază, prec
 
 La fiecare schimbare de pagină, **cookie-ul din browser-ul utilizatorului este extras și verificat** cu o copie a acestuia, pentru a ne asigura că nu a fost modificat.
 
-##
-
-###
-
-###
-
-###
-
-###
-
 ### 5.5.2 Management Sesiuni și Caching
 
 Managementul sesiunilor este foarte important pentru aplicația noastră. Fiind o aplicație **multi-page**, este necesar să păstrăm date între pagini.
@@ -182,12 +172,6 @@ Funcționalități principale:
 
 Structura exactă a unei sesiuni în baza de date este prezentată în secțiunea _Arhitectura proiectului_.
 
-####
-
-####
-
-####
-
 #### 2\. SessionUpdater
 
 **SessionUpdater.tsx** este responsabil pentru **actualizarea sesiunilor în baza de date**.
@@ -216,12 +200,6 @@ Managementul datelor și al fișierelor este un aspect de bază al aplicației. 
 - **R2 Object Storage (hostat de Cloudflare)  
    **
 
-####
-
-####
-
-####
-
 #### Baza de date
 
 Structura bazei de date este prezentată în secțiunea _Arhitectura Proiectului_.
@@ -249,10 +227,6 @@ Fiecare utilizator are propriul său folder în cloud, cu următoarea structură
 │ └── orice fișier .csv încărcat de utilizator  
 └── Optim/  
 └── orice fișier .onnx optimizat de către 2N2D API
-
-####
-
-####
 
 #### Politică de curățare și optimizare spațiu
 
@@ -305,10 +279,6 @@ De asemenea, o funcționalitate pe pagina de Learn este faptul că AI-ul știe c
 
 Am făcut AI-ul capabil să genereze Markdown și să îl afișeze corespunzător în mesaje. Pe când multe alte implementări ale unui AI chatbot se bazează doar pe răspunsul text, noi am făcut un pas în plus pentru a ne asigura că este cât mai folositor.
 
-###
-
-###
-
 ### 5.6.4 **Streaming**
 
 Un alt aspect care face AI-ul mai bun este implementarea _message streaming_. În loc să aștepți până când acesta generează întregul mesaj, ceea ce îl face să pară lent, am implementat un sistem prin care primești porțiuni din mesaj pe măsură ce acesta este generat, până când mesajul este complet.
@@ -327,26 +297,15 @@ Astfel, pe client nu se execută niciun cod critic care să compromită integrit
 
 ## 5.9 Tehnologii folosite
 
-\- NextJS - Framework web development
-
-\- Tailwind CSS - Stilizarea aplicației
-
-\- React Vis - Generare grafic interactiv cu noduri
-
-\- Plotly - Grafice
-
-\- Nextra - Framework generare documentație
-
-\- Firebase OAuth - Autentificarea utlizatorilor
-
-\- PostgreSQL - Bază de date
-
-\- Cloudflare R2 Buckets - Stocare fișiere
-
-\- Lingui - Internaționalizare
-
-\- Gemini - Chatbot AI
-
-\- OpenAPI - Documentarea API Endpointurilor
-
-\- Hostare și scalare: Microservicii, Docker, Vercel
+- NextJS - Framework web development
+- Tailwind CSS - Stilizarea aplicației
+- React Vis - Generare grafic interactiv cu noduri
+- Plotly - Grafice
+- Nextra - Framework generare documentație
+- Firebase OAuth - Autentificarea utlizatorilor
+- PostgreSQL - Bază de date
+- Cloudflare R2 Buckets - Stocare fișiere
+- Lingui - Internaționalizare
+- Gemini - Chatbot AI
+- OpenAPI - Documentarea API Endpointurilor
+- Hostare și scalare: Microservicii, Docker, Vercel

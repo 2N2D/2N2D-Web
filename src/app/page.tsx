@@ -89,7 +89,7 @@ export default function Home() {
         }}
       >
         <motion.img
-          src='logo2n2d.svg'
+          src='/logo2n2d.svg'
           alt='2N2D Logo'
           className='landingLogo'
           initial={{ opacity: 0, y: 40 }}

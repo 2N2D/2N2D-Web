@@ -101,16 +101,6 @@ main {
   left: 0;
 }
 
-header {
-  background-color: var(--card-background);
-  border-bottom: 1px solid var(--border-color);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: var(--shadow-sm);
-}
-
 footer {
   padding: 1rem;
   text-align: center;
@@ -283,6 +273,10 @@ input[type='file'] {
   background-color: var(--error-hover);
 }
 
+.nextra-mobile-nav {
+  backdrop-filter: blur(10px);
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -368,12 +362,6 @@ input[type='file'] {
   body {
     font-size: 0.875rem;
     padding: 0.5rem;
-  }
-
-  header {
-    padding: 0.5rem 1rem;
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .title {

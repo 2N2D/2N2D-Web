@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 4rem;
+  min-height: 100vh;
 }
 
 .pageDash .lander {
@@ -414,7 +415,6 @@
 
   .pageDash .lander {
     flex-direction: column;
-    padding: 1.5rem;
   }
 
   .pageDash .lander .logo {
@@ -457,8 +457,16 @@
     padding: 1.5rem;
   }
 
+  .currentSessionInfo .title {
+    padding-left: 1.5rem;
+  }
+
   .currentSessionInfo .element .networkPreview {
     width: 100%;
+  }
+
+  .sessionsArea .sessions .button .largeIcon {
+    font-size: 5rem;
   }
 
   .resultArea {

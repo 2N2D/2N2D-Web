@@ -14,9 +14,12 @@ export default function signup() {
   const router = useRouter();
 
   const [loggedIn, setLoggedIn] = useState(false);
+  const [mpAuthError, setMPAuthError] = useState(false);
+  const [verifyEmailNotification, setVerifyEmailNotification] = useState(false);
   const { t } = useLingui();
 
   async function attemptSignUp(e: FormEvent<HTMLFormElement>) {
+    setVerifyEmailNotification(false);
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const email = formData.get('email')?.toString();
@@ -27,6 +30,9 @@ export default function signup() {
     }
 
     const rez = await register(email, password);
+    if (rez == '200') {
+      setVerifyEmailNotification(true);
+    }
   }
 
   useEffect(() => {
@@ -74,6 +80,12 @@ export default function signup() {
             />
             <input type={'submit'} value={t`Sign up`} />
           </form>
+          <div className={mpAuthError ? 'error' : 'hidden'}>
+            <h1>{t`Account already exists!`}</h1>
+          </div>
+          <div className={verifyEmailNotification ? 'not' : 'hidden'}>
+            <h1>{t`Verify your email addres to be able to login!`}</h1>
+          </div>
           <GoogleSignInButton />
           <OneTimeMailSignInButton />
           <h2>

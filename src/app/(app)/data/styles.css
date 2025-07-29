@@ -116,3 +116,14 @@
 .pageData .viewButtons i {
   font-size: 1.5rem;
 }
+
+@media (max-width: 768px) {
+  .pageData .viewButtons {
+    flex-direction: column;
+  }
+
+  .pageData .viewButtons button {
+    width: 100%;
+    justify-content: center;
+  }
+}

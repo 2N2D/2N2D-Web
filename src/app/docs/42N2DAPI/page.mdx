@@ -1,4 +1,4 @@
-# 4 2N2D API
+# 4. 2N2D API
 
 **2N2D API** este componenta aplicației 2N2D responsabilă pentru procesarea modelelor de rețele neuronale și a seturilor de date.
 
@@ -14,9 +14,11 @@
 - **Procesare internă**: module Python (2N2D.py, data.py) care realizează analiza și procesarea efectivă a modelelor și datelor.
 - **Format de răspuns**: datele procesate sunt returnate clientului în format JSON.
 
-## 4.1 **APP.py**
+![](/Group32.png)
 
-în acest fișier rulează serverul și deci întregul API, aici ajunge și este procesat fiecare request din partea WEB a aplicației.
+## 4.1 APP.py
+
+În acest fișier rulează serverul și deci întregul API, aici ajunge și este procesat fiecare request din partea WEB a aplicației.
 
 ### 4.1.1 Autentificare
 
@@ -32,18 +34,18 @@ De asemenea toate acestea au nevoie și de un API key
 
 ### 4.1.2 Exemplu de Antet
 
-\\{
-"x-api-key":"hash-cheie-api",  
-"session-id": "hash-sesiune-utilizator"  
-\\}
+```json
+{
+  "x-api-key": "hash-cheie-api",
+  "session-id": "hash-sesiune-utilizator"
+}
+```
 
-##
+## 4.2 Endpoint-uri
 
-## 4.2 **Endpoint-uri**
+### 4.2.1 Verificare Stare (Health Check)
 
-### 4.2.1 **Verificare Stare (Health Check)**
-
-#### **GET /**
+#### GET /
 
 Acest endpoint poate fi folosit pentru a verifica dacă API-ul rulează.
 
@@ -52,15 +54,17 @@ Acest endpoint poate fi folosit pentru a verifica dacă API-ul rulează.
 
 **Răspuns de Succes (200):**
 
-\\{  
-"message": "2N2D API is running"  
-\\}
+```json
+{
+  "message": "2N2D API is running"
+}
+```
 
-### 4.2.2 **Gestionarea Datelor (Data Handling)**
+### 4.2.2 Gestionarea Datelor (Data Handling)
 
 Aceste endpoint-uri sunt responsabile pentru încărcarea și procesarea datelor necesare pentru optimizarea modelului.
 
-#### **POST /upload-model**
+#### POST /upload-model
 
 Încarcă un fișier model în format ONNX pentru analiză.
 
@@ -68,22 +72,26 @@ Aceste endpoint-uri sunt responsabile pentru încărcarea și procesarea datelor
 
 **Corp Cerere:**
 
-\\{  
-"filepath": "cale/catre/modelul/tau.onnx"  
-\\}
+```json
+{
+  "filepath": "cale/catre/modelul/tau.onnx"
+}
+```
 
 **Răspuns de Succes (200):**
 
-\\{  
-"input_names": \\["input1", "input2"\\],  
-"output_names": \\["output"\\],  
-"layers": \\[
-\\{ "name": "layer1", "type": "Conv", "attributes": "..." \\},
-\\{ "name": "layer2", "type": "ReLU", "attributes": "..." \\}
-\\]  
-\\}
+```json
+{
+  "input_names": ["input1", "input2"],
+  "output_names": ["output"],
+  "layers": [
+    { "name": "layer1", "type": "Conv", "attributes": "..." },
+    { "name": "layer2", "type": "ReLU", "attributes": "..." }
+  ]
+}
+```
 
-#### **POST /upload-csv**
+#### POST /upload-csv
 
 Încarcă un fișier CSV care conține setul de date.
 
@@ -91,25 +99,29 @@ Aceste endpoint-uri sunt responsabile pentru încărcarea și procesarea datelor
 
 **Corp Cerere:**
 
-\\{  
-"filepath": "cale/catre/datele/tale.csv"  
-\\}
+```json
+{
+  "filepath": "cale/catre/datele/tale.csv"
+}
+```
 
 **Răspuns de Succes (200):**
 
-\\{  
-"columns": \\["feature1", "feature2", "target"\\],  
-"preview": \\[
-\\{ "feature1": 0.5, "feature2": 0.3, "target": 1 \\},
-\\{ "feature1": 0.6, "feature2": 0.4, "target": 0 \\}
-\\]  
-\\}
+```json
+{
+  "columns": ["feature1", "feature2", "target"],
+  "preview": [
+    { "feature1": 0.5, "feature2": 0.3, "target": 1 },
+    { "feature1": 0.6, "feature2": 0.4, "target": 0 }
+  ]
+}
+```
 
-### 4.2.3 **Optimizarea Modelului**
+### 4.2.3 Optimizarea Modelului
 
 Acest set de endpoint-uri gestionează procesul de optimizare a modelului.
 
-#### **POST /optimize**
+#### POST /optimize
 
 Inițiază procesul de optimizare a modelului.
 
@@ -117,36 +129,42 @@ Inițiază procesul de optimizare a modelului.
 
 **Corp Cerere:**
 
-\\{  
-"input_features": \\["feature1", "feature2"\\],  
-"target_feature": "target",  
-"max_epochs": 100,  
-"session_id": "id-sesiune-utilizator",  
-"csv_path": "cale/catre/date.csv",  
-"onnx_path": "cale/catre/model.onnx",  
-"encoding": "onehot",  
-"strategy": "bayesian"  
-\\}
+```json
+{
+  "input_features": ["feature1", "feature2"],
+  "target_feature": "target",
+  "max_epochs": 100,
+  "session_id": "id-sesiune-utilizator",
+  "csv_path": "cale/catre/date.csv",
+  "onnx_path": "cale/catre/model.onnx",
+  "encoding": "onehot",
+  "strategy": "bayesian"
+}
+```
 
 **Răspuns de Succes (200):**
 
-\\{  
-"message": "Optimizarea a început cu succes",  
-"url": "id-sesiune-utilizator/optim/model_optimizat.onnx",  
-"model_path": "/cale/server/catre/model_optimizat.onnx",  
-"results": \\{  
-"best_accuracy": 0.95,  
-"best_hyperparameters": "..."  
-\\}  
-\\}
+```json
+{
+  "message": "Optimizarea a început cu succes",
+  "url": "id-sesiune-utilizator/optim/model_optimizat.onnx",
+  "model_path": "/cale/server/catre/model_optimizat.onnx",
+  "results": {
+    "best_accuracy": 0.95,
+    "best_hyperparameters": "..."
+  }
+}
+```
 
 **Răspuns de Eroare (400):**
 
-\\{  
-"detail": "Mesaj de eroare care detaliază ce nu a funcționat în timpul optimizării"  
-\\}
+```json
+{
+  "detail": "Mesaj de eroare care detaliază ce nu a funcționat în timpul optimizării"
+}
+```
 
-#### **GET /optimization-status/{session_id}**
+#### GET `/optimization-status/{ session_id }`
 
 Transmite în flux (streams) starea procesului de optimizare în desfășurare.
 
@@ -156,10 +174,12 @@ Transmite în flux (streams) starea procesului de optimizare în desfășurare.
 
 **Răspuns (text/event-stream):** Un flux de obiecte JSON cu actualizări de stare.
 
-data: \\{"status": "Se descarcă datele CSV din baza de date...", "progress": 3\\}
+```
+data: {"status": "Se descarcă datele CSV din baza de date...", "progress": 3}
 
-data: \\{"status": "Se codează datele CSV...", "progress": 5\\}  
-data: \\{"status": "Se caută arhitectura optimă...", "progress": 20\\}
+data: {"status": "Se codează datele CSV...", "progress": 5}
+data: {"status": "Se caută arhitectura optimă...", "progress": 20}
+```
 
 ## 4.3 Request flow
 
@@ -209,24 +229,26 @@ Fișierele CSV reprezintă cel mai comun format pentru date tabulare utilizate �
 
 2N2D oferă două metode principale pentru encodarea datelor non-numerice:
 
-#### 1\. Encodare Label
+#### 1. Encodare Label
 
 - Fiecare valoare non-numerică unică dintr-o coloană primește un cod numeric unic, începând de la 0.
-- Exemplu:  
-   Categorii ordonate, precum ("ușor", "mediu", "dificil") vor fi encodate ca (0, 1, 2).
+- Exemplu:
+
+  Categorii ordonate, precum ("ușor", "mediu", "dificil") vor fi encodate ca (0, 1, 2).
+
 - Această metodă este ideală atunci când există o succesiune logică între elemente, permițând rețelei să interpreteze valorile ca având o relație ordonată.
 - Nu este potrivită pentru categorii fără ordine logică, de exemplu ("albastru", "galben", "roșu"), deoarece codificarea (0, 1, 2) poate induce rețeaua în eroare, sugerând o ierarhie inexistenta.
 - Este o metodă eficientă din punct de vedere al memoriei.
 
-#### 2\. Encodare One-Hot
+#### 2. Encodare One-Hot
 
 - Pentru fiecare element unic non-numeric se creează un vector binar cu dimensiunea egală cu numărul de valori unice.
 - Exemplu:
 
-Valorile ("albastru", "galben", "roșu") vor fi encodate astfel:  
-"albastru" → \[1, 0, 0\]  
-"galben" → \[0, 1, 0\]  
-"roșu" → \[0, 0, 1\]
+  Valorile ("albastru", "galben", "roșu") vor fi encodate astfel:
+  - "albastru" → [1, 0, 0]
+  - "galben" → [0, 1, 0]
+  - "roșu" → [0, 0, 1]
 
 - Această metodă elimină problema ordinii false de la encodarea Label, deoarece fiecare categorie este reprezentată distinct și independent.
 - Dezavantaj: vectorii pot deveni foarte mari dacă există multe valori unice, crescând substanțial consumul de memorie.
@@ -263,16 +285,6 @@ API-ul utilizează un proces complex de optimizare a rețelelor neuronale, struc
 - O copie a modelului original este reantrenată și evaluată.
 - Acest pas oferă o bază de referință a performanței inițiale, care va fi folosită ulterior pentru comparații.
 
-##
-
-##
-
-##
-
-##
-
-##
-
 ## 4.8 Metodele de optimizare
 
 De aici, procesul diferă în funcție de metoda de optimizare aleasă, după cum urmează:
@@ -280,8 +292,8 @@ De aici, procesul diferă în funcție de metoda de optimizare aleasă, după cu
 ### 4.8.1 Brute Force
 
 - Modelul este reantrenat și testat pe o varietate de configurații.
-- Numărul de neuroni per layer variază în intervalul \[x/2, x\*2\], unde x este numărul original de neuroni.
-- Numărul de layere este variat în intervalul \[y-1, y+1\], y fiind numărul original de layere.
+- Numărul de neuroni per layer variază în intervalul [x/2, x*2], unde x este numărul original de neuroni.
+- Numărul de layere este variat în intervalul [y-1, y+1], y fiind numărul original de layere.
 - Antrenarea folosește tehnica _early stopping_ pentru a opri procesul dacă modelul nu mai prezintă îmbunătățiri.
 - După testarea tuturor configurațiilor, cel mai performant model este salvat și oferit utilizatorului împreună cu metricile de evaluare (descrise în User Manual).
 
@@ -296,32 +308,22 @@ De aici, procesul diferă în funcție de metoda de optimizare aleasă, după cu
 - Procesul continuă până la obținerea celui mai performant model, care este oferit utilizatorului.
 - Această metodă este mai costisitoare computațional și în timp față de Brute Force, dar explorează un spațiu mai larg de configurații.
 
-###
-
-###
-
-###
-
-###
-
-###
-
 ### 4.8.3 Neuro-evolutiv (folosind librăria NEAT)
 
 - Pornește de la o populație simplă de genomuri ce descriu structura rețelei neuronale.
 - Un genom este compus din:
   - Noduri (cu ID, bias, factor de răspuns, funcție de activare și tip de agregare)
   - Conexiuni (cu ID, greutate și starea activă/inactivă)
-  - Fitness (scorul de performanță)
-
-- După evaluarea generației inițiale, genomurile sunt grupate în specii în funcție de similaritate, iar cele mai bune au șanse mai mari de recombinare.
+  - Fitness (scorul de performanță) După evaluarea generației inițiale, genomurile sunt grupate în specii în funcție de similaritate, iar cele mai bune au șanse mai mari de recombinare.
 - Genomurile rezultate suferă mutații și sunt evaluate iar și iar în cicluri repetate.
 - Această metodă permite modificarea atât a greutăților și biasurilor, cât și a topologiei rețelei, oferind arhitecturi complet noi și complexe.
 - Modelul final descris de cel mai bun genom este returnat.
 
 ### 4.8.4 Finalizarea procesului
 
-Modelul optimizat rezultat din oricare dintre metodele de mai sus este antrenat și evaluat încă o dată pentru a confirma performanța. Ulterior, este exportat în format ONNX și pus la dispoziția utilizatorului pentru instalare și utilizare.![]()
+Modelul optimizat rezultat din oricare dintre metodele de mai sus este antrenat și evaluat încă o dată pentru a confirma performanța. Ulterior, este exportat în format ONNX și pus la dispoziția utilizatorului pentru instalare și utilizare.
+
+![](/flowchart.jpeg)
 
 ## 4.9 Scalabilitate
 
@@ -334,7 +336,7 @@ De asemenea, datorită centralizării fișierelor și a datelor utilizatorilor, 
 
 ## 4.10 Securitate
 
-Toate requesturile care ajung în API sunt mai întâi verificate. Se extrag datele din header și se caută componenta x*api_key. Aceasta este, de fapt, un \_hash* al unei chei stocate pe serverul aplicației web.
+Toate requesturile care ajung în API sunt mai întâi verificate. Se extrag datele din header și se caută componenta `x-api-key`. Aceasta este, de fapt, un _hash_ al unei chei stocate pe serverul aplicației web.
 
 Hash-ul primit este comparat cu hash-ul stocat local, setat la pornirea aplicației. API-ul nu cunoaște cheia originală. Dacă hash-urile se potrivesc, atunci requestul este procesat; dacă nu, acesta este refuzat.
 
@@ -346,20 +348,12 @@ De asemenea, configurarea serverului care rulează aplicația este foarte import
 
 ## 4.11 Tehnologii folosite
 
-\- Pytorch - Framework principal pentru rețele neuronale
-
-\- ONNX - Format standard al modelelor de machine learning
-
-\- Numpy - Procesare numerică și manipulare a datelor
-
-\- Pandas - Preprocesare a datelor tabulare
-
-\- Scikit-learn - Funcții de preprocesare și evaluare
-
-\- NEAT - Algoritm neuro-evolutiv folosit pentru optimizare
-
-\- DEAP - Algoritm genetic folosit pentru optimizare
-
-\- FastAPI - Framework pentru API
-
-\- Cloudfare R2 Buckets - Stocare fisiere
+- **PyTorch** - Framework principal pentru rețele neuronale
+- **ONNX** - Format standard al modelelor de machine learning
+- **NumPy** - Procesare numerică și manipulare a datelor
+- **Pandas** - Preprocesare a datelor tabulare
+- **Scikit-learn** - Funcții de preprocesare și evaluare
+- **NEAT** - Algoritm neuro-evolutiv folosit pentru optimizare
+- **DEAP** - Algoritm genetic folosit pentru optimizare
+- **FastAPI** - Framework pentru API
+- **Cloudflare R2 Buckets** - Stocare fișiere

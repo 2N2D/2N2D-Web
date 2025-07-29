@@ -25,6 +25,7 @@
   margin: 1rem;
   background-color: var(--background-color);
   padding: 1rem;
+  border-radius: 0.4rem;
 }
 
 .form input {
@@ -57,8 +58,16 @@
 .error {
   padding: 1rem;
   background-color: var(--error-color);
+  border-radius: 0.4rem;
 }
 
-.error h1 {
+.not {
+  padding: 1rem;
+  background-color: var(--success-color);
+  border-radius: 0.4rem;
+}
+
+.error,
+.not h1 {
   font-size: 1rem;
 }

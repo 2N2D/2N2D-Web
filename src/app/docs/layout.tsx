@@ -6,7 +6,7 @@ import 'nextra-theme-docs/style.css';
 const navbar = (
   <Navbar
     logo={
-      <img src='logo2n2d.svg' style={{ maxWidth: '100px', height: 'auto' }} />
+      <img src='/logo2n2d.svg' style={{ maxWidth: '100px', height: 'auto' }} />
     }
   />
 );
